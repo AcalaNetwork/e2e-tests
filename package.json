@@ -1,0 +1,36 @@
+{
+	"name": "e2e-tests",
+	"version": "0.1.0",
+	"author": "Ermal Kaleci <ermalkaleci@gmail.com>",
+	"license": "MIT",
+	"private": true,
+	"packageManager": "yarn@3.2.4",
+	"scripts": {
+		"lint": "tsc --noEmit && eslint . --ext .js,.ts && prettier --check .",
+		"fix": "eslint . --ext .js,.ts --fix && prettier -w .",
+		"prepare": "husky install",
+		"test": "LOG_LEVEL=error vitest --silent",
+		"test:ui": "yarn test --ui",
+		"test:dev": "vitest --inspect"
+	},
+	"dependencies": {
+		"@acala-network/chopsticks": "^0.3.6",
+		"@types/node": "^18.11.18",
+		"@typescript-eslint/eslint-plugin": "^5.48.2",
+		"@typescript-eslint/parser": "^5.48.2",
+		"@vitest/ui": "^0.28.1",
+		"eslint": "^8.32.0",
+		"eslint-config-prettier": "^8.6.0",
+		"eslint-plugin-import": "^2.27.5",
+		"eslint-plugin-sort-imports-es6-autofix": "^0.6.0",
+		"husky": "^8.0.3",
+		"lint-staged": "^13.1.0",
+		"prettier": "^2.8.3",
+		"ts-node": "^10.9.1",
+		"typescript": "^4.9.4",
+		"vitest": "^0.28.1"
+	},
+	"engines": {
+		"node": ">=v14"
+	}
+}
