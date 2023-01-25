@@ -19,7 +19,7 @@ describe("Polkadot <-> Acala", async () => {
     await acala.teardown();
   });
 
-  it("Polkadot transfer assets to Acala", async () => {
+  it("0. Polkadot transfer assets to Acala", async () => {
     await polkadot.dev.setStorage({
       System: {
         Account: [[[alice.address], { data: { free: 1000 * 1e10 } }]],
@@ -75,6 +75,64 @@ describe("Polkadot <-> Acala", async () => {
       event: expect.objectContaining({
         section: "parachainSystem",
         method: "DownwardMessagesReceived",
+      }),
+    });
+  });
+
+  it("1. Acala transfer assets to Polkadot", async () => {
+    await acala.dev.setStorage({
+      System: {
+        Account: [[[alice.address], { data: { free: 1000 * 1e10 } }]],
+      },
+      Tokens: {
+        Accounts: [[[alice.address, { token: "DOT" }], { free: 1000e10 }]],
+      },
+    });
+    await matchSnapshot(polkadot.api.query.system.account(alice.address));
+    await matchSnapshot(acala.api.query.system.account(alice.address));
+    await matchSnapshot(acala.api.query.tokens.accounts(alice.address, { token: "DOT" }));
+
+    await acala.api.tx.xTokens
+      .transfer(
+        {
+          Token: "DOT",
+        },
+        10e10,
+        {
+          V1: {
+            parents: 1,
+            interior: {
+              X1: {
+                AccountId32: {
+                  network: "Any",
+                  id: alice.addressRaw,
+                },
+              },
+            },
+          },
+        },
+        {
+          Unlimited: null,
+        }
+      )
+      .signAndSend(alice);
+
+    await acala.chain.newBlock();
+    await polkadot.chain.upcomingBlock();
+
+    await matchSnapshot(acala.api.query.tokens.accounts(alice.address, { token: "DOT" }));
+    await expectEvent(acala.api.query.system.events(), {
+      event: expect.objectContaining({
+        section: "xTokens",
+        method: "TransferredMultiAssets",
+      }),
+    });
+
+    await matchSnapshot(polkadot.api.query.system.account(alice.address));
+    await expectEvent(polkadot.api.query.system.events(), {
+      event: expect.objectContaining({
+        section: "xcmPallet",
+        method: "Attempted",
       }),
     });
   });

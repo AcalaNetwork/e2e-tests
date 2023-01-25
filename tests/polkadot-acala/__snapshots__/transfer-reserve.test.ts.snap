@@ -1,6 +1,6 @@
 // Vitest Snapshot v1
 
-exports[`Polkadot <-> Acala > Polkadot transfer assets to Acala 1`] = `
+exports[`Polkadot <-> Acala > 0. Polkadot transfer assets to Acala 1`] = `
 {
   "consumers": "0",
   "data": {
@@ -15,7 +15,7 @@ exports[`Polkadot <-> Acala > Polkadot transfer assets to Acala 1`] = `
 }
 `;
 
-exports[`Polkadot <-> Acala > Polkadot transfer assets to Acala 2`] = `
+exports[`Polkadot <-> Acala > 0. Polkadot transfer assets to Acala 2`] = `
 {
   "free": "0",
   "frozen": "0",
@@ -23,7 +23,7 @@ exports[`Polkadot <-> Acala > Polkadot transfer assets to Acala 2`] = `
 }
 `;
 
-exports[`Polkadot <-> Acala > Polkadot transfer assets to Acala 3`] = `
+exports[`Polkadot <-> Acala > 0. Polkadot transfer assets to Acala 3`] = `
 {
   "consumers": "0",
   "data": {
@@ -38,10 +38,71 @@ exports[`Polkadot <-> Acala > Polkadot transfer assets to Acala 3`] = `
 }
 `;
 
-exports[`Polkadot <-> Acala > Polkadot transfer assets to Acala 4`] = `
+exports[`Polkadot <-> Acala > 0. Polkadot transfer assets to Acala 4`] = `
 {
   "free": "999,998,266,092",
   "frozen": "0",
   "reserved": "0",
+}
+`;
+
+exports[`Polkadot <-> Acala > 1. Acala transfer assets to Polkadot 1`] = `
+{
+  "consumers": "0",
+  "data": {
+    "feeFrozen": "0",
+    "free": "8,999,815,091,021",
+    "miscFrozen": "0",
+    "reserved": "0",
+  },
+  "nonce": "1",
+  "providers": "0",
+  "sufficients": "0",
+}
+`;
+
+exports[`Polkadot <-> Acala > 1. Acala transfer assets to Polkadot 2`] = `
+{
+  "consumers": "0",
+  "data": {
+    "feeFrozen": "0",
+    "free": "10,000,000,000,000",
+    "miscFrozen": "0",
+    "reserved": "0",
+  },
+  "nonce": "0",
+  "providers": "0",
+  "sufficients": "0",
+}
+`;
+
+exports[`Polkadot <-> Acala > 1. Acala transfer assets to Polkadot 3`] = `
+{
+  "free": "10,000,000,000,000",
+  "frozen": "0",
+  "reserved": "0",
+}
+`;
+
+exports[`Polkadot <-> Acala > 1. Acala transfer assets to Polkadot 4`] = `
+{
+  "free": "9,900,000,000,000",
+  "frozen": "0",
+  "reserved": "0",
+}
+`;
+
+exports[`Polkadot <-> Acala > 1. Acala transfer assets to Polkadot 5`] = `
+{
+  "consumers": "0",
+  "data": {
+    "feeFrozen": "0",
+    "free": "8,999,815,091,021",
+    "miscFrozen": "0",
+    "reserved": "0",
+  },
+  "nonce": "1",
+  "providers": "0",
+  "sufficients": "0",
 }
 `;

@@ -5,18 +5,18 @@ __metadata:
   version: 6
   cacheKey: 8
 
-"@acala-network/chopsticks-executor@npm:0.3.0":
-  version: 0.3.0
-  resolution: "@acala-network/chopsticks-executor@npm:0.3.0"
-  checksum: 46bba9e64fa94eeb4dbb8134382aa3fbead6d2959ecc0d618aeeda1a115401cac15f1693f97cdb33ec794a91a1fd3a0cbea3467e1ee1886e913417dace391533
+"@acala-network/chopsticks-executor@npm:0.3.7":
+  version: 0.3.7
+  resolution: "@acala-network/chopsticks-executor@npm:0.3.7"
+  checksum: 56ecf74ee359f68c389bee49359268c57fe0b8d8b6687613cf6e5455416c72c198c92997961e4aa1a2c8ac11d3f869cd5fa31eb53c2e637fb73b525c7ad97505
   languageName: node
   linkType: hard
 
-"@acala-network/chopsticks@npm:^0.3.6":
-  version: 0.3.6
-  resolution: "@acala-network/chopsticks@npm:0.3.6"
+"@acala-network/chopsticks@npm:^0.3.8":
+  version: 0.3.8
+  resolution: "@acala-network/chopsticks@npm:0.3.8"
   dependencies:
-    "@acala-network/chopsticks-executor": 0.3.0
+    "@acala-network/chopsticks-executor": 0.3.7
     "@polkadot/api": ^9.11.3
     "@polkadot/rpc-provider": ^9.11.3
     "@polkadot/types": ^9.11.3
@@ -39,7 +39,7 @@ __metadata:
     zod: ^3.20.2
   bin:
     chopsticks: ./chopsticks.js
-  checksum: 562dd4b42e0731d97aa6deb351b4af02f4d3aabff649f9a89b49c5a0175aa8b80439dab3392ceffb65ec075dd62c793a2f2828642117314ba0cb44df7ab0e830
+  checksum: 4487af0ed5ae36a78b05a91e34bbdb4fec653cc7e8fdb1af5c38a682e4a15da86127c86f58ed57f4d1d5773e9875ad5c937ed9818bb0a5a8c457dcaf953e76b9
   languageName: node
   linkType: hard
 
@@ -1972,7 +1972,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "e2e-tests@workspace:."
   dependencies:
-    "@acala-network/chopsticks": ^0.3.6
+    "@acala-network/chopsticks": ^0.3.8
     "@types/node": ^18.11.18
     "@typescript-eslint/eslint-plugin": ^5.48.2
     "@typescript-eslint/parser": ^5.48.2
