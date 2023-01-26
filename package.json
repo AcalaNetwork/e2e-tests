@@ -14,7 +14,7 @@
 		"test:dev": "vitest --inspect"
 	},
 	"dependencies": {
-		"@acala-network/chopsticks": "^0.3.8",
+		"@acala-network/chopsticks": "^0.3.9",
 		"@types/node": "^18.11.18",
 		"@typescript-eslint/eslint-plugin": "^5.48.2",
 		"@typescript-eslint/parser": "^5.48.2",
