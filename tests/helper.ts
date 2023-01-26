@@ -1,3 +1,4 @@
+import { AccountInfo } from "@polkadot/types/interfaces";
 import { ApiPromise, WsProvider } from "@polkadot/api";
 import { BuildBlockMode, setupWithServer } from "@acala-network/chopsticks";
 import { Codec } from "@polkadot/types/types";
@@ -64,16 +65,21 @@ export const setupContext = async ({ endpoint, blockNumber, blockHash, mockSigna
 
 type CodecOrArray = Codec | Codec[];
 
-export const matchSnapshot = (codec: CodecOrArray | Promise<CodecOrArray>) => {
+export const matchSnapshot = (codec: CodecOrArray | Promise<CodecOrArray>, message?: string) => {
   return expect(
     Promise.resolve(codec).then((x) => (Array.isArray(x) ? x.map((x) => x.toHuman()) : x.toHuman()))
-  ).resolves.toMatchSnapshot();
+  ).resolves.toMatchSnapshot(message);
 };
 
 export const expectEvent = async (codec: Codec | Promise<Codec>, event: any) => {
   return expect(await Promise.resolve(codec).then((x) => x.toHuman())).toEqual(
     expect.arrayContaining([expect.objectContaining(event)])
   );
+};
+
+export const balance = async (api: ApiPromise, address: string) => {
+  const account = await api.query.system.account<AccountInfo>(address);
+  return account.data.toHuman();
 };
 
 export const testingPairs = (ss58Format?: number) => {

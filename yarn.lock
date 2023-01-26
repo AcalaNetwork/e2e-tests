@@ -12,9 +12,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@acala-network/chopsticks@npm:^0.3.8":
-  version: 0.3.8
-  resolution: "@acala-network/chopsticks@npm:0.3.8"
+"@acala-network/chopsticks@npm:^0.3.9":
+  version: 0.3.9
+  resolution: "@acala-network/chopsticks@npm:0.3.9"
   dependencies:
     "@acala-network/chopsticks-executor": 0.3.7
     "@polkadot/api": ^9.11.3
@@ -39,7 +39,7 @@ __metadata:
     zod: ^3.20.2
   bin:
     chopsticks: ./chopsticks.js
-  checksum: 4487af0ed5ae36a78b05a91e34bbdb4fec653cc7e8fdb1af5c38a682e4a15da86127c86f58ed57f4d1d5773e9875ad5c937ed9818bb0a5a8c457dcaf953e76b9
+  checksum: e023824566df8ad8733bd21432856ffb95fa97e333641490bf57d38bf6487c72d5653b7ff6451a16a8894d0b3d6db6083e1d91fb214b408a0b2e3a84ee53ef2a
   languageName: node
   linkType: hard
 
@@ -1972,7 +1972,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "e2e-tests@workspace:."
   dependencies:
-    "@acala-network/chopsticks": ^0.3.8
+    "@acala-network/chopsticks": ^0.3.9
     "@types/node": ^18.11.18
     "@typescript-eslint/eslint-plugin": ^5.48.2
     "@typescript-eslint/parser": ^5.48.2

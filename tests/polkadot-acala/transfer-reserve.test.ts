@@ -1,7 +1,7 @@
 import { afterAll, describe, expect, it } from "vitest";
 import { connectVertical } from "@acala-network/chopsticks";
 
-import { expectEvent, matchSnapshot, setupContext, testingPairs } from "../helper";
+import { balance, expectEvent, setupContext, testingPairs } from "../helper";
 
 describe("Polkadot <-> Acala", async () => {
   const polkadot = await setupContext({
@@ -12,7 +12,7 @@ describe("Polkadot <-> Acala", async () => {
   });
   await connectVertical(polkadot.chain, acala.chain);
 
-  const { alice } = testingPairs();
+  const { alice, bob } = testingPairs();
 
   afterAll(async () => {
     await polkadot.teardown();
@@ -26,8 +26,21 @@ describe("Polkadot <-> Acala", async () => {
       },
     });
 
-    await matchSnapshot(polkadot.api.query.system.account(alice.address));
-    await matchSnapshot(acala.api.query.tokens.accounts(alice.address, { token: "DOT" }));
+    expect(await balance(polkadot.api, alice.address)).toMatchInlineSnapshot(`
+      {
+        "feeFrozen": "0",
+        "free": "10,000,000,000,000",
+        "miscFrozen": "0",
+        "reserved": "0",
+      }
+    `);
+    expect((await acala.api.query.tokens.accounts(alice.address, { token: "DOT" })).toHuman()).toMatchInlineSnapshot(`
+      {
+        "free": "0",
+        "frozen": "0",
+        "reserved": "0",
+      }
+    `);
 
     await polkadot.api.tx.xcmPallet
       .reserveTransferAssets(
@@ -62,7 +75,14 @@ describe("Polkadot <-> Acala", async () => {
     await polkadot.chain.newBlock();
     await acala.chain.upcomingBlock();
 
-    await matchSnapshot(polkadot.api.query.system.account(alice.address));
+    expect(await balance(polkadot.api, alice.address)).toMatchInlineSnapshot(`
+      {
+        "feeFrozen": "0",
+        "free": "8,999,815,091,021",
+        "miscFrozen": "0",
+        "reserved": "0",
+      }
+    `);
     await expectEvent(polkadot.api.query.system.events(), {
       event: expect.objectContaining({
         section: "xcmPallet",
@@ -70,7 +90,13 @@ describe("Polkadot <-> Acala", async () => {
       }),
     });
 
-    await matchSnapshot(acala.api.query.tokens.accounts(alice.address, { token: "DOT" }));
+    expect((await acala.api.query.tokens.accounts(alice.address, { token: "DOT" })).toHuman()).toMatchInlineSnapshot(`
+      {
+        "free": "999,998,266,092",
+        "frozen": "0",
+        "reserved": "0",
+      }
+    `);
     await expectEvent(acala.api.query.system.events(), {
       event: expect.objectContaining({
         section: "parachainSystem",
@@ -88,9 +114,29 @@ describe("Polkadot <-> Acala", async () => {
         Accounts: [[[alice.address, { token: "DOT" }], { free: 1000e10 }]],
       },
     });
-    await matchSnapshot(polkadot.api.query.system.account(alice.address));
-    await matchSnapshot(acala.api.query.system.account(alice.address));
-    await matchSnapshot(acala.api.query.tokens.accounts(alice.address, { token: "DOT" }));
+    expect(await balance(polkadot.api, bob.address)).toMatchInlineSnapshot(`
+      {
+        "feeFrozen": "0",
+        "free": "0",
+        "miscFrozen": "0",
+        "reserved": "0",
+      }
+    `);
+    expect(await balance(acala.api, alice.address)).toMatchInlineSnapshot(`
+      {
+        "feeFrozen": "0",
+        "free": "10,000,000,000,000",
+        "miscFrozen": "0",
+        "reserved": "0",
+      }
+    `);
+    expect((await acala.api.query.tokens.accounts(alice.address, { token: "DOT" })).toHuman()).toMatchInlineSnapshot(`
+      {
+        "free": "10,000,000,000,000",
+        "frozen": "0",
+        "reserved": "0",
+      }
+    `);
 
     await acala.api.tx.xTokens
       .transfer(
@@ -105,7 +151,7 @@ describe("Polkadot <-> Acala", async () => {
               X1: {
                 AccountId32: {
                   network: "Any",
-                  id: alice.addressRaw,
+                  id: bob.addressRaw,
                 },
               },
             },
@@ -120,7 +166,13 @@ describe("Polkadot <-> Acala", async () => {
     await acala.chain.newBlock();
     await polkadot.chain.upcomingBlock();
 
-    await matchSnapshot(acala.api.query.tokens.accounts(alice.address, { token: "DOT" }));
+    expect((await acala.api.query.tokens.accounts(alice.address, { token: "DOT" })).toHuman()).toMatchInlineSnapshot(`
+      {
+        "free": "9,900,000,000,000",
+        "frozen": "0",
+        "reserved": "0",
+      }
+    `);
     await expectEvent(acala.api.query.system.events(), {
       event: expect.objectContaining({
         section: "xTokens",
@@ -128,11 +180,18 @@ describe("Polkadot <-> Acala", async () => {
       }),
     });
 
-    await matchSnapshot(polkadot.api.query.system.account(alice.address));
+    expect(await balance(polkadot.api, bob.address)).toMatchInlineSnapshot(`
+      {
+        "feeFrozen": "0",
+        "free": "99,530,582,548",
+        "miscFrozen": "0",
+        "reserved": "0",
+      }
+    `);
     await expectEvent(polkadot.api.query.system.events(), {
       event: expect.objectContaining({
-        section: "xcmPallet",
-        method: "Attempted",
+        section: "ump",
+        method: "ExecutedUpward",
       }),
     });
   });
