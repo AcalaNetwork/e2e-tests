@@ -1,25 +1,25 @@
-import { afterAll, describe, expect, it } from "vitest";
-import { connectParachains } from "@acala-network/chopsticks";
+import { afterAll, describe, expect, it } from 'vitest'
+import { connectParachains } from '@acala-network/chopsticks'
 
-import { balance, expectEvent, setupContext, testingPairs } from "../helper";
+import { balance, expectEvent, setupContext, testingPairs } from '../helper'
 
-describe("Karura <-> Statemine", async () => {
+describe('Karura <-> Statemine', async () => {
   const statemine = await setupContext({
-    endpoint: "wss://statemine-rpc.polkadot.io",
-  });
+    endpoint: 'wss://statemine-rpc.polkadot.io',
+  })
   const karura = await setupContext({
-    endpoint: "wss://karura-rpc-1.aca-api.network",
-  });
-  await connectParachains([statemine.chain, karura.chain]);
+    endpoint: 'wss://karura-rpc-1.aca-api.network',
+  })
+  await connectParachains([statemine.chain, karura.chain])
 
-  const { alice, bob } = testingPairs();
+  const { alice, bob } = testingPairs()
 
   afterAll(async () => {
-    await statemine.teardown();
-    await karura.teardown();
-  });
+    await statemine.teardown()
+    await karura.teardown()
+  })
 
-  it("0. Statemine transfer assets to Karura", async () => {
+  it('0. Statemine transfer assets to Karura', async () => {
     // give Alice some KSM and USDt
     await statemine.dev.setStorage({
       System: {
@@ -28,7 +28,7 @@ describe("Karura <-> Statemine", async () => {
       Assets: {
         Account: [[[1984, alice.address], { balance: 1000e6 }]],
       },
-    });
+    })
 
     // ensure balance was given
     expect(await balance(statemine.api, alice.address)).toMatchInlineSnapshot(`
@@ -38,7 +38,7 @@ describe("Karura <-> Statemine", async () => {
         "miscFrozen": "0",
         "reserved": "0",
       }
-    `);
+    `)
     expect((await statemine.api.query.assets.account(1984, alice.address)).toHuman()).toMatchInlineSnapshot(`
       {
         "balance": "1,000,000,000",
@@ -46,7 +46,7 @@ describe("Karura <-> Statemine", async () => {
         "isFrozen": false,
         "reason": "Consumer",
       }
-    `);
+    `)
 
     await statemine.api.tx.polkadotXcm
       .limitedReserveTransferAssets(
@@ -59,7 +59,7 @@ describe("Karura <-> Statemine", async () => {
           V0: {
             X1: {
               AccountId32: {
-                network: "Any",
+                network: 'Any',
                 id: alice.addressRaw,
               },
             },
@@ -80,10 +80,10 @@ describe("Karura <-> Statemine", async () => {
         0,
         { Unlimited: null }
       )
-      .signAndSend(alice);
+      .signAndSend(alice)
 
-    await statemine.chain.newBlock();
-    await karura.chain.upcomingBlock();
+    await statemine.chain.newBlock()
+    await karura.chain.upcomingBlock()
 
     expect(await balance(statemine.api, alice.address)).toMatchInlineSnapshot(`
       {
@@ -92,38 +92,38 @@ describe("Karura <-> Statemine", async () => {
         "miscFrozen": "0",
         "reserved": "0",
       }
-    `);
+    `)
     await expectEvent(statemine.api.query.system.events(), {
       event: expect.objectContaining({
-        section: "polkadotXcm",
-        method: "Attempted",
+        section: 'polkadotXcm',
+        method: 'Attempted',
       }),
-    });
+    })
 
     await expectEvent(karura.api.query.system.events(), {
       event: expect.objectContaining({
-        section: "xcmpQueue",
-        method: "Success",
+        section: 'xcmpQueue',
+        method: 'Success',
       }),
-    });
+    })
 
     // ensure Alice got the money
-    expect((await karura.api.query.tokens.accounts(alice.address, { ForeignAsset: "7" })).toHuman())
+    expect((await karura.api.query.tokens.accounts(alice.address, { ForeignAsset: '7' })).toHuman())
       .toMatchInlineSnapshot(`
       {
         "free": "9,999,192",
         "frozen": "0",
         "reserved": "0",
       }
-    `);
-  });
+    `)
+  })
 
-  it("1. Karura transfer assets to Statemine", async () => {
+  it('1. Karura transfer assets to Statemine', async () => {
     await karura.dev.setStorage({
       System: {
         Account: [[[alice.address], { data: { free: 1000 * 1e10 } }]],
       },
-    });
+    })
     expect(await balance(statemine.api, alice.address)).toMatchInlineSnapshot(`
       {
         "feeFrozen": "0",
@@ -131,7 +131,7 @@ describe("Karura <-> Statemine", async () => {
         "miscFrozen": "0",
         "reserved": "0",
       }
-    `);
+    `)
     expect(await balance(karura.api, alice.address)).toMatchInlineSnapshot(`
       {
         "feeFrozen": "0",
@@ -139,15 +139,15 @@ describe("Karura <-> Statemine", async () => {
         "miscFrozen": "0",
         "reserved": "0",
       }
-    `);
-    expect((await karura.api.query.tokens.accounts(alice.address, { ForeignAsset: "7" })).toHuman())
+    `)
+    expect((await karura.api.query.tokens.accounts(alice.address, { ForeignAsset: '7' })).toHuman())
       .toMatchInlineSnapshot(`
       {
         "free": "9,999,192",
         "frozen": "0",
         "reserved": "0",
       }
-    `);
+    `)
 
     await karura.api.tx.xTokens
       .transferMultiasset(
@@ -176,7 +176,7 @@ describe("Karura <-> Statemine", async () => {
                 },
                 {
                   AccountId32: {
-                    network: "Any",
+                    network: 'Any',
                     id: bob.addressRaw,
                   },
                 },
@@ -188,25 +188,25 @@ describe("Karura <-> Statemine", async () => {
           Limited: 4000000000,
         }
       )
-      .signAndSend(alice);
+      .signAndSend(alice)
 
-    await karura.chain.newBlock();
-    await statemine.chain.upcomingBlock();
+    await karura.chain.newBlock()
+    await statemine.chain.upcomingBlock()
 
-    expect((await karura.api.query.tokens.accounts(alice.address, { ForeignAsset: "7" })).toHuman())
+    expect((await karura.api.query.tokens.accounts(alice.address, { ForeignAsset: '7' })).toHuman())
       .toMatchInlineSnapshot(`
       {
         "free": "0",
         "frozen": "0",
         "reserved": "0",
       }
-    `);
+    `)
     await expectEvent(karura.api.query.system.events(), {
       event: expect.objectContaining({
-        section: "xTokens",
-        method: "TransferredMultiAssets",
+        section: 'xTokens',
+        method: 'TransferredMultiAssets',
       }),
-    });
+    })
 
     expect((await statemine.api.query.assets.account(1984, bob.address)).toHuman()).toMatchInlineSnapshot(`
       {
@@ -215,12 +215,12 @@ describe("Karura <-> Statemine", async () => {
         "isFrozen": false,
         "reason": "Sufficient",
       }
-    `);
+    `)
     await expectEvent(statemine.api.query.system.events(), {
       event: expect.objectContaining({
-        section: "xcmpQueue",
-        method: "Success",
+        section: 'xcmpQueue',
+        method: 'Success',
       }),
-    });
-  });
-});
+    })
+  })
+})
