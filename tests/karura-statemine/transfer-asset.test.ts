@@ -1,15 +1,12 @@
 import { afterAll, describe, expect, it } from 'vitest'
 import { connectParachains } from '@acala-network/chopsticks'
 
-import { balance, expectEvent, setupContext, testingPairs } from '../helper'
+import { balance, expectEvent, testingPairs } from '../helper'
+import networks from '../networks'
 
 describe('Karura <-> Statemine', async () => {
-  const statemine = await setupContext({
-    endpoint: 'wss://statemine-rpc.polkadot.io',
-  })
-  const karura = await setupContext({
-    endpoint: 'wss://karura-rpc-1.aca-api.network',
-  })
+  const statemine = await networks.statemine()
+  const karura = await networks.karura()
   await connectParachains([statemine.chain, karura.chain])
 
   const { alice, bob } = testingPairs()
@@ -88,7 +85,7 @@ describe('Karura <-> Statemine', async () => {
     expect(await balance(statemine.api, alice.address)).toMatchInlineSnapshot(`
       {
         "feeFrozen": "0",
-        "free": "9,999,937,253,325",
+        "free": "9,999,937,253,833",
         "miscFrozen": "0",
         "reserved": "0",
       }
@@ -127,7 +124,7 @@ describe('Karura <-> Statemine', async () => {
     expect(await balance(statemine.api, alice.address)).toMatchInlineSnapshot(`
       {
         "feeFrozen": "0",
-        "free": "9,999,937,253,325",
+        "free": "9,999,937,253,833",
         "miscFrozen": "0",
         "reserved": "0",
       }

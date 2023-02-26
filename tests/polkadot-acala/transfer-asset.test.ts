@@ -1,15 +1,12 @@
 import { afterAll, describe, expect, it } from 'vitest'
 import { connectVertical } from '@acala-network/chopsticks'
 
-import { balance, expectEvent, setupContext, testingPairs } from '../helper'
+import { balance, expectEvent, testingPairs } from '../helper'
+import networks from '../networks'
 
 describe('Polkadot <-> Acala', async () => {
-  const polkadot = await setupContext({
-    endpoint: 'wss://rpc.polkadot.io',
-  })
-  const acala = await setupContext({
-    endpoint: 'wss://acala-rpc-1.aca-api.network',
-  })
+  const polkadot = await networks.polkadot()
+  const acala = await networks.acala()
   await connectVertical(polkadot.chain, acala.chain)
 
   const { alice, bob } = testingPairs()
