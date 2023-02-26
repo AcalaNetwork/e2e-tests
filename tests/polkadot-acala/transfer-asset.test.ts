@@ -75,7 +75,7 @@ describe('Polkadot <-> Acala', async () => {
     expect(await balance(polkadot.api, alice.address)).toMatchInlineSnapshot(`
       {
         "feeFrozen": "0",
-        "free": "8,999,815,091,021",
+        "free": "8,999,816,762,209",
         "miscFrozen": "0",
         "reserved": "0",
       }
@@ -89,7 +89,7 @@ describe('Polkadot <-> Acala', async () => {
 
     expect((await acala.api.query.tokens.accounts(alice.address, { token: 'DOT' })).toHuman()).toMatchInlineSnapshot(`
       {
-        "free": "999,998,266,092",
+        "free": "999,998,304,511",
         "frozen": "0",
         "reserved": "0",
       }
@@ -180,7 +180,7 @@ describe('Polkadot <-> Acala', async () => {
     expect(await balance(polkadot.api, bob.address)).toMatchInlineSnapshot(`
       {
         "feeFrozen": "0",
-        "free": "99,530,582,548",
+        "free": "99,591,353,032",
         "miscFrozen": "0",
         "reserved": "0",
       }
