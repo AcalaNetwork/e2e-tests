@@ -125,7 +125,6 @@ describe('Karura <-> Kusama', async () => {
       }),
     })
 
-
     // console.dir((await kusama.api.query.system.events()).toHuman(), { depth: null })
 
     expectEvent(await kusama.api.query.system.events(), {
@@ -162,7 +161,7 @@ describe('Karura <-> Kusama', async () => {
     })
   })
 
-  it("Homa redeem unbond works", async() =>{
+  it('Homa redeem unbond works', async () => {
     const tx3 = await sendTransaction(karura.api.tx.homa.requestRedeem(10 * 1e12, false).signAsync(alice, { nonce: 0 }))
     const tx4 = await sendTransaction(
       karura.api.tx.sudo.sudo(karura.api.tx.homa.forceBumpCurrentEra(0)).signAsync(alice, { nonce: 1 })
@@ -190,9 +189,11 @@ describe('Karura <-> Kusama', async () => {
     })
 
     await kusama.chain.upcomingBlock()
-    console.dir((await kusama.api.query.system.events()).toHuman(), { depth: null })
 
-    expectEvent(await kusama.api.query.system.events(), {
+    const kusamaEvents = await kusama.api.query.system.events()
+    // console.dir(kusamaEvents, { depth: null })
+
+    expectEvent(kusamaEvents, {
       event: expect.objectContaining({
         method: 'ExecutedUpward',
         section: 'ump',
@@ -205,7 +206,7 @@ describe('Karura <-> Kusama', async () => {
       }),
     })
 
-    expectEvent(await kusama.api.query.system.events(), {
+    expectEvent(kusamaEvents, {
       event: expect.objectContaining({
         method: 'Unbonded',
         section: 'staking',
