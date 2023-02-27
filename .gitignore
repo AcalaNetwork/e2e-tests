@@ -108,3 +108,5 @@ dist
 !.yarn/patches
 !.yarn/plugins
 !.yarn/sdks
+
+*.sqlite

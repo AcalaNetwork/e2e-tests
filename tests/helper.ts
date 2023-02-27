@@ -4,24 +4,27 @@ import { BuildBlockMode, setupWithServer } from '@acala-network/chopsticks'
 import { Codec } from '@polkadot/types/types'
 import { HexString } from '@polkadot/util/types'
 import { Keyring } from '@polkadot/keyring'
-import { StorageValues } from '@acala-network/chopsticks/dist/utils/set-storage'
+import { StorageValues } from '@acala-network/chopsticks/lib/utils/set-storage'
+import { SubmittableExtrinsic } from '@polkadot/api-base/types'
 import { expect } from 'vitest'
 
 export type SetupOption = {
   endpoint: string
   blockNumber?: number
   blockHash?: HexString
-  mockSignatureHost?: boolean
+  wasmOverride?: string
 }
 
-export const setupContext = async ({ endpoint, blockNumber, blockHash, mockSignatureHost }: SetupOption) => {
+export const setupContext = async ({ endpoint, blockNumber, blockHash, wasmOverride }: SetupOption) => {
   const port = 8000
   const config = {
     endpoint,
     port,
     block: blockNumber || blockHash,
-    mockSignatureHost,
+    mockSignatureHost: true,
     'build-block-mode': BuildBlockMode.Manual,
+    db: './db.sqlite',
+    wasmOverride,
   }
   const { chain, listenPort, close } = await setupWithServer(config)
 
@@ -65,21 +68,75 @@ export const setupContext = async ({ endpoint, blockNumber, blockHash, mockSigna
 
 type CodecOrArray = Codec | Codec[]
 
+const processCodecOrArray = (codec: CodecOrArray, fn: (c: Codec) => any) =>
+  Array.isArray(codec) ? codec.map(fn) : fn(codec)
+
+const toHuman = (codec: CodecOrArray) => processCodecOrArray(codec, (c) => c.toHuman())
+const toJson = (codec: CodecOrArray) => processCodecOrArray(codec, (c) => c.toJSON())
+const toHex = (codec: CodecOrArray) => processCodecOrArray(codec, (c) => c.toHex())
+
 export const matchSnapshot = (codec: CodecOrArray | Promise<CodecOrArray>, message?: string) => {
   return expect(
-    Promise.resolve(codec).then((x) => (Array.isArray(x) ? x.map((x) => x.toHuman()) : x.toHuman()))
+    Promise.resolve(codec).then(toHuman)
   ).resolves.toMatchSnapshot(message)
 }
 
-export const expectEvent = async (codec: Codec | Promise<Codec>, event: any) => {
-  return expect(await Promise.resolve(codec).then((x) => x.toHuman())).toEqual(
+export const expectEvent = (codec: CodecOrArray, event: any) => {
+  return expect(toHuman(codec)).toEqual(
     expect.arrayContaining([expect.objectContaining(event)])
   )
 }
 
+export const expectHuman = (codec: CodecOrArray) => {
+  return expect(toHuman(codec))
+}
+
+export const expectJson = (codec: CodecOrArray) => {
+  return expect(toJson(codec))
+}
+
+export const expectHex = (codec: CodecOrArray) => {
+  return expect(toHex(codec))
+}
+
+export const expectExtrinsicSuccess = (events: Codec[]) => {
+  expectEvent(events, {
+    event: expect.objectContaining({
+      method: 'ExtrinsicSuccess',
+      section: 'system',
+    }),
+  })
+}
+
+export function defer<T>() {
+  const deferred = {} as { resolve: (value: any) => void; reject: (reason: any) => void; promise: Promise<T> }
+  deferred.promise = new Promise((resolve, reject) => {
+    deferred.resolve = resolve
+    deferred.reject = reject
+  })
+  return deferred
+}
+
+export const sendTransaction = async (tx: Promise<SubmittableExtrinsic<'promise'>>) => {
+  const signed = await tx
+  const deferred = defer<Codec[]>()
+  await signed.send((status) => {
+    if (status.isCompleted) {
+      deferred.resolve(status.events)
+    }
+    if (status.isError) {
+      deferred.reject(status.status)
+    }
+  })
+
+  return {
+    events: deferred.promise,
+  }
+}
+
 export const balance = async (api: ApiPromise, address: string) => {
   const account = await api.query.system.account<AccountInfo>(address)
-  return account.data.toHuman()
+  return account.data.toJSON()
 }
 
 export const testingPairs = (ss58Format?: number) => {

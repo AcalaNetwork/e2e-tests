@@ -1,7 +1,7 @@
 import { afterAll, describe, expect, it } from 'vitest'
 import { connectParachains } from '@acala-network/chopsticks'
 
-import { balance, expectEvent, testingPairs } from '../helper'
+import { balance, expectEvent, expectJson, testingPairs } from '../helper'
 import networks from '../networks'
 
 describe('Karura <-> Statemine', async () => {
@@ -30,10 +30,10 @@ describe('Karura <-> Statemine', async () => {
     // ensure balance was given
     expect(await balance(statemine.api, alice.address)).toMatchInlineSnapshot(`
       {
-        "feeFrozen": "0",
-        "free": "10,000,000,000,000",
-        "miscFrozen": "0",
-        "reserved": "0",
+        "feeFrozen": 0,
+        "free": 10000000000000,
+        "miscFrozen": 0,
+        "reserved": 0,
       }
     `)
     expect((await statemine.api.query.assets.account(1984, alice.address)).toHuman()).toMatchInlineSnapshot(`
@@ -84,20 +84,20 @@ describe('Karura <-> Statemine', async () => {
 
     expect(await balance(statemine.api, alice.address)).toMatchInlineSnapshot(`
       {
-        "feeFrozen": "0",
-        "free": "9,999,937,253,833",
-        "miscFrozen": "0",
-        "reserved": "0",
+        "feeFrozen": 0,
+        "free": 9999937253833,
+        "miscFrozen": 0,
+        "reserved": 0,
       }
     `)
-    await expectEvent(statemine.api.query.system.events(), {
+    expectEvent(await statemine.api.query.system.events(), {
       event: expect.objectContaining({
         section: 'polkadotXcm',
         method: 'Attempted',
       }),
     })
 
-    await expectEvent(karura.api.query.system.events(), {
+    expectEvent(await karura.api.query.system.events(), {
       event: expect.objectContaining({
         section: 'xcmpQueue',
         method: 'Success',
@@ -123,18 +123,18 @@ describe('Karura <-> Statemine', async () => {
     })
     expect(await balance(statemine.api, alice.address)).toMatchInlineSnapshot(`
       {
-        "feeFrozen": "0",
-        "free": "9,999,937,253,833",
-        "miscFrozen": "0",
-        "reserved": "0",
+        "feeFrozen": 0,
+        "free": 9999937253833,
+        "miscFrozen": 0,
+        "reserved": 0,
       }
     `)
     expect(await balance(karura.api, alice.address)).toMatchInlineSnapshot(`
       {
-        "feeFrozen": "0",
-        "free": "10,000,000,000,000",
-        "miscFrozen": "0",
-        "reserved": "0",
+        "feeFrozen": 0,
+        "free": 10000000000000,
+        "miscFrozen": 0,
+        "reserved": 0,
       }
     `)
     expect((await karura.api.query.tokens.accounts(alice.address, { ForeignAsset: '7' })).toHuman())
@@ -190,30 +190,31 @@ describe('Karura <-> Statemine', async () => {
     await karura.chain.newBlock()
     await statemine.chain.upcomingBlock()
 
-    expect((await karura.api.query.tokens.accounts(alice.address, { ForeignAsset: '7' })).toHuman())
-      .toMatchInlineSnapshot(`
+    expectJson(await karura.api.query.tokens.accounts(alice.address, { ForeignAsset: '7' })).toMatchInlineSnapshot(`
       {
-        "free": "0",
-        "frozen": "0",
-        "reserved": "0",
+        "free": 0,
+        "frozen": 0,
+        "reserved": 0,
       }
     `)
-    await expectEvent(karura.api.query.system.events(), {
+    expectEvent(await karura.api.query.system.events(), {
       event: expect.objectContaining({
         section: 'xTokens',
         method: 'TransferredMultiAssets',
       }),
     })
 
-    expect((await statemine.api.query.assets.account(1984, bob.address)).toHuman()).toMatchInlineSnapshot(`
+    expectJson(await statemine.api.query.assets.account(1984, bob.address)).toMatchInlineSnapshot(`
       {
-        "balance": "9,998,009",
+        "balance": 9998009,
         "extra": null,
         "isFrozen": false,
-        "reason": "Sufficient",
+        "reason": {
+          "sufficient": null,
+        },
       }
     `)
-    await expectEvent(statemine.api.query.system.events(), {
+    expectEvent(await statemine.api.query.system.events(), {
       event: expect.objectContaining({
         section: 'xcmpQueue',
         method: 'Success',

@@ -1,7 +1,7 @@
 import { afterAll, describe, expect, it } from 'vitest'
 import { connectVertical } from '@acala-network/chopsticks'
 
-import { balance, expectEvent, testingPairs } from '../helper'
+import { balance, expectEvent, expectJson, testingPairs } from '../helper'
 import networks from '../networks'
 
 describe('Polkadot <-> Acala', async () => {
@@ -25,17 +25,17 @@ describe('Polkadot <-> Acala', async () => {
 
     expect(await balance(polkadot.api, alice.address)).toMatchInlineSnapshot(`
       {
-        "feeFrozen": "0",
-        "free": "10,000,000,000,000",
-        "miscFrozen": "0",
-        "reserved": "0",
+        "feeFrozen": 0,
+        "free": 10000000000000,
+        "miscFrozen": 0,
+        "reserved": 0,
       }
     `)
-    expect((await acala.api.query.tokens.accounts(alice.address, { token: 'DOT' })).toHuman()).toMatchInlineSnapshot(`
+    expectJson(await acala.api.query.tokens.accounts(alice.address, { token: 'DOT' })).toMatchInlineSnapshot(`
       {
-        "free": "0",
-        "frozen": "0",
-        "reserved": "0",
+        "free": 0,
+        "frozen": 0,
+        "reserved": 0,
       }
     `)
 
@@ -74,27 +74,27 @@ describe('Polkadot <-> Acala', async () => {
 
     expect(await balance(polkadot.api, alice.address)).toMatchInlineSnapshot(`
       {
-        "feeFrozen": "0",
-        "free": "8,999,816,762,209",
-        "miscFrozen": "0",
-        "reserved": "0",
+        "feeFrozen": 0,
+        "free": 8999816762209,
+        "miscFrozen": 0,
+        "reserved": 0,
       }
     `)
-    await expectEvent(polkadot.api.query.system.events(), {
+    expectEvent(await polkadot.api.query.system.events(), {
       event: expect.objectContaining({
         section: 'xcmPallet',
         method: 'Attempted',
       }),
     })
 
-    expect((await acala.api.query.tokens.accounts(alice.address, { token: 'DOT' })).toHuman()).toMatchInlineSnapshot(`
+    expectJson(await acala.api.query.tokens.accounts(alice.address, { token: 'DOT' })).toMatchInlineSnapshot(`
       {
-        "free": "999,998,304,511",
-        "frozen": "0",
-        "reserved": "0",
+        "free": 999998304511,
+        "frozen": 0,
+        "reserved": 0,
       }
     `)
-    await expectEvent(acala.api.query.system.events(), {
+    expectEvent(await acala.api.query.system.events(), {
       event: expect.objectContaining({
         section: 'parachainSystem',
         method: 'DownwardMessagesReceived',
@@ -113,25 +113,25 @@ describe('Polkadot <-> Acala', async () => {
     })
     expect(await balance(polkadot.api, bob.address)).toMatchInlineSnapshot(`
       {
-        "feeFrozen": "0",
-        "free": "0",
-        "miscFrozen": "0",
-        "reserved": "0",
+        "feeFrozen": 0,
+        "free": 0,
+        "miscFrozen": 0,
+        "reserved": 0,
       }
     `)
     expect(await balance(acala.api, alice.address)).toMatchInlineSnapshot(`
       {
-        "feeFrozen": "0",
-        "free": "10,000,000,000,000",
-        "miscFrozen": "0",
-        "reserved": "0",
+        "feeFrozen": 0,
+        "free": 10000000000000,
+        "miscFrozen": 0,
+        "reserved": 0,
       }
     `)
-    expect((await acala.api.query.tokens.accounts(alice.address, { token: 'DOT' })).toHuman()).toMatchInlineSnapshot(`
+    expectJson(await acala.api.query.tokens.accounts(alice.address, { token: 'DOT' })).toMatchInlineSnapshot(`
       {
-        "free": "10,000,000,000,000",
-        "frozen": "0",
-        "reserved": "0",
+        "free": 10000000000000,
+        "frozen": 0,
+        "reserved": 0,
       }
     `)
 
@@ -163,14 +163,14 @@ describe('Polkadot <-> Acala', async () => {
     await acala.chain.newBlock()
     await polkadot.chain.upcomingBlock()
 
-    expect((await acala.api.query.tokens.accounts(alice.address, { token: 'DOT' })).toHuman()).toMatchInlineSnapshot(`
+    expectJson(await acala.api.query.tokens.accounts(alice.address, { token: 'DOT' })).toMatchInlineSnapshot(`
       {
-        "free": "9,900,000,000,000",
-        "frozen": "0",
-        "reserved": "0",
+        "free": 9900000000000,
+        "frozen": 0,
+        "reserved": 0,
       }
     `)
-    await expectEvent(acala.api.query.system.events(), {
+    expectEvent(await acala.api.query.system.events(), {
       event: expect.objectContaining({
         section: 'xTokens',
         method: 'TransferredMultiAssets',
@@ -179,13 +179,13 @@ describe('Polkadot <-> Acala', async () => {
 
     expect(await balance(polkadot.api, bob.address)).toMatchInlineSnapshot(`
       {
-        "feeFrozen": "0",
-        "free": "99,591,353,032",
-        "miscFrozen": "0",
-        "reserved": "0",
+        "feeFrozen": 0,
+        "free": 99591353032,
+        "miscFrozen": 0,
+        "reserved": 0,
       }
     `)
-    await expectEvent(polkadot.api.query.system.events(), {
+    expectEvent(await polkadot.api.query.system.events(), {
       event: expect.objectContaining({
         section: 'ump',
         method: 'ExecutedUpward',
