@@ -1,15 +1,7 @@
 import { afterAll, beforeEach, describe, expect, it } from 'vitest'
 import { connectVertical } from '@acala-network/chopsticks'
 
-import {
-  balance,
-  expectEvent,
-  expectExtrinsicSuccess,
-  expectHuman,
-  expectJson,
-  sendTransaction,
-  testingPairs,
-} from '../helper'
+import { balance, expectEvent, expectExtrinsicSuccess, expectJson, sendTransaction, testingPairs } from '../helper'
 import networks from '../networks'
 
 describe('Karura <-> Kusama', async () => {
@@ -159,6 +151,7 @@ describe('Karura <-> Kusama', async () => {
       }),
     })
 
+    // console.dir((await kusama.api.query.system.events()).toHuman(), { depth: null })
     expectEvent(await kusama.api.query.system.events(), {
       event: expect.objectContaining({
         method: 'Bonded',

@@ -16,7 +16,8 @@ export type SetupOption = {
 }
 
 export const setupContext = async ({ endpoint, blockNumber, blockHash, wasmOverride }: SetupOption) => {
-  const port = 8000
+  // random port
+  const port = Math.floor(Math.random() * 10000) + 10000
   const config = {
     endpoint,
     port,
@@ -24,7 +25,7 @@ export const setupContext = async ({ endpoint, blockNumber, blockHash, wasmOverr
     mockSignatureHost: true,
     'build-block-mode': BuildBlockMode.Manual,
     db: './db.sqlite',
-    wasmOverride,
+    'wasm-override': wasmOverride,
   }
   const { chain, listenPort, close } = await setupWithServer(config)
 
@@ -76,15 +77,11 @@ const toJson = (codec: CodecOrArray) => processCodecOrArray(codec, (c) => c.toJS
 const toHex = (codec: CodecOrArray) => processCodecOrArray(codec, (c) => c.toHex())
 
 export const matchSnapshot = (codec: CodecOrArray | Promise<CodecOrArray>, message?: string) => {
-  return expect(
-    Promise.resolve(codec).then(toHuman)
-  ).resolves.toMatchSnapshot(message)
+  return expect(Promise.resolve(codec).then(toHuman)).resolves.toMatchSnapshot(message)
 }
 
 export const expectEvent = (codec: CodecOrArray, event: any) => {
-  return expect(toHuman(codec)).toEqual(
-    expect.arrayContaining([expect.objectContaining(event)])
-  )
+  return expect(toHuman(codec)).toEqual(expect.arrayContaining([expect.objectContaining(event)]))
 }
 
 export const expectHuman = (codec: CodecOrArray) => {

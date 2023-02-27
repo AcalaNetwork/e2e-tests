@@ -21,18 +21,47 @@ const toNumber = (value: string | undefined): number | undefined => {
   return Number(value)
 }
 
-
 export default {
   polkadot: (options?: Partial<SetupOption>) =>
-    setupContext({ wasmOverride: process.env.POLKADOT_WASM, blockNumber: toNumber(process.env.POLKADOT_BLOCK_NUMBER), endpoint: endpoints.polkadot, ...options }),
+    setupContext({
+      wasmOverride: process.env.POLKADOT_WASM,
+      blockNumber: toNumber(process.env.POLKADOT_BLOCK_NUMBER),
+      endpoint: endpoints.polkadot,
+      ...options,
+    }),
   statemint: (options?: Partial<SetupOption>) =>
-    setupContext({ wasmOverride: process.env.STATEMINT_WASM, blockNumber: toNumber(process.env.STATEMINT_BLOCK_NUMBER), endpoint: endpoints.statemint, ...options }),
+    setupContext({
+      wasmOverride: process.env.STATEMINT_WASM,
+      blockNumber: toNumber(process.env.STATEMINT_BLOCK_NUMBER),
+      endpoint: endpoints.statemint,
+      ...options,
+    }),
   acala: (options?: Partial<SetupOption>) =>
-    setupContext({ wasmOverride: process.env.ACALA_WASM, blockNumber: toNumber(process.env.ACALA_BLOCK_NUMBER), endpoint: endpoints.acala, ...options }),
+    setupContext({
+      wasmOverride: process.env.ACALA_WASM,
+      blockNumber: toNumber(process.env.ACALA_BLOCK_NUMBER),
+      endpoint: endpoints.acala,
+      ...options,
+    }),
   kusama: (options?: Partial<SetupOption>) =>
-    setupContext({ wasmOverride: process.env.KUSAMA_WASM, blockNumber: toNumber(process.env.KUSAMA_BLOCK_NUMBER), endpoint: endpoints.kusama, ...options }),
+    setupContext({
+      wasmOverride: process.env.KUSAMA_WASM,
+      blockNumber: toNumber(process.env.KUSAMA_BLOCK_NUMBER),
+      endpoint: endpoints.kusama,
+      ...options,
+    }),
   statemine: (options?: Partial<SetupOption>) =>
-    setupContext({ wasmOverride: process.env.STATEMINE_WASM, blockNumber: toNumber(process.env.STATEMINE_BLOCK_NUMBER), endpoint: endpoints.statemine, ...options }),
+    setupContext({
+      wasmOverride: process.env.STATEMINE_WASM,
+      blockNumber: toNumber(process.env.STATEMINE_BLOCK_NUMBER),
+      endpoint: endpoints.statemine,
+      ...options,
+    }),
   karura: (options?: Partial<SetupOption>) =>
-    setupContext({ wasmOverride: process.env.KARURA_WASM, blockNumber: toNumber(process.env.KARURA_BLOCK_NUMBER), endpoint: endpoints.karura, ...options }),
+    setupContext({
+      wasmOverride: process.env.KARURA_WASM,
+      blockNumber: toNumber(process.env.KARURA_BLOCK_NUMBER),
+      endpoint: endpoints.karura,
+      ...options,
+    }),
 }
