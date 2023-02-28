@@ -11,6 +11,7 @@ const endpoints = {
   kusama: 'wss://kusama-rpc.polkadot.io',
   statemine: 'wss://statemine-rpc.polkadot.io',
   karura: 'wss://karura-rpc-0.aca-api.network',
+  basilisk: 'wss://basilisk-rpc.dwellir.com'
 }
 
 const toNumber = (value: string | undefined): number | undefined => {
@@ -62,6 +63,13 @@ export default {
       wasmOverride: process.env.KARURA_WASM,
       blockNumber: toNumber(process.env.KARURA_BLOCK_NUMBER),
       endpoint: endpoints.karura,
+      ...options,
+    }),
+  basilisk: (options?: Partial<SetupOption>) =>
+    setupContext({
+      wasmOverride: process.env.BASILISK_WASM,
+      blockNumber: toNumber(process.env.BASILISK_BLOCK_NUMBER),
+      endpoint: endpoints.basilisk,
       ...options,
     }),
 }
