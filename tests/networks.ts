@@ -69,7 +69,7 @@ export default {
     setupContext({
       wasmOverride: process.env.BASILISK_WASM,
       blockNumber: toNumber(process.env.BASILISK_BLOCK_NUMBER),
-      endpoint: endpoints.basilisk,
+      endpoint: process.env.BASILISK_ENDPOINT ?? endpoints.basilisk,
       ...options,
     }),
 }
