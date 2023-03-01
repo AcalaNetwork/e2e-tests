@@ -27,42 +27,42 @@ export default {
     setupContext({
       wasmOverride: process.env.POLKADOT_WASM,
       blockNumber: toNumber(process.env.POLKADOT_BLOCK_NUMBER),
-      endpoint: endpoints.polkadot,
+      endpoint: process.env.POLKADOT_ENDPOINT ?? endpoints.polkadot,
       ...options,
     }),
   statemint: (options?: Partial<SetupOption>) =>
     setupContext({
       wasmOverride: process.env.STATEMINT_WASM,
       blockNumber: toNumber(process.env.STATEMINT_BLOCK_NUMBER),
-      endpoint: endpoints.statemint,
+      endpoint: process.env.STATEMINT__ENDPOINT ?? endpoints.statemint,
       ...options,
     }),
   acala: (options?: Partial<SetupOption>) =>
     setupContext({
       wasmOverride: process.env.ACALA_WASM,
       blockNumber: toNumber(process.env.ACALA_BLOCK_NUMBER),
-      endpoint: endpoints.acala,
+      endpoint: process.env.ACALA_ENDPOINT ?? endpoints.acala,
       ...options,
     }),
   kusama: (options?: Partial<SetupOption>) =>
     setupContext({
       wasmOverride: process.env.KUSAMA_WASM,
       blockNumber: toNumber(process.env.KUSAMA_BLOCK_NUMBER),
-      endpoint: endpoints.kusama,
+      endpoint: process.env.KUSAMA_ENDPOINT ?? endpoints.kusama,
       ...options,
     }),
   statemine: (options?: Partial<SetupOption>) =>
     setupContext({
       wasmOverride: process.env.STATEMINE_WASM,
       blockNumber: toNumber(process.env.STATEMINE_BLOCK_NUMBER),
-      endpoint: endpoints.statemine,
+      endpoint: process.env.STATEMINE_ENDPOINT ?? endpoints.statemine,
       ...options,
     }),
   karura: (options?: Partial<SetupOption>) =>
     setupContext({
       wasmOverride: process.env.KARURA_WASM,
       blockNumber: toNumber(process.env.KARURA_BLOCK_NUMBER),
-      endpoint: endpoints.karura,
+      endpoint: process.env.KARURA_ENDPOINT ?? endpoints.karura,
       ...options,
     }),
   basilisk: (options?: Partial<SetupOption>) =>
