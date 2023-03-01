@@ -5,18 +5,18 @@ __metadata:
   version: 6
   cacheKey: 8
 
-"@acala-network/chopsticks-executor@npm:0.4.0":
-  version: 0.4.0
-  resolution: "@acala-network/chopsticks-executor@npm:0.4.0"
-  checksum: fc65174719c418378095ec410c35320a072006ef479dcf0aae03b85ca6c489ae80c965e60638a95cba88583d91aa2bfaee1798d4fff136e0dc11ed7ffa14992c
+"@acala-network/chopsticks-executor@npm:0.4.1":
+  version: 0.4.1
+  resolution: "@acala-network/chopsticks-executor@npm:0.4.1"
+  checksum: 5bade0f49f984ee0000b85d5acb706d308c0c7351ee40f2903e796f15d56af8860c09253a05bbba912a8c158a0cb1c177ead22980e6f000b0b15392425240f51
   languageName: node
   linkType: hard
 
-"@acala-network/chopsticks@npm:^0.4.0":
-  version: 0.4.0
-  resolution: "@acala-network/chopsticks@npm:0.4.0"
+"@acala-network/chopsticks@npm:^0.4.1":
+  version: 0.4.1
+  resolution: "@acala-network/chopsticks@npm:0.4.1"
   dependencies:
-    "@acala-network/chopsticks-executor": 0.4.0
+    "@acala-network/chopsticks-executor": 0.4.1
     "@polkadot/api": ^9.14.2
     "@polkadot/rpc-provider": ^9.14.2
     "@polkadot/types": ^9.14.2
@@ -28,8 +28,8 @@ __metadata:
     js-yaml: ^4.1.0
     jsondiffpatch: ^0.4.1
     lodash: ^4.17.21
-    pino: ^8.10.0
-    pino-pretty: ^9.3.0
+    pino: ^8.11.0
+    pino-pretty: ^9.4.0
     reflect-metadata: ^0.1.13
     sqlite3: ^5.1.4
     typeorm: ^0.3.12
@@ -38,7 +38,7 @@ __metadata:
     zod: ^3.20.6
   bin:
     chopsticks: ./chopsticks.js
-  checksum: 1b37717ceeb76b648eaf877b58687d668b8a9ef2e7001be7808c2dd103664f3fa627fd3243c58cbb83b9ea19c0458cbdfd1ab2c1a1cad028032c7a8896ffa7e6
+  checksum: c314b91eecebaacb2cfdadbe4f0cff4f9352fb6b960549721283329375e7e1035db1644e8d1edd071109a09dd64723e486aff5c0252588b6a094db8cc549d63d
   languageName: node
   linkType: hard
 
@@ -1972,7 +1972,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "e2e-tests@workspace:."
   dependencies:
-    "@acala-network/chopsticks": ^0.4.0
+    "@acala-network/chopsticks": ^0.4.1
     "@types/node": ^18.14.1
     "@typescript-eslint/eslint-plugin": ^5.53.0
     "@typescript-eslint/parser": ^5.53.0
@@ -4343,7 +4343,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pino-pretty@npm:^9.3.0":
+"pino-pretty@npm:^9.4.0":
   version: 9.4.0
   resolution: "pino-pretty@npm:9.4.0"
   dependencies:
@@ -4374,7 +4374,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pino@npm:^8.10.0":
+"pino@npm:^8.11.0":
   version: 8.11.0
   resolution: "pino@npm:8.11.0"
   dependencies:
