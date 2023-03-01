@@ -2,6 +2,7 @@ import { afterAll, beforeEach, describe, expect, it } from 'vitest'
 import { connectVertical } from '@acala-network/chopsticks'
 
 import { balance, expectEvent, expectExtrinsicSuccess, expectJson, sendTransaction, testingPairs } from '../helper'
+import { xTokens } from '../api/extrinsics'
 import networks from '../networks'
 
 describe('Karura <-> Kusama', async () => {
@@ -40,28 +41,7 @@ describe('Karura <-> Kusama', async () => {
 
   it('Karura transfer assets to kusama', async () => {
     const tx = await sendTransaction(
-      karura.api.tx.xTokens
-        .transfer(
-          {
-            Token: 'KSM',
-          },
-          1e12,
-          {
-            V1: {
-              parents: 1,
-              interior: {
-                X1: {
-                  AccountId32: {
-                    network: 'Any',
-                    id: alice.addressRaw,
-                  },
-                },
-              },
-            },
-          },
-          'Unlimited'
-        )
-        .signAsync(alice)
+      xTokens(karura.api, true, '', { Token: 'KSM' }, '1000000000000', alice.addressRaw).signAsync(alice)
     )
 
     await karura.chain.newBlock()

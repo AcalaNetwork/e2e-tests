@@ -145,7 +145,6 @@ describe('Karura <-> Statemine', async () => {
         "reserved": "0",
       }
     `)
-
     await karura.api.tx.xTokens
       .transferMultiasset(
         {
