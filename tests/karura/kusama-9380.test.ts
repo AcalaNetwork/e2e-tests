@@ -1,7 +1,7 @@
 import { afterAll, beforeEach, describe, expect, it } from 'vitest'
 import { connectVertical } from '@acala-network/chopsticks'
 
-import { balance, expectEvent, expectExtrinsicSuccess, expectJson, sendTransaction, testingPairs} from '../helper'
+import { balance, expectEvent, expectExtrinsicSuccess, expectJson, sendTransaction, testingPairs } from '../helper'
 import networks from '../networks'
 
 describe('Karura <-> Kusama', async () => {
@@ -19,22 +19,22 @@ describe('Karura <-> Kusama', async () => {
   beforeEach(async () => {
     await karura.dev.setStorage({
       System: {
-        Account: [[[alice.address], { data: { free: 10 * 1e12 } }]]
+        Account: [[[alice.address], { data: { free: 10 * 1e12 } }]],
       },
       Tokens: {
         Accounts: [
           [[alice.address, { Token: 'KSM' }], { free: 10 * 1e12 }],
-          [[alice.address, { Token: 'LKSM' }], { free: 100 * 1e12 }]
-        ]
+          [[alice.address, { Token: 'LKSM' }], { free: 100 * 1e12 }],
+        ],
       },
       Sudo: {
-        Key: alice.address
-      }
+        Key: alice.address,
+      },
     })
     await kusama.dev.setStorage({
       System: {
-        Account: [[[alice.address], { data: { free: 10 * 1e12 } }]]
-      }
+        Account: [[[alice.address], { data: { free: 10 * 1e12 } }]],
+      },
     })
   })
 
@@ -43,7 +43,7 @@ describe('Karura <-> Kusama', async () => {
       karura.api.tx.xTokens
         .transfer(
           {
-            Token: 'KSM'
+            Token: 'KSM',
           },
           1e12,
           {
@@ -53,11 +53,11 @@ describe('Karura <-> Kusama', async () => {
                 X1: {
                   AccountId32: {
                     network: 'Any',
-                    id: alice.addressRaw
-                  }
-                }
-              }
-            }
+                    id: alice.addressRaw,
+                  },
+                },
+              },
+            },
           },
           'Unlimited'
         )
@@ -71,8 +71,8 @@ describe('Karura <-> Kusama', async () => {
     expectEvent(await tx.events, {
       event: expect.objectContaining({
         section: 'xTokens',
-        method: 'TransferredMultiAssets'
-      })
+        method: 'TransferredMultiAssets',
+      }),
     })
 
     expectJson(await karura.api.query.tokens.accounts(alice.address, { Token: 'KSM' })).toMatchInlineSnapshot(`
@@ -99,48 +99,49 @@ describe('Karura <-> Kusama', async () => {
         data: [
           '0x740fe61d99a98beab81994c32b7f31445044b01b2fd682936fc5e12ec2c229cb',
           {
-            Complete: expect.anything()
-          }
-        ]
-      })
+            Complete: expect.anything(),
+          },
+        ],
+      }),
     })
   })
 
-
   it('Kusama transfer assets to Karura', async () => {
     const tx = await sendTransaction(
-      kusama.api.tx.xcmPallet.limitedReserveTransferAssets(
-        {
-          V3: {
-            parents: 0,
-            interior: {
-              X1: { Parachain: 2000 }
-            }
-          }
-        },
-        {
-          V3: {
-            parents: 0,
-            interior: {
-              X1: {
-                AccountId32: {
-                  id: alice.addressRaw
-                }
-              }
-            }
-          }
-        },
-        {
-          V3: [
-            {
-              id: { Concrete: { parents: 0, interior: 'Here'}},
-              fun: {Fungible : "1000000000000"}
-            }
-          ]
-        },
-        0,
-        'Unlimited'
-      ).signAsync(alice, { nonce: 0 })
+      kusama.api.tx.xcmPallet
+        .limitedReserveTransferAssets(
+          {
+            V3: {
+              parents: 0,
+              interior: {
+                X1: { Parachain: 2000 },
+              },
+            },
+          },
+          {
+            V3: {
+              parents: 0,
+              interior: {
+                X1: {
+                  AccountId32: {
+                    id: alice.addressRaw,
+                  },
+                },
+              },
+            },
+          },
+          {
+            V3: [
+              {
+                id: { Concrete: { parents: 0, interior: 'Here' } },
+                fun: { Fungible: '1000000000000' },
+              },
+            ],
+          },
+          0,
+          'Unlimited'
+        )
+        .signAsync(alice, { nonce: 0 })
     )
 
     await kusama.chain.newBlock()
@@ -149,15 +150,15 @@ describe('Karura <-> Kusama', async () => {
     expectEvent(await tx.events, {
       event: expect.objectContaining({
         section: 'xcmPallet',
-        method: 'Attempted'
-      })
+        method: 'Attempted',
+      }),
     })
 
     expectEvent(await tx.events, {
       event: expect.objectContaining({
         method: 'Transfer',
         section: 'balances',
-      })
+      }),
     })
 
     expect(await balance(kusama.api, alice.address)).toMatchInlineSnapshot(`
@@ -177,7 +178,6 @@ describe('Karura <-> Kusama', async () => {
         "reserved": 0,
       }
     `)
-
   })
 
   it('Homa stake works', async () => {
@@ -208,10 +208,10 @@ describe('Karura <-> Kusama', async () => {
         data: [
           '0x7a2dc201d461fb785c8d38af7a6f0ac35ae319e26699890ad1647b5ee4e086d2', // transfer
           {
-            Complete: expect.anything()
-          }
-        ]
-      })
+            Complete: expect.anything(),
+          },
+        ],
+      }),
     })
 
     expectEvent(await kusama.api.query.system.events(), {
@@ -221,17 +221,17 @@ describe('Karura <-> Kusama', async () => {
         data: [
           '0xd38682b5a8a7149ef9ab3469690e6b806926174327f7e4946e8990095a0997be', // transact bond_extra
           {
-            Complete: expect.anything()
-          }
-        ]
-      })
+            Complete: expect.anything(),
+          },
+        ],
+      }),
     })
 
     expectEvent(await kusama.api.query.system.events(), {
       event: expect.objectContaining({
         method: 'Bonded',
-        section: 'staking'
-      })
+        section: 'staking',
+      }),
     })
   })
 
@@ -250,16 +250,16 @@ describe('Karura <-> Kusama', async () => {
     expectEvent(await tx3.events, {
       event: expect.objectContaining({
         method: 'RequestedRedeem',
-        section: 'homa'
-      })
+        section: 'homa',
+      }),
     })
 
     expectExtrinsicSuccess(await tx4.events)
     expectEvent(await tx4.events, {
       event: expect.objectContaining({
         method: 'CurrentEraBumped',
-        section: 'homa'
-      })
+        section: 'homa',
+      }),
     })
 
     await kusama.chain.upcomingBlock()
@@ -274,17 +274,17 @@ describe('Karura <-> Kusama', async () => {
         data: [
           '0x10e5f14af53729290493c04e0c18403ceaf7fed7b0ccaa808d81d061587b9cca', // transact unbond
           {
-            Complete: expect.anything()
-          }
-        ]
-      })
+            Complete: expect.anything(),
+          },
+        ],
+      }),
     })
 
     expectEvent(kusamaEvents, {
       event: expect.objectContaining({
         method: 'Unbonded',
-        section: 'staking'
-      })
+        section: 'staking',
+      }),
     })
   })
 })

@@ -11,7 +11,7 @@ const endpoints = {
   kusama: 'wss://kusama-rpc.polkadot.io',
   statemine: 'wss://statemine-rpc.polkadot.io',
   karura: 'wss://karura-rpc-0.aca-api.network',
-  basilisk: 'wss://basilisk-rpc.dwellir.com'
+  basilisk: 'wss://basilisk-rpc.dwellir.com',
 }
 
 const toNumber = (value: string | undefined): number | undefined => {
