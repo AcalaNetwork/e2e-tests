@@ -1,7 +1,7 @@
 import { afterAll, beforeEach, describe, expect, it } from 'vitest'
 import { connectParachains } from '@acala-network/chopsticks'
 
-import { expectEvent, expectExtrinsicSuccess, sendTransaction, testingPairs } from '../helper'
+import { expectEvent, expectExtrinsicSuccess, expectJson, sendTransaction, testingPairs } from '../helper'
 import networks from '../networks'
 
 describe('Karura <-> Basilisk', async () => {
@@ -69,39 +69,54 @@ describe('Karura <-> Basilisk', async () => {
         method: 'Transferred',
       }),
     })
-    //
-    // const tx1 = await sendTransaction(
-    //   karura.api.tx.xTokens
-    //     .transfer(
-    //       {
-    //         Erc20: DAI
-    //       },
-    //       10 ** 18,
-    //       {
-    //         V1: {
-    //           parents: 1,
-    //           interior: {
-    //             X2: [
-    //               {
-    //                 Parachain: '2090'
-    //               },
-    //               {
-    //                 AccountId32: {
-    //                   network: 'Any',
-    //                   id: alice.addressRaw
-    //                 }
-    //               }
-    //             ]
-    //           }
-    //         }
-    //       },
-    //       'Unlimited'
-    //     )
-    //     .signAsync(alice)
-    // )
-    //
-    // await karura.chain.newBlock()
+
+    const tx1 = await sendTransaction(
+      karura.api.tx.xTokens
+        .transfer(
+          {
+            Erc20: DAI
+          },
+          '1000000000000000000',
+          {
+            V1: {
+              parents: 1,
+              interior: {
+                X2: [
+                  {
+                    Parachain: '2090'
+                  },
+                  {
+                    AccountId32: {
+                      network: 'Any',
+                      id: alice.addressRaw
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          'Unlimited'
+        )
+        .signAsync(alice)
+    )
+
+    await karura.chain.newBlock()
     // await basilisk.chain.upcomingBlock()
-    // expectExtrinsicSuccess(await tx1.events)
+    expectExtrinsicSuccess(await tx1.events)
+    expectEvent(await tx1.events, {
+      event: expect.objectContaining({
+        section: 'xTokens',
+        method: 'TransferredMultiAssets',
+      }),
+    })
+
+    await basilisk.chain.newBlock()
+    expectJson(await basilisk.api.query.tokens.accounts(alice.address, { id: '13' })).toMatchInlineSnapshot(`
+      {
+        "free": 1000000000000000000,
+        "frozen": 0,
+        "reserved": 0,
+      }
+    `)
   })
 })
