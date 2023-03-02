@@ -66,7 +66,7 @@ export const xTokens = (
   isRelayChain: boolean,
   parachainId: string,
   token: object,
-  amount: string,
+  amount: string | bigint,
   address: Uint8Array
 ) => {
   const multiLocation = isRelayChain

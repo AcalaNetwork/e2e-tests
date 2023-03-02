@@ -1,0 +1,257 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Karura <-> Kusama > Homa redeem unbond works > events 1`] = `
+[
+  {
+    "data": {
+      "allowFastMatch": false,
+      "liquidAmount": "(redacted)",
+      "redeemer": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "RequestedRedeem",
+    "section": "homa",
+  },
+]
+`;
+
+exports[`Karura <-> Kusama > Homa redeem unbond works > events 2`] = `
+[
+  {
+    "data": {
+      "newEraIndex": "(redacted)",
+    },
+    "method": "CurrentEraBumped",
+    "section": "homa",
+  },
+  {
+    "data": {
+      "eraIndexWhenUnbond": "(redacted)",
+      "liquidAmount": "(redacted)",
+      "redeemer": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+      "unbondingStakingAmount": "(redacted)",
+    },
+    "method": "RedeemedByUnbond",
+    "section": "homa",
+  },
+]
+`;
+
+exports[`Karura <-> Kusama > Homa redeem unbond works > system events 1`] = `
+[
+  {
+    "data": {
+      "amount": "(redacted)",
+      "stash": "EMrKvFy7xLgzzdgruXT9oXERt553igEScqgSjoDm3GewPSA",
+    },
+    "method": "Unbonded",
+    "section": "staking",
+  },
+  {
+    "data": [
+      "0x10e5f14af53729290493c04e0c18403ceaf7fed7b0ccaa808d81d061587b9cca",
+      {
+        "Complete": {
+          "proofSize": "(redacted)",
+          "refTime": "(redacted)",
+        },
+      },
+    ],
+    "method": "ExecutedUpward",
+    "section": "ump",
+  },
+]
+`;
+
+exports[`Karura <-> Kusama > Homa stake works > events 1`] = `
+[
+  {
+    "data": {
+      "liquidAmountAddedToVoid": "(redacted)",
+      "liquidAmountReceived": "(redacted)",
+      "minter": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+      "stakingCurrencyAmount": "(redacted)",
+    },
+    "method": "Minted",
+    "section": "homa",
+  },
+]
+`;
+
+exports[`Karura <-> Kusama > Homa stake works > events 2`] = `
+[
+  {
+    "data": {
+      "newEraIndex": "(redacted)",
+    },
+    "method": "CurrentEraBumped",
+    "section": "homa",
+  },
+]
+`;
+
+exports[`Karura <-> Kusama > Homa stake works > system events 1`] = `
+[
+  {
+    "data": [
+      "0x7a2dc201d461fb785c8d38af7a6f0ac35ae319e26699890ad1647b5ee4e086d2",
+      {
+        "Complete": {
+          "proofSize": "(redacted)",
+          "refTime": "(redacted)",
+        },
+      },
+    ],
+    "method": "ExecutedUpward",
+    "section": "ump",
+  },
+  {
+    "data": {
+      "amount": "(redacted)",
+      "stash": "FDVu3RdH5WsE2yTdXN3QMq6v1XVDK8GKjhq5oFjXe8wZYpL",
+    },
+    "method": "Bonded",
+    "section": "staking",
+  },
+  {
+    "data": [
+      "0xd38682b5a8a7149ef9ab3469690e6b806926174327f7e4946e8990095a0997be",
+      {
+        "Complete": {
+          "proofSize": "(redacted)",
+          "refTime": "(redacted)",
+        },
+      },
+    ],
+    "method": "ExecutedUpward",
+    "section": "ump",
+  },
+]
+`;
+
+exports[`Karura <-> Kusama > Homa stake works > ump 1`] = `
+[
+  "0x0210000400000000070010a5d4e80a1300000000070010a5d4e8010700e40b54020d0100040001010074d37d762e06c6841a5dad64463a9afe0684f7e45245f6a7296ca613cca74669",
+  "0x02140004000000000700e40b540213000000000700e40b54020006010700c817a8043018010100060107002c9980e6140d010004000100411f",
+]
+`;
+
+exports[`Karura <-> Kusama > Karura transfer assets to Kusama > events 1`] = `
+[
+  {
+    "data": {
+      "assets": [
+        {
+          "fun": {
+            "Fungible": "(redacted)",
+          },
+          "id": {
+            "Concrete": {
+              "interior": "Here",
+              "parents": "(redacted)",
+            },
+          },
+        },
+      ],
+      "dest": {
+        "interior": {
+          "X1": {
+            "AccountId32": {
+              "id": "0x88dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee",
+              "network": "Any",
+            },
+          },
+        },
+        "parents": "(redacted)",
+      },
+      "fee": {
+        "fun": {
+          "Fungible": "(redacted)",
+        },
+        "id": {
+          "Concrete": {
+            "interior": "Here",
+            "parents": "(redacted)",
+          },
+        },
+      },
+      "sender": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "TransferredMultiAssets",
+    "section": "xTokens",
+  },
+]
+`;
+
+exports[`Karura <-> Kusama > Karura transfer assets to Kusama > system events 1`] = `
+[
+  {
+    "data": [
+      "0x740fe61d99a98beab81994c32b7f31445044b01b2fd682936fc5e12ec2c229cb",
+      {
+        "Complete": {
+          "proofSize": "(redacted)",
+          "refTime": "(redacted)",
+        },
+      },
+    ],
+    "method": "ExecutedUpward",
+    "section": "ump",
+  },
+]
+`;
+
+exports[`Karura <-> Kusama > Karura transfer assets to Kusama > ump 1`] = `
+[
+  "0x0210000400000000070010a5d4e80a1300000000070010a5d4e8000d0100040001010088dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee",
+]
+`;
+
+exports[`Karura <-> Kusama > Kusama transfer assets to Karura > events 1`] = `
+[
+  {
+    "data": [
+      {
+        "Complete": {
+          "proofSize": "(redacted)",
+          "refTime": "(redacted)",
+        },
+      },
+    ],
+    "method": "Attempted",
+    "section": "xcmPallet",
+  },
+]
+`;
+
+exports[`Karura <-> Kusama > Kusama transfer assets to Karura > system events 1`] = `
+[
+  {
+    "data": {
+      "count": "(redacted)",
+    },
+    "method": "DownwardMessagesReceived",
+    "section": "parachainSystem",
+  },
+  {
+    "data": {
+      "messageId": "0xfe9546f0ff1760e2bd953b66efc0fe1ac066887ccd941d3bbe0d8baf29dce922",
+      "outcome": {
+        "Complete": "(redacted)",
+      },
+    },
+    "method": "ExecutedDownward",
+    "section": "dmpQueue",
+  },
+  {
+    "data": {
+      "dmqHead": "0xd9b025b2c6992c1eb17eaba36861e7c53af2d22e73c1de2795e0879db8567347",
+      "weightUsed": {
+        "proofSize": "(redacted)",
+        "refTime": "(redacted)",
+      },
+    },
+    "method": "DownwardMessagesProcessed",
+    "section": "parachainSystem",
+  },
+]
+`;

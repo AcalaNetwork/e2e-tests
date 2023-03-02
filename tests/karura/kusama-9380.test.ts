@@ -1,7 +1,7 @@
 import { afterAll, beforeEach, describe, expect, it } from 'vitest'
 import { connectVertical } from '@acala-network/chopsticks'
 
-import { balance, expectEvent, expectExtrinsicSuccess, expectJson, sendTransaction, testingPairs } from '../helper'
+import { balance, expectJson, matchEvents, matchSystemEvents, matchUmp, sendTransaction, testingPairs } from '../helper'
 import { xTokens } from '../api/extrinsics'
 import networks from '../networks'
 
@@ -39,21 +39,17 @@ describe('Karura <-> Kusama', async () => {
     })
   })
 
-  it('Karura transfer assets to kusama', async () => {
+  it('Karura transfer assets to Kusama', async () => {
     const tx = await sendTransaction(
-      xTokens(karura.api, true, '', { Token: 'KSM' }, '1000000000000', alice.addressRaw).signAsync(alice)
+      xTokens(karura.api, true, '', { Token: 'KSM' }, 10n ** 12n, alice.addressRaw).signAsync(alice)
     )
 
     await karura.chain.newBlock()
-    await kusama.chain.upcomingBlock()
 
-    expectExtrinsicSuccess(await tx.events)
-    expectEvent(await tx.events, {
-      event: expect.objectContaining({
-        section: 'xTokens',
-        method: 'TransferredMultiAssets',
-      }),
-    })
+    await matchEvents(tx.events, 'xTokens')
+    await matchUmp(karura)
+
+    await kusama.chain.upcomingBlock()
 
     expectJson(await karura.api.query.tokens.accounts(alice.address, { Token: 'KSM' })).toMatchInlineSnapshot(`
       {
@@ -72,18 +68,7 @@ describe('Karura <-> Kusama', async () => {
       }
     `)
 
-    expectEvent(await kusama.api.query.system.events(), {
-      event: expect.objectContaining({
-        method: 'ExecutedUpward',
-        section: 'ump',
-        data: [
-          '0x740fe61d99a98beab81994c32b7f31445044b01b2fd682936fc5e12ec2c229cb',
-          {
-            Complete: expect.anything(),
-          },
-        ],
-      }),
-    })
+    await matchSystemEvents(kusama, 'ump')
   })
 
   it('Kusama transfer assets to Karura', async () => {
@@ -125,21 +110,8 @@ describe('Karura <-> Kusama', async () => {
     )
 
     await kusama.chain.newBlock()
-    //
-    expectExtrinsicSuccess(await tx.events)
-    expectEvent(await tx.events, {
-      event: expect.objectContaining({
-        section: 'xcmPallet',
-        method: 'Attempted',
-      }),
-    })
 
-    expectEvent(await tx.events, {
-      event: expect.objectContaining({
-        method: 'Transfer',
-        section: 'balances',
-      }),
-    })
+    await matchEvents(tx.events, 'xcmPallet')
 
     expect(await balance(kusama.api, alice.address)).toMatchInlineSnapshot(`
       {
@@ -150,7 +122,8 @@ describe('Karura <-> Kusama', async () => {
       }
     `)
 
-    await karura.chain.newBlock()
+    await karura.chain.upcomingBlock()
+
     expectJson(await karura.api.query.tokens.accounts(alice.address, { Token: 'KSM' })).toMatchInlineSnapshot(`
       {
         "free": 10999955836390,
@@ -158,6 +131,8 @@ describe('Karura <-> Kusama', async () => {
         "reserved": 0,
       }
     `)
+
+    await matchSystemEvents(karura, 'parachainSystem', 'dmpQueue')
   })
 
   it('Homa stake works', async () => {
@@ -167,52 +142,14 @@ describe('Karura <-> Kusama', async () => {
     )
 
     await karura.chain.newBlock()
+
+    await matchEvents(tx1.events, 'homa')
+    await matchEvents(tx2.events, 'homa')
+    await matchUmp(karura)
+
     await kusama.chain.upcomingBlock()
 
-    expectExtrinsicSuccess(await tx1.events)
-    expectExtrinsicSuccess(await tx2.events)
-
-    expectEvent(await tx2.events, {
-      event: expect.objectContaining({
-        method: 'CurrentEraBumped',
-        section: 'homa',
-      }),
-    })
-
-    // console.dir((await kusama.api.query.system.events()).toHuman(), { depth: null })
-
-    expectEvent(await kusama.api.query.system.events(), {
-      event: expect.objectContaining({
-        method: 'ExecutedUpward',
-        section: 'ump',
-        data: [
-          '0x7a2dc201d461fb785c8d38af7a6f0ac35ae319e26699890ad1647b5ee4e086d2', // transfer
-          {
-            Complete: expect.anything(),
-          },
-        ],
-      }),
-    })
-
-    expectEvent(await kusama.api.query.system.events(), {
-      event: expect.objectContaining({
-        method: 'ExecutedUpward',
-        section: 'ump',
-        data: [
-          '0xd38682b5a8a7149ef9ab3469690e6b806926174327f7e4946e8990095a0997be', // transact bond_extra
-          {
-            Complete: expect.anything(),
-          },
-        ],
-      }),
-    })
-
-    expectEvent(await kusama.api.query.system.events(), {
-      event: expect.objectContaining({
-        method: 'Bonded',
-        section: 'staking',
-      }),
-    })
+    await matchSystemEvents(kusama, 'ump', 'staking')
   })
 
   it('Homa redeem unbond works', async () => {
@@ -223,48 +160,11 @@ describe('Karura <-> Kusama', async () => {
 
     await karura.chain.newBlock()
 
-    // console.dir((await tx3.events).map(x => x.toHuman()), { depth: null })
-    // console.dir((await tx4.events).map(x => x.toHuman()), { depth: null })
-
-    expectExtrinsicSuccess(await tx3.events)
-    expectEvent(await tx3.events, {
-      event: expect.objectContaining({
-        method: 'RequestedRedeem',
-        section: 'homa',
-      }),
-    })
-
-    expectExtrinsicSuccess(await tx4.events)
-    expectEvent(await tx4.events, {
-      event: expect.objectContaining({
-        method: 'CurrentEraBumped',
-        section: 'homa',
-      }),
-    })
+    await matchEvents(tx3.events, 'homa')
+    await matchEvents(tx4.events, 'homa')
 
     await kusama.chain.upcomingBlock()
 
-    const kusamaEvents = await kusama.api.query.system.events()
-    // console.dir(kusamaEvents, { depth: null })
-
-    expectEvent(kusamaEvents, {
-      event: expect.objectContaining({
-        method: 'ExecutedUpward',
-        section: 'ump',
-        data: [
-          '0x10e5f14af53729290493c04e0c18403ceaf7fed7b0ccaa808d81d061587b9cca', // transact unbond
-          {
-            Complete: expect.anything(),
-          },
-        ],
-      }),
-    })
-
-    expectEvent(kusamaEvents, {
-      event: expect.objectContaining({
-        method: 'Unbonded',
-        section: 'staking',
-      }),
-    })
+    await matchSystemEvents(kusama, 'ump', 'staking')
   })
 })
