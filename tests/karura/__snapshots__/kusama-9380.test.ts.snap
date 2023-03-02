@@ -48,7 +48,7 @@ exports[`Karura <-> Kusama > Homa redeem unbond works > system events 1`] = `
   },
   {
     "data": [
-      "0x10e5f14af53729290493c04e0c18403ceaf7fed7b0ccaa808d81d061587b9cca",
+      "(redacted)",
       {
         "Complete": {
           "proofSize": "(redacted)",
@@ -93,7 +93,7 @@ exports[`Karura <-> Kusama > Homa stake works > system events 1`] = `
 [
   {
     "data": [
-      "0x7a2dc201d461fb785c8d38af7a6f0ac35ae319e26699890ad1647b5ee4e086d2",
+      "(redacted)",
       {
         "Complete": {
           "proofSize": "(redacted)",
@@ -114,7 +114,7 @@ exports[`Karura <-> Kusama > Homa stake works > system events 1`] = `
   },
   {
     "data": [
-      "0xd38682b5a8a7149ef9ab3469690e6b806926174327f7e4946e8990095a0997be",
+      "(redacted)",
       {
         "Complete": {
           "proofSize": "(redacted)",
@@ -156,7 +156,7 @@ exports[`Karura <-> Kusama > Karura transfer assets to Kusama > events 1`] = `
         "interior": {
           "X1": {
             "AccountId32": {
-              "id": "0x88dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee",
+              "id": "(redacted)",
               "network": "Any",
             },
           },
@@ -186,7 +186,7 @@ exports[`Karura <-> Kusama > Karura transfer assets to Kusama > system events 1`
 [
   {
     "data": [
-      "0x740fe61d99a98beab81994c32b7f31445044b01b2fd682936fc5e12ec2c229cb",
+      "(redacted)",
       {
         "Complete": {
           "proofSize": "(redacted)",
@@ -234,7 +234,7 @@ exports[`Karura <-> Kusama > Kusama transfer assets to Karura > system events 1`
   },
   {
     "data": {
-      "messageId": "0xfe9546f0ff1760e2bd953b66efc0fe1ac066887ccd941d3bbe0d8baf29dce922",
+      "messageId": "(redacted)",
       "outcome": {
         "Complete": "(redacted)",
       },
@@ -244,7 +244,7 @@ exports[`Karura <-> Kusama > Kusama transfer assets to Karura > system events 1`
   },
   {
     "data": {
-      "dmqHead": "0xd9b025b2c6992c1eb17eaba36861e7c53af2d22e73c1de2795e0879db8567347",
+      "dmqHead": "(redacted)",
       "weightUsed": {
         "proofSize": "(redacted)",
         "refTime": "(redacted)",

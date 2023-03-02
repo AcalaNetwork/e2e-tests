@@ -116,18 +116,18 @@ const _matchEvents = async (msg: string, events: Promise<Codec[] | Codec>, ...fi
 }
 
 export const matchEvents = async (events: Promise<Codec[] | Codec>, ...filters: EventFilter[]) => {
-  return _matchEvents('events', redactNumber(events), ...filters)
+  return _matchEvents('events', redact(events), ...filters)
 }
 
 export const matchSystemEvents = async ({ api }: { api: ApiPromise }, ...filters: EventFilter[]) => {
-  await _matchEvents('system events', redactNumber(api.query.system.events()), ...filters)
+  await _matchEvents('system events', redact(api.query.system.events()), ...filters)
 }
 
 export const matchUmp = async ({ api }: { api: ApiPromise }) => {
   expect(await api.query.parachainSystem.upwardMessages()).toMatchSnapshot('ump')
 }
 
-export const redactNumber = async (data: any | Promise<any>) => {
+export const redact = async (data: any | Promise<any>) => {
   const json = toHuman(await data)
 
   const process = (obj: any): any => {
@@ -141,7 +141,7 @@ export const redactNumber = async (data: any | Promise<any>) => {
       return '(redacted)'
     }
     if (typeof obj === 'string') {
-      if (obj.match(/^[\d,]+$/)) {
+      if (obj.match(/^[\d,]+$/) || obj.match(/0x[0-9a-f]{64}/)) {
         return '(redacted)'
       }
       return obj
