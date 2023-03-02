@@ -1,7 +1,7 @@
-import { afterAll, beforeEach, describe, expect, it } from 'vitest'
+import { afterAll, beforeEach, describe, it } from 'vitest'
 import { connectParachains } from '@acala-network/chopsticks'
 
-import { expectEvent, expectExtrinsicSuccess, expectJson, sendTransaction, testingPairs } from '../helper'
+import { expectJson, matchEvents, matchHrmp, matchSystemEvents, sendTransaction, testingPairs } from '../helper'
 import { xTokens } from '../api/extrinsics'
 import networks from '../networks'
 
@@ -39,48 +39,31 @@ describe('Karura <-> Basilisk', async () => {
     })
   })
 
-  it('0. Karura transfer DAI to basilisk', async () => {
+  it('Karura transfer DAI to basilisk', async () => {
     const DAI = '0x4bb6afb5fa2b07a5d1c499e1c3ddb5a15e709a71'
     const tx0 = await sendTransaction(
       karura.api.tx.sudo
         .sudoAs(
           'rPWzRkpPjuceq6Po91sfHLZJ9wo6wzx4PAdjUH91ckv81nv',
-          karura.api.tx.currencies.transfer(alice.address, { Erc20: DAI }, '1000000000000000000')
+          karura.api.tx.currencies.transfer(alice.address, { Erc20: DAI }, 10n ** 18n)
         )
         .signAsync(alice)
     )
 
     await karura.chain.newBlock()
-    expectExtrinsicSuccess(await tx0.events)
 
-    expectEvent(await tx0.events, {
-      event: expect.objectContaining({
-        section: 'evmAccounts',
-        method: 'ClaimAccount',
-      }),
-    })
-    //
-    expectEvent(await tx0.events, {
-      event: expect.objectContaining({
-        section: 'currencies',
-        method: 'Transferred',
-      }),
-    })
+    await matchEvents(tx0.events, 'currencies', 'evmAccounts')
 
     const tx1 = await sendTransaction(
-      xTokens(karura.api, false, '2090', { Erc20: DAI }, '1000000000000000000', alice.addressRaw).signAsync(alice)
+      xTokens(karura.api, false, '2090', { Erc20: DAI }, 10n ** 18n, alice.addressRaw).signAsync(alice)
     )
 
     await karura.chain.newBlock()
-    // await basilisk.chain.upcomingBlock()
-    expectExtrinsicSuccess(await tx1.events)
-    expectEvent(await tx1.events, {
-      event: expect.objectContaining({
-        section: 'xTokens',
-        method: 'TransferredMultiAssets',
-      }),
-    })
 
+    await matchEvents(tx1.events, 'xTokens', 'xcmpQueue', 'evm')
+    await matchHrmp(karura)
+
+    // await basilisk.chain.upcomingBlock()
     // await basilisk.chain.upcomingBlock()
     // expectJson(await basilisk.api.query.tokens.accounts(alice, '13')).toMatchInlineSnapshot(`
     //   {
@@ -91,7 +74,7 @@ describe('Karura <-> Basilisk', async () => {
     // `)
   })
 
-  it('1. Karura transfer USDC to basilisk', async () => {
+  it('Karura transfer USDC to basilisk', async () => {
     const USDC = '0x1f3a10587a20114ea25ba1b388ee2dd4a337ce27'
     const tx0 = await sendTransaction(
       karura.api.tx.sudo
@@ -103,35 +86,17 @@ describe('Karura <-> Basilisk', async () => {
     )
 
     await karura.chain.newBlock()
-    expectExtrinsicSuccess(await tx0.events)
 
-    expectEvent(await tx0.events, {
-      event: expect.objectContaining({
-        section: 'evmAccounts',
-        method: 'ClaimAccount',
-      }),
-    })
-
-    expectEvent(await tx0.events, {
-      event: expect.objectContaining({
-        section: 'currencies',
-        method: 'Transferred',
-      }),
-    })
+    await matchEvents(tx0.events, 'currencies', 'evmAccounts')
 
     const tx1 = await sendTransaction(
       xTokens(karura.api, false, '2090', { Erc20: USDC }, '1000000', alice.addressRaw).signAsync(alice)
     )
 
     await karura.chain.newBlock()
-    // await basilisk.chain.upcomingBlock()
-    expectExtrinsicSuccess(await tx1.events)
-    expectEvent(await tx1.events, {
-      event: expect.objectContaining({
-        section: 'xTokens',
-        method: 'TransferredMultiAssets',
-      }),
-    })
+
+    await matchEvents(tx1.events, 'xTokens', 'xcmpQueue', 'evm')
+    await matchHrmp(karura)
 
     await basilisk.chain.upcomingBlock()
     expectJson(await basilisk.api.query.tokens.accounts(alice.address, '9')).toMatchInlineSnapshot(`
@@ -141,5 +106,7 @@ describe('Karura <-> Basilisk', async () => {
         "reserved": 0,
       }
     `)
+
+    await matchSystemEvents(basilisk, 'xcmpQueue', 'tokens')
   })
 })

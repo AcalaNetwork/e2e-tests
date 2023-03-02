@@ -144,7 +144,7 @@ describe('Karura <-> Kusama', async () => {
     await karura.chain.newBlock()
 
     await matchEvents(tx1.events, 'homa')
-    await matchEvents(tx2.events, 'homa')
+    await matchEvents(tx2.events, { section: 'homa', method: 'CurrentEraBumped' })
     await matchUmp(karura)
 
     await kusama.chain.upcomingBlock()

@@ -101,7 +101,7 @@ type EventFilter = string | { method: string; section: string }
 
 const _matchEvents = async (msg: string, events: Promise<Codec[] | Codec>, ...filters: EventFilter[]) => {
   let data = toHuman(await events).map(({ event: { index: _, ...event } }: any) => event)
-  if (filters) {
+  if (filters.length > 0) {
     const filtersArr = Array.isArray(filters) ? filters : [filters]
     data = data.filter((evt: any) => {
       return filtersArr.some((filter) => {
@@ -126,6 +126,10 @@ export const matchSystemEvents = async ({ api }: { api: ApiPromise }, ...filters
 
 export const matchUmp = async ({ api }: { api: ApiPromise }) => {
   expect(await api.query.parachainSystem.upwardMessages()).toMatchSnapshot('ump')
+}
+
+export const matchHrmp = async ({ api }: { api: ApiPromise }) => {
+  expect(await api.query.parachainSystem.hrmpOutboundMessages()).toMatchSnapshot('hrmp')
 }
 
 export const redact = async (data: any | Promise<any>) => {

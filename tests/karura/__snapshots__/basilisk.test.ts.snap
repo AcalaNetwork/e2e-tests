@@ -1,0 +1,173 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Karura <-> Basilisk > Karura transfer USDC to basilisk > events 1`] = `
+[
+  {
+    "data": {
+      "accountId": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+      "evmAddress": "0x4d9cf56ac6f1b4b6be4757ad0af3348fc6a918c2",
+    },
+    "method": "ClaimAccount",
+    "section": "evmAccounts",
+  },
+  {
+    "data": {
+      "amount": "(redacted)",
+      "currencyId": {
+        "Erc20": "0x1f3a10587a20114ea25ba1b388ee2dd4a337ce27",
+      },
+      "from": "r7ts9D2xjiWoPhdnSLe3id9MAT5MADP8bBg17zP9aqRcKvj",
+      "to": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "Transferred",
+    "section": "currencies",
+  },
+]
+`;
+
+exports[`Karura <-> Basilisk > Karura transfer USDC to basilisk > events 2`] = `
+[
+  {
+    "data": {
+      "contract": "0x1f3a10587a20114ea25ba1b388ee2dd4a337ce27",
+      "from": "0x4d9cf56ac6f1b4b6be4757ad0af3348fc6a918c2",
+      "logs": [
+        {
+          "address": "0x1f3a10587a20114ea25ba1b388ee2dd4a337ce27",
+          "data": "(redacted)",
+          "topics": [
+            "(redacted)",
+            "(redacted)",
+            "(redacted)",
+          ],
+        },
+      ],
+      "usedGas": "(redacted)",
+      "usedStorage": "-64",
+    },
+    "method": "Executed",
+    "section": "evm",
+  },
+  {
+    "data": {
+      "messageHash": "(redacted)",
+    },
+    "method": "XcmpMessageSent",
+    "section": "xcmpQueue",
+  },
+  {
+    "data": {
+      "assets": [
+        {
+          "fun": {
+            "Fungible": "(redacted)",
+          },
+          "id": {
+            "Concrete": {
+              "interior": {
+                "X2": [
+                  {
+                    "Parachain": "(redacted)",
+                  },
+                  {
+                    "GeneralKey": "0x021f3a10587a20114ea25ba1b388ee2dd4a337ce27",
+                  },
+                ],
+              },
+              "parents": "(redacted)",
+            },
+          },
+        },
+      ],
+      "dest": {
+        "interior": {
+          "X2": [
+            {
+              "Parachain": "(redacted)",
+            },
+            {
+              "AccountId32": {
+                "id": "(redacted)",
+                "network": "Any",
+              },
+            },
+          ],
+        },
+        "parents": "(redacted)",
+      },
+      "fee": {
+        "fun": {
+          "Fungible": "(redacted)",
+        },
+        "id": {
+          "Concrete": {
+            "interior": {
+              "X2": [
+                {
+                  "Parachain": "(redacted)",
+                },
+                {
+                  "GeneralKey": "0x021f3a10587a20114ea25ba1b388ee2dd4a337ce27",
+                },
+              ],
+            },
+            "parents": "(redacted)",
+          },
+        },
+      },
+      "sender": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "TransferredMultiAssets",
+    "section": "xTokens",
+  },
+]
+`;
+
+exports[`Karura <-> Basilisk > Karura transfer USDC to basilisk > hrmp 1`] = `
+[
+  {
+    "data": "0x000210010400010200411f0654021f3a10587a20114ea25ba1b388ee2dd4a337ce270002093d000a1300010200411f0654021f3a10587a20114ea25ba1b388ee2dd4a337ce270002093d00000d0100040001010088dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee",
+    "recipient": 2090,
+  },
+]
+`;
+
+exports[`Karura <-> Basilisk > Karura transfer USDC to basilisk > system events 1`] = `
+[
+  {
+    "data": {
+      "amount": "(redacted)",
+      "currencyId": "(redacted)",
+      "who": "bXjgry3bkMHToRvMRedUhtPzEUUXdhyVX2UwY8hY156tWH4YB",
+    },
+    "method": "Deposited",
+    "section": "tokens",
+  },
+  {
+    "data": {
+      "amount": "(redacted)",
+      "currencyId": "(redacted)",
+      "who": "bXjgry3bkMHToRvMRedUhtPzEUUXdhyVX2UwY8hY156tWH4YB",
+    },
+    "method": "Endowed",
+    "section": "tokens",
+  },
+  {
+    "data": {
+      "amount": "(redacted)",
+      "currencyId": "(redacted)",
+      "who": "bXj4uMHTyQyvNCLHKBv6ztwkPSx8tgsrxuFtAFfWDYntXtohw",
+    },
+    "method": "Deposited",
+    "section": "tokens",
+  },
+  {
+    "data": {
+      "messageHash": "(redacted)",
+      "weight": "(redacted)",
+    },
+    "method": "Success",
+    "section": "xcmpQueue",
+  },
+]
+`;
