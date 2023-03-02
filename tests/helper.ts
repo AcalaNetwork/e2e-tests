@@ -13,9 +13,10 @@ export type SetupOption = {
   blockNumber?: number
   blockHash?: HexString
   wasmOverride?: string
+  db?: string
 }
 
-export const setupContext = async ({ endpoint, blockNumber, blockHash, wasmOverride }: SetupOption) => {
+export const setupContext = async ({ endpoint, blockNumber, blockHash, wasmOverride, db }: SetupOption) => {
   // random port
   const port = Math.floor(Math.random() * 10000) + 10000
   const config = {
@@ -24,7 +25,7 @@ export const setupContext = async ({ endpoint, blockNumber, blockHash, wasmOverr
     block: blockNumber || blockHash,
     mockSignatureHost: true,
     'build-block-mode': BuildBlockMode.Manual,
-    db: './db.sqlite',
+    db,
     'wasm-override': wasmOverride,
   }
   const { chain, listenPort, close } = await setupWithServer(config)
