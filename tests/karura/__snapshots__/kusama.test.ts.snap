@@ -50,10 +50,7 @@ exports[`Karura <-> Kusama > Homa redeem unbond works > system events 1`] = `
     "data": [
       "(redacted)",
       {
-        "Complete": {
-          "proofSize": "(redacted)",
-          "refTime": "(redacted)",
-        },
+        "Complete": "(redacted)",
       },
     ],
     "method": "ExecutedUpward",
@@ -95,10 +92,7 @@ exports[`Karura <-> Kusama > Homa stake works > system events 1`] = `
     "data": [
       "(redacted)",
       {
-        "Complete": {
-          "proofSize": "(redacted)",
-          "refTime": "(redacted)",
-        },
+        "Complete": "(redacted)",
       },
     ],
     "method": "ExecutedUpward",
@@ -116,10 +110,7 @@ exports[`Karura <-> Kusama > Homa stake works > system events 1`] = `
     "data": [
       "(redacted)",
       {
-        "Complete": {
-          "proofSize": "(redacted)",
-          "refTime": "(redacted)",
-        },
+        "Complete": "(redacted)",
       },
     ],
     "method": "ExecutedUpward",
@@ -263,7 +254,7 @@ exports[`Karura <-> Kusama > Homa stake works > ump 1`] = `
             },
             "parents": 0,
           },
-          "maxAssets": 1,
+          "maxAssets": 4294967295,
         },
       },
     ],
@@ -271,7 +262,7 @@ exports[`Karura <-> Kusama > Homa stake works > ump 1`] = `
 ]
 `;
 
-exports[`Karura <-> Kusama > Karura transfer assets to Kusama > events 1`] = `
+exports[`Karura <-> Kusama > Karura transfer assets to kusama > events 1`] = `
 [
   {
     "data": {
@@ -318,16 +309,13 @@ exports[`Karura <-> Kusama > Karura transfer assets to Kusama > events 1`] = `
 ]
 `;
 
-exports[`Karura <-> Kusama > Karura transfer assets to Kusama > system events 1`] = `
+exports[`Karura <-> Kusama > Karura transfer assets to kusama > system events 1`] = `
 [
   {
     "data": [
       "(redacted)",
       {
-        "Complete": {
-          "proofSize": "(redacted)",
-          "refTime": "(redacted)",
-        },
+        "Complete": "(redacted)",
       },
     ],
     "method": "ExecutedUpward",
@@ -336,7 +324,7 @@ exports[`Karura <-> Kusama > Karura transfer assets to Kusama > system events 1`
 ]
 `;
 
-exports[`Karura <-> Kusama > Karura transfer assets to Kusama > ump 1`] = `
+exports[`Karura <-> Kusama > Karura transfer assets to kusama > ump 1`] = `
 [
   {
     "v2": [
@@ -404,56 +392,6 @@ exports[`Karura <-> Kusama > Karura transfer assets to Kusama > ump 1`] = `
         },
       },
     ],
-  },
-]
-`;
-
-exports[`Karura <-> Kusama > Kusama transfer assets to Karura > events 1`] = `
-[
-  {
-    "data": [
-      {
-        "Complete": {
-          "proofSize": "(redacted)",
-          "refTime": "(redacted)",
-        },
-      },
-    ],
-    "method": "Attempted",
-    "section": "xcmPallet",
-  },
-]
-`;
-
-exports[`Karura <-> Kusama > Kusama transfer assets to Karura > system events 1`] = `
-[
-  {
-    "data": {
-      "count": "(redacted)",
-    },
-    "method": "DownwardMessagesReceived",
-    "section": "parachainSystem",
-  },
-  {
-    "data": {
-      "messageId": "(redacted)",
-      "outcome": {
-        "Complete": "(redacted)",
-      },
-    },
-    "method": "ExecutedDownward",
-    "section": "dmpQueue",
-  },
-  {
-    "data": {
-      "dmqHead": "(redacted)",
-      "weightUsed": {
-        "proofSize": "(redacted)",
-        "refTime": "(redacted)",
-      },
-    },
-    "method": "DownwardMessagesProcessed",
-    "section": "parachainSystem",
   },
 ]
 `;

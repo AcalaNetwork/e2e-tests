@@ -125,11 +125,18 @@ export const matchSystemEvents = async ({ api }: { api: ApiPromise }, ...filters
 }
 
 export const matchUmp = async ({ api }: { api: ApiPromise }) => {
-  expect(await api.query.parachainSystem.upwardMessages()).toMatchSnapshot('ump')
+  const ump = await api.query.parachainSystem.upwardMessages()
+  const decoded = (ump.toJSON() as string[]).map((msg) => api.createType('XcmVersionedXcm', msg))
+  expect(decoded).toMatchSnapshot('ump')
 }
 
 export const matchHrmp = async ({ api }: { api: ApiPromise }) => {
-  expect(await api.query.parachainSystem.hrmpOutboundMessages()).toMatchSnapshot('hrmp')
+  const hrmp = await api.query.parachainSystem.hrmpOutboundMessages()
+  const decoded = (hrmp.toJSON() as any[]).map(({ recipient, data }) => ({
+    data: api.createType('(XcmpMessageFormat, XcmVersionedXcm)', data),
+    recipient,
+  }))
+  expect(decoded).toMatchSnapshot('hrmp')
 }
 
 export const redact = async (data: any | Promise<any>) => {

@@ -1,23 +1,21 @@
-import { afterAll, beforeEach, describe, it } from 'vitest'
+import { beforeEach, describe, it } from 'vitest'
 import { connectParachains } from '@acala-network/chopsticks'
 
 import { expectJson, matchEvents, matchHrmp, matchSystemEvents, sendTransaction, testingPairs } from '../helper'
 import { xTokens } from '../api/extrinsics'
-import networks from '../networks'
+import networks, { Network } from '../networks'
 
 describe('Karura <-> Basilisk', async () => {
-  const basilisk = await networks.basilisk()
-  const karura = await networks.karura()
-  await connectParachains([basilisk.chain, karura.chain])
+  let basilisk: Network
+  let karura: Network
 
   const { alice } = testingPairs()
 
-  afterAll(async () => {
-    await basilisk.teardown()
-    await karura.teardown()
-  })
-
   beforeEach(async () => {
+    basilisk = await networks.basilisk()
+    karura = await networks.karura()
+    await connectParachains([basilisk.chain, karura.chain])
+
     await karura.dev.setStorage({
       System: {
         Account: [[[alice.address], { data: { free: 10 * 1e12 } }]],
@@ -37,6 +35,11 @@ describe('Karura <-> Basilisk', async () => {
         Account: [[[alice.address], { data: { free: 10 * 1e12 } }]],
       },
     })
+
+    return async () => {
+      await basilisk.teardown()
+      await karura.teardown()
+    }
   })
 
   it('Karura transfer DAI to basilisk', async () => {
@@ -47,12 +50,12 @@ describe('Karura <-> Basilisk', async () => {
           'rPWzRkpPjuceq6Po91sfHLZJ9wo6wzx4PAdjUH91ckv81nv',
           karura.api.tx.currencies.transfer(alice.address, { Erc20: DAI }, 10n ** 18n)
         )
-        .signAsync(alice)
+        .signAsync(alice, { nonce: 0 })
     )
 
     await karura.chain.newBlock()
 
-    await matchEvents(tx0.events, 'currencies', 'evmAccounts')
+    await matchEvents(tx0.events, 'currencies')
 
     const tx1 = await sendTransaction(
       xTokens(karura.api, false, '2090', { Erc20: DAI }, 10n ** 18n, alice.addressRaw).signAsync(alice)
@@ -63,8 +66,7 @@ describe('Karura <-> Basilisk', async () => {
     await matchEvents(tx1.events, 'xTokens', 'xcmpQueue', 'evm')
     await matchHrmp(karura)
 
-    // await basilisk.chain.upcomingBlock()
-    // await basilisk.chain.upcomingBlock()
+    // await basilisk.chain.upcomingBlock({ timeout: 1000 })
     // expectJson(await basilisk.api.query.tokens.accounts(alice, '13')).toMatchInlineSnapshot(`
     //   {
     //     "free": 1000000000000000000,
@@ -82,12 +84,12 @@ describe('Karura <-> Basilisk', async () => {
           'r7ts9D2xjiWoPhdnSLe3id9MAT5MADP8bBg17zP9aqRcKvj',
           karura.api.tx.currencies.transfer(alice.address, { Erc20: USDC }, '1000000')
         )
-        .signAsync(alice)
+        .signAsync(alice, { nonce: 0 })
     )
 
     await karura.chain.newBlock()
 
-    await matchEvents(tx0.events, 'currencies', 'evmAccounts')
+    await matchEvents(tx0.events, 'currencies')
 
     const tx1 = await sendTransaction(
       xTokens(karura.api, false, '2090', { Erc20: USDC }, '1000000', alice.addressRaw).signAsync(alice)
