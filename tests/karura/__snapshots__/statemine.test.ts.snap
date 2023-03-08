@@ -1,0 +1,92 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Karura <-> Statemine > 1. Karura transfer assets to Statemine > events 1`] = `
+[
+  {
+    "data": {
+      "messageHash": "(redacted)",
+    },
+    "method": "XcmpMessageSent",
+    "section": "xcmpQueue",
+  },
+  {
+    "data": {
+      "assets": [
+        {
+          "fun": {
+            "Fungible": "(redacted)",
+          },
+          "id": {
+            "Concrete": {
+              "interior": "Here",
+              "parents": "(redacted)",
+            },
+          },
+        },
+        {
+          "fun": {
+            "Fungible": "(redacted)",
+          },
+          "id": {
+            "Concrete": {
+              "interior": {
+                "X3": [
+                  {
+                    "Parachain": "(redacted)",
+                  },
+                  {
+                    "PalletInstance": "(redacted)",
+                  },
+                  {
+                    "GeneralIndex": "(redacted)",
+                  },
+                ],
+              },
+              "parents": "(redacted)",
+            },
+          },
+        },
+      ],
+      "dest": {
+        "interior": {
+          "X2": [
+            {
+              "Parachain": "(redacted)",
+            },
+            {
+              "AccountId32": {
+                "id": "(redacted)",
+                "network": "Any",
+              },
+            },
+          ],
+        },
+        "parents": "(redacted)",
+      },
+      "fee": {
+        "fun": {
+          "Fungible": "(redacted)",
+        },
+        "id": {
+          "Concrete": {
+            "interior": "Here",
+            "parents": "(redacted)",
+          },
+        },
+      },
+      "sender": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "TransferredMultiAssets",
+    "section": "xTokens",
+  },
+]
+`;
+
+exports[`Karura <-> Statemine > 1. Karura transfer assets to Statemine > hrmp 1`] = `
+[
+  {
+    "data": "0x0002100008000002043205011f00624d620200010000028c86470a1300010000028c8647000d01000800010100d17c2d7823ebf260fd138f2d7e27d114c0145d968b5ff5006125f2414fadae69",
+    "recipient": 1000,
+  },
+]
+`;

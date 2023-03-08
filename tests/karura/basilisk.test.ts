@@ -45,7 +45,7 @@ describe('Karura <-> Basilisk', async () => {
       karura.api.tx.sudo
         .sudoAs(
           'rPWzRkpPjuceq6Po91sfHLZJ9wo6wzx4PAdjUH91ckv81nv',
-          karura.api.tx.currencies.transfer(alice.address, { Erc20: DAI }, 10n ** 18n)
+          karura.api.tx.currencies.transfer(alice.address, { Erc20: DAI }, '1000000000000000000')
         )
         .signAsync(alice)
     )
@@ -55,7 +55,7 @@ describe('Karura <-> Basilisk', async () => {
     await matchEvents(tx0.events, 'currencies', 'evmAccounts')
 
     const tx1 = await sendTransaction(
-      xTokens(karura.api, false, '2090', { Erc20: DAI }, 10n ** 18n, alice.addressRaw).signAsync(alice)
+      xTokens(karura.api, false, '2090', { Erc20: DAI }, '1000000000000000000', alice.addressRaw).signAsync(alice)
     )
 
     await karura.chain.newBlock()
@@ -63,9 +63,8 @@ describe('Karura <-> Basilisk', async () => {
     await matchEvents(tx1.events, 'xTokens', 'xcmpQueue', 'evm')
     await matchHrmp(karura)
 
-    // await basilisk.chain.upcomingBlock()
-    // await basilisk.chain.upcomingBlock()
-    // expectJson(await basilisk.api.query.tokens.accounts(alice, '13')).toMatchInlineSnapshot(`
+    //   await basilisk.chain.upcomingBlock()
+    //   expectJson(await basilisk.api.query.tokens.accounts(alice, '13')).toMatchInlineSnapshot(`
     //   {
     //     "free": 1000000000000000000,
     //     "frozen": 0,

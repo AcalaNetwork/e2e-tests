@@ -135,6 +135,26 @@ exports[`Karura <-> Kusama > Homa stake works > ump 1`] = `
 ]
 `;
 
+exports[`Karura <-> Kusama > Homa unbond withdraw works > events 1`] = `[]`;
+
+exports[`Karura <-> Kusama > Homa unbond withdraw works > system events 1`] = `
+[
+  {
+    "data": [
+      "(redacted)",
+      {
+        "Complete": {
+          "proofSize": "(redacted)",
+          "refTime": "(redacted)",
+        },
+      },
+    ],
+    "method": "ExecutedUpward",
+    "section": "ump",
+  },
+]
+`;
+
 exports[`Karura <-> Kusama > Karura transfer assets to Kusama > events 1`] = `
 [
   {
