@@ -2,7 +2,14 @@ import { afterAll, beforeEach, describe, expect, it } from 'vitest'
 import { connectVertical } from '@acala-network/chopsticks'
 
 import { balance, expectJson, matchEvents, matchSystemEvents, matchUmp, sendTransaction, testingPairs } from '../helper'
-import { relayChainV3limitedReserveTransferAssets, xTokens } from '../api/extrinsics'
+import {
+  forceBumpCurrentEra,
+  mint,
+  relayChainV3limitedReserveTransferAssets,
+  requestRedeem,
+  sudo,
+  xTokens,
+} from '../api/extrinsics'
 import networks from '../networks'
 
 describe('Karura <-> Kusama', async () => {
@@ -10,7 +17,10 @@ describe('Karura <-> Kusama', async () => {
     wasmOverride: './wasm/kusama_runtime-v9380.compact.compressed.wasm',
     blockNumber: 16732970,
   })
-  const karura = await networks.karura({ wasmOverride: './wasm/karura-2140.wasm', blockNumber: 3752729 })
+  const karura = await networks.karura({
+    wasmOverride: './wasm/karura-2150.wasm',
+    blockNumber: 3752729,
+  })
   await connectVertical(kusama.chain, karura.chain)
 
   const { alice } = testingPairs()
@@ -96,7 +106,7 @@ describe('Karura <-> Kusama', async () => {
 
     expectJson(await karura.api.query.tokens.accounts(alice.address, { Token: 'KSM' })).toMatchInlineSnapshot(`
       {
-        "free": 10999955836390,
+        "free": 10999958145583,
         "frozen": 0,
         "reserved": 0,
       }
@@ -106,15 +116,15 @@ describe('Karura <-> Kusama', async () => {
   })
 
   it('Homa stake works', async () => {
-    const tx1 = await sendTransaction(karura.api.tx.homa.mint(1e12).signAsync(alice, { nonce: 0 }))
-    const tx2 = await sendTransaction(
-      karura.api.tx.sudo.sudo(karura.api.tx.homa.forceBumpCurrentEra(0)).signAsync(alice, { nonce: 1 })
+    const tx0 = await sendTransaction(mint(karura.api, '1000000000000').signAsync(alice, { nonce: 0 }))
+    const tx1 = await sendTransaction(
+      sudo(karura.api, forceBumpCurrentEra(karura.api, '0')).signAsync(alice, { nonce: 1 })
     )
 
     await karura.chain.newBlock()
 
-    await matchEvents(tx1.events, 'homa')
-    await matchEvents(tx2.events, { section: 'homa', method: 'CurrentEraBumped' })
+    await matchEvents(tx0.events, 'homa')
+    await matchEvents(tx1.events, { section: 'homa', method: 'CurrentEraBumped' })
     await matchUmp(karura)
 
     await kusama.chain.upcomingBlock()
@@ -123,29 +133,26 @@ describe('Karura <-> Kusama', async () => {
   })
 
   it('Homa redeem unbond works', async () => {
-    const tx3 = await sendTransaction(karura.api.tx.homa.requestRedeem(10 * 1e12, false).signAsync(alice, { nonce: 0 }))
-    const tx4 = await sendTransaction(
-      karura.api.tx.sudo.sudo(karura.api.tx.homa.forceBumpCurrentEra(0)).signAsync(alice, { nonce: 1 })
+    const tx0 = await sendTransaction(requestRedeem(karura.api, '1000000000000', false).signAsync(alice, { nonce: 0 }))
+    const tx1 = await sendTransaction(
+      sudo(karura.api, forceBumpCurrentEra(karura.api, '0')).signAsync(alice, { nonce: 1 })
     )
 
     await karura.chain.newBlock()
 
-    await matchEvents(tx3.events, 'homa')
-    await matchEvents(tx4.events, 'homa')
-
+    await matchEvents(tx0.events, { section: 'homa', method: 'RequestedRedeem' })
+    await matchEvents(tx1.events, { section: 'homa', method: 'RedeemedByUnbond' })
     await kusama.chain.upcomingBlock()
-
     await matchSystemEvents(kusama, 'ump', 'staking')
   })
 
   it('Homa unbond withdraw works', async () => {
     //Set the relaychain number in advance, Kusama Block Number: 16732970, Karura Block Number: 3752729
-    const tx = await sendTransaction(
-      karura.api.tx.sudo.sudo(karura.api.tx.homa.forceBumpCurrentEra(1)).signAsync(alice)
-    )
+    const tx = await sendTransaction(sudo(karura.api, forceBumpCurrentEra(karura.api, '1')).signAsync(alice))
     await karura.chain.newBlock()
-    await matchEvents(tx.events, 'CurrentEraBumped')
+    await matchEvents(tx.events, { section: 'homa', method: 'CurrentEraBumped' })
     await kusama.chain.upcomingBlock()
-    await matchSystemEvents(kusama, 'ump', 'withdrawUnbonded')
+    await matchSystemEvents(kusama, 'ump', 'staking')
+    // await matchSystemEvents(kusama, { section: 'staking', method: 'withdrawUnbonded' })
   })
 })

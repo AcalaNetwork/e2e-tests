@@ -204,6 +204,6 @@ export const forceBumpCurrentEra = (api: ApiPromise, bumpAmount: string) => {
   return api.tx.homa.forceBumpCurrentEra(bumpAmount)
 }
 
-export const sudo = (api: ApiPromise, call: SubmittableExtrinsic<'rxjs'>) => {
-  return api.tx.sudo.sduo(call)
+export const sudo = (api: ApiPromise, call: SubmittableExtrinsic<'promise'>) => {
+  return api.tx.sudo.sudo(call)
 }
