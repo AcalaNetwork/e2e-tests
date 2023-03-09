@@ -1,7 +1,16 @@
 import { afterAll, describe, expect, it } from 'vitest'
 import { connectParachains } from '@acala-network/chopsticks'
 
-import { balance, expectEvent, expectJson, testingPairs } from '../helper'
+import {
+  balance,
+  expectJson,
+  matchEvents,
+  matchHrmp,
+  matchSystemEvents,
+  sendTransaction,
+  testingPairs,
+} from '../helper'
+import { xTokensTransferMulticurrencies } from '../api/extrinsics'
 import networks from '../networks'
 
 describe('Karura <-> Statemine', async () => {
@@ -90,18 +99,14 @@ describe('Karura <-> Statemine', async () => {
         "reserved": 0,
       }
     `)
-    expectEvent(await statemine.api.query.system.events(), {
-      event: expect.objectContaining({
-        section: 'polkadotXcm',
-        method: 'Attempted',
-      }),
+    await matchSystemEvents(statemine, {
+      section: 'polkadotXcm',
+      method: 'Attempted',
     })
 
-    expectEvent(await karura.api.query.system.events(), {
-      event: expect.objectContaining({
-        section: 'xcmpQueue',
-        method: 'Success',
-      }),
+    await matchSystemEvents(karura, {
+      section: 'xcmpQueue',
+      method: 'Success',
     })
 
     // ensure Alice got the money
@@ -119,6 +124,9 @@ describe('Karura <-> Statemine', async () => {
     await karura.dev.setStorage({
       System: {
         Account: [[[alice.address], { data: { free: 1000 * 1e10 } }]],
+      },
+      Tokens: {
+        Accounts: [[[alice.address, { Token: 'KSM' }], { free: 10 * 1e12 }]],
       },
     })
     expect(await balance(statemine.api, alice.address)).toMatchInlineSnapshot(`
@@ -145,47 +153,9 @@ describe('Karura <-> Statemine', async () => {
         "reserved": "0",
       }
     `)
-    await karura.api.tx.xTokens
-      .transferMultiasset(
-        {
-          V1: {
-            fun: {
-              Fungible: 9999192,
-            },
-            id: {
-              Concrete: {
-                parents: 1,
-                interior: {
-                  X3: [{ Parachain: 1000 }, { PalletInstance: 50 }, { GeneralIndex: 1984 }],
-                },
-              },
-            },
-          },
-        },
-        {
-          V1: {
-            parents: 1,
-            interior: {
-              X2: [
-                {
-                  Parachain: 1000,
-                },
-                {
-                  AccountId32: {
-                    network: 'Any',
-                    id: bob.addressRaw,
-                  },
-                },
-              ],
-            },
-          },
-        },
-        {
-          Limited: 4000000000,
-        }
-      )
-      .signAndSend(alice)
-
+    const tx = await sendTransaction(
+      xTokensTransferMulticurrencies(karura.api, '7', '9999192', '1000', bob.addressRaw).signAsync(alice)
+    )
     await karura.chain.newBlock()
     await statemine.chain.newBlock()
 
@@ -196,16 +166,16 @@ describe('Karura <-> Statemine', async () => {
         "reserved": 0,
       }
     `)
-    expectEvent(await karura.api.query.system.events(), {
-      event: expect.objectContaining({
-        section: 'xTokens',
-        method: 'TransferredMultiAssets',
-      }),
-    })
 
+    await matchEvents(tx.events, 'xTokens', 'TransferredMultiAssets', 'xcmpQueue')
+    await matchHrmp(karura)
+    await matchSystemEvents(statemine, {
+      section: 'xcmpQueue',
+      method: 'Success',
+    })
     expectJson(await statemine.api.query.assets.account(1984, bob.address)).toMatchInlineSnapshot(`
       {
-        "balance": 9998009,
+        "balance": 9999192,
         "extra": null,
         "isFrozen": false,
         "reason": {
@@ -213,11 +183,11 @@ describe('Karura <-> Statemine', async () => {
         },
       }
     `)
-    expectEvent(await statemine.api.query.system.events(), {
-      event: expect.objectContaining({
-        section: 'xcmpQueue',
-        method: 'Success',
-      }),
-    })
+    // expectEvent(await statemine.api.query.system.events(), {
+    //   event: expect.objectContaining({
+    //     section: 'xcmpQueue',
+    //     method: 'Success'
+    //   })
+    // })
   })
 })

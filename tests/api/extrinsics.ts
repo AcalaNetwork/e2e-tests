@@ -1,5 +1,6 @@
 import { AccountInfo } from '@polkadot/types/interfaces'
 import { ApiPromise } from '@polkadot/api'
+import { SubmittableExtrinsic } from '@polkadot/api-base/types'
 
 export const balance = async (api: ApiPromise, address: string) => {
   const account = await api.query.system.account<AccountInfo>(address)
@@ -96,4 +97,113 @@ export const xTokens = (
     },
     'Unlimited'
   )
+}
+
+export const relayChainV3limitedReserveTransferAssets = (
+  api: ApiPromise,
+  parachainId: string,
+  amount: string,
+  address: Uint8Array
+) => {
+  return api.tx.xcmPallet.limitedReserveTransferAssets(
+    {
+      V3: {
+        parents: 0,
+        interior: {
+          X1: { Parachain: parachainId },
+        },
+      },
+    },
+    {
+      V3: {
+        parents: 0,
+        interior: {
+          X1: {
+            AccountId32: {
+              id: address,
+            },
+          },
+        },
+      },
+    },
+    {
+      V3: [
+        {
+          id: { Concrete: { parents: 0, interior: 'Here' } },
+          fun: { Fungible: amount },
+        },
+      ],
+    },
+    0,
+    'Unlimited'
+  )
+}
+
+export const xTokensTransferMulticurrencies = (
+  api: ApiPromise,
+  foreignAssetId: string,
+  amount: string,
+  parachainId: string,
+  address: Uint8Array
+) => {
+  return api.tx.xTokens.transferMulticurrencies(
+    [
+      [
+        {
+          ForeignAsset: foreignAssetId,
+        },
+        amount,
+      ],
+      [
+        {
+          Token: 'KSM',
+        },
+        '16000000000',
+      ],
+    ],
+    '1',
+    {
+      V1: {
+        parents: 1,
+        interior: {
+          X2: [
+            {
+              Parachain: parachainId,
+            },
+            {
+              AccountId32: {
+                network: 'Any',
+                id: address,
+              },
+            },
+          ],
+        },
+      },
+    },
+    'Unlimited'
+  )
+}
+
+export const swapWithExactSupply = (api: ApiPromise, path: any[], supplyAmount: string, minTargetAmount: string) => {
+  return api.tx.dex.swapWithExactSupply(path, supplyAmount, minTargetAmount)
+}
+
+export const adjustLoan = (api: ApiPromise, token: string, collateralAdjustment: string, debitAdjustment: string) => {
+  return api.tx.honzon.adjustLoan({ Token: token }, collateralAdjustment, debitAdjustment)
+}
+
+export const mint = (api: ApiPromise, amount: string) => {
+  return api.tx.homa.mint(amount)
+}
+
+export const requestRedeem = (api: ApiPromise, amount: string, isFastMatch: boolean) => {
+  return api.tx.homa.requestRedeem(amount, isFastMatch)
+}
+
+export const forceBumpCurrentEra = (api: ApiPromise, bumpAmount: string) => {
+  return api.tx.homa.forceBumpCurrentEra(bumpAmount)
+}
+
+export const sudo = (api: ApiPromise, call: SubmittableExtrinsic<'promise'>) => {
+  return api.tx.sudo.sudo(call)
 }

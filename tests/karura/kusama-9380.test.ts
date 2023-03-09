@@ -1,13 +1,26 @@
 import { afterAll, beforeEach, describe, it } from 'vitest'
 import { connectVertical } from '@acala-network/chopsticks'
 
+import {
+  forceBumpCurrentEra,
+  mint,
+  relayChainV3limitedReserveTransferAssets,
+  requestRedeem,
+  sudo,
+  xTokens,
+} from '../api/extrinsics'
 import { matchEvents, matchJson, matchSystemEvents, matchUmp, sendTransaction, testingPairs } from '../helper'
-import { xTokens } from '../api/extrinsics'
 import networks from '../networks'
 
 describe('Karura <-> Kusama', async () => {
-  const kusama = await networks.kusama({ wasmOverride: './wasm/kusama_runtime-v9380.compact.compressed.wasm' })
-  const karura = await networks.karura({ wasmOverride: './wasm/karura-2140.wasm' })
+  const kusama = await networks.kusama({
+    wasmOverride: './wasm/kusama_runtime-v9380.compact.compressed.wasm',
+    blockNumber: 16732970,
+  })
+  const karura = await networks.karura({
+    wasmOverride: './wasm/karura-2150.wasm',
+    blockNumber: 3752729,
+  })
   await connectVertical(kusama.chain, karura.chain)
 
   const { alice } = testingPairs()
@@ -41,7 +54,7 @@ describe('Karura <-> Kusama', async () => {
 
   it('Karura transfer assets to Kusama', async () => {
     const tx = await sendTransaction(
-      xTokens(karura.api, true, '', { Token: 'KSM' }, 10n ** 12n, alice.addressRaw).signAsync(alice)
+      xTokens(karura.api, true, '', { Token: 'KSM' }, '1000000000000', alice.addressRaw).signAsync(alice)
     )
 
     await karura.chain.newBlock()
@@ -60,40 +73,7 @@ describe('Karura <-> Kusama', async () => {
 
   it('Kusama transfer assets to Karura', async () => {
     const tx = await sendTransaction(
-      kusama.api.tx.xcmPallet
-        .limitedReserveTransferAssets(
-          {
-            V3: {
-              parents: 0,
-              interior: {
-                X1: { Parachain: 2000 },
-              },
-            },
-          },
-          {
-            V3: {
-              parents: 0,
-              interior: {
-                X1: {
-                  AccountId32: {
-                    id: alice.addressRaw,
-                  },
-                },
-              },
-            },
-          },
-          {
-            V3: [
-              {
-                id: { Concrete: { parents: 0, interior: 'Here' } },
-                fun: { Fungible: '1000000000000' },
-              },
-            ],
-          },
-          0,
-          'Unlimited'
-        )
-        .signAsync(alice, { nonce: 0 })
+      relayChainV3limitedReserveTransferAssets(kusama.api, '2000', '1000000000000', alice.addressRaw).signAsync(alice)
     )
 
     await kusama.chain.newBlock()
@@ -110,15 +90,15 @@ describe('Karura <-> Kusama', async () => {
   })
 
   it('Homa stake works', async () => {
-    const tx1 = await sendTransaction(karura.api.tx.homa.mint(1e12).signAsync(alice, { nonce: 0 }))
-    const tx2 = await sendTransaction(
-      karura.api.tx.sudo.sudo(karura.api.tx.homa.forceBumpCurrentEra(0)).signAsync(alice, { nonce: 1 })
+    const tx0 = await sendTransaction(mint(karura.api, '1000000000000').signAsync(alice, { nonce: 0 }))
+    const tx1 = await sendTransaction(
+      sudo(karura.api, forceBumpCurrentEra(karura.api, '0')).signAsync(alice, { nonce: 1 })
     )
 
     await karura.chain.newBlock()
 
-    await matchEvents(tx1.events, 'homa')
-    await matchEvents(tx2.events, { section: 'homa', method: 'CurrentEraBumped' })
+    await matchEvents(tx0.events, 'homa')
+    await matchEvents(tx1.events, { section: 'homa', method: 'CurrentEraBumped' })
     await matchUmp(karura)
 
     await kusama.chain.newBlock()
@@ -127,18 +107,28 @@ describe('Karura <-> Kusama', async () => {
   })
 
   it('Homa redeem unbond works', async () => {
-    const tx3 = await sendTransaction(karura.api.tx.homa.requestRedeem(10 * 1e12, false).signAsync(alice, { nonce: 0 }))
-    const tx4 = await sendTransaction(
-      karura.api.tx.sudo.sudo(karura.api.tx.homa.forceBumpCurrentEra(0)).signAsync(alice, { nonce: 1 })
+    const tx0 = await sendTransaction(requestRedeem(karura.api, '1000000000000', false).signAsync(alice, { nonce: 0 }))
+    const tx1 = await sendTransaction(
+      sudo(karura.api, forceBumpCurrentEra(karura.api, '0')).signAsync(alice, { nonce: 1 })
     )
 
     await karura.chain.newBlock()
 
-    await matchEvents(tx3.events, 'homa')
-    await matchEvents(tx4.events, 'homa')
+    await matchEvents(tx0.events, { section: 'homa', method: 'RequestedRedeem' })
+    await matchEvents(tx1.events, { section: 'homa', method: 'RedeemedByUnbond' })
 
     await kusama.chain.newBlock()
-
     await matchSystemEvents(kusama, 'ump', 'staking')
+  })
+
+  it('Homa unbond withdraw works', async () => {
+    //Set the relaychain number in advance, Kusama Block Number: 16732970, Karura Block Number: 3752729
+    const tx = await sendTransaction(sudo(karura.api, forceBumpCurrentEra(karura.api, '1')).signAsync(alice))
+    await karura.chain.newBlock()
+    await matchEvents(tx.events, { section: 'homa', method: 'CurrentEraBumped' })
+
+    await kusama.chain.newBlock()
+    await matchSystemEvents(kusama, 'ump', 'staking')
+    // await matchSystemEvents(kusama, { section: 'staking', method: 'withdrawUnbonded' })
   })
 })
