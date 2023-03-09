@@ -1,7 +1,7 @@
-import { afterAll, beforeEach, describe, expect, it } from 'vitest'
+import { afterAll, beforeEach, describe, it } from 'vitest'
 import { connectVertical } from '@acala-network/chopsticks'
 
-import { balance, expectJson, matchEvents, matchSystemEvents, matchUmp, sendTransaction, testingPairs } from '../helper'
+import { matchEvents, matchJson, matchSystemEvents, matchUmp, sendTransaction, testingPairs } from '../helper'
 import { xTokens } from '../api/extrinsics'
 import networks from '../networks'
 
@@ -46,27 +46,14 @@ describe('Karura <-> Kusama', async () => {
 
     await karura.chain.newBlock()
 
+    matchJson(await karura.api.query.tokens.accounts(alice.address, { Token: 'KSM' }))
+
     await matchEvents(tx.events, 'xTokens')
     await matchUmp(karura)
 
-    await kusama.chain.upcomingBlock()
+    await kusama.chain.newBlock()
 
-    expectJson(await karura.api.query.tokens.accounts(alice.address, { Token: 'KSM' })).toMatchInlineSnapshot(`
-      {
-        "free": 9000000000000,
-        "frozen": 0,
-        "reserved": 0,
-      }
-    `)
-
-    expect(await balance(kusama.api, alice.address)).toMatchInlineSnapshot(`
-      {
-        "feeFrozen": 0,
-        "free": 10999909712564,
-        "miscFrozen": 0,
-        "reserved": 0,
-      }
-    `)
+    matchJson(await kusama.api.query.system.account(alice.address))
 
     await matchSystemEvents(kusama, 'ump')
   })
@@ -113,24 +100,11 @@ describe('Karura <-> Kusama', async () => {
 
     await matchEvents(tx.events, 'xcmPallet')
 
-    expect(await balance(kusama.api, alice.address)).toMatchInlineSnapshot(`
-      {
-        "feeFrozen": 0,
-        "free": 8999379005607,
-        "miscFrozen": 0,
-        "reserved": 0,
-      }
-    `)
+    matchJson(await kusama.api.query.system.account(alice.address))
 
-    await karura.chain.upcomingBlock()
+    await karura.chain.newBlock()
 
-    expectJson(await karura.api.query.tokens.accounts(alice.address, { Token: 'KSM' })).toMatchInlineSnapshot(`
-      {
-        "free": 10999955836390,
-        "frozen": 0,
-        "reserved": 0,
-      }
-    `)
+    matchJson(await karura.api.query.tokens.accounts(alice.address, { Token: 'KSM' }))
 
     await matchSystemEvents(karura, 'parachainSystem', 'dmpQueue')
   })
@@ -147,7 +121,7 @@ describe('Karura <-> Kusama', async () => {
     await matchEvents(tx2.events, { section: 'homa', method: 'CurrentEraBumped' })
     await matchUmp(karura)
 
-    await kusama.chain.upcomingBlock()
+    await kusama.chain.newBlock()
 
     await matchSystemEvents(kusama, 'ump', 'staking')
   })
@@ -163,7 +137,7 @@ describe('Karura <-> Kusama', async () => {
     await matchEvents(tx3.events, 'homa')
     await matchEvents(tx4.events, 'homa')
 
-    await kusama.chain.upcomingBlock()
+    await kusama.chain.newBlock()
 
     await matchSystemEvents(kusama, 'ump', 'staking')
   })

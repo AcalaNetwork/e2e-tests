@@ -80,7 +80,7 @@ describe('Karura <-> Statemine', async () => {
       .signAndSend(alice)
 
     await statemine.chain.newBlock()
-    await karura.chain.upcomingBlock()
+    await karura.chain.newBlock()
 
     expect(await balance(statemine.api, alice.address)).toMatchInlineSnapshot(`
       {
@@ -187,7 +187,7 @@ describe('Karura <-> Statemine', async () => {
       .signAndSend(alice)
 
     await karura.chain.newBlock()
-    await statemine.chain.upcomingBlock()
+    await statemine.chain.newBlock()
 
     expectJson(await karura.api.query.tokens.accounts(alice.address, { ForeignAsset: '7' })).toMatchInlineSnapshot(`
       {

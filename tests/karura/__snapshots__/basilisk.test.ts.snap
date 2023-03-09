@@ -4,7 +4,7 @@ exports[`Karura <-> Basilisk > Karura transfer DAI to basilisk > events 1`] = `
 [
   {
     "data": {
-      "amount": "(redacted)",
+      "amount": 1000000000000000000,
       "currencyId": {
         "Erc20": "0x4bb6afb5fa2b07a5d1c499e1c3ddb5a15e709a71",
       },
@@ -26,23 +26,23 @@ exports[`Karura <-> Basilisk > Karura transfer DAI to basilisk > events 2`] = `
       "logs": [
         {
           "address": "0x4bb6afb5fa2b07a5d1c499e1c3ddb5a15e709a71",
-          "data": "(redacted)",
+          "data": "(hash)",
           "topics": [
-            "(redacted)",
-            "(redacted)",
-            "(redacted)",
+            "(hash)",
+            "(hash)",
+            "(hash)",
           ],
         },
       ],
-      "usedGas": "(redacted)",
-      "usedStorage": "(redacted)",
+      "usedGas": "(rounded 67000)",
+      "usedStorage": 0,
     },
     "method": "Executed",
     "section": "evm",
   },
   {
     "data": {
-      "messageHash": "(redacted)",
+      "messageHash": "(hash)",
     },
     "method": "XcmpMessageSent",
     "section": "xcmpQueue",
@@ -52,21 +52,21 @@ exports[`Karura <-> Basilisk > Karura transfer DAI to basilisk > events 2`] = `
       "assets": [
         {
           "fun": {
-            "Fungible": "(redacted)",
+            "Fungible": 1000000000000000000,
           },
           "id": {
             "Concrete": {
               "interior": {
                 "X2": [
                   {
-                    "Parachain": "(redacted)",
+                    "Parachain": 2000,
                   },
                   {
                     "GeneralKey": "0x024bb6afb5fa2b07a5d1c499e1c3ddb5a15e709a71",
                   },
                 ],
               },
-              "parents": "(redacted)",
+              "parents": 1,
             },
           },
         },
@@ -75,35 +75,35 @@ exports[`Karura <-> Basilisk > Karura transfer DAI to basilisk > events 2`] = `
         "interior": {
           "X2": [
             {
-              "Parachain": "(redacted)",
+              "Parachain": "(rounded 2100)",
             },
             {
               "AccountId32": {
-                "id": "(redacted)",
+                "id": "(hash)",
                 "network": "Any",
               },
             },
           ],
         },
-        "parents": "(redacted)",
+        "parents": 1,
       },
       "fee": {
         "fun": {
-          "Fungible": "(redacted)",
+          "Fungible": 1000000000000000000,
         },
         "id": {
           "Concrete": {
             "interior": {
               "X2": [
                 {
-                  "Parachain": "(redacted)",
+                  "Parachain": 2000,
                 },
                 {
                   "GeneralKey": "0x024bb6afb5fa2b07a5d1c499e1c3ddb5a15e709a71",
                 },
               ],
             },
-            "parents": "(redacted)",
+            "parents": 1,
           },
         },
       },
@@ -211,7 +211,7 @@ exports[`Karura <-> Basilisk > Karura transfer USDC to basilisk > events 1`] = `
 [
   {
     "data": {
-      "amount": "(redacted)",
+      "amount": 1000000,
       "currencyId": {
         "Erc20": "0x1f3a10587a20114ea25ba1b388ee2dd4a337ce27",
       },
@@ -233,15 +233,15 @@ exports[`Karura <-> Basilisk > Karura transfer USDC to basilisk > events 2`] = `
       "logs": [
         {
           "address": "0x1f3a10587a20114ea25ba1b388ee2dd4a337ce27",
-          "data": "(redacted)",
+          "data": "(hash)",
           "topics": [
-            "(redacted)",
-            "(redacted)",
-            "(redacted)",
+            "(hash)",
+            "(hash)",
+            "(hash)",
           ],
         },
       ],
-      "usedGas": "(redacted)",
+      "usedGas": "(rounded 50000)",
       "usedStorage": "-64",
     },
     "method": "Executed",
@@ -249,7 +249,7 @@ exports[`Karura <-> Basilisk > Karura transfer USDC to basilisk > events 2`] = `
   },
   {
     "data": {
-      "messageHash": "(redacted)",
+      "messageHash": "(hash)",
     },
     "method": "XcmpMessageSent",
     "section": "xcmpQueue",
@@ -259,21 +259,21 @@ exports[`Karura <-> Basilisk > Karura transfer USDC to basilisk > events 2`] = `
       "assets": [
         {
           "fun": {
-            "Fungible": "(redacted)",
+            "Fungible": 1000000,
           },
           "id": {
             "Concrete": {
               "interior": {
                 "X2": [
                   {
-                    "Parachain": "(redacted)",
+                    "Parachain": 2000,
                   },
                   {
                     "GeneralKey": "0x021f3a10587a20114ea25ba1b388ee2dd4a337ce27",
                   },
                 ],
               },
-              "parents": "(redacted)",
+              "parents": 1,
             },
           },
         },
@@ -282,35 +282,35 @@ exports[`Karura <-> Basilisk > Karura transfer USDC to basilisk > events 2`] = `
         "interior": {
           "X2": [
             {
-              "Parachain": "(redacted)",
+              "Parachain": "(rounded 2100)",
             },
             {
               "AccountId32": {
-                "id": "(redacted)",
+                "id": "(hash)",
                 "network": "Any",
               },
             },
           ],
         },
-        "parents": "(redacted)",
+        "parents": 1,
       },
       "fee": {
         "fun": {
-          "Fungible": "(redacted)",
+          "Fungible": 1000000,
         },
         "id": {
           "Concrete": {
             "interior": {
               "X2": [
                 {
-                  "Parachain": "(redacted)",
+                  "Parachain": 2000,
                 },
                 {
                   "GeneralKey": "0x021f3a10587a20114ea25ba1b388ee2dd4a337ce27",
                 },
               ],
             },
-            "parents": "(redacted)",
+            "parents": 1,
           },
         },
       },
@@ -418,8 +418,8 @@ exports[`Karura <-> Basilisk > Karura transfer USDC to basilisk > system events 
 [
   {
     "data": {
-      "amount": "(redacted)",
-      "currencyId": "(redacted)",
+      "amount": "(rounded 1000000)",
+      "currencyId": 9,
       "who": "bXjgry3bkMHToRvMRedUhtPzEUUXdhyVX2UwY8hY156tWH4YB",
     },
     "method": "Deposited",
@@ -427,8 +427,8 @@ exports[`Karura <-> Basilisk > Karura transfer USDC to basilisk > system events 
   },
   {
     "data": {
-      "amount": "(redacted)",
-      "currencyId": "(redacted)",
+      "amount": "(rounded 1000000)",
+      "currencyId": 9,
       "who": "bXjgry3bkMHToRvMRedUhtPzEUUXdhyVX2UwY8hY156tWH4YB",
     },
     "method": "Endowed",
@@ -436,8 +436,8 @@ exports[`Karura <-> Basilisk > Karura transfer USDC to basilisk > system events 
   },
   {
     "data": {
-      "amount": "(redacted)",
-      "currencyId": "(redacted)",
+      "amount": 4400,
+      "currencyId": 9,
       "who": "bXj4uMHTyQyvNCLHKBv6ztwkPSx8tgsrxuFtAFfWDYntXtohw",
     },
     "method": "Deposited",
@@ -445,8 +445,8 @@ exports[`Karura <-> Basilisk > Karura transfer USDC to basilisk > system events 
   },
   {
     "data": {
-      "messageHash": "(redacted)",
-      "weight": "(redacted)",
+      "messageHash": "(hash)",
+      "weight": 400000000,
     },
     "method": "Success",
     "section": "xcmpQueue",

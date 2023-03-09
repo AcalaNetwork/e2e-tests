@@ -4,20 +4,20 @@ import { connectVertical } from '@acala-network/chopsticks'
 import { matchEvents, matchJson, matchSystemEvents, matchUmp, sendTransaction, testingPairs } from '../helper'
 import networks from '../networks'
 
-describe('Karura <-> Kusama', async () => {
-  const kusama = await networks.kusama()
-  const karura = await networks.karura()
-  await connectVertical(kusama.chain, karura.chain)
+describe('Acala <-> Polkadot', async () => {
+  const polkadot = await networks.polkadot()
+  const acala = await networks.acala()
+  await connectVertical(polkadot.chain, acala.chain)
 
   const { alice } = testingPairs()
 
   afterAll(async () => {
-    await kusama.teardown()
-    await karura.teardown()
+    await polkadot.teardown()
+    await acala.teardown()
   })
 
   beforeEach(async () => {
-    await karura.dev.setStorage({
+    await acala.dev.setStorage({
       System: {
         Account: [[[alice.address], { data: { free: 10 * 1e12 } }]],
       },
@@ -31,16 +31,16 @@ describe('Karura <-> Kusama', async () => {
         Key: alice.address,
       },
     })
-    await kusama.dev.setStorage({
+    await polkadot.dev.setStorage({
       System: {
         Account: [[[alice.address], { data: { free: 10 * 1e12 } }]],
       },
     })
   })
 
-  it('Karura transfer assets to kusama', async () => {
+  it('Acala transfer assets to polkadot', async () => {
     const tx = await sendTransaction(
-      karura.api.tx.xTokens
+      acala.api.tx.xTokens
         .transfer(
           {
             Token: 'KSM',
@@ -64,50 +64,50 @@ describe('Karura <-> Kusama', async () => {
         .signAsync(alice)
     )
 
-    await karura.chain.newBlock()
+    await acala.chain.newBlock()
 
-    matchJson(await kusama.api.query.system.account(alice.address))
+    matchJson(await polkadot.api.query.system.account(alice.address))
 
     await matchEvents(tx.events, 'xTokens')
-    await matchUmp(karura)
+    await matchUmp(acala)
 
-    await kusama.chain.newBlock()
+    await polkadot.chain.newBlock()
 
-    matchJson(await karura.api.query.tokens.accounts(alice.address, { Token: 'KSM' }))
+    matchJson(await acala.api.query.tokens.accounts(alice.address, { Token: 'KSM' }))
 
-    await matchSystemEvents(kusama, 'ump')
+    await matchSystemEvents(polkadot, 'ump')
   })
 
   it('Homa stake works', async () => {
-    const tx1 = await sendTransaction(karura.api.tx.homa.mint(1e12).signAsync(alice, { nonce: 0 }))
+    const tx1 = await sendTransaction(acala.api.tx.homa.mint(1e12).signAsync(alice, { nonce: 0 }))
     const tx2 = await sendTransaction(
-      karura.api.tx.sudo.sudo(karura.api.tx.homa.forceBumpCurrentEra(0)).signAsync(alice, { nonce: 1 })
+      acala.api.tx.sudo.sudo(acala.api.tx.homa.forceBumpCurrentEra(0)).signAsync(alice, { nonce: 1 })
     )
 
-    await karura.chain.newBlock()
+    await acala.chain.newBlock()
 
     await matchEvents(tx1.events, 'homa')
     await matchEvents(tx2.events, { section: 'homa', method: 'CurrentEraBumped' })
-    await matchUmp(karura)
+    await matchUmp(acala)
 
-    await kusama.chain.newBlock()
+    await polkadot.chain.newBlock()
 
-    await matchSystemEvents(kusama, 'ump', 'staking')
+    await matchSystemEvents(polkadot, 'ump', 'staking')
   })
 
   it('Homa redeem unbond works', async () => {
-    const tx3 = await sendTransaction(karura.api.tx.homa.requestRedeem(10 * 1e12, false).signAsync(alice, { nonce: 0 }))
+    const tx3 = await sendTransaction(acala.api.tx.homa.requestRedeem(10 * 1e12, false).signAsync(alice, { nonce: 0 }))
     const tx4 = await sendTransaction(
-      karura.api.tx.sudo.sudo(karura.api.tx.homa.forceBumpCurrentEra(0)).signAsync(alice, { nonce: 1 })
+      acala.api.tx.sudo.sudo(acala.api.tx.homa.forceBumpCurrentEra(0)).signAsync(alice, { nonce: 1 })
     )
 
-    await karura.chain.newBlock()
+    await acala.chain.newBlock()
 
     await matchEvents(tx3.events, 'homa')
     await matchEvents(tx4.events, 'homa')
 
-    await kusama.chain.newBlock()
+    await polkadot.chain.newBlock()
 
-    await matchSystemEvents(kusama, 'ump', 'staking')
+    await matchSystemEvents(polkadot, 'ump', 'staking')
   })
 })

@@ -1,63 +1,41 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Karura <-> Kusama > Homa redeem unbond works > events 1`] = `
-[
-  {
-    "data": {
-      "allowFastMatch": false,
-      "liquidAmount": 10000000000000,
-      "redeemer": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "RequestedRedeem",
-    "section": "homa",
+exports[`Acala <-> Polkadot > Acala transfer assets to polkadot > events 1`] = `[]`;
+
+exports[`Acala <-> Polkadot > Acala transfer assets to polkadot > system events 1`] = `[]`;
+
+exports[`Acala <-> Polkadot > Acala transfer assets to polkadot > ump 1`] = `[]`;
+
+exports[`Acala <-> Polkadot > Acala transfer assets to polkadot 1`] = `
+{
+  "consumers": 0,
+  "data": {
+    "feeFrozen": 0,
+    "free": 10000000000000,
+    "miscFrozen": 0,
+    "reserved": 0,
   },
-]
+  "nonce": 0,
+  "providers": 0,
+  "sufficients": 0,
+}
 `;
 
-exports[`Karura <-> Kusama > Homa redeem unbond works > events 2`] = `
-[
-  {
-    "data": {
-      "newEraIndex": "(rounded 4900)",
-    },
-    "method": "CurrentEraBumped",
-    "section": "homa",
-  },
-  {
-    "data": {
-      "eraIndexWhenUnbond": "(rounded 4900)",
-      "liquidAmount": 10000000000000,
-      "redeemer": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-      "unbondingStakingAmount": "(rounded 1300000000000)",
-    },
-    "method": "RedeemedByUnbond",
-    "section": "homa",
-  },
-]
+exports[`Acala <-> Polkadot > Acala transfer assets to polkadot 2`] = `
+{
+  "free": 10000000000000,
+  "frozen": 0,
+  "reserved": 0,
+}
 `;
 
-exports[`Karura <-> Kusama > Homa redeem unbond works > system events 1`] = `[]`;
+exports[`Acala <-> Polkadot > Homa redeem unbond works > events 1`] = `[]`;
 
-exports[`Karura <-> Kusama > Homa stake works > events 1`] = `
+exports[`Acala <-> Polkadot > Homa redeem unbond works > events 2`] = `
 [
   {
     "data": {
-      "liquidAmountAddedToVoid": "(rounded 640000000)",
-      "liquidAmountReceived": "(rounded 7700000000000)",
-      "minter": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-      "stakingCurrencyAmount": 1000000000000,
-    },
-    "method": "Minted",
-    "section": "homa",
-  },
-]
-`;
-
-exports[`Karura <-> Kusama > Homa stake works > events 2`] = `
-[
-  {
-    "data": {
-      "newEraIndex": "(rounded 4900)",
+      "newEraIndex": "(rounded 1000)",
     },
     "method": "CurrentEraBumped",
     "section": "homa",
@@ -65,9 +43,25 @@ exports[`Karura <-> Kusama > Homa stake works > events 2`] = `
 ]
 `;
 
-exports[`Karura <-> Kusama > Homa stake works > system events 1`] = `[]`;
+exports[`Acala <-> Polkadot > Homa redeem unbond works > system events 1`] = `[]`;
 
-exports[`Karura <-> Kusama > Homa stake works > ump 1`] = `
+exports[`Acala <-> Polkadot > Homa stake works > events 1`] = `[]`;
+
+exports[`Acala <-> Polkadot > Homa stake works > events 2`] = `
+[
+  {
+    "data": {
+      "newEraIndex": "(rounded 1000)",
+    },
+    "method": "CurrentEraBumped",
+    "section": "homa",
+  },
+]
+`;
+
+exports[`Acala <-> Polkadot > Homa stake works > system events 1`] = `[]`;
+
+exports[`Acala <-> Polkadot > Homa stake works > ump 1`] = `
 [
   {
     "v2": [
@@ -75,7 +69,7 @@ exports[`Karura <-> Kusama > Homa stake works > ump 1`] = `
         "withdrawAsset": [
           {
             "fun": {
-              "fungible": 1000000000000,
+              "fungible": 2345508630004,
             },
             "id": {
               "concrete": {
@@ -95,7 +89,7 @@ exports[`Karura <-> Kusama > Homa stake works > ump 1`] = `
         "buyExecution": {
           "fees": {
             "fun": {
-              "fungible": 1000000000000,
+              "fungible": 2345508630004,
             },
             "id": {
               "concrete": {
@@ -107,7 +101,7 @@ exports[`Karura <-> Kusama > Homa stake works > ump 1`] = `
             },
           },
           "weightLimit": {
-            "limited": 10000000000,
+            "limited": 5000000000,
           },
         },
       },
@@ -122,7 +116,7 @@ exports[`Karura <-> Kusama > Homa stake works > ump 1`] = `
             "interior": {
               "x1": {
                 "accountId32": {
-                  "id": "0x4ef5fd5c306e203cce9679c7649a4848c077fbb5ba36d6fcffe8119048e8d1cb",
+                  "id": "0xd7b8926b326dd349355a9a7cca6606c1e0eb6fd2b506066b518c7155ff0d8297",
                   "network": {
                     "any": null,
                   },
@@ -142,7 +136,7 @@ exports[`Karura <-> Kusama > Homa stake works > ump 1`] = `
         "withdrawAsset": [
           {
             "fun": {
-              "fungible": 10000000000,
+              "fungible": 5000000000,
             },
             "id": {
               "concrete": {
@@ -159,7 +153,7 @@ exports[`Karura <-> Kusama > Homa stake works > ump 1`] = `
         "buyExecution": {
           "fees": {
             "fun": {
-              "fungible": 10000000000,
+              "fungible": 5000000000,
             },
             "id": {
               "concrete": {
@@ -178,10 +172,81 @@ exports[`Karura <-> Kusama > Homa stake works > ump 1`] = `
       {
         "transact": {
           "call": {
-            "encoded": "0x18010200060107002c9980e6",
+            "encoded": "0x1a01000007010bf4a39adf2102",
           },
           "originType": "SovereignAccount",
-          "requireWeightAtMost": 20000000000,
+          "requireWeightAtMost": 10000000000,
+        },
+      },
+      {
+        "refundSurplus": null,
+      },
+      {
+        "depositAsset": {
+          "assets": {
+            "wild": {
+              "all": null,
+            },
+          },
+          "beneficiary": {
+            "interior": {
+              "x1": {
+                "parachain": 2000,
+              },
+            },
+            "parents": 0,
+          },
+          "maxAssets": 4294967295,
+        },
+      },
+    ],
+  },
+  {
+    "v2": [
+      {
+        "withdrawAsset": [
+          {
+            "fun": {
+              "fungible": 5000000000,
+            },
+            "id": {
+              "concrete": {
+                "interior": {
+                  "here": null,
+                },
+                "parents": 0,
+              },
+            },
+          },
+        ],
+      },
+      {
+        "buyExecution": {
+          "fees": {
+            "fun": {
+              "fungible": 5000000000,
+            },
+            "id": {
+              "concrete": {
+                "interior": {
+                  "here": null,
+                },
+                "parents": 0,
+              },
+            },
+          },
+          "weightLimit": {
+            "unlimited": null,
+          },
+        },
+      },
+      {
+        "transact": {
+          "call": {
+            "encoded": "0x1a01000007020735468cf5b0",
+          },
+          "originType": "SovereignAccount",
+          "requireWeightAtMost": 10000000000,
         },
       },
       {
@@ -208,148 +273,4 @@ exports[`Karura <-> Kusama > Homa stake works > ump 1`] = `
     ],
   },
 ]
-`;
-
-exports[`Karura <-> Kusama > Karura transfer assets to kusama > events 1`] = `
-[
-  {
-    "data": {
-      "assets": [
-        {
-          "fun": {
-            "Fungible": 1000000000000,
-          },
-          "id": {
-            "Concrete": {
-              "interior": "Here",
-              "parents": 1,
-            },
-          },
-        },
-      ],
-      "dest": {
-        "interior": {
-          "X1": {
-            "AccountId32": {
-              "id": "(hash)",
-              "network": "Any",
-            },
-          },
-        },
-        "parents": 1,
-      },
-      "fee": {
-        "fun": {
-          "Fungible": 1000000000000,
-        },
-        "id": {
-          "Concrete": {
-            "interior": "Here",
-            "parents": 1,
-          },
-        },
-      },
-      "sender": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "TransferredMultiAssets",
-    "section": "xTokens",
-  },
-]
-`;
-
-exports[`Karura <-> Kusama > Karura transfer assets to kusama > system events 1`] = `[]`;
-
-exports[`Karura <-> Kusama > Karura transfer assets to kusama > ump 1`] = `
-[
-  {
-    "v2": [
-      {
-        "withdrawAsset": [
-          {
-            "fun": {
-              "fungible": 1000000000000,
-            },
-            "id": {
-              "concrete": {
-                "interior": {
-                  "here": null,
-                },
-                "parents": 0,
-              },
-            },
-          },
-        ],
-      },
-      {
-        "clearOrigin": null,
-      },
-      {
-        "buyExecution": {
-          "fees": {
-            "fun": {
-              "fungible": 1000000000000,
-            },
-            "id": {
-              "concrete": {
-                "interior": {
-                  "here": null,
-                },
-                "parents": 0,
-              },
-            },
-          },
-          "weightLimit": {
-            "unlimited": null,
-          },
-        },
-      },
-      {
-        "depositAsset": {
-          "assets": {
-            "wild": {
-              "all": null,
-            },
-          },
-          "beneficiary": {
-            "interior": {
-              "x1": {
-                "accountId32": {
-                  "id": "0x88dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee",
-                  "network": {
-                    "any": null,
-                  },
-                },
-              },
-            },
-            "parents": 0,
-          },
-          "maxAssets": 1,
-        },
-      },
-    ],
-  },
-]
-`;
-
-exports[`Karura <-> Kusama > Karura transfer assets to kusama 1`] = `
-{
-  "consumers": 0,
-  "data": {
-    "feeFrozen": 0,
-    "free": 10000000000000,
-    "miscFrozen": 0,
-    "reserved": 0,
-  },
-  "nonce": 0,
-  "providers": 0,
-  "sufficients": 0,
-}
-`;
-
-exports[`Karura <-> Kusama > Karura transfer assets to kusama 2`] = `
-{
-  "free": 9000000000000,
-  "frozen": 0,
-  "reserved": 0,
-}
 `;
