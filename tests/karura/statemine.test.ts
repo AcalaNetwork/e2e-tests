@@ -1,7 +1,15 @@
 import { afterAll, describe, expect, it } from 'vitest'
 import { connectParachains } from '@acala-network/chopsticks'
 
-import { balance, expectEvent, expectJson, matchEvents, matchHrmp, sendTransaction, testingPairs } from '../helper'
+import {
+  balance,
+  expectJson,
+  matchEvents,
+  matchHrmp,
+  matchSystemEvents,
+  sendTransaction,
+  testingPairs,
+} from '../helper'
 import { xTokensTransferMulticurrencies } from '../api/extrinsics'
 import networks from '../networks'
 
@@ -91,18 +99,14 @@ describe('Karura <-> Statemine', async () => {
         "reserved": 0,
       }
     `)
-    expectEvent(await statemine.api.query.system.events(), {
-      event: expect.objectContaining({
-        section: 'polkadotXcm',
-        method: 'Attempted',
-      }),
+    await matchSystemEvents(statemine, {
+      section: 'polkadotXcm',
+      method: 'Attempted',
     })
 
-    expectEvent(await karura.api.query.system.events(), {
-      event: expect.objectContaining({
-        section: 'xcmpQueue',
-        method: 'Success',
-      }),
+    await matchSystemEvents(karura, {
+      section: 'xcmpQueue',
+      method: 'Success',
     })
 
     // ensure Alice got the money
@@ -165,13 +169,10 @@ describe('Karura <-> Statemine', async () => {
 
     await matchEvents(tx.events, 'xTokens', 'TransferredMultiAssets', 'xcmpQueue')
     await matchHrmp(karura)
-    // expectEvent(await karura.api.query.system.events(), {
-    //   event: expect.objectContaining({
-    //     section: 'xTokens',
-    //     method: 'TransferredMultiAssets',
-    //   }),
-    // })
-
+    await matchSystemEvents(statemine, {
+      section: 'xcmpQueue',
+      method: 'Success',
+    })
     expectJson(await statemine.api.query.assets.account(1984, bob.address)).toMatchInlineSnapshot(`
       {
         "balance": 9999192,
@@ -182,11 +183,11 @@ describe('Karura <-> Statemine', async () => {
         },
       }
     `)
-    expectEvent(await statemine.api.query.system.events(), {
-      event: expect.objectContaining({
-        section: 'xcmpQueue',
-        method: 'Success',
-      }),
-    })
+    // expectEvent(await statemine.api.query.system.events(), {
+    //   event: expect.objectContaining({
+    //     section: 'xcmpQueue',
+    //     method: 'Success'
+    //   })
+    // })
   })
 })

@@ -1,5 +1,35 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Karura <-> Statemine > 0. Statemine transfer assets to Karura > system events 1`] = `
+[
+  {
+    "data": [
+      {
+        "Complete": "(redacted)",
+      },
+    ],
+    "method": "Attempted",
+    "section": "polkadotXcm",
+  },
+]
+`;
+
+exports[`Karura <-> Statemine > 0. Statemine transfer assets to Karura > system events 2`] = `
+[
+  {
+    "data": {
+      "messageHash": "(redacted)",
+      "weight": {
+        "proofSize": "(redacted)",
+        "refTime": "(redacted)",
+      },
+    },
+    "method": "Success",
+    "section": "xcmpQueue",
+  },
+]
+`;
+
 exports[`Karura <-> Statemine > 1. Karura transfer assets to Statemine > events 1`] = `
 [
   {
@@ -87,6 +117,22 @@ exports[`Karura <-> Statemine > 1. Karura transfer assets to Statemine > hrmp 1`
   {
     "data": "0x0002100008000002043205011f00624d620200010000028c86470a1300010000028c8647000d01000800010100d17c2d7823ebf260fd138f2d7e27d114c0145d968b5ff5006125f2414fadae69",
     "recipient": 1000,
+  },
+]
+`;
+
+exports[`Karura <-> Statemine > 1. Karura transfer assets to Statemine > system events 1`] = `
+[
+  {
+    "data": {
+      "messageHash": "(redacted)",
+      "weight": {
+        "proofSize": "(redacted)",
+        "refTime": "(redacted)",
+      },
+    },
+    "method": "Success",
+    "section": "xcmpQueue",
   },
 ]
 `;

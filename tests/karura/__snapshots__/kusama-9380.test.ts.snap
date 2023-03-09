@@ -18,13 +18,6 @@ exports[`Karura <-> Kusama > Homa redeem unbond works > events 2`] = `
 [
   {
     "data": {
-      "newEraIndex": "(redacted)",
-    },
-    "method": "CurrentEraBumped",
-    "section": "homa",
-  },
-  {
-    "data": {
       "eraIndexWhenUnbond": "(redacted)",
       "liquidAmount": "(redacted)",
       "redeemer": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
@@ -107,7 +100,7 @@ exports[`Karura <-> Kusama > Homa stake works > system events 1`] = `
   {
     "data": {
       "amount": "(redacted)",
-      "stash": "FDVu3RdH5WsE2yTdXN3QMq6v1XVDK8GKjhq5oFjXe8wZYpL",
+      "stash": "HTAeD1dokCVs9MwnC1q9s2a7d2kQ52TAjrxE1y5mj5MFLLA",
     },
     "method": "Bonded",
     "section": "staking",
@@ -130,15 +123,33 @@ exports[`Karura <-> Kusama > Homa stake works > system events 1`] = `
 
 exports[`Karura <-> Kusama > Homa stake works > ump 1`] = `
 [
-  "0x0210000400000000070010a5d4e80a1300000000070010a5d4e8010700e40b54020d0100040001010074d37d762e06c6841a5dad64463a9afe0684f7e45245f6a7296ca613cca74669",
-  "0x02140004000000000700e40b540213000000000700e40b54020006010700c817a8043018010100060107002c9980e6140d010004000100411f",
+  "0x02100004000000000b2f4a2d73a40d0a13000000000b2f4a2d73a40d010700e40b54020d01000400010100d7b8926b326dd349355a9a7cca6606c1e0eb6fd2b506066b518c7155ff0d8297",
+  "0x02140004000000000700e40b540213000000000700e40b54020006010700c817a804341801000006010b2f66211fa20d140d010004000100411f",
 ]
 `;
 
-exports[`Karura <-> Kusama > Homa unbond withdraw works > events 1`] = `[]`;
+exports[`Karura <-> Kusama > Homa unbond withdraw works > events 1`] = `
+[
+  {
+    "data": {
+      "newEraIndex": "(redacted)",
+    },
+    "method": "CurrentEraBumped",
+    "section": "homa",
+  },
+]
+`;
 
 exports[`Karura <-> Kusama > Homa unbond withdraw works > system events 1`] = `
 [
+  {
+    "data": {
+      "amount": "(redacted)",
+      "stash": "HTAeD1dokCVs9MwnC1q9s2a7d2kQ52TAjrxE1y5mj5MFLLA",
+    },
+    "method": "Withdrawn",
+    "section": "staking",
+  },
   {
     "data": [
       "(redacted)",
