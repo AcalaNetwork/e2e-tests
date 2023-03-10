@@ -66,13 +66,8 @@ describe('Karura <-> Basilisk', async () => {
     await matchEvents(tx1.events, 'xTokens', 'xcmpQueue', 'evm')
     await matchHrmp(karura)
 
-<<<<<<< HEAD
     // await basilisk.chain.newBlock({ timeout: 1000 })
     // expectJson(await basilisk.api.query.tokens.accounts(alice, '13')).toMatchInlineSnapshot(`
-=======
-    //   await basilisk.chain.upcomingBlock()
-    //   expectJson(await basilisk.api.query.tokens.accounts(alice, '13')).toMatchInlineSnapshot(`
->>>>>>> origin/master
     //   {
     //     "free": 1000000000000000000,
     //     "frozen": 0,
