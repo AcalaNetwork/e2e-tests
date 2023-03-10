@@ -11,3 +11,7 @@ export const queryTokenBalance = (api: ApiPromise, token: object, address: strin
 export const queryRedeemRequests = (api: ApiPromise, address: string) => {
   return api.query.homa.redeemRequests(address)
 }
+
+export const queryPositions = (api: ApiPromise, token: string, address: string) => {
+  return api.query.loans.positions({ Token: token }, address)
+}
