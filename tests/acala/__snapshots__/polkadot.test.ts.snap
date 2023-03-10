@@ -1,67 +1,68 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Acala <-> Polkadot > Acala transfer assets to polkadot > events 1`] = `[]`;
-
-exports[`Acala <-> Polkadot > Acala transfer assets to polkadot > system events 1`] = `[]`;
-
-exports[`Acala <-> Polkadot > Acala transfer assets to polkadot > ump 1`] = `[]`;
-
-exports[`Acala <-> Polkadot > Acala transfer assets to polkadot 1`] = `
-{
-  "consumers": 0,
-  "data": {
-    "feeFrozen": 0,
-    "free": 10000000000000,
-    "miscFrozen": 0,
-    "reserved": 0,
-  },
-  "nonce": 0,
-  "providers": 0,
-  "sufficients": 0,
-}
-`;
-
-exports[`Acala <-> Polkadot > Acala transfer assets to polkadot 2`] = `
-{
-  "free": 10000000000000,
-  "frozen": 0,
-  "reserved": 0,
-}
-`;
-
-exports[`Acala <-> Polkadot > Homa redeem unbond works > events 1`] = `[]`;
-
-exports[`Acala <-> Polkadot > Homa redeem unbond works > events 2`] = `
+exports[`Acala <-> Polkadot > Acala transfer assets to polkadot > events 1`] = `
 [
   {
     "data": {
-      "newEraIndex": "(rounded 1000)",
+      "assets": [
+        {
+          "fun": {
+            "Fungible": 1000000000000,
+          },
+          "id": {
+            "Concrete": {
+              "interior": "Here",
+              "parents": 1,
+            },
+          },
+        },
+      ],
+      "dest": {
+        "interior": {
+          "X1": {
+            "AccountId32": {
+              "id": "(hash)",
+              "network": "Any",
+            },
+          },
+        },
+        "parents": 1,
+      },
+      "fee": {
+        "fun": {
+          "Fungible": 1000000000000,
+        },
+        "id": {
+          "Concrete": {
+            "interior": "Here",
+            "parents": 1,
+          },
+        },
+      },
+      "sender": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
     },
-    "method": "CurrentEraBumped",
-    "section": "homa",
+    "method": "TransferredMultiAssets",
+    "section": "xTokens",
   },
 ]
 `;
 
-exports[`Acala <-> Polkadot > Homa redeem unbond works > system events 1`] = `[]`;
-
-exports[`Acala <-> Polkadot > Homa stake works > events 1`] = `[]`;
-
-exports[`Acala <-> Polkadot > Homa stake works > events 2`] = `
+exports[`Acala <-> Polkadot > Acala transfer assets to polkadot > system events 1`] = `
 [
   {
-    "data": {
-      "newEraIndex": "(rounded 1000)",
-    },
-    "method": "CurrentEraBumped",
-    "section": "homa",
+    "data": [
+      "(hash)",
+      {
+        "Complete": 4000000000,
+      },
+    ],
+    "method": "ExecutedUpward",
+    "section": "ump",
   },
 ]
 `;
 
-exports[`Acala <-> Polkadot > Homa stake works > system events 1`] = `[]`;
-
-exports[`Acala <-> Polkadot > Homa stake works > ump 1`] = `
+exports[`Acala <-> Polkadot > Acala transfer assets to polkadot > ump 1`] = `
 [
   {
     "v2": [
@@ -69,7 +70,7 @@ exports[`Acala <-> Polkadot > Homa stake works > ump 1`] = `
         "withdrawAsset": [
           {
             "fun": {
-              "fungible": 2345508630004,
+              "fungible": 1000000000000,
             },
             "id": {
               "concrete": {
@@ -89,7 +90,203 @@ exports[`Acala <-> Polkadot > Homa stake works > ump 1`] = `
         "buyExecution": {
           "fees": {
             "fun": {
-              "fungible": 2345508630004,
+              "fungible": 1000000000000,
+            },
+            "id": {
+              "concrete": {
+                "interior": {
+                  "here": null,
+                },
+                "parents": 0,
+              },
+            },
+          },
+          "weightLimit": {
+            "unlimited": null,
+          },
+        },
+      },
+      {
+        "depositAsset": {
+          "assets": {
+            "wild": {
+              "all": null,
+            },
+          },
+          "beneficiary": {
+            "interior": {
+              "x1": {
+                "accountId32": {
+                  "id": "0x88dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee",
+                  "network": {
+                    "any": null,
+                  },
+                },
+              },
+            },
+            "parents": 0,
+          },
+          "maxAssets": 1,
+        },
+      },
+    ],
+  },
+]
+`;
+
+exports[`Acala <-> Polkadot > Acala transfer assets to polkadot 1`] = `
+{
+  "consumers": 0,
+  "data": {
+    "feeFrozen": 0,
+    "free": 10000000000000,
+    "miscFrozen": 0,
+    "reserved": 0,
+  },
+  "nonce": 0,
+  "providers": 0,
+  "sufficients": 0,
+}
+`;
+
+exports[`Acala <-> Polkadot > Acala transfer assets to polkadot 2`] = `
+{
+  "free": 9000000000000,
+  "frozen": 0,
+  "reserved": 0,
+}
+`;
+
+exports[`Acala <-> Polkadot > Homa redeem unbond works > events 1`] = `
+[
+  {
+    "data": {
+      "allowFastMatch": false,
+      "liquidAmount": 10000000000000,
+      "redeemer": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+    },
+    "method": "RequestedRedeem",
+    "section": "homa",
+  },
+]
+`;
+
+exports[`Acala <-> Polkadot > Homa redeem unbond works > events 2`] = `
+[
+  {
+    "data": {
+      "newEraIndex": "(rounded 1000)",
+    },
+    "method": "CurrentEraBumped",
+    "section": "homa",
+  },
+  {
+    "data": {
+      "eraIndexWhenUnbond": "(rounded 1000)",
+      "liquidAmount": 10000000000000,
+      "redeemer": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+      "unbondingStakingAmount": "(rounded 1200000000000)",
+    },
+    "method": "RedeemedByUnbond",
+    "section": "homa",
+  },
+]
+`;
+
+exports[`Acala <-> Polkadot > Homa redeem unbond works > system events 1`] = `
+[
+  {
+    "data": {
+      "amount": "(rounded 1200000000000)",
+      "stash": "15sr8Dvq3AT3Z2Z1y8FnQ4VipekAHhmQnrkgzegUr1tNgbcn",
+    },
+    "method": "Unbonded",
+    "section": "staking",
+  },
+  {
+    "data": [
+      "(hash)",
+      {
+        "Complete": "(rounded 11000000000)",
+      },
+    ],
+    "method": "ExecutedUpward",
+    "section": "ump",
+  },
+]
+`;
+
+exports[`Acala <-> Polkadot > Homa stake works > events 1`] = `
+[
+  {
+    "data": {
+      "liquidAmountAddedToVoid": "(rounded 3000000000)",
+      "liquidAmountReceived": "(rounded 8400000000000)",
+      "minter": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+      "stakingCurrencyAmount": 1000000000000,
+    },
+    "method": "Minted",
+    "section": "homa",
+  },
+]
+`;
+
+exports[`Acala <-> Polkadot > Homa stake works > events 2`] = `
+[
+  {
+    "data": {
+      "newEraIndex": "(rounded 1000)",
+    },
+    "method": "CurrentEraBumped",
+    "section": "homa",
+  },
+]
+`;
+
+exports[`Acala <-> Polkadot > Homa stake works > system events 1`] = `
+[
+  {
+    "data": [
+      "(hash)",
+      {
+        "Complete": 4000000000,
+      },
+    ],
+    "method": "ExecutedUpward",
+    "section": "ump",
+  },
+]
+`;
+
+exports[`Acala <-> Polkadot > Homa stake works > ump 1`] = `
+[
+  {
+    "v2": [
+      {
+        "withdrawAsset": [
+          {
+            "fun": {
+              "fungible": 3345508630004,
+            },
+            "id": {
+              "concrete": {
+                "interior": {
+                  "here": null,
+                },
+                "parents": 0,
+              },
+            },
+          },
+        ],
+      },
+      {
+        "clearOrigin": null,
+      },
+      {
+        "buyExecution": {
+          "fees": {
+            "fun": {
+              "fungible": 3345508630004,
             },
             "id": {
               "concrete": {
@@ -172,7 +369,7 @@ exports[`Acala <-> Polkadot > Homa stake works > ump 1`] = `
       {
         "transact": {
           "call": {
-            "encoded": "0x1a01000007010bf4a39adf2102",
+            "encoded": "0x1a01000007010bf4b33fb40a03",
           },
           "originType": "SovereignAccount",
           "requireWeightAtMost": 10000000000,
@@ -243,7 +440,7 @@ exports[`Acala <-> Polkadot > Homa stake works > ump 1`] = `
       {
         "transact": {
           "call": {
-            "encoded": "0x1a01000007020735468cf5b0",
+            "encoded": "0x1a01000007020709758cf5b0",
           },
           "originType": "SovereignAccount",
           "requireWeightAtMost": 10000000000,

@@ -1,1 +1,1 @@
-export * from '@acala-network/chopsticks-tests'
+export * from '@acala-network/chopsticks-testing'

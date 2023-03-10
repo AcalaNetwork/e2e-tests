@@ -36,7 +36,28 @@ exports[`Karura <-> Kusama > Homa redeem unbond works > events 2`] = `
 ]
 `;
 
-exports[`Karura <-> Kusama > Homa redeem unbond works > system events 1`] = `[]`;
+exports[`Karura <-> Kusama > Homa redeem unbond works > system events 1`] = `
+[
+  {
+    "data": {
+      "amount": "(rounded 1300000000000)",
+      "stash": "FDVu3RdH5WsE2yTdXN3QMq6v1XVDK8GKjhq5oFjXe8wZYpL",
+    },
+    "method": "Unbonded",
+    "section": "staking",
+  },
+  {
+    "data": [
+      "(hash)",
+      {
+        "Complete": "(rounded 15000000000)",
+      },
+    ],
+    "method": "ExecutedUpward",
+    "section": "ump",
+  },
+]
+`;
 
 exports[`Karura <-> Kusama > Homa stake works > events 1`] = `
 [
@@ -65,7 +86,38 @@ exports[`Karura <-> Kusama > Homa stake works > events 2`] = `
 ]
 `;
 
-exports[`Karura <-> Kusama > Homa stake works > system events 1`] = `[]`;
+exports[`Karura <-> Kusama > Homa stake works > system events 1`] = `
+[
+  {
+    "data": [
+      "(hash)",
+      {
+        "Complete": "(rounded 300000000)",
+      },
+    ],
+    "method": "ExecutedUpward",
+    "section": "ump",
+  },
+  {
+    "data": {
+      "amount": 990000000000,
+      "stash": "EMrKvFy7xLgzzdgruXT9oXERt553igEScqgSjoDm3GewPSA",
+    },
+    "method": "Bonded",
+    "section": "staking",
+  },
+  {
+    "data": [
+      "(hash)",
+      {
+        "Complete": "(rounded 20000000000)",
+      },
+    ],
+    "method": "ExecutedUpward",
+    "section": "ump",
+  },
+]
+`;
 
 exports[`Karura <-> Kusama > Homa stake works > ump 1`] = `
 [
@@ -257,7 +309,20 @@ exports[`Karura <-> Kusama > Karura transfer assets to kusama > events 1`] = `
 ]
 `;
 
-exports[`Karura <-> Kusama > Karura transfer assets to kusama > system events 1`] = `[]`;
+exports[`Karura <-> Kusama > Karura transfer assets to kusama > system events 1`] = `
+[
+  {
+    "data": [
+      "(hash)",
+      {
+        "Complete": "(rounded 300000000)",
+      },
+    ],
+    "method": "ExecutedUpward",
+    "section": "ump",
+  },
+]
+`;
 
 exports[`Karura <-> Kusama > Karura transfer assets to kusama > ump 1`] = `
 [

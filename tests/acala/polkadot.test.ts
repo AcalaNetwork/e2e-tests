@@ -23,8 +23,8 @@ describe('Acala <-> Polkadot', async () => {
       },
       Tokens: {
         Accounts: [
-          [[alice.address, { Token: 'KSM' }], { free: 10 * 1e12 }],
-          [[alice.address, { Token: 'LKSM' }], { free: 100 * 1e12 }],
+          [[alice.address, { Token: 'DOT' }], { free: 10 * 1e12 }],
+          [[alice.address, { Token: 'LDOT' }], { free: 100 * 1e12 }],
         ],
       },
       Sudo: {
@@ -43,7 +43,7 @@ describe('Acala <-> Polkadot', async () => {
       acala.api.tx.xTokens
         .transfer(
           {
-            Token: 'KSM',
+            Token: 'DOT',
           },
           1e12,
           {
@@ -73,7 +73,7 @@ describe('Acala <-> Polkadot', async () => {
 
     await polkadot.chain.newBlock()
 
-    matchJson(await acala.api.query.tokens.accounts(alice.address, { Token: 'KSM' }))
+    matchJson(await acala.api.query.tokens.accounts(alice.address, { Token: 'DOT' }))
 
     await matchSystemEvents(polkadot, 'ump')
   })
