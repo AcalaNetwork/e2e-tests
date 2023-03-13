@@ -1,72 +1,6 @@
-import { AccountInfo } from '@polkadot/types/interfaces'
-import { ApiPromise, WsProvider } from '@polkadot/api'
-import { BuildBlockMode, setupWithServer } from '@acala-network/chopsticks'
+import { ApiPromise } from '@polkadot/api'
 import { Codec } from '@polkadot/types/types'
-import { HexString } from '@polkadot/util/types'
-import { Keyring } from '@polkadot/keyring'
-import { StorageValues } from '@acala-network/chopsticks/lib/utils/set-storage'
-import { SubmittableExtrinsic } from '@polkadot/api-base/types'
 import { expect } from 'vitest'
-
-export type SetupOption = {
-  endpoint: string
-  blockNumber?: number
-  blockHash?: HexString
-  wasmOverride?: string
-  db?: string
-}
-
-export const setupContext = async ({ endpoint, blockNumber, blockHash, wasmOverride, db }: SetupOption) => {
-  // random port
-  const port = Math.floor(Math.random() * 10000) + 10000
-  const config = {
-    endpoint,
-    port,
-    block: blockNumber || blockHash,
-    mockSignatureHost: true,
-    'build-block-mode': BuildBlockMode.Manual,
-    db,
-    'wasm-override': wasmOverride,
-  }
-  const { chain, listenPort, close } = await setupWithServer(config)
-
-  const ws = new WsProvider(`ws://localhost:${listenPort}`)
-  const api = await ApiPromise.create({
-    provider: ws,
-    signedExtensions: {
-      SetEvmOrigin: {
-        extrinsic: {},
-        payload: {},
-      },
-    },
-  })
-
-  await api.isReady
-
-  return {
-    chain,
-    ws,
-    api,
-    dev: {
-      newBlock: (param?: { count?: number; to?: number }): Promise<string> => {
-        return ws.send('dev_newBlock', [param])
-      },
-      setStorage: (values: StorageValues, blockHash?: string) => {
-        return ws.send('dev_setStorage', [values, blockHash])
-      },
-      timeTravel: (date: string | number) => {
-        return ws.send<number>('dev_timeTravel', [date])
-      },
-      setHead: (hashOrNumber: string | number) => {
-        return ws.send('dev_setHead', [hashOrNumber])
-      },
-    },
-    async teardown() {
-      await api.disconnect()
-      await close()
-    },
-  }
-}
 
 type CodecOrArray = Codec | Codec[]
 
@@ -74,149 +8,193 @@ const processCodecOrArray = (codec: CodecOrArray, fn: (c: Codec) => any) =>
   Array.isArray(codec) ? codec.map(fn) : fn(codec)
 
 const toHuman = (codec: CodecOrArray) => processCodecOrArray(codec, (c) => c?.toHuman?.() ?? c)
-const toJson = (codec: CodecOrArray) => processCodecOrArray(codec, (c) => c?.toJSON?.() ?? c)
 const toHex = (codec: CodecOrArray) => processCodecOrArray(codec, (c) => c?.toHex?.() ?? c)
-
-export const matchSnapshot = (codec: CodecOrArray | Promise<CodecOrArray>, message?: string) => {
-  return expect(Promise.resolve(codec).then(toHuman)).resolves.toMatchSnapshot(message)
-}
-
-export const expectEvent = (codec: CodecOrArray, event: any) => {
-  return expect(toHuman(codec)).toEqual(expect.arrayContaining([expect.objectContaining(event)]))
-}
-
-export const expectHuman = (codec: CodecOrArray) => {
-  return expect(toHuman(codec))
-}
-
-export const expectJson = (codec: CodecOrArray) => {
-  return expect(toJson(codec))
-}
-
-export const expectHex = (codec: CodecOrArray) => {
-  return expect(toHex(codec))
-}
+const toJson = (codec: CodecOrArray) => processCodecOrArray(codec, (c) => c?.toJSON?.() ?? c)
 
 type EventFilter = string | { method: string; section: string }
 
-const _matchEvents = async (msg: string, events: Promise<Codec[] | Codec>, ...filters: EventFilter[]) => {
-  let data = toHuman(await events).map(({ event: { index: _, ...event } }: any) => event)
-  if (filters.length > 0) {
-    const filtersArr = Array.isArray(filters) ? filters : [filters]
-    data = data.filter((evt: any) => {
-      return filtersArr.some((filter) => {
-        if (typeof filter === 'string') {
-          return evt.section === filter
-        }
-        const { section, method } = filter
-        return evt.section === section && evt.method === method
-      })
-    })
+export type RedactOptions = {
+  number?: boolean | number // precision
+  hash?: boolean // 32 byte hex
+  hex?: boolean // any hex with 0x prefix
+  address?: boolean // base58 address
+}
+
+export class Checker {
+  readonly #value: any
+  readonly #pipeline: Array<(value: any) => any> = []
+
+  #format: 'human' | 'hex' | 'json' = 'json'
+  #message: string | undefined
+  #redactOptions: RedactOptions | undefined
+
+  constructor(value: any, message?: string) {
+    this.#value = value
+    this.#message = message
   }
-  return expect(data).toMatchSnapshot(msg)
-}
 
-export const matchEvents = async (events: Promise<Codec[] | Codec>, ...filters: EventFilter[]) => {
-  return _matchEvents('events', redact(events), ...filters)
-}
+  toHuman() {
+    this.#format = 'human'
+    return this
+  }
 
-export const matchSystemEvents = async ({ api }: { api: ApiPromise }, ...filters: EventFilter[]) => {
-  await _matchEvents('system events', redact(api.query.system.events()), ...filters)
-}
+  toHex() {
+    this.#format = 'hex'
+    return this
+  }
 
-export const matchUmp = async ({ api }: { api: ApiPromise }) => {
-  expect(await api.query.parachainSystem.upwardMessages()).toMatchSnapshot('ump')
-}
+  toJson() {
+    this.#format = 'json'
+    return this
+  }
 
-export const matchHrmp = async ({ api }: { api: ApiPromise }) => {
-  expect(await api.query.parachainSystem.hrmpOutboundMessages()).toMatchSnapshot('hrmp')
-}
+  filterEvents(...filters: EventFilter[]) {
+    this.toHuman()
+    this.#pipeline.push((value) => {
+      let data = value.map(({ event: { index: _, ...event } }: any) => event)
+      if (filters.length > 0) {
+        data = data.filter((evt: any) => {
+          return filters.some((filter) => {
+            if (typeof filter === 'string') {
+              return evt.section === filter
+            } else if ('method' in filter) {
+              const { section, method } = filter
+              return evt.section === section && evt.method === method
+            }
+          })
+        })
+      }
+      return data
+    })
+    return this
+  }
 
-export const redact = async (data: any | Promise<any>) => {
-  const json = toHuman(await data)
-
-  const process = (obj: any): any => {
-    if (obj == null) {
-      return obj
+  redact(options: RedactOptions = { number: 2, hash: true }) {
+    this.#redactOptions = {
+      ...this.#redactOptions,
+      ...options,
     }
-    if (Array.isArray(obj)) {
-      return obj.map(process)
+    return this
+  }
+
+  #redact(value: any) {
+    if (!this.#redactOptions) {
+      return value
     }
-    if (typeof obj === 'number') {
-      return '(redacted)'
+
+    const redactNumber = this.#redactOptions.number === true || typeof this.#redactOptions.number === 'number'
+    const precision = redactNumber
+      ? typeof this.#redactOptions.number === 'number'
+        ? this.#redactOptions.number
+        : 0
+      : 0
+    const redactHash = this.#redactOptions.hash === true
+    const redactHex = this.#redactOptions.hex === true
+    const redactAddress = this.#redactOptions.address === true
+
+    const processNumber = (value: number) => {
+      if (precision > 0) {
+        const rounded = parseFloat(value.toPrecision(precision))
+        if (rounded === value) {
+          return rounded
+        }
+        return `(rounded ${rounded})`
+      }
+      return '(number)'
     }
-    if (typeof obj === 'string') {
-      if (obj.match(/^[\d,]+$/) || obj.match(/0x[0-9a-f]{64}/)) {
-        return '(redacted)'
+
+    const process = (obj: any): any => {
+      if (obj == null) {
+        return obj
+      }
+      if (Array.isArray(obj)) {
+        return obj.map(process)
+      }
+      if (redactNumber && typeof obj === 'number') {
+        return processNumber(obj)
+      }
+      if (typeof obj === 'string') {
+        if (redactHash && obj.match(/0x[0-9a-f]{64}/)) {
+          return '(hash)'
+        }
+        if (redactHex && obj.match(/0x[0-9a-f]+/)) {
+          return '(hex)'
+        }
+        if (redactAddress && obj.match(/^[1-9A-HJ-NP-Za-km-z]{46,48}$/)) {
+          return '(address)'
+        }
+        if (redactNumber && obj.match(/^[\d,]+$/)) {
+          const num = parseInt(obj.replace(/,/g, ''))
+          return processNumber(num)
+        }
+        return obj
+      }
+      if (typeof obj === 'object') {
+        return Object.fromEntries(Object.entries(obj).map(([k, v]) => [k, process(v)]))
       }
       return obj
     }
-    if (typeof obj === 'object') {
-      return Object.fromEntries(Object.entries(obj).map(([k, v]) => [k, process(v)]))
-    }
-    return obj
+
+    return process(value)
   }
 
-  return process(json)
-}
+  map(fn: (value: any) => any) {
+    this.#pipeline.push(fn)
+    return this
+  }
 
-export const expectExtrinsicSuccess = (events: Codec[]) => {
-  expectEvent(events, {
-    event: expect.objectContaining({
-      method: 'ExtrinsicSuccess',
-      section: 'system',
-    }),
-  })
-}
+  async value() {
+    let value = await this.#value
 
-export function defer<T>() {
-  const deferred = {} as { resolve: (value: any) => void; reject: (reason: any) => void; promise: Promise<T> }
-  deferred.promise = new Promise((resolve, reject) => {
-    deferred.resolve = resolve
-    deferred.reject = reject
-  })
-  return deferred
-}
-
-export const sendTransaction = async (tx: Promise<SubmittableExtrinsic<'promise'>>) => {
-  const signed = await tx
-  const deferred = defer<Codec[]>()
-  await signed.send((status) => {
-    if (status.isCompleted) {
-      deferred.resolve(status.events)
+    switch (this.#format) {
+      case 'human':
+        value = toHuman(value)
+        break
+      case 'hex':
+        value = toHex(value)
+        break
+      case 'json':
+        value = toJson(value)
+        break
     }
-    if (status.isError) {
-      deferred.reject(status.status)
-    }
-  })
 
-  return {
-    events: deferred.promise,
+    for (const fn of this.#pipeline) {
+      value = await fn(value)
+    }
+
+    value = this.#redact(value)
+
+    return value
+  }
+
+  async toMatchSnapshot(msg?: string) {
+    return expect(await this.value()).toMatchSnapshot(msg ?? this.#message)
   }
 }
 
-export const balance = async (api: ApiPromise, address: string) => {
-  const account = await api.query.system.account<AccountInfo>(address)
-  return account.data.toJSON()
-}
+export const check = (value: any, msg?: string) => new Checker(value, msg)
 
-export const testingPairs = (ss58Format?: number) => {
-  const keyring = new Keyring({ type: 'ed25519', ss58Format }) // cannot use sr25519 as it is non determinstic
-  const alice = keyring.addFromUri('//Alice')
-  const bob = keyring.addFromUri('//Bob')
-  const charlie = keyring.addFromUri('//Charlie')
-  const dave = keyring.addFromUri('//Dave')
-  const eve = keyring.addFromUri('//Eve')
-  const test1 = keyring.addFromUri('//test1')
-  const test2 = keyring.addFromUri('//test2')
-  return {
-    alice,
-    bob,
-    charlie,
-    dave,
-    eve,
-    test1,
-    test2,
-    keyring,
-  }
-}
+export const checkEvents = ({ events }: { events: Promise<Codec[] | Codec> }, ...filters: EventFilter[]) =>
+  check(events, 'events')
+    .filterEvents(...filters)
+    .redact()
+
+export const checkSystemEvents = ({ api }: { api: ApiPromise }, ...filters: EventFilter[]) =>
+  check(api.query.system.events(), 'system events')
+    .filterEvents(...filters)
+    .redact()
+
+export const checkUmp = ({ api }: { api: ApiPromise }) =>
+  check(api.query.parachainSystem.upwardMessages(), 'ump').map((value) =>
+    api.createType('Vec<XcmVersionedXcm>', value).toJSON()
+  )
+
+export const checkHrmp = ({ api }: { api: ApiPromise }) =>
+  check(api.query.parachainSystem.hrmpOutboundMessages(), 'hrmp').map((value) =>
+    (value as any[]).map(({ recipient, data }) => ({
+      data: api.createType('(XcmpMessageFormat, XcmVersionedXcm)', data),
+      recipient,
+    }))
+  )
+
+export { SetupOption, setupContext, defer, sendTransaction, testingPairs } from '@acala-network/chopsticks-testing'

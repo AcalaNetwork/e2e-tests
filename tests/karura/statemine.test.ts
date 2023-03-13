@@ -1,15 +1,7 @@
 import { afterAll, describe, expect, it } from 'vitest'
 import { connectParachains } from '@acala-network/chopsticks'
 
-import {
-  balance,
-  expectJson,
-  matchEvents,
-  matchHrmp,
-  matchSystemEvents,
-  sendTransaction,
-  testingPairs,
-} from '../helper'
+import { checkEvents, checkHrmp, checkSystemEvents, sendTransaction, testingPairs } from '../helper'
 import { xTokensTransferMulticurrencies } from '../api/extrinsics'
 import networks from '../networks'
 
@@ -25,7 +17,7 @@ describe('Karura <-> Statemine', async () => {
     await karura.teardown()
   })
 
-  it('0. Statemine transfer assets to Karura', async () => {
+  it('Statemine transfer assets to Karura', async () => {
     // give Alice some KSM and USDt
     await statemine.dev.setStorage({
       System: {
@@ -37,12 +29,18 @@ describe('Karura <-> Statemine', async () => {
     })
 
     // ensure balance was given
-    expect(await balance(statemine.api, alice.address)).toMatchInlineSnapshot(`
+    expect(await statemine.api.query.system.account(alice.address)).toMatchInlineSnapshot(`
       {
-        "feeFrozen": 0,
-        "free": 10000000000000,
-        "miscFrozen": 0,
-        "reserved": 0,
+        "consumers": 0,
+        "data": {
+          "feeFrozen": 0,
+          "free": 10000000000000,
+          "miscFrozen": 0,
+          "reserved": 0,
+        },
+        "nonce": 0,
+        "providers": 0,
+        "sufficients": 0,
       }
     `)
     expect((await statemine.api.query.assets.account(1984, alice.address)).toHuman()).toMatchInlineSnapshot(`
@@ -89,25 +87,25 @@ describe('Karura <-> Statemine', async () => {
       .signAndSend(alice)
 
     await statemine.chain.newBlock()
-    await karura.chain.upcomingBlock()
+    await karura.chain.newBlock()
 
-    expect(await balance(statemine.api, alice.address)).toMatchInlineSnapshot(`
+    expect(await statemine.api.query.system.account(alice.address)).toMatchInlineSnapshot(`
       {
-        "feeFrozen": 0,
-        "free": 9999937253833,
-        "miscFrozen": 0,
-        "reserved": 0,
+        "consumers": 0,
+        "data": {
+          "feeFrozen": 0,
+          "free": 9999937253833,
+          "miscFrozen": 0,
+          "reserved": 0,
+        },
+        "nonce": 1,
+        "providers": 0,
+        "sufficients": 0,
       }
     `)
-    await matchSystemEvents(statemine, {
-      section: 'polkadotXcm',
-      method: 'Attempted',
-    })
+    await checkSystemEvents(statemine, 'polkadotXcm').toMatchSnapshot()
 
-    await matchSystemEvents(karura, {
-      section: 'xcmpQueue',
-      method: 'Success',
-    })
+    await checkSystemEvents(karura, 'xcmpQueue').toMatchSnapshot()
 
     // ensure Alice got the money
     expect((await karura.api.query.tokens.accounts(alice.address, { ForeignAsset: '7' })).toHuman())
@@ -120,7 +118,7 @@ describe('Karura <-> Statemine', async () => {
     `)
   })
 
-  it('1. Karura transfer assets to Statemine', async () => {
+  it('Karura transfer assets to Statemine', async () => {
     await karura.dev.setStorage({
       System: {
         Account: [[[alice.address], { data: { free: 1000 * 1e10 } }]],
@@ -129,20 +127,32 @@ describe('Karura <-> Statemine', async () => {
         Accounts: [[[alice.address, { Token: 'KSM' }], { free: 10 * 1e12 }]],
       },
     })
-    expect(await balance(statemine.api, alice.address)).toMatchInlineSnapshot(`
+    expect(await statemine.api.query.system.account(alice.address)).toMatchInlineSnapshot(`
       {
-        "feeFrozen": 0,
-        "free": 9999937253833,
-        "miscFrozen": 0,
-        "reserved": 0,
+        "consumers": 0,
+        "data": {
+          "feeFrozen": 0,
+          "free": 9999937253833,
+          "miscFrozen": 0,
+          "reserved": 0,
+        },
+        "nonce": 1,
+        "providers": 0,
+        "sufficients": 0,
       }
     `)
-    expect(await balance(karura.api, alice.address)).toMatchInlineSnapshot(`
+    expect(await karura.api.query.system.account(alice.address)).toMatchInlineSnapshot(`
       {
-        "feeFrozen": 0,
-        "free": 10000000000000,
-        "miscFrozen": 0,
-        "reserved": 0,
+        "consumers": 0,
+        "data": {
+          "feeFrozen": 0,
+          "free": 10000000000000,
+          "miscFrozen": 0,
+          "reserved": 0,
+        },
+        "nonce": 0,
+        "providers": 0,
+        "sufficients": 0,
       }
     `)
     expect((await karura.api.query.tokens.accounts(alice.address, { ForeignAsset: '7' })).toHuman())
@@ -157,9 +167,8 @@ describe('Karura <-> Statemine', async () => {
       xTokensTransferMulticurrencies(karura.api, '7', '9999192', '1000', bob.addressRaw).signAsync(alice)
     )
     await karura.chain.newBlock()
-    await statemine.chain.upcomingBlock()
 
-    expectJson(await karura.api.query.tokens.accounts(alice.address, { ForeignAsset: '7' })).toMatchInlineSnapshot(`
+    expect(await karura.api.query.tokens.accounts(alice.address, { ForeignAsset: '7' })).toMatchInlineSnapshot(`
       {
         "free": 0,
         "frozen": 0,
@@ -167,13 +176,13 @@ describe('Karura <-> Statemine', async () => {
       }
     `)
 
-    await matchEvents(tx.events, 'xTokens', 'TransferredMultiAssets', 'xcmpQueue')
-    await matchHrmp(karura)
-    await matchSystemEvents(statemine, {
-      section: 'xcmpQueue',
-      method: 'Success',
-    })
-    expectJson(await statemine.api.query.assets.account(1984, bob.address)).toMatchInlineSnapshot(`
+    await checkEvents(tx, 'xTokens', 'TransferredMultiAssets', 'xcmpQueue').toMatchSnapshot()
+    await checkHrmp(karura).toMatchSnapshot()
+
+    await statemine.chain.newBlock()
+
+    await checkSystemEvents(statemine, 'xcmpQueue').toMatchSnapshot()
+    expect(await statemine.api.query.assets.account(1984, bob.address)).toMatchInlineSnapshot(`
       {
         "balance": 9999192,
         "extra": null,
@@ -183,11 +192,5 @@ describe('Karura <-> Statemine', async () => {
         },
       }
     `)
-    // expectEvent(await statemine.api.query.system.events(), {
-    //   event: expect.objectContaining({
-    //     section: 'xcmpQueue',
-    //     method: 'Success'
-    //   })
-    // })
   })
 })

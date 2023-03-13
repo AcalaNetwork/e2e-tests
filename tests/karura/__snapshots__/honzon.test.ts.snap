@@ -1,14 +1,14 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Karura <-> Kusama > honzon deposit and debit works > events 1`] = `
+exports[`Karura honzon > honzon deposit and debit works > events 1`] = `
 [
   {
     "data": {
-      "collateralAdjustment": "(redacted)",
+      "collateralAdjustment": 50000000000000,
       "collateralType": {
         "Token": "KSM",
       },
-      "debitAdjustment": "(redacted)",
+      "debitAdjustment": 500000000000000,
       "owner": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
     },
     "method": "PositionUpdated",
@@ -17,7 +17,7 @@ exports[`Karura <-> Kusama > honzon deposit and debit works > events 1`] = `
 ]
 `;
 
-exports[`Karura <-> Kusama > honzon payback works > events 1`] = `
+exports[`Karura honzon > honzon payback works > events 1`] = `
 [
   {
     "data": {
@@ -34,15 +34,15 @@ exports[`Karura <-> Kusama > honzon payback works > events 1`] = `
 ]
 `;
 
-exports[`Karura <-> Kusama > loans by Dex close works > events 1`] = `
+exports[`Karura honzon > loans by Dex close works > events 1`] = `
 [
   {
     "data": {
-      "collateralAdjustment": "(redacted)",
+      "collateralAdjustment": 50000000000000,
       "collateralType": {
         "Token": "KSM",
       },
-      "debitAdjustment": "(redacted)",
+      "debitAdjustment": 500000000000000,
       "owner": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
     },
     "method": "PositionUpdated",
@@ -51,7 +51,7 @@ exports[`Karura <-> Kusama > loans by Dex close works > events 1`] = `
 ]
 `;
 
-exports[`Karura <-> Kusama > loans by Dex close works > events 2`] = `
+exports[`Karura honzon > loans by Dex close works > events 2`] = `
 [
   {
     "data": {
@@ -70,10 +70,10 @@ exports[`Karura <-> Kusama > loans by Dex close works > events 2`] = `
       "collateralType": {
         "Token": "KSM",
       },
-      "debitValue": "(redacted)",
+      "debitValue": "(rounded 50000000000000)",
       "owner": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-      "refundCollateralAmount": "(redacted)",
-      "soldCollateralAmount": "(redacted)",
+      "refundCollateralAmount": "(rounded 50000000000000)",
+      "soldCollateralAmount": "(rounded 1000000000000)",
     },
     "method": "CloseCDPInDebitByDEX",
     "section": "cdpEngine",

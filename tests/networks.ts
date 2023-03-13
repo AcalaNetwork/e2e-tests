@@ -22,6 +22,8 @@ const toNumber = (value: string | undefined): number | undefined => {
   return Number(value)
 }
 
+export type Network = Awaited<ReturnType<typeof setupContext>>
+
 export default {
   polkadot: (options?: Partial<SetupOption>) =>
     setupContext({
