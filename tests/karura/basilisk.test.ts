@@ -1,11 +1,11 @@
-import { beforeEach, describe, it } from 'vitest'
+import { beforeEach, describe, expect, it } from 'vitest'
 import { connectParachains } from '@acala-network/chopsticks'
 
-import { expectJson, matchEvents, matchHrmp, matchSystemEvents, sendTransaction, testingPairs } from '../helper'
+import { checkEvents, checkHrmp, checkSystemEvents, sendTransaction, testingPairs } from '../helper'
 import { xTokens } from '../api/extrinsics'
 import networks, { Network } from '../networks'
 
-describe('Karura <-> Basilisk', async () => {
+describe('Karura <-> Basilisk', () => {
   let basilisk: Network
   let karura: Network
 
@@ -55,7 +55,7 @@ describe('Karura <-> Basilisk', async () => {
 
     await karura.chain.newBlock()
 
-    await matchEvents(tx0.events, 'currencies')
+    await checkEvents(tx0, 'currencies').toMatchSnapshot()
 
     const tx1 = await sendTransaction(
       xTokens(karura.api, false, '2090', { Erc20: DAI }, '1000000000000000000', alice.addressRaw).signAsync(alice)
@@ -63,8 +63,8 @@ describe('Karura <-> Basilisk', async () => {
 
     await karura.chain.newBlock()
 
-    await matchEvents(tx1.events, 'xTokens', 'xcmpQueue', 'evm')
-    await matchHrmp(karura)
+    await checkEvents(tx1, 'xTokens', 'xcmpQueue', 'evm').toMatchSnapshot()
+    await checkHrmp(karura).toMatchSnapshot()
 
     // await basilisk.chain.newBlock({ timeout: 1000 })
     // expectJson(await basilisk.api.query.tokens.accounts(alice, '13')).toMatchInlineSnapshot(`
@@ -89,7 +89,7 @@ describe('Karura <-> Basilisk', async () => {
 
     await karura.chain.newBlock()
 
-    await matchEvents(tx0.events, 'currencies')
+    await checkEvents(tx0, 'currencies').toMatchSnapshot()
 
     const tx1 = await sendTransaction(
       xTokens(karura.api, false, '2090', { Erc20: USDC }, '1000000', alice.addressRaw).signAsync(alice)
@@ -97,18 +97,18 @@ describe('Karura <-> Basilisk', async () => {
 
     await karura.chain.newBlock()
 
-    await matchEvents(tx1.events, 'xTokens', 'xcmpQueue', 'evm')
-    await matchHrmp(karura)
+    await checkEvents(tx1, 'xTokens', 'xcmpQueue', 'evm').toMatchSnapshot()
+    await checkHrmp(karura).toMatchSnapshot()
 
     await basilisk.chain.newBlock()
-    expectJson(await basilisk.api.query.tokens.accounts(alice.address, '9')).toMatchInlineSnapshot(`
+
+    expect(await basilisk.api.query.tokens.accounts(alice.address, '9')).toMatchInlineSnapshot(`
       {
         "free": 995600,
         "frozen": 0,
         "reserved": 0,
       }
     `)
-
-    await matchSystemEvents(basilisk, 'xcmpQueue', 'tokens')
+    await checkSystemEvents(basilisk, 'xcmpQueue', 'tokens').toMatchSnapshot()
   })
 })

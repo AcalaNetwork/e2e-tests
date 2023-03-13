@@ -1,36 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Karura <-> Statemine > 0. Statemine transfer assets to Karura > system events 1`] = `
-[
-  {
-    "data": [
-      {
-        "Complete": "(rounded 650000000)",
-      },
-    ],
-    "method": "Attempted",
-    "section": "polkadotXcm",
-  },
-]
-`;
-
-exports[`Karura <-> Statemine > 0. Statemine transfer assets to Karura > system events 2`] = `
-[
-  {
-    "data": {
-      "messageHash": "(hash)",
-      "weight": {
-        "proofSize": 0,
-        "refTime": 800000000,
-      },
-    },
-    "method": "Success",
-    "section": "xcmpQueue",
-  },
-]
-`;
-
-exports[`Karura <-> Statemine > 1. Karura transfer assets to Statemine > events 1`] = `
+exports[`Karura <-> Statemine > Karura transfer assets to Statemine > events 1`] = `
 [
   {
     "data": {
@@ -112,7 +82,7 @@ exports[`Karura <-> Statemine > 1. Karura transfer assets to Statemine > events 
 ]
 `;
 
-exports[`Karura <-> Statemine > 1. Karura transfer assets to Statemine > hrmp 1`] = `
+exports[`Karura <-> Statemine > Karura transfer assets to Statemine > hrmp 1`] = `
 [
   {
     "data": [
@@ -210,7 +180,7 @@ exports[`Karura <-> Statemine > 1. Karura transfer assets to Statemine > hrmp 1`
 ]
 `;
 
-exports[`Karura <-> Statemine > 1. Karura transfer assets to Statemine > system events 1`] = `
+exports[`Karura <-> Statemine > Karura transfer assets to Statemine > system events 1`] = `
 [
   {
     "data": {
@@ -218,6 +188,36 @@ exports[`Karura <-> Statemine > 1. Karura transfer assets to Statemine > system 
       "weight": {
         "proofSize": 0,
         "refTime": "(rounded 1300000000)",
+      },
+    },
+    "method": "Success",
+    "section": "xcmpQueue",
+  },
+]
+`;
+
+exports[`Karura <-> Statemine > Statemine transfer assets to Karura > system events 1`] = `
+[
+  {
+    "data": [
+      {
+        "Complete": "(rounded 650000000)",
+      },
+    ],
+    "method": "Attempted",
+    "section": "polkadotXcm",
+  },
+]
+`;
+
+exports[`Karura <-> Statemine > Statemine transfer assets to Karura > system events 2`] = `
+[
+  {
+    "data": {
+      "messageHash": "(hash)",
+      "weight": {
+        "proofSize": 0,
+        "refTime": 800000000,
       },
     },
     "method": "Success",
