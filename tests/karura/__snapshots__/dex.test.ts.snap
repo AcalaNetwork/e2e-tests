@@ -1,0 +1,102 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Karura <-> Kusama > stable swap works > events 1`] = `
+[
+  {
+    "data": {
+      "liquidityChanges": [
+        "(redacted)",
+        "(redacted)",
+      ],
+      "path": [
+        {
+          "Token": "KSM",
+        },
+        {
+          "Token": "KUSD",
+        },
+      ],
+      "trader": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "Swap",
+    "section": "dex",
+  },
+]
+`;
+
+exports[`Karura <-> Kusama > stable swap works > events 2`] = `
+[
+  {
+    "data": {
+      "a": "(redacted)",
+      "balances": [
+        "(redacted)",
+        "(redacted)",
+        "(redacted)",
+      ],
+      "inputAmount": "(redacted)",
+      "inputAsset": {
+        "Token": "KUSD",
+      },
+      "minOutputAmount": "(redacted)",
+      "outputAmount": "(redacted)",
+      "outputAsset": {
+        "ForeignAsset": "(redacted)",
+      },
+      "poolId": "(redacted)",
+      "swapper": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+      "totalSupply": "(redacted)",
+    },
+    "method": "TokenSwapped",
+    "section": "stableAsset",
+  },
+]
+`;
+
+exports[`Karura <-> Kusama > supply swap works > events 1`] = `
+[
+  {
+    "data": {
+      "liquidityChanges": [
+        "(redacted)",
+        "(redacted)",
+      ],
+      "path": [
+        {
+          "Token": "KSM",
+        },
+        {
+          "Token": "KUSD",
+        },
+      ],
+      "trader": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "Swap",
+    "section": "dex",
+  },
+]
+`;
+
+exports[`Karura <-> Kusama > target swap works > events 1`] = `
+[
+  {
+    "data": {
+      "liquidityChanges": [
+        "(redacted)",
+        "(redacted)",
+      ],
+      "path": [
+        {
+          "Token": "KSM",
+        },
+        {
+          "Token": "KUSD",
+        },
+      ],
+      "trader": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "Swap",
+    "section": "dex",
+  },
+]
+`;

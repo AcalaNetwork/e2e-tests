@@ -1,0 +1,82 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Karura <-> Kusama > honzon deposit and debit works > events 1`] = `
+[
+  {
+    "data": {
+      "collateralAdjustment": "(redacted)",
+      "collateralType": {
+        "Token": "KSM",
+      },
+      "debitAdjustment": "(redacted)",
+      "owner": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "PositionUpdated",
+    "section": "loans",
+  },
+]
+`;
+
+exports[`Karura <-> Kusama > honzon payback works > events 1`] = `
+[
+  {
+    "data": {
+      "collateralAdjustment": "-50,000,000,000,000",
+      "collateralType": {
+        "Token": "KSM",
+      },
+      "debitAdjustment": "-500,000,000,000,000",
+      "owner": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "PositionUpdated",
+    "section": "loans",
+  },
+]
+`;
+
+exports[`Karura <-> Kusama > loans by Dex close works > events 1`] = `
+[
+  {
+    "data": {
+      "collateralAdjustment": "(redacted)",
+      "collateralType": {
+        "Token": "KSM",
+      },
+      "debitAdjustment": "(redacted)",
+      "owner": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "PositionUpdated",
+    "section": "loans",
+  },
+]
+`;
+
+exports[`Karura <-> Kusama > loans by Dex close works > events 2`] = `
+[
+  {
+    "data": {
+      "collateralAdjustment": "-50,000,000,000,000",
+      "collateralType": {
+        "Token": "KSM",
+      },
+      "debitAdjustment": "-500,000,000,000,000",
+      "owner": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "PositionUpdated",
+    "section": "loans",
+  },
+  {
+    "data": {
+      "collateralType": {
+        "Token": "KSM",
+      },
+      "debitValue": "(redacted)",
+      "owner": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+      "refundCollateralAmount": "(redacted)",
+      "soldCollateralAmount": "(redacted)",
+    },
+    "method": "CloseCDPInDebitByDEX",
+    "section": "cdpEngine",
+  },
+]
+`;

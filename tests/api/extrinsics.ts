@@ -188,8 +188,37 @@ export const swapWithExactSupply = (api: ApiPromise, path: any[], supplyAmount: 
   return api.tx.dex.swapWithExactSupply(path, supplyAmount, minTargetAmount)
 }
 
+export const swapWithExactTarget = (api: ApiPromise, path: any[], targetAmount: string, maxSupplyAmount: string) => {
+  return api.tx.dex.swapWithExactTarget(path, targetAmount, maxSupplyAmount)
+}
+
+export const stableAssetSwap = (
+  api: ApiPromise,
+  poolId: string,
+  i: string,
+  j: string,
+  dx: string,
+  minDy: string,
+  assetLength: string
+) => {
+  return api.tx.stableAsset.swap(poolId, i, j, dx, minDy, assetLength)
+}
+
 export const adjustLoan = (api: ApiPromise, token: string, collateralAdjustment: string, debitAdjustment: string) => {
   return api.tx.honzon.adjustLoan({ Token: token }, collateralAdjustment, debitAdjustment)
+}
+
+export const adjustLoanByDebitValue = (
+  api: ApiPromise,
+  token: string,
+  collateralAdjustment: string,
+  debitValueAdjustment: string
+) => {
+  return api.tx.honzon.adjustLoanByDebitValue({ Token: token }, collateralAdjustment, debitValueAdjustment)
+}
+
+export const closeLoanHasDebitByDex = (api: ApiPromise, token: string, max_collateral_amount: string) => {
+  return api.tx.honzon.closeLoanHasDebitByDex({ Token: token }, max_collateral_amount)
 }
 
 export const mint = (api: ApiPromise, amount: string) => {
