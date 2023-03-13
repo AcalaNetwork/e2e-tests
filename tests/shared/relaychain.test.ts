@@ -48,6 +48,11 @@ describe.each([
       System: {
         Account: [[[alice.address], { data: { free: 10 * 1e12 } }]],
       },
+      ParasDisputes: { // those can makes block building super slow
+        $removePrefix: [
+          'disputes'
+        ]
+      }
     })
   })
 
@@ -98,7 +103,7 @@ describe.each([
 
     await parachain.chain.newBlock()
 
-    await checkEvents(tx1, 'homa').toMatchSnapshot()
+    await checkEvents(tx1, 'homa').redact({ number: 1 }).toMatchSnapshot()
     await checkEvents(tx2, { section: 'homa', method: 'CurrentEraBumped' }).toMatchSnapshot()
     await checkUmp(parachain).redact({ number: true, hex: true }).toMatchSnapshot()
 

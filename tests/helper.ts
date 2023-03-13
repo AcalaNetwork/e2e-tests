@@ -185,7 +185,9 @@ export const checkSystemEvents = ({ api }: { api: ApiPromise }, ...filters: Even
     .redact()
 
 export const checkUmp = ({ api }: { api: ApiPromise }) =>
-  check(api.query.parachainSystem.upwardMessages(), 'ump').map((value) => api.createType('Vec<XcmVersionedXcm>', value))
+  check(api.query.parachainSystem.upwardMessages(), 'ump').map((value) =>
+    api.createType('Vec<XcmVersionedXcm>', value).toJSON()
+  )
 
 export const checkHrmp = ({ api }: { api: ApiPromise }) =>
   check(api.query.parachainSystem.hrmpOutboundMessages(), 'hrmp').map((value) =>

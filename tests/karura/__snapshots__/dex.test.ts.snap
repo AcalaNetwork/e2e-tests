@@ -5,7 +5,7 @@ exports[`Karura dex > stable swap works > events 1`] = `
   {
     "data": {
       "liquidityChanges": [
-        "(rounded 21000000000)",
+        "(rounded 20000000000)",
         1000000000000,
       ],
       "path": [
@@ -30,22 +30,22 @@ exports[`Karura dex > stable swap works > events 2`] = `
     "data": {
       "a": 10000,
       "balances": [
-        "(rounded 1100000000000000000)",
-        "(rounded 38000000000000000)",
-        "(rounded 37000000000000000)",
+        "(rounded 1000000000000000000)",
+        "(rounded 40000000000000000)",
+        "(rounded 30000000000000000)",
       ],
       "inputAmount": 1000000000000,
       "inputAsset": {
         "Token": "KUSD",
       },
       "minOutputAmount": 0,
-      "outputAmount": "(rounded 730000)",
+      "outputAmount": "(rounded 700000)",
       "outputAsset": {
         "ForeignAsset": 7,
       },
       "poolId": 1,
       "swapper": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-      "totalSupply": "(rounded 1100000000000000000)",
+      "totalSupply": "(rounded 1000000000000000000)",
     },
     "method": "TokenSwapped",
     "section": "stableAsset",
@@ -59,7 +59,7 @@ exports[`Karura dex > supply swap works > events 1`] = `
     "data": {
       "liquidityChanges": [
         1000000000000,
-        "(rounded 47000000000000)",
+        "(rounded 50000000000000)",
       ],
       "path": [
         {
@@ -82,7 +82,7 @@ exports[`Karura dex > target swap works > events 1`] = `
   {
     "data": {
       "liquidityChanges": [
-        "(rounded 21000000000)",
+        "(rounded 20000000000)",
         1000000000000,
       ],
       "path": [

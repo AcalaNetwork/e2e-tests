@@ -124,12 +124,142 @@ exports[`Karura <-> Kusama > Homa stake works > system events 1`] = `
 exports[`Karura <-> Kusama > Homa stake works > ump 1`] = `
 [
   {
-    "initialU8aLength": "(number)",
-    "registry": {},
+    "v2": [
+      {
+        "withdrawAsset": [
+          {
+            "fun": {
+              "fungible": "(number)",
+            },
+            "id": {
+              "concrete": {
+                "interior": {
+                  "here": null,
+                },
+                "parents": "(number)",
+              },
+            },
+          },
+        ],
+      },
+      {
+        "clearOrigin": null,
+      },
+      {
+        "buyExecution": {
+          "fees": {
+            "fun": {
+              "fungible": "(number)",
+            },
+            "id": {
+              "concrete": {
+                "interior": {
+                  "here": null,
+                },
+                "parents": "(number)",
+              },
+            },
+          },
+          "weightLimit": {
+            "limited": "(number)",
+          },
+        },
+      },
+      {
+        "depositAsset": {
+          "assets": {
+            "wild": {
+              "all": null,
+            },
+          },
+          "beneficiary": {
+            "interior": {
+              "x1": {
+                "accountId32": {
+                  "id": "(hex)",
+                  "network": {
+                    "any": null,
+                  },
+                },
+              },
+            },
+            "parents": "(number)",
+          },
+          "maxAssets": "(number)",
+        },
+      },
+    ],
   },
   {
-    "initialU8aLength": "(number)",
-    "registry": {},
+    "v2": [
+      {
+        "withdrawAsset": [
+          {
+            "fun": {
+              "fungible": "(number)",
+            },
+            "id": {
+              "concrete": {
+                "interior": {
+                  "here": null,
+                },
+                "parents": "(number)",
+              },
+            },
+          },
+        ],
+      },
+      {
+        "buyExecution": {
+          "fees": {
+            "fun": {
+              "fungible": "(number)",
+            },
+            "id": {
+              "concrete": {
+                "interior": {
+                  "here": null,
+                },
+                "parents": "(number)",
+              },
+            },
+          },
+          "weightLimit": {
+            "unlimited": null,
+          },
+        },
+      },
+      {
+        "transact": {
+          "call": {
+            "encoded": "(hex)",
+          },
+          "originType": "SovereignAccount",
+          "requireWeightAtMost": "(number)",
+        },
+      },
+      {
+        "refundSurplus": null,
+      },
+      {
+        "depositAsset": {
+          "assets": {
+            "wild": {
+              "all": null,
+            },
+          },
+          "beneficiary": {
+            "interior": {
+              "x1": {
+                "parachain": "(number)",
+              },
+            },
+            "parents": "(number)",
+          },
+          "maxAssets": "(number)",
+        },
+      },
+    ],
   },
 ]
 `;

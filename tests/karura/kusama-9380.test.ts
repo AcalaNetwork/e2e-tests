@@ -47,6 +47,11 @@ describe('Karura <-> Kusama', async () => {
       System: {
         Account: [[[alice.address], { data: { free: 10 * 1e12 } }]],
       },
+      ParasDisputes: { // those can makes block building super slow
+        $removePrefix: [
+          'disputes'
+        ]
+      }
     })
   })
 

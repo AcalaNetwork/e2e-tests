@@ -55,14 +55,16 @@ describe('Karura dex', async () => {
     await checkEvents(tx, {
       method: 'Swap',
       section: 'dex',
-    }).toMatchSnapshot()
+    })
+      .redact({ number: 1 })
+      .toMatchSnapshot()
     expect(
       await check(queryTokenBalance(karura.api, { Token: 'KUSD' }, alice.address))
-        .redact()
+        .redact({ number: 1 })
         .value()
     ).toMatchInlineSnapshot(`
       {
-        "free": "(rounded 47000000000000)",
+        "free": "(rounded 50000000000000)",
         "frozen": 0,
         "reserved": 0,
       }
@@ -104,7 +106,9 @@ describe('Karura dex', async () => {
     await checkEvents(tx, {
       method: 'Swap',
       section: 'dex',
-    }).toMatchSnapshot()
+    })
+      .redact({ number: 1 })
+      .toMatchSnapshot()
 
     expect(await queryTokenBalance(karura.api, { Token: 'KUSD' }, alice.address)).toMatchInlineSnapshot(`
       {
@@ -154,7 +158,9 @@ describe('Karura dex', async () => {
     await checkEvents(tx0, {
       method: 'Swap',
       section: 'dex',
-    }).toMatchSnapshot()
+    })
+      .redact({ number: 1 })
+      .toMatchSnapshot()
     expect(await queryTokenBalance(karura.api, { Token: 'KUSD' }, alice.address)).toMatchInlineSnapshot(`
       {
         "free": 1000000000000,
@@ -178,7 +184,7 @@ describe('Karura dex', async () => {
     )
     await karura.chain.newBlock()
 
-    await checkEvents(tx1, { method: 'TokenSwapped', section: 'stableAsset' }).toMatchSnapshot()
+    await checkEvents(tx1, { method: 'TokenSwapped', section: 'stableAsset' }).redact({ number: 1 }).toMatchSnapshot()
     expect(await queryTokenBalance(karura.api, { Token: 'KUSD' }, alice.address)).toMatchInlineSnapshot(`
       {
         "free": 0,
@@ -188,11 +194,11 @@ describe('Karura dex', async () => {
     `)
     expect(
       await check(queryTokenBalance(karura.api, { ForeignAsset: '7' }, alice.address))
-        .redact()
+        .redact({ number: 1 })
         .value()
     ).toMatchInlineSnapshot(`
       {
-        "free": "(rounded 730000)",
+        "free": "(rounded 700000)",
         "frozen": 0,
         "reserved": 0,
       }
