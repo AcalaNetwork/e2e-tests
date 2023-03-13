@@ -204,6 +204,70 @@ export const stableAssetSwap = (
   return api.tx.stableAsset.swap(poolId, i, j, dx, minDy, assetLength)
 }
 
+export const aggregatedDexSwapWithExactSupply = (
+  api: ApiPromise,
+  paths: any[],
+  supplyAmount: string,
+  minTargetAmount: string
+) => {
+  return api.tx.aggregatedDex.swapWithExactSupply(paths, supplyAmount, minTargetAmount)
+}
+
+export const addLiquidity = (
+  api: ApiPromise,
+  currencyIdA: object,
+  currencyIdB: object,
+  maxAmountA: string,
+  maxAmountB: string,
+  minShareIncrement: string,
+  stakeIncrementShare: string
+) => {
+  return api.tx.dex.addLiquidity(
+    currencyIdA,
+    currencyIdB,
+    maxAmountA,
+    maxAmountB,
+    minShareIncrement,
+    stakeIncrementShare
+  )
+}
+
+export const stableAssetMint = (api: ApiPromise, poolId: string, amounts: any[], min_mint_amount: string) => {
+  return api.tx.stableAsset.mint(poolId, amounts, min_mint_amount)
+}
+
+export const stableAssetRedeemSingle = (
+  api: ApiPromise,
+  poolId: string,
+  amount: string,
+  i: string,
+  minRedeemAmount: string,
+  assetLength: string
+) => {
+  return api.tx.stableAsset.redeemSingle(poolId, amount, i, minRedeemAmount, assetLength)
+}
+
+export const stableAssetRedeemProportion = (
+  api: ApiPromise,
+  poolId: string,
+  amount: string,
+  minRedeemAmount: any[]
+) => {
+  return api.tx.stableAsset.redeemSingle(poolId, amount, minRedeemAmount)
+}
+
+export const dexRemoveLiquidity = (
+  api: ApiPromise,
+  currencyIdA: object,
+  currencyIdB: object,
+  removeShare: string,
+  minWithdrawnA: string,
+  minWithdrawnB: string,
+  byUnstake: boolean
+) => {
+  return api.tx.dex.removeLiquidity(currencyIdA, currencyIdB, removeShare, minWithdrawnA, minWithdrawnB, byUnstake)
+}
+
 export const adjustLoan = (api: ApiPromise, token: string, collateralAdjustment: string, debitAdjustment: string) => {
   return api.tx.honzon.adjustLoan({ Token: token }, collateralAdjustment, debitAdjustment)
 }

@@ -1,5 +1,57 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Karura dex > aggregatedDex supply swap works > events 1`] = `
+[
+  {
+    "data": {
+      "liquidityChanges": [
+        1000000000000,
+        "(rounded 140000000000)",
+        "(rounded 50000000000000)",
+      ],
+      "path": [
+        {
+          "Token": "KSM",
+        },
+        {
+          "ForeignAsset": 0,
+        },
+        {
+          "Token": "KUSD",
+        },
+      ],
+      "trader": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "Swap",
+    "section": "dex",
+  },
+  {
+    "data": {
+      "a": 10000,
+      "balances": [
+        "(rounded 1100000000000000000)",
+        "(rounded 37000000000000000)",
+        "(rounded 37000000000000000)",
+      ],
+      "inputAmount": "(rounded 50000000000000)",
+      "inputAsset": {
+        "Token": "KUSD",
+      },
+      "minOutputAmount": 0,
+      "outputAmount": "(rounded 36000000)",
+      "outputAsset": {
+        "ForeignAsset": 7,
+      },
+      "poolId": 1,
+      "swapper": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+      "totalSupply": "(rounded 1100000000000000000)",
+    },
+    "method": "TokenSwapped",
+    "section": "stableAsset",
+  },
+]
+`;
+
 exports[`Karura dex > stable swap works > events 1`] = `
 [
   {
@@ -32,7 +84,7 @@ exports[`Karura dex > stable swap works > events 2`] = `
       "balances": [
         "(rounded 1000000000000000000)",
         "(rounded 40000000000000000)",
-        "(rounded 30000000000000000)",
+        "(rounded 40000000000000000)",
       ],
       "inputAmount": 1000000000000,
       "inputAsset": {
@@ -48,6 +100,32 @@ exports[`Karura dex > stable swap works > events 2`] = `
       "totalSupply": "(rounded 1000000000000000000)",
     },
     "method": "TokenSwapped",
+    "section": "stableAsset",
+  },
+]
+`;
+
+exports[`Karura dex > stableAsset mint works > events 1`] = `
+[
+  {
+    "data": {
+      "a": 3000,
+      "balances": [
+        "(rounded 9000000000000000)",
+        "(rounded 10000000000000000)",
+      ],
+      "feeAmount": 0,
+      "inputAmounts": [
+        1000000000000,
+        10000000000000,
+      ],
+      "minOutputAmount": 0,
+      "minter": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+      "outputAmount": "(rounded 10000000000000)",
+      "poolId": 0,
+      "totalSupply": "(rounded 20000000000000000)",
+    },
+    "method": "Minted",
     "section": "stableAsset",
   },
 ]

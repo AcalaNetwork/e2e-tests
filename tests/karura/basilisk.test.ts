@@ -12,8 +12,8 @@ describe('Karura <-> Basilisk', () => {
   const { alice } = testingPairs()
 
   beforeEach(async () => {
-    basilisk = await networks.basilisk()
-    karura = await networks.karura()
+    basilisk = await networks.basilisk({ blockNumber: 2943223 })
+    karura = await networks.karura({ blockNumber: 3892780 })
     await connectParachains([basilisk.chain, karura.chain])
 
     await karura.dev.setStorage({
@@ -55,10 +55,12 @@ describe('Karura <-> Basilisk', () => {
 
     await karura.chain.newBlock()
 
-    await checkEvents(tx0, 'currencies').toMatchSnapshot()
+    await checkEvents(tx0, 'ClaimAccount', 'currencies').toMatchSnapshot()
 
     const tx1 = await sendTransaction(
-      xTokens(karura.api, false, '2090', { Erc20: DAI }, '1000000000000000000', alice.addressRaw).signAsync(alice)
+      xTokens(karura.api, false, '2090', { Erc20: DAI }, '1000000000000000000', alice.addressRaw).signAsync(alice, {
+        nonce: 1,
+      })
     )
 
     await karura.chain.newBlock()
@@ -66,14 +68,14 @@ describe('Karura <-> Basilisk', () => {
     await checkEvents(tx1, 'xTokens', 'xcmpQueue', 'evm').toMatchSnapshot()
     await checkHrmp(karura).toMatchSnapshot()
 
-    // await basilisk.chain.newBlock({ timeout: 1000 })
-    // expectJson(await basilisk.api.query.tokens.accounts(alice, '13')).toMatchInlineSnapshot(`
-    //   {
-    //     "free": 1000000000000000000,
-    //     "frozen": 0,
-    //     "reserved": 0,
-    //   }
-    // `)
+    await basilisk.chain.newBlock()
+    expect((await basilisk.api.query.tokens.accounts(alice.address, '13')).toHuman()).toMatchInlineSnapshot(`
+      {
+        "free": "995,600,000,000,000,000",
+        "frozen": "0",
+        "reserved": "0",
+      }
+    `)
   })
 
   it('Karura transfer USDC to basilisk', async () => {
