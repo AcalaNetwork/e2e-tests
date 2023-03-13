@@ -1,11 +1,11 @@
-import { afterAll, beforeEach, describe, it } from 'vitest'
+import { afterAll, beforeEach, describe, expect, it } from 'vitest'
 
 import { adjustLoan, adjustLoanByDebitValue, closeLoanHasDebitByDex } from '../api/extrinsics'
-import { expectJson, matchEvents, sendTransaction, testingPairs } from '../helper'
+import { check, checkEvents, sendTransaction, testingPairs } from '../helper'
 import { queryPositions, queryTokenBalance } from '../api/query'
 import networks from '../networks'
 
-describe('Karura <-> Kusama', async () => {
+describe('Karura honzon', async () => {
   const karura = await networks.karura()
 
   const { alice } = testingPairs()
@@ -36,16 +36,18 @@ describe('Karura <-> Kusama', async () => {
     const tx = await sendTransaction(
       adjustLoan(karura.api, 'KSM', '50000000000000', '500000000000000').signAsync(alice)
     )
+
     await karura.chain.newBlock()
-    await matchEvents(tx.events, { section: 'loans', method: 'PositionUpdated' })
-    expectJson(await queryTokenBalance(karura.api, { Token: 'KUSD' }, alice.address)).toMatchInlineSnapshot(`
+
+    await checkEvents(tx, { section: 'loans', method: 'PositionUpdated' }).toMatchSnapshot()
+    expect(await check(queryTokenBalance(karura.api, { Token: 'KUSD' }, alice.address)).redact().value()).toMatchInlineSnapshot(`
       {
-        "free": 152372833376614,
+        "free": "(rounded 150000000000000)",
         "frozen": 0,
         "reserved": 0,
       }
     `)
-    expectJson(await queryPositions(karura.api, 'KSM', alice.address)).toMatchInlineSnapshot(`
+    expect(await queryPositions(karura.api, 'KSM', alice.address)).toMatchInlineSnapshot(`
       {
         "collateral": 50000000000000,
         "debit": 500000000000000,
@@ -54,7 +56,7 @@ describe('Karura <-> Kusama', async () => {
   })
 
   it('honzon payback works', async () => {
-    expectJson(await queryPositions(karura.api, 'KSM', alice.address)).toMatchInlineSnapshot(`
+    expect(await queryPositions(karura.api, 'KSM', alice.address)).toMatchInlineSnapshot(`
       {
         "collateral": 50000000000000,
         "debit": 500000000000000,
@@ -63,16 +65,18 @@ describe('Karura <-> Kusama', async () => {
     const tx = await sendTransaction(
       adjustLoanByDebitValue(karura.api, 'KSM', '-50000000000000', '-500000000000000').signAsync(alice, { nonce: 0 })
     )
+
     await karura.chain.newBlock()
-    await matchEvents(tx.events, { section: 'loans', method: 'PositionUpdated' })
-    expectJson(await queryTokenBalance(karura.api, { Token: 'KUSD' }, alice.address)).toMatchInlineSnapshot(`
+
+    await checkEvents(tx, { section: 'loans', method: 'PositionUpdated' }).toMatchSnapshot()
+    expect(await check(queryTokenBalance(karura.api, { Token: 'KUSD' }, alice.address)).redact().value()).toMatchInlineSnapshot(`
       {
-        "free": 47627166034315,
+        "free": "(rounded 48000000000000)",
         "frozen": 0,
         "reserved": 0,
       }
     `)
-    expectJson(await queryPositions(karura.api, 'KSM', alice.address)).toMatchInlineSnapshot(`
+    expect(await queryPositions(karura.api, 'KSM', alice.address)).toMatchInlineSnapshot(`
       {
         "collateral": 0,
         "debit": 0,
@@ -84,10 +88,12 @@ describe('Karura <-> Kusama', async () => {
     const tx0 = await sendTransaction(
       adjustLoan(karura.api, 'KSM', '50000000000000', '500000000000000').signAsync(alice, { nonce: 0 })
     )
-    await karura.chain.newBlock()
-    await matchEvents(tx0.events, { section: 'loans', method: 'PositionUpdated' })
 
-    expectJson(await queryPositions(karura.api, 'KSM', alice.address)).toMatchInlineSnapshot(`
+    await karura.chain.newBlock()
+
+    await checkEvents(tx0, { section: 'loans', method: 'PositionUpdated' }).toMatchSnapshot()
+
+    expect(await queryPositions(karura.api, 'KSM', alice.address)).toMatchInlineSnapshot(`
       {
         "collateral": 50000000000000,
         "debit": 500000000000000,
@@ -97,13 +103,15 @@ describe('Karura <-> Kusama', async () => {
     const tx1 = await sendTransaction(
       closeLoanHasDebitByDex(karura.api, 'KSM', '50000000000000').signAsync(alice, { nonce: 1 })
     )
+
     await karura.chain.newBlock()
-    await matchEvents(
-      tx1.events,
+
+    await checkEvents(
+      tx1,
       { section: 'loans', method: 'PositionUpdated' },
       { section: 'cdpEngine', method: 'CloseCDPInDebitByDEX' }
-    )
-    expectJson(await queryPositions(karura.api, 'KSM', alice.address)).toMatchInlineSnapshot(`
+    ).toMatchSnapshot()
+    expect(await queryPositions(karura.api, 'KSM', alice.address)).toMatchInlineSnapshot(`
       {
         "collateral": 0,
         "debit": 0,

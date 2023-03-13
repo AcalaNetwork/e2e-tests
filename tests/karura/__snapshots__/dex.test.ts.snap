@@ -1,12 +1,12 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Karura <-> Kusama > stable swap works > events 1`] = `
+exports[`Karura dex > stable swap works > events 1`] = `
 [
   {
     "data": {
       "liquidityChanges": [
-        "(redacted)",
-        "(redacted)",
+        "(rounded 20000000000)",
+        1000000000000,
       ],
       "path": [
         {
@@ -24,28 +24,28 @@ exports[`Karura <-> Kusama > stable swap works > events 1`] = `
 ]
 `;
 
-exports[`Karura <-> Kusama > stable swap works > events 2`] = `
+exports[`Karura dex > stable swap works > events 2`] = `
 [
   {
     "data": {
-      "a": "(redacted)",
+      "a": 10000,
       "balances": [
-        "(redacted)",
-        "(redacted)",
-        "(redacted)",
+        "(rounded 1100000000000000000)",
+        "(rounded 37000000000000000)",
+        "(rounded 36000000000000000)",
       ],
-      "inputAmount": "(redacted)",
+      "inputAmount": 1000000000000,
       "inputAsset": {
         "Token": "KUSD",
       },
-      "minOutputAmount": "(redacted)",
-      "outputAmount": "(redacted)",
+      "minOutputAmount": 0,
+      "outputAmount": "(rounded 710000)",
       "outputAsset": {
-        "ForeignAsset": "(redacted)",
+        "ForeignAsset": 7,
       },
-      "poolId": "(redacted)",
+      "poolId": 1,
       "swapper": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-      "totalSupply": "(redacted)",
+      "totalSupply": "(rounded 1100000000000000000)",
     },
     "method": "TokenSwapped",
     "section": "stableAsset",
@@ -53,13 +53,13 @@ exports[`Karura <-> Kusama > stable swap works > events 2`] = `
 ]
 `;
 
-exports[`Karura <-> Kusama > supply swap works > events 1`] = `
+exports[`Karura dex > supply swap works > events 1`] = `
 [
   {
     "data": {
       "liquidityChanges": [
-        "(redacted)",
-        "(redacted)",
+        1000000000000,
+        "(rounded 51000000000000)",
       ],
       "path": [
         {
@@ -77,13 +77,13 @@ exports[`Karura <-> Kusama > supply swap works > events 1`] = `
 ]
 `;
 
-exports[`Karura <-> Kusama > target swap works > events 1`] = `
+exports[`Karura dex > target swap works > events 1`] = `
 [
   {
     "data": {
       "liquidityChanges": [
-        "(redacted)",
-        "(redacted)",
+        "(rounded 20000000000)",
+        1000000000000,
       ],
       "path": [
         {

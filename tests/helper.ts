@@ -195,10 +195,4 @@ export const checkHrmp = ({ api }: { api: ApiPromise }) =>
     }))
   )
 
-export {
-  SetupOption,
-  setupContext,
-  defer,
-  sendTransaction,
-  testingPairs,
-} from '@acala-network/chopsticks-testing'
+export { SetupOption, setupContext, defer, sendTransaction, testingPairs } from '@acala-network/chopsticks-testing'

@@ -1,11 +1,11 @@
-import { afterAll, beforeEach, describe, it } from 'vitest'
+import { afterAll, beforeEach, describe, expect, it } from 'vitest'
 
-import { expectJson, matchEvents, sendTransaction, testingPairs } from '../helper'
+import { check, checkEvents, sendTransaction, testingPairs } from '../helper'
 import { queryTokenBalance } from '../api/query'
 import { stableAssetSwap, swapWithExactSupply, swapWithExactTarget } from '../api/extrinsics'
 import networks from '../networks'
 
-describe('Karura <-> Kusama', async () => {
+describe('Karura dex', async () => {
   const karura = await networks.karura()
 
   const { alice } = testingPairs()
@@ -33,14 +33,14 @@ describe('Karura <-> Kusama', async () => {
   })
 
   it('supply swap works', async () => {
-    expectJson(await queryTokenBalance(karura.api, { Token: 'KUSD' }, alice.address)).toMatchInlineSnapshot(`
+    expect(await queryTokenBalance(karura.api, { Token: 'KUSD' }, alice.address)).toMatchInlineSnapshot(`
       {
         "free": 0,
         "frozen": 0,
         "reserved": 0,
       }
     `)
-    expectJson(await queryTokenBalance(karura.api, { Token: 'KSM' }, alice.address)).toMatchInlineSnapshot(`
+    expect(await queryTokenBalance(karura.api, { Token: 'KSM' }, alice.address)).toMatchInlineSnapshot(`
       {
         "free": 100000000000000,
         "frozen": 0,
@@ -51,18 +51,19 @@ describe('Karura <-> Kusama', async () => {
       swapWithExactSupply(karura.api, [{ Token: 'KSM' }, { Token: 'KUSD' }], '1000000000000', '0').signAsync(alice)
     )
     await karura.chain.newBlock()
-    await matchEvents(tx.events, {
+
+    await checkEvents(tx, {
       method: 'Swap',
       section: 'dex',
-    })
-    expectJson(await queryTokenBalance(karura.api, { Token: 'KUSD' }, alice.address)).toMatchInlineSnapshot(`
+    }).toMatchSnapshot()
+    expect(await check(queryTokenBalance(karura.api, { Token: 'KUSD' }, alice.address)).redact().value()).toMatchInlineSnapshot(`
       {
-        "free": 51959600247621,
+        "free": "(rounded 51000000000000)",
         "frozen": 0,
         "reserved": 0,
       }
     `)
-    expectJson(await queryTokenBalance(karura.api, { Token: 'KSM' }, alice.address)).toMatchInlineSnapshot(`
+    expect(await queryTokenBalance(karura.api, { Token: 'KSM' }, alice.address)).toMatchInlineSnapshot(`
       {
         "free": 99000000000000,
         "frozen": 0,
@@ -72,14 +73,14 @@ describe('Karura <-> Kusama', async () => {
   })
 
   it('target swap works', async () => {
-    expectJson(await queryTokenBalance(karura.api, { Token: 'KUSD' }, alice.address)).toMatchInlineSnapshot(`
+    expect(await queryTokenBalance(karura.api, { Token: 'KUSD' }, alice.address)).toMatchInlineSnapshot(`
       {
         "free": 0,
         "frozen": 0,
         "reserved": 0,
       }
     `)
-    expectJson(await queryTokenBalance(karura.api, { Token: 'KSM' }, alice.address)).toMatchInlineSnapshot(`
+    expect(await queryTokenBalance(karura.api, { Token: 'KSM' }, alice.address)).toMatchInlineSnapshot(`
       {
         "free": 100000000000000,
         "frozen": 0,
@@ -95,20 +96,22 @@ describe('Karura <-> Kusama', async () => {
       ).signAsync(alice, { nonce: 0 })
     )
     await karura.chain.newBlock()
-    await matchEvents(tx.events, {
+
+    await checkEvents(tx, {
       method: 'Swap',
       section: 'dex',
-    })
-    expectJson(await queryTokenBalance(karura.api, { Token: 'KUSD' }, alice.address)).toMatchInlineSnapshot(`
+    }).toMatchSnapshot()
+
+    expect(await queryTokenBalance(karura.api, { Token: 'KUSD' }, alice.address)).toMatchInlineSnapshot(`
       {
         "free": 1000000000000,
         "frozen": 0,
         "reserved": 0,
       }
     `)
-    expectJson(await queryTokenBalance(karura.api, { Token: 'KSM' }, alice.address)).toMatchInlineSnapshot(`
+    expect(await check(queryTokenBalance(karura.api, { Token: 'KSM' }, alice.address)).redact().value()).toMatchInlineSnapshot(`
       {
-        "free": 99980750049439,
+        "free": "(rounded 100000000000000)",
         "frozen": 0,
         "reserved": 0,
       }
@@ -116,14 +119,14 @@ describe('Karura <-> Kusama', async () => {
   })
 
   it('stable swap works', async () => {
-    expectJson(await queryTokenBalance(karura.api, { Token: 'KUSD' }, alice.address)).toMatchInlineSnapshot(`
+    expect(await queryTokenBalance(karura.api, { Token: 'KUSD' }, alice.address)).toMatchInlineSnapshot(`
       {
         "free": 0,
         "frozen": 0,
         "reserved": 0,
       }
     `)
-    expectJson(await queryTokenBalance(karura.api, { Token: 'KSM' }, alice.address)).toMatchInlineSnapshot(`
+    expect(await queryTokenBalance(karura.api, { Token: 'KSM' }, alice.address)).toMatchInlineSnapshot(`
       {
         "free": 100000000000000,
         "frozen": 0,
@@ -139,20 +142,21 @@ describe('Karura <-> Kusama', async () => {
       ).signAsync(alice, { nonce: 0 })
     )
     await karura.chain.newBlock()
-    await matchEvents(tx0.events, {
+
+    await checkEvents(tx0, {
       method: 'Swap',
       section: 'dex',
-    })
-    expectJson(await queryTokenBalance(karura.api, { Token: 'KUSD' }, alice.address)).toMatchInlineSnapshot(`
+    }).toMatchSnapshot()
+    expect(await queryTokenBalance(karura.api, { Token: 'KUSD' }, alice.address)).toMatchInlineSnapshot(`
       {
         "free": 1000000000000,
         "frozen": 0,
         "reserved": 0,
       }
     `)
-    expectJson(await queryTokenBalance(karura.api, { Token: 'KSM' }, alice.address)).toMatchInlineSnapshot(`
+    expect(await check(queryTokenBalance(karura.api, { Token: 'KSM' }, alice.address)).redact().value()).toMatchInlineSnapshot(`
       {
-        "free": 99980749889928,
+        "free": "(rounded 100000000000000)",
         "frozen": 0,
         "reserved": 0,
       }
@@ -161,17 +165,18 @@ describe('Karura <-> Kusama', async () => {
       stableAssetSwap(karura.api, '1', '0', '2', '1000000000000', '0', '3').signAsync(alice, { nonce: 1 })
     )
     await karura.chain.newBlock()
-    await matchEvents(tx1.events, { method: 'TokenSwapped', section: 'stableAsset' })
-    expectJson(await queryTokenBalance(karura.api, { Token: 'KUSD' }, alice.address)).toMatchInlineSnapshot(`
+
+    await checkEvents(tx1, { method: 'TokenSwapped', section: 'stableAsset' }).toMatchSnapshot()
+    expect(await queryTokenBalance(karura.api, { Token: 'KUSD' }, alice.address)).toMatchInlineSnapshot(`
       {
         "free": 0,
         "frozen": 0,
         "reserved": 0,
       }
     `)
-    expectJson(await queryTokenBalance(karura.api, { ForeignAsset: '7' }, alice.address)).toMatchInlineSnapshot(`
+    expect(await check(queryTokenBalance(karura.api, { ForeignAsset: '7' }, alice.address)).redact().value()).toMatchInlineSnapshot(`
       {
-        "free": 722149,
+        "free": "(rounded 710000)",
         "frozen": 0,
         "reserved": 0,
       }

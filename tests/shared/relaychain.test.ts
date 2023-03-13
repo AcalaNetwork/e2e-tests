@@ -1,14 +1,7 @@
 import { afterAll, beforeEach, describe, it } from 'vitest'
 import { connectVertical } from '@acala-network/chopsticks'
 
-import {
-  check,
-  checkEvents,
-  checkSystemEvents,
-  checkUmp,
-  sendTransaction,
-  testingPairs,
-} from '../helper'
+import { check, checkEvents, checkSystemEvents, checkUmp, sendTransaction, testingPairs } from '../helper'
 import networks from '../networks'
 
 describe.each([
@@ -23,7 +16,7 @@ describe.each([
     relay: 'kusama',
     relayToken: 'KSM',
     relayLiquidToken: 'LKSM',
-  }
+  },
 ])('$para <-> $relay', async ({ para, relay, relayToken, relayLiquidToken }) => {
   const relaychain = await networks[relay as keyof typeof networks]()
   const parachain = await networks[para as keyof typeof networks]()
@@ -115,7 +108,9 @@ describe.each([
   })
 
   it('Homa redeem unbond works', async () => {
-    const tx3 = await sendTransaction(parachain.api.tx.homa.requestRedeem(10 * 1e12, false).signAsync(alice, { nonce: 0 }))
+    const tx3 = await sendTransaction(
+      parachain.api.tx.homa.requestRedeem(10 * 1e12, false).signAsync(alice, { nonce: 0 })
+    )
     const tx4 = await sendTransaction(
       parachain.api.tx.sudo.sudo(parachain.api.tx.homa.forceBumpCurrentEra(0)).signAsync(alice, { nonce: 1 })
     )
