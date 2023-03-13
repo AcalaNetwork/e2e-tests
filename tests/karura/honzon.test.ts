@@ -40,7 +40,11 @@ describe('Karura honzon', async () => {
     await karura.chain.newBlock()
 
     await checkEvents(tx, { section: 'loans', method: 'PositionUpdated' }).toMatchSnapshot()
-    expect(await check(queryTokenBalance(karura.api, { Token: 'KUSD' }, alice.address)).redact().value()).toMatchInlineSnapshot(`
+    expect(
+      await check(queryTokenBalance(karura.api, { Token: 'KUSD' }, alice.address))
+        .redact()
+        .value()
+    ).toMatchInlineSnapshot(`
       {
         "free": "(rounded 150000000000000)",
         "frozen": 0,
@@ -69,7 +73,11 @@ describe('Karura honzon', async () => {
     await karura.chain.newBlock()
 
     await checkEvents(tx, { section: 'loans', method: 'PositionUpdated' }).toMatchSnapshot()
-    expect(await check(queryTokenBalance(karura.api, { Token: 'KUSD' }, alice.address)).redact().value()).toMatchInlineSnapshot(`
+    expect(
+      await check(queryTokenBalance(karura.api, { Token: 'KUSD' }, alice.address))
+        .redact()
+        .value()
+    ).toMatchInlineSnapshot(`
       {
         "free": "(rounded 48000000000000)",
         "frozen": 0,
@@ -111,8 +119,8 @@ describe('Karura honzon', async () => {
       { section: 'loans', method: 'PositionUpdated' },
       { section: 'cdpEngine', method: 'CloseCDPInDebitByDEX' }
     )
-    .redact({ number: 1 }) // reduce precision to ensure it passes
-    .toMatchSnapshot()
+      .redact({ number: 1 }) // reduce precision to ensure it passes
+      .toMatchSnapshot()
     expect(await queryPositions(karura.api, 'KSM', alice.address)).toMatchInlineSnapshot(`
       {
         "collateral": 0,

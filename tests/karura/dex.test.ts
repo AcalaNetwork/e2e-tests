@@ -56,7 +56,11 @@ describe('Karura dex', async () => {
       method: 'Swap',
       section: 'dex',
     }).toMatchSnapshot()
-    expect(await check(queryTokenBalance(karura.api, { Token: 'KUSD' }, alice.address)).redact().value()).toMatchInlineSnapshot(`
+    expect(
+      await check(queryTokenBalance(karura.api, { Token: 'KUSD' }, alice.address))
+        .redact()
+        .value()
+    ).toMatchInlineSnapshot(`
       {
         "free": "(rounded 47000000000000)",
         "frozen": 0,
@@ -109,7 +113,11 @@ describe('Karura dex', async () => {
         "reserved": 0,
       }
     `)
-    expect(await check(queryTokenBalance(karura.api, { Token: 'KSM' }, alice.address)).redact().value()).toMatchInlineSnapshot(`
+    expect(
+      await check(queryTokenBalance(karura.api, { Token: 'KSM' }, alice.address))
+        .redact()
+        .value()
+    ).toMatchInlineSnapshot(`
       {
         "free": "(rounded 100000000000000)",
         "frozen": 0,
@@ -154,7 +162,11 @@ describe('Karura dex', async () => {
         "reserved": 0,
       }
     `)
-    expect(await check(queryTokenBalance(karura.api, { Token: 'KSM' }, alice.address)).redact().value()).toMatchInlineSnapshot(`
+    expect(
+      await check(queryTokenBalance(karura.api, { Token: 'KSM' }, alice.address))
+        .redact()
+        .value()
+    ).toMatchInlineSnapshot(`
       {
         "free": "(rounded 100000000000000)",
         "frozen": 0,
@@ -174,7 +186,11 @@ describe('Karura dex', async () => {
         "reserved": 0,
       }
     `)
-    expect(await check(queryTokenBalance(karura.api, { ForeignAsset: '7' }, alice.address)).redact().value()).toMatchInlineSnapshot(`
+    expect(
+      await check(queryTokenBalance(karura.api, { ForeignAsset: '7' }, alice.address))
+        .redact()
+        .value()
+    ).toMatchInlineSnapshot(`
       {
         "free": "(rounded 730000)",
         "frozen": 0,

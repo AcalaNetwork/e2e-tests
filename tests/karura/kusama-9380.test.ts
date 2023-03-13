@@ -81,7 +81,9 @@ describe('Karura <-> Kusama', async () => {
 
     await karura.chain.newBlock()
 
-    await check(karura.api.query.tokens.accounts(alice.address, { Token: 'KSM' })).redact().toMatchSnapshot()
+    await check(karura.api.query.tokens.accounts(alice.address, { Token: 'KSM' }))
+      .redact()
+      .toMatchSnapshot()
     await checkSystemEvents(karura, 'parachainSystem', 'dmpQueue').toMatchSnapshot()
   })
 
