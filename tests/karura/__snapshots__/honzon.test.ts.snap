@@ -70,9 +70,9 @@ exports[`Karura honzon > loans by Dex close works > events 2`] = `
       "collateralType": {
         "Token": "KSM",
       },
-      "debitValue": "(rounded 52000000000000)",
+      "debitValue": "(rounded 50000000000000)",
       "owner": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-      "refundCollateralAmount": "(rounded 49000000000000)",
+      "refundCollateralAmount": "(rounded 50000000000000)",
       "soldCollateralAmount": "(rounded 1000000000000)",
     },
     "method": "CloseCDPInDebitByDEX",

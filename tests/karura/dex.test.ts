@@ -58,7 +58,7 @@ describe('Karura dex', async () => {
     }).toMatchSnapshot()
     expect(await check(queryTokenBalance(karura.api, { Token: 'KUSD' }, alice.address)).redact().value()).toMatchInlineSnapshot(`
       {
-        "free": "(rounded 51000000000000)",
+        "free": "(rounded 47000000000000)",
         "frozen": 0,
         "reserved": 0,
       }
@@ -176,7 +176,7 @@ describe('Karura dex', async () => {
     `)
     expect(await check(queryTokenBalance(karura.api, { ForeignAsset: '7' }, alice.address)).redact().value()).toMatchInlineSnapshot(`
       {
-        "free": "(rounded 710000)",
+        "free": "(rounded 730000)",
         "frozen": 0,
         "reserved": 0,
       }

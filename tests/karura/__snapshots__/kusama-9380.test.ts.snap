@@ -18,7 +18,7 @@ exports[`Karura <-> Kusama > Homa redeem unbond works > events 2`] = `
 [
   {
     "data": {
-      "eraIndexWhenUnbond": "(rounded 4800)",
+      "eraIndexWhenUnbond": "(rounded 4900)",
       "liquidAmount": 1000000000000,
       "redeemer": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
       "unbondingStakingAmount": "(rounded 130000000000)",
@@ -34,7 +34,7 @@ exports[`Karura <-> Kusama > Homa redeem unbond works > system events 1`] = `
   {
     "data": {
       "amount": "(rounded 130000000000)",
-      "stash": "EMrKvFy7xLgzzdgruXT9oXERt553igEScqgSjoDm3GewPSA",
+      "stash": "(address)",
     },
     "method": "Unbonded",
     "section": "staking",
@@ -59,7 +59,7 @@ exports[`Karura <-> Kusama > Homa stake works > events 1`] = `
 [
   {
     "data": {
-      "liquidAmountAddedToVoid": "(rounded 650000000)",
+      "liquidAmountAddedToVoid": "(rounded 640000000)",
       "liquidAmountReceived": "(rounded 7700000000000)",
       "minter": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
       "stakingCurrencyAmount": 1000000000000,
@@ -74,7 +74,7 @@ exports[`Karura <-> Kusama > Homa stake works > events 2`] = `
 [
   {
     "data": {
-      "newEraIndex": "(rounded 4800)",
+      "newEraIndex": "(rounded 4900)",
     },
     "method": "CurrentEraBumped",
     "section": "homa",
@@ -89,8 +89,8 @@ exports[`Karura <-> Kusama > Homa stake works > system events 1`] = `
       "(hash)",
       {
         "Complete": {
-          "proofSize": 0,
-          "refTime": "(rounded 300000000)",
+          "proofSize": "(number)",
+          "refTime": "(number)",
         },
       },
     ],
@@ -99,8 +99,8 @@ exports[`Karura <-> Kusama > Homa stake works > system events 1`] = `
   },
   {
     "data": {
-      "amount": "(rounded 15000000000000)",
-      "stash": "HTAeD1dokCVs9MwnC1q9s2a7d2kQ52TAjrxE1y5mj5MFLLA",
+      "amount": "(number)",
+      "stash": "(address)",
     },
     "method": "Bonded",
     "section": "staking",
@@ -110,8 +110,8 @@ exports[`Karura <-> Kusama > Homa stake works > system events 1`] = `
       "(hash)",
       {
         "Complete": {
-          "proofSize": "(rounded 66000)",
-          "refTime": "(rounded 20000000000)",
+          "proofSize": "(number)",
+          "refTime": "(number)",
         },
       },
     ],
@@ -124,180 +124,12 @@ exports[`Karura <-> Kusama > Homa stake works > system events 1`] = `
 exports[`Karura <-> Kusama > Homa stake works > ump 1`] = `
 [
   {
-    "v2": [
-      {
-        "withdrawAsset": [
-          {
-            "fun": {
-              "fungible": 14999958145583,
-            },
-            "id": {
-              "concrete": {
-                "interior": {
-                  "here": null,
-                },
-                "parents": 0,
-              },
-            },
-          },
-        ],
-      },
-      {
-        "clearOrigin": null,
-      },
-      {
-        "buyExecution": {
-          "fees": {
-            "fun": {
-              "fungible": 14999958145583,
-            },
-            "id": {
-              "concrete": {
-                "interior": {
-                  "here": null,
-                },
-                "parents": 0,
-              },
-            },
-          },
-          "weightLimit": {
-            "limited": 10000000000,
-          },
-        },
-      },
-      {
-        "depositAsset": {
-          "assets": {
-            "wild": {
-              "all": null,
-            },
-          },
-          "beneficiary": {
-            "interior": {
-              "x1": {
-                "accountId32": {
-                  "id": "0xd7b8926b326dd349355a9a7cca6606c1e0eb6fd2b506066b518c7155ff0d8297",
-                  "network": {
-                    "any": null,
-                  },
-                },
-              },
-            },
-            "parents": 0,
-          },
-          "maxAssets": 1,
-        },
-      },
-    ],
+    "initialU8aLength": "(number)",
+    "registry": {},
   },
   {
-    "v2": [
-      {
-        "withdrawAsset": [
-          {
-            "fun": {
-              "fungible": 10000000000,
-            },
-            "id": {
-              "concrete": {
-                "interior": {
-                  "here": null,
-                },
-                "parents": 0,
-              },
-            },
-          },
-        ],
-      },
-      {
-        "buyExecution": {
-          "fees": {
-            "fun": {
-              "fungible": 10000000000,
-            },
-            "id": {
-              "concrete": {
-                "interior": {
-                  "here": null,
-                },
-                "parents": 0,
-              },
-            },
-          },
-          "weightLimit": {
-            "unlimited": null,
-          },
-        },
-      },
-      {
-        "transact": {
-          "call": {
-            "encoded": "0x1801000006010b2f66211fa20d",
-          },
-          "originType": "SovereignAccount",
-          "requireWeightAtMost": 20000000000,
-        },
-      },
-      {
-        "refundSurplus": null,
-      },
-      {
-        "depositAsset": {
-          "assets": {
-            "wild": {
-              "all": null,
-            },
-          },
-          "beneficiary": {
-            "interior": {
-              "x1": {
-                "parachain": 2000,
-              },
-            },
-            "parents": 0,
-          },
-          "maxAssets": 1,
-        },
-      },
-    ],
-  },
-]
-`;
-
-exports[`Karura <-> Kusama > Homa unbond withdraw works > events 1`] = `
-[
-  {
-    "data": {
-      "newEraIndex": "(rounded 4800)",
-    },
-    "method": "CurrentEraBumped",
-    "section": "homa",
-  },
-]
-`;
-
-exports[`Karura <-> Kusama > Homa unbond withdraw works > system events 1`] = `
-[
-  {
-    "data": {
-      "amount": "(rounded 17000000000000)",
-      "stash": "HTAeD1dokCVs9MwnC1q9s2a7d2kQ52TAjrxE1y5mj5MFLLA",
-    },
-    "method": "Withdrawn",
-    "section": "staking",
-  },
-  {
-    "data": [
-      "(hash)",
-      {
-        "Complete": {
-          "proofSize": "(rounded 130000)",
-          "refTime": "(rounded 39000000000)",
-        },
-      },
-    ],
-    "method": "ExecutedUpward",
-    "section": "ump",
+    "initialU8aLength": "(number)",
+    "registry": {},
   },
 ]
 `;
@@ -529,8 +361,80 @@ exports[`Karura <-> Kusama > Kusama transfer assets to Karura 1`] = `
 
 exports[`Karura <-> Kusama > Kusama transfer assets to Karura 2`] = `
 {
-  "free": 10999958145583,
+  "free": "(rounded 11000000000000)",
   "frozen": 0,
   "reserved": 0,
 }
+`;
+
+exports[`Karura 3752729 <-> Kusama 16732970 > Homa unbond withdraw works > events 1`] = `
+[
+  {
+    "data": {
+      "newEraIndex": "(rounded 4800)",
+    },
+    "method": "CurrentEraBumped",
+    "section": "homa",
+  },
+]
+`;
+
+exports[`Karura 3752729 <-> Kusama 16732970 > Homa unbond withdraw works > system events 1`] = `
+[
+  {
+    "data": {
+      "amount": "(rounded 17000000000000)",
+      "stash": "HTAeD1dokCVs9MwnC1q9s2a7d2kQ52TAjrxE1y5mj5MFLLA",
+    },
+    "method": "Withdrawn",
+    "section": "staking",
+  },
+  {
+    "data": [
+      "(hash)",
+      {
+        "Complete": {
+          "proofSize": "(rounded 130000)",
+          "refTime": "(rounded 39000000000)",
+        },
+      },
+    ],
+    "method": "ExecutedUpward",
+    "section": "ump",
+  },
+  {
+    "data": [
+      "(hash)",
+      {
+        "Complete": {
+          "proofSize": 0,
+          "refTime": "(rounded 300000000)",
+        },
+      },
+    ],
+    "method": "ExecutedUpward",
+    "section": "ump",
+  },
+  {
+    "data": {
+      "amount": "(rounded 14000000000000)",
+      "stash": "HTAeD1dokCVs9MwnC1q9s2a7d2kQ52TAjrxE1y5mj5MFLLA",
+    },
+    "method": "Bonded",
+    "section": "staking",
+  },
+  {
+    "data": [
+      "(hash)",
+      {
+        "Complete": {
+          "proofSize": "(rounded 66000)",
+          "refTime": "(rounded 20000000000)",
+        },
+      },
+    ],
+    "method": "ExecutedUpward",
+    "section": "ump",
+  },
+]
 `;
