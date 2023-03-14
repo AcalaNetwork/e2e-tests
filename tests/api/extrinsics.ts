@@ -220,7 +220,7 @@ export const addLiquidity = (
   maxAmountA: string,
   maxAmountB: string,
   minShareIncrement: string,
-  stakeIncrementShare: string
+  stakeIncrementShare: boolean
 ) => {
   return api.tx.dex.addLiquidity(
     currencyIdA,

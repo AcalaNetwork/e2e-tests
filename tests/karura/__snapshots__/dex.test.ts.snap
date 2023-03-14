@@ -1,5 +1,47 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Karura dex > addLiquidity and stake works > events 1`] = `
+[
+  {
+    "data": {
+      "currency0": {
+        "Token": "KSM",
+      },
+      "currency1": {
+        "Token": "LKSM",
+      },
+      "pool0": 1000000000000,
+      "pool1": "(rounded 7700000000000)",
+      "shareIncrement": "(rounded 1700000000000)",
+      "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "AddLiquidity",
+    "section": "dex",
+  },
+]
+`;
+
+exports[`Karura dex > addLiquidity works > events 1`] = `
+[
+  {
+    "data": {
+      "currency0": {
+        "Token": "KSM",
+      },
+      "currency1": {
+        "Token": "LKSM",
+      },
+      "pool0": 1000000000000,
+      "pool1": "(rounded 7700000000000)",
+      "shareIncrement": "(rounded 1700000000000)",
+      "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "AddLiquidity",
+    "section": "dex",
+  },
+]
+`;
+
 exports[`Karura dex > aggregatedDex supply swap works > events 1`] = `
 [
   {
@@ -48,6 +90,48 @@ exports[`Karura dex > aggregatedDex supply swap works > events 1`] = `
     },
     "method": "TokenSwapped",
     "section": "stableAsset",
+  },
+]
+`;
+
+exports[`Karura dex > dexRemoveLiquidity works  > events 1`] = `
+[
+  {
+    "data": {
+      "currency0": {
+        "Token": "KSM",
+      },
+      "currency1": {
+        "Token": "LKSM",
+      },
+      "pool0": 1000000000000,
+      "pool1": "(rounded 7700000000000)",
+      "shareIncrement": "(rounded 1700000000000)",
+      "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "AddLiquidity",
+    "section": "dex",
+  },
+]
+`;
+
+exports[`Karura dex > dexRemoveLiquidity works  > events 2`] = `
+[
+  {
+    "data": {
+      "currency0": {
+        "Token": "KSM",
+      },
+      "currency1": {
+        "Token": "LKSM",
+      },
+      "pool0": "(rounded 1000000000000)",
+      "pool1": "(rounded 7700000000000)",
+      "shareDecrement": "(rounded 1700000000000)",
+      "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "RemoveLiquidity",
+    "section": "dex",
   },
 ]
 `;

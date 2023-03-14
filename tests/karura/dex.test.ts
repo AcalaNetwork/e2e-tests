@@ -1,14 +1,16 @@
 import { afterAll, beforeEach, describe, expect, it } from 'vitest'
 
 import {
+  addLiquidity,
   aggregatedDexSwapWithExactSupply,
+  dexRemoveLiquidity,
   stableAssetMint,
   stableAssetSwap,
   swapWithExactSupply,
   swapWithExactTarget,
 } from '../api/extrinsics'
 import { check, checkEvents, sendTransaction, testingPairs } from '../helper'
-import { queryTokenBalance } from '../api/query'
+import { querySharesAndWithdrawnRewards, queryTokenBalance } from '../api/query'
 import networks from '../networks'
 
 describe('Karura dex', async () => {
@@ -31,6 +33,7 @@ describe('Karura dex', async () => {
           [[alice.address, { Token: 'LKSM' }], { free: 1000 * 1e12 }],
           [[alice.address, { Token: 'KUSD' }], { free: 0 }],
           [[alice.address, { ForeignAsset: '7' }], { free: 0 }],
+          [[alice.address, { DexShare: [{ Token: 'KSM' }, { Token: 'LKSM' }] }], { free: 0 }],
         ],
       },
       Sudo: {
@@ -309,6 +312,150 @@ describe('Karura dex', async () => {
     expect(await queryTokenBalance(karura.api, { Token: 'LKSM' }, alice.address)).toMatchInlineSnapshot(`
       {
         "free": 923012003349538,
+        "frozen": 0,
+        "reserved": 0,
+      }
+    `)
+  })
+
+  it('addLiquidity works', async () => {
+    expect(await queryTokenBalance(karura.api, { DexShare: [{ Token: 'KSM' }, { Token: 'LKSM' }] }, alice.address))
+      .toMatchInlineSnapshot(`
+      {
+        "free": 0,
+        "frozen": 0,
+        "reserved": 0,
+      }
+    `)
+
+    const tx = await sendTransaction(
+      addLiquidity(
+        karura.api,
+        { Token: 'KSM' },
+        { Token: 'LKSM' },
+        '1000000000000',
+        '10000000000000',
+        '0',
+        false
+      ).signAsync(alice, { nonce: 0 })
+    )
+    await karura.chain.newBlock()
+    await checkEvents(tx, 'ExtrinsicSuccess', { method: 'AddLiquidity', section: 'dex' }).toMatchSnapshot()
+    expect(await queryTokenBalance(karura.api, { DexShare: [{ Token: 'KSM' }, { Token: 'LKSM' }] }, alice.address))
+      .toMatchInlineSnapshot(`
+        {
+          "free": 1662820028901,
+          "frozen": 0,
+          "reserved": 0,
+        }
+      `)
+    expect(await queryTokenBalance(karura.api, { Token: 'KSM' }, alice.address)).toMatchInlineSnapshot(`
+      {
+        "free": 99000000000000,
+        "frozen": 0,
+        "reserved": 0,
+      }
+    `)
+    expect(await queryTokenBalance(karura.api, { Token: 'LKSM' }, alice.address)).toMatchInlineSnapshot(`
+      {
+        "free": 992254983026490,
+        "frozen": 0,
+        "reserved": 0,
+      }
+    `)
+  })
+
+  it('dexRemoveLiquidity works ', async () => {
+    const tx0 = await sendTransaction(
+      addLiquidity(
+        karura.api,
+        { Token: 'KSM' },
+        { Token: 'LKSM' },
+        '1000000000000',
+        '10000000000000',
+        '0',
+        false
+      ).signAsync(alice, { nonce: 0 })
+    )
+    await karura.chain.newBlock()
+    await checkEvents(tx0, 'ExtrinsicSuccess', { method: 'AddLiquidity', section: 'dex' }).toMatchSnapshot()
+    expect(await queryTokenBalance(karura.api, { DexShare: [{ Token: 'KSM' }, { Token: 'LKSM' }] }, alice.address))
+      .toMatchInlineSnapshot(`
+        {
+          "free": 1662820028901,
+          "frozen": 0,
+          "reserved": 0,
+        }
+      `)
+    const tx1 = await sendTransaction(
+      dexRemoveLiquidity(karura.api, { Token: 'KSM' }, { Token: 'LKSM' }, '1662820028901', '0', '0', false).signAsync(
+        alice,
+        { nonce: 1 }
+      )
+    )
+    await karura.chain.newBlock()
+    await checkEvents(tx1, 'ExtrinsicSuccess', {
+      method: 'RemoveLiquidity',
+      section: 'dex',
+    }).toMatchSnapshot()
+  })
+
+  it('addLiquidity and stake works', async () => {
+    expect(await queryTokenBalance(karura.api, { DexShare: [{ Token: 'KSM' }, { Token: 'LKSM' }] }, alice.address))
+      .toMatchInlineSnapshot(`
+      {
+        "free": 0,
+        "frozen": 0,
+        "reserved": 0,
+      }
+    `)
+
+    const tx = await sendTransaction(
+      addLiquidity(
+        karura.api,
+        { Token: 'KSM' },
+        { Token: 'LKSM' },
+        '1000000000000',
+        '10000000000000',
+        '0',
+        true
+      ).signAsync(alice, { nonce: 0 })
+    )
+    await karura.chain.newBlock()
+    await checkEvents(tx, 'ExtrinsicSuccess', { method: 'AddLiquidity', section: 'dex' }).toMatchSnapshot()
+    expect(
+      await querySharesAndWithdrawnRewards(
+        karura.api,
+        { Dex: { DexShare: [{ Token: 'KSM' }, { Token: 'LKSM' }] } },
+        alice.address
+      )
+    ).toMatchInlineSnapshot(`
+      [
+        1662820028901,
+        {
+          "{\\"token\\":\\"KAR\\"}": 18816251150800,
+        },
+      ]
+    `)
+    expect(await queryTokenBalance(karura.api, { DexShare: [{ Token: 'KSM' }, { Token: 'LKSM' }] }, alice.address))
+      .toMatchInlineSnapshot(`
+        {
+          "free": 0,
+          "frozen": 0,
+          "reserved": 0,
+        }
+      `)
+
+    expect(await queryTokenBalance(karura.api, { Token: 'KSM' }, alice.address)).toMatchInlineSnapshot(`
+      {
+        "free": 99000000000000,
+        "frozen": 0,
+        "reserved": 0,
+      }
+    `)
+    expect(await queryTokenBalance(karura.api, { Token: 'LKSM' }, alice.address)).toMatchInlineSnapshot(`
+      {
+        "free": 992254983026490,
         "frozen": 0,
         "reserved": 0,
       }
