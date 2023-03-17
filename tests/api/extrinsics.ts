@@ -99,6 +99,48 @@ export const xTokens = (
   )
 }
 
+export const xTokensV3 = (
+  api: ApiPromise,
+  isRelayChain: boolean,
+  parachainId: string,
+  token: object,
+  amount: string | bigint,
+  address: Uint8Array
+) => {
+  const multiLocation = isRelayChain
+    ? {
+        X1: {
+          AccountId32: {
+            id: address,
+          },
+        },
+      }
+    : {
+        X2: [
+          {
+            Parachain: parachainId,
+          },
+          {
+            AccountId32: {
+              id: address,
+            },
+          },
+        ],
+      }
+
+  return api.tx.xTokens.transfer(
+    token,
+    amount,
+    {
+      V3: {
+        parents: 1,
+        interior: multiLocation,
+      },
+    },
+    'Unlimited'
+  )
+}
+
 export const relayChainV3limitedReserveTransferAssets = (
   api: ApiPromise,
   parachainId: string,
@@ -173,6 +215,50 @@ export const xTokensTransferMulticurrencies = (
             {
               AccountId32: {
                 network: 'Any',
+                id: address,
+              },
+            },
+          ],
+        },
+      },
+    },
+    'Unlimited'
+  )
+}
+
+export const xTokensTransferMulticurrenciesV3 = (
+  api: ApiPromise,
+  foreignAssetId: string,
+  amount: string,
+  parachainId: string,
+  address: Uint8Array
+) => {
+  return api.tx.xTokens.transferMulticurrencies(
+    [
+      [
+        {
+          ForeignAsset: foreignAssetId,
+        },
+        amount,
+      ],
+      [
+        {
+          Token: 'KSM',
+        },
+        '16000000000',
+      ],
+    ],
+    '1',
+    {
+      V3: {
+        parents: 1,
+        interior: {
+          X2: [
+            {
+              Parachain: parachainId,
+            },
+            {
+              AccountId32: {
                 id: address,
               },
             },

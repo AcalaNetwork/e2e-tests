@@ -12,6 +12,7 @@ const endpoints = {
   statemine: 'wss://statemine-rpc.polkadot.io',
   karura: 'wss://karura-rpc-0.aca-api.network',
   basilisk: 'wss://basilisk-rpc.dwellir.com',
+  hydraDX: 'wss://rpc.hydradx.cloud',
 }
 
 const toNumber = (value: string | undefined): number | undefined => {
@@ -78,6 +79,14 @@ export default {
       wasmOverride: process.env.BASILISK_WASM,
       blockNumber: toNumber(process.env.BASILISK_BLOCK_NUMBER),
       endpoint: process.env.BASILISK_ENDPOINT ?? endpoints.basilisk,
+      db: process.env.DB_PATH,
+      ...options,
+    }),
+  hydraDX: (options?: Partial<SetupOption>) =>
+    setupContext({
+      wasmOverride: process.env.HYDRADX_WASM,
+      blockNumber: toNumber(process.env.HYDRADX_BLOCK_NUMBER),
+      endpoint: process.env.HYDRADX_ENDPOINT ?? endpoints.hydraDX,
       db: process.env.DB_PATH,
       ...options,
     }),

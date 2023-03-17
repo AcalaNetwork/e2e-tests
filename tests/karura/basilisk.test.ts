@@ -23,7 +23,7 @@ describe('Karura <-> Basilisk', () => {
       Tokens: {
         Accounts: [
           [[alice.address, { Token: 'KSM' }], { free: 10 * 1e12 }],
-          [[alice.address, { Token: 'AUSD' }], { free: 10 * 1e12 }],
+          [[alice.address, { Token: 'KUSD' }], { free: 10 * 1e12 }],
         ],
       },
       Sudo: {
