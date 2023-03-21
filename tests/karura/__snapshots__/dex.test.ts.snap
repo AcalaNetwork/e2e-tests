@@ -31,8 +31,8 @@ exports[`Karura dex > stable swap works > events 2`] = `
       "a": 10000,
       "balances": [
         "(rounded 1000000000000000000)",
-        "(rounded 40000000000000000)",
-        "(rounded 40000000000000000)",
+        "(rounded 30000000000000000)",
+        "(rounded 30000000000000000)",
       ],
       "inputAmount": 1000000000000,
       "inputAsset": {
