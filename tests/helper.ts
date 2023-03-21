@@ -123,7 +123,7 @@ export class Checker {
         if (redactAddress && obj.match(/^[1-9A-HJ-NP-Za-km-z]{46,48}$/)) {
           return '(address)'
         }
-        if (redactNumber && obj.match(/^[\d,]+$/)) {
+        if (redactNumber && obj.match(/^-?[\d,]+$/)) {
           const num = parseInt(obj.replace(/,/g, ''))
           return processNumber(num)
         }

@@ -21,11 +21,11 @@ exports[`Karura honzon > honzon payback works > events 1`] = `
 [
   {
     "data": {
-      "collateralAdjustment": "-50,000,000,000,000",
+      "collateralAdjustment": -50000000000000,
       "collateralType": {
         "Token": "KSM",
       },
-      "debitAdjustment": "-500,000,000,000,000",
+      "debitAdjustment": -500000000000000,
       "owner": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
     },
     "method": "PositionUpdated",
@@ -55,11 +55,11 @@ exports[`Karura honzon > loans by Dex close works > events 2`] = `
 [
   {
     "data": {
-      "collateralAdjustment": "-50,000,000,000,000",
+      "collateralAdjustment": -50000000000000,
       "collateralType": {
         "Token": "KSM",
       },
-      "debitAdjustment": "-500,000,000,000,000",
+      "debitAdjustment": -500000000000000,
       "owner": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
     },
     "method": "PositionUpdated",

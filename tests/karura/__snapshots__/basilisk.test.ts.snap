@@ -242,7 +242,7 @@ exports[`Karura <-> Basilisk > Karura transfer USDC to basilisk > events 2`] = `
         },
       ],
       "usedGas": "(rounded 50000)",
-      "usedStorage": "-64",
+      "usedStorage": -64,
     },
     "method": "Executed",
     "section": "evm",
