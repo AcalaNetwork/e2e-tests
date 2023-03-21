@@ -226,6 +226,97 @@ export const xTokensTransferMulticurrencies = (
   )
 }
 
+export const xTokensTransferTransferMultiasset = (
+  api: ApiPromise,
+  interior: any[],
+  amount: string,
+  parachainId: string,
+  address: Uint8Array
+) => {
+  return api.tx.xTokens.transferMultiasset(
+    {
+      V1: {
+        fun: {
+          Fungible: amount,
+        },
+        id: {
+          Concrete: {
+            parents: 1,
+            interior: {
+              X3: interior,
+              // X3: [{ Parachain: 1000 }, { PalletInstance: 50 }, { GeneralIndex: 1984 }],
+            },
+          },
+        },
+      },
+    },
+    {
+      V1: {
+        parents: 1,
+        interior: {
+          X2: [
+            {
+              Parachain: parachainId,
+            },
+            {
+              AccountId32: {
+                network: 'Any',
+                id: address,
+              },
+            },
+          ],
+        },
+      },
+    },
+    'Unlimited'
+  )
+}
+
+export const xTokensTransferTransferMultiassetV3 = (
+  api: ApiPromise,
+  interior: any[],
+  amount: string,
+  parachainId: string,
+  address: Uint8Array
+) => {
+  return api.tx.xTokens.transferMultiasset(
+    {
+      V3: {
+        fun: {
+          Fungible: amount,
+        },
+        id: {
+          Concrete: {
+            parents: 1,
+            interior: {
+              X3: interior,
+              // X3: [{ Parachain: 1000 }, { PalletInstance: 50 }, { GeneralIndex: 1984 }],
+            },
+          },
+        },
+      },
+    },
+    {
+      V3: {
+        parents: 1,
+        interior: {
+          X2: [
+            {
+              Parachain: parachainId,
+            },
+            {
+              AccountId32: {
+                id: address,
+              },
+            },
+          ],
+        },
+      },
+    },
+    'Unlimited'
+  )
+}
+
 export const xTokensTransferMulticurrenciesV3 = (
   api: ApiPromise,
   foreignAssetId: string,
@@ -339,7 +430,7 @@ export const stableAssetRedeemProportion = (
   amount: string,
   minRedeemAmount: any[]
 ) => {
-  return api.tx.stableAsset.redeemSingle(poolId, amount, minRedeemAmount)
+  return api.tx.stableAsset.redeemProportion(poolId, amount, minRedeemAmount)
 }
 
 export const dexRemoveLiquidity = (
@@ -381,6 +472,18 @@ export const requestRedeem = (api: ApiPromise, amount: string, isFastMatch: bool
 
 export const forceBumpCurrentEra = (api: ApiPromise, bumpAmount: string) => {
   return api.tx.homa.forceBumpCurrentEra(bumpAmount)
+}
+
+export const incentivesClaimRewards = (api: ApiPromise, poolId: object) => {
+  return api.tx.incentives.claimRewards(poolId)
+}
+
+export const transactionPaymentWithFeeCurrency = (
+  api: ApiPromise,
+  currencyId: object,
+  call: SubmittableExtrinsic<'promise'>
+) => {
+  return api.tx.transactionPayment.withFeeCurrency(currencyId, call)
 }
 
 export const sudo = (api: ApiPromise, call: SubmittableExtrinsic<'promise'>) => {

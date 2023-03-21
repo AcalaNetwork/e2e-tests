@@ -148,6 +148,6 @@ describe('Acala <-> HydraDX', () => {
     `)
 
     await acala.chain.newBlock()
-    await checkSystemEvents(acala, 'xcmpQueue', 'evm', 'Executed').toMatchSnapshot()
+    await checkSystemEvents(acala).toMatchSnapshot()
   })
 })

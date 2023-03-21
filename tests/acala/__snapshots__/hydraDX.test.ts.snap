@@ -414,4 +414,79 @@ exports[`Acala <-> HydraDX > hydraDX tranfer DAI to acala > hrmp 1`] = `
 ]
 `;
 
-exports[`Acala <-> HydraDX > hydraDX tranfer DAI to acala > system events 1`] = `[]`;
+exports[`Acala <-> HydraDX > hydraDX tranfer DAI to acala > system events 1`] = `
+[
+  {
+    "data": {
+      "amount": "(rounded 39000000000)",
+      "currencyId": {
+        "Token": "AUSD",
+      },
+      "who": "23M5ttkmR6KcnvsNJdmYTpLo9xfc54g8uCk55buDfiJPon69",
+    },
+    "method": "Deposited",
+    "section": "tokens",
+  },
+  {
+    "data": {
+      "amount": "(rounded 2200000000)",
+      "currencyId": {
+        "Token": "AUSD",
+      },
+      "who": "23M5ttkmR6KcnvsNJdmYTpLo9xfc54g8uCk55buDfiJPon69",
+    },
+    "method": "Deposited",
+    "section": "tokens",
+  },
+  {
+    "data": {
+      "amount": "(rounded 1200000000)",
+      "currencyId": {
+        "Token": "AUSD",
+      },
+      "who": "23M5ttkmR6KcnvsNJdmYTpLo9xfc54g8uCk55buDfiJPon69",
+    },
+    "method": "Deposited",
+    "section": "tokens",
+  },
+  {
+    "data": {
+      "amount": "(rounded 6600000000)",
+      "currencyId": {
+        "Token": "AUSD",
+      },
+      "who": "23M5ttkmR6KcnvsNJdmYTpLo9xfc54g8uCk55buDfiJPon69",
+    },
+    "method": "Deposited",
+    "section": "tokens",
+  },
+  {
+    "data": {
+      "dispatchInfo": {
+        "class": "Mandatory",
+        "paysFee": "Yes",
+        "weight": {
+          "proofSize": 0,
+          "refTime": "(rounded 260000000)",
+        },
+      },
+    },
+    "method": "ExtrinsicSuccess",
+    "section": "system",
+  },
+  {
+    "data": {
+      "dispatchInfo": {
+        "class": "Mandatory",
+        "paysFee": "No",
+        "weight": {
+          "proofSize": 0,
+          "refTime": "(rounded 99000000)",
+        },
+      },
+    },
+    "method": "ExtrinsicSuccess",
+    "section": "system",
+  },
+]
+`;

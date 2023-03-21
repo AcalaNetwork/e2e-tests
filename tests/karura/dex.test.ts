@@ -5,6 +5,8 @@ import {
   aggregatedDexSwapWithExactSupply,
   dexRemoveLiquidity,
   stableAssetMint,
+  stableAssetRedeemProportion,
+  stableAssetRedeemSingle,
   stableAssetSwap,
   swapWithExactSupply,
   swapWithExactTarget,
@@ -456,6 +458,112 @@ describe('Karura dex', async () => {
     expect(await queryTokenBalance(karura.api, { Token: 'LKSM' }, alice.address)).toMatchInlineSnapshot(`
       {
         "free": 992254983026490,
+        "frozen": 0,
+        "reserved": 0,
+      }
+    `)
+  })
+
+  it('stableAssetRedeemSingle works', async () => {
+    expect(await queryTokenBalance(karura.api, { Token: 'KSM' }, alice.address)).toMatchInlineSnapshot(`
+      {
+        "free": 100000000000000,
+        "frozen": 0,
+        "reserved": 0,
+      }
+    `)
+    expect(await queryTokenBalance(karura.api, { StableAssetPoolToken: '0' }, alice.address)).toMatchInlineSnapshot(`
+      {
+        "free": 10981459434471,
+        "frozen": 0,
+        "reserved": 0,
+      }
+    `)
+    const tx = await sendTransaction(
+      stableAssetRedeemSingle(karura.api, '0', '10981459434471', '0', '0', '2').signAsync(alice, { nonce: 0 })
+    )
+    await karura.chain.newBlock()
+    await checkEvents(tx).toMatchSnapshot()
+    expect(await queryTokenBalance(karura.api, { StableAssetPoolToken: '0' }, alice.address)).toMatchInlineSnapshot(`
+      {
+        "free": 0,
+        "frozen": 0,
+        "reserved": 0,
+      }
+    `)
+    expect(await queryTokenBalance(karura.api, { Token: 'KSM' }, alice.address)).toMatchInlineSnapshot(`
+      {
+        "free": 110922245582163,
+        "frozen": 0,
+        "reserved": 0,
+      }
+    `)
+  })
+
+  it('redeemProportion works', async () => {
+    // 1. mint tailKSM
+    expect(await queryTokenBalance(karura.api, { StableAssetPoolToken: '0' }, alice.address)).toMatchInlineSnapshot(`
+      {
+        "free": 0,
+        "frozen": 0,
+        "reserved": 0,
+      }
+    `)
+    const tx0 = await sendTransaction(
+      stableAssetMint(karura.api, '0', ['1000000000000', '10000000000000'], '0').signAsync(alice, { nonce: 0 })
+    )
+    await karura.chain.newBlock()
+    await checkEvents(tx0, {
+      method: 'Minted',
+      section: 'stableAsset',
+    })
+      .redact({ number: 1 })
+      .toMatchSnapshot()
+
+    expect(await queryTokenBalance(karura.api, { StableAssetPoolToken: '0' }, alice.address)).toMatchInlineSnapshot(`
+      {
+        "free": 10981332729006,
+        "frozen": 0,
+        "reserved": 0,
+      }
+    `)
+    expect(await queryTokenBalance(karura.api, { Token: 'KSM' }, alice.address)).toMatchInlineSnapshot(`
+      {
+        "free": 99000000000000,
+        "frozen": 0,
+        "reserved": 0,
+      }
+    `)
+    expect(await queryTokenBalance(karura.api, { Token: 'LKSM' }, alice.address)).toMatchInlineSnapshot(`
+      {
+        "free": 923012003349538,
+        "frozen": 0,
+        "reserved": 0,
+      }
+    `)
+
+    const tx1 = await sendTransaction(
+      stableAssetRedeemProportion(karura.api, '0', '10981332729006', [0, 0]).signAsync(alice, { nonce: 1 })
+    )
+    await karura.chain.newBlock()
+    await checkEvents(tx1).toMatchSnapshot()
+    expect(await queryTokenBalance(karura.api, { StableAssetPoolToken: '0' }, alice.address)).toMatchInlineSnapshot(`
+      {
+        "free": 0,
+        "frozen": 0,
+        "reserved": 0,
+      }
+    `)
+    expect(await queryTokenBalance(karura.api, { Token: 'KSM' }, alice.address)).toMatchInlineSnapshot(`
+      {
+        "free": 103744713027682,
+        "frozen": 0,
+        "reserved": 0,
+      }
+    `)
+    expect(await queryTokenBalance(karura.api, { Token: 'LKSM' }, alice.address)).toMatchInlineSnapshot(`
+      {
+        "free": 970785371252874,
         "frozen": 0,
         "reserved": 0,
       }
