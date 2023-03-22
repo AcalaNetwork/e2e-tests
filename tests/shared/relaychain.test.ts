@@ -43,6 +43,10 @@ describe.each([
       Sudo: {
         Key: alice.address,
       },
+      Homa: {
+        // avoid impact test outcome
+        $removePrefix: ['redeemRequests', 'unbondings'],
+      },
     })
     await relaychain.dev.setStorage({
       System: {
