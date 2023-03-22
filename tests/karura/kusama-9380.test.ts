@@ -10,25 +10,23 @@ import {
   sudo,
   xTokens,
 } from '../api/extrinsics'
-import networks from '../networks'
+import networks, { Network } from '../networks'
 
 describe('Karura <-> Kusama', async () => {
-  const kusama = await networks.kusama({
-    wasmOverride: './wasm/kusama_runtime-v9381.compact.compressed.wasm',
-  })
-  const karura = await networks.karura({
-    wasmOverride: './wasm/karura-2150.wasm',
-  })
-  await connectVertical(kusama.chain, karura.chain)
+  let kusama: Network
+  let karura: Network
 
   const { alice } = testingPairs()
 
-  afterAll(async () => {
-    await kusama.teardown()
-    await karura.teardown()
-  })
-
   beforeEach(async () => {
+    kusama = await networks.kusama({
+      wasmOverride: './wasm/kusama_runtime-v9381.compact.compressed.wasm',
+    })
+    karura = await networks.karura({
+      wasmOverride: './wasm/karura-2150.wasm',
+    })
+    await connectVertical(kusama.chain, karura.chain)
+
     await karura.dev.setStorage({
       System: {
         Account: [[[alice.address], { data: { free: 10 * 1e12 } }]],
@@ -42,6 +40,12 @@ describe('Karura <-> Kusama', async () => {
       Sudo: {
         Key: alice.address,
       },
+      Homa: {
+        // avoid impact test outcome
+        $removePrefix: ['redeemRequests', 'unbondings'],
+        // so that bump era won't trigger unbond
+        relayChainCurrentEra: '0x45130000',
+      }
     })
     await kusama.dev.setStorage({
       System: {
@@ -52,6 +56,15 @@ describe('Karura <-> Kusama', async () => {
         $removePrefix: ['disputes'],
       },
     })
+
+    // new block to run migration
+    await kusama.dev.newBlock()
+    await karura.dev.newBlock()
+
+    return async () => {
+      await kusama.teardown()
+      await karura.teardown()
+    }
   })
 
   it('Karura transfer assets to Kusama', async () => {
