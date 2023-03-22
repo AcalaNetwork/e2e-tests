@@ -14,7 +14,7 @@ import networks from '../networks'
 
 describe('Karura <-> Kusama', async () => {
   const kusama = await networks.kusama({
-    wasmOverride: './wasm/kusama_runtime-v9380.compact.compressed.wasm',
+    wasmOverride: './wasm/kusama_runtime-v9381.compact.compressed.wasm',
   })
   const karura = await networks.karura({
     wasmOverride: './wasm/karura-2150.wasm',
@@ -127,7 +127,7 @@ describe('Karura <-> Kusama', async () => {
 
 describe('Karura 3752729 <-> Kusama 16732970', async () => {
   const kusama = await networks.kusama({
-    wasmOverride: './wasm/kusama_runtime-v9380.compact.compressed.wasm',
+    wasmOverride: './wasm/kusama_runtime-v9381.compact.compressed.wasm',
     blockNumber: 16732970,
   })
   const karura = await networks.karura({
