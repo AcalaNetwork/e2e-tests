@@ -39,7 +39,7 @@ exports[`Karura dex > stable swap works > events 2`] = `
         "Token": "KUSD",
       },
       "minOutputAmount": 0,
-      "outputAmount": "(rounded 700000)",
+      "outputAmount": "(rounded 600000)",
       "outputAsset": {
         "ForeignAsset": 7,
       },
