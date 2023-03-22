@@ -45,7 +45,7 @@ describe('Karura <-> Kusama', async () => {
         $removePrefix: ['redeemRequests', 'unbondings'],
         // so that bump era won't trigger unbond
         relayChainCurrentEra: '0x45130000',
-      }
+      },
     })
     await kusama.dev.setStorage({
       System: {
