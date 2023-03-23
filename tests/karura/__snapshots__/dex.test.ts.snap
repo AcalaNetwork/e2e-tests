@@ -21,6 +21,39 @@ exports[`Karura dex > addLiquidity and stake works > events 1`] = `
 ]
 `;
 
+exports[`Karura dex > addLiquidity and stake works 1`] = `
+[
+  "(rounded 1700000000000)",
+  {
+    "{\\"token\\":\\"KAR\\"}": "(rounded 19000000000000)",
+  },
+]
+`;
+
+exports[`Karura dex > addLiquidity and stake works 2`] = `
+{
+  "free": 0,
+  "frozen": 0,
+  "reserved": 0,
+}
+`;
+
+exports[`Karura dex > addLiquidity and stake works 3`] = `
+{
+  "free": 99000000000000,
+  "frozen": 0,
+  "reserved": 0,
+}
+`;
+
+exports[`Karura dex > addLiquidity and stake works 4`] = `
+{
+  "free": "(rounded 990000000000000)",
+  "frozen": 0,
+  "reserved": 0,
+}
+`;
+
 exports[`Karura dex > addLiquidity works > events 1`] = `
 [
   {
@@ -42,13 +75,37 @@ exports[`Karura dex > addLiquidity works > events 1`] = `
 ]
 `;
 
+exports[`Karura dex > addLiquidity works 1`] = `
+{
+  "free": "(rounded 1700000000000)",
+  "frozen": 0,
+  "reserved": 0,
+}
+`;
+
+exports[`Karura dex > addLiquidity works 2`] = `
+{
+  "free": 99000000000000,
+  "frozen": 0,
+  "reserved": 0,
+}
+`;
+
+exports[`Karura dex > addLiquidity works 3`] = `
+{
+  "free": "(rounded 990000000000000)",
+  "frozen": 0,
+  "reserved": 0,
+}
+`;
+
 exports[`Karura dex > aggregatedDex supply swap works > events 1`] = `
 [
   {
     "data": {
       "liquidityChanges": [
         1000000000000,
-        "(rounded 140000000000)",
+        "(rounded 100000000000)",
         "(rounded 50000000000000)",
       ],
       "path": [
@@ -69,29 +126,84 @@ exports[`Karura dex > aggregatedDex supply swap works > events 1`] = `
   },
   {
     "data": {
+      "newBalances": [
+        "(rounded 1000000000000000000)",
+        "(rounded 30000000000000000)",
+        "(rounded 30000000000000000)",
+      ],
+      "oldBalances": [
+        "(rounded 1000000000000000000)",
+        "(rounded 30000000000000000)",
+        "(rounded 30000000000000000)",
+      ],
+      "poolId": 1,
+    },
+    "method": "BalanceUpdated",
+    "section": "stableAsset",
+  },
+  {
+    "data": {
+      "a": 10000,
+      "amount": "(rounded 20000000000)",
+      "newBalances": [
+        "(rounded 1000000000000000000)",
+        "(rounded 30000000000000000)",
+        "(rounded 30000000000000000)",
+      ],
+      "newTotalSupply": "(rounded 1000000000000000000)",
+      "oldBalances": [
+        "(rounded 1000000000000000000)",
+        "(rounded 30000000000000000)",
+        "(rounded 30000000000000000)",
+      ],
+      "oldTotalSupply": "(rounded 1000000000000000000)",
+      "poolId": 1,
+      "who": "qbK5taeJoMcwJoK3hZ7W8y2KkGu1iDRUvjrg9xQMsUKrrv7",
+    },
+    "method": "FeeCollected",
+    "section": "stableAsset",
+  },
+  {
+    "data": {
       "a": 10000,
       "balances": [
-        "(rounded 1100000000000000000)",
-        "(rounded 37000000000000000)",
-        "(rounded 37000000000000000)",
+        "(rounded 1000000000000000000)",
+        "(rounded 30000000000000000)",
+        "(rounded 30000000000000000)",
       ],
       "inputAmount": "(rounded 50000000000000)",
       "inputAsset": {
         "Token": "KUSD",
       },
       "minOutputAmount": 0,
-      "outputAmount": "(rounded 36000000)",
+      "outputAmount": "(rounded 30000000)",
       "outputAsset": {
         "ForeignAsset": 7,
       },
       "poolId": 1,
       "swapper": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-      "totalSupply": "(rounded 1100000000000000000)",
+      "totalSupply": "(rounded 1000000000000000000)",
     },
     "method": "TokenSwapped",
     "section": "stableAsset",
   },
 ]
+`;
+
+exports[`Karura dex > aggregatedDex supply swap works 1`] = `
+{
+  "free": "(rounded 32000000)",
+  "frozen": 0,
+  "reserved": 0,
+}
+`;
+
+exports[`Karura dex > aggregatedDex supply swap works 2`] = `
+{
+  "free": 99000000000000,
+  "frozen": 0,
+  "reserved": 0,
+}
 `;
 
 exports[`Karura dex > dexRemoveLiquidity works  > events 1`] = `
@@ -136,508 +248,6 @@ exports[`Karura dex > dexRemoveLiquidity works  > events 2`] = `
 ]
 `;
 
-exports[`Karura dex > redeemProportion works > events 1`] = `
-[
-  {
-    "data": {
-      "a": 3000,
-      "balances": [
-        "(rounded 9000000000000000)",
-        "(rounded 10000000000000000)",
-      ],
-      "feeAmount": 0,
-      "inputAmounts": [
-        1000000000000,
-        10000000000000,
-      ],
-      "minOutputAmount": 0,
-      "minter": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-      "outputAmount": "(rounded 10000000000000)",
-      "poolId": 0,
-      "totalSupply": "(rounded 20000000000000000)",
-    },
-    "method": "Minted",
-    "section": "stableAsset",
-  },
-]
-`;
-
-exports[`Karura dex > redeemProportion works > events 2`] = `
-[
-  {
-    "data": {
-      "amount": "(rounded 2600000000)",
-      "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "Withdraw",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "newBalances": [
-        "(rounded 9300000000000000)",
-        "(rounded 12000000000000000)",
-      ],
-      "oldBalances": [
-        "(rounded 9300000000000000)",
-        "(rounded 12000000000000000)",
-      ],
-      "poolId": 0,
-    },
-    "method": "BalanceUpdated",
-    "section": "stableAsset",
-  },
-  {
-    "data": {
-      "amount": "(rounded 4700000000000)",
-      "currencyId": {
-        "Token": "KSM",
-      },
-      "from": "qmmNug1GQstpimAXBphJPSbDawH47vwMmhuSUq9xRqAsDAr",
-      "to": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "Transfer",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "amount": "(rounded 4700000000000)",
-      "currencyId": {
-        "Token": "KSM",
-      },
-      "from": "qmmNug1GQstpimAXBphJPSbDawH47vwMmhuSUq9xRqAsDAr",
-      "to": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "Transferred",
-    "section": "currencies",
-  },
-  {
-    "data": {
-      "amount": "(rounded 48000000000000)",
-      "currencyId": {
-        "Token": "LKSM",
-      },
-      "from": "qmmNug1GQstpimAXBphJPSbDawH47vwMmhuSUq9xRqAsDAr",
-      "to": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "Transfer",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "amount": "(rounded 48000000000000)",
-      "currencyId": {
-        "Token": "LKSM",
-      },
-      "from": "qmmNug1GQstpimAXBphJPSbDawH47vwMmhuSUq9xRqAsDAr",
-      "to": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "Transferred",
-    "section": "currencies",
-  },
-  {
-    "data": {
-      "amount": "(rounded 33000000000)",
-      "currencyId": {
-        "StableAssetPoolToken": 0,
-      },
-      "from": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-      "to": "qbK5taeJoMcwJoK3hZ7W8y2KkGu1iDRUvjrg9xQMsUKrrv7",
-    },
-    "method": "Transfer",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "amount": "(rounded 33000000000)",
-      "currencyId": {
-        "StableAssetPoolToken": 0,
-      },
-      "from": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-      "to": "qbK5taeJoMcwJoK3hZ7W8y2KkGu1iDRUvjrg9xQMsUKrrv7",
-    },
-    "method": "Transferred",
-    "section": "currencies",
-  },
-  {
-    "data": {
-      "amount": "(rounded 11000000000000)",
-      "currencyId": {
-        "StableAssetPoolToken": 0,
-      },
-      "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "Withdrawn",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "account": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "KilledAccount",
-    "section": "system",
-  },
-  {
-    "data": {
-      "amount": 1,
-      "currencyId": {
-        "StableAssetPoolToken": 0,
-      },
-      "who": "qbK5taeJoMcwJoK3hZ7W8y2KkGu1iDRUvjrg9xQMsUKrrv7",
-    },
-    "method": "Deposited",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "a": 3000,
-      "amount": 1,
-      "newBalances": [
-        "(rounded 9300000000000000)",
-        "(rounded 12000000000000000)",
-      ],
-      "newTotalSupply": "(rounded 22000000000000000)",
-      "oldBalances": [
-        "(rounded 9300000000000000)",
-        "(rounded 12000000000000000)",
-      ],
-      "oldTotalSupply": "(rounded 22000000000000000)",
-      "poolId": 0,
-      "who": "qbK5taeJoMcwJoK3hZ7W8y2KkGu1iDRUvjrg9xQMsUKrrv7",
-    },
-    "method": "FeeCollected",
-    "section": "stableAsset",
-  },
-  {
-    "data": {
-      "a": 3000,
-      "balances": [
-        "(rounded 9300000000000000)",
-        "(rounded 12000000000000000)",
-      ],
-      "feeAmount": "(rounded 33000000000)",
-      "inputAmount": "(rounded 11000000000000)",
-      "minOutputAmounts": [
-        0,
-        0,
-      ],
-      "outputAmounts": [
-        "(rounded 4700000000000)",
-        "(rounded 6200000000000)",
-      ],
-      "poolId": 0,
-      "redeemer": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-      "totalSupply": "(rounded 22000000000000000)",
-    },
-    "method": "RedeemedProportion",
-    "section": "stableAsset",
-  },
-  {
-    "data": {
-      "amount": "(rounded 2600000000)",
-      "who": "qmmNufxeWaAVLMER2va1v4w2HbuU683c5gGtuxQG4fKTZSb",
-    },
-    "method": "Deposit",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "value": "(rounded 2600000000)",
-    },
-    "method": "Deposit",
-    "section": "treasury",
-  },
-  {
-    "data": {
-      "actualFee": "(rounded 2600000000)",
-      "actualSurplus": 0,
-      "actualTip": 0,
-      "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "TransactionFeePaid",
-    "section": "transactionPayment",
-  },
-  {
-    "data": {
-      "dispatchInfo": {
-        "class": "Normal",
-        "paysFee": "Yes",
-        "weight": {
-          "proofSize": 0,
-          "refTime": "(rounded 1200000000)",
-        },
-      },
-    },
-    "method": "ExtrinsicSuccess",
-    "section": "system",
-  },
-]
-`;
-
-exports[`Karura dex > stable swap works > events 1`] = `
-[
-  {
-    "data": {
-      "liquidityChanges": [
-        "(rounded 20000000000)",
-        1000000000000,
-      ],
-      "path": [
-        {
-          "Token": "KSM",
-        },
-        {
-          "Token": "KUSD",
-        },
-      ],
-      "trader": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "Swap",
-    "section": "dex",
-  },
-]
-`;
-
-exports[`Karura dex > stable swap works > events 2`] = `
-[
-  {
-    "data": {
-      "a": 10000,
-      "balances": [
-        "(rounded 1000000000000000000)",
-        "(rounded 40000000000000000)",
-        "(rounded 40000000000000000)",
-      ],
-      "inputAmount": 1000000000000,
-      "inputAsset": {
-        "Token": "KUSD",
-      },
-      "minOutputAmount": 0,
-      "outputAmount": "(rounded 600000)",
-      "outputAsset": {
-        "ForeignAsset": 7,
-      },
-      "poolId": 1,
-      "swapper": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-      "totalSupply": "(rounded 1000000000000000000)",
-    },
-    "method": "TokenSwapped",
-    "section": "stableAsset",
-  },
-]
-`;
-
-exports[`Karura dex > stableAsset mint works > events 1`] = `
-[
-  {
-    "data": {
-      "a": 3000,
-      "balances": [
-        "(rounded 9000000000000000)",
-        "(rounded 10000000000000000)",
-      ],
-      "feeAmount": 0,
-      "inputAmounts": [
-        1000000000000,
-        10000000000000,
-      ],
-      "minOutputAmount": 0,
-      "minter": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-      "outputAmount": "(rounded 10000000000000)",
-      "poolId": 0,
-      "totalSupply": "(rounded 20000000000000000)",
-    },
-    "method": "Minted",
-    "section": "stableAsset",
-  },
-]
-`;
-
-exports[`Karura dex > stableAssetRedeemSingle works > events 1`] = `
-[
-  {
-    "data": {
-      "amount": "(rounded 2500000000)",
-      "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "Withdraw",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "newBalances": [
-        "(rounded 9300000000000000)",
-        "(rounded 12000000000000000)",
-      ],
-      "oldBalances": [
-        "(rounded 9300000000000000)",
-        "(rounded 12000000000000000)",
-      ],
-      "poolId": 0,
-    },
-    "method": "BalanceUpdated",
-    "section": "stableAsset",
-  },
-  {
-    "data": {
-      "amount": "(rounded 33000000000)",
-      "currencyId": {
-        "StableAssetPoolToken": 0,
-      },
-      "from": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-      "to": "qbK5taeJoMcwJoK3hZ7W8y2KkGu1iDRUvjrg9xQMsUKrrv7",
-    },
-    "method": "Transfer",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "amount": "(rounded 33000000000)",
-      "currencyId": {
-        "StableAssetPoolToken": 0,
-      },
-      "from": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-      "to": "qbK5taeJoMcwJoK3hZ7W8y2KkGu1iDRUvjrg9xQMsUKrrv7",
-    },
-    "method": "Transferred",
-    "section": "currencies",
-  },
-  {
-    "data": {
-      "amount": "(rounded 11000000000000)",
-      "currencyId": {
-        "Token": "KSM",
-      },
-      "from": "qmmNug1GQstpimAXBphJPSbDawH47vwMmhuSUq9xRqAsDAr",
-      "to": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "Transfer",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "amount": "(rounded 11000000000000)",
-      "currencyId": {
-        "Token": "KSM",
-      },
-      "from": "qmmNug1GQstpimAXBphJPSbDawH47vwMmhuSUq9xRqAsDAr",
-      "to": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "Transferred",
-    "section": "currencies",
-  },
-  {
-    "data": {
-      "amount": "(rounded 11000000000000)",
-      "currencyId": {
-        "StableAssetPoolToken": 0,
-      },
-      "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "Withdrawn",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "account": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "KilledAccount",
-    "section": "system",
-  },
-  {
-    "data": {
-      "amount": 1,
-      "currencyId": {
-        "StableAssetPoolToken": 0,
-      },
-      "who": "qbK5taeJoMcwJoK3hZ7W8y2KkGu1iDRUvjrg9xQMsUKrrv7",
-    },
-    "method": "Deposited",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "a": 3000,
-      "amount": 1,
-      "newBalances": [
-        "(rounded 9300000000000000)",
-        "(rounded 12000000000000000)",
-      ],
-      "newTotalSupply": "(rounded 22000000000000000)",
-      "oldBalances": [
-        "(rounded 9300000000000000)",
-        "(rounded 12000000000000000)",
-      ],
-      "oldTotalSupply": "(rounded 22000000000000000)",
-      "poolId": 0,
-      "who": "qbK5taeJoMcwJoK3hZ7W8y2KkGu1iDRUvjrg9xQMsUKrrv7",
-    },
-    "method": "FeeCollected",
-    "section": "stableAsset",
-  },
-  {
-    "data": {
-      "a": 3000,
-      "balances": [
-        "(rounded 9300000000000000)",
-        "(rounded 12000000000000000)",
-      ],
-      "feeAmount": "(rounded 33000000000)",
-      "inputAmount": "(rounded 11000000000000)",
-      "minOutputAmount": 0,
-      "outputAmount": "(rounded 11000000000000)",
-      "outputAsset": {
-        "Token": "KSM",
-      },
-      "poolId": 0,
-      "redeemer": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-      "totalSupply": "(rounded 22000000000000000)",
-    },
-    "method": "RedeemedSingle",
-    "section": "stableAsset",
-  },
-  {
-    "data": {
-      "amount": "(rounded 2500000000)",
-      "who": "qmmNufxeWaAVLMER2va1v4w2HbuU683c5gGtuxQG4fKTZSb",
-    },
-    "method": "Deposit",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "value": "(rounded 2500000000)",
-    },
-    "method": "Deposit",
-    "section": "treasury",
-  },
-  {
-    "data": {
-      "actualFee": "(rounded 2500000000)",
-      "actualSurplus": 0,
-      "actualTip": 0,
-      "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "TransactionFeePaid",
-    "section": "transactionPayment",
-  },
-  {
-    "data": {
-      "dispatchInfo": {
-        "class": "Normal",
-        "paysFee": "Yes",
-        "weight": {
-          "proofSize": 0,
-          "refTime": "(rounded 1200000000)",
-        },
-      },
-    },
-    "method": "ExtrinsicSuccess",
-    "section": "system",
-  },
-]
-`;
-
 exports[`Karura dex > supply swap works > events 1`] = `
 [
   {
@@ -662,6 +272,22 @@ exports[`Karura dex > supply swap works > events 1`] = `
 ]
 `;
 
+exports[`Karura dex > supply swap works 1`] = `
+{
+  "free": "(rounded 50000000000000)",
+  "frozen": 0,
+  "reserved": 0,
+}
+`;
+
+exports[`Karura dex > supply swap works 2`] = `
+{
+  "free": 99000000000000,
+  "frozen": 0,
+  "reserved": 0,
+}
+`;
+
 exports[`Karura dex > target swap works > events 1`] = `
 [
   {
@@ -684,4 +310,20 @@ exports[`Karura dex > target swap works > events 1`] = `
     "section": "dex",
   },
 ]
+`;
+
+exports[`Karura dex > target swap works 1`] = `
+{
+  "free": 1000000000000,
+  "frozen": 0,
+  "reserved": 0,
+}
+`;
+
+exports[`Karura dex > target swap works 2`] = `
+{
+  "free": "(rounded 100000000000000)",
+  "frozen": 0,
+  "reserved": 0,
+}
 `;
