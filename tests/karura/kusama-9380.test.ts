@@ -40,7 +40,7 @@ describe('Karura <-> Kusama', async () => {
       },
       Homa: {
         // avoid impact test outcome
-        $removePrefix: ['redeemRequests', 'unbondings'],
+        $removePrefix: ['redeemRequests', 'unbondings', 'toBondPool'],
         // so that bump era won't trigger unbond
         relayChainCurrentEra: '0x45130000',
       },
