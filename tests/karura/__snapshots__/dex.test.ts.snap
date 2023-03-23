@@ -192,7 +192,7 @@ exports[`Karura dex > aggregatedDex supply swap works > events 1`] = `
 
 exports[`Karura dex > aggregatedDex supply swap works 1`] = `
 {
-  "free": "(rounded 32000000)",
+  "free": "(rounded 33000000)",
   "frozen": 0,
   "reserved": 0,
 }

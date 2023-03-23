@@ -118,7 +118,7 @@ exports[`Karura dex > stable swap works 3`] = `
 
 exports[`Karura dex > stable swap works 4`] = `
 {
-  "free": "(rounded 630000)",
+  "free": "(rounded 640000)",
   "frozen": 0,
   "reserved": 0,
 }
@@ -194,11 +194,11 @@ exports[`Karura dex > with liquidity > redeemProportion works > events 1`] = `
   {
     "data": {
       "newBalances": [
-        "(rounded 9000000000000000)",
+        "(rounded 8900000000000000)",
         "(rounded 13000000000000000)",
       ],
       "oldBalances": [
-        "(rounded 9000000000000000)",
+        "(rounded 8900000000000000)",
         "(rounded 13000000000000000)",
       ],
       "poolId": 0,
@@ -209,8 +209,28 @@ exports[`Karura dex > with liquidity > redeemProportion works > events 1`] = `
   {
     "data": {
       "a": 3000,
+      "amount": 2,
+      "newBalances": [
+        "(rounded 8900000000000000)",
+        "(rounded 13000000000000000)",
+      ],
+      "newTotalSupply": "(rounded 22000000000000000)",
+      "oldBalances": [
+        "(rounded 8900000000000000)",
+        "(rounded 13000000000000000)",
+      ],
+      "oldTotalSupply": "(rounded 22000000000000000)",
+      "poolId": 0,
+      "who": "qbK5taeJoMcwJoK3hZ7W8y2KkGu1iDRUvjrg9xQMsUKrrv7",
+    },
+    "method": "FeeCollected",
+    "section": "stableAsset",
+  },
+  {
+    "data": {
+      "a": 3000,
       "balances": [
-        "(rounded 9000000000000000)",
+        "(rounded 8900000000000000)",
         "(rounded 13000000000000000)",
       ],
       "feeAmount": "(rounded 33000000000)",
@@ -221,7 +241,7 @@ exports[`Karura dex > with liquidity > redeemProportion works > events 1`] = `
       ],
       "outputAmounts": [
         "(rounded 4500000000000)",
-        "(rounded 6400000000000)",
+        "(rounded 6500000000000)",
       ],
       "poolId": 0,
       "redeemer": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
@@ -262,11 +282,11 @@ exports[`Karura dex > with liquidity > stableAssetRedeemSingle works > events 1`
   {
     "data": {
       "newBalances": [
-        "(rounded 9000000000000000)",
+        "(rounded 8900000000000000)",
         "(rounded 13000000000000000)",
       ],
       "oldBalances": [
-        "(rounded 9000000000000000)",
+        "(rounded 8900000000000000)",
         "(rounded 13000000000000000)",
       ],
       "poolId": 0,
@@ -277,8 +297,28 @@ exports[`Karura dex > with liquidity > stableAssetRedeemSingle works > events 1`
   {
     "data": {
       "a": 3000,
+      "amount": 1,
+      "newBalances": [
+        "(rounded 8900000000000000)",
+        "(rounded 13000000000000000)",
+      ],
+      "newTotalSupply": "(rounded 22000000000000000)",
+      "oldBalances": [
+        "(rounded 8900000000000000)",
+        "(rounded 13000000000000000)",
+      ],
+      "oldTotalSupply": "(rounded 22000000000000000)",
+      "poolId": 0,
+      "who": "qbK5taeJoMcwJoK3hZ7W8y2KkGu1iDRUvjrg9xQMsUKrrv7",
+    },
+    "method": "FeeCollected",
+    "section": "stableAsset",
+  },
+  {
+    "data": {
+      "a": 3000,
       "balances": [
-        "(rounded 9000000000000000)",
+        "(rounded 8900000000000000)",
         "(rounded 13000000000000000)",
       ],
       "feeAmount": "(rounded 33000000000)",
