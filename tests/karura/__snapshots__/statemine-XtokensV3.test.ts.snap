@@ -177,79 +177,11 @@ exports[`Karura <-> Statemine > Karura transfer assets to Statemine > hrmp 1`] =
     ],
     "recipient": 1000,
   },
-  {
-    "data": [
-      "ConcatenatedVersionedXcm",
-      {
-        "v2": [
-          {
-            "queryResponse": {
-              "maxWeight": 0,
-              "queryId": 0,
-              "response": {
-                "version": 3,
-              },
-            },
-          },
-        ],
-      },
-    ],
-    "recipient": 2096,
-  },
-  {
-    "data": [
-      "ConcatenatedVersionedXcm",
-      {
-        "v2": [
-          {
-            "queryResponse": {
-              "maxWeight": 0,
-              "queryId": 3,
-              "response": {
-                "version": 3,
-              },
-            },
-          },
-        ],
-      },
-    ],
-    "recipient": 2106,
-  },
-  {
-    "data": [
-      "ConcatenatedVersionedXcm",
-      {
-        "v2": [
-          {
-            "queryResponse": {
-              "maxWeight": 0,
-              "queryId": 2,
-              "response": {
-                "version": 3,
-              },
-            },
-          },
-        ],
-      },
-    ],
-    "recipient": 2118,
-  },
 ]
 `;
 
 exports[`Karura <-> Statemine > Karura transfer assets to Statemine > system events 1`] = `
 [
-  {
-    "data": {
-      "messageHash": "(hash)",
-      "weight": {
-        "proofSize": 0,
-        "refTime": "(rounded 42000000)",
-      },
-    },
-    "method": "Success",
-    "section": "xcmpQueue",
-  },
   {
     "data": {
       "messageHash": "(hash)",
@@ -264,8 +196,140 @@ exports[`Karura <-> Statemine > Karura transfer assets to Statemine > system eve
 ]
 `;
 
+exports[`Karura <-> Statemine > Karura transfer assets to Statemine 1`] = `
+{
+  "free": "(rounded 10000000000000)",
+  "frozen": 0,
+  "reserved": 0,
+}
+`;
+
+exports[`Karura <-> Statemine > Karura transfer assets to Statemine 2`] = `
+{
+  "balance": "(rounded 10000000)",
+  "extra": null,
+  "isFrozen": false,
+  "reason": {
+    "sufficient": null,
+  },
+}
+`;
+
+exports[`Karura <-> Statemine > Statemine transfer assets to Karura > hrmp 1`] = `
+[
+  {
+    "data": [
+      "ConcatenatedVersionedXcm",
+      {
+        "v2": [
+          {
+            "reserveAssetDeposited": [
+              {
+                "fun": {
+                  "fungible": 10000000,
+                },
+                "id": {
+                  "concrete": {
+                    "interior": {
+                      "x3": [
+                        {
+                          "parachain": 1000,
+                        },
+                        {
+                          "palletInstance": 50,
+                        },
+                        {
+                          "generalIndex": 1984,
+                        },
+                      ],
+                    },
+                    "parents": 1,
+                  },
+                },
+              },
+            ],
+          },
+          {
+            "clearOrigin": null,
+          },
+          {
+            "buyExecution": {
+              "fees": {
+                "fun": {
+                  "fungible": 10000000,
+                },
+                "id": {
+                  "concrete": {
+                    "interior": {
+                      "x3": [
+                        {
+                          "parachain": 1000,
+                        },
+                        {
+                          "palletInstance": 50,
+                        },
+                        {
+                          "generalIndex": 1984,
+                        },
+                      ],
+                    },
+                    "parents": 1,
+                  },
+                },
+              },
+              "weightLimit": {
+                "unlimited": null,
+              },
+            },
+          },
+          {
+            "depositAsset": {
+              "assets": {
+                "wild": {
+                  "all": null,
+                },
+              },
+              "beneficiary": {
+                "interior": {
+                  "x1": {
+                    "accountId32": {
+                      "id": "0x88dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee",
+                      "network": {
+                        "any": null,
+                      },
+                    },
+                  },
+                },
+                "parents": 0,
+              },
+              "maxAssets": 1,
+            },
+          },
+        ],
+      },
+    ],
+    "recipient": 2000,
+  },
+]
+`;
+
 exports[`Karura <-> Statemine > Statemine transfer assets to Karura > system events 1`] = `
 [
+  {
+    "data": [
+      {
+        "interior": {
+          "X1": {
+            "Parachain": 2000,
+          },
+        },
+        "parents": 1,
+      },
+      3,
+    ],
+    "method": "SupportedVersionChanged",
+    "section": "polkadotXcm",
+  },
   {
     "data": [
       {
@@ -297,69 +361,6 @@ exports[`Karura <-> Statemine > Statemine transfer assets to Karura > system eve
   {
     "data": {
       "messageHash": "(hash)",
-    },
-    "method": "XcmpMessageSent",
-    "section": "xcmpQueue",
-  },
-  {
-    "data": {
-      "messageHash": "(hash)",
-    },
-    "method": "XcmpMessageSent",
-    "section": "xcmpQueue",
-  },
-  {
-    "data": {
-      "messageHash": "(hash)",
-    },
-    "method": "XcmpMessageSent",
-    "section": "xcmpQueue",
-  },
-  {
-    "data": {
-      "messageHash": "(hash)",
-    },
-    "method": "XcmpMessageSent",
-    "section": "xcmpQueue",
-  },
-  {
-    "data": {
-      "messageHash": "(hash)",
-    },
-    "method": "XcmpMessageSent",
-    "section": "xcmpQueue",
-  },
-  {
-    "data": {
-      "messageHash": "(hash)",
-    },
-    "method": "XcmpMessageSent",
-    "section": "xcmpQueue",
-  },
-  {
-    "data": {
-      "messageHash": "(hash)",
-    },
-    "method": "XcmpMessageSent",
-    "section": "xcmpQueue",
-  },
-  {
-    "data": {
-      "messageHash": "(hash)",
-    },
-    "method": "XcmpMessageSent",
-    "section": "xcmpQueue",
-  },
-  {
-    "data": {
-      "messageHash": "(hash)",
-    },
-    "method": "XcmpMessageSent",
-    "section": "xcmpQueue",
-  },
-  {
-    "data": {
-      "messageHash": "(hash)",
       "weight": {
         "proofSize": 0,
         "refTime": 800000000,
@@ -369,4 +370,27 @@ exports[`Karura <-> Statemine > Statemine transfer assets to Karura > system eve
     "section": "xcmpQueue",
   },
 ]
+`;
+
+exports[`Karura <-> Statemine > Statemine transfer assets to Karura 1`] = `
+{
+  "consumers": 0,
+  "data": {
+    "feeFrozen": 0,
+    "free": "(rounded 10000000000000)",
+    "miscFrozen": 0,
+    "reserved": 0,
+  },
+  "nonce": 1,
+  "providers": 0,
+  "sufficients": 0,
+}
+`;
+
+exports[`Karura <-> Statemine > Statemine transfer assets to Karura 2`] = `
+{
+  "free": "(rounded 10000000000000)",
+  "frozen": 0,
+  "reserved": 0,
+}
 `;
