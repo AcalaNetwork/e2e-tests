@@ -22,9 +22,7 @@ describe('Karura <-> Kusama', async () => {
     kusama = await networks.kusama({
       wasmOverride: './wasm/kusama_runtime-v9381.compact.compressed.wasm',
     })
-    karura = await networks.karura({
-      wasmOverride: './wasm/karura-2150.wasm',
-    })
+    karura = await networks.karura()
     await connectVertical(kusama.chain, karura.chain)
 
     await karura.dev.setStorage({
