@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it } from 'vitest'
+import { beforeEach, describe, it } from 'vitest'
 import { connectParachains } from '@acala-network/chopsticks'
 
 import { check, checkEvents, checkHrmp, checkSystemEvents, sendTransaction, testingPairs } from '../helper'

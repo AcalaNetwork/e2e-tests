@@ -1,4 +1,4 @@
-import { afterAll, beforeEach, describe, it } from 'vitest'
+import { beforeEach, describe, it } from 'vitest'
 
 import { check, checkEvents, checkSystemEvents, sendTransaction, testingPairs } from '../helper'
 import { queryTokenBalance } from '../api/query'
@@ -117,7 +117,9 @@ describe('Karura dex', async () => {
     it('redeemProportion works', async () => {
       const balData: any = await queryTokenBalance(karura.api, { StableAssetPoolToken: '0' }, alice.address)
 
-      const tx1 = await sendTransaction(stableAssetRedeemProportion(karura.api, '0', balData.free, [0, 0]).signAsync(alice))
+      const tx1 = await sendTransaction(
+        stableAssetRedeemProportion(karura.api, '0', balData.free, [0, 0]).signAsync(alice)
+      )
 
       await karura.chain.newBlock()
 

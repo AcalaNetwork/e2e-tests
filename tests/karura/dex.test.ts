@@ -76,7 +76,6 @@ describe('Karura dex', async () => {
       .toMatchSnapshot()
   })
 
-
   it('aggregatedDex supply swap works', async () => {
     const tx = await sendTransaction(
       aggregatedDexSwapWithExactSupply(
