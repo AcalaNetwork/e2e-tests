@@ -25,69 +25,18 @@ const toNumber = (value: string | undefined): number | undefined => {
 
 export type Network = Awaited<ReturnType<typeof setupContext>>
 
-export default {
-  polkadot: (options?: Partial<SetupOption>) =>
+const networks = {} as Record<keyof typeof endpoints, (options?: Partial<SetupOption>) => Promise<Network>>
+
+for (const [name, endpoint] of Object.entries(endpoints)) {
+  const upperName = name.toUpperCase()
+  networks[name as keyof typeof endpoints] = (options?: Partial<SetupOption>) =>
     setupContext({
-      wasmOverride: process.env.POLKADOT_WASM,
-      blockNumber: toNumber(process.env.POLKADOT_BLOCK_NUMBER),
-      endpoint: process.env.POLKADOT_ENDPOINT ?? endpoints.polkadot,
+      wasmOverride: process.env[`${upperName}_WASM`],
+      blockNumber: toNumber(process.env[`${upperName}_BLOCK_NUMBER`]),
+      endpoint: process.env[`${upperName}_ENDPOINT`] ?? endpoint,
       db: process.env.DB_PATH,
       ...options,
-    }),
-  statemint: (options?: Partial<SetupOption>) =>
-    setupContext({
-      wasmOverride: process.env.STATEMINT_WASM,
-      blockNumber: toNumber(process.env.STATEMINT_BLOCK_NUMBER),
-      endpoint: process.env.STATEMINT__ENDPOINT ?? endpoints.statemint,
-      db: process.env.DB_PATH,
-      ...options,
-    }),
-  acala: (options?: Partial<SetupOption>) =>
-    setupContext({
-      wasmOverride: process.env.ACALA_WASM,
-      blockNumber: toNumber(process.env.ACALA_BLOCK_NUMBER),
-      endpoint: process.env.ACALA_ENDPOINT ?? endpoints.acala,
-      db: process.env.DB_PATH,
-      ...options,
-    }),
-  kusama: (options?: Partial<SetupOption>) =>
-    setupContext({
-      wasmOverride: process.env.KUSAMA_WASM,
-      blockNumber: toNumber(process.env.KUSAMA_BLOCK_NUMBER),
-      endpoint: process.env.KUSAMA_ENDPOINT ?? endpoints.kusama,
-      db: process.env.DB_PATH,
-      ...options,
-    }),
-  statemine: (options?: Partial<SetupOption>) =>
-    setupContext({
-      wasmOverride: process.env.STATEMINE_WASM,
-      blockNumber: toNumber(process.env.STATEMINE_BLOCK_NUMBER),
-      endpoint: process.env.STATEMINE_ENDPOINT ?? endpoints.statemine,
-      db: process.env.DB_PATH,
-      ...options,
-    }),
-  karura: (options?: Partial<SetupOption>) =>
-    setupContext({
-      wasmOverride: process.env.KARURA_WASM,
-      blockNumber: toNumber(process.env.KARURA_BLOCK_NUMBER),
-      endpoint: process.env.KARURA_ENDPOINT ?? endpoints.karura,
-      db: process.env.DB_PATH,
-      ...options,
-    }),
-  basilisk: (options?: Partial<SetupOption>) =>
-    setupContext({
-      wasmOverride: process.env.BASILISK_WASM,
-      blockNumber: toNumber(process.env.BASILISK_BLOCK_NUMBER),
-      endpoint: process.env.BASILISK_ENDPOINT ?? endpoints.basilisk,
-      db: process.env.DB_PATH,
-      ...options,
-    }),
-  hydraDX: (options?: Partial<SetupOption>) =>
-    setupContext({
-      wasmOverride: process.env.HYDRADX_WASM,
-      blockNumber: toNumber(process.env.HYDRADX_BLOCK_NUMBER),
-      endpoint: process.env.HYDRADX_ENDPOINT ?? endpoints.hydraDX,
-      db: process.env.DB_PATH,
-      ...options,
-    }),
+    })
 }
+
+export default networks

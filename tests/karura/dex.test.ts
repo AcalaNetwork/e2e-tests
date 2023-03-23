@@ -210,7 +210,7 @@ describe('Karura dex', async () => {
         .value()
     ).toMatchInlineSnapshot(`
       {
-        "free": "(rounded 700000)",
+        "free": "(rounded 600000)",
         "frozen": 0,
         "reserved": 0,
       }
