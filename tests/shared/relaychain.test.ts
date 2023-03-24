@@ -1,62 +1,41 @@
-import { afterAll, beforeEach, describe, it } from 'vitest'
-import { connectVertical } from '@acala-network/chopsticks'
+import { beforeEach, describe, it } from 'vitest'
 
-import { check, checkEvents, checkSystemEvents, checkUmp, sendTransaction, testingPairs } from '../helper'
-import networks from '../networks'
+import { Network, createContext, createNetworks } from '../networks'
+import { check, checkEvents, checkSystemEvents, checkUmp, sendTransaction } from '../helper'
 
 describe.each([
   {
     para: 'acala',
     relay: 'polkadot',
     relayToken: 'DOT',
-    relayLiquidToken: 'LDOT',
   },
   {
     para: 'karura',
     relay: 'kusama',
     relayToken: 'KSM',
-    relayLiquidToken: 'LKSM',
   },
-])('$para <-> $relay', async ({ para, relay, relayToken, relayLiquidToken }) => {
-  const relaychain = await networks[relay as keyof typeof networks]()
-  const parachain = await networks[para as keyof typeof networks]()
-  await connectVertical(relaychain.chain, parachain.chain)
-
-  const { alice } = testingPairs()
-
-  afterAll(async () => {
-    await relaychain.teardown()
-    await parachain.teardown()
-  })
+] as const)('$para <-> $relay', async ({ para, relay, relayToken }) => {
+  let parachain: Network
+  let relaychain: Network
+  const ctx = createContext()
+  const { alice } = ctx
 
   beforeEach(async () => {
-    await parachain.dev.setStorage({
-      System: {
-        Account: [[[alice.address], { data: { free: 10 * 1e12 } }]],
-      },
-      Tokens: {
-        Accounts: [
-          [[alice.address, { Token: relayToken }], { free: 10 * 1e12 }],
-          [[alice.address, { Token: relayLiquidToken }], { free: 100 * 1e12 }],
-        ],
-      },
-      Sudo: {
-        Key: alice.address,
-      },
-      Homa: {
-        // avoid impact test outcome
-        $removePrefix: ['redeemRequests', 'unbondings'],
-      },
-    })
-    await relaychain.dev.setStorage({
-      System: {
-        Account: [[[alice.address], { data: { free: 10 * 1e12 } }]],
-      },
-      ParasDisputes: {
-        // those can makes block building super slow
-        $removePrefix: ['disputes'],
-      },
-    })
+    const { [para]: parachain1, [relay]: relaychain1 } = await createNetworks(
+      {
+        [para]: undefined,
+        [relay]: undefined,
+      } as any,
+      ctx
+    )
+
+    parachain = parachain1
+    relaychain = relaychain1
+
+    return async () => {
+      await relaychain.teardown()
+      await parachain.teardown()
+    }
   })
 
   it('parachain transfer assets to relaychain', async () => {
@@ -127,6 +106,7 @@ describe.each([
 
     await checkEvents(tx3, 'homa').toMatchSnapshot()
     await checkEvents(tx4, 'homa').toMatchSnapshot()
+    await checkUmp(parachain).toMatchSnapshot()
 
     await relaychain.chain.newBlock()
 
