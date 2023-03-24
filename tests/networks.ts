@@ -11,7 +11,7 @@ const endpoints = {
   kusama: 'wss://kusama-rpc.polkadot.io',
   statemine: 'wss://statemine-rpc.polkadot.io',
   karura: 'wss://karura-rpc-0.aca-api.network',
-  basilisk: 'wss://basilisk-rpc.dwellir.com',
+  basilisk: 'wss://rpc.basilisk.cloud',
   hydraDX: 'wss://rpc.hydradx.cloud',
 }
 
