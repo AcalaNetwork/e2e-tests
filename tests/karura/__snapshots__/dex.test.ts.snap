@@ -1,16 +1,119 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Karura dex > stable swap works > events 1`] = `
+exports[`Karura dex > addLiquidity and stake works > events 1`] = `
+[
+  {
+    "data": {
+      "currency0": {
+        "Token": "KSM",
+      },
+      "currency1": {
+        "Token": "LKSM",
+      },
+      "pool0": 1000000000000,
+      "pool1": "(rounded 7700000000000)",
+      "shareIncrement": "(rounded 1700000000000)",
+      "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "AddLiquidity",
+    "section": "dex",
+  },
+]
+`;
+
+exports[`Karura dex > addLiquidity and stake works 1`] = `
+[
+  "(rounded 1700000000000)",
+  {
+    "{\\"token\\":\\"KAR\\"}": "(rounded 19000000000000)",
+  },
+]
+`;
+
+exports[`Karura dex > addLiquidity and stake works 2`] = `
+{
+  "free": 0,
+  "frozen": 0,
+  "reserved": 0,
+}
+`;
+
+exports[`Karura dex > addLiquidity and stake works 3`] = `
+{
+  "free": 99000000000000,
+  "frozen": 0,
+  "reserved": 0,
+}
+`;
+
+exports[`Karura dex > addLiquidity and stake works 4`] = `
+{
+  "free": "(rounded 990000000000000)",
+  "frozen": 0,
+  "reserved": 0,
+}
+`;
+
+exports[`Karura dex > addLiquidity works > events 1`] = `
+[
+  {
+    "data": {
+      "currency0": {
+        "Token": "KSM",
+      },
+      "currency1": {
+        "Token": "LKSM",
+      },
+      "pool0": 1000000000000,
+      "pool1": "(rounded 7700000000000)",
+      "shareIncrement": "(rounded 1700000000000)",
+      "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "AddLiquidity",
+    "section": "dex",
+  },
+]
+`;
+
+exports[`Karura dex > addLiquidity works 1`] = `
+{
+  "free": "(rounded 1700000000000)",
+  "frozen": 0,
+  "reserved": 0,
+}
+`;
+
+exports[`Karura dex > addLiquidity works 2`] = `
+{
+  "free": 99000000000000,
+  "frozen": 0,
+  "reserved": 0,
+}
+`;
+
+exports[`Karura dex > addLiquidity works 3`] = `
+{
+  "free": "(rounded 990000000000000)",
+  "frozen": 0,
+  "reserved": 0,
+}
+`;
+
+exports[`Karura dex > aggregatedDex supply swap works > events 1`] = `
 [
   {
     "data": {
       "liquidityChanges": [
-        "(rounded 20000000000)",
         1000000000000,
+        "(rounded 100000000000)",
+        "(rounded 50000000000000)",
       ],
       "path": [
         {
           "Token": "KSM",
+        },
+        {
+          "ForeignAsset": 0,
         },
         {
           "Token": "KUSD",
@@ -21,11 +124,45 @@ exports[`Karura dex > stable swap works > events 1`] = `
     "method": "Swap",
     "section": "dex",
   },
-]
-`;
-
-exports[`Karura dex > stable swap works > events 2`] = `
-[
+  {
+    "data": {
+      "newBalances": [
+        "(rounded 1000000000000000000)",
+        "(rounded 30000000000000000)",
+        "(rounded 30000000000000000)",
+      ],
+      "oldBalances": [
+        "(rounded 1000000000000000000)",
+        "(rounded 30000000000000000)",
+        "(rounded 30000000000000000)",
+      ],
+      "poolId": 1,
+    },
+    "method": "BalanceUpdated",
+    "section": "stableAsset",
+  },
+  {
+    "data": {
+      "a": 10000,
+      "amount": "(rounded 20000000000)",
+      "newBalances": [
+        "(rounded 1000000000000000000)",
+        "(rounded 30000000000000000)",
+        "(rounded 30000000000000000)",
+      ],
+      "newTotalSupply": "(rounded 1000000000000000000)",
+      "oldBalances": [
+        "(rounded 1000000000000000000)",
+        "(rounded 30000000000000000)",
+        "(rounded 30000000000000000)",
+      ],
+      "oldTotalSupply": "(rounded 1000000000000000000)",
+      "poolId": 1,
+      "who": "qbK5taeJoMcwJoK3hZ7W8y2KkGu1iDRUvjrg9xQMsUKrrv7",
+    },
+    "method": "FeeCollected",
+    "section": "stableAsset",
+  },
   {
     "data": {
       "a": 10000,
@@ -34,12 +171,12 @@ exports[`Karura dex > stable swap works > events 2`] = `
         "(rounded 30000000000000000)",
         "(rounded 30000000000000000)",
       ],
-      "inputAmount": 1000000000000,
+      "inputAmount": "(rounded 50000000000000)",
       "inputAsset": {
         "Token": "KUSD",
       },
       "minOutputAmount": 0,
-      "outputAmount": "(rounded 600000)",
+      "outputAmount": "(rounded 30000000)",
       "outputAsset": {
         "ForeignAsset": 7,
       },
@@ -49,6 +186,64 @@ exports[`Karura dex > stable swap works > events 2`] = `
     },
     "method": "TokenSwapped",
     "section": "stableAsset",
+  },
+]
+`;
+
+exports[`Karura dex > aggregatedDex supply swap works 1`] = `
+{
+  "free": "(rounded 33000000)",
+  "frozen": 0,
+  "reserved": 0,
+}
+`;
+
+exports[`Karura dex > aggregatedDex supply swap works 2`] = `
+{
+  "free": 99000000000000,
+  "frozen": 0,
+  "reserved": 0,
+}
+`;
+
+exports[`Karura dex > dexRemoveLiquidity works  > events 1`] = `
+[
+  {
+    "data": {
+      "currency0": {
+        "Token": "KSM",
+      },
+      "currency1": {
+        "Token": "LKSM",
+      },
+      "pool0": 1000000000000,
+      "pool1": "(rounded 7700000000000)",
+      "shareIncrement": "(rounded 1700000000000)",
+      "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "AddLiquidity",
+    "section": "dex",
+  },
+]
+`;
+
+exports[`Karura dex > dexRemoveLiquidity works  > events 2`] = `
+[
+  {
+    "data": {
+      "currency0": {
+        "Token": "KSM",
+      },
+      "currency1": {
+        "Token": "LKSM",
+      },
+      "pool0": "(rounded 1000000000000)",
+      "pool1": "(rounded 7700000000000)",
+      "shareDecrement": "(rounded 1700000000000)",
+      "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "RemoveLiquidity",
+    "section": "dex",
   },
 ]
 `;
@@ -77,6 +272,22 @@ exports[`Karura dex > supply swap works > events 1`] = `
 ]
 `;
 
+exports[`Karura dex > supply swap works 1`] = `
+{
+  "free": "(rounded 50000000000000)",
+  "frozen": 0,
+  "reserved": 0,
+}
+`;
+
+exports[`Karura dex > supply swap works 2`] = `
+{
+  "free": 99000000000000,
+  "frozen": 0,
+  "reserved": 0,
+}
+`;
+
 exports[`Karura dex > target swap works > events 1`] = `
 [
   {
@@ -99,4 +310,20 @@ exports[`Karura dex > target swap works > events 1`] = `
     "section": "dex",
   },
 ]
+`;
+
+exports[`Karura dex > target swap works 1`] = `
+{
+  "free": 1000000000000,
+  "frozen": 0,
+  "reserved": 0,
+}
+`;
+
+exports[`Karura dex > target swap works 2`] = `
+{
+  "free": "(rounded 100000000000000)",
+  "frozen": 0,
+  "reserved": 0,
+}
 `;

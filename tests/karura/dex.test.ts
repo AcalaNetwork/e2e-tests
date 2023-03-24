@@ -1,8 +1,14 @@
-import { afterAll, beforeEach, describe, expect, it } from 'vitest'
+import { afterAll, beforeEach, describe, it } from 'vitest'
 
+import {
+  addLiquidity,
+  aggregatedDexSwapWithExactSupply,
+  dexRemoveLiquidity,
+  swapWithExactSupply,
+  swapWithExactTarget,
+} from '../api/extrinsics'
 import { check, checkEvents, sendTransaction, testingPairs } from '../helper'
-import { queryTokenBalance } from '../api/query'
-import { stableAssetSwap, swapWithExactSupply, swapWithExactTarget } from '../api/extrinsics'
+import { querySharesAndWithdrawnRewards, queryTokenBalance } from '../api/query'
 import networks from '../networks'
 
 describe('Karura dex', async () => {
@@ -24,6 +30,8 @@ describe('Karura dex', async () => {
           [[alice.address, { Token: 'KSM' }], { free: 100 * 1e12 }],
           [[alice.address, { Token: 'LKSM' }], { free: 1000 * 1e12 }],
           [[alice.address, { Token: 'KUSD' }], { free: 0 }],
+          [[alice.address, { ForeignAsset: '7' }], { free: 0 }],
+          [[alice.address, { DexShare: [{ Token: 'KSM' }, { Token: 'LKSM' }] }], { free: 0 }],
         ],
       },
       Sudo: {
@@ -33,66 +41,22 @@ describe('Karura dex', async () => {
   })
 
   it('supply swap works', async () => {
-    expect(await queryTokenBalance(karura.api, { Token: 'KUSD' }, alice.address)).toMatchInlineSnapshot(`
-      {
-        "free": 0,
-        "frozen": 0,
-        "reserved": 0,
-      }
-    `)
-    expect(await queryTokenBalance(karura.api, { Token: 'KSM' }, alice.address)).toMatchInlineSnapshot(`
-      {
-        "free": 100000000000000,
-        "frozen": 0,
-        "reserved": 0,
-      }
-    `)
     const tx = await sendTransaction(
       swapWithExactSupply(karura.api, [{ Token: 'KSM' }, { Token: 'KUSD' }], '1000000000000', '0').signAsync(alice)
     )
+
     await karura.chain.newBlock()
 
-    await checkEvents(tx, {
-      method: 'Swap',
-      section: 'dex',
-    })
+    await checkEvents(tx, 'dex').redact({ number: 1 }).toMatchSnapshot()
+
+    await check(queryTokenBalance(karura.api, { Token: 'KUSD' }, alice.address))
       .redact({ number: 1 })
       .toMatchSnapshot()
-    expect(
-      await check(queryTokenBalance(karura.api, { Token: 'KUSD' }, alice.address))
-        .redact({ number: 1 })
-        .value()
-    ).toMatchInlineSnapshot(`
-      {
-        "free": "(rounded 50000000000000)",
-        "frozen": 0,
-        "reserved": 0,
-      }
-    `)
-    expect(await queryTokenBalance(karura.api, { Token: 'KSM' }, alice.address)).toMatchInlineSnapshot(`
-      {
-        "free": 99000000000000,
-        "frozen": 0,
-        "reserved": 0,
-      }
-    `)
+
+    await check(queryTokenBalance(karura.api, { Token: 'KSM' }, alice.address)).toMatchSnapshot()
   })
 
   it('target swap works', async () => {
-    expect(await queryTokenBalance(karura.api, { Token: 'KUSD' }, alice.address)).toMatchInlineSnapshot(`
-      {
-        "free": 0,
-        "frozen": 0,
-        "reserved": 0,
-      }
-    `)
-    expect(await queryTokenBalance(karura.api, { Token: 'KSM' }, alice.address)).toMatchInlineSnapshot(`
-      {
-        "free": 100000000000000,
-        "frozen": 0,
-        "reserved": 0,
-      }
-    `)
     const tx = await sendTransaction(
       swapWithExactTarget(
         karura.api,
@@ -103,105 +67,150 @@ describe('Karura dex', async () => {
     )
     await karura.chain.newBlock()
 
-    await checkEvents(tx, {
-      method: 'Swap',
-      section: 'dex',
-    })
-      .redact({ number: 1 })
+    await checkEvents(tx, 'dex').redact({ number: 1 }).toMatchSnapshot()
+    await check(queryTokenBalance(karura.api, { Token: 'KUSD' }, alice.address))
+      .redact()
       .toMatchSnapshot()
-
-    expect(await queryTokenBalance(karura.api, { Token: 'KUSD' }, alice.address)).toMatchInlineSnapshot(`
-      {
-        "free": 1000000000000,
-        "frozen": 0,
-        "reserved": 0,
-      }
-    `)
-    expect(
-      await check(queryTokenBalance(karura.api, { Token: 'KSM' }, alice.address))
-        .redact()
-        .value()
-    ).toMatchInlineSnapshot(`
-      {
-        "free": "(rounded 100000000000000)",
-        "frozen": 0,
-        "reserved": 0,
-      }
-    `)
+    await check(queryTokenBalance(karura.api, { Token: 'KSM' }, alice.address))
+      .redact()
+      .toMatchSnapshot()
   })
 
-  it('stable swap works', async () => {
-    expect(await queryTokenBalance(karura.api, { Token: 'KUSD' }, alice.address)).toMatchInlineSnapshot(`
-      {
-        "free": 0,
-        "frozen": 0,
-        "reserved": 0,
-      }
-    `)
-    expect(await queryTokenBalance(karura.api, { Token: 'KSM' }, alice.address)).toMatchInlineSnapshot(`
-      {
-        "free": 100000000000000,
-        "frozen": 0,
-        "reserved": 0,
-      }
-    `)
-    const tx0 = await sendTransaction(
-      swapWithExactTarget(
+  it('aggregatedDex supply swap works', async () => {
+    const tx = await sendTransaction(
+      aggregatedDexSwapWithExactSupply(
         karura.api,
-        [{ Token: 'KSM' }, { Token: 'KUSD' }],
+        [
+          {
+            Dex: [
+              {
+                Token: 'KSM',
+              },
+              {
+                ForeignAsset: '0',
+              },
+              {
+                Token: 'KUSD',
+              },
+            ],
+          },
+          {
+            Taiga: ['1', '0', '2'],
+          },
+        ],
         '1000000000000',
-        '10000000000000'
+        '0'
+      ).signAsync(alice, { nonce: 0 })
+    )
+
+    await karura.chain.newBlock()
+
+    await checkEvents(tx, 'dex', 'stableAsset').redact({ number: 1 }).toMatchSnapshot()
+    await check(queryTokenBalance(karura.api, { ForeignAsset: '7' }, alice.address))
+      .redact()
+      .toMatchSnapshot()
+    await check(queryTokenBalance(karura.api, { Token: 'KSM' }, alice.address))
+      .redact()
+      .toMatchSnapshot()
+  })
+
+  it('addLiquidity works', async () => {
+    const tx = await sendTransaction(
+      addLiquidity(
+        karura.api,
+        { Token: 'KSM' },
+        { Token: 'LKSM' },
+        '1000000000000',
+        '10000000000000',
+        '0',
+        false
+      ).signAsync(alice, { nonce: 0 })
+    )
+
+    await karura.chain.newBlock()
+
+    await checkEvents(tx, { method: 'AddLiquidity', section: 'dex' }).toMatchSnapshot()
+    await check(queryTokenBalance(karura.api, { DexShare: [{ Token: 'KSM' }, { Token: 'LKSM' }] }, alice.address))
+      .redact()
+      .toMatchSnapshot()
+    await check(queryTokenBalance(karura.api, { Token: 'KSM' }, alice.address))
+      .redact()
+      .toMatchSnapshot()
+    await check(queryTokenBalance(karura.api, { Token: 'LKSM' }, alice.address))
+      .redact()
+      .toMatchSnapshot()
+  })
+
+  it('dexRemoveLiquidity works ', async () => {
+    const tx0 = await sendTransaction(
+      addLiquidity(
+        karura.api,
+        { Token: 'KSM' },
+        { Token: 'LKSM' },
+        '1000000000000',
+        '10000000000000',
+        '0',
+        false
+      ).signAsync(alice, { nonce: 0 })
+    )
+
+    await karura.chain.newBlock()
+
+    await checkEvents(tx0, { method: 'AddLiquidity', section: 'dex' }).toMatchSnapshot()
+
+    const balData: any = await queryTokenBalance(
+      karura.api,
+      { DexShare: [{ Token: 'KSM' }, { Token: 'LKSM' }] },
+      alice.address
+    )
+    const bal = balData.free
+
+    const tx1 = await sendTransaction(
+      dexRemoveLiquidity(karura.api, { Token: 'KSM' }, { Token: 'LKSM' }, bal, '0', '0', false).signAsync(alice, {
+        nonce: 1,
+      })
+    )
+
+    await karura.chain.newBlock()
+
+    await checkEvents(tx1, {
+      method: 'RemoveLiquidity',
+      section: 'dex',
+    }).toMatchSnapshot()
+  })
+
+  it('addLiquidity and stake works', async () => {
+    const tx = await sendTransaction(
+      addLiquidity(
+        karura.api,
+        { Token: 'KSM' },
+        { Token: 'LKSM' },
+        '1000000000000',
+        '10000000000000',
+        '0',
+        true
       ).signAsync(alice, { nonce: 0 })
     )
     await karura.chain.newBlock()
 
-    await checkEvents(tx0, {
-      method: 'Swap',
-      section: 'dex',
-    })
-      .redact({ number: 1 })
-      .toMatchSnapshot()
-    expect(await queryTokenBalance(karura.api, { Token: 'KUSD' }, alice.address)).toMatchInlineSnapshot(`
-      {
-        "free": 1000000000000,
-        "frozen": 0,
-        "reserved": 0,
-      }
-    `)
-    expect(
-      await check(queryTokenBalance(karura.api, { Token: 'KSM' }, alice.address))
-        .redact()
-        .value()
-    ).toMatchInlineSnapshot(`
-      {
-        "free": "(rounded 100000000000000)",
-        "frozen": 0,
-        "reserved": 0,
-      }
-    `)
-    const tx1 = await sendTransaction(
-      stableAssetSwap(karura.api, '1', '0', '2', '1000000000000', '0', '3').signAsync(alice, { nonce: 1 })
+    await checkEvents(tx, { method: 'AddLiquidity', section: 'dex' }).toMatchSnapshot()
+    await check(
+      querySharesAndWithdrawnRewards(
+        karura.api,
+        { Dex: { DexShare: [{ Token: 'KSM' }, { Token: 'LKSM' }] } },
+        alice.address
+      )
     )
-    await karura.chain.newBlock()
-
-    await checkEvents(tx1, { method: 'TokenSwapped', section: 'stableAsset' }).redact({ number: 1 }).toMatchSnapshot()
-    expect(await queryTokenBalance(karura.api, { Token: 'KUSD' }, alice.address)).toMatchInlineSnapshot(`
-      {
-        "free": 0,
-        "frozen": 0,
-        "reserved": 0,
-      }
-    `)
-    expect(
-      await check(queryTokenBalance(karura.api, { ForeignAsset: '7' }, alice.address))
-        .redact({ number: 1 })
-        .value()
-    ).toMatchInlineSnapshot(`
-      {
-        "free": "(rounded 600000)",
-        "frozen": 0,
-        "reserved": 0,
-      }
-    `)
+      .redact()
+      .toMatchSnapshot()
+    await check(queryTokenBalance(karura.api, { DexShare: [{ Token: 'KSM' }, { Token: 'LKSM' }] }, alice.address))
+      .redact()
+      .toMatchSnapshot()
+    await check(queryTokenBalance(karura.api, { Token: 'KSM' }, alice.address))
+      .redact()
+      .toMatchSnapshot()
+    await check(queryTokenBalance(karura.api, { Token: 'LKSM' }, alice.address))
+      .redact()
+      .toMatchSnapshot()
   })
 })

@@ -12,6 +12,7 @@ const endpoints = {
   statemine: 'wss://statemine-rpc.polkadot.io',
   karura: 'wss://karura-rpc-0.aca-api.network',
   basilisk: 'wss://basilisk-rpc.dwellir.com',
+  hydraDX: 'wss://rpc.hydradx.cloud',
 }
 
 const toNumber = (value: string | undefined): number | undefined => {

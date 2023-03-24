@@ -4,6 +4,27 @@ exports[`Karura <-> Basilisk > Basilisk tranfer DAI to Karura > events 1`] = `
 [
   {
     "data": {
+      "contract": "0x4bb6afb5fa2b07a5d1c499e1c3ddb5a15e709a71",
+      "from": "0xffffd2ff9b840f6bd74f80df8e532b4d7886ffff",
+      "logs": [
+        {
+          "address": "0x4bb6afb5fa2b07a5d1c499e1c3ddb5a15e709a71",
+          "data": "(hash)",
+          "topics": [
+            "(hash)",
+            "(hash)",
+            "(hash)",
+          ],
+        },
+      ],
+      "usedGas": "(rounded 67000)",
+      "usedStorage": 64,
+    },
+    "method": "Executed",
+    "section": "evm",
+  },
+  {
+    "data": {
       "amount": 1000000000000000000,
       "currencyId": {
         "Erc20": "0x4bb6afb5fa2b07a5d1c499e1c3ddb5a15e709a71",
@@ -34,8 +55,8 @@ exports[`Karura <-> Basilisk > Basilisk tranfer DAI to Karura > events 2`] = `
           ],
         },
       ],
-      "usedGas": "(rounded 67000)",
-      "usedStorage": 0,
+      "usedGas": "(rounded 50000)",
+      "usedStorage": -64,
     },
     "method": "Executed",
     "section": "evm",
@@ -62,7 +83,10 @@ exports[`Karura <-> Basilisk > Basilisk tranfer DAI to Karura > events 2`] = `
                     "Parachain": 2000,
                   },
                   {
-                    "GeneralKey": "0x024bb6afb5fa2b07a5d1c499e1c3ddb5a15e709a71",
+                    "GeneralKey": {
+                      "data": "(hash)",
+                      "length": 21,
+                    },
                   },
                 ],
               },
@@ -80,7 +104,7 @@ exports[`Karura <-> Basilisk > Basilisk tranfer DAI to Karura > events 2`] = `
             {
               "AccountId32": {
                 "id": "(hash)",
-                "network": "Any",
+                "network": null,
               },
             },
           ],
@@ -99,7 +123,10 @@ exports[`Karura <-> Basilisk > Basilisk tranfer DAI to Karura > events 2`] = `
                   "Parachain": 2000,
                 },
                 {
-                  "GeneralKey": "0x024bb6afb5fa2b07a5d1c499e1c3ddb5a15e709a71",
+                  "GeneralKey": {
+                    "data": "(hash)",
+                    "length": 21,
+                  },
                 },
               ],
             },
@@ -266,8 +293,8 @@ exports[`Karura <-> Basilisk > Basilisk tranfer DAI to Karura > system events 1`
           ],
         },
       ],
-      "usedGas": "(rounded 67000)",
-      "usedStorage": 0,
+      "usedGas": "(rounded 50000)",
+      "usedStorage": -64,
     },
     "method": "Executed",
     "section": "evm",
@@ -284,6 +311,22 @@ exports[`Karura <-> Basilisk > Basilisk tranfer DAI to Karura > system events 1`
     "section": "xcmpQueue",
   },
 ]
+`;
+
+exports[`Karura <-> Basilisk > Basilisk tranfer DAI to Karura 1`] = `
+{
+  "free": "0x00000000000000000dd114ecd2610000",
+  "frozen": 0,
+  "reserved": 0,
+}
+`;
+
+exports[`Karura <-> Basilisk > Basilisk tranfer DAI to Karura 2`] = `
+{
+  "free": 0,
+  "frozen": 0,
+  "reserved": 0,
+}
 `;
 
 exports[`Karura <-> Basilisk > Basilisk transfer USDC to karura > events 1`] = `
@@ -348,7 +391,10 @@ exports[`Karura <-> Basilisk > Basilisk transfer USDC to karura > events 2`] = `
                     "Parachain": 2000,
                   },
                   {
-                    "GeneralKey": "0x021f3a10587a20114ea25ba1b388ee2dd4a337ce27",
+                    "GeneralKey": {
+                      "data": "(hash)",
+                      "length": 21,
+                    },
                   },
                 ],
               },
@@ -366,7 +412,7 @@ exports[`Karura <-> Basilisk > Basilisk transfer USDC to karura > events 2`] = `
             {
               "AccountId32": {
                 "id": "(hash)",
-                "network": "Any",
+                "network": null,
               },
             },
           ],
@@ -385,7 +431,10 @@ exports[`Karura <-> Basilisk > Basilisk transfer USDC to karura > events 2`] = `
                   "Parachain": 2000,
                 },
                 {
-                  "GeneralKey": "0x021f3a10587a20114ea25ba1b388ee2dd4a337ce27",
+                  "GeneralKey": {
+                    "data": "(hash)",
+                    "length": 21,
+                  },
                 },
               ],
             },
@@ -572,8 +621,45 @@ exports[`Karura <-> Basilisk > Basilisk transfer USDC to karura > system events 
 ]
 `;
 
+exports[`Karura <-> Basilisk > Basilisk transfer USDC to karura 1`] = `
+{
+  "free": 995600,
+  "frozen": 0,
+  "reserved": 0,
+}
+`;
+
+exports[`Karura <-> Basilisk > Basilisk transfer USDC to karura 2`] = `
+{
+  "free": 0,
+  "frozen": 0,
+  "reserved": 0,
+}
+`;
+
 exports[`Karura <-> Basilisk > Karura transfer DAI to basilisk > events 1`] = `
 [
+  {
+    "data": {
+      "contract": "0x4bb6afb5fa2b07a5d1c499e1c3ddb5a15e709a71",
+      "from": "0xffffd2ff9b840f6bd74f80df8e532b4d7886ffff",
+      "logs": [
+        {
+          "address": "0x4bb6afb5fa2b07a5d1c499e1c3ddb5a15e709a71",
+          "data": "(hash)",
+          "topics": [
+            "(hash)",
+            "(hash)",
+            "(hash)",
+          ],
+        },
+      ],
+      "usedGas": "(rounded 67000)",
+      "usedStorage": 64,
+    },
+    "method": "Executed",
+    "section": "evm",
+  },
   {
     "data": {
       "amount": 1000000000000000000,
@@ -606,8 +692,8 @@ exports[`Karura <-> Basilisk > Karura transfer DAI to basilisk > events 2`] = `
           ],
         },
       ],
-      "usedGas": "(rounded 67000)",
-      "usedStorage": 0,
+      "usedGas": "(rounded 50000)",
+      "usedStorage": -64,
     },
     "method": "Executed",
     "section": "evm",
@@ -634,7 +720,10 @@ exports[`Karura <-> Basilisk > Karura transfer DAI to basilisk > events 2`] = `
                     "Parachain": 2000,
                   },
                   {
-                    "GeneralKey": "0x024bb6afb5fa2b07a5d1c499e1c3ddb5a15e709a71",
+                    "GeneralKey": {
+                      "data": "(hash)",
+                      "length": 21,
+                    },
                   },
                 ],
               },
@@ -652,7 +741,7 @@ exports[`Karura <-> Basilisk > Karura transfer DAI to basilisk > events 2`] = `
             {
               "AccountId32": {
                 "id": "(hash)",
-                "network": "Any",
+                "network": null,
               },
             },
           ],
@@ -671,7 +760,10 @@ exports[`Karura <-> Basilisk > Karura transfer DAI to basilisk > events 2`] = `
                   "Parachain": 2000,
                 },
                 {
-                  "GeneralKey": "0x024bb6afb5fa2b07a5d1c499e1c3ddb5a15e709a71",
+                  "GeneralKey": {
+                    "data": "(hash)",
+                    "length": 21,
+                  },
                 },
               ],
             },
@@ -779,6 +871,14 @@ exports[`Karura <-> Basilisk > Karura transfer DAI to basilisk > hrmp 1`] = `
 ]
 `;
 
+exports[`Karura <-> Basilisk > Karura transfer DAI to basilisk 1`] = `
+{
+  "free": "0x00000000000000000dd114ecd2610000",
+  "frozen": 0,
+  "reserved": 0,
+}
+`;
+
 exports[`Karura <-> Basilisk > Karura transfer USDC to basilisk > events 1`] = `
 [
   {
@@ -841,7 +941,10 @@ exports[`Karura <-> Basilisk > Karura transfer USDC to basilisk > events 2`] = `
                     "Parachain": 2000,
                   },
                   {
-                    "GeneralKey": "0x021f3a10587a20114ea25ba1b388ee2dd4a337ce27",
+                    "GeneralKey": {
+                      "data": "(hash)",
+                      "length": 21,
+                    },
                   },
                 ],
               },
@@ -859,7 +962,7 @@ exports[`Karura <-> Basilisk > Karura transfer USDC to basilisk > events 2`] = `
             {
               "AccountId32": {
                 "id": "(hash)",
-                "network": "Any",
+                "network": null,
               },
             },
           ],
@@ -878,7 +981,10 @@ exports[`Karura <-> Basilisk > Karura transfer USDC to basilisk > events 2`] = `
                   "Parachain": 2000,
                 },
                 {
-                  "GeneralKey": "0x021f3a10587a20114ea25ba1b388ee2dd4a337ce27",
+                  "GeneralKey": {
+                    "data": "(hash)",
+                    "length": 21,
+                  },
                 },
               ],
             },
@@ -1024,4 +1130,12 @@ exports[`Karura <-> Basilisk > Karura transfer USDC to basilisk > system events 
     "section": "xcmpQueue",
   },
 ]
+`;
+
+exports[`Karura <-> Basilisk > Karura transfer USDC to basilisk 1`] = `
+{
+  "free": "(rounded 1000000)",
+  "frozen": 0,
+  "reserved": 0,
+}
 `;
