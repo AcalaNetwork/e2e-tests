@@ -1,8 +1,8 @@
 import { ApiPromise } from '@polkadot/api'
-import { SubmittableExtrinsic } from '@polkadot/api/types'
 import { Codec } from '@polkadot/types/types'
-import { expect } from 'vitest'
 import { NetworkNames } from '../networks'
+import { SubmittableExtrinsic } from '@polkadot/api/types'
+import { expect } from 'vitest'
 
 type CodecOrArray = Codec | Codec[]
 
