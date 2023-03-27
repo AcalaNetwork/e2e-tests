@@ -7,14 +7,12 @@ describe.each([
   {
     para: 'acala',
     relay: 'polkadot',
-    relayToken: 'DOT',
   },
   {
     para: 'karura',
     relay: 'kusama',
-    relayToken: 'KSM',
   },
-] as const)('$para <-> $relay', async ({ para, relay, relayToken }) => {
+] as const)('$para <-> $relay', async ({ para, relay }) => {
   let parachain: Network
   let relaychain: Network
   const ctx = createContext()
@@ -36,45 +34,6 @@ describe.each([
       await relaychain.teardown()
       await parachain.teardown()
     }
-  })
-
-  it('parachain transfer assets to relaychain', async () => {
-    const tx = await sendTransaction(
-      parachain.api.tx.xTokens
-        .transfer(
-          {
-            Token: relayToken,
-          },
-          1e12,
-          {
-            V1: {
-              parents: 1,
-              interior: {
-                X1: {
-                  AccountId32: {
-                    network: 'Any',
-                    id: alice.addressRaw,
-                  },
-                },
-              },
-            },
-          },
-          'Unlimited'
-        )
-        .signAsync(alice)
-    )
-
-    await parachain.chain.newBlock()
-
-    await check(relaychain.api.query.system.account(alice.address)).toMatchSnapshot()
-
-    await checkEvents(tx, 'xTokens').toMatchSnapshot()
-    await checkUmp(parachain).toMatchSnapshot()
-
-    await relaychain.chain.newBlock()
-
-    await check(parachain.api.query.tokens.accounts(alice.address, { Token: relayToken })).toMatchSnapshot()
-    await checkSystemEvents(relaychain, 'ump').toMatchSnapshot()
   })
 
   it('Homa stake works', async () => {

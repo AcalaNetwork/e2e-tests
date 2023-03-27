@@ -489,3 +489,4 @@ export const transactionPaymentWithFeeCurrency = (
 export const sudo = (api: ApiPromise, call: SubmittableExtrinsic<'promise'>) => {
   return api.tx.sudo.sudo(call)
 }
+

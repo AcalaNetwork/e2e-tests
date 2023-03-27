@@ -1,4 +1,4 @@
-import { testingPairs } from '@acala-network/chopsticks-testing'
+import { SetupOption, testingPairs } from '@acala-network/chopsticks-testing'
 
 export type NetworkKind = 'polkadot' | 'kusama'
 
@@ -18,5 +18,6 @@ export type Config<T = object> = {
   kusama?: NetworkConfig & T
   config(context: FullContext & T): {
     storages?: Record<string, unknown>
+    options?: Partial<SetupOption>
   }
 }

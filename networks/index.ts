@@ -1,14 +1,13 @@
-import { beforeEach } from 'vitest'
+import { SetupOption, setupContext, testingPairs } from '@acala-network/chopsticks-testing'
 import { connectParachains, connectVertical } from '@acala-network/chopsticks'
-import { testingPairs } from '@acala-network/chopsticks-testing'
 import dotenv from 'dotenv'
 
-import { Context, NetworkKind } from './types'
-import { SetupOption, setupContext } from '../helper'
+import { Config, Context, NetworkKind } from './types'
 
 import acala from './acala'
 import hydraDX from './hydraDX'
 import polkadot from './polkadot'
+import polkadot9381 from './polkadot9381'
 import statemint from './statemint'
 
 dotenv.config()
@@ -18,7 +17,8 @@ const networkDefs = {
   hydraDX,
   polkadot,
   statemint,
-}
+  polkadot9381,
+} satisfies Record<string, Config>
 
 const toNumber = (value: string | undefined): number | undefined => {
   if (value === undefined) {
@@ -28,10 +28,16 @@ const toNumber = (value: string | undefined): number | undefined => {
   return Number(value)
 }
 
-export type Network = Awaited<ReturnType<typeof setupContext>>
+export type Network = Awaited<ReturnType<typeof setupContext>> & {
+  options: SetupOption
+  config: (typeof networkDefs)[keyof typeof networkDefs][NetworkKind]
+}
 export type NetworkNames = (typeof networkDefs)[keyof typeof networkDefs][NetworkKind]['name']
 
-export const networkCreator = {} as Record<NetworkNames, (options?: Partial<SetupOption>) => (ctx: Context) => Promise<Network>>
+export const networkCreator = {} as Record<
+  NetworkNames,
+  (options?: Partial<SetupOption>) => (ctx: Context) => Promise<Network>
+>
 
 const relaychains = ['polkadot', 'kusama'] as const
 
@@ -41,25 +47,29 @@ for (const def of Object.values(networkDefs)) {
     const { endpoint, name } = config
     const upperName = name.toUpperCase()
     networkCreator[name] = (options?: Partial<SetupOption>) => async (ctx: Context) => {
-      const network = await setupContext({
+      const setupConfig = (def as Config).config({
+        network: relaychain,
+        ...config,
+        ...ctx,
+      })
+
+      const finalOptions = {
         wasmOverride: process.env[`${upperName}_WASM`],
         blockNumber: toNumber(process.env[`${upperName}_BLOCK_NUMBER`]),
         endpoint: process.env[`${upperName}_ENDPOINT`] ?? endpoint,
         db: process.env.DB_PATH,
+        ...setupConfig.options,
         ...options,
-      })
+      }
 
-      const setupConfig = def.config({
-        network: relaychain,
-        ...config,
-        ...ctx,
-      } as any)
+      const network = await setupContext(finalOptions)
 
       await network.dev.setStorage(setupConfig.storages)
 
       return {
         ...network,
         config,
+        options: finalOptions,
       }
     }
   }
@@ -67,15 +77,23 @@ for (const def of Object.values(networkDefs)) {
 
 export const createContext = () => testingPairs()
 
-export const createNetworks = async (networkOptions: Record<NetworkNames, Partial<SetupOption> | undefined>, context = createContext()) => {
+export const createNetworks = async (
+  networkOptions: Record<NetworkNames, Partial<SetupOption> | undefined>,
+  context = createContext()
+) => {
   const ret = {} as Record<NetworkNames, Network>
+
+  let wasmOverriden = false
 
   for (const [name, options] of Object.entries(networkOptions) as [NetworkNames, Partial<SetupOption> | undefined][]) {
     ret[name] = await networkCreator[name](options)(context)
+    wasmOverriden ||= !!ret[name].options.wasmOverride
   }
 
-  const { polkadot, kusama, ...parachains} = ret
-  const relaychain = polkadot || kusama
+  const relaychainName = Object.keys(ret).filter(
+    (x) => x.startsWith('polkadot') || x.startsWith('kusama')
+  )[0] as NetworkKind
+  const { [relaychainName]: relaychain, ...parachains } = ret
 
   if (relaychain) {
     for (const parachain of Object.values(parachains)) {
@@ -88,14 +106,16 @@ export const createNetworks = async (networkOptions: Record<NetworkNames, Partia
     await connectParachains(parachainList)
   }
 
-  // // trigger runtime upgrade if needed (due to wasm override)
-  // for (const chain of Object.values(ret)) {
-  //   await chain.dev.newBlock()
-  // }
-  // // handle xcm version message if needed (due to wasm override triggered xcm version upgrade)
-  // for (const chain of Object.values(ret)) {
-  //   await chain.dev.newBlock()
-  // }
+  if (wasmOverriden) {
+    // trigger runtime upgrade if needed (due to wasm override)
+    for (const chain of Object.values(ret)) {
+      await chain.dev.newBlock()
+    }
+    // handle xcm version message if needed (due to wasm override triggered xcm version upgrade)
+    for (const chain of Object.values(ret)) {
+      await chain.dev.newBlock()
+    }
+  }
 
   return ret
 }
