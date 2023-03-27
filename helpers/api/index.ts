@@ -1,15 +1,6 @@
 import { ApiPromise } from '@polkadot/api'
-import { Checker, EventFilter } from '..'
 
 export const xtokens = {
-  transferV2:
-    (token: any, amount: any, dest: (dest: any) => any) =>
-    ({ api }: { api: ApiPromise }, acc: any) =>
-      api.tx.xTokens.transfer(token, amount, dest(acc), 'Unlimited'),
-}
-
-export const xcm = {
-  nativeToken: { Concrete: { parents: 0, interior: 'Here' } },
   relaychainV2: (acc: any) => ({
     V1: {
       parents: 1,
@@ -23,9 +14,32 @@ export const xcm = {
       },
     },
   }),
-  parachainV2: (paraId: any) => ({
+  parachainV2: (paraId: number) => (acc: any) => ({
     V1: {
-      parents: 0,
+      parents: 1,
+      interior: {
+        X2: [
+          { Parachain: paraId },
+          {
+            AccountId32: {
+              network: 'Any',
+              id: acc,
+            },
+          },
+        ],
+      },
+    },
+  }),
+  transferV2:
+    (token: any, amount: any, dest: (dest: any) => any) =>
+    ({ api }: { api: ApiPromise }, acc: any) =>
+      api.tx.xTokens.transfer(token, amount, dest(acc), 'Unlimited'),
+}
+
+export const xcmPallet = {
+  parachainV2: (parents: number, paraId: number) => ({
+    V1: {
+      parents: parents,
       interior: {
         X1: { Parachain: paraId },
       },
@@ -52,13 +66,10 @@ export const xcm = {
       },
     },
   }),
-}
-
-export const xcmPallet = {
   limitedReserveTransferAssetsV2:
     (token: any, amount: any, dest: any) =>
     ({ api }: { api: ApiPromise }, acc: any) =>
-      api.tx.xcmPallet.limitedReserveTransferAssets(
+      (api.tx.xcmPallet || api.tx.polkadotXcm).limitedReserveTransferAssets(
         dest,
         {
           V1: {
@@ -86,7 +97,7 @@ export const xcmPallet = {
   limitedReserveTransferAssetsV3:
     (token: any, amount: any, dest: any) =>
     ({ api }: { api: ApiPromise }, acc: any) =>
-      api.tx.xcmPallet.limitedReserveTransferAssets(
+      (api.tx.xcmPallet || api.tx.polkadotXcm).limitedReserveTransferAssets(
         dest,
         {
           V3: {
@@ -118,13 +129,14 @@ export const tx = {
   xcmPallet,
 }
 
-export const queryBalances = ({ api }: { api: ApiPromise }, address: string) => api.query.system.account(address)
-export const queryTokens =
-  (token: any) =>
-  ({ api }: { api: ApiPromise }, address: string) =>
-    api.query.tokens.accounts(address, token)
-
-export const filterEvents =
-  (...filters: EventFilter[]) =>
-  (checker: Checker) =>
-    checker.filterEvents(...filters).redact()
+export const query = {
+  balances: ({ api }: { api: ApiPromise }, address: string) => api.query.system.account(address),
+  tokens:
+    (token: any) =>
+    ({ api }: { api: ApiPromise }, address: string) =>
+      api.query.tokens.accounts(address, token),
+  assets:
+    (token: number) =>
+    ({ api }: { api: ApiPromise }, address: string) =>
+      api.query.assets.account(token, address),
+}

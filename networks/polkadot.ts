@@ -21,3 +21,11 @@ export default {
     },
   }),
 } satisfies Config
+
+export const polkadot =  {
+  dot: { Concrete: { parents: 0, interior: 'Here' } },
+}
+
+export const kusama = {
+  ksm: { Concrete: { parents: 0, interior: 'Here' } },
+}

@@ -42,3 +42,12 @@ export default {
   }),
 } satisfies Config<Vars>
 
+export const acala = {
+  dot: { Token: 'DOT' },
+  wbtc: { ForeignAsset: 5 },
+}
+
+export const karura = {
+  ksm: { Token: 'KSM' },
+  usdt: { ForeignAsset: 7 },
+}

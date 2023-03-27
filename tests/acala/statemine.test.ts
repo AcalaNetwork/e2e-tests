@@ -28,30 +28,6 @@ describe('Karura <-> Statemine', async () => {
       },
     })
 
-    // ensure balance was given
-    expect(await statemine.api.query.system.account(alice.address)).toMatchInlineSnapshot(`
-      {
-        "consumers": 0,
-        "data": {
-          "feeFrozen": 0,
-          "free": 10000000000000,
-          "miscFrozen": 0,
-          "reserved": 0,
-        },
-        "nonce": 0,
-        "providers": 0,
-        "sufficients": 0,
-      }
-    `)
-    expect((await statemine.api.query.assets.account(1984, alice.address)).toHuman()).toMatchInlineSnapshot(`
-      {
-        "balance": "1,000,000,000",
-        "extra": null,
-        "isFrozen": false,
-        "reason": "Consumer",
-      }
-    `)
-
     await statemine.api.tx.polkadotXcm
       .limitedReserveTransferAssets(
         {
