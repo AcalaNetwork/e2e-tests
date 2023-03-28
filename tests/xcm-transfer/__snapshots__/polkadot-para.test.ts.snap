@@ -23,8 +23,6 @@ exports[`'acala' -> 'statemint' xcm transfer 'DOT' > xtokens transfer > balance 
 }
 `;
 
-exports[`'acala' -> 'statemint' xcm transfer 'DOT' > xtokens transfer > from chain hrmp messages 1`] = `[]`;
-
 exports[`'acala' -> 'statemint' xcm transfer 'DOT' > xtokens transfer > from chain ump messages 1`] = `
 [
   {
@@ -137,7 +135,20 @@ exports[`'acala' -> 'statemint' xcm transfer 'DOT' > xtokens transfer > from cha
 ]
 `;
 
-exports[`'acala' -> 'statemint' xcm transfer 'DOT' > xtokens transfer > to chain xcmpQueue events 1`] = `[]`;
+exports[`'acala' -> 'statemint' xcm transfer 'DOT' > xtokens transfer > to chain xcm events 1`] = `
+[
+  {
+    "data": {
+      "messageId": "(hash)",
+      "outcome": {
+        "Error": "WeightNotComputable",
+      },
+    },
+    "method": "ExecutedDownward",
+    "section": "dmpQueue",
+  },
+]
+`;
 
 exports[`'acala' -> 'statemint' xcm transfer 'DOT' > xtokens transfer > tx events 1`] = `
 [
@@ -214,9 +225,9 @@ exports[`'statemint' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > balanc
 }
 `;
 
-exports[`'statemint' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > from chain hrmp messages 1`] = `[]`;
+exports[`'statemint' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > from chain ump messages 1`] = `[]`;
 
-exports[`'statemint' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > to chain xcmpQueue events 1`] = `[]`;
+exports[`'statemint' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > to chain xcm events 1`] = `[]`;
 
 exports[`'statemint' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > tx events 1`] = `
 [

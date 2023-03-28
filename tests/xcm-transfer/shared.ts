@@ -54,13 +54,15 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
 
         await fromChain.chain.newBlock()
 
-        await check(balance(fromChain, alice.address)).redact().toMatchSnapshot('balance on from chain')
+        await check(balance(fromChain, alice.address)).redact({ number: 4 }).toMatchSnapshot('balance on from chain')
         await checkEvents(tx0, 'xTokens').toMatchSnapshot('tx events')
         await checkUmp(fromChain).toMatchSnapshot('from chain ump messages')
 
         await toChain.chain.newBlock()
 
-        await check(toChain.api.query.system.account(alice.address)).redact().toMatchSnapshot('balance on to chain')
+        await check(toChain.api.query.system.account(alice.address))
+          .redact({ number: 4 })
+          .toMatchSnapshot('balance on to chain')
         await checkSystemEvents(toChain, 'ump').toMatchSnapshot('to chain ump events')
       })
     }
@@ -73,32 +75,44 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
 
         await fromChain.chain.newBlock()
 
-        await check(fromChain.api.query.system.account(alice.address)).redact().toMatchSnapshot('balance on from chain')
+        await check(fromChain.api.query.system.account(alice.address))
+          .redact({ number: 4 })
+          .toMatchSnapshot('balance on from chain')
         await checkEvents(tx0, 'xcmPallet').toMatchSnapshot('tx events')
 
         await toChain.chain.newBlock()
 
-        await check(balance(toChain, alice.address)).redact().toMatchSnapshot('balance on to chain')
+        await check(balance(toChain, alice.address)).redact({ number: 4 }).toMatchSnapshot('balance on to chain')
         await checkSystemEvents(toChain, 'parachainSystem', 'dmpQueue').toMatchSnapshot('to chain dmp events')
       })
     }
 
     if ('xcmPalletHorzontal' in test) {
-      const { fromBalance, toBalance, tx } = test.xcmPalletHorzontal
+      const { fromBalance, toBalance, tx, ...testOpt } = test.xcmPalletHorzontal
 
       it('xcmPallet transfer', async () => {
         const tx0 = await sendTransaction(tx(fromChain, alice.addressRaw).signAsync(alice))
 
         await fromChain.chain.newBlock()
 
-        await check(fromBalance(fromChain, alice.address)).redact().toMatchSnapshot('balance on from chain')
+        await check(fromBalance(fromChain, alice.address))
+          .redact({ number: 4 })
+          .toMatchSnapshot('balance on from chain')
         await checkEvents(tx0, 'polkadotXcm').toMatchSnapshot('tx events')
-        await checkHrmp(fromChain).toMatchSnapshot('from chain hrmp messages')
 
+        if ('checkUmp' in testOpt) {
+          await checkUmp(fromChain).toMatchSnapshot('from chain ump messages')
+        } else {
+          await checkHrmp(fromChain).toMatchSnapshot('from chain hrmp messages')
+        }
+
+        if (reserveChain) {
+          await reserveChain.chain.newBlock()
+        }
         await toChain.chain.newBlock()
 
-        await check(toBalance(toChain, alice.address)).redact().toMatchSnapshot('balance on to chain')
-        await checkSystemEvents(toChain, 'xcmpQueue').toMatchSnapshot('to chain xcmpQueue events')
+        await check(toBalance(toChain, alice.address)).redact({ number: 4 }).toMatchSnapshot('balance on to chain')
+        await checkSystemEvents(toChain, 'xcmpQueue', 'dmpQueue').toMatchSnapshot('to chain xcm events')
       })
     }
 
@@ -110,7 +124,9 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
 
         await fromChain.chain.newBlock()
 
-        await check(fromBalance(fromChain, alice.address)).redact().toMatchSnapshot('balance on from chain')
+        await check(fromBalance(fromChain, alice.address))
+          .redact({ number: 4 })
+          .toMatchSnapshot('balance on from chain')
         await checkEvents(tx0, 'xTokens').toMatchSnapshot('tx events')
 
         if ('checkUmp' in testOpt) {
@@ -124,10 +140,9 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
         }
         await toChain.chain.newBlock()
 
-        await check(toBalance(toChain, alice.address)).redact().toMatchSnapshot('balance on to chain')
-        await checkSystemEvents(toChain, 'xcmpQueue').toMatchSnapshot('to chain xcmpQueue events')
+        await check(toBalance(toChain, alice.address)).redact({ number: 4 }).toMatchSnapshot('balance on to chain')
+        await checkSystemEvents(toChain, 'xcmpQueue', 'dmpQueue').toMatchSnapshot('to chain xcm events')
       })
     }
-
   })
 }

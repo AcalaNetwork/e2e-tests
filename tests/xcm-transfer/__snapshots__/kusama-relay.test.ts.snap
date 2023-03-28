@@ -322,7 +322,7 @@ exports[`'kusama' -> 'karura' xcm transfer 'KSM' > xcmPallet transfer > balance 
   "consumers": 0,
   "data": {
     "feeFrozen": 0,
-    "free": "(rounded 9000000000000)",
+    "free": "(rounded 8999000000000)",
     "miscFrozen": 0,
     "reserved": 0,
   },
@@ -392,7 +392,7 @@ exports[`'kusama9381' -> 'karura' xcm transfer 'KSM' > xcmPallet transfer > bala
   "consumers": 0,
   "data": {
     "feeFrozen": 0,
-    "free": "(rounded 9000000000000)",
+    "free": "(rounded 8999000000000)",
     "miscFrozen": 0,
     "reserved": 0,
   },

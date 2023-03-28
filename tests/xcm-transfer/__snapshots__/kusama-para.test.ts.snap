@@ -10,7 +10,7 @@ exports[`'karura' -> 'statemine' xcm transfer 'USDT' > xtokens transfer > balanc
 
 exports[`'karura' -> 'statemine' xcm transfer 'USDT' > xtokens transfer > balance on to chain 1`] = `
 {
-  "balance": "(rounded 1000000000)",
+  "balance": "(rounded 1001000000)",
   "extra": null,
   "isFrozen": false,
   "reason": {
@@ -111,7 +111,7 @@ exports[`'karura' -> 'statemine' xcm transfer 'USDT' > xtokens transfer > from c
 ]
 `;
 
-exports[`'karura' -> 'statemine' xcm transfer 'USDT' > xtokens transfer > to chain xcmpQueue events 1`] = `
+exports[`'karura' -> 'statemine' xcm transfer 'USDT' > xtokens transfer > to chain xcm events 1`] = `
 [
   {
     "data": {
@@ -205,7 +205,7 @@ exports[`'karura' -> 'statemine' xcm transfer 'USDT' > xtokens transfer > tx eve
 
 exports[`'statemine' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer > balance on from chain 1`] = `
 {
-  "balance": "(rounded 1000000000)",
+  "balance": 999000000,
   "extra": null,
   "isFrozen": false,
   "reason": {
@@ -216,7 +216,7 @@ exports[`'statemine' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer > bala
 
 exports[`'statemine' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer > balance on to chain 1`] = `
 {
-  "free": "(rounded 1000000)",
+  "free": "(rounded 999200)",
   "frozen": 0,
   "reserved": 0,
 }
@@ -320,7 +320,7 @@ exports[`'statemine' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer > from
 ]
 `;
 
-exports[`'statemine' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer > to chain xcmpQueue events 1`] = `
+exports[`'statemine' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer > to chain xcm events 1`] = `
 [
   {
     "data": {

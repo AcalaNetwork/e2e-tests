@@ -8,13 +8,14 @@ import buildTest from './shared'
 const tests = [
   // statemint <-> acala
   {
+    // TODO: this failed to execute on statemint with FailedToTransactAsset error
     from: 'statemint',
     to: 'acala',
     reserve: 'polkadot',
     name: 'DOT',
     test: {
       xcmPalletHorzontal: {
-        tx: tx.xcmPallet.limitedReserveTransferAssetsV2(statemint.dot, 1e12, tx.xcmPallet.parachainV2(1, 2000)),
+        tx: tx.xcmPallet.limitedReserveTransferAssetsV2(statemint.dot, 1e10, tx.xcmPallet.parachainV2(1, 2000)),
         fromBalance: query.balances,
         toBalance: query.tokens(acala.dot),
         checkUmp: true,
@@ -22,6 +23,7 @@ const tests = [
     },
   },
   {
+    // TODO: this failed to execute on statemint with WeightNotComputable error
     from: 'acala',
     to: 'statemint',
     reserve: 'polkadot',
