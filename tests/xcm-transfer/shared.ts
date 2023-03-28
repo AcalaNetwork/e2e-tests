@@ -1,7 +1,7 @@
 import { beforeEach, describe, it } from 'vitest'
 import { sendTransaction } from '@acala-network/chopsticks-testing'
 
-import { Network, createContext, createNetworks, NetworkNames } from '../../networks'
+import { Network, NetworkNames, createContext, createNetworks } from '../../networks'
 import { check, checkEvents, checkHrmp, checkSystemEvents, checkUmp } from '../../helpers'
 
 import type { TestType as KusamaParaTestType } from './kusama-para.test'
@@ -44,6 +44,9 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
       return async () => {
         await toChain.teardown()
         await fromChain.teardown()
+        if (reserveChain) {
+          await reserveChain.teardown()
+        }
       }
     })
 

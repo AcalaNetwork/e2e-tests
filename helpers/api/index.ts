@@ -14,6 +14,18 @@ export const xtokens = {
       },
     },
   }),
+  relaychainV3: (acc: any) => ({
+    V3: {
+      parents: 1,
+      interior: {
+        X1: {
+          AccountId32: {
+            id: acc,
+          },
+        },
+      },
+    },
+  }),
   parachainV2: (paraId: number) => (acc: any) => ({
     V1: {
       parents: 1,
@@ -30,11 +42,27 @@ export const xtokens = {
       },
     },
   }),
-  transferV2:
+  parachainV3: (paraId: number) => (acc: any) => ({
+    V3: {
+      parents: 1,
+      interior: {
+        X2: [
+          { Parachain: paraId },
+          {
+            AccountId32: {
+              network: 'Any',
+              id: acc,
+            },
+          },
+        ],
+      },
+    },
+  }),
+  transfer:
     (token: any, amount: any, dest: (dest: any) => any, weight: any = 'Unlimited') =>
     ({ api }: { api: ApiPromise }, acc: any) =>
       api.tx.xTokens.transfer(token, amount, dest(acc), weight),
-  transferMulticurrenciesV2:
+  transferMulticurrencies:
     (token: any, amount: any, feeToken: any, feeAmount: any, dest: (dest: any) => any) =>
     ({ api }: { api: ApiPromise }, acc: any) =>
       api.tx.xTokens.transferMulticurrencies(

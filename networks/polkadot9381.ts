@@ -1,29 +1,26 @@
 import { Config } from './types'
 
+import polkadotConfig from './polkadot'
+
 export default {
+  ...polkadotConfig,
   polkadot: {
+    // eslint-disable-next-line import/no-named-as-default-member
+    ...polkadotConfig.polkadot,
     name: 'polkadot9381' as const,
-    endpoint: 'wss://rpc.polkadot.io',
   },
   kusama: {
+    // eslint-disable-next-line import/no-named-as-default-member
+    ...polkadotConfig.kusama,
     name: 'kusama9381' as const,
-    endpoint: 'wss://kusama-rpc.polkadot.io',
   },
-  config: ({ network, alice }) => ({
-    storages: {
-      System: {
-        Account: [[[alice.address], { data: { free: 10 * 1e12 } }]],
-      },
-      ParasDisputes: {
-        // those can makes block building super slow
-        $removePrefix: ['disputes'],
-      },
-    },
+  config: (opt) => ({
+    ...polkadotConfig.config(opt),
     options: {
       wasmOverride: {
         polkadot: './wasm/polkadot_runtime-v9381.compact.compressed.wasm',
         kusama: './wasm/kusama_runtime-v9381.compact.compressed.wasm',
-      }[network]
-    }
+      }[opt.network],
+    },
   }),
 } satisfies Config

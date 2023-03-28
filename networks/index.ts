@@ -4,6 +4,7 @@ import dotenv from 'dotenv'
 
 import { Config, Context, NetworkKind } from './types'
 
+import acala2160Config from './acala2160'
 import acalaConfig from './acala'
 import hydraDXConfig from './hydraDX'
 import polkadot9381Config from './polkadot9381'
@@ -18,6 +19,7 @@ const networkDefs = {
   polkadot: polkadotConfig,
   statemint: statemintConfig,
   polkadot9381: polkadot9381Config,
+  acala2160: acala2160Config,
 } satisfies Record<string, Config>
 
 const toNumber = (value: string | undefined): number | undefined => {
@@ -53,7 +55,8 @@ for (const def of Object.values(networkDefs)) {
         ...ctx,
       })
 
-      const finalOptions = {
+      const finalOptions: SetupOption = {
+        timeout: 180000,
         wasmOverride: process.env[`${upperName}_WASM`],
         blockNumber: toNumber(process.env[`${upperName}_BLOCK_NUMBER`]),
         endpoint: process.env[`${upperName}_ENDPOINT`] ?? endpoint,

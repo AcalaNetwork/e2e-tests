@@ -1,15 +1,16 @@
 import { beforeEach, describe, it } from 'vitest'
+import { sendTransaction, testingPairs } from '@acala-network/chopsticks-testing'
 
-import { check, checkEvents, checkSystemEvents, sendTransaction, testingPairs } from '../helper'
-import { queryTokenBalance } from '../api/query'
+import { check, checkEvents, checkSystemEvents } from '../../helpers'
+import { queryTokenBalance } from '../../helpers/api/query'
 import {
   stableAssetMint,
   stableAssetRedeemProportion,
   stableAssetRedeemSingle,
   stableAssetSwap,
   swapWithExactTarget,
-} from '../api/extrinsics'
-import networks, { Network } from '../networks'
+} from '../../helpers/api/extrinsics'
+import networks, { Network } from '../../networks'
 
 describe('Karura dex', async () => {
   let karura: Network

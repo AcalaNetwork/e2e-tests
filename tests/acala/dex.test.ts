@@ -1,4 +1,5 @@
 import { afterAll, beforeEach, describe, it } from 'vitest'
+import { sendTransaction, testingPairs } from '@acala-network/chopsticks-testing'
 
 import {
   addLiquidity,
@@ -6,10 +7,10 @@ import {
   dexRemoveLiquidity,
   swapWithExactSupply,
   swapWithExactTarget,
-} from '../api/extrinsics'
-import { check, checkEvents, sendTransaction, testingPairs } from '../helper'
-import { querySharesAndWithdrawnRewards, queryTokenBalance } from '../api/query'
-import networks from '../networks'
+} from '../../helpers/api/extrinsics'
+import { check, checkEvents } from '../../helpers'
+import { querySharesAndWithdrawnRewards, queryTokenBalance } from '../../helpers/api/query'
+import networks from '../../networks'
 
 describe('Karura dex', async () => {
   const karura = await networks.karura()
@@ -21,6 +22,7 @@ describe('Karura dex', async () => {
   })
 
   beforeEach(async () => {
+    addLiquidity
     await karura.dev.setStorage({
       System: {
         Account: [[[alice.address], { data: { free: 10 * 1e12 } }]],

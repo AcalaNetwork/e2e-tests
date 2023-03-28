@@ -14,9 +14,9 @@
 		"test:dev": "vitest --inspect"
 	},
 	"dependencies": {
-		"@acala-network/chopsticks": "^0.5.10",
-		"@acala-network/chopsticks-testing": "^0.5.10",
-		"@polkadot/api": "^9.14.2",
+		"@acala-network/chopsticks": "^0.6.0",
+		"@acala-network/chopsticks-testing": "^0.6.0",
+		"@polkadot/api": "^10.2.1",
 		"dotenv": "^16.0.3",
 		"typescript": "^4.9.5",
 		"vitest": "^0.29.1"

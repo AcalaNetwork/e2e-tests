@@ -1,9 +1,9 @@
+import { Context } from '../../networks/types'
 import { query, tx } from '../../helpers/api'
 
 import { acala } from '../../networks/acala'
 import { hydraDX } from '../../networks/hydraDX'
 import { statemint } from '../../networks/statemint'
-import { Context } from '../../networks/types'
 
 import buildTest from './shared'
 
@@ -32,7 +32,7 @@ const tests = [
     name: 'DOT',
     test: {
       xtokenstHorzontal: {
-        tx: tx.xtokens.transferV2(acala.dot, 1e12, tx.xtokens.parachainV2(statemint.paraId)),
+        tx: tx.xtokens.transfer(acala.dot, 1e12, tx.xtokens.parachainV2(statemint.paraId)),
         fromBalance: query.tokens(acala.dot),
         toBalance: query.balances,
         checkUmp: true,
@@ -59,7 +59,7 @@ const tests = [
     },
     test: {
       xtokenstHorzontal: {
-        tx: tx.xtokens.transferV2(acala.dai, 10n ** 18n, tx.xtokens.parachainV2(hydraDX.paraId)),
+        tx: tx.xtokens.transfer(acala.dai, 10n ** 18n, tx.xtokens.parachainV2(hydraDX.paraId)),
         fromBalance: query.evm(acala.dai.Erc20, '0x2aef47e62c966f0695d5af370ddc1bc7c56902063eee60853e2872fc0ff4f88c'),
         toBalance: query.tokens(hydraDX.dai),
       },
@@ -76,7 +76,7 @@ const tests = [
     }),
     test: {
       xtokenstHorzontal: {
-        tx: tx.xtokens.transferV2(hydraDX.dai, 10n ** 18n, tx.xtokens.parachainV2(acala.paraId), 5e9),
+        tx: tx.xtokens.transfer(hydraDX.dai, 10n ** 18n, tx.xtokens.parachainV2(acala.paraId), 5e9),
         fromBalance: query.tokens(hydraDX.dai),
         toBalance: query.evm(acala.dai.Erc20, '0x2aef47e62c966f0695d5af370ddc1bc7c56902063eee60853e2872fc0ff4f88c'),
       },

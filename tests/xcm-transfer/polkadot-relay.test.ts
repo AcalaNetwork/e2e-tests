@@ -13,7 +13,7 @@ const tests = [
     name: 'DOT',
     test: {
       xtokensUp: {
-        tx: tx.xtokens.transferV2(acala.dot, 1e12, tx.xtokens.relaychainV2),
+        tx: tx.xtokens.transfer(acala.dot, 1e12, tx.xtokens.relaychainV2),
         balance: query.tokens(acala.dot),
       },
     },
@@ -36,7 +36,7 @@ const tests = [
     name: 'DOT',
     test: {
       xtokensUp: {
-        tx: tx.xtokens.transferV2(acala.dot, 1e12, tx.xtokens.relaychainV2),
+        tx: tx.xtokens.transfer(acala.dot, 1e12, tx.xtokens.relaychainV2),
         balance: query.tokens(acala.dot),
       },
     },

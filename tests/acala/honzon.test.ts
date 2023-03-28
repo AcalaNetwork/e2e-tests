@@ -1,9 +1,10 @@
 import { afterAll, beforeEach, describe, expect, it } from 'vitest'
+import { sendTransaction, testingPairs } from '@acala-network/chopsticks-testing'
 
-import { adjustLoan, adjustLoanByDebitValue, closeLoanHasDebitByDex } from '../api/extrinsics'
-import { check, checkEvents, sendTransaction, testingPairs } from '../helper'
-import { queryPositions, queryTokenBalance } from '../api/query'
-import networks from '../networks'
+import { adjustLoan, adjustLoanByDebitValue, closeLoanHasDebitByDex } from '../../helpers/api/extrinsics'
+import { check, checkEvents } from '../../helpers'
+import { queryPositions, queryTokenBalance } from '../../helpers/api/query'
+import networks from '../../networks'
 
 describe('Karura honzon', async () => {
   const karura = await networks.karura()

@@ -317,6 +317,166 @@ exports[`'karura' -> 'kusama9381' xcm transfer 'KSM' > xtokens transfer > tx eve
 ]
 `;
 
+exports[`'karura2160' -> 'kusama9381' xcm transfer 'KSM' > xtokens transfer > balance on from chain 1`] = `
+{
+  "free": 9000000000000,
+  "frozen": 0,
+  "reserved": 0,
+}
+`;
+
+exports[`'karura2160' -> 'kusama9381' xcm transfer 'KSM' > xtokens transfer > balance on to chain 1`] = `
+{
+  "consumers": 0,
+  "data": {
+    "feeFrozen": 0,
+    "free": "(rounded 11000000000000)",
+    "miscFrozen": 0,
+    "reserved": 0,
+  },
+  "nonce": 0,
+  "providers": 0,
+  "sufficients": 0,
+}
+`;
+
+exports[`'karura2160' -> 'kusama9381' xcm transfer 'KSM' > xtokens transfer > from chain ump messages 1`] = `
+[
+  {
+    "v2": [
+      {
+        "withdrawAsset": [
+          {
+            "fun": {
+              "fungible": 1000000000000,
+            },
+            "id": {
+              "concrete": {
+                "interior": {
+                  "here": null,
+                },
+                "parents": 0,
+              },
+            },
+          },
+        ],
+      },
+      {
+        "clearOrigin": null,
+      },
+      {
+        "buyExecution": {
+          "fees": {
+            "fun": {
+              "fungible": 1000000000000,
+            },
+            "id": {
+              "concrete": {
+                "interior": {
+                  "here": null,
+                },
+                "parents": 0,
+              },
+            },
+          },
+          "weightLimit": {
+            "unlimited": null,
+          },
+        },
+      },
+      {
+        "depositAsset": {
+          "assets": {
+            "wild": {
+              "all": null,
+            },
+          },
+          "beneficiary": {
+            "interior": {
+              "x1": {
+                "accountId32": {
+                  "id": "0x88dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee",
+                  "network": {
+                    "any": null,
+                  },
+                },
+              },
+            },
+            "parents": 0,
+          },
+          "maxAssets": 1,
+        },
+      },
+    ],
+  },
+]
+`;
+
+exports[`'karura2160' -> 'kusama9381' xcm transfer 'KSM' > xtokens transfer > to chain ump events 1`] = `
+[
+  {
+    "data": [
+      "(hash)",
+      {
+        "Complete": {
+          "proofSize": 0,
+          "refTime": "(rounded 300000000)",
+        },
+      },
+    ],
+    "method": "ExecutedUpward",
+    "section": "ump",
+  },
+]
+`;
+
+exports[`'karura2160' -> 'kusama9381' xcm transfer 'KSM' > xtokens transfer > tx events 1`] = `
+[
+  {
+    "data": {
+      "assets": [
+        {
+          "fun": {
+            "Fungible": 1000000000000,
+          },
+          "id": {
+            "Concrete": {
+              "interior": "Here",
+              "parents": 1,
+            },
+          },
+        },
+      ],
+      "dest": {
+        "interior": {
+          "X1": {
+            "AccountId32": {
+              "id": "(hash)",
+              "network": null,
+            },
+          },
+        },
+        "parents": 1,
+      },
+      "fee": {
+        "fun": {
+          "Fungible": 1000000000000,
+        },
+        "id": {
+          "Concrete": {
+            "interior": "Here",
+            "parents": 1,
+          },
+        },
+      },
+      "sender": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "TransferredMultiAssets",
+    "section": "xTokens",
+  },
+]
+`;
+
 exports[`'kusama' -> 'karura' xcm transfer 'KSM' > xcmPallet transfer > balance on from chain 1`] = `
 {
   "consumers": 0,
@@ -444,6 +604,82 @@ exports[`'kusama9381' -> 'karura' xcm transfer 'KSM' > xcmPallet transfer > to c
 `;
 
 exports[`'kusama9381' -> 'karura' xcm transfer 'KSM' > xcmPallet transfer > tx events 1`] = `
+[
+  {
+    "data": [
+      {
+        "Complete": {
+          "proofSize": 0,
+          "refTime": "(rounded 750000000)",
+        },
+      },
+    ],
+    "method": "Attempted",
+    "section": "xcmPallet",
+  },
+]
+`;
+
+exports[`'kusama9381' -> 'karura2160' xcm transfer 'KSM' > xcmPallet transfer > balance on from chain 1`] = `
+{
+  "consumers": 0,
+  "data": {
+    "feeFrozen": 0,
+    "free": "(rounded 8999000000000)",
+    "miscFrozen": 0,
+    "reserved": 0,
+  },
+  "nonce": 1,
+  "providers": 0,
+  "sufficients": 0,
+}
+`;
+
+exports[`'kusama9381' -> 'karura2160' xcm transfer 'KSM' > xcmPallet transfer > balance on to chain 1`] = `
+{
+  "free": "(rounded 11000000000000)",
+  "frozen": 0,
+  "reserved": 0,
+}
+`;
+
+exports[`'kusama9381' -> 'karura2160' xcm transfer 'KSM' > xcmPallet transfer > to chain dmp events 1`] = `
+[
+  {
+    "data": {
+      "count": 1,
+    },
+    "method": "DownwardMessagesReceived",
+    "section": "parachainSystem",
+  },
+  {
+    "data": {
+      "messageId": "(hash)",
+      "outcome": {
+        "Complete": {
+          "proofSize": 0,
+          "refTime": 800000000,
+        },
+      },
+    },
+    "method": "ExecutedDownward",
+    "section": "dmpQueue",
+  },
+  {
+    "data": {
+      "dmqHead": "(hash)",
+      "weightUsed": {
+        "proofSize": 0,
+        "refTime": 800000000,
+      },
+    },
+    "method": "DownwardMessagesProcessed",
+    "section": "parachainSystem",
+  },
+]
+`;
+
+exports[`'kusama9381' -> 'karura2160' xcm transfer 'KSM' > xcmPallet transfer > tx events 1`] = `
 [
   {
     "data": [

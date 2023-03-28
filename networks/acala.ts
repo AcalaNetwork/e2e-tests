@@ -1,6 +1,6 @@
 import { Config } from './types'
 
-type Vars = {
+export type Vars = {
   relayToken: string
   relayLiquidToken: string
 }
@@ -42,6 +42,9 @@ export default {
         accounts: [[['0x82a258cb20e2adb4788153cd5eb5839615ece9a0'], alice.address]],
         evmAddresses: [[[alice.address], '0x82a258cb20e2adb4788153cd5eb5839615ece9a0']],
       },
+      PolkadotXcm: {
+        $removePrefix: ['versionNotifyTargets', 'versionNotifiers', 'supportedVersion'],
+      }
     },
   }),
 } satisfies Config<Vars>
