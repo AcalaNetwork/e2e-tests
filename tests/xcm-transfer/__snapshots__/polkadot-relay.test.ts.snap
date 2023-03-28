@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`'karura' -> 'kusama' xcm transfer 'KSM' > xtokens transfer > balance on from chain 1`] = `
+exports[`'acala' -> 'polkadot' xcm transfer 'DOT' > xtokens transfer > balance on from chain 1`] = `
 {
   "free": 9000000000000,
   "frozen": 0,
@@ -8,7 +8,7 @@ exports[`'karura' -> 'kusama' xcm transfer 'KSM' > xtokens transfer > balance on
 }
 `;
 
-exports[`'karura' -> 'kusama' xcm transfer 'KSM' > xtokens transfer > balance on to chain 1`] = `
+exports[`'acala' -> 'polkadot' xcm transfer 'DOT' > xtokens transfer > balance on to chain 1`] = `
 {
   "consumers": 0,
   "data": {
@@ -23,7 +23,7 @@ exports[`'karura' -> 'kusama' xcm transfer 'KSM' > xtokens transfer > balance on
 }
 `;
 
-exports[`'karura' -> 'kusama' xcm transfer 'KSM' > xtokens transfer > from chain ump messages 1`] = `
+exports[`'acala' -> 'polkadot' xcm transfer 'DOT' > xtokens transfer > from chain ump messages 1`] = `
 [
   {
     "v2": [
@@ -95,13 +95,13 @@ exports[`'karura' -> 'kusama' xcm transfer 'KSM' > xtokens transfer > from chain
 ]
 `;
 
-exports[`'karura' -> 'kusama' xcm transfer 'KSM' > xtokens transfer > to chain ump events 1`] = `
+exports[`'acala' -> 'polkadot' xcm transfer 'DOT' > xtokens transfer > to chain ump events 1`] = `
 [
   {
     "data": [
       "(hash)",
       {
-        "Complete": "(rounded 300000000)",
+        "Complete": 4000000000,
       },
     ],
     "method": "ExecutedUpward",
@@ -110,7 +110,7 @@ exports[`'karura' -> 'kusama' xcm transfer 'KSM' > xtokens transfer > to chain u
 ]
 `;
 
-exports[`'karura' -> 'kusama' xcm transfer 'KSM' > xtokens transfer > tx events 1`] = `
+exports[`'acala' -> 'polkadot' xcm transfer 'DOT' > xtokens transfer > tx events 1`] = `
 [
   {
     "data": {
@@ -149,7 +149,7 @@ exports[`'karura' -> 'kusama' xcm transfer 'KSM' > xtokens transfer > tx events 
           },
         },
       },
-      "sender": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+      "sender": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
     },
     "method": "TransferredMultiAssets",
     "section": "xTokens",
@@ -157,7 +157,7 @@ exports[`'karura' -> 'kusama' xcm transfer 'KSM' > xtokens transfer > tx events 
 ]
 `;
 
-exports[`'karura' -> 'kusama9381' xcm transfer 'KSM' > xtokens transfer > balance on from chain 1`] = `
+exports[`'acala' -> 'polkadot9381' xcm transfer 'DOT' > xtokens transfer > balance on from chain 1`] = `
 {
   "free": 9000000000000,
   "frozen": 0,
@@ -165,7 +165,7 @@ exports[`'karura' -> 'kusama9381' xcm transfer 'KSM' > xtokens transfer > balanc
 }
 `;
 
-exports[`'karura' -> 'kusama9381' xcm transfer 'KSM' > xtokens transfer > balance on to chain 1`] = `
+exports[`'acala' -> 'polkadot9381' xcm transfer 'DOT' > xtokens transfer > balance on to chain 1`] = `
 {
   "consumers": 0,
   "data": {
@@ -180,7 +180,7 @@ exports[`'karura' -> 'kusama9381' xcm transfer 'KSM' > xtokens transfer > balanc
 }
 `;
 
-exports[`'karura' -> 'kusama9381' xcm transfer 'KSM' > xtokens transfer > from chain ump messages 1`] = `
+exports[`'acala' -> 'polkadot9381' xcm transfer 'DOT' > xtokens transfer > from chain ump messages 1`] = `
 [
   {
     "v2": [
@@ -252,15 +252,15 @@ exports[`'karura' -> 'kusama9381' xcm transfer 'KSM' > xtokens transfer > from c
 ]
 `;
 
-exports[`'karura' -> 'kusama9381' xcm transfer 'KSM' > xtokens transfer > to chain ump events 1`] = `
+exports[`'acala' -> 'polkadot9381' xcm transfer 'DOT' > xtokens transfer > to chain ump events 1`] = `
 [
   {
     "data": [
       "(hash)",
       {
         "Complete": {
-          "proofSize": 0,
-          "refTime": "(rounded 300000000)",
+          "proofSize": "(rounded 260000)",
+          "refTime": 4000000000,
         },
       },
     ],
@@ -270,7 +270,7 @@ exports[`'karura' -> 'kusama9381' xcm transfer 'KSM' > xtokens transfer > to cha
 ]
 `;
 
-exports[`'karura' -> 'kusama9381' xcm transfer 'KSM' > xtokens transfer > tx events 1`] = `
+exports[`'acala' -> 'polkadot9381' xcm transfer 'DOT' > xtokens transfer > tx events 1`] = `
 [
   {
     "data": {
@@ -309,7 +309,7 @@ exports[`'karura' -> 'kusama9381' xcm transfer 'KSM' > xtokens transfer > tx eve
           },
         },
       },
-      "sender": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+      "sender": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
     },
     "method": "TransferredMultiAssets",
     "section": "xTokens",
@@ -317,32 +317,7 @@ exports[`'karura' -> 'kusama9381' xcm transfer 'KSM' > xtokens transfer > tx eve
 ]
 `;
 
-exports[`'karura' -> 'statemine' xcm transfer 'USDT' > xtokens transfer > balance on from chain 1`] = `
-{
-  "free": 0,
-  "frozen": 0,
-  "reserved": 0,
-}
-`;
-
-exports[`'karura' -> 'statemine' xcm transfer 'USDT' > xtokens transfer > balance on to chain 1`] = `
-{
-  "balance": 1000000000,
-  "extra": null,
-  "isFrozen": false,
-  "reason": {
-    "consumer": null,
-  },
-}
-`;
-
-exports[`'karura' -> 'statemine' xcm transfer 'USDT' > xtokens transfer > from chain ump messages 1`] = `[]`;
-
-exports[`'karura' -> 'statemine' xcm transfer 'USDT' > xtokens transfer > to chain ump events 1`] = `[]`;
-
-exports[`'karura' -> 'statemine' xcm transfer 'USDT' > xtokens transfer > tx events 1`] = `[]`;
-
-exports[`'kusama' -> 'karura' xcm transfer 'KSM' > xcmPallet transfer > balance on from chain 1`] = `
+exports[`'polkadot' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > balance on from chain 1`] = `
 {
   "consumers": 0,
   "data": {
@@ -357,7 +332,7 @@ exports[`'kusama' -> 'karura' xcm transfer 'KSM' > xcmPallet transfer > balance 
 }
 `;
 
-exports[`'kusama' -> 'karura' xcm transfer 'KSM' > xcmPallet transfer > balance on to chain 1`] = `
+exports[`'polkadot' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > balance on to chain 1`] = `
 {
   "free": "(rounded 11000000000000)",
   "frozen": 0,
@@ -365,7 +340,7 @@ exports[`'kusama' -> 'karura' xcm transfer 'KSM' > xcmPallet transfer > balance 
 }
 `;
 
-exports[`'kusama' -> 'karura' xcm transfer 'KSM' > xcmPallet transfer > to chain dmp events 1`] = `
+exports[`'polkadot' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > to chain dmp events 1`] = `
 [
   {
     "data": {
@@ -398,12 +373,12 @@ exports[`'kusama' -> 'karura' xcm transfer 'KSM' > xcmPallet transfer > to chain
 ]
 `;
 
-exports[`'kusama' -> 'karura' xcm transfer 'KSM' > xcmPallet transfer > tx events 1`] = `
+exports[`'polkadot' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > tx events 1`] = `
 [
   {
     "data": [
       {
-        "Complete": "(rounded 750000000)",
+        "Complete": 1000000000,
       },
     ],
     "method": "Attempted",
@@ -412,7 +387,7 @@ exports[`'kusama' -> 'karura' xcm transfer 'KSM' > xcmPallet transfer > tx event
 ]
 `;
 
-exports[`'kusama9381' -> 'karura' xcm transfer 'KSM' > xcmPallet transfer > balance on from chain 1`] = `
+exports[`'polkadot9381' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > balance on from chain 1`] = `
 {
   "consumers": 0,
   "data": {
@@ -427,7 +402,7 @@ exports[`'kusama9381' -> 'karura' xcm transfer 'KSM' > xcmPallet transfer > bala
 }
 `;
 
-exports[`'kusama9381' -> 'karura' xcm transfer 'KSM' > xcmPallet transfer > balance on to chain 1`] = `
+exports[`'polkadot9381' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > balance on to chain 1`] = `
 {
   "free": "(rounded 11000000000000)",
   "frozen": 0,
@@ -435,7 +410,7 @@ exports[`'kusama9381' -> 'karura' xcm transfer 'KSM' > xcmPallet transfer > bala
 }
 `;
 
-exports[`'kusama9381' -> 'karura' xcm transfer 'KSM' > xcmPallet transfer > to chain dmp events 1`] = `
+exports[`'polkadot9381' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > to chain dmp events 1`] = `
 [
   {
     "data": {
@@ -468,14 +443,14 @@ exports[`'kusama9381' -> 'karura' xcm transfer 'KSM' > xcmPallet transfer > to c
 ]
 `;
 
-exports[`'kusama9381' -> 'karura' xcm transfer 'KSM' > xcmPallet transfer > tx events 1`] = `
+exports[`'polkadot9381' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > tx events 1`] = `
 [
   {
     "data": [
       {
         "Complete": {
-          "proofSize": 0,
-          "refTime": "(rounded 750000000)",
+          "proofSize": "(rounded 66000)",
+          "refTime": 1000000000,
         },
       },
     ],
@@ -484,138 +459,3 @@ exports[`'kusama9381' -> 'karura' xcm transfer 'KSM' > xcmPallet transfer > tx e
   },
 ]
 `;
-
-exports[`'statemine' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer > balance on from chain 1`] = `
-{
-  "balance": "(rounded 1000000000)",
-  "extra": null,
-  "isFrozen": false,
-  "reason": {
-    "consumer": null,
-  },
-}
-`;
-
-exports[`'statemine' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer > balance on to chain 1`] = `
-{
-  "free": "(rounded 1000000)",
-  "frozen": 0,
-  "reserved": 0,
-}
-`;
-
-exports[`'statemine' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer > from chain ump messages 1`] = `
-[
-  {
-    "data": [
-      "ConcatenatedVersionedXcm",
-      {
-        "v2": [
-          {
-            "reserveAssetDeposited": [
-              {
-                "fun": {
-                  "fungible": 1000000,
-                },
-                "id": {
-                  "concrete": {
-                    "interior": {
-                      "x3": [
-                        {
-                          "parachain": 1000,
-                        },
-                        {
-                          "palletInstance": 50,
-                        },
-                        {
-                          "generalIndex": 1984,
-                        },
-                      ],
-                    },
-                    "parents": 1,
-                  },
-                },
-              },
-            ],
-          },
-          {
-            "clearOrigin": null,
-          },
-          {
-            "buyExecution": {
-              "fees": {
-                "fun": {
-                  "fungible": 1000000,
-                },
-                "id": {
-                  "concrete": {
-                    "interior": {
-                      "x3": [
-                        {
-                          "parachain": 1000,
-                        },
-                        {
-                          "palletInstance": 50,
-                        },
-                        {
-                          "generalIndex": 1984,
-                        },
-                      ],
-                    },
-                    "parents": 1,
-                  },
-                },
-              },
-              "weightLimit": {
-                "unlimited": null,
-              },
-            },
-          },
-          {
-            "depositAsset": {
-              "assets": {
-                "wild": {
-                  "all": null,
-                },
-              },
-              "beneficiary": {
-                "interior": {
-                  "x1": {
-                    "accountId32": {
-                      "id": "0x88dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee",
-                      "network": {
-                        "any": null,
-                      },
-                    },
-                  },
-                },
-                "parents": 0,
-              },
-              "maxAssets": 1,
-            },
-          },
-        ],
-      },
-    ],
-    "recipient": 2000,
-  },
-]
-`;
-
-exports[`'statemine' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer > to chain dmp events 1`] = `
-[
-  {
-    "data": {
-      "messageHash": "(hash)",
-      "weight": {
-        "proofSize": 0,
-        "refTime": 800000000,
-      },
-    },
-    "method": "Success",
-    "section": "xcmpQueue",
-  },
-]
-`;
-
-exports[`'statemine' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer > tx events 1`] = `[]`;

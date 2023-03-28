@@ -4,20 +4,20 @@ import dotenv from 'dotenv'
 
 import { Config, Context, NetworkKind } from './types'
 
-import acala from './acala'
-import hydraDX from './hydraDX'
-import polkadot from './polkadot'
-import polkadot9381 from './polkadot9381'
-import statemint from './statemint'
+import acalaConfig from './acala'
+import hydraDXConfig from './hydraDX'
+import polkadot9381Config from './polkadot9381'
+import polkadotConfig from './polkadot'
+import statemintConfig from './statemint'
 
 dotenv.config()
 
 const networkDefs = {
-  acala,
-  hydraDX,
-  polkadot,
-  statemint,
-  polkadot9381,
+  acala: acalaConfig,
+  hydraDX: hydraDXConfig,
+  polkadot: polkadotConfig,
+  statemint: statemintConfig,
+  polkadot9381: polkadot9381Config,
 } satisfies Record<string, Config>
 
 const toNumber = (value: string | undefined): number | undefined => {

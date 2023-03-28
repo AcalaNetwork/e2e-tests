@@ -44,10 +44,9 @@ export default {
 
 export const acala = {
   dot: { Token: 'DOT' },
-  wbtc: { ForeignAsset: 5 },
-}
+} as const
 
 export const karura = {
   ksm: { Token: 'KSM' },
   usdt: { ForeignAsset: 7 },
-}
+} as const

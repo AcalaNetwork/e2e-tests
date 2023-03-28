@@ -34,6 +34,24 @@ export const xtokens = {
     (token: any, amount: any, dest: (dest: any) => any) =>
     ({ api }: { api: ApiPromise }, acc: any) =>
       api.tx.xTokens.transfer(token, amount, dest(acc), 'Unlimited'),
+  transferMulticurrenciesV2:
+    (token: any, amount: any, feeToken: any, feeAmount: any, dest: (dest: any) => any) =>
+    ({ api }: { api: ApiPromise }, acc: any) =>
+      api.tx.xTokens.transferMulticurrencies(
+        [
+          [
+            token,
+            amount,
+          ],
+          [
+            feeToken,
+            feeAmount,
+          ],
+        ],
+        1,
+        dest(acc),
+        'Unlimited'
+      ),
 }
 
 export const xcmPallet = {

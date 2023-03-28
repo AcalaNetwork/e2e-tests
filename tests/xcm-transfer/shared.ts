@@ -1,30 +1,44 @@
 import { beforeEach, describe, it } from 'vitest'
 import { sendTransaction } from '@acala-network/chopsticks-testing'
 
-import { Network, createContext, createNetworks } from '../../networks'
+import { Network, createContext, createNetworks, NetworkNames } from '../../networks'
 import { check, checkEvents, checkHrmp, checkSystemEvents, checkUmp } from '../../helpers'
 
-import type { TestType as KusamaTestType } from './kusama.test'
-import type { TestType as PolkadotTestType } from './polkadot.test'
+import type { TestType as KusamaParaTestType } from './kusama-para.test'
+import type { TestType as KusamaRelayTestType } from './kusama-relay.test'
+import type { TestType as PolkadotParaTestType } from './polkadot-para.test'
+import type { TestType as PolkadotRelayTestType } from './polkadot-relay.test'
 
-export default function buildTest(tests: ReadonlyArray<PolkadotTestType | KusamaTestType>) {
-  describe.each(tests)('$from -> $to xcm transfer $name', async ({ from, to, test }) => {
+type TestType = KusamaRelayTestType | KusamaParaTestType | PolkadotRelayTestType | PolkadotParaTestType
+
+export default function buildTest(tests: ReadonlyArray<TestType>) {
+  describe.each(tests)('$from -> $to xcm transfer $name', async ({ from, to, test, ...opt }) => {
     let fromChain: Network
     let toChain: Network
+    let reserveChain: Network
+
     const ctx = createContext()
     const { alice } = ctx
 
     beforeEach(async () => {
-      const { [from]: parachain1, [to]: relaychain1 } = await createNetworks(
-        {
-          [from]: undefined,
-          [to]: undefined,
-        } as any,
-        ctx
-      )
+      const networkOptions = {
+        [from]: undefined,
+        [to]: undefined,
+      } as Record<NetworkNames, undefined>
+      if ('reserve' in opt) {
+        networkOptions[opt.reserve] = undefined
+      }
+      const chains = await createNetworks(networkOptions, ctx)
 
-      fromChain = parachain1
-      toChain = relaychain1
+      fromChain = chains[from]
+      toChain = chains[to]
+      if ('reserve' in opt) {
+        reserveChain = chains[opt.reserve]
+      }
+
+      if ('fromStorage' in opt) {
+        await fromChain.dev.setStorage(opt.fromStorage(ctx))
+      }
 
       return async () => {
         await toChain.teardown()
@@ -78,18 +92,18 @@ export default function buildTest(tests: ReadonlyArray<PolkadotTestType | Kusama
         await fromChain.chain.newBlock()
 
         await check(fromBalance(fromChain, alice.address)).redact().toMatchSnapshot('balance on from chain')
-        await checkEvents(tx0, 'xcmPallet').toMatchSnapshot('tx events')
-        await checkHrmp(fromChain).toMatchSnapshot('from chain ump messages')
+        await checkEvents(tx0, 'polkadotXcm').toMatchSnapshot('tx events')
+        await checkHrmp(fromChain).toMatchSnapshot('from chain hrmp messages')
 
         await toChain.chain.newBlock()
 
         await check(toBalance(toChain, alice.address)).redact().toMatchSnapshot('balance on to chain')
-        await checkSystemEvents(toChain, 'xcmpQueue').toMatchSnapshot('to chain dmp events')
+        await checkSystemEvents(toChain, 'xcmpQueue').toMatchSnapshot('to chain xcmpQueue events')
       })
     }
 
     if ('xtokenstHorzontal' in test) {
-      const { fromBalance, toBalance, tx } = test.xtokenstHorzontal
+      const { fromBalance, toBalance, tx, ...testOpt } = test.xtokenstHorzontal
 
       it('xtokens transfer', async () => {
         const tx0 = await sendTransaction(tx(fromChain, alice.addressRaw).signAsync(alice))
@@ -98,13 +112,22 @@ export default function buildTest(tests: ReadonlyArray<PolkadotTestType | Kusama
 
         await check(fromBalance(fromChain, alice.address)).redact().toMatchSnapshot('balance on from chain')
         await checkEvents(tx0, 'xTokens').toMatchSnapshot('tx events')
-        await checkHrmp(fromChain).toMatchSnapshot('from chain ump messages')
 
+        if ('checkUmp' in testOpt) {
+          await checkUmp(fromChain).toMatchSnapshot('from chain ump messages')
+        } else {
+          await checkHrmp(fromChain).toMatchSnapshot('from chain hrmp messages')
+        }
+
+        if (reserveChain) {
+          await reserveChain.chain.newBlock()
+        }
         await toChain.chain.newBlock()
 
         await check(toBalance(toChain, alice.address)).redact().toMatchSnapshot('balance on to chain')
-        await checkSystemEvents(toChain, 'xcmpQueue').toMatchSnapshot('to chain ump events')
+        await checkSystemEvents(toChain, 'xcmpQueue').toMatchSnapshot('to chain xcmpQueue events')
       })
     }
+
   })
 }

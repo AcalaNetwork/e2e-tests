@@ -1,0 +1,351 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`'karura' -> 'statemine' xcm transfer 'USDT' > xtokens transfer > balance on from chain 1`] = `
+{
+  "free": 9000000,
+  "frozen": 0,
+  "reserved": 0,
+}
+`;
+
+exports[`'karura' -> 'statemine' xcm transfer 'USDT' > xtokens transfer > balance on to chain 1`] = `
+{
+  "balance": "(rounded 1000000000)",
+  "extra": null,
+  "isFrozen": false,
+  "reason": {
+    "consumer": null,
+  },
+}
+`;
+
+exports[`'karura' -> 'statemine' xcm transfer 'USDT' > xtokens transfer > from chain hrmp messages 1`] = `
+[
+  {
+    "data": [
+      "ConcatenatedVersionedXcm",
+      {
+        "v2": [
+          {
+            "withdrawAsset": [
+              {
+                "fun": {
+                  "fungible": 1000000,
+                },
+                "id": {
+                  "concrete": {
+                    "interior": {
+                      "x2": [
+                        {
+                          "palletInstance": 50,
+                        },
+                        {
+                          "generalIndex": 1984,
+                        },
+                      ],
+                    },
+                    "parents": 0,
+                  },
+                },
+              },
+            ],
+          },
+          {
+            "clearOrigin": null,
+          },
+          {
+            "buyExecution": {
+              "fees": {
+                "fun": {
+                  "fungible": 1000000,
+                },
+                "id": {
+                  "concrete": {
+                    "interior": {
+                      "x2": [
+                        {
+                          "palletInstance": 50,
+                        },
+                        {
+                          "generalIndex": 1984,
+                        },
+                      ],
+                    },
+                    "parents": 0,
+                  },
+                },
+              },
+              "weightLimit": {
+                "unlimited": null,
+              },
+            },
+          },
+          {
+            "depositAsset": {
+              "assets": {
+                "wild": {
+                  "all": null,
+                },
+              },
+              "beneficiary": {
+                "interior": {
+                  "x1": {
+                    "accountId32": {
+                      "id": "0x88dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee",
+                      "network": {
+                        "any": null,
+                      },
+                    },
+                  },
+                },
+                "parents": 0,
+              },
+              "maxAssets": 1,
+            },
+          },
+        ],
+      },
+    ],
+    "recipient": 1000,
+  },
+]
+`;
+
+exports[`'karura' -> 'statemine' xcm transfer 'USDT' > xtokens transfer > to chain xcmpQueue events 1`] = `
+[
+  {
+    "data": {
+      "messageHash": "(hash)",
+      "weight": {
+        "proofSize": 0,
+        "refTime": "(rounded 1200000000)",
+      },
+    },
+    "method": "Success",
+    "section": "xcmpQueue",
+  },
+]
+`;
+
+exports[`'karura' -> 'statemine' xcm transfer 'USDT' > xtokens transfer > tx events 1`] = `
+[
+  {
+    "data": {
+      "assets": [
+        {
+          "fun": {
+            "Fungible": 1000000,
+          },
+          "id": {
+            "Concrete": {
+              "interior": {
+                "X3": [
+                  {
+                    "Parachain": 1000,
+                  },
+                  {
+                    "PalletInstance": 50,
+                  },
+                  {
+                    "GeneralIndex": "(rounded 2000)",
+                  },
+                ],
+              },
+              "parents": 1,
+            },
+          },
+        },
+      ],
+      "dest": {
+        "interior": {
+          "X2": [
+            {
+              "Parachain": 1000,
+            },
+            {
+              "AccountId32": {
+                "id": "(hash)",
+                "network": "Any",
+              },
+            },
+          ],
+        },
+        "parents": 1,
+      },
+      "fee": {
+        "fun": {
+          "Fungible": 1000000,
+        },
+        "id": {
+          "Concrete": {
+            "interior": {
+              "X3": [
+                {
+                  "Parachain": 1000,
+                },
+                {
+                  "PalletInstance": 50,
+                },
+                {
+                  "GeneralIndex": "(rounded 2000)",
+                },
+              ],
+            },
+            "parents": 1,
+          },
+        },
+      },
+      "sender": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "TransferredMultiAssets",
+    "section": "xTokens",
+  },
+]
+`;
+
+exports[`'statemine' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer > balance on from chain 1`] = `
+{
+  "balance": "(rounded 1000000000)",
+  "extra": null,
+  "isFrozen": false,
+  "reason": {
+    "consumer": null,
+  },
+}
+`;
+
+exports[`'statemine' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer > balance on to chain 1`] = `
+{
+  "free": "(rounded 1000000)",
+  "frozen": 0,
+  "reserved": 0,
+}
+`;
+
+exports[`'statemine' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer > from chain hrmp messages 1`] = `
+[
+  {
+    "data": [
+      "ConcatenatedVersionedXcm",
+      {
+        "v2": [
+          {
+            "reserveAssetDeposited": [
+              {
+                "fun": {
+                  "fungible": 1000000,
+                },
+                "id": {
+                  "concrete": {
+                    "interior": {
+                      "x3": [
+                        {
+                          "parachain": 1000,
+                        },
+                        {
+                          "palletInstance": 50,
+                        },
+                        {
+                          "generalIndex": 1984,
+                        },
+                      ],
+                    },
+                    "parents": 1,
+                  },
+                },
+              },
+            ],
+          },
+          {
+            "clearOrigin": null,
+          },
+          {
+            "buyExecution": {
+              "fees": {
+                "fun": {
+                  "fungible": 1000000,
+                },
+                "id": {
+                  "concrete": {
+                    "interior": {
+                      "x3": [
+                        {
+                          "parachain": 1000,
+                        },
+                        {
+                          "palletInstance": 50,
+                        },
+                        {
+                          "generalIndex": 1984,
+                        },
+                      ],
+                    },
+                    "parents": 1,
+                  },
+                },
+              },
+              "weightLimit": {
+                "unlimited": null,
+              },
+            },
+          },
+          {
+            "depositAsset": {
+              "assets": {
+                "wild": {
+                  "all": null,
+                },
+              },
+              "beneficiary": {
+                "interior": {
+                  "x1": {
+                    "accountId32": {
+                      "id": "0x88dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee",
+                      "network": {
+                        "any": null,
+                      },
+                    },
+                  },
+                },
+                "parents": 0,
+              },
+              "maxAssets": 1,
+            },
+          },
+        ],
+      },
+    ],
+    "recipient": 2000,
+  },
+]
+`;
+
+exports[`'statemine' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer > to chain xcmpQueue events 1`] = `
+[
+  {
+    "data": {
+      "messageHash": "(hash)",
+      "weight": {
+        "proofSize": 0,
+        "refTime": 800000000,
+      },
+    },
+    "method": "Success",
+    "section": "xcmpQueue",
+  },
+]
+`;
+
+exports[`'statemine' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer > tx events 1`] = `
+[
+  {
+    "data": [
+      {
+        "Complete": "(rounded 650000000)",
+      },
+    ],
+    "method": "Attempted",
+    "section": "polkadotXcm",
+  },
+]
+`;
