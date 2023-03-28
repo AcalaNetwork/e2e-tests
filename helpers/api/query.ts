@@ -19,4 +19,3 @@ export const queryPositions = (api: ApiPromise, token: string, address: string) 
 export const querySharesAndWithdrawnRewards = (api: ApiPromise, poolsId: object, address: string) => {
   return api.query.rewards.sharesAndWithdrawnRewards(poolsId, address)
 }
-

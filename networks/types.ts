@@ -9,9 +9,10 @@ export type NetworkConfig = {
 
 export type Context = ReturnType<typeof testingPairs>
 
-export type FullContext = Context & NetworkConfig & {
-  network: NetworkKind
-}
+export type FullContext = Context &
+  NetworkConfig & {
+    network: NetworkKind
+  }
 
 export type Config<T = object> = {
   polkadot?: NetworkConfig & T

@@ -22,7 +22,7 @@ export default {
   }),
 } satisfies Config
 
-export const polkadot =  {
+export const polkadot = {
   dot: { Concrete: { parents: 0, interior: 'Here' } },
 } as const
 

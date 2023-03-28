@@ -44,7 +44,7 @@ export default {
       },
       PolkadotXcm: {
         $removePrefix: ['versionNotifyTargets', 'versionNotifiers', 'supportedVersion'],
-      }
+      },
     },
   }),
 } satisfies Config<Vars>

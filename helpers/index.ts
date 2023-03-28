@@ -1,7 +1,5 @@
 import { ApiPromise } from '@polkadot/api'
 import { Codec } from '@polkadot/types/types'
-import { NetworkNames } from '../networks'
-import { SubmittableExtrinsic } from '@polkadot/api/types'
 import { expect } from 'vitest'
 
 type CodecOrArray = Codec | Codec[]
@@ -198,7 +196,7 @@ export const check = (value: any, msg?: string) => {
   return new Checker(value, msg)
 }
 
-type Api = { api: ApiPromise };
+type Api = { api: ApiPromise }
 
 export const checkEvents = ({ events }: { events: Promise<Codec[] | Codec> }, ...filters: EventFilter[]) =>
   check(events, 'events')

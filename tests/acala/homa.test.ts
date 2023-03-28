@@ -1,16 +1,10 @@
 import { afterAll, beforeEach, describe, it } from 'vitest'
 import { connectVertical } from '@acala-network/chopsticks'
+import { sendTransaction, testingPairs } from '@acala-network/chopsticks-testing'
 
-import { check, checkEvents, checkSystemEvents, checkUmp, sendTransaction, testingPairs } from '../helper'
-import {
-  forceBumpCurrentEra,
-  mint,
-  relayChainV3limitedReserveTransferAssets,
-  requestRedeem,
-  sudo,
-  xTokens,
-} from '../api/extrinsics'
-import networks, { Network } from '../networks'
+import { checkEvents, checkSystemEvents, checkUmp } from '../../helpers'
+import { forceBumpCurrentEra, mint, requestRedeem, sudo } from '../../helpers/api/extrinsics'
+import networks, { Network } from '../../networks'
 
 describe('Karura <-> Kusama', async () => {
   let kusama: Network
@@ -64,8 +58,6 @@ describe('Karura <-> Kusama', async () => {
       await karura.teardown()
     }
   })
-
-
 
   it('Homa stake works', async () => {
     const tx0 = await sendTransaction(mint(karura.api, '1000000000000').signAsync(alice, { nonce: 0 }))
