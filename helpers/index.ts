@@ -121,6 +121,11 @@ export class Checker {
         return processNumber(obj)
       }
       if (typeof obj === 'string') {
+        if (redactNumber && obj.match(/0x000000[0-9a-f]{26}/)) {
+          // this is very likely u128 encoded in hex
+          const num = parseInt(obj)
+          return processNumber(num)
+        }
         if (redactHash && obj.match(/0x[0-9a-f]{64}/)) {
           return '(hash)'
         }

@@ -14,7 +14,7 @@ const tests = [
     name: 'USDT',
     test: {
       xcmPalletHorzontal: {
-        tx: tx.xcmPallet.limitedReserveTransferAssetsV2(statemine.usdt, 1e6, tx.xcmPallet.parachainV2(1, 2000)),
+        tx: tx.xcmPallet.limitedReserveTransferAssetsV2(statemine.usdt, 1e6, tx.xcmPallet.parachainV2(1, karura.paraId)),
         fromBalance: query.assets(statemine.usdtIndex),
         toBalance: query.tokens(karura.usdt),
       },
@@ -31,7 +31,7 @@ const tests = [
     }),
     test: {
       xtokenstHorzontal: {
-        tx: tx.xtokens.transferV2(karura.usdt, 1e6, tx.xtokens.parachainV2(1000)),
+        tx: tx.xtokens.transferV2(karura.usdt, 1e6, tx.xtokens.parachainV2(statemine.paraId)),
         fromBalance: query.tokens(karura.usdt),
         toBalance: query.assets(statemine.usdtIndex),
       },

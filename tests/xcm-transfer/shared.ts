@@ -37,7 +37,8 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
       }
 
       if ('fromStorage' in opt) {
-        await fromChain.dev.setStorage(opt.fromStorage(ctx))
+        const override = typeof opt.fromStorage === 'function' ? opt.fromStorage(ctx) : opt.fromStorage
+        await fromChain.dev.setStorage(override)
       }
 
       return async () => {

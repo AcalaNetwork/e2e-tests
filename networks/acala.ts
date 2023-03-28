@@ -21,16 +21,16 @@ export default {
   config: ({ alice, relayToken, relayLiquidToken }) => ({
     storages: {
       System: {
-        Account: [[[alice.address], { data: { free: 10 * 1e12 } }]],
+        account: [[[alice.address], { data: { free: 10 * 1e12 } }]],
       },
       Tokens: {
-        Accounts: [
+        accounts: [
           [[alice.address, { Token: relayToken }], { free: 10 * 1e12 }],
           [[alice.address, { Token: relayLiquidToken }], { free: 100 * 1e12 }],
         ],
       },
       Sudo: {
-        Key: alice.address,
+        key: alice.address,
       },
       Homa: {
         // avoid impact test outcome
@@ -38,15 +38,22 @@ export default {
         // so that bump era won't trigger unbond
         relayChainCurrentEra: '0x64000000',
       },
+      EvmAccounts: {
+        accounts: [[['0x82a258cb20e2adb4788153cd5eb5839615ece9a0'], alice.address]],
+        evmAddresses: [[[alice.address], '0x82a258cb20e2adb4788153cd5eb5839615ece9a0']],
+      },
     },
   }),
 } satisfies Config<Vars>
 
 export const acala = {
+  paraId: 2000,
   dot: { Token: 'DOT' },
+  dai: { Erc20: '0x54a37a01cd75b616d63e0ab665bffdb0143c52ae' },
 } as const
 
 export const karura = {
+  paraId: 2000,
   ksm: { Token: 'KSM' },
   usdt: { ForeignAsset: 7 },
 } as const

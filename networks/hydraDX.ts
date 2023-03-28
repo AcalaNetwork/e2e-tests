@@ -17,3 +17,8 @@ export default {
     },
   }),
 } satisfies Config
+
+export const hydraDX = {
+  paraId: 2034,
+  dai: 2,
+}

@@ -31,9 +31,9 @@ export const xtokens = {
     },
   }),
   transferV2:
-    (token: any, amount: any, dest: (dest: any) => any) =>
+    (token: any, amount: any, dest: (dest: any) => any, weight: any = 'Unlimited') =>
     ({ api }: { api: ApiPromise }, acc: any) =>
-      api.tx.xTokens.transfer(token, amount, dest(acc), 'Unlimited'),
+      api.tx.xTokens.transfer(token, amount, dest(acc), weight),
   transferMulticurrenciesV2:
     (token: any, amount: any, feeToken: any, feeAmount: any, dest: (dest: any) => any) =>
     ({ api }: { api: ApiPromise }, acc: any) =>
@@ -157,4 +157,7 @@ export const query = {
     (token: number) =>
     ({ api }: { api: ApiPromise }, address: string) =>
       api.query.assets.account(token, address),
+  evm: (contract: string, slot: string) =>
+  ({ api }: { api: ApiPromise }, _address: string) =>
+    api.query.evm.accountStorages(contract, slot),
 }

@@ -24,7 +24,7 @@ const tests = [
     name: 'KSM',
     test: {
       xcmPalletDown: {
-        tx: tx.xcmPallet.limitedReserveTransferAssetsV2(kusama.ksm, 1e12, tx.xcmPallet.parachainV2(0, 2000)),
+        tx: tx.xcmPallet.limitedReserveTransferAssetsV2(kusama.ksm, 1e12, tx.xcmPallet.parachainV2(0, karura.paraId)),
         balance: query.tokens(karura.ksm),
       },
     },
@@ -47,7 +47,7 @@ const tests = [
     name: 'KSM',
     test: {
       xcmPalletDown: {
-        tx: tx.xcmPallet.limitedReserveTransferAssetsV3(kusama.ksm, 1e12, tx.xcmPallet.parachainV3(2000)),
+        tx: tx.xcmPallet.limitedReserveTransferAssetsV3(kusama.ksm, 1e12, tx.xcmPallet.parachainV3(karura.paraId)),
         balance: query.tokens(karura.ksm),
       },
     },

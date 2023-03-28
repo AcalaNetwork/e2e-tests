@@ -24,10 +24,12 @@ export default {
 } satisfies Config
 
 export const statemint = {
+  paraId: 1000,
   dot: { Concrete: { parents: 0, interior: 'Here' } },
 } as const
 
 export const statemine = {
+  paraId: 1000,
   ksm: { Concrete: { parents: 0, interior: 'Here' } },
   usdt: { Concrete: { parents: 0, interior: { X2: [{ PalletInstance: 50 }, { GeneralIndex: 1984 }] } } },
   usdtIndex: 1984,
