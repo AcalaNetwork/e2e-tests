@@ -22,3 +22,8 @@ export const hydraDX = {
   paraId: 2034,
   dai: 2,
 }
+
+export const basilisk = {
+  paraId: 2090,
+  dai: 13,
+}
