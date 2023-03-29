@@ -125,7 +125,6 @@ const tests = [
     },
   },
   {
-    // TODO: this isn't working as Moonbeam is reserve transfer xcDOT to Acala, instead of the real DOT
     from: 'moonbeam',
     to: 'acala',
     route: 'polkadot',
@@ -133,15 +132,15 @@ const tests = [
     fromAccount: ({ alith }: Context) => alith,
     fromStorage: ({ alith }: Context) => ({
       Assets: {
-        account: [[[moonbeam.dot, alith.address], { balance: 10n ** 18n }]],
+        account: [[[moonbeam.dot, alith.address], { balance: 10e12 }]],
       },
     }),
     test: {
       xtokenstHorzontal: {
-        tx: tx.xtokens.transfer(moonbeam.dot, 10n ** 18n, tx.xtokens.parachainV2(acala.paraId)),
+        tx: tx.xtokens.transfer({ ForeignAsset: moonbeam.dot }, 1e12, tx.xtokens.parachainV2(acala.paraId)),
         fromBalance: query.assets(moonbeam.dot),
         toBalance: query.tokens(acala.dot),
-        // checkUmp: true,
+        checkUmp: true,
       },
     },
   },

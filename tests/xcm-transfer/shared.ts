@@ -147,7 +147,9 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
       const { fromBalance, toBalance, tx, ...testOpt } = test.xtokenstHorzontal
 
       it('xtokens transfer', async () => {
-        const tx0 = await sendTransaction(tx(fromChain, toAccount.addressRaw).signAsync(fromAccount))
+        const txx = tx(fromChain, toAccount.addressRaw)
+        console.log(111, txx.toHex())
+        const tx0 = await sendTransaction(txx.signAsync(fromAccount))
 
         await fromChain.chain.newBlock()
 
