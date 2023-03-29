@@ -105,7 +105,7 @@ exports[`Karura dex > aggregatedDex supply swap works > events 1`] = `
     "data": {
       "liquidityChanges": [
         1000000000000,
-        "(rounded 100000000000)",
+        "(rounded 200000000000)",
         "(rounded 50000000000000)",
       ],
       "path": [
@@ -192,7 +192,7 @@ exports[`Karura dex > aggregatedDex supply swap works > events 1`] = `
 
 exports[`Karura dex > aggregatedDex supply swap works 1`] = `
 {
-  "free": "(rounded 33000000)",
+  "free": "(rounded 32000000)",
   "frozen": 0,
   "reserved": 0,
 }

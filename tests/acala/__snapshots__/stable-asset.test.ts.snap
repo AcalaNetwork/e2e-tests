@@ -194,12 +194,12 @@ exports[`Karura dex > with liquidity > redeemProportion works > events 1`] = `
   {
     "data": {
       "newBalances": [
-        "(rounded 8900000000000000)",
-        "(rounded 13000000000000000)",
+        "(rounded 8700000000000000)",
+        "(rounded 11000000000000000)",
       ],
       "oldBalances": [
-        "(rounded 8900000000000000)",
-        "(rounded 13000000000000000)",
+        "(rounded 8700000000000000)",
+        "(rounded 11000000000000000)",
       ],
       "poolId": 0,
     },
@@ -211,15 +211,15 @@ exports[`Karura dex > with liquidity > redeemProportion works > events 1`] = `
       "a": 3000,
       "amount": 2,
       "newBalances": [
-        "(rounded 8900000000000000)",
-        "(rounded 13000000000000000)",
+        "(rounded 8700000000000000)",
+        "(rounded 11000000000000000)",
       ],
-      "newTotalSupply": "(rounded 22000000000000000)",
+      "newTotalSupply": "(rounded 20000000000000000)",
       "oldBalances": [
-        "(rounded 8900000000000000)",
-        "(rounded 13000000000000000)",
+        "(rounded 8700000000000000)",
+        "(rounded 11000000000000000)",
       ],
-      "oldTotalSupply": "(rounded 22000000000000000)",
+      "oldTotalSupply": "(rounded 20000000000000000)",
       "poolId": 0,
       "who": "qbK5taeJoMcwJoK3hZ7W8y2KkGu1iDRUvjrg9xQMsUKrrv7",
     },
@@ -230,8 +230,8 @@ exports[`Karura dex > with liquidity > redeemProportion works > events 1`] = `
     "data": {
       "a": 3000,
       "balances": [
-        "(rounded 8900000000000000)",
-        "(rounded 13000000000000000)",
+        "(rounded 8700000000000000)",
+        "(rounded 11000000000000000)",
       ],
       "feeAmount": "(rounded 33000000000)",
       "inputAmount": "(rounded 11000000000000)",
@@ -240,12 +240,12 @@ exports[`Karura dex > with liquidity > redeemProportion works > events 1`] = `
         0,
       ],
       "outputAmounts": [
-        "(rounded 4500000000000)",
-        "(rounded 6500000000000)",
+        "(rounded 4800000000000)",
+        "(rounded 6200000000000)",
       ],
       "poolId": 0,
       "redeemer": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-      "totalSupply": "(rounded 22000000000000000)",
+      "totalSupply": "(rounded 20000000000000000)",
     },
     "method": "RedeemedProportion",
     "section": "stableAsset",
@@ -282,12 +282,12 @@ exports[`Karura dex > with liquidity > stableAssetRedeemSingle works > events 1`
   {
     "data": {
       "newBalances": [
-        "(rounded 8900000000000000)",
-        "(rounded 13000000000000000)",
+        "(rounded 8700000000000000)",
+        "(rounded 11000000000000000)",
       ],
       "oldBalances": [
-        "(rounded 8900000000000000)",
-        "(rounded 13000000000000000)",
+        "(rounded 8700000000000000)",
+        "(rounded 11000000000000000)",
       ],
       "poolId": 0,
     },
@@ -297,29 +297,9 @@ exports[`Karura dex > with liquidity > stableAssetRedeemSingle works > events 1`
   {
     "data": {
       "a": 3000,
-      "amount": 1,
-      "newBalances": [
-        "(rounded 8900000000000000)",
-        "(rounded 13000000000000000)",
-      ],
-      "newTotalSupply": "(rounded 22000000000000000)",
-      "oldBalances": [
-        "(rounded 8900000000000000)",
-        "(rounded 13000000000000000)",
-      ],
-      "oldTotalSupply": "(rounded 22000000000000000)",
-      "poolId": 0,
-      "who": "qbK5taeJoMcwJoK3hZ7W8y2KkGu1iDRUvjrg9xQMsUKrrv7",
-    },
-    "method": "FeeCollected",
-    "section": "stableAsset",
-  },
-  {
-    "data": {
-      "a": 3000,
       "balances": [
-        "(rounded 8900000000000000)",
-        "(rounded 13000000000000000)",
+        "(rounded 8700000000000000)",
+        "(rounded 11000000000000000)",
       ],
       "feeAmount": "(rounded 33000000000)",
       "inputAmount": "(rounded 11000000000000)",
@@ -330,7 +310,7 @@ exports[`Karura dex > with liquidity > stableAssetRedeemSingle works > events 1`
       },
       "poolId": 0,
       "redeemer": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-      "totalSupply": "(rounded 22000000000000000)",
+      "totalSupply": "(rounded 20000000000000000)",
     },
     "method": "RedeemedSingle",
     "section": "stableAsset",
