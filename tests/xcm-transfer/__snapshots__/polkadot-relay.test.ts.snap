@@ -449,7 +449,7 @@ exports[`'polkadot9381' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > tx 
     "data": [
       {
         "Complete": {
-          "proofSize": "(rounded 66000)",
+          "proofSize": "(rounded 65540)",
           "refTime": 1000000000,
         },
       },

@@ -1,5 +1,6 @@
 import { ApiPromise } from '@polkadot/api'
 import { Codec } from '@polkadot/types/types'
+import { Keyring, createTestKeyring } from '@polkadot/keyring'
 import { expect } from 'vitest'
 
 type CodecOrArray = Codec | Codec[]
@@ -220,3 +221,24 @@ export const checkHrmp = ({ api }: Api) =>
       recipient,
     }))
   )
+
+export const testingPairs = () => {
+  const keyringEth = createTestKeyring({ type: 'ethereum' })
+  const keyring = new Keyring({ type: 'ed25519' }) // can't use sr25519 because it is non-deterministic
+  return {
+    alice: keyring.addFromUri('//Alice'),
+    bob: keyring.addFromUri('//Bob'),
+    charlie: keyring.addFromUri('//Charlie'),
+    dave: keyring.addFromUri('//Dave'),
+    eve: keyring.addFromUri('//Eve'),
+
+    alith: keyringEth.getPair('0xf24FF3a9CF04c71Dbc94D0b566f7A27B94566cac'),
+    baltathar: keyringEth.getPair('0x3Cd0A705a2DC65e5b1E1205896BaA2be8A07c6e0'),
+    charleth: keyringEth.getPair('0x798d4Ba9baf0064Ec19eB4F0a1a45785ae9D6DFc'),
+    dorothy: keyringEth.getPair('0x773539d4Ac0e786233D90A233654ccEE26a613D9'),
+    ethan: keyringEth.getPair('0xFf64d3F6efE2317EE2807d223a0Bdc4c0c49dfDB'),
+
+    keyring,
+    keyringEth,
+  }
+}

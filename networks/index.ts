@@ -1,12 +1,14 @@
-import { SetupOption, setupContext, testingPairs } from '@acala-network/chopsticks-testing'
+import { SetupOption, setupContext } from '@acala-network/chopsticks-testing'
 import { connectParachains, connectVertical } from '@acala-network/chopsticks'
 import dotenv from 'dotenv'
 
 import { Config, Context, NetworkKind } from './types'
 
+import { testingPairs } from '../helpers'
 import acala2160Config from './acala2160'
 import acalaConfig from './acala'
 import hydraDXConfig from './hydraDX'
+import moonbeamConfig from './moonbeam'
 import polkadot9381Config from './polkadot9381'
 import polkadotConfig from './polkadot'
 import statemintConfig from './statemint'
@@ -14,12 +16,13 @@ import statemintConfig from './statemint'
 dotenv.config()
 
 const networkDefs = {
-  acala: acalaConfig,
-  hydraDX: hydraDXConfig,
   polkadot: polkadotConfig,
-  statemint: statemintConfig,
   polkadot9381: polkadot9381Config,
+  statemint: statemintConfig,
+  acala: acalaConfig,
   acala2160: acala2160Config,
+  moonbeam: moonbeamConfig,
+  hydraDX: hydraDXConfig,
 } satisfies Record<string, Config>
 
 const toNumber = (value: string | undefined): number | undefined => {

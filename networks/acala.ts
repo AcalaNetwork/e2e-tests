@@ -51,12 +51,15 @@ export default {
 
 export const acala = {
   paraId: 2000,
+  paraAccount: '13YMK2eYoAvStnzReuxBjMrAvPXmmdsURwZvc62PrdXimbNy',
   dot: { Token: 'DOT' },
   dai: { Erc20: '0x54a37a01cd75b616d63e0ab665bffdb0143c52ae' },
+  wbtc: { ForeignAsset: 5 },
 } as const
 
 export const karura = {
   paraId: 2000,
+  paraAccount: '13YMK2eYoAvStnzReuxBjMrAvPXmmdsURwZvc62PrdXimbNy',
   ksm: { Token: 'KSM' },
   usdt: { ForeignAsset: 7 },
   dai: { Erc20: '0x4bb6afb5fa2b07a5d1c499e1c3ddb5a15e709a71' },

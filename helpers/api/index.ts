@@ -42,6 +42,22 @@ export const xtokens = {
       },
     },
   }),
+  parachainAccountId20V2: (paraId: number) => (acc: any) => ({
+    V1: {
+      parents: 1,
+      interior: {
+        X2: [
+          { Parachain: paraId },
+          {
+            AccountKey20: {
+              network: 'Any',
+              key: acc,
+            },
+          },
+        ],
+      },
+    },
+  }),
   parachainV3: (paraId: number) => (acc: any) => ({
     V3: {
       parents: 1,
@@ -117,6 +133,7 @@ export const xcmPallet = {
             interior: {
               X1: {
                 AccountId32: {
+                  network: 'Any',
                   id: acc,
                 },
               },
@@ -176,7 +193,7 @@ export const query = {
     ({ api }: { api: ApiPromise }, address: string) =>
       api.query.tokens.accounts(address, token),
   assets:
-    (token: number) =>
+    (token: number | bigint) =>
     ({ api }: { api: ApiPromise }, address: string) =>
       api.query.assets.account(token, address),
   evm:

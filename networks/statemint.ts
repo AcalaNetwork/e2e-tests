@@ -12,11 +12,11 @@ export default {
   config: ({ alice }) => ({
     storages: {
       System: {
-        Account: [[[alice.address], { data: { free: 1000e10 } }]],
+        account: [[[alice.address], { data: { free: 1000e10 } }]],
       },
       Assets: {
-        Account: [
-          [[1984, alice.address], { balance: 1000e6 }], // USDT
+        account: [
+          [[statemine.usdtIndex, alice.address], { balance: 1000e6 }], // USDT
         ],
       },
     },
@@ -25,12 +25,14 @@ export default {
 
 export const statemint = {
   paraId: 1000,
-  dot: { Concrete: { parents: 0, interior: 'Here' } },
+  dot: { Concrete: { parents: 1, interior: 'Here' } },
+  wbtc: { Concrete: { parents: 0, interior: { X2: [{ PalletInstance: 50 }, { GeneralIndex: 21 }] } } },
+  wbtcIndex: 21,
 } as const
 
 export const statemine = {
   paraId: 1000,
-  ksm: { Concrete: { parents: 0, interior: 'Here' } },
+  ksm: { Concrete: { parents: 1, interior: 'Here' } },
   usdt: { Concrete: { parents: 0, interior: { X2: [{ PalletInstance: 50 }, { GeneralIndex: 1984 }] } } },
   usdtIndex: 1984,
 } as const
