@@ -1,16 +1,10 @@
 import { afterAll, beforeEach, describe, it } from 'vitest'
 import { connectVertical } from '@acala-network/chopsticks'
+import { sendTransaction, testingPairs } from '@acala-network/chopsticks-testing'
 
-import { check, checkEvents, checkSystemEvents, checkUmp, sendTransaction, testingPairs } from '../helper'
-import {
-  forceBumpCurrentEra,
-  mint,
-  relayChainV3limitedReserveTransferAssets,
-  requestRedeem,
-  sudo,
-  xTokens,
-} from '../api/extrinsics'
-import networks, { Network } from '../networks'
+import { checkEvents, checkSystemEvents, checkUmp } from '../../helpers'
+import { forceBumpCurrentEra, mint, requestRedeem, sudo } from '../../helpers/api/extrinsics'
+import networks, { Network } from '../../networks'
 
 describe('Karura <-> Kusama', async () => {
   let kusama: Network
@@ -63,43 +57,6 @@ describe('Karura <-> Kusama', async () => {
       await kusama.teardown()
       await karura.teardown()
     }
-  })
-
-  it('Karura transfer assets to Kusama', async () => {
-    const tx = await sendTransaction(
-      xTokens(karura.api, true, '', { Token: 'KSM' }, '1000000000000', alice.addressRaw).signAsync(alice)
-    )
-
-    await karura.chain.newBlock()
-
-    await check(karura.api.query.tokens.accounts(alice.address, { Token: 'KSM' })).toMatchSnapshot()
-
-    await checkEvents(tx, 'xTokens').toMatchSnapshot()
-    await checkUmp(karura).toMatchSnapshot()
-
-    await kusama.chain.newBlock()
-
-    await check(kusama.api.query.system.account(alice.address)).toMatchSnapshot()
-
-    await checkSystemEvents(kusama, 'ump').toMatchSnapshot()
-  })
-
-  it('Kusama transfer assets to Karura', async () => {
-    const tx = await sendTransaction(
-      relayChainV3limitedReserveTransferAssets(kusama.api, '2000', '1000000000000', alice.addressRaw).signAsync(alice)
-    )
-
-    await kusama.chain.newBlock()
-
-    await checkEvents(tx, 'xcmPallet').toMatchSnapshot()
-    await check(kusama.api.query.system.account(alice.address)).toMatchSnapshot()
-
-    await karura.chain.newBlock()
-
-    await check(karura.api.query.tokens.accounts(alice.address, { Token: 'KSM' }))
-      .redact()
-      .toMatchSnapshot()
-    await checkSystemEvents(karura, 'parachainSystem', 'dmpQueue').toMatchSnapshot()
   })
 
   it('Homa stake works', async () => {

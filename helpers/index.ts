@@ -11,7 +11,7 @@ const toHuman = (codec: CodecOrArray) => processCodecOrArray(codec, (c) => c?.to
 const toHex = (codec: CodecOrArray) => processCodecOrArray(codec, (c) => c?.toHex?.() ?? c)
 const toJson = (codec: CodecOrArray) => processCodecOrArray(codec, (c) => c?.toJSON?.() ?? c)
 
-type EventFilter = string | { method: string; section: string }
+export type EventFilter = string | { method: string; section: string }
 
 export type RedactOptions = {
   number?: boolean | number // precision
@@ -45,6 +45,11 @@ export class Checker {
 
   toJson() {
     this.#format = 'json'
+    return this
+  }
+
+  message(message: string) {
+    this.#message = message
     return this
   }
 
@@ -114,6 +119,11 @@ export class Checker {
         return processNumber(obj)
       }
       if (typeof obj === 'string') {
+        if (redactNumber && obj.match(/0x000000[0-9a-f]{26}/)) {
+          // this is very likely u128 encoded in hex
+          const num = parseInt(obj)
+          return processNumber(num)
+        }
         if (redactHash && obj.match(/0x[0-9a-f]{64}/)) {
           return '(hash)'
         }
@@ -141,6 +151,10 @@ export class Checker {
   map(fn: (value: any) => any) {
     this.#pipeline.push(fn)
     return this
+  }
+
+  pipe(fn?: (value: Checker) => Checker) {
+    return fn ? fn(this) : this
   }
 
   async value() {
@@ -172,29 +186,37 @@ export class Checker {
   }
 }
 
-export const check = (value: any, msg?: string) => new Checker(value, msg)
+export const check = (value: any, msg?: string) => {
+  if (value instanceof Checker) {
+    if (msg) {
+      return value.message(msg)
+    }
+    return value
+  }
+  return new Checker(value, msg)
+}
+
+type Api = { api: ApiPromise }
 
 export const checkEvents = ({ events }: { events: Promise<Codec[] | Codec> }, ...filters: EventFilter[]) =>
   check(events, 'events')
     .filterEvents(...filters)
     .redact()
 
-export const checkSystemEvents = ({ api }: { api: ApiPromise }, ...filters: EventFilter[]) =>
+export const checkSystemEvents = ({ api }: Api, ...filters: EventFilter[]) =>
   check(api.query.system.events(), 'system events')
     .filterEvents(...filters)
     .redact()
 
-export const checkUmp = ({ api }: { api: ApiPromise }) =>
+export const checkUmp = ({ api }: Api) =>
   check(api.query.parachainSystem.upwardMessages(), 'ump').map((value) =>
     api.createType('Vec<XcmVersionedXcm>', value).toJSON()
   )
 
-export const checkHrmp = ({ api }: { api: ApiPromise }) =>
+export const checkHrmp = ({ api }: Api) =>
   check(api.query.parachainSystem.hrmpOutboundMessages(), 'hrmp').map((value) =>
     (value as any[]).map(({ recipient, data }) => ({
       data: api.createType('(XcmpMessageFormat, XcmVersionedXcm)', data),
       recipient,
     }))
   )
-
-export { SetupOption, setupContext, defer, sendTransaction, testingPairs } from '@acala-network/chopsticks-testing'
