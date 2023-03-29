@@ -42,12 +42,15 @@ const tests = [
         Accounts: [[[alice.address, acala.wbtc], { free: 1e8 }]],
       },
     }),
-    toStorage: (_: Context) => ({
+    toStorage: ({ alice }: Context) => ({
       System: {
         account: [[[acala.paraAccount], { data: { free: 10e10 } }]],
       },
       Assets: {
-        account: [[[statemint.wbtcIndex, acala.paraAccount], { balance: 10e8 }]],
+        account: [
+          [[statemint.wbtcIndex, acala.paraAccount], { balance: 10e8 }],
+          [[statemint.wbtcIndex, alice.address], { balance: 10e8 }],
+        ],
         asset: [[[statemint.wbtcIndex], { supply: 10e8 }]],
       },
     }),
