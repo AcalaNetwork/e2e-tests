@@ -6,10 +6,16 @@ import { check, checkEvents, checkHrmp, checkSystemEvents, checkUmp } from '../.
 
 import type { TestType as KusamaParaTestType } from './kusama-para.test'
 import type { TestType as KusamaRelayTestType } from './kusama-relay.test'
+import type { TestType as PlaygroundTestType } from './playground.test'
 import type { TestType as PolkadotParaTestType } from './polkadot-para.test'
 import type { TestType as PolkadotRelayTestType } from './polkadot-relay.test'
 
-type TestType = KusamaRelayTestType | KusamaParaTestType | PolkadotRelayTestType | PolkadotParaTestType
+type TestType =
+  | KusamaRelayTestType
+  | KusamaParaTestType
+  | PolkadotRelayTestType
+  | PolkadotParaTestType
+  | PlaygroundTestType
 
 export default function buildTest(tests: ReadonlyArray<TestType>) {
   describe.each(tests)('$from -> $to xcm transfer $name', async ({ from, to, test, ...opt }) => {
@@ -19,6 +25,16 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
 
     const ctx = createContext()
     const { alice } = ctx
+
+    let fromAccount = alice
+    if ('fromAccount' in opt) {
+      fromAccount = opt.fromAccount(ctx)
+    }
+
+    let toAccount = alice
+    if ('toAccount' in opt) {
+      toAccount = opt.toAccount(ctx)
+    }
 
     beforeEach(async () => {
       const networkOptions = {
@@ -59,17 +75,19 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
       const { balance, tx } = test.xtokensUp
 
       it('xtokens transfer', async () => {
-        const tx0 = await sendTransaction(tx(fromChain, alice.addressRaw).signAsync(alice))
+        const tx0 = await sendTransaction(tx(fromChain, toAccount.addressRaw).signAsync(fromAccount))
 
         await fromChain.chain.newBlock()
 
-        await check(balance(fromChain, alice.address)).redact({ number: 4 }).toMatchSnapshot('balance on from chain')
-        await checkEvents(tx0, 'xTokens').toMatchSnapshot('tx events')
+        await check(balance(fromChain, fromAccount.address))
+          .redact({ number: 4 })
+          .toMatchSnapshot('balance on from chain')
+        await checkEvents(tx0, 'xTokens').redact({ number: 4 }).toMatchSnapshot('tx events')
         await checkUmp(fromChain).toMatchSnapshot('from chain ump messages')
 
         await toChain.chain.newBlock()
 
-        await check(toChain.api.query.system.account(alice.address))
+        await check(toChain.api.query.system.account(toAccount.address))
           .redact({ number: 4 })
           .toMatchSnapshot('balance on to chain')
         await checkSystemEvents(toChain, 'ump').toMatchSnapshot('to chain ump events')
@@ -80,18 +98,18 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
       const { balance, tx } = test.xcmPalletDown
 
       it('xcmPallet transfer', async () => {
-        const tx0 = await sendTransaction(tx(fromChain, alice.addressRaw).signAsync(alice))
+        const tx0 = await sendTransaction(tx(fromChain, toAccount.addressRaw).signAsync(fromAccount))
 
         await fromChain.chain.newBlock()
 
-        await check(fromChain.api.query.system.account(alice.address))
+        await check(fromChain.api.query.system.account(fromAccount.address))
           .redact({ number: 4 })
           .toMatchSnapshot('balance on from chain')
-        await checkEvents(tx0, 'xcmPallet').toMatchSnapshot('tx events')
+        await checkEvents(tx0, 'xcmPallet').redact({ number: 4 }).toMatchSnapshot('tx events')
 
         await toChain.chain.newBlock()
 
-        await check(balance(toChain, alice.address)).redact({ number: 4 }).toMatchSnapshot('balance on to chain')
+        await check(balance(toChain, toAccount.address)).redact({ number: 4 }).toMatchSnapshot('balance on to chain')
         await checkSystemEvents(toChain, 'parachainSystem', 'dmpQueue').toMatchSnapshot('to chain dmp events')
       })
     }
@@ -100,14 +118,14 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
       const { fromBalance, toBalance, tx, ...testOpt } = test.xcmPalletHorzontal
 
       it('xcmPallet transfer', async () => {
-        const tx0 = await sendTransaction(tx(fromChain, alice.addressRaw).signAsync(alice))
+        const tx0 = await sendTransaction(tx(fromChain, toAccount.addressRaw).signAsync(fromAccount))
 
         await fromChain.chain.newBlock()
 
-        await check(fromBalance(fromChain, alice.address))
+        await check(fromBalance(fromChain, fromAccount.address))
           .redact({ number: 4 })
           .toMatchSnapshot('balance on from chain')
-        await checkEvents(tx0, 'polkadotXcm').toMatchSnapshot('tx events')
+        await checkEvents(tx0, 'polkadotXcm').redact({ number: 4 }).toMatchSnapshot('tx events')
 
         if ('checkUmp' in testOpt) {
           await checkUmp(fromChain).toMatchSnapshot('from chain ump messages')
@@ -120,7 +138,7 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
         }
         await toChain.chain.newBlock()
 
-        await check(toBalance(toChain, alice.address)).redact({ number: 4 }).toMatchSnapshot('balance on to chain')
+        await check(toBalance(toChain, toAccount.address)).redact({ number: 4 }).toMatchSnapshot('balance on to chain')
         await checkSystemEvents(toChain, 'xcmpQueue', 'dmpQueue').toMatchSnapshot('to chain xcm events')
       })
     }
@@ -129,11 +147,11 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
       const { fromBalance, toBalance, tx, ...testOpt } = test.xtokenstHorzontal
 
       it('xtokens transfer', async () => {
-        const tx0 = await sendTransaction(tx(fromChain, alice.addressRaw).signAsync(alice))
+        const tx0 = await sendTransaction(tx(fromChain, toAccount.addressRaw).signAsync(fromAccount))
 
         await fromChain.chain.newBlock()
 
-        await check(fromBalance(fromChain, alice.address))
+        await check(fromBalance(fromChain, fromAccount.address))
           .redact({ number: 4 })
           .toMatchSnapshot('balance on from chain')
         await checkEvents(tx0, 'xTokens').toMatchSnapshot('tx events')
@@ -149,7 +167,7 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
         }
         await toChain.chain.newBlock()
 
-        await check(toBalance(toChain, alice.address)).redact({ number: 4 }).toMatchSnapshot('balance on to chain')
+        await check(toBalance(toChain, toAccount.address)).redact({ number: 4 }).toMatchSnapshot('balance on to chain')
         await checkSystemEvents(toChain, 'xcmpQueue', 'dmpQueue').toMatchSnapshot('to chain xcm events')
       })
     }

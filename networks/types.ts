@@ -1,4 +1,5 @@
-import { SetupOption, testingPairs } from '@acala-network/chopsticks-testing'
+import { SetupOption } from '@acala-network/chopsticks-testing'
+import { testingPairs } from '../helpers'
 
 export type NetworkKind = 'polkadot' | 'kusama'
 
