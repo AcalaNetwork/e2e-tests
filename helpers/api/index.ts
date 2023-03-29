@@ -117,6 +117,7 @@ export const xcmPallet = {
             interior: {
               X1: {
                 AccountId32: {
+                  network: 'Any',
                   id: acc,
                 },
               },

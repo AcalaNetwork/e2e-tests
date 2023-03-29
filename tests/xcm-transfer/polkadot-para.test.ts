@@ -10,32 +10,57 @@ import buildTest from './shared'
 const tests = [
   // statemint <-> acala
   {
-    // TODO: this failed to execute on statemint with FailedToTransactAsset error
     from: 'statemint',
     to: 'acala',
-    reserve: 'polkadot',
-    name: 'DOT',
+    name: 'WBTC',
+    fromStorage: ({ alice }: Context) => ({
+      System: {
+        account: [[[acala.paraAccount], { data: { free: 10e10 } }]],
+      },
+      Assets: {
+        account: [[[statemint.wbtcIndex, alice.address], { balance: 1e8 }]],
+        asset: [[[statemint.wbtcIndex], { supply: 1e8 }]],
+      },
+    }),
     test: {
       xcmPalletHorzontal: {
-        tx: tx.xcmPallet.limitedReserveTransferAssetsV2(statemint.dot, 1e10, tx.xcmPallet.parachainV2(1, acala.paraId)),
-        fromBalance: query.balances,
-        toBalance: query.tokens(acala.dot),
-        checkUmp: true,
+        tx: tx.xcmPallet.limitedReserveTransferAssetsV2(statemint.wbtc, 1e7, tx.xcmPallet.parachainV2(1, acala.paraId)),
+        fromBalance: query.assets(statemint.wbtcIndex),
+        toBalance: query.tokens(acala.wbtc),
       },
     },
   },
   {
-    // TODO: this failed to execute on statemint with WeightNotComputable error
+    // TODO: this failed with FailedToTransactAsset on statemint somehow
     from: 'acala',
     to: 'statemint',
-    reserve: 'polkadot',
-    name: 'DOT',
+    route: 'polkadot', // for sending DOT for fee
+    name: 'WBTC',
+    fromStorage: ({ alice }: Context) => ({
+      Tokens: {
+        Accounts: [[[alice.address, acala.wbtc], { free: 1e8 }]],
+      },
+    }),
+    toStorage: (_: Context) => ({
+      System: {
+        account: [[[acala.paraAccount], { data: { free: 10e10 } }]],
+      },
+      Assets: {
+        account: [[[statemint.wbtcIndex, acala.paraAccount], { balance: 10e8 }]],
+        asset: [[[statemint.wbtcIndex], { supply: 10e8 }]],
+      },
+    }),
     test: {
       xtokenstHorzontal: {
-        tx: tx.xtokens.transfer(acala.dot, 1e12, tx.xtokens.parachainV2(statemint.paraId)),
-        fromBalance: query.tokens(acala.dot),
-        toBalance: query.balances,
-        checkUmp: true,
+        tx: tx.xtokens.transferMulticurrencies(
+          acala.wbtc,
+          1e7,
+          acala.dot, // fee
+          1e10,
+          tx.xtokens.parachainV2(statemint.paraId)
+        ),
+        fromBalance: query.tokens(acala.wbtc),
+        toBalance: query.assets(statemint.wbtcIndex),
       },
     },
   },

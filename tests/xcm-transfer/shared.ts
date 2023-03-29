@@ -15,7 +15,7 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
   describe.each(tests)('$from -> $to xcm transfer $name', async ({ from, to, test, ...opt }) => {
     let fromChain: Network
     let toChain: Network
-    let reserveChain: Network
+    let routeChain: Network
 
     const ctx = createContext()
     const { alice } = ctx
@@ -25,15 +25,15 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
         [from]: undefined,
         [to]: undefined,
       } as Record<NetworkNames, undefined>
-      if ('reserve' in opt) {
-        networkOptions[opt.reserve] = undefined
+      if ('route' in opt) {
+        networkOptions[opt.route] = undefined
       }
       const chains = await createNetworks(networkOptions, ctx)
 
       fromChain = chains[from]
       toChain = chains[to]
-      if ('reserve' in opt) {
-        reserveChain = chains[opt.reserve]
+      if ('route' in opt) {
+        routeChain = chains[opt.route]
       }
 
       if ('fromStorage' in opt) {
@@ -41,11 +41,16 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
         await fromChain.dev.setStorage(override)
       }
 
+      if ('toStorage' in opt) {
+        const override = typeof opt.toStorage === 'function' ? opt.toStorage(ctx) : opt.toStorage
+        await toChain.dev.setStorage(override)
+      }
+
       return async () => {
         await toChain.teardown()
         await fromChain.teardown()
-        if (reserveChain) {
-          await reserveChain.teardown()
+        if (routeChain) {
+          await routeChain.teardown()
         }
       }
     })
@@ -110,8 +115,8 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
           await checkHrmp(fromChain).toMatchSnapshot('from chain hrmp messages')
         }
 
-        if (reserveChain) {
-          await reserveChain.chain.newBlock()
+        if (routeChain) {
+          await routeChain.chain.newBlock()
         }
         await toChain.chain.newBlock()
 
@@ -139,8 +144,8 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
           await checkHrmp(fromChain).toMatchSnapshot('from chain hrmp messages')
         }
 
-        if (reserveChain) {
-          await reserveChain.chain.newBlock()
+        if (routeChain) {
+          await routeChain.chain.newBlock()
         }
         await toChain.chain.newBlock()
 

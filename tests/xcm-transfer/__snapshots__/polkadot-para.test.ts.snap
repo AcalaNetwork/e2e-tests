@@ -185,168 +185,217 @@ exports[`'acala' -> 'hydraDX' xcm transfer 'DAI' > xtokens transfer > tx events 
 ]
 `;
 
-exports[`'acala' -> 'statemint' xcm transfer 'DOT' > xtokens transfer > balance on from chain 1`] = `
+exports[`'acala' -> 'statemint' xcm transfer 'WBTC' > xtokens transfer > balance on from chain 1`] = `
 {
-  "free": 9000000000000,
+  "free": 90000000,
   "frozen": 0,
   "reserved": 0,
 }
 `;
 
-exports[`'acala' -> 'statemint' xcm transfer 'DOT' > xtokens transfer > balance on to chain 1`] = `
+exports[`'acala' -> 'statemint' xcm transfer 'WBTC' > xtokens transfer > balance on to chain 1`] = `
 {
-  "consumers": 0,
-  "data": {
-    "feeFrozen": 0,
-    "free": 10000000000000,
-    "miscFrozen": 0,
-    "reserved": 0,
+  "createdAtHash": {
+    "0": 18,
+    "1": 199,
+    "10": 205,
+    "11": 233,
+    "12": 178,
+    "13": 56,
+    "14": 142,
+    "15": 77,
+    "16": 225,
+    "17": 44,
+    "18": 52,
+    "19": 54,
+    "2": 75,
+    "20": 171,
+    "21": 122,
+    "22": 252,
+    "23": 71,
+    "24": 116,
+    "25": 118,
+    "26": 251,
+    "27": 195,
+    "28": 65,
+    "29": 85,
+    "3": 252,
+    "30": 97,
+    "31": 117,
+    "4": 109,
+    "5": 208,
+    "6": 59,
+    "7": 103,
+    "8": 5,
+    "9": 4,
+    "initialU8aLength": 32,
+    "registry": {},
   },
-  "nonce": 0,
-  "providers": 0,
-  "sufficients": 0,
+  "isStorageFallback": true,
+  "registry": {},
 }
 `;
 
-exports[`'acala' -> 'statemint' xcm transfer 'DOT' > xtokens transfer > from chain ump messages 1`] = `
+exports[`'acala' -> 'statemint' xcm transfer 'WBTC' > xtokens transfer > from chain hrmp messages 1`] = `
 [
   {
-    "v2": [
+    "data": [
+      "ConcatenatedVersionedXcm",
       {
-        "withdrawAsset": [
+        "v2": [
           {
-            "fun": {
-              "fungible": 1000000000000,
+            "withdrawAsset": [
+              {
+                "fun": {
+                  "fungible": 10000000,
+                },
+                "id": {
+                  "concrete": {
+                    "interior": {
+                      "x2": [
+                        {
+                          "palletInstance": 50,
+                        },
+                        {
+                          "generalIndex": 21,
+                        },
+                      ],
+                    },
+                    "parents": 0,
+                  },
+                },
+              },
+              {
+                "fun": {
+                  "fungible": 50000000,
+                },
+                "id": {
+                  "concrete": {
+                    "interior": {
+                      "here": null,
+                    },
+                    "parents": 1,
+                  },
+                },
+              },
+            ],
+          },
+          {
+            "clearOrigin": null,
+          },
+          {
+            "buyExecution": {
+              "fees": {
+                "fun": {
+                  "fungible": 50000000,
+                },
+                "id": {
+                  "concrete": {
+                    "interior": {
+                      "here": null,
+                    },
+                    "parents": 1,
+                  },
+                },
+              },
+              "weightLimit": {
+                "unlimited": null,
+              },
             },
-            "id": {
-              "concrete": {
+          },
+          {
+            "depositAsset": {
+              "assets": {
+                "wild": {
+                  "all": null,
+                },
+              },
+              "beneficiary": {
                 "interior": {
-                  "here": null,
+                  "x1": {
+                    "accountId32": {
+                      "id": "0x88dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee",
+                      "network": {
+                        "any": null,
+                      },
+                    },
+                  },
                 },
                 "parents": 0,
               },
+              "maxAssets": 2,
             },
           },
         ],
       },
-      {
-        "clearOrigin": null,
-      },
-      {
-        "buyExecution": {
-          "fees": {
-            "fun": {
-              "fungible": 500000000000,
-            },
-            "id": {
-              "concrete": {
-                "interior": {
-                  "here": null,
-                },
-                "parents": 0,
-              },
-            },
-          },
-          "weightLimit": {
-            "unlimited": null,
-          },
-        },
-      },
-      {
-        "depositReserveAsset": {
-          "assets": {
-            "wild": {
-              "all": null,
-            },
-          },
-          "dest": {
-            "interior": {
-              "x1": {
-                "parachain": 1000,
-              },
-            },
-            "parents": 0,
-          },
-          "maxAssets": 1,
-          "xcm": [
-            {
-              "buyExecution": {
-                "fees": {
-                  "fun": {
-                    "fungible": 500000000000,
-                  },
-                  "id": {
-                    "concrete": {
-                      "interior": {
-                        "here": null,
-                      },
-                      "parents": 1,
-                    },
-                  },
-                },
-                "weightLimit": {
-                  "unlimited": null,
-                },
-              },
-            },
-            {
-              "depositAsset": {
-                "assets": {
-                  "wild": {
-                    "all": null,
-                  },
-                },
-                "beneficiary": {
-                  "interior": {
-                    "x1": {
-                      "accountId32": {
-                        "id": "0x88dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee",
-                        "network": {
-                          "any": null,
-                        },
-                      },
-                    },
-                  },
-                  "parents": 0,
-                },
-                "maxAssets": 1,
-              },
-            },
-          ],
-        },
-      },
     ],
+    "recipient": 1000,
   },
 ]
 `;
 
-exports[`'acala' -> 'statemint' xcm transfer 'DOT' > xtokens transfer > to chain xcm events 1`] = `
+exports[`'acala' -> 'statemint' xcm transfer 'WBTC' > xtokens transfer > to chain xcm events 1`] = `
 [
   {
     "data": {
       "messageId": "(hash)",
       "outcome": {
-        "Error": "WeightNotComputable",
+        "Complete": "(rounded 1000000000)",
       },
     },
     "method": "ExecutedDownward",
     "section": "dmpQueue",
   },
+  {
+    "data": {
+      "error": "FailedToTransactAsset",
+      "messageHash": "(hash)",
+      "weight": {
+        "proofSize": 0,
+        "refTime": "(rounded 310000000)",
+      },
+    },
+    "method": "Fail",
+    "section": "xcmpQueue",
+  },
 ]
 `;
 
-exports[`'acala' -> 'statemint' xcm transfer 'DOT' > xtokens transfer > tx events 1`] = `
+exports[`'acala' -> 'statemint' xcm transfer 'WBTC' > xtokens transfer > tx events 1`] = `
 [
   {
     "data": {
       "assets": [
         {
           "fun": {
-            "Fungible": 1000000000000,
+            "Fungible": 10000000000,
           },
           "id": {
             "Concrete": {
               "interior": "Here",
+              "parents": 1,
+            },
+          },
+        },
+        {
+          "fun": {
+            "Fungible": 10000000,
+          },
+          "id": {
+            "Concrete": {
+              "interior": {
+                "X3": [
+                  {
+                    "Parachain": 1000,
+                  },
+                  {
+                    "PalletInstance": 50,
+                  },
+                  {
+                    "GeneralIndex": 21,
+                  },
+                ],
+              },
               "parents": 1,
             },
           },
@@ -370,7 +419,7 @@ exports[`'acala' -> 'statemint' xcm transfer 'DOT' > xtokens transfer > tx event
       },
       "fee": {
         "fun": {
-          "Fungible": 1000000000000,
+          "Fungible": 10000000000,
         },
         "id": {
           "Concrete": {
@@ -565,42 +614,145 @@ exports[`'hydraDX' -> 'acala' xcm transfer 'DAI' > xtokens transfer > tx events 
 ]
 `;
 
-exports[`'statemint' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > balance on from chain 1`] = `
+exports[`'statemint' -> 'acala' xcm transfer 'WBTC' > xcmPallet transfer > balance on from chain 1`] = `
 {
-  "consumers": 0,
-  "data": {
-    "feeFrozen": 0,
-    "free": "(rounded 10000000000000)",
-    "miscFrozen": 0,
-    "reserved": 0,
+  "balance": 90000000,
+  "extra": null,
+  "isFrozen": false,
+  "reason": {
+    "consumer": null,
   },
-  "nonce": 1,
-  "providers": 0,
-  "sufficients": 0,
 }
 `;
 
-exports[`'statemint' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > balance on to chain 1`] = `
+exports[`'statemint' -> 'acala' xcm transfer 'WBTC' > xcmPallet transfer > balance on to chain 1`] = `
 {
-  "free": 10000000000000,
+  "free": "(rounded 10000000)",
   "frozen": 0,
   "reserved": 0,
 }
 `;
 
-exports[`'statemint' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > from chain ump messages 1`] = `[]`;
+exports[`'statemint' -> 'acala' xcm transfer 'WBTC' > xcmPallet transfer > from chain hrmp messages 1`] = `
+[
+  {
+    "data": [
+      "ConcatenatedVersionedXcm",
+      {
+        "v2": [
+          {
+            "reserveAssetDeposited": [
+              {
+                "fun": {
+                  "fungible": 10000000,
+                },
+                "id": {
+                  "concrete": {
+                    "interior": {
+                      "x3": [
+                        {
+                          "parachain": 1000,
+                        },
+                        {
+                          "palletInstance": 50,
+                        },
+                        {
+                          "generalIndex": 21,
+                        },
+                      ],
+                    },
+                    "parents": 1,
+                  },
+                },
+              },
+            ],
+          },
+          {
+            "clearOrigin": null,
+          },
+          {
+            "buyExecution": {
+              "fees": {
+                "fun": {
+                  "fungible": 10000000,
+                },
+                "id": {
+                  "concrete": {
+                    "interior": {
+                      "x3": [
+                        {
+                          "parachain": 1000,
+                        },
+                        {
+                          "palletInstance": 50,
+                        },
+                        {
+                          "generalIndex": 21,
+                        },
+                      ],
+                    },
+                    "parents": 1,
+                  },
+                },
+              },
+              "weightLimit": {
+                "unlimited": null,
+              },
+            },
+          },
+          {
+            "depositAsset": {
+              "assets": {
+                "wild": {
+                  "all": null,
+                },
+              },
+              "beneficiary": {
+                "interior": {
+                  "x1": {
+                    "accountId32": {
+                      "id": "0x88dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee",
+                      "network": {
+                        "any": null,
+                      },
+                    },
+                  },
+                },
+                "parents": 0,
+              },
+              "maxAssets": 1,
+            },
+          },
+        ],
+      },
+    ],
+    "recipient": 2000,
+  },
+]
+`;
 
-exports[`'statemint' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > to chain xcm events 1`] = `[]`;
+exports[`'statemint' -> 'acala' xcm transfer 'WBTC' > xcmPallet transfer > to chain xcm events 1`] = `
+[
+  {
+    "data": {
+      "messageHash": "(hash)",
+      "weight": {
+        "proofSize": 0,
+        "refTime": 800000000,
+      },
+    },
+    "method": "Success",
+    "section": "xcmpQueue",
+  },
+]
+`;
 
-exports[`'statemint' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > tx events 1`] = `
+exports[`'statemint' -> 'acala' xcm transfer 'WBTC' > xcmPallet transfer > tx events 1`] = `
 [
   {
     "data": [
       {
-        "Incomplete": [
-          "(rounded 650000000)",
-          "FailedToTransactAsset",
-        ],
+        "Complete": "(rounded 650000000)",
       },
     ],
     "method": "Attempted",
