@@ -11,11 +11,7 @@ describe.each([
     name: 'karura',
     swapPath: [
       {
-        Dex: [
-          karura.ksm,
-          karura.rmrk,
-          karura.ausd,
-        ],
+        Dex: [karura.ksm, karura.rmrk, karura.ausd],
       },
       {
         Taiga: [1, 0, 2],
@@ -26,11 +22,7 @@ describe.each([
     name: 'acala',
     swapPath: [
       {
-        Dex: [
-          acala.aca,
-          acala.ausd,
-          acala.ldot,
-        ],
+        Dex: [acala.aca, acala.ausd, acala.ldot],
       },
       {
         Taiga: [0, 1, 0],
