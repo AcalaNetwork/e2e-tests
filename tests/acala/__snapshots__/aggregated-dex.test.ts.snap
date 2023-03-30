@@ -1,0 +1,202 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`'acala' dex > aggregatedDex supply swap works > events 1`] = `
+[
+  {
+    "data": {
+      "amount": "(number)",
+      "currencyId": {
+        "Token": "LDOT",
+      },
+      "from": "23M5ttkmR6KcnxentoqchgBdUjzMDSzFoUyf5qMs7FsmRMvV",
+      "to": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+    },
+    "method": "Transfer",
+    "section": "tokens",
+  },
+  {
+    "data": {
+      "liquidityChanges": [
+        "(number)",
+        "(number)",
+        "(number)",
+      ],
+      "path": [
+        {
+          "Token": "ACA",
+        },
+        {
+          "Token": "AUSD",
+        },
+        {
+          "Token": "LDOT",
+        },
+      ],
+      "trader": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+    },
+    "method": "Swap",
+    "section": "dex",
+  },
+]
+`;
+
+exports[`'karura' dex > aggregatedDex supply swap works > events 1`] = `
+[
+  {
+    "data": {
+      "amount": "(number)",
+      "currencyId": {
+        "Token": "KSM",
+      },
+      "from": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+      "to": "qmmNufxeWaAUqqs5k5ZwsenBmhm75jDRbsPrU5GBYgnrf5c",
+    },
+    "method": "Transfer",
+    "section": "tokens",
+  },
+  {
+    "data": {
+      "amount": "(number)",
+      "currencyId": {
+        "Token": "KUSD",
+      },
+      "from": "qmmNufxeWaAUqqs5k5ZwsenBmhm75jDRbsPrU5GBYgnrf5c",
+      "to": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "Transfer",
+    "section": "tokens",
+  },
+  {
+    "data": {
+      "liquidityChanges": [
+        "(number)",
+        "(number)",
+        "(number)",
+      ],
+      "path": [
+        {
+          "Token": "KSM",
+        },
+        {
+          "ForeignAsset": "(number)",
+        },
+        {
+          "Token": "KUSD",
+        },
+      ],
+      "trader": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "Swap",
+    "section": "dex",
+  },
+  {
+    "data": {
+      "newBalances": [
+        "(number)",
+        "(number)",
+        "(number)",
+      ],
+      "oldBalances": [
+        "(number)",
+        "(number)",
+        "(number)",
+      ],
+      "poolId": "(number)",
+    },
+    "method": "BalanceUpdated",
+    "section": "stableAsset",
+  },
+  {
+    "data": {
+      "amount": "(number)",
+      "currencyId": {
+        "Token": "KUSD",
+      },
+      "from": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+      "to": "qmmNug1GQstpimAXBpy3QzBL5cUWg2p6SeQzRWzRFhu8pfX",
+    },
+    "method": "Transfer",
+    "section": "tokens",
+  },
+  {
+    "data": {
+      "amount": "(number)",
+      "currencyId": {
+        "ForeignAsset": "(number)",
+      },
+      "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "Endowed",
+    "section": "tokens",
+  },
+  {
+    "data": {
+      "amount": "(number)",
+      "currencyId": {
+        "ForeignAsset": "(number)",
+      },
+      "from": "qmmNug1GQstpimAXBpy3QzBL5cUWg2p6SeQzRWzRFhu8pfX",
+      "to": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "Transfer",
+    "section": "tokens",
+  },
+  {
+    "data": {
+      "amount": "(number)",
+      "currencyId": {
+        "StableAssetPoolToken": "(number)",
+      },
+      "who": "qbK5taeJoMcwJoK3hZ7W8y2KkGu1iDRUvjrg9xQMsUKrrv7",
+    },
+    "method": "Deposited",
+    "section": "tokens",
+  },
+  {
+    "data": {
+      "a": "(number)",
+      "amount": "(number)",
+      "newBalances": [
+        "(number)",
+        "(number)",
+        "(number)",
+      ],
+      "newTotalSupply": "(number)",
+      "oldBalances": [
+        "(number)",
+        "(number)",
+        "(number)",
+      ],
+      "oldTotalSupply": "(number)",
+      "poolId": "(number)",
+      "who": "qbK5taeJoMcwJoK3hZ7W8y2KkGu1iDRUvjrg9xQMsUKrrv7",
+    },
+    "method": "FeeCollected",
+    "section": "stableAsset",
+  },
+  {
+    "data": {
+      "a": "(number)",
+      "balances": [
+        "(number)",
+        "(number)",
+        "(number)",
+      ],
+      "inputAmount": "(number)",
+      "inputAsset": {
+        "Token": "KUSD",
+      },
+      "minOutputAmount": "(number)",
+      "outputAmount": "(number)",
+      "outputAsset": {
+        "ForeignAsset": "(number)",
+      },
+      "poolId": "(number)",
+      "swapper": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+      "totalSupply": "(number)",
+    },
+    "method": "TokenSwapped",
+    "section": "stableAsset",
+  },
+]
+`;

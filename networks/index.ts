@@ -84,7 +84,7 @@ for (const def of Object.values(networkDefs)) {
 export const createContext = () => testingPairs()
 
 export const createNetworks = async (
-  networkOptions: Record<NetworkNames, Partial<SetupOption> | undefined>,
+  networkOptions: Partial<Record<NetworkNames, Partial<SetupOption> | undefined>>,
   context = createContext()
 ) => {
   const ret = {} as Record<NetworkNames, Network>
