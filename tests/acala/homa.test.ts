@@ -36,7 +36,7 @@ describe('Karura <-> Kusama', async () => {
         // avoid impact test outcome
         $removePrefix: ['redeemRequests', 'unbondings', 'toBondPool'],
         // so that bump era won't trigger unbond
-        relayChainCurrentEra: '0x45130000',
+        relayChainCurrentEra: '0x64000000',
       },
     })
     await kusama.dev.setStorage({

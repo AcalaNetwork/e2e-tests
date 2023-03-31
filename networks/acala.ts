@@ -36,17 +36,12 @@ export default {
       Sudo: {
         key: alice.address,
       },
-      Homa: {
-        // avoid impact test outcome
-        $removePrefix: ['redeemRequests', 'unbondings', 'toBondPool'],
-        // so that bump era won't trigger unbond
-        relayChainCurrentEra: '0x64000000',
-      },
       EvmAccounts: {
         accounts: [[['0x82a258cb20e2adb4788153cd5eb5839615ece9a0'], alice.address]],
         evmAddresses: [[[alice.address], '0x82a258cb20e2adb4788153cd5eb5839615ece9a0']],
       },
       PolkadotXcm: {
+        // avoid sending xcm version change notifications to makes things faster
         $removePrefix: ['versionNotifyTargets', 'versionNotifiers', 'supportedVersion'],
       },
     },

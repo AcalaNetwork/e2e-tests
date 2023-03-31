@@ -1,137 +1,70 @@
-import { beforeEach, describe, it } from 'vitest'
-import { sendTransaction, testingPairs } from '@acala-network/chopsticks-testing'
+import { beforeEach, describe, expect, it } from 'vitest'
+import { sendTransaction } from '@acala-network/chopsticks-testing'
 
-import { check, checkEvents, checkSystemEvents } from '../../helpers'
-import { queryTokenBalance } from '../../helpers/api/query'
-import {
-  stableAssetMint,
-  stableAssetRedeemProportion,
-  stableAssetRedeemSingle,
-  stableAssetSwap,
-  swapWithExactTarget,
-} from '../../helpers/api/extrinsics'
-import networks, { Network } from '../../networks'
+import { checkEvents, checkSystemEvents } from '../../helpers'
 
-describe('Karura dex', async () => {
-  let karura: Network
+import { Network, createContext, createNetworks } from '../../networks'
 
-  const { alice } = testingPairs()
+import { query } from '../../helpers/api'
+
+describe.each([
+  {
+    name: 'karura',
+  },
+  {
+    name: 'acala',
+  },
+] as const)('$name stable asset', async ({ name }) => {
+  let chain: Network
+
+  const ctx = createContext()
+  const { alice } = ctx
 
   beforeEach(async () => {
-    karura = await networks.karura()
-    await karura.dev.setStorage({
-      System: {
-        Account: [[[alice.address], { data: { free: 10 * 1e12 } }]],
-      },
-      Tokens: {
-        Accounts: [
-          [[alice.address, { Token: 'KSM' }], { free: 100 * 1e12 }],
-          [[alice.address, { Token: 'LKSM' }], { free: 1000 * 1e12 }],
-          [[alice.address, { Token: 'KUSD' }], { free: 0 }],
-          [[alice.address, { ForeignAsset: '7' }], { free: 0 }],
-          [[alice.address, { DexShare: [{ Token: 'KSM' }, { Token: 'LKSM' }] }], { free: 0 }],
-        ],
-      },
-      Sudo: {
-        Key: alice.address,
-      },
-    })
+    const { [name]: chain1 } = await createNetworks({ [name]: undefined }, ctx)
+    chain = chain1
 
-    return async () => await karura.teardown()
+    return async () => chain.teardown()
   })
 
-  it('stable swap works', async () => {
-    const tx0 = await sendTransaction(
-      swapWithExactTarget(
-        karura.api,
-        [{ Token: 'KSM' }, { Token: 'KUSD' }],
-        '1000000000000',
-        '10000000000000'
-      ).signAsync(alice)
-    )
+  it('swap', async () => {
+    const tx0 = await sendTransaction(chain.api.tx.stableAsset.swap(0, 0, 1, 1e12, 1e11, 2).signAsync(alice))
 
-    await karura.chain.newBlock()
+    await chain.chain.newBlock()
 
-    await checkEvents(tx0, 'dex').redact({ number: 1 }).toMatchSnapshot()
-    await check(queryTokenBalance(karura.api, { Token: 'KUSD' }, alice.address))
-      .redact()
-      .toMatchSnapshot()
-    await check(queryTokenBalance(karura.api, { Token: 'KSM' }, alice.address))
-      .redact()
-      .toMatchSnapshot()
-
-    const tx1 = await sendTransaction(
-      stableAssetSwap(karura.api, '1', '0', '2', '1000000000000', '0', '3').signAsync(alice)
-    )
-    await karura.chain.newBlock()
-
-    await checkEvents(tx1, 'stableAsset').redact({ number: 1 }).toMatchSnapshot()
-    await check(queryTokenBalance(karura.api, { Token: 'KUSD' }, alice.address))
-      .redact()
-      .toMatchSnapshot()
-    await check(queryTokenBalance(karura.api, { ForeignAsset: '7' }, alice.address))
-      .redact()
+    await checkEvents(tx0, { section: 'stableAsset', method: 'TokenSwapped' }, 'tokens')
+      .redact({ number: true })
       .toMatchSnapshot()
   })
 
   describe('with liquidity', () => {
     beforeEach(async () => {
-      await sendTransaction(
-        stableAssetMint(karura.api, '0', ['1000000000000', '10000000000000'], '0').signAsync(alice, { nonce: 0 })
-      )
+      await sendTransaction(chain.api.tx.stableAsset.mint(0, [1e12, 1e12], 0).signAsync(alice))
 
-      await karura.chain.newBlock()
+      await chain.chain.newBlock()
     })
 
-    it('mint works', async () => {
-      await checkSystemEvents(karura, 'stableAsset').redact({ number: 1 }).toMatchSnapshot()
-
-      await check(queryTokenBalance(karura.api, { StableAssetPoolToken: '0' }, alice.address))
-        .redact()
-        .toMatchSnapshot()
-      await check(queryTokenBalance(karura.api, { Token: 'KSM' }, alice.address))
-        .redact()
-        .toMatchSnapshot()
-      await check(queryTokenBalance(karura.api, { Token: 'LKSM' }, alice.address))
-        .redact()
-        .toMatchSnapshot()
+    it('mint', async () => {
+      await checkSystemEvents(chain, 'stableAsset').redact({ number: true }).toMatchSnapshot()
     })
 
-    it('stableAssetRedeemSingle works', async () => {
-      const balData: any = await queryTokenBalance(karura.api, { StableAssetPoolToken: '0' }, alice.address)
+    it.each([
+      {
+        name: 'stableAssetRedeemSingle',
+        tx: (x: any) => chain.api.tx.stableAsset.redeemSingle(0, x, 0, 0, 2),
+      },
+      {
+        name: 'redeemProportion',
+        tx: (x: any) => chain.api.tx.stableAsset.redeemProportion(0, x, [0, 0]),
+      },
+    ])('$name', async ({ tx }) => {
+      const balData: any = await query.tokens({ StableAssetPoolToken: 0 })(chain, alice.address)
 
-      const tx = await sendTransaction(
-        stableAssetRedeemSingle(karura.api, '0', balData.free, '0', '0', '2').signAsync(alice)
-      )
+      const tx0 = await sendTransaction(tx(balData.free).signAsync(alice))
 
-      await karura.chain.newBlock()
+      await chain.chain.newBlock()
 
-      await checkEvents(tx, 'stableAsset').toMatchSnapshot()
-      await check(queryTokenBalance(karura.api, { StableAssetPoolToken: '0' }, alice.address))
-        .redact()
-        .toMatchSnapshot()
-      await check(queryTokenBalance(karura.api, { Token: 'KSM' }, alice.address))
-        .redact()
-        .toMatchSnapshot()
-    })
-
-    it('redeemProportion works', async () => {
-      const balData: any = await queryTokenBalance(karura.api, { StableAssetPoolToken: '0' }, alice.address)
-
-      const tx1 = await sendTransaction(
-        stableAssetRedeemProportion(karura.api, '0', balData.free, [0, 0]).signAsync(alice)
-      )
-
-      await karura.chain.newBlock()
-
-      await checkEvents(tx1, 'stableAsset').toMatchSnapshot()
-      await check(queryTokenBalance(karura.api, { StableAssetPoolToken: '0' }, alice.address)).toMatchSnapshot()
-      await check(queryTokenBalance(karura.api, { Token: 'KSM' }, alice.address))
-        .redact()
-        .toMatchSnapshot()
-      await check(queryTokenBalance(karura.api, { Token: 'LKSM' }, alice.address))
-        .redact()
-        .toMatchSnapshot()
+      await checkEvents(tx0, 'stableAsset', 'tokens').redact({ number: true }).toMatchSnapshot()
     })
   })
 })
