@@ -1,0 +1,81 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`'acala' aggregatedDex > swapWithExactSupply > events 1`] = `
+[
+  {
+    "data": {
+      "liquidityChanges": [
+        "(number)",
+        "(number)",
+        "(number)",
+      ],
+      "path": [
+        {
+          "Token": "ACA",
+        },
+        {
+          "Token": "AUSD",
+        },
+        {
+          "Token": "LDOT",
+        },
+      ],
+      "trader": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+    },
+    "method": "Swap",
+    "section": "dex",
+  },
+]
+`;
+
+exports[`'karura' aggregatedDex > swapWithExactSupply > events 1`] = `
+[
+  {
+    "data": {
+      "liquidityChanges": [
+        "(number)",
+        "(number)",
+        "(number)",
+      ],
+      "path": [
+        {
+          "Token": "KSM",
+        },
+        {
+          "ForeignAsset": "(number)",
+        },
+        {
+          "Token": "KUSD",
+        },
+      ],
+      "trader": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "Swap",
+    "section": "dex",
+  },
+  {
+    "data": {
+      "a": "(number)",
+      "balances": [
+        "(number)",
+        "(number)",
+        "(number)",
+      ],
+      "inputAmount": "(number)",
+      "inputAsset": {
+        "Token": "KUSD",
+      },
+      "minOutputAmount": "(number)",
+      "outputAmount": "(number)",
+      "outputAsset": {
+        "ForeignAsset": "(number)",
+      },
+      "poolId": "(number)",
+      "swapper": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+      "totalSupply": "(number)",
+    },
+    "method": "TokenSwapped",
+    "section": "stableAsset",
+  },
+]
+`;

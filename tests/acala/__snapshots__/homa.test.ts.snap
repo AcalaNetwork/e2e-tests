@@ -18,7 +18,7 @@ exports[`Karura <-> Kusama > Homa redeem unbond works > events 2`] = `
 [
   {
     "data": {
-      "eraIndexWhenUnbond": "(rounded 4900)",
+      "eraIndexWhenUnbond": 100,
       "liquidAmount": 1000000000000,
       "redeemer": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
       "unbondingStakingAmount": "(rounded 130000000000)",
@@ -74,7 +74,7 @@ exports[`Karura <-> Kusama > Homa stake works > events 2`] = `
 [
   {
     "data": {
-      "newEraIndex": "(rounded 4900)",
+      "newEraIndex": 100,
     },
     "method": "CurrentEraBumped",
     "section": "homa",

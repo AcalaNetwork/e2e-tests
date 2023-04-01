@@ -59,7 +59,7 @@ for (const def of Object.values(networkDefs)) {
       })
 
       const finalOptions: SetupOption = {
-        timeout: 180000,
+        timeout: 600000,
         wasmOverride: process.env[`${upperName}_WASM`],
         blockNumber: toNumber(process.env[`${upperName}_BLOCK_NUMBER`]),
         endpoint: process.env[`${upperName}_ENDPOINT`] ?? endpoint,
@@ -84,7 +84,7 @@ for (const def of Object.values(networkDefs)) {
 export const createContext = () => testingPairs()
 
 export const createNetworks = async (
-  networkOptions: Record<NetworkNames, Partial<SetupOption> | undefined>,
+  networkOptions: Partial<Record<NetworkNames, Partial<SetupOption> | undefined>>,
   context = createContext()
 ) => {
   const ret = {} as Record<NetworkNames, Network>

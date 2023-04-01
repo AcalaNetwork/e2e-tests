@@ -4,7 +4,7 @@ exports[`'acala' -> 'hydraDX' xcm transfer 'DAI' > xtokens transfer > balance on
 
 exports[`'acala' -> 'hydraDX' xcm transfer 'DAI' > xtokens transfer > balance on to chain 1`] = `
 {
-  "free": "(rounded 997800000000000000)",
+  "free": "(rounded 998000000000000000)",
   "frozen": 0,
   "reserved": 0,
 }
@@ -195,7 +195,7 @@ exports[`'acala' -> 'moonbeam' xcm transfer 'DOT' > xtokens transfer > balance o
 
 exports[`'acala' -> 'moonbeam' xcm transfer 'DOT' > xtokens transfer > balance on to chain 1`] = `
 {
-  "balance": "(rounded 999600000000)",
+  "balance": "(rounded 1000000000000)",
   "extra": null,
   "isFrozen": false,
   "reason": {
@@ -610,7 +610,7 @@ exports[`'hydraDX' -> 'acala' xcm transfer 'DAI' > xtokens transfer > balance on
 }
 `;
 
-exports[`'hydraDX' -> 'acala' xcm transfer 'DAI' > xtokens transfer > balance on to chain 1`] = `"(rounded 999200000000000000)"`;
+exports[`'hydraDX' -> 'acala' xcm transfer 'DAI' > xtokens transfer > balance on to chain 1`] = `"(rounded 999000000000000000)"`;
 
 exports[`'hydraDX' -> 'acala' xcm transfer 'DAI' > xtokens transfer > from chain hrmp messages 1`] = `
 [
@@ -1116,7 +1116,7 @@ exports[`'statemint' -> 'acala' xcm transfer 'WBTC' > xcmPallet transfer > tx ev
   {
     "data": [
       {
-        "Complete": "(rounded 653200000)",
+        "Complete": "(rounded 653000000)",
       },
     ],
     "method": "Attempted",
