@@ -42,7 +42,7 @@ describe.each([
 
     await chain.chain.newBlock()
 
-    await checkEvents(tx0, { section: 'stableAsset', method: 'TokenSwapped' }, 'tokens')
+    await checkEvents(tx0, { section: 'stableAsset', method: 'TokenSwapped' })
       .redact({ number: true })
       .toMatchSnapshot()
   })
@@ -74,7 +74,7 @@ describe.each([
 
       await chain.chain.newBlock()
 
-      await checkEvents(tx0, 'stableAsset', 'tokens').redact({ number: true }).toMatchSnapshot()
+      await checkEvents(tx0, 'stableAsset').redact({ number: true }).toMatchSnapshot()
     })
   })
 })

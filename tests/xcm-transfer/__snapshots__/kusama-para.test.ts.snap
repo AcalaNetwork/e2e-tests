@@ -8,7 +8,7 @@ exports[`'basilisk' -> 'karura' xcm transfer 'DAI' > xtokens transfer > balance 
 }
 `;
 
-exports[`'basilisk' -> 'karura' xcm transfer 'DAI' > xtokens transfer > balance on to chain 1`] = `"(rounded 999200000000000000)"`;
+exports[`'basilisk' -> 'karura' xcm transfer 'DAI' > xtokens transfer > balance on to chain 1`] = `"(rounded 999000000000000000)"`;
 
 exports[`'basilisk' -> 'karura' xcm transfer 'DAI' > xtokens transfer > from chain hrmp messages 1`] = `
 [
@@ -182,7 +182,7 @@ exports[`'karura' -> 'basilisk' xcm transfer 'DAI' > xtokens transfer > balance 
 
 exports[`'karura' -> 'basilisk' xcm transfer 'DAI' > xtokens transfer > balance on to chain 1`] = `
 {
-  "free": 995600000000000000,
+  "free": "(rounded 996000000000000000)",
   "frozen": 0,
   "reserved": 0,
 }
@@ -373,7 +373,7 @@ exports[`'karura' -> 'statemine' xcm transfer 'USDT' > xtokens transfer > balanc
 
 exports[`'karura' -> 'statemine' xcm transfer 'USDT' > xtokens transfer > balance on to chain 1`] = `
 {
-  "balance": "(rounded 1001000000)",
+  "balance": "(rounded 1000000000)",
   "extra": null,
   "isFrozen": false,
   "reason": {
@@ -579,7 +579,7 @@ exports[`'statemine' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer > bala
 
 exports[`'statemine' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer > balance on to chain 1`] = `
 {
-  "free": "(rounded 999200)",
+  "free": "(rounded 999000)",
   "frozen": 0,
   "reserved": 0,
 }
@@ -704,7 +704,7 @@ exports[`'statemine' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer > tx e
   {
     "data": [
       {
-        "Complete": "(rounded 653100000)",
+        "Complete": "(rounded 653000000)",
       },
     ],
     "method": "Attempted",

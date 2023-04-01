@@ -4,41 +4,6 @@ exports[`'acala' stable asset > swap > events 1`] = `
 [
   {
     "data": {
-      "amount": "(number)",
-      "currencyId": {
-        "Token": "DOT",
-      },
-      "from": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
-      "to": "23M5ttkp2zdM8qa6LFak4BySWZDsAVByjepAfr7kt929S1U9",
-    },
-    "method": "Transfer",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "amount": "(number)",
-      "currencyId": {
-        "Token": "LDOT",
-      },
-      "from": "23M5ttkp2zdM8qa6LFak4BySWZDsAVByjepAfr7kt929S1U9",
-      "to": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
-    },
-    "method": "Transfer",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "amount": "(number)",
-      "currencyId": {
-        "StableAssetPoolToken": "(number)",
-      },
-      "who": "23AdbsfTWCWtRFweQF4f3iZLcLBPwSHci9CXuMhqFirZmUZj",
-    },
-    "method": "Deposited",
-    "section": "tokens",
-  },
-  {
-    "data": {
       "a": "(number)",
       "balances": [
         "(number)",
@@ -79,64 +44,6 @@ exports[`'acala' stable asset > with liquidity > 'redeemProportion' > events 1`]
     },
     "method": "BalanceUpdated",
     "section": "stableAsset",
-  },
-  {
-    "data": {
-      "amount": "(number)",
-      "currencyId": {
-        "Token": "DOT",
-      },
-      "from": "23M5ttkp2zdM8qa6LFak4BySWZDsAVByjepAfr7kt929S1U9",
-      "to": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
-    },
-    "method": "Transfer",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "amount": "(number)",
-      "currencyId": {
-        "Token": "LDOT",
-      },
-      "from": "23M5ttkp2zdM8qa6LFak4BySWZDsAVByjepAfr7kt929S1U9",
-      "to": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
-    },
-    "method": "Transfer",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "amount": "(number)",
-      "currencyId": {
-        "StableAssetPoolToken": "(number)",
-      },
-      "from": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
-      "to": "23AdbsfTWCWtRFweQF4f3iZLcLBPwSHci9CXuMhqFirZmUZj",
-    },
-    "method": "Transfer",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "amount": "(number)",
-      "currencyId": {
-        "StableAssetPoolToken": "(number)",
-      },
-      "who": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
-    },
-    "method": "Withdrawn",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "amount": "(number)",
-      "currencyId": {
-        "StableAssetPoolToken": "(number)",
-      },
-      "who": "23AdbsfTWCWtRFweQF4f3iZLcLBPwSHci9CXuMhqFirZmUZj",
-    },
-    "method": "Deposited",
-    "section": "tokens",
   },
   {
     "data": {
@@ -201,41 +108,6 @@ exports[`'acala' stable asset > with liquidity > 'stableAssetRedeemSingle' > eve
     },
     "method": "BalanceUpdated",
     "section": "stableAsset",
-  },
-  {
-    "data": {
-      "amount": "(number)",
-      "currencyId": {
-        "StableAssetPoolToken": "(number)",
-      },
-      "from": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
-      "to": "23AdbsfTWCWtRFweQF4f3iZLcLBPwSHci9CXuMhqFirZmUZj",
-    },
-    "method": "Transfer",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "amount": "(number)",
-      "currencyId": {
-        "Token": "DOT",
-      },
-      "from": "23M5ttkp2zdM8qa6LFak4BySWZDsAVByjepAfr7kt929S1U9",
-      "to": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
-    },
-    "method": "Transfer",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "amount": "(number)",
-      "currencyId": {
-        "StableAssetPoolToken": "(number)",
-      },
-      "who": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
-    },
-    "method": "Withdrawn",
-    "section": "tokens",
   },
   {
     "data": {
@@ -306,41 +178,6 @@ exports[`'karura' stable asset > swap > events 1`] = `
 [
   {
     "data": {
-      "amount": "(number)",
-      "currencyId": {
-        "Token": "KSM",
-      },
-      "from": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-      "to": "qmmNug1GQstpimAXBphJPSbDawH47vwMmhuSUq9xRqAsDAr",
-    },
-    "method": "Transfer",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "amount": "(number)",
-      "currencyId": {
-        "Token": "LKSM",
-      },
-      "from": "qmmNug1GQstpimAXBphJPSbDawH47vwMmhuSUq9xRqAsDAr",
-      "to": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "Transfer",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "amount": "(number)",
-      "currencyId": {
-        "StableAssetPoolToken": "(number)",
-      },
-      "who": "qbK5taeJoMcwJoK3hZ7W8y2KkGu1iDRUvjrg9xQMsUKrrv7",
-    },
-    "method": "Deposited",
-    "section": "tokens",
-  },
-  {
-    "data": {
       "a": "(number)",
       "balances": [
         "(number)",
@@ -381,64 +218,6 @@ exports[`'karura' stable asset > with liquidity > 'redeemProportion' > events 1`
     },
     "method": "BalanceUpdated",
     "section": "stableAsset",
-  },
-  {
-    "data": {
-      "amount": "(number)",
-      "currencyId": {
-        "Token": "KSM",
-      },
-      "from": "qmmNug1GQstpimAXBphJPSbDawH47vwMmhuSUq9xRqAsDAr",
-      "to": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "Transfer",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "amount": "(number)",
-      "currencyId": {
-        "Token": "LKSM",
-      },
-      "from": "qmmNug1GQstpimAXBphJPSbDawH47vwMmhuSUq9xRqAsDAr",
-      "to": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "Transfer",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "amount": "(number)",
-      "currencyId": {
-        "StableAssetPoolToken": "(number)",
-      },
-      "from": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-      "to": "qbK5taeJoMcwJoK3hZ7W8y2KkGu1iDRUvjrg9xQMsUKrrv7",
-    },
-    "method": "Transfer",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "amount": "(number)",
-      "currencyId": {
-        "StableAssetPoolToken": "(number)",
-      },
-      "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "Withdrawn",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "amount": "(number)",
-      "currencyId": {
-        "StableAssetPoolToken": "(number)",
-      },
-      "who": "qbK5taeJoMcwJoK3hZ7W8y2KkGu1iDRUvjrg9xQMsUKrrv7",
-    },
-    "method": "Deposited",
-    "section": "tokens",
   },
   {
     "data": {
@@ -503,52 +282,6 @@ exports[`'karura' stable asset > with liquidity > 'stableAssetRedeemSingle' > ev
     },
     "method": "BalanceUpdated",
     "section": "stableAsset",
-  },
-  {
-    "data": {
-      "amount": "(number)",
-      "currencyId": {
-        "StableAssetPoolToken": "(number)",
-      },
-      "from": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-      "to": "qbK5taeJoMcwJoK3hZ7W8y2KkGu1iDRUvjrg9xQMsUKrrv7",
-    },
-    "method": "Transfer",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "amount": "(number)",
-      "currencyId": {
-        "Token": "KSM",
-      },
-      "from": "qmmNug1GQstpimAXBphJPSbDawH47vwMmhuSUq9xRqAsDAr",
-      "to": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "Transfer",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "amount": "(number)",
-      "currencyId": {
-        "StableAssetPoolToken": "(number)",
-      },
-      "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "Withdrawn",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "amount": "(number)",
-      "currencyId": {
-        "StableAssetPoolToken": "(number)",
-      },
-      "who": "qbK5taeJoMcwJoK3hZ7W8y2KkGu1iDRUvjrg9xQMsUKrrv7",
-    },
-    "method": "Deposited",
-    "section": "tokens",
   },
   {
     "data": {

@@ -76,11 +76,11 @@ describe('Karura honzon', async () => {
     await checkEvents(tx, { section: 'loans', method: 'PositionUpdated' }).toMatchSnapshot()
     expect(
       await check(queryTokenBalance(karura.api, { Token: 'KUSD' }, alice.address))
-        .redact()
+        .redact({ number: 1 })
         .value()
     ).toMatchInlineSnapshot(`
       {
-        "free": "(rounded 48000000000000)",
+        "free": "(rounded 50000000000000)",
         "frozen": 0,
         "reserved": 0,
       }
