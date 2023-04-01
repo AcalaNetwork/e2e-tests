@@ -1,4 +1,5 @@
-import { beforeEach, describe, expect, it } from 'vitest'
+import { beforeEach, describe, it } from 'vitest'
+import { bnToHex } from '@polkadot/util'
 import { sendTransaction } from '@acala-network/chopsticks-testing'
 
 import { checkEvents, checkSystemEvents } from '../../helpers'
@@ -23,6 +24,15 @@ describe.each([
   beforeEach(async () => {
     const { [name]: chain1 } = await createNetworks({ [name]: undefined }, ctx)
     chain = chain1
+
+    // restore Homa.toBondPool to correct liquid token exchange rate
+    const apiAt = await chain.api.at(await chain.api.rpc.chain.getBlockHash(chain.chain.head.number - 1))
+    const toBondPool: any = await apiAt.query.homa.toBondPool()
+    await chain.dev.setStorage({
+      Homa: {
+        toBondPool: bnToHex(toBondPool, { bitLength: 128, isLe: true }),
+      }
+    })
 
     return async () => chain.teardown()
   })

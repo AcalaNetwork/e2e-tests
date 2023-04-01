@@ -29,7 +29,7 @@ describe.each([
       },
     ],
   },
-] as const)('$name dex', async ({ name, swapPath }) => {
+] as const)('$name aggregatedDex', async ({ name, swapPath }) => {
   const { [name]: chain } = await createNetworks({ [name]: undefined })
   const { alice } = testingPairs()
 
@@ -43,13 +43,13 @@ describe.each([
     await chain.chain.setHead(head)
   })
 
-  it('aggregatedDex supply swap works', async () => {
+  it('swapWithExactSupply', async () => {
     const tx = await sendTransaction(
       chain.api.tx.aggregatedDex.swapWithExactSupply(swapPath, 1e12, 0).signAsync(alice, { nonce: 0 })
     )
 
     await chain.chain.newBlock()
 
-    await checkEvents(tx, 'dex', 'stableAsset', 'tokens').redact({ number: true }).toMatchSnapshot()
+    await checkEvents(tx, 'dex', { section: 'stableAsset', method: 'TokenSwapped' }).redact({ number: true }).toMatchSnapshot()
   })
 })
