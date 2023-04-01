@@ -31,7 +31,7 @@ describe.each([
     await chain.dev.setStorage({
       Homa: {
         toBondPool: bnToHex(toBondPool, { bitLength: 128, isLe: true }),
-      }
+      },
     })
 
     return async () => chain.teardown()
