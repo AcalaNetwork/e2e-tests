@@ -40,7 +40,12 @@ DB_PATH=./db.sqlite
 
 Use specific block number for tests and db cache can signficantly improve test running speed.
 
+### Use Subway to catch RPC responses
+
 Use [subway](http://github.com/AcalaNetwork/subway) to run local endpoints to catch RPC responses for additonal improved test running speed.
 
+- Install Subway: `cargo install --git https://github.com/AcalaNetwork/subway.git`
+- Run: `./scripts/run-all.sh`
+
 ## To do
-1. Enhance XCM tests by using Bridge SDK instead of Polkadot.js - i.e. full e2e
+1. Enhance XCM tests by using Bridge SDK in additonal to Polkadot.js
