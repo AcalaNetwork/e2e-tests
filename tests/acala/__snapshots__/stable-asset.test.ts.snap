@@ -32,41 +32,6 @@ exports[`'acala' stable asset > with liquidity > 'redeemProportion' > events 1`]
 [
   {
     "data": {
-      "newBalances": [
-        "(number)",
-        "(number)",
-      ],
-      "oldBalances": [
-        "(number)",
-        "(number)",
-      ],
-      "poolId": "(number)",
-    },
-    "method": "BalanceUpdated",
-    "section": "stableAsset",
-  },
-  {
-    "data": {
-      "a": "(number)",
-      "amount": "(number)",
-      "newBalances": [
-        "(number)",
-        "(number)",
-      ],
-      "newTotalSupply": "(number)",
-      "oldBalances": [
-        "(number)",
-        "(number)",
-      ],
-      "oldTotalSupply": "(number)",
-      "poolId": "(number)",
-      "who": "23AdbsfTWCWtRFweQF4f3iZLcLBPwSHci9CXuMhqFirZmUZj",
-    },
-    "method": "FeeCollected",
-    "section": "stableAsset",
-  },
-  {
-    "data": {
       "a": "(number)",
       "balances": [
         "(number)",
@@ -96,21 +61,6 @@ exports[`'acala' stable asset > with liquidity > 'stableAssetRedeemSingle' > eve
 [
   {
     "data": {
-      "newBalances": [
-        "(number)",
-        "(number)",
-      ],
-      "oldBalances": [
-        "(number)",
-        "(number)",
-      ],
-      "poolId": "(number)",
-    },
-    "method": "BalanceUpdated",
-    "section": "stableAsset",
-  },
-  {
-    "data": {
       "a": "(number)",
       "balances": [
         "(number)",
@@ -135,21 +85,6 @@ exports[`'acala' stable asset > with liquidity > 'stableAssetRedeemSingle' > eve
 
 exports[`'acala' stable asset > with liquidity > mint > system events 1`] = `
 [
-  {
-    "data": {
-      "newBalances": [
-        "(number)",
-        "(number)",
-      ],
-      "oldBalances": [
-        "(number)",
-        "(number)",
-      ],
-      "poolId": "(number)",
-    },
-    "method": "BalanceUpdated",
-    "section": "stableAsset",
-  },
   {
     "data": {
       "a": "(number)",
@@ -206,41 +141,6 @@ exports[`'karura' stable asset > with liquidity > 'redeemProportion' > events 1`
 [
   {
     "data": {
-      "newBalances": [
-        "(number)",
-        "(number)",
-      ],
-      "oldBalances": [
-        "(number)",
-        "(number)",
-      ],
-      "poolId": "(number)",
-    },
-    "method": "BalanceUpdated",
-    "section": "stableAsset",
-  },
-  {
-    "data": {
-      "a": "(number)",
-      "amount": "(number)",
-      "newBalances": [
-        "(number)",
-        "(number)",
-      ],
-      "newTotalSupply": "(number)",
-      "oldBalances": [
-        "(number)",
-        "(number)",
-      ],
-      "oldTotalSupply": "(number)",
-      "poolId": "(number)",
-      "who": "qbK5taeJoMcwJoK3hZ7W8y2KkGu1iDRUvjrg9xQMsUKrrv7",
-    },
-    "method": "FeeCollected",
-    "section": "stableAsset",
-  },
-  {
-    "data": {
       "a": "(number)",
       "balances": [
         "(number)",
@@ -270,41 +170,6 @@ exports[`'karura' stable asset > with liquidity > 'stableAssetRedeemSingle' > ev
 [
   {
     "data": {
-      "newBalances": [
-        "(number)",
-        "(number)",
-      ],
-      "oldBalances": [
-        "(number)",
-        "(number)",
-      ],
-      "poolId": "(number)",
-    },
-    "method": "BalanceUpdated",
-    "section": "stableAsset",
-  },
-  {
-    "data": {
-      "a": "(number)",
-      "amount": "(number)",
-      "newBalances": [
-        "(number)",
-        "(number)",
-      ],
-      "newTotalSupply": "(number)",
-      "oldBalances": [
-        "(number)",
-        "(number)",
-      ],
-      "oldTotalSupply": "(number)",
-      "poolId": "(number)",
-      "who": "qbK5taeJoMcwJoK3hZ7W8y2KkGu1iDRUvjrg9xQMsUKrrv7",
-    },
-    "method": "FeeCollected",
-    "section": "stableAsset",
-  },
-  {
-    "data": {
       "a": "(number)",
       "balances": [
         "(number)",
@@ -329,21 +194,6 @@ exports[`'karura' stable asset > with liquidity > 'stableAssetRedeemSingle' > ev
 
 exports[`'karura' stable asset > with liquidity > mint > system events 1`] = `
 [
-  {
-    "data": {
-      "newBalances": [
-        "(number)",
-        "(number)",
-      ],
-      "oldBalances": [
-        "(number)",
-        "(number)",
-      ],
-      "poolId": "(number)",
-    },
-    "method": "BalanceUpdated",
-    "section": "stableAsset",
-  },
   {
     "data": {
       "a": "(number)",

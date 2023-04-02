@@ -55,26 +55,30 @@ describe.each([
     })
 
     it('mint', async () => {
-      await checkSystemEvents(chain, 'stableAsset').redact({ number: true }).toMatchSnapshot()
+      await checkSystemEvents(chain, { section: 'stableAsset', method: 'Minted' })
+        .redact({ number: true })
+        .toMatchSnapshot()
     })
 
     it.each([
       {
         name: 'stableAssetRedeemSingle',
         tx: (x: any) => chain.api.tx.stableAsset.redeemSingle(0, x, 0, 0, 2),
+        event: 'RedeemedSingle'
       },
       {
         name: 'redeemProportion',
         tx: (x: any) => chain.api.tx.stableAsset.redeemProportion(0, x, [0, 0]),
+        event: 'RedeemedProportion'
       },
-    ])('$name', async ({ tx }) => {
+    ])('$name', async ({ tx, event }) => {
       const balData: any = await query.tokens({ StableAssetPoolToken: 0 })(chain, alice.address)
 
       const tx0 = await sendTransaction(tx(balData.free).signAsync(alice))
 
       await chain.chain.newBlock()
 
-      await checkEvents(tx0, 'stableAsset').redact({ number: true }).toMatchSnapshot()
+      await checkEvents(tx0, { section: 'stableAsset', method: event }).redact({ number: true }).toMatchSnapshot()
     })
   })
 })
