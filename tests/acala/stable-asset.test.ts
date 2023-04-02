@@ -64,12 +64,12 @@ describe.each([
       {
         name: 'stableAssetRedeemSingle',
         tx: (x: any) => chain.api.tx.stableAsset.redeemSingle(0, x, 0, 0, 2),
-        event: 'RedeemedSingle'
+        event: 'RedeemedSingle',
       },
       {
         name: 'redeemProportion',
         tx: (x: any) => chain.api.tx.stableAsset.redeemProportion(0, x, [0, 0]),
-        event: 'RedeemedProportion'
+        event: 'RedeemedProportion',
       },
     ])('$name', async ({ tx, event }) => {
       const balData: any = await query.tokens({ StableAssetPoolToken: 0 })(chain, alice.address)
