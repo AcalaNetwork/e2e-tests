@@ -1178,16 +1178,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitest/ui@npm:^0.29.2":
-  version: 0.29.2
-  resolution: "@vitest/ui@npm:0.29.2"
+"@vitest/ui@npm:^0.29.8":
+  version: 0.29.8
+  resolution: "@vitest/ui@npm:0.29.8"
   dependencies:
     fast-glob: ^3.2.12
     flatted: ^3.2.7
     pathe: ^1.1.0
     picocolors: ^1.0.0
     sirv: ^2.0.2
-  checksum: f9a50a7fc0900a6775334efc347af0e7ecb8c1b027c161291e68a08db93c81907bf52b3a4a710f7ea5f69f94520f2af40f5b3cce49dd0043a603198891b86e3d
+  checksum: 0190c01a1a467b71a4e81563cd70370c651238f1b4e82c3ff5c6e8a6e6f35ffb6e66f987cd9c892df99ed1ec00ed20d804b2c07c24cdb996eb880c585d13dfcf
   languageName: node
   linkType: hard
 
@@ -2016,7 +2016,7 @@ __metadata:
     "@types/node": ^18.15.11
     "@typescript-eslint/eslint-plugin": ^5.54.0
     "@typescript-eslint/parser": ^5.57.0
-    "@vitest/ui": ^0.29.2
+    "@vitest/ui": ^0.29.8
     dotenv: ^16.0.3
     eslint: ^8.37.0
     eslint-config-prettier: ^8.6.0
