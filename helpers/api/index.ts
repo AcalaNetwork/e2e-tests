@@ -95,7 +95,7 @@ export const xtokens = {
 export const xcmPallet = {
   parachainV2: (parents: number, paraId: number) => ({
     V1: {
-      parents: parents,
+      parents,
       interior: {
         X1: { Parachain: paraId },
       },
@@ -114,9 +114,9 @@ export const xcmPallet = {
       },
     },
   }),
-  parachainV3: (paraId: any) => ({
+  parachainV3: (parents: number, paraId: any) => ({
     V3: {
-      parents: 0,
+      parents,
       interior: {
         X1: { Parachain: paraId },
       },

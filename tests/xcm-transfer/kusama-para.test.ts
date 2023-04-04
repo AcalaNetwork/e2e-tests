@@ -15,10 +15,10 @@ const tests = [
     name: 'USDT',
     test: {
       xcmPalletHorzontal: {
-        tx: tx.xcmPallet.limitedReserveTransferAssetsV2(
+        tx: tx.xcmPallet.limitedReserveTransferAssetsV3(
           statemine.usdt,
           1e6,
-          tx.xcmPallet.parachainV2(1, karura.paraId)
+          tx.xcmPallet.parachainV3(1, karura.paraId)
         ),
         fromBalance: query.assets(statemine.usdtIndex),
         toBalance: query.tokens(karura.usdt),
