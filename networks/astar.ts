@@ -21,9 +21,7 @@ export default {
         account: [[[alice.address], { data: { free: 10 * 1e18 } }]],
       },
       Tokens: {
-        accounts: [
-          [[alice.address, { Token: relayToken }], { free: 10 * 1e12 }],
-        ],
+        accounts: [[[alice.address, { Token: relayToken }], { free: 10 * 1e12 }]],
       },
       Sudo: {
         key: alice.address,
