@@ -47,7 +47,7 @@ const tests = [
     name: 'DOT',
     test: {
       xcmPalletDown: {
-        tx: tx.xcmPallet.limitedReserveTransferAssetsV3(polkadot.dot, 1e12, tx.xcmPallet.parachainV3(acala.paraId)),
+        tx: tx.xcmPallet.limitedReserveTransferAssetsV3(polkadot.dot, 1e12, tx.xcmPallet.parachainV3(0, acala.paraId)),
         balance: query.tokens(acala.dot),
       },
     },
