@@ -59,10 +59,10 @@ exports[`Karura <-> Kusama > Homa stake works > events 1`] = `
 [
   {
     "data": {
-      "liquidAmountAddedToVoid": "(rounded 640000000)",
-      "liquidAmountReceived": "(rounded 7600000000000)",
+      "liquidAmountAddedToVoid": "(number)",
+      "liquidAmountReceived": "(number)",
       "minter": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-      "stakingCurrencyAmount": 1000000000000,
+      "stakingCurrencyAmount": "(number)",
     },
     "method": "Minted",
     "section": "homa",

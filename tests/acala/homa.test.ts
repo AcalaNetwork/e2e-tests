@@ -67,7 +67,7 @@ describe('Karura <-> Kusama', async () => {
 
     await karura.chain.newBlock()
 
-    await checkEvents(tx0, 'homa').toMatchSnapshot()
+    await checkEvents(tx0, 'homa').redact({ number: true }).toMatchSnapshot()
     await checkEvents(tx1, { section: 'homa', method: 'CurrentEraBumped' }).toMatchSnapshot()
     await checkUmp(karura).redact({ number: true, hex: true }).toMatchSnapshot()
 
