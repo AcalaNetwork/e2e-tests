@@ -1,0 +1,15 @@
+endpoints:
+  - wss://rpc.astar.network
+  - wss://astar.public.blastapi.io
+  - wss://astar-rpc.dwellir.com
+  - wss://astar.api.onfinality.io/public-ws
+  - wss://astar.public.curie.radiumblock.co/ws
+
+stale_timeout_seconds: 180 # rotate endpoint if no new blocks for 3 minutes
+
+server:
+  port: 9944
+  listen_address: '0.0.0.0'
+  max_connections: 2000
+
+rpcs: substrate
