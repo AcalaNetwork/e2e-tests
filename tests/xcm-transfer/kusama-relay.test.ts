@@ -2,6 +2,7 @@ import { query, tx } from '../../helpers/api'
 
 import { karura } from '../../networks/acala'
 import { kusama } from '../../networks/polkadot'
+import { shiden } from '../../networks/astar'
 
 import buildTest from './shared'
 
@@ -49,6 +50,30 @@ const tests = [
       xcmPalletDown: {
         tx: tx.xcmPallet.limitedReserveTransferAssetsV3(kusama.ksm, 1e12, tx.xcmPallet.parachainV3(0, karura.paraId)),
         balance: query.tokens(karura.ksm),
+      },
+    },
+  },
+  // shiden <-> kusama
+  {
+    from: 'shiden',
+    to: 'kusama',
+    name: 'KSM',
+    test: {
+      xcmPalletDown: {
+        tx: tx.xcmPallet.limitedReserveTransferAssetsV2(kusama.ksm, 1e12, tx.xcmPallet.parachainV2(0, shiden.paraId)),
+        balance: query.tokens(shiden.ksm),
+      },
+    },
+  },
+  // kusama <-> shiden
+  {
+    from: 'kusama',
+    to: 'shiden',
+    name: 'KSM',
+    test: {
+      xcmPalletDown: {
+        tx: tx.xcmPallet.limitedReserveTransferAssetsV2(kusama.ksm, 1e12, tx.xcmPallet.parachainV2(0, shiden.paraId)),
+        balance: query.tokens(shiden.ksm),
       },
     },
   },
