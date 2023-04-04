@@ -7,6 +7,7 @@ import { Config, Context, NetworkKind } from './types'
 import { testingPairs } from '../helpers'
 import acala2160Config from './acala2160'
 import acalaConfig from './acala'
+import astarConfig from './astar'
 import hydraDXConfig from './hydraDX'
 import moonbeamConfig from './moonbeam'
 import polkadot9381Config from './polkadot9381'
@@ -21,6 +22,7 @@ const networkDefs = {
   statemint: statemintConfig,
   acala: acalaConfig,
   acala2160: acala2160Config,
+  astar: astarConfig,
   moonbeam: moonbeamConfig,
   hydraDX: hydraDXConfig,
 } satisfies Record<string, Config>
