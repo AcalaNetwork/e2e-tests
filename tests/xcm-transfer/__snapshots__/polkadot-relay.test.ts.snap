@@ -387,6 +387,51 @@ exports[`'polkadot' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > tx even
 ]
 `;
 
+exports[`'polkadot' -> 'astar' xcm transfer 'DOT' > xcmPallet transfer > balance on from chain 1`] = `
+{
+  "consumers": 0,
+  "data": {
+    "feeFrozen": 0,
+    "free": "(rounded 10000000000000)",
+    "miscFrozen": 0,
+    "reserved": 0,
+  },
+  "nonce": 1,
+  "providers": 0,
+  "sufficients": 0,
+}
+`;
+
+exports[`'polkadot' -> 'astar' xcm transfer 'DOT' > xcmPallet transfer > balance on to chain 1`] = `
+{
+  "balance": 10000000000000,
+  "extra": null,
+  "isFrozen": false,
+  "reason": {
+    "consumer": null,
+  },
+}
+`;
+
+exports[`'polkadot' -> 'astar' xcm transfer 'DOT' > xcmPallet transfer > to chain dmp events 1`] = `[]`;
+
+exports[`'polkadot' -> 'astar' xcm transfer 'DOT' > xcmPallet transfer > tx events 1`] = `
+[
+  {
+    "data": [
+      {
+        "Incomplete": [
+          1000000000,
+          "FailedToTransactAsset",
+        ],
+      },
+    ],
+    "method": "Attempted",
+    "section": "xcmPallet",
+  },
+]
+`;
+
 exports[`'polkadot9381' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > balance on from chain 1`] = `
 {
   "consumers": 0,

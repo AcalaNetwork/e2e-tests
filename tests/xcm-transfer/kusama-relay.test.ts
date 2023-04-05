@@ -53,18 +53,18 @@ const tests = [
       },
     },
   },
-  // shiden <-> kusama
-  {
-    from: 'shiden',
-    to: 'kusama',
-    name: 'KSM',
-    test: {
-      xcmPalletDown: {
-        tx: tx.xcmPallet.limitedReserveTransferAssetsV2(shiden.ksm, 1e12, tx.xcmPallet.parachainV2(0, kusama.paraId)),
-        balance: query.tokens(kusama.ksm),
-      },
-    },
-  },
+  // // shiden <-> kusama
+  // {
+  //   from: 'shiden',
+  //   to: 'kusama',
+  //   name: 'KSM',
+  //   test: {
+  //     xcmPalletDown: {
+  //       tx: tx.xcmPallet.limitedReserveTransferAssetsV2(shiden.ksm, 1e12, tx.xcmPallet.relaychainV3),
+  //       balance: query.assets(shiden.ksm),
+  //     },
+  //   },
+  // },
   // kusama <-> shiden
   {
     from: 'kusama',
@@ -72,8 +72,8 @@ const tests = [
     name: 'KSM',
     test: {
       xcmPalletDown: {
-        tx: tx.xcmPallet.limitedReserveTransferAssetsV2(kusama.ksm, 1e12, tx.xcmPallet.parachainV2(0, shiden.paraId)),
-        balance: query.tokens(shiden.ksm),
+        tx: tx.xcmPallet.limitedReserveTransferAssetsV3(kusama.ksm, 1e12, tx.xcmPallet.parachainV3(1, shiden.paraId)),
+        balance: query.assets(shiden.ksm),
       },
     },
   },

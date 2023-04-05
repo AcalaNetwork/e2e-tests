@@ -7,21 +7,21 @@ export type Vars = {
 export default {
   polkadot: {
     name: 'astar' as const,
-    endpoint: 'wss://rpc.astar.network',
-    relayToken: 'DOT',
+    endpoint: 'wss://astar-rpc.dwellir.com',
+    relayToken: '340282366920938463463374607431768211455',
   },
   kusama: {
     name: 'shiden' as const,
-    endpoint: 'wss://rpc.shiden.astar.network',
-    relayToken: 'KSM',
+    endpoint: 'wss://shiden-rpc.dwellir.com',
+    relayToken: '340282366920938463463374607431768211455',
   },
   config: ({ alice, relayToken }) => ({
     storages: {
       System: {
-        account: [[[alice.address], { data: { free: 10 * 1e18 } }]],
+        account: [[[alice.address], { data: { free: 10 * 1e12 } }]],
       },
-      Tokens: {
-        accounts: [[[alice.address, { Token: relayToken }], { free: 10 * 1e12 }]],
+      Assets: {
+        account: [[[relayToken, alice.address ], { balance: 10 * 1e12 }]],
       },
       Sudo: {
         key: alice.address,
@@ -37,7 +37,7 @@ export default {
 export const astar = {
   paraId: 2006,
   paraAccount: '13YMK2eZzuFY1WZGagpYtTgbWBWGdoUD2CtrPj1mQPjY8Ldc',
-  dot: { Concrete: { parents: 1, interior: 'Here' } },
+  dot: 340282366920938463463374607431768211455n,
   astr: { Concrete: { parents: 0, interior: 'Here' } },
   aca: { parents: 1, interior: { X2: [{ Parachain: 2000 }, { GeneralKey: 0x0000 }] } },
   usdt: { parents: 1, interior: { X3: [{ Parachain: 1000 }, { PalletInstance: 50 }, { GeneralIndex: 1984 }] } },
@@ -46,7 +46,7 @@ export const astar = {
 export const shiden = {
   paraId: 2007,
   paraAccount: 'F7fq1jNy74AqkJ1DP4KqSrWtnTGtXfNVoDwFhTvvPxUvJaq',
-  ksm: { Concrete: { parents: 1, interior: 'Here' } },
+  ksm: 340282366920938463463374607431768211455n,
   sdn: { Concrete: { parents: 0, interior: 'Here' } },
   kar: { parents: 1, interior: { X2: [{ Parachain: 2000 }, { GeneralKey: 0x0000 }] } },
   usdt: { parents: 1, interior: { X3: [{ Parachain: 1000 }, { PalletInstance: 50 }, { GeneralIndex: 1984 }] } },

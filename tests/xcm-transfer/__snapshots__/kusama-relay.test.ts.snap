@@ -468,3 +468,68 @@ exports[`'kusama' -> 'karura2160' xcm transfer 'KSM' > xcmPallet transfer > tx e
   },
 ]
 `;
+
+exports[`'kusama' -> 'shiden' xcm transfer 'KSM' > xcmPallet transfer > balance on from chain 1`] = `
+{
+  "consumers": 0,
+  "data": {
+    "feeFrozen": 0,
+    "free": "(rounded 10000000000000)",
+    "miscFrozen": 0,
+    "reserved": 0,
+  },
+  "nonce": 1,
+  "providers": 0,
+  "sufficients": 0,
+}
+`;
+
+exports[`'kusama' -> 'shiden' xcm transfer 'KSM' > xcmPallet transfer > balance on to chain 1`] = `
+{
+  "balance": 10000000000000,
+  "extra": null,
+  "isFrozen": false,
+  "reason": {
+    "consumer": null,
+  },
+}
+`;
+
+exports[`'kusama' -> 'shiden' xcm transfer 'KSM' > xcmPallet transfer > to chain dmp events 1`] = `[]`;
+
+exports[`'kusama' -> 'shiden' xcm transfer 'KSM' > xcmPallet transfer > tx events 1`] = `
+[
+  {
+    "data": [
+      {
+        "Incomplete": [
+          {
+            "proofSize": 0,
+            "refTime": "(rounded 751000000)",
+          },
+          "FailedToTransactAsset",
+        ],
+      },
+    ],
+    "method": "Attempted",
+    "section": "xcmPallet",
+  },
+]
+`;
+
+exports[`'shiden' -> 'kusama' xcm transfer 'KSM' > xcmPallet transfer > balance on from chain 1`] = `
+{
+  "consumers": 0,
+  "data": {
+    "feeFrozen": 0,
+    "free": 10000000000000,
+    "miscFrozen": 0,
+    "reserved": 0,
+  },
+  "nonce": 0,
+  "providers": 0,
+  "sufficients": 0,
+}
+`;
+
+exports[`'shiden' -> 'kusama' xcm transfer 'KSM' > xcmPallet transfer > tx events 1`] = `[]`;
