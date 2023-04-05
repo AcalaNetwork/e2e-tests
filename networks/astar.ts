@@ -21,7 +21,7 @@ export default {
         account: [[[opt.alice.address], { data: { free: 10 * 1e12 } }]],
       },
       Assets: {
-        account: [[[opt.relayToken, opt.alice.address ], { balance: 10 * 1e12 }]],
+        account: [[[opt.relayToken, opt.alice.address], { balance: 10 * 1e12 }]],
       },
       Sudo: {
         key: opt.alice.address,
@@ -35,8 +35,8 @@ export default {
       wasmOverride: {
         kusama: './wasm/astar-55.wasm',
         polkadot: './wasm/shiden-93.wasm',
-      }[opt.network]
-    }
+      }[opt.network],
+    },
   }),
 } satisfies Config<Vars>
 
