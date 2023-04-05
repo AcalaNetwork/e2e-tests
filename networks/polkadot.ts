@@ -23,9 +23,11 @@ export default {
 } satisfies Config
 
 export const polkadot = {
+  paraId: 1000,
   dot: { Concrete: { parents: 0, interior: 'Here' } },
 } as const
 
 export const kusama = {
+  paraId: 1000,
   ksm: { Concrete: { parents: 0, interior: 'Here' } },
 } as const
