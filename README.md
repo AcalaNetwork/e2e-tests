@@ -12,6 +12,9 @@ All tests:
 Run one test only:
 `yarn test ./tests/xcm-transfer/kusama-relay.test.ts`
 
+Or you can just use a keywork since it is using vitest and use regex to find tests:
+`yarn test xcm`
+
 ## Environment variables
 
 - `{NETWORK_NAME}_BLOCK_NUMBER` - block number to run tests against

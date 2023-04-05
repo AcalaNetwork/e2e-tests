@@ -37,15 +37,17 @@ export default {
 export const astar = {
   paraId: 2006,
   paraAccount: '13YMK2eZzuFY1WZGagpYtTgbWBWGdoUD2CtrPj1mQPjY8Ldc',
-  dot: { assetId: '340282366920938463463374607431768211455' },
-  astr: { assetId: '0000000000000000000' },
-  aca: { assetId: '18446744073709551616' },
+  dot: { Concrete: { parents: 1, interior: 'Here' } },
+  astr: { Concrete: { parents: 0, interior: 'Here' } },
+  aca: { parents: 1, interior: { X2: [{ Parachain: 2000 }, { GeneralKey: 0x0000 }] } },
+  usdt: { parents: 1, interior: { X3: [{ Parachain: 1000 }, { PalletInstance: 50 }, { GeneralIndex: 1984 }] } },
 } as const
 
 export const shiden = {
   paraId: 2007,
   paraAccount: 'F7fq1jNy74AqkJ1DP4KqSrWtnTGtXfNVoDwFhTvvPxUvJaq',
-  ksm: { assetId: '340282366920938463463374607431768211455' },
-  sdn: { assetId: '0000000000000000000' },
-  kar: { assetId: '18446744073709551618' },
+  ksm: { Concrete: { parents: 1, interior: 'Here' } },
+  sdn: { Concrete: { parents: 0, interior: 'Here' } },
+  kar: { parents: 1, interior: { X2: [{ Parachain: 2000 }, { GeneralKey: 0x0000 }] } },
+  usdt: { parents: 1, interior: { X3: [{ Parachain: 1000 }, { PalletInstance: 50 }, { GeneralIndex: 1984 }] } },
 } as const
