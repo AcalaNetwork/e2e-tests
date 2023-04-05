@@ -15,22 +15,28 @@ export default {
     endpoint: 'wss://shiden-rpc.dwellir.com',
     relayToken: '340282366920938463463374607431768211455',
   },
-  config: ({ alice, relayToken }) => ({
+  config: (opt) => ({
     storages: {
       System: {
-        account: [[[alice.address], { data: { free: 10 * 1e12 } }]],
+        account: [[[opt.alice.address], { data: { free: 10 * 1e12 } }]],
       },
       Assets: {
-        account: [[[relayToken, alice.address ], { balance: 10 * 1e12 }]],
+        account: [[[opt.relayToken, opt.alice.address ], { balance: 10 * 1e12 }]],
       },
       Sudo: {
-        key: alice.address,
+        key: opt.alice.address,
       },
       PolkadotXcm: {
         // avoid sending xcm version change notifications to makes things faster
         $removePrefix: ['versionNotifyTargets', 'versionNotifiers', 'supportedVersion'],
       },
     },
+    options: {
+      wasmOverride: {
+        kusama: './wasm/astar-55.wasm',
+        polkadot: './wasm/shiden-93.wasm',
+      }[opt.network]
+    }
   }),
 } satisfies Config<Vars>
 
