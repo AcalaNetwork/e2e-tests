@@ -33,8 +33,8 @@ export default {
     },
     options: {
       wasmOverride: {
-        kusama: './wasm/astar-55.wasm',
-        polkadot: './wasm/shiden-93.wasm',
+        polkadot: './wasm/astar-55.wasm',
+        kusama: './wasm/shiden-93.wasm',
       }[opt.network],
     },
   }),
