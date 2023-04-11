@@ -7,6 +7,9 @@ on:
 
 jobs:
   tests:
+    strategy:
+        matrix:
+          tests: [xcm-transfer, acala]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -18,10 +21,12 @@ jobs:
         node-version: 18.x
         cache: 'yarn'
     - run: yarn --immutable
-    - run: yarn test
+    - run: yarn ts-node scripts/update-env.ts
+    - run: yarn test tests/${{ matrix.tests }}
     - uses: ravsamhq/notify-slack-action@v2
       if: ${{ failure() }}
       with:
         status: ${{ job.status }}
       env:
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+

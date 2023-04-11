@@ -8,6 +8,9 @@ on:
 
 jobs:
   tests:
+    strategy:
+        matrix:
+          tests: [xcm-transfer, acala]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -20,4 +23,5 @@ jobs:
         cache: 'yarn'
     - run: yarn --immutable
     - run: yarn lint
-    - run: yarn test
+    - run: yarn ts-node scripts/update-env.ts
+    - run: yarn test tests/${{ matrix.tests }}
