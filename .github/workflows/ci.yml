@@ -7,7 +7,7 @@ on:
     branches: [ master ]
 
 jobs:
-  tests:
+  lint:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -20,4 +20,20 @@ jobs:
         cache: 'yarn'
     - run: yarn --immutable
     - run: yarn lint
-    - run: yarn test
+  tests:
+    strategy:
+        matrix:
+          tests: [xcm-transfer, acala]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules: recursive
+    - name: Use Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18.x
+        cache: 'yarn'
+    - run: yarn --immutable
+    - run: yarn ts-node scripts/update-env.ts
+    - run: yarn test tests/${{ matrix.tests }}
