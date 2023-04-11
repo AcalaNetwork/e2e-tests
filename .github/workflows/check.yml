@@ -5,6 +5,9 @@ on:
   schedule:
     - cron: '0 0,12 * * *'
 
+env:
+  DB_PATH: ./db.sqlite
+
 jobs:
   tests:
     strategy:

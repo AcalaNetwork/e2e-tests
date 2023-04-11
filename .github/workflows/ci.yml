@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [ master ]
 
+env:
+  DB_PATH: ./db.sqlite
+
 jobs:
   lint:
     runs-on: ubuntu-latest
