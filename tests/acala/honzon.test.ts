@@ -26,7 +26,7 @@ describe.each([
 
     await chain.dev.setStorage({
       Tokens: {
-        accounts: [[[alice.address, { Token: relayToken }], { free: 100e12 }]],
+        accounts: [[[alice.address, relayToken], { free: 100e12 }]],
       },
     })
 
