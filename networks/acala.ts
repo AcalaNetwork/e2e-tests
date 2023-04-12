@@ -28,7 +28,7 @@ export default {
       },
       Tokens: {
         accounts: [
-          [[alice.address, { Token: relayToken }], { free: 10 * 1e12 }],
+          [[alice.address, { Token: relayToken }], { free: 100 * 1e12 }],
           [[alice.address, { Token: relayLiquidToken }], { free: 100 * 1e12 }],
           [[alice.address, { Token: stableToken }], { free: 1000 * 1e12 }],
         ],
