@@ -25,6 +25,7 @@ jobs:
     - run: yarn lint
   tests:
     strategy:
+        fail-fast: true
         matrix:
           tests: [xcm-transfer, acala]
     runs-on: ubuntu-latest

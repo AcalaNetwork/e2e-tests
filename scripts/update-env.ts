@@ -15,7 +15,7 @@ const main = async () => {
   let envFile = readEnvFile()
 
   // comment out current ones
-  envFile = envFile.replaceAll(/(^[A-Z]+_BLOCK_NUMBER=\d+)/gm, '# $1')
+  envFile = envFile.replaceAll(/(^[A-Z0-9]+_BLOCK_NUMBER=\d+)/gm, '# $1')
 
   // prepend new ones
   const blockNumbers: Promise<string>[] = []
