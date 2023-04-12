@@ -24,8 +24,13 @@ describe.each([
     const { [name]: chain1 } = await createNetworks({ [name]: undefined })
     chain = chain1
 
-    const head = chain.chain.head
-    await chain.chain.setHead(head)
+    await chain.dev.setStorage({
+      Tokens: {
+        accounts: [
+          [[alice.address, { Token: relayToken }], { free: 100e12 }],
+        ]
+      }
+    })
 
     return async () => await chain.teardown()
   })
