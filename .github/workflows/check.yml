@@ -11,7 +11,7 @@ env:
 jobs:
   tests:
     strategy:
-        fail-fast: true
+        fail-fast: false
         matrix:
           tests: [xcm-transfer, acala]
     runs-on: ubuntu-latest
