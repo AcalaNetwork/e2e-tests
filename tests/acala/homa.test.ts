@@ -99,7 +99,7 @@ describe.each([
       }
     })
 
-    it.only('unbond withdraw works', async () => {
+    it('unbond withdraw works', async () => {
       const tx = await sendTransaction(
         parachain.api.tx.sudo.sudo(parachain.api.tx.homa.forceBumpCurrentEra(1)).signAsync(alice)
       )
