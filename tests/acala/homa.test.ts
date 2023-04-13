@@ -1,6 +1,5 @@
 import { beforeEach, describe, it } from 'vitest'
 import { sendTransaction, testingPairs } from '@acala-network/chopsticks-testing'
-import fs from 'fs'
 
 import { Network, createNetworks } from '../../networks'
 import { checkEvents, checkSystemEvents, checkUmp } from '../../helpers'
@@ -15,7 +14,7 @@ describe.each([
     name: 'acala',
     relay: 'polkadot9381',
     wasmOverride: './wasm/acala-2150.wasm',
-    unbond: { para:  3346762, relay: 15059809, era: '0x14040000' },
+    unbond: { para: 3346762, relay: 15059809, era: '0x14040000' },
   },
 ] as const)('$name homa', async ({ name, relay, wasmOverride, unbond }) => {
   let relaychain: Network
