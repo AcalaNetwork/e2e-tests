@@ -78,6 +78,19 @@ exports[`'acala' honzon > with positions > loans by Dex close works > events 1`]
     "method": "PositionUpdated",
     "section": "loans",
   },
+  {
+    "data": {
+      "collateralType": {
+        "Token": "DOT",
+      },
+      "debitValue": "(number)",
+      "owner": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+      "refundCollateralAmount": "(number)",
+      "soldCollateralAmount": "(number)",
+    },
+    "method": "CloseCDPInDebitByDEX",
+    "section": "cdpEngine",
+  },
 ]
 `;
 
