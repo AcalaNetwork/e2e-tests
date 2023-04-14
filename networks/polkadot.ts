@@ -20,8 +20,8 @@ export default {
       },
       Dmp: {
         // clear existing dmp to avoid impact test result
-        $removePrefix: ['downwardMessageQueues']
-      }
+        $removePrefix: ['downwardMessageQueues'],
+      },
     },
   }),
 } satisfies Config
