@@ -18,6 +18,10 @@ export default {
         // those can makes block building super slow
         $removePrefix: ['disputes'],
       },
+      Dmp: {
+        // clear existing dmp to avoid impact test result
+        $removePrefix: ['downwardMessageQueues']
+      }
     },
   }),
 } satisfies Config

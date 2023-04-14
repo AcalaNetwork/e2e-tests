@@ -22,7 +22,7 @@ const main = async () => {
   for (const { polkadot, kusama } of Object.values(networkDefs)) {
     for (const { name, endpoint } of [polkadot, kusama]) {
       const fn = async () => {
-        const api = await ApiPromise.create({ provider: new WsProvider(endpoint) })
+        const api = await ApiPromise.create({ provider: new WsProvider(endpoint), noInitWarn: true })
         const header = await api.rpc.chain.getHeader()
         const blockNumber = header.number.toNumber()
         return `${name.toUpperCase()}_BLOCK_NUMBER=${blockNumber}`
