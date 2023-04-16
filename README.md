@@ -48,6 +48,10 @@ DB_PATH=./db.sqlite
 
 Use specific block number for tests and db cache can signficantly improve test running speed.
 
+Run `yarn update-env` to update .env file with latest block number.
+
+To debug failing tests on CI, find the block number config from CI log and put them in .env to run the test with the same block height.
+
 ### Use Subway to catch RPC responses
 
 Use [subway](http://github.com/AcalaNetwork/subway) to run local endpoints to catch RPC responses for additonal improved test running speed.
