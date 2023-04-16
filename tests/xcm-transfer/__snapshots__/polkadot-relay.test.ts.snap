@@ -326,9 +326,9 @@ exports[`'acala' -> 'polkadot9381' xcm transfer 'DOT wiht limited weight' > xtok
 {
   "consumers": 0,
   "data": {
-    "feeFrozen": 0,
+    "flags": 0,
     "free": 10000000000000,
-    "miscFrozen": 0,
+    "frozen": 0,
     "reserved": 0,
   },
   "nonce": 0,
@@ -415,7 +415,10 @@ exports[`'acala' -> 'polkadot9381' xcm transfer 'DOT wiht limited weight' > xtok
     "data": [
       "(hash)",
       {
-        "Error": "Barrier",
+        "Complete": {
+          "proofSize": "(rounded 7200)",
+          "refTime": "(rounded 260000000)",
+        },
       },
     ],
     "method": "ExecutedUpward",
@@ -483,9 +486,9 @@ exports[`'acala' -> 'polkadot9381' xcm transfer 'DOT' > xtokens transfer > balan
 {
   "consumers": 0,
   "data": {
-    "feeFrozen": 0,
-    "free": "(rounded 11000000000000)",
-    "miscFrozen": 0,
+    "flags": 0,
+    "free": 10000000000000,
+    "frozen": 0,
     "reserved": 0,
   },
   "nonce": 0,
@@ -573,8 +576,8 @@ exports[`'acala' -> 'polkadot9381' xcm transfer 'DOT' > xtokens transfer > to ch
       "(hash)",
       {
         "Complete": {
-          "proofSize": "(rounded 260000)",
-          "refTime": 4000000000,
+          "proofSize": "(rounded 7200)",
+          "refTime": "(rounded 260000000)",
         },
       },
     ],
@@ -705,9 +708,9 @@ exports[`'polkadot9381' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > bal
 {
   "consumers": 0,
   "data": {
-    "feeFrozen": 0,
-    "free": "(rounded 9000000000000)",
-    "miscFrozen": 0,
+    "flags": 0,
+    "free": 10000000000000,
+    "frozen": 0,
     "reserved": 0,
   },
   "nonce": 1,
@@ -763,8 +766,8 @@ exports[`'polkadot9381' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > tx 
     "data": [
       {
         "Complete": {
-          "proofSize": "(rounded 65500)",
-          "refTime": 1000000000,
+          "proofSize": "(rounded 24700)",
+          "refTime": "(rounded 654000000)",
         },
       },
     ],
