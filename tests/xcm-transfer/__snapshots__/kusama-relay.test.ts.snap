@@ -474,7 +474,7 @@ exports[`'kusama' -> 'shiden' xcm transfer 'KSM' > xcmPallet transfer > balance 
   "consumers": 0,
   "data": {
     "feeFrozen": 0,
-    "free": "(rounded 10000000000000)",
+    "free": "(rounded 9000000000000)",
     "miscFrozen": 0,
     "reserved": 0,
   },
@@ -507,7 +507,7 @@ exports[`'kusama' -> 'shiden' xcm transfer 'KSM' > xcmPallet transfer > tx event
             "proofSize": 0,
             "refTime": "(rounded 751000000)",
           },
-          "FailedToTransactAsset",
+          "DestinationUnsupported",
         ],
       },
     ],
@@ -516,20 +516,3 @@ exports[`'kusama' -> 'shiden' xcm transfer 'KSM' > xcmPallet transfer > tx event
   },
 ]
 `;
-
-exports[`'shiden' -> 'kusama' xcm transfer 'KSM' > xcmPallet transfer > balance on from chain 1`] = `
-{
-  "consumers": 0,
-  "data": {
-    "feeFrozen": 0,
-    "free": 10000000000000,
-    "miscFrozen": 0,
-    "reserved": 0,
-  },
-  "nonce": 0,
-  "providers": 0,
-  "sufficients": 0,
-}
-`;
-
-exports[`'shiden' -> 'kusama' xcm transfer 'KSM' > xcmPallet transfer > tx events 1`] = `[]`;

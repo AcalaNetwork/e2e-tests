@@ -60,7 +60,7 @@ const tests = [
     name: 'DOT',
     test: {
       xcmPalletDown: {
-        tx: tx.xcmPallet.limitedReserveTransferAssetsV2(polkadot.dot, 1e12, tx.xcmPallet.parachainV2(1, astar.paraId)),
+        tx: tx.xcmPallet.limitedReserveTransferAssetsV2(polkadot.dot, 1e12, tx.xcmPallet.parachainV2(0, astar.paraId)),
         balance: query.assets(astar.dot),
       },
     },
