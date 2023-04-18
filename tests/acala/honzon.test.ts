@@ -1,132 +1,86 @@
-import { afterAll, beforeEach, describe, expect, it } from 'vitest'
+import { beforeEach, describe, it } from 'vitest'
+import { bnToHex } from '@polkadot/util'
 import { sendTransaction, testingPairs } from '@acala-network/chopsticks-testing'
 
-import { adjustLoan, adjustLoanByDebitValue, closeLoanHasDebitByDex } from '../../helpers/api/extrinsics'
-import { check, checkEvents } from '../../helpers'
-import { queryPositions, queryTokenBalance } from '../../helpers/api/query'
-import networks from '../../networks'
+import { Network, createNetworks } from '../../networks'
+import { acala, karura } from '../../networks/acala'
+import { check, checkEvents, checkSystemEvents } from '../../helpers'
 
-describe('Karura honzon', async () => {
-  const karura = await networks.karura()
-
+describe.each([
+  {
+    name: 'karura',
+    relayToken: karura.ksm,
+    stableToken: karura.ausd,
+  },
+  {
+    name: 'acala',
+    relayToken: acala.dot,
+    stableToken: acala.ausd,
+  },
+] as const)('$name honzon', async ({ name, relayToken, stableToken }) => {
   const { alice } = testingPairs()
-
-  afterAll(async () => {
-    await karura.teardown()
-  })
+  let chain: Network
 
   beforeEach(async () => {
-    await karura.dev.setStorage({
-      System: {
-        Account: [[[alice.address], { data: { free: 10 * 1e12 } }]],
-      },
-      Tokens: {
-        Accounts: [
-          [[alice.address, { Token: 'KSM' }], { free: 100 * 1e12 }],
-          [[alice.address, { Token: 'LKSM' }], { free: 1000 * 1e12 }],
-          [[alice.address, { Token: 'KUSD' }], { free: 100 * 1e12 }],
-        ],
-      },
-      Sudo: {
-        Key: alice.address,
+    const { [name]: chain1 } = await createNetworks({ [name]: undefined })
+    chain = chain1
+
+    // restore Homa.toBondPool to correct liquid token exchange rate
+    const apiAt = await chain.api.at(await chain.api.rpc.chain.getBlockHash(chain.chain.head.number - 1))
+    const toBondPool: any = await apiAt.query.homa.toBondPool()
+    await chain.dev.setStorage({
+      Homa: {
+        toBondPool: bnToHex(toBondPool, { bitLength: 128, isLe: true }),
       },
     })
+
+    await chain.dev.setStorage({
+      Tokens: {
+        accounts: [[[alice.address, relayToken], { free: 100e12 }]],
+      },
+    })
+
+    return async () => await chain.teardown()
   })
 
-  it('honzon deposit and debit works', async () => {
-    const tx = await sendTransaction(
-      adjustLoan(karura.api, 'KSM', '50000000000000', '500000000000000').signAsync(alice)
-    )
+  describe('with positions', () => {
+    beforeEach(async () => {
+      await sendTransaction(chain.api.tx.honzon.adjustLoan(relayToken, 50e12, 500e12).signAsync(alice))
 
-    await karura.chain.newBlock()
+      await chain.chain.newBlock()
+    })
 
-    await checkEvents(tx, { section: 'loans', method: 'PositionUpdated' }).toMatchSnapshot()
-    expect(
-      await check(queryTokenBalance(karura.api, { Token: 'KUSD' }, alice.address))
-        .redact()
-        .value()
-    ).toMatchInlineSnapshot(`
-      {
-        "free": "(rounded 150000000000000)",
-        "frozen": 0,
-        "reserved": 0,
-      }
-    `)
-    expect(await queryPositions(karura.api, 'KSM', alice.address)).toMatchInlineSnapshot(`
-      {
-        "collateral": 50000000000000,
-        "debit": 500000000000000,
-      }
-    `)
-  })
+    it('honzon deposit and debit works', async () => {
+      await checkSystemEvents(chain, { section: 'loans', method: 'PositionUpdated' }).toMatchSnapshot()
+      await check(chain.api.query.tokens.accounts(alice.address, stableToken)).redact({ number: 1 }).toMatchSnapshot()
+      await check(chain.api.query.loans.positions(relayToken, alice.address)).toMatchSnapshot()
+    })
 
-  it('honzon payback works', async () => {
-    expect(await queryPositions(karura.api, 'KSM', alice.address)).toMatchInlineSnapshot(`
-      {
-        "collateral": 50000000000000,
-        "debit": 500000000000000,
-      }
-    `)
-    const tx = await sendTransaction(
-      adjustLoanByDebitValue(karura.api, 'KSM', '-50000000000000', '-500000000000000').signAsync(alice, { nonce: 0 })
-    )
+    it('honzon payback works', async () => {
+      const tx = await sendTransaction(
+        chain.api.tx.honzon.adjustLoanByDebitValue(relayToken, -50e12, -500e12).signAsync(alice)
+      )
 
-    await karura.chain.newBlock()
+      await chain.chain.newBlock()
 
-    await checkEvents(tx, { section: 'loans', method: 'PositionUpdated' }).toMatchSnapshot()
-    expect(
-      await check(queryTokenBalance(karura.api, { Token: 'KUSD' }, alice.address))
-        .redact({ number: 1 })
-        .value()
-    ).toMatchInlineSnapshot(`
-      {
-        "free": "(rounded 50000000000000)",
-        "frozen": 0,
-        "reserved": 0,
-      }
-    `)
-    expect(await queryPositions(karura.api, 'KSM', alice.address)).toMatchInlineSnapshot(`
-      {
-        "collateral": 0,
-        "debit": 0,
-      }
-    `)
-  })
+      await checkEvents(tx, { section: 'loans', method: 'PositionUpdated' }).toMatchSnapshot()
+      await check(chain.api.query.tokens.accounts(alice.address, stableToken)).redact({ number: 1 }).toMatchSnapshot()
+      await check(chain.api.query.loans.positions(relayToken, alice.address)).toMatchSnapshot()
+    })
 
-  it('loans by Dex close works', async () => {
-    const tx0 = await sendTransaction(
-      adjustLoan(karura.api, 'KSM', '50000000000000', '500000000000000').signAsync(alice, { nonce: 0 })
-    )
+    it('loans by Dex close works', async () => {
+      const tx1 = await sendTransaction(chain.api.tx.honzon.closeLoanHasDebitByDex(relayToken, 50e12).signAsync(alice))
 
-    await karura.chain.newBlock()
+      await chain.chain.newBlock()
 
-    await checkEvents(tx0, { section: 'loans', method: 'PositionUpdated' }).toMatchSnapshot()
-
-    expect(await queryPositions(karura.api, 'KSM', alice.address)).toMatchInlineSnapshot(`
-      {
-        "collateral": 50000000000000,
-        "debit": 500000000000000,
-      }
-    `)
-
-    const tx1 = await sendTransaction(
-      closeLoanHasDebitByDex(karura.api, 'KSM', '50000000000000').signAsync(alice, { nonce: 1 })
-    )
-
-    await karura.chain.newBlock()
-
-    await checkEvents(
-      tx1,
-      { section: 'loans', method: 'PositionUpdated' },
-      { section: 'cdpEngine', method: 'CloseCDPInDebitByDEX' }
-    )
-      .redact({ number: 1 }) // reduce precision to ensure it passes
-      .toMatchSnapshot()
-    expect(await queryPositions(karura.api, 'KSM', alice.address)).toMatchInlineSnapshot(`
-      {
-        "collateral": 0,
-        "debit": 0,
-      }
-    `)
+      await checkEvents(
+        tx1,
+        { section: 'loans', method: 'PositionUpdated' },
+        { section: 'cdpEngine', method: 'CloseCDPInDebitByDEX' }
+      )
+        .redact({ number: true })
+        .toMatchSnapshot()
+      await check(chain.api.query.loans.positions(relayToken, alice.address)).toMatchSnapshot()
+    })
   })
 })

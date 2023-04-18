@@ -11,7 +11,8 @@
 		"prepare": "husky install",
 		"test": "LOG_LEVEL=error vitest --silent",
 		"test:ui": "yarn test --ui",
-		"test:dev": "vitest --inspect"
+		"test:dev": "vitest --inspect",
+		"update-env": "ts-node scripts/update-env.ts"
 	},
 	"dependencies": {
 		"@acala-network/chopsticks": "^0.6.0",

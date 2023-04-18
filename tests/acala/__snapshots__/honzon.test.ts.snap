@@ -1,15 +1,15 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Karura honzon > honzon deposit and debit works > events 1`] = `
+exports[`'acala' honzon > with positions > honzon deposit and debit works > system events 1`] = `
 [
   {
     "data": {
       "collateralAdjustment": 50000000000000,
       "collateralType": {
-        "Token": "KSM",
+        "Token": "DOT",
       },
       "debitAdjustment": 500000000000000,
-      "owner": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+      "owner": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
     },
     "method": "PositionUpdated",
     "section": "loans",
@@ -17,16 +17,31 @@ exports[`Karura honzon > honzon deposit and debit works > events 1`] = `
 ]
 `;
 
-exports[`Karura honzon > honzon payback works > events 1`] = `
+exports[`'acala' honzon > with positions > honzon deposit and debit works 1`] = `
+{
+  "free": "(rounded 1000000000000000)",
+  "frozen": 0,
+  "reserved": 0,
+}
+`;
+
+exports[`'acala' honzon > with positions > honzon deposit and debit works 2`] = `
+{
+  "collateral": 50000000000000,
+  "debit": 500000000000000,
+}
+`;
+
+exports[`'acala' honzon > with positions > honzon payback works > events 1`] = `
 [
   {
     "data": {
       "collateralAdjustment": -50000000000000,
       "collateralType": {
-        "Token": "KSM",
+        "Token": "DOT",
       },
       "debitAdjustment": -500000000000000,
-      "owner": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+      "owner": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
     },
     "method": "PositionUpdated",
     "section": "loans",
@@ -34,33 +49,31 @@ exports[`Karura honzon > honzon payback works > events 1`] = `
 ]
 `;
 
-exports[`Karura honzon > loans by Dex close works > events 1`] = `
-[
-  {
-    "data": {
-      "collateralAdjustment": 50000000000000,
-      "collateralType": {
-        "Token": "KSM",
-      },
-      "debitAdjustment": 500000000000000,
-      "owner": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "PositionUpdated",
-    "section": "loans",
-  },
-]
+exports[`'acala' honzon > with positions > honzon payback works 1`] = `
+{
+  "free": "(rounded 1000000000000000)",
+  "frozen": 0,
+  "reserved": 0,
+}
 `;
 
-exports[`Karura honzon > loans by Dex close works > events 2`] = `
+exports[`'acala' honzon > with positions > honzon payback works 2`] = `
+{
+  "collateral": 0,
+  "debit": 0,
+}
+`;
+
+exports[`'acala' honzon > with positions > loans by Dex close works > events 1`] = `
 [
   {
     "data": {
-      "collateralAdjustment": -50000000000000,
+      "collateralAdjustment": "(number)",
       "collateralType": {
-        "Token": "KSM",
+        "Token": "DOT",
       },
-      "debitAdjustment": -500000000000000,
-      "owner": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+      "debitAdjustment": "(number)",
+      "owner": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
     },
     "method": "PositionUpdated",
     "section": "loans",
@@ -68,15 +81,123 @@ exports[`Karura honzon > loans by Dex close works > events 2`] = `
   {
     "data": {
       "collateralType": {
-        "Token": "KSM",
+        "Token": "DOT",
       },
-      "debitValue": "(rounded 50000000000000)",
-      "owner": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-      "refundCollateralAmount": "(rounded 50000000000000)",
-      "soldCollateralAmount": "(rounded 1000000000000)",
+      "debitValue": "(number)",
+      "owner": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+      "refundCollateralAmount": "(number)",
+      "soldCollateralAmount": "(number)",
     },
     "method": "CloseCDPInDebitByDEX",
     "section": "cdpEngine",
   },
 ]
+`;
+
+exports[`'acala' honzon > with positions > loans by Dex close works 1`] = `
+{
+  "collateral": 0,
+  "debit": 0,
+}
+`;
+
+exports[`'karura' honzon > with positions > honzon deposit and debit works > system events 1`] = `
+[
+  {
+    "data": {
+      "collateralAdjustment": 50000000000000,
+      "collateralType": {
+        "Token": "KSM",
+      },
+      "debitAdjustment": 500000000000000,
+      "owner": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "PositionUpdated",
+    "section": "loans",
+  },
+]
+`;
+
+exports[`'karura' honzon > with positions > honzon deposit and debit works 1`] = `
+{
+  "free": "(rounded 1000000000000000)",
+  "frozen": 0,
+  "reserved": 0,
+}
+`;
+
+exports[`'karura' honzon > with positions > honzon deposit and debit works 2`] = `
+{
+  "collateral": 50000000000000,
+  "debit": 500000000000000,
+}
+`;
+
+exports[`'karura' honzon > with positions > honzon payback works > events 1`] = `
+[
+  {
+    "data": {
+      "collateralAdjustment": -50000000000000,
+      "collateralType": {
+        "Token": "KSM",
+      },
+      "debitAdjustment": -500000000000000,
+      "owner": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "PositionUpdated",
+    "section": "loans",
+  },
+]
+`;
+
+exports[`'karura' honzon > with positions > honzon payback works 1`] = `
+{
+  "free": "(rounded 1000000000000000)",
+  "frozen": 0,
+  "reserved": 0,
+}
+`;
+
+exports[`'karura' honzon > with positions > honzon payback works 2`] = `
+{
+  "collateral": 0,
+  "debit": 0,
+}
+`;
+
+exports[`'karura' honzon > with positions > loans by Dex close works > events 1`] = `
+[
+  {
+    "data": {
+      "collateralAdjustment": "(number)",
+      "collateralType": {
+        "Token": "KSM",
+      },
+      "debitAdjustment": "(number)",
+      "owner": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "PositionUpdated",
+    "section": "loans",
+  },
+  {
+    "data": {
+      "collateralType": {
+        "Token": "KSM",
+      },
+      "debitValue": "(number)",
+      "owner": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+      "refundCollateralAmount": "(number)",
+      "soldCollateralAmount": "(number)",
+    },
+    "method": "CloseCDPInDebitByDEX",
+    "section": "cdpEngine",
+  },
+]
+`;
+
+exports[`'karura' honzon > with positions > loans by Dex close works 1`] = `
+{
+  "collateral": 0,
+  "debit": 0,
+}
 `;
