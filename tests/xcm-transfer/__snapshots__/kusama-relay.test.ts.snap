@@ -486,7 +486,7 @@ exports[`'kusama' -> 'shiden' xcm transfer 'KSM' > xcmPallet transfer > balance 
 
 exports[`'kusama' -> 'shiden' xcm transfer 'KSM' > xcmPallet transfer > balance on to chain 1`] = `
 {
-  "balance": 10000000000000,
+  "balance": "(rounded 11000000000000)",
   "extra": null,
   "isFrozen": false,
   "reason": {
@@ -495,20 +495,48 @@ exports[`'kusama' -> 'shiden' xcm transfer 'KSM' > xcmPallet transfer > balance 
 }
 `;
 
-exports[`'kusama' -> 'shiden' xcm transfer 'KSM' > xcmPallet transfer > to chain dmp events 1`] = `[]`;
+exports[`'kusama' -> 'shiden' xcm transfer 'KSM' > xcmPallet transfer > to chain dmp events 1`] = `
+[
+  {
+    "data": {
+      "count": 1,
+    },
+    "method": "DownwardMessagesReceived",
+    "section": "parachainSystem",
+  },
+  {
+    "data": {
+      "messageId": "(hash)",
+      "outcome": {
+        "Complete": 4000000000,
+      },
+    },
+    "method": "ExecutedDownward",
+    "section": "dmpQueue",
+  },
+  {
+    "data": {
+      "dmqHead": "(hash)",
+      "weightUsed": {
+        "proofSize": 0,
+        "refTime": 4000000000,
+      },
+    },
+    "method": "DownwardMessagesProcessed",
+    "section": "parachainSystem",
+  },
+]
+`;
 
 exports[`'kusama' -> 'shiden' xcm transfer 'KSM' > xcmPallet transfer > tx events 1`] = `
 [
   {
     "data": [
       {
-        "Incomplete": [
-          {
-            "proofSize": 0,
-            "refTime": "(rounded 751000000)",
-          },
-          "DestinationUnsupported",
-        ],
+        "Complete": {
+          "proofSize": 0,
+          "refTime": "(rounded 751000000)",
+        },
       },
     ],
     "method": "Attempted",

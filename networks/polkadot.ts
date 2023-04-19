@@ -11,6 +11,9 @@ export default {
   },
   config: ({ alice }) => ({
     storages: {
+      xcmPallet: {
+        safeXcmVersion: 2,
+      },
       System: {
         Account: [[[alice.address], { data: { free: 10 * 1e12 } }]],
       },
