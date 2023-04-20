@@ -1,9 +1,5 @@
 endpoints:
-  - wss://shiden-rpc.dwellir.com
-  - wss://shiden.public.blastapi.io
-  - wss://shiden-rpc.dwellir.com
-  - wss://shiden.api.onfinality.io/public-ws
-  - wss://rpc.shiden.astar.network
+  - wss://astar.api.onfinality.io:443/public-ws
 
 stale_timeout_seconds: 180 # rotate endpoint if no new blocks for 3 minutes
 
