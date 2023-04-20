@@ -12,7 +12,6 @@ export default {
   },
   kusama: {
     name: 'shiden' as const,
-    // endpoint: 'wss://rpc.shiden.astar.network',
     endpoint: 'wss://shiden.api.onfinality.io/public-ws',
     relayToken: '340282366920938463463374607431768211455',
   },
