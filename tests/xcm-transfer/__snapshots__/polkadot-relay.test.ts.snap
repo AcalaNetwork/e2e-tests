@@ -435,7 +435,10 @@ exports[`'polkadot' -> 'astar' xcm transfer 'DOT' > xcmPallet transfer > to chai
   {
     "data": {
       "dmqHead": "(hash)",
-      "weightUsed": 4000000000,
+      "weightUsed": {
+        "proofSize": 0,
+        "refTime": 4000000000,
+      },
     },
     "method": "DownwardMessagesProcessed",
     "section": "parachainSystem",
