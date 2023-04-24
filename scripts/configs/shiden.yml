@@ -1,5 +1,5 @@
 endpoints:
-  - wss://astar.api.onfinality.io:443/public-ws
+  - wss://shiden.api.onfinality.io:443/public-ws
 
 stale_timeout_seconds: 180 # rotate endpoint if no new blocks for 3 minutes
 

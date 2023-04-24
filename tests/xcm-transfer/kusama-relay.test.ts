@@ -53,18 +53,6 @@ const tests = [
       },
     },
   },
-  // // shiden <-> kusama
-  // {
-  //   from: 'shiden',
-  //   to: 'kusama',
-  //   name: 'KSM',
-  //   test: {
-  //     xcmPalletDown: {
-  //       tx: tx.xcmPallet.limitedReserveTransferAssetsV2(shiden.ksm, 1e12, tx.xcmPallet.relaychainV3),
-  //       balance: query.assets(shiden.ksm),
-  //     },
-  //   },
-  // },
   // kusama <-> shiden
   {
     from: 'kusama',
