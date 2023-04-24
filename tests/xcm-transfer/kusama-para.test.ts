@@ -14,7 +14,7 @@ const tests = [
     to: 'karura',
     name: 'USDT',
     test: {
-      xcmPalletHorzontal: {
+      xcmPalletHorizontal: {
         tx: tx.xcmPallet.limitedReserveTransferAssetsV3(
           statemine.usdt,
           1e6,
@@ -35,7 +35,7 @@ const tests = [
       },
     }),
     test: {
-      xtokenstHorzontal: {
+      xtokenstHorizontal: {
         tx: tx.xtokens.transfer(karura.usdt, 1e6, tx.xtokens.parachainV2(statemine.paraId)),
         fromBalance: query.tokens(karura.usdt),
         toBalance: query.assets(statemine.usdtIndex),
@@ -61,7 +61,7 @@ const tests = [
       },
     },
     test: {
-      xtokenstHorzontal: {
+      xtokenstHorizontal: {
         tx: tx.xtokens.transfer(karura.dai, 10n ** 18n, tx.xtokens.parachainV2(basilisk.paraId)),
         fromBalance: query.evm(karura.dai.Erc20, '0x2aef47e62c966f0695d5af370ddc1bc7c56902063eee60853e2872fc0ff4f88c'),
         toBalance: query.tokens(basilisk.dai),
@@ -78,7 +78,7 @@ const tests = [
       },
     }),
     test: {
-      xtokenstHorzontal: {
+      xtokenstHorizontal: {
         tx: tx.xtokens.transfer(basilisk.dai, 10n ** 18n, tx.xtokens.parachainV2(karura.paraId), 5e9),
         fromBalance: query.tokens(basilisk.dai),
         toBalance: query.evm(karura.dai.Erc20, '0x2aef47e62c966f0695d5af370ddc1bc7c56902063eee60853e2872fc0ff4f88c'),

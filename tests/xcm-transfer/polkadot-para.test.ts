@@ -24,7 +24,7 @@ const tests = [
       },
     }),
     test: {
-      xcmPalletHorzontal: {
+      xcmPalletHorizontal: {
         tx: tx.xcmPallet.limitedReserveTransferAssetsV2(statemint.wbtc, 1e7, tx.xcmPallet.parachainV2(1, acala.paraId)),
         fromBalance: query.assets(statemint.wbtcIndex),
         toBalance: query.tokens(acala.wbtc),
@@ -55,7 +55,7 @@ const tests = [
       },
     }),
     test: {
-      xtokenstHorzontal: {
+      xtokenstHorizontal: {
         tx: tx.xtokens.transferMulticurrencies(
           acala.wbtc,
           1e7,
@@ -87,7 +87,7 @@ const tests = [
       },
     },
     test: {
-      xtokenstHorzontal: {
+      xtokenstHorizontal: {
         tx: tx.xtokens.transfer(acala.dai, 10n ** 18n, tx.xtokens.parachainV2(hydraDX.paraId)),
         fromBalance: query.evm(acala.dai.Erc20, '0x2aef47e62c966f0695d5af370ddc1bc7c56902063eee60853e2872fc0ff4f88c'),
         toBalance: query.tokens(hydraDX.dai),
@@ -104,7 +104,7 @@ const tests = [
       },
     }),
     test: {
-      xtokenstHorzontal: {
+      xtokenstHorizontal: {
         tx: tx.xtokens.transfer(hydraDX.dai, 10n ** 18n, tx.xtokens.parachainV2(acala.paraId), 5e9),
         fromBalance: query.tokens(hydraDX.dai),
         toBalance: query.evm(acala.dai.Erc20, '0x2aef47e62c966f0695d5af370ddc1bc7c56902063eee60853e2872fc0ff4f88c'),
@@ -119,7 +119,7 @@ const tests = [
     name: 'DOT',
     toAccount: ({ alith }: Context) => alith,
     test: {
-      xtokenstHorzontal: {
+      xtokenstHorizontal: {
         tx: tx.xtokens.transfer(acala.dot, 1e12, tx.xtokens.parachainAccountId20V2(moonbeam.paraId)),
         fromBalance: query.tokens(acala.dot),
         toBalance: query.assets(moonbeam.dot),
@@ -139,7 +139,7 @@ const tests = [
       },
     }),
     test: {
-      xtokenstHorzontal: {
+      xtokenstHorizontal: {
         tx: tx.xtokens.transfer({ ForeignAsset: moonbeam.dot }, 1e12, tx.xtokens.parachainV2(acala.paraId)),
         fromBalance: query.assets(moonbeam.dot),
         toBalance: query.tokens(acala.dot),
