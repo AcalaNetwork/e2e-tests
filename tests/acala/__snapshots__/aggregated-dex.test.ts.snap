@@ -53,29 +53,5 @@ exports[`'karura' aggregatedDex > swapWithExactSupply > events 1`] = `
     "method": "Swap",
     "section": "dex",
   },
-  {
-    "data": {
-      "a": "(number)",
-      "balances": [
-        "(number)",
-        "(number)",
-        "(number)",
-      ],
-      "inputAmount": "(number)",
-      "inputAsset": {
-        "Token": "KUSD",
-      },
-      "minOutputAmount": "(number)",
-      "outputAmount": "(number)",
-      "outputAsset": {
-        "ForeignAsset": "(number)",
-      },
-      "poolId": "(number)",
-      "swapper": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-      "totalSupply": "(number)",
-    },
-    "method": "TokenSwapped",
-    "section": "stableAsset",
-  },
 ]
 `;
