@@ -4,6 +4,17 @@ End to end tests for Acala and Karura.
 
 Tests are powered by [Chopsticks](http://github.com/AcalaNetwork/chopsticks) to always run with latest mainnet block.
 
+## Running tests
+
+All tests:
+`yarn test`
+
+Run one test only:
+`yarn test ./tests/xcm-transfer/kusama-relay.test.ts`
+
+Or you can just use a keywork since it is using vitest and use regex to find tests:
+`yarn test xcm`
+
 ## Environment variables
 
 - `{NETWORK_NAME}_BLOCK_NUMBER` - block number to run tests against

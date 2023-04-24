@@ -1,6 +1,7 @@
 import { query, tx } from '../../helpers/api'
 
 import { acala } from '../../networks/acala'
+import { astar } from '../../networks/astar'
 import { polkadot } from '../../networks/polkadot'
 
 import buildTest from './shared'
@@ -49,6 +50,18 @@ const tests = [
       xcmPalletDown: {
         tx: tx.xcmPallet.limitedReserveTransferAssetsV3(polkadot.dot, 1e12, tx.xcmPallet.parachainV3(0, acala.paraId)),
         balance: query.tokens(acala.dot),
+      },
+    },
+  },
+  // polkadot <-> astar
+  {
+    from: 'polkadot',
+    to: 'astar',
+    name: 'DOT',
+    test: {
+      xcmPalletDown: {
+        tx: tx.xcmPallet.limitedReserveTransferAssetsV2(polkadot.dot, 1e12, tx.xcmPallet.parachainV2(0, astar.paraId)),
+        balance: query.assets(astar.dot),
       },
     },
   },
