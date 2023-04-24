@@ -114,8 +114,8 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
       })
     }
 
-    if ('xcmPalletHorzontal' in test) {
-      const { fromBalance, toBalance, tx, ...testOpt } = test.xcmPalletHorzontal
+    if ('xcmPalletHorizontal' in test) {
+      const { fromBalance, toBalance, tx, ...testOpt } = test.xcmPalletHorizontal
 
       it('xcmPallet transfer', async () => {
         const tx0 = await sendTransaction(tx(fromChain, toAccount.addressRaw).signAsync(fromAccount))
@@ -143,8 +143,8 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
       })
     }
 
-    if ('xtokenstHorzontal' in test) {
-      const { fromBalance, toBalance, tx, ...testOpt } = test.xtokenstHorzontal
+    if ('xtokenstHorizontal' in test) {
+      const { fromBalance, toBalance, tx, ...testOpt } = test.xtokenstHorizontal
 
       it('xtokens transfer', async () => {
         const txx = tx(fromChain, toAccount.addressRaw)
