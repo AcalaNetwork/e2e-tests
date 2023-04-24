@@ -50,8 +50,6 @@ describe.each([
 
     await chain.chain.newBlock()
 
-    await checkEvents(tx, 'dex')
-      .redact({ number: true })
-      .toMatchSnapshot()
+    await checkEvents(tx, 'dex').redact({ number: true }).toMatchSnapshot()
   })
 })
