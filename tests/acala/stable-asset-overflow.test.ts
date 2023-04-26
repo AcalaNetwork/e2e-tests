@@ -10,12 +10,12 @@ describe.each([
   {
     name: 'karura',
     block: 4180050,
-    wasm: './wasm/karura-2170.wasm'
+    wasm: './wasm/karura-2170.wasm',
   },
   {
     name: 'acala',
     block: 3419758,
-    wasm: './wasm/acala-2170.wasm'
+    wasm: './wasm/acala-2170.wasm',
   },
 ] as const)('$name stable asset overflow', async ({ name, block, wasm }) => {
   let chain: Network
