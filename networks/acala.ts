@@ -52,7 +52,7 @@ export default {
       },
       TransactionPause: {
         $removePrefix: ['pausedTransactions'],
-      }
+      },
     },
   }),
 } satisfies Config<Vars>
