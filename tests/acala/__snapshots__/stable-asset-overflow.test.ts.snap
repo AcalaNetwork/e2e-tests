@@ -6,8 +6,8 @@ exports[`'acala' stable asset overflow > mint overflow > events 1`] = `
     "data": {
       "dispatchError": {
         "Module": {
-          "error": "0x06000000",
-          "index": 200,
+          "error": "0x00000000",
+          "index": 11,
         },
       },
       "dispatchInfo": {
@@ -31,8 +31,8 @@ exports[`'acala' stable asset overflow > swap overflow > events 1`] = `
     "data": {
       "dispatchError": {
         "Module": {
-          "error": "0x06000000",
-          "index": 200,
+          "error": "0x00000000",
+          "index": 11,
         },
       },
       "dispatchInfo": {
