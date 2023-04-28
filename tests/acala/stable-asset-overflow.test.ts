@@ -9,30 +9,18 @@ import { Network, createContext, createNetworks } from '../../networks'
 describe.each([
   {
     name: 'karura',
-    block: 4180050,
-    wasm: './wasm/karura-2170.wasm',
   },
   {
     name: 'acala',
-    block: 3419758,
-    wasm: './wasm/acala-2170.wasm',
   },
-] as const)('$name stable asset overflow', async ({ name, block, wasm }) => {
+] as const)('$name stable asset overflow', async ({ name }) => {
   let chain: Network
 
   const ctx = createContext()
   const { alice } = ctx
 
   beforeEach(async () => {
-    const { [name]: chain1 } = await createNetworks(
-      {
-        [name]: {
-          blockNumber: block,
-          wasmOverride: wasm,
-        },
-      },
-      ctx
-    )
+    const { [name]: chain1 } = await createNetworks({ [name]: undefined }, ctx)
     chain = chain1
 
     // restore Homa.toBondPool to correct liquid token exchange rate
