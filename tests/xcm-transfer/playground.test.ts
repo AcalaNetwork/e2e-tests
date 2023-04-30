@@ -3,7 +3,9 @@ import { it } from 'vitest'
 // import { query, tx } from '../../helpers/api'
 
 // import { acala } from '../../networks/acala'
+// import { hydraDX } from '../../networks/hydraDX'
 // import { moonbeam } from '../../networks/moonbeam'
+// import { statemint } from '../../networks/statemint'
 
 // import { Context } from '../../networks/types'
 

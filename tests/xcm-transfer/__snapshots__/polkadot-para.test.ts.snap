@@ -322,7 +322,10 @@ exports[`'acala' -> 'moonbeam' xcm transfer 'DOT' > xtokens transfer > to chain 
     "data": {
       "messageId": "(hash)",
       "outcome": {
-        "Complete": 800000000,
+        "Complete": {
+          "proofSize": 0,
+          "refTime": 800000000,
+        },
       },
     },
     "method": "ExecutedDownward",
@@ -952,7 +955,7 @@ exports[`'moonbeam' -> 'acala' xcm transfer 'DOT' > xtokens transfer > tx events
             {
               "AccountId32": {
                 "id": "(hash)",
-                "network": "Any",
+                "network": null,
               },
             },
           ],
