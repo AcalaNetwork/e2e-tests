@@ -75,7 +75,6 @@ describe.each([
     beforeEach(async () => {
       const { [name]: parachain1, [relay]: relaychain1 } = await createNetworks({
         [name]: {
-          wasmOverride,
           blockNumber: unbond.para,
         },
         [relay]: {

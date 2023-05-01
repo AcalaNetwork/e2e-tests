@@ -222,9 +222,10 @@ export const checkHrmp = ({ api }: Api) =>
     }))
   )
 
-export const testingPairs = () => {
+export const testingPairs = (keyringType: 'ed25519' | 'sr25519' = 'ed25519') => {
   const keyringEth = createTestKeyring({ type: 'ethereum' })
-  const keyring = new Keyring({ type: 'ed25519' }) // can't use sr25519 because it is non-deterministic
+  // default to ed25519 because sr25519 signature is non-deterministic
+  const keyring = new Keyring({ type: keyringType })
   return {
     alice: keyring.addFromUri('//Alice'),
     bob: keyring.addFromUri('//Bob'),
