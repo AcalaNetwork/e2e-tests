@@ -5,29 +5,27 @@ __metadata:
   version: 6
   cacheKey: 8
 
-"@acala-network/chopsticks-executor@npm:0.6.0":
-  version: 0.6.0
-  resolution: "@acala-network/chopsticks-executor@npm:0.6.0"
-  checksum: 13982549bc40fc32395733d5a5ea43eb254893555cd05a181afda9c46f688ecc07e436fa0e500d6e0535adbf6accdb9ff239ea4c152ffc33257b2fb60666aa1c
+"@acala-network/chopsticks-executor@portal:/Users/xiliangchen/projects/acala/chopsticks/executor/pkg::locator=e2e-tests%40workspace%3A.":
+  version: 0.0.0-use.local
+  resolution: "@acala-network/chopsticks-executor@portal:/Users/xiliangchen/projects/acala/chopsticks/executor/pkg::locator=e2e-tests%40workspace%3A."
   languageName: node
-  linkType: hard
+  linkType: soft
 
-"@acala-network/chopsticks-testing@npm:^0.6.0":
-  version: 0.6.0
-  resolution: "@acala-network/chopsticks-testing@npm:0.6.0"
+"@acala-network/chopsticks-testing@portal:/Users/xiliangchen/projects/acala/chopsticks/packages/testing::locator=e2e-tests%40workspace%3A.":
+  version: 0.0.0-use.local
+  resolution: "@acala-network/chopsticks-testing@portal:/Users/xiliangchen/projects/acala/chopsticks/packages/testing::locator=e2e-tests%40workspace%3A."
   dependencies:
-    "@acala-network/chopsticks": ^0.6.0
+    "@acala-network/chopsticks": "workspace:*"
   peerDependencies:
     vitest: ^0.29.2
-  checksum: d29798179e56e3db898f4db7136200f750a8bbae71861cd544b90ed2d63c599ed811e951a6fef5bbacf391ea02226a211df8382808b8865f25de5b18ee895ccb
   languageName: node
-  linkType: hard
+  linkType: soft
 
-"@acala-network/chopsticks@npm:^0.6.0":
-  version: 0.6.0
-  resolution: "@acala-network/chopsticks@npm:0.6.0"
+"@acala-network/chopsticks@portal:/Users/xiliangchen/projects/acala/chopsticks/packages/chopsticks::locator=e2e-tests%40workspace%3A.":
+  version: 0.0.0-use.local
+  resolution: "@acala-network/chopsticks@portal:/Users/xiliangchen/projects/acala/chopsticks/packages/chopsticks::locator=e2e-tests%40workspace%3A."
   dependencies:
-    "@acala-network/chopsticks-executor": 0.6.0
+    "@acala-network/chopsticks-executor": "workspace:*"
     "@polkadot/api": ^10.2.1
     "@polkadot/rpc-provider": ^10.2.1
     "@polkadot/types": ^10.2.1
@@ -49,9 +47,8 @@ __metadata:
     zod: ^3.21.4
   bin:
     chopsticks: ./chopsticks.js
-  checksum: dcd4418f4c0d418077ec146c991fd1815bc67bca7bd514209d1e65072f0ffdf10b0bdfc54dcf3b957e0970e8144b5f6aded75af0dbde882a481e60f891775800
   languageName: node
-  linkType: hard
+  linkType: soft
 
 "@cspotcode/source-map-support@npm:^0.8.0":
   version: 0.8.1
