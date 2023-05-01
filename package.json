@@ -15,7 +15,7 @@
 		"update-env": "ts-node scripts/update-env.ts"
 	},
 	"dependencies": {
-		"@acala-network/chopsticks": "^0.6.0",
+		"@acala-network/chopsticks": "^0.6.2",
 		"@acala-network/chopsticks-testing": "^0.6.0",
 		"@polkadot/api": "^10.2.1",
 		"dotenv": "^16.0.3",
