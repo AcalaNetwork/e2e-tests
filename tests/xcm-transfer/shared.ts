@@ -148,7 +148,6 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
 
       it('xtokens transfer', async () => {
         const txx = tx(fromChain, toAccount.addressRaw)
-        console.log(111, txx.toHex())
         const tx0 = await sendTransaction(txx.signAsync(fromAccount))
 
         await fromChain.chain.newBlock()

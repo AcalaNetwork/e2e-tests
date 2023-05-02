@@ -50,9 +50,6 @@ export default {
         // avoid sending xcm version change notifications to makes things faster
         $removePrefix: ['versionNotifyTargets', 'versionNotifiers', 'supportedVersion'],
       },
-      TransactionPause: {
-        $removePrefix: ['pausedTransactions'],
-      },
     },
   }),
 } satisfies Config<Vars>

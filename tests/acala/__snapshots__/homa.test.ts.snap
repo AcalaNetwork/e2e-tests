@@ -265,7 +265,7 @@ exports[`'acala' homa > with specific block > unbond withdraw works > events 1`]
 [
   {
     "data": {
-      "newEraIndex": "(rounded 1000)",
+      "newEraIndex": "(rounded 1100)",
     },
     "method": "CurrentEraBumped",
     "section": "homa",
@@ -277,7 +277,7 @@ exports[`'acala' homa > with specific block > unbond withdraw works > system eve
 [
   {
     "data": {
-      "amount": "(rounded 2200000000000)",
+      "amount": "(rounded 3400000000000)",
       "stash": "15sr8Dvq3AT3Z2Z1y8FnQ4VipekAHhmQnrkgzegUr1tNgbcn",
     },
     "method": "Withdrawn",
@@ -352,7 +352,7 @@ exports[`'acala' homa > with specific block > unbond withdraw works > ump 1`] = 
       {
         "transact": {
           "call": {
-            "encoded": "0x1a01000005030070617261d00700000000000000000000000000000000000000000000000000000b8f589fcc0302",
+            "encoded": "0x1a01000005030070617261d00700000000000000000000000000000000000000000000000000000b8582fb7f2003",
           },
           "originType": "SovereignAccount",
           "requireWeightAtMost": 10000000000,

@@ -140,7 +140,7 @@ const tests = [
     }),
     test: {
       xtokenstHorizontal: {
-        tx: tx.xtokens.transfer({ ForeignAsset: moonbeam.dot }, 1e12, tx.xtokens.parachainV2(acala.paraId)),
+        tx: tx.xtokens.transfer({ ForeignAsset: moonbeam.dot }, 1e12, tx.xtokens.parachainV3(acala.paraId)),
         fromBalance: query.assets(moonbeam.dot),
         toBalance: query.tokens(acala.dot),
         checkUmp: true,
