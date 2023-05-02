@@ -15,8 +15,8 @@
 		"update-env": "ts-node scripts/update-env.ts"
 	},
 	"dependencies": {
-		"@acala-network/chopsticks": "^0.6.0",
-		"@acala-network/chopsticks-testing": "^0.6.0",
+		"@acala-network/chopsticks": "^0.6.3",
+		"@acala-network/chopsticks-testing": "^0.6.3",
 		"@polkadot/api": "^10.2.1",
 		"dotenv": "^16.0.3",
 		"typescript": "^4.9.5",
@@ -41,11 +41,5 @@
 		"tabWidth": 2,
 		"semi": false,
 		"singleQuote": true
-	},
-	"resolutions": {
-		"@acala-network/chopsticks-executor": "portal:/Users/xiliangchen/projects/acala/chopsticks/executor/pkg",
-		"@acala-network/chopsticks": "portal:/Users/xiliangchen/projects/acala/chopsticks/packages/chopsticks",
-		"@acala-network/chopsticks-core": "portal:/Users/xiliangchen/projects/acala/chopsticks/packages/core",
-		"@acala-network/chopsticks-testing": "portal:/Users/xiliangchen/projects/acala/chopsticks/packages/testing"
 	}
 }
