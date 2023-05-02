@@ -13,7 +13,7 @@ describe.each([
   {
     name: 'acala',
     relay: 'polkadot9381',
-    unbond: { para: 3346762, relay: 15059809, era: '0x14040000' },
+    unbond: { para: 3482376, relay: 15333247, era: '0x27040000' },
   },
 ] as const)('$name homa', async ({ name, relay, unbond }) => {
   let relaychain: Network
