@@ -508,7 +508,10 @@ exports[`'kusama' -> 'shiden' xcm transfer 'KSM' > xcmPallet transfer > to chain
     "data": {
       "messageId": "(hash)",
       "outcome": {
-        "Complete": 4000000000,
+        "Complete": {
+          "proofSize": "(rounded 4100)",
+          "refTime": 4000000000,
+        },
       },
     },
     "method": "ExecutedDownward",
@@ -518,7 +521,7 @@ exports[`'kusama' -> 'shiden' xcm transfer 'KSM' > xcmPallet transfer > to chain
     "data": {
       "dmqHead": "(hash)",
       "weightUsed": {
-        "proofSize": 0,
+        "proofSize": "(rounded 4100)",
         "refTime": 4000000000,
       },
     },
