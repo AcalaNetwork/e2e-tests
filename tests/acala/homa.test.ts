@@ -11,6 +11,16 @@ describe.each([
     unbond: { para: 4045222, relay: 17325226, era: '0x7e130000' },
   },
   {
+    name: 'karura',
+    relay: 'kusama9420',
+    unbond: { para: 4045222, relay: 17325226, era: '0x7e130000' },
+  },
+  {
+    name: 'acala',
+    relay: 'polkadot',
+    unbond: { para: 3482376, relay: 15333247, era: '0x27040000' },
+  },
+  {
     name: 'acala',
     relay: 'polkadot9420',
     unbond: { para: 3482376, relay: 15333247, era: '0x27040000' },
