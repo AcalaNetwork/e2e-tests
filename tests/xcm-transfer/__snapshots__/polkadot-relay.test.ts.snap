@@ -18,7 +18,7 @@ exports[`'acala' -> 'polkadot' xcm transfer 'DOT' > xtokens transfer > balance o
     "reserved": 0,
   },
   "nonce": 0,
-  "providers": 0,
+  "providers": 1,
   "sufficients": 0,
 }
 `;
@@ -157,7 +157,7 @@ exports[`'acala' -> 'polkadot' xcm transfer 'DOT' > xtokens transfer > tx events
 ]
 `;
 
-exports[`'acala' -> 'polkadot9381' xcm transfer 'DOT' > xtokens transfer > balance on from chain 1`] = `
+exports[`'acala' -> 'polkadot9420' xcm transfer 'DOT' > xtokens transfer > balance on from chain 1`] = `
 {
   "free": 9000000000000,
   "frozen": 0,
@@ -165,22 +165,22 @@ exports[`'acala' -> 'polkadot9381' xcm transfer 'DOT' > xtokens transfer > balan
 }
 `;
 
-exports[`'acala' -> 'polkadot9381' xcm transfer 'DOT' > xtokens transfer > balance on to chain 1`] = `
+exports[`'acala' -> 'polkadot9420' xcm transfer 'DOT' > xtokens transfer > balance on to chain 1`] = `
 {
   "consumers": 0,
   "data": {
-    "feeFrozen": 0,
+    "flags": "0x80000000000000000000000000000000",
     "free": "(rounded 11000000000000)",
-    "miscFrozen": 0,
+    "frozen": 0,
     "reserved": 0,
   },
   "nonce": 0,
-  "providers": 0,
+  "providers": 1,
   "sufficients": 0,
 }
 `;
 
-exports[`'acala' -> 'polkadot9381' xcm transfer 'DOT' > xtokens transfer > from chain ump messages 1`] = `
+exports[`'acala' -> 'polkadot9420' xcm transfer 'DOT' > xtokens transfer > from chain ump messages 1`] = `
 [
   {
     "v2": [
@@ -252,14 +252,14 @@ exports[`'acala' -> 'polkadot9381' xcm transfer 'DOT' > xtokens transfer > from 
 ]
 `;
 
-exports[`'acala' -> 'polkadot9381' xcm transfer 'DOT' > xtokens transfer > to chain ump events 1`] = `
+exports[`'acala' -> 'polkadot9420' xcm transfer 'DOT' > xtokens transfer > to chain ump events 1`] = `
 [
   {
     "data": [
       "(hash)",
       {
         "Complete": {
-          "proofSize": "(rounded 260000)",
+          "proofSize": 0,
           "refTime": 4000000000,
         },
       },
@@ -270,7 +270,7 @@ exports[`'acala' -> 'polkadot9381' xcm transfer 'DOT' > xtokens transfer > to ch
 ]
 `;
 
-exports[`'acala' -> 'polkadot9381' xcm transfer 'DOT' > xtokens transfer > tx events 1`] = `
+exports[`'acala' -> 'polkadot9420' xcm transfer 'DOT' > xtokens transfer > tx events 1`] = `
 [
   {
     "data": {
@@ -327,7 +327,7 @@ exports[`'polkadot' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > balance
     "reserved": 0,
   },
   "nonce": 1,
-  "providers": 0,
+  "providers": 1,
   "sufficients": 0,
 }
 `;
@@ -397,7 +397,7 @@ exports[`'polkadot' -> 'astar' xcm transfer 'DOT' > xcmPallet transfer > balance
     "reserved": 0,
   },
   "nonce": 1,
-  "providers": 0,
+  "providers": 1,
   "sufficients": 0,
 }
 `;
@@ -460,22 +460,22 @@ exports[`'polkadot' -> 'astar' xcm transfer 'DOT' > xcmPallet transfer > tx even
 ]
 `;
 
-exports[`'polkadot9381' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > balance on from chain 1`] = `
+exports[`'polkadot9420' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > balance on from chain 1`] = `
 {
   "consumers": 0,
   "data": {
-    "feeFrozen": 0,
+    "flags": "0x80000000000000000000000000000000",
     "free": "(rounded 9000000000000)",
-    "miscFrozen": 0,
+    "frozen": 0,
     "reserved": 0,
   },
   "nonce": 1,
-  "providers": 0,
+  "providers": 1,
   "sufficients": 0,
 }
 `;
 
-exports[`'polkadot9381' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > balance on to chain 1`] = `
+exports[`'polkadot9420' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > balance on to chain 1`] = `
 {
   "free": "(rounded 11000000000000)",
   "frozen": 0,
@@ -483,7 +483,7 @@ exports[`'polkadot9381' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > bal
 }
 `;
 
-exports[`'polkadot9381' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > to chain dmp events 1`] = `
+exports[`'polkadot9420' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > to chain dmp events 1`] = `
 [
   {
     "data": {
@@ -516,14 +516,14 @@ exports[`'polkadot9381' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > to 
 ]
 `;
 
-exports[`'polkadot9381' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > tx events 1`] = `
+exports[`'polkadot9420' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > tx events 1`] = `
 [
   {
     "data": [
       {
         "Complete": {
-          "proofSize": "(rounded 65500)",
-          "refTime": 1000000000,
+          "proofSize": 0,
+          "refTime": 2000000000,
         },
       },
     ],

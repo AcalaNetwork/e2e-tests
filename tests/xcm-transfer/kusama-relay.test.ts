@@ -53,6 +53,29 @@ const tests = [
       },
     },
   },
+  // karura <-> kusama9420
+  {
+    from: 'karura',
+    to: 'kusama9420',
+    name: 'KSM',
+    test: {
+      xtokensUp: {
+        tx: tx.xtokens.transfer(karura.ksm, 1e12, tx.xtokens.relaychainV2),
+        balance: query.tokens(karura.ksm),
+      },
+    },
+  },
+  {
+    from: 'kusama9420',
+    to: 'karura',
+    name: 'KSM',
+    test: {
+      xcmPalletDown: {
+        tx: tx.xcmPallet.limitedReserveTransferAssetsV3(kusama.ksm, 1e12, tx.xcmPallet.parachainV3(0, karura.paraId)),
+        balance: query.tokens(karura.ksm),
+      },
+    },
+  },
   // kusama <-> shiden
   {
     from: 'kusama',

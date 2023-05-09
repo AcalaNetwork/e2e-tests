@@ -7,19 +7,19 @@ export default {
   polkadot: {
     // eslint-disable-next-line import/no-named-as-default-member
     ...polkadotConfig.polkadot,
-    name: 'polkadot9381' as const,
+    name: 'polkadot9420' as const,
   },
   kusama: {
     // eslint-disable-next-line import/no-named-as-default-member
     ...polkadotConfig.kusama,
-    name: 'kusama9381' as const,
+    name: 'kusama9420' as const,
   },
   config: (opt) => ({
     ...polkadotConfig.config(opt),
     options: {
       wasmOverride: {
-        polkadot: './wasm/polkadot_runtime-v9381.compact.compressed.wasm',
-        kusama: './wasm/kusama_runtime-v9381.compact.compressed.wasm',
+        polkadot: './wasm/polkadot_runtime-v9420.compact.compressed.wasm',
+        kusama: './wasm/kusama_runtime-v9420.compact.compressed.wasm',
       }[opt.network],
     },
   }),

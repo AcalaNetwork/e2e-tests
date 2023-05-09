@@ -5,6 +5,7 @@ import { it } from 'vitest'
 
 // import { acala , karura } from '../../networks/acala'
 // import { basilisk , hydraDX } from '../../networks/hydraDX'
+// import { kusama, polkadot } from '../../networks/polkadot'
 // import { moonbeam } from '../../networks/moonbeam'
 // import { statemine , statemint } from '../../networks/statemint'
 
