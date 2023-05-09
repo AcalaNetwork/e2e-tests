@@ -44,7 +44,7 @@ exports[`'acala' homa > with latest block > Homa redeem unbond works > system ev
       "(hash)",
       {
         "Complete": {
-          "proofSize": "(rounded 390000)",
+          "proofSize": "(rounded 59000)",
           "refTime": "(rounded 11000000000)",
         },
       },
@@ -88,7 +88,10 @@ exports[`'acala' homa > with latest block > Homa stake works > system events 1`]
     "data": [
       "(hash)",
       {
-        "Error": "Barrier",
+        "Complete": {
+          "proofSize": "(number)",
+          "refTime": "(number)",
+        },
       },
     ],
     "method": "ExecutedUpward",
@@ -288,7 +291,7 @@ exports[`'acala' homa > with specific block > unbond withdraw works > system eve
       "(hash)",
       {
         "Complete": {
-          "proofSize": "(rounded 520000)",
+          "proofSize": "(rounded 130000)",
           "refTime": "(rounded 25000000000)",
         },
       },

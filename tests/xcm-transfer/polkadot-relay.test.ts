@@ -30,10 +30,10 @@ const tests = [
       },
     },
   },
-  // acala <-> polkadot9381
+  // acala <-> polkadot9420
   {
     from: 'acala',
-    to: 'polkadot9381',
+    to: 'polkadot9420',
     name: 'DOT',
     test: {
       xtokensUp: {
@@ -43,7 +43,7 @@ const tests = [
     },
   },
   {
-    from: 'polkadot9381',
+    from: 'polkadot9420',
     to: 'acala',
     name: 'DOT',
     test: {
