@@ -114,7 +114,9 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
 
         await toChain.chain.newBlock()
 
-        await check(balance(toChain, toAccount.address)).redact({ number: precision }).toMatchSnapshot('balance on to chain')
+        await check(balance(toChain, toAccount.address))
+          .redact({ number: precision })
+          .toMatchSnapshot('balance on to chain')
         await checkSystemEvents(toChain, 'parachainSystem', 'dmpQueue').toMatchSnapshot('to chain dmp events')
       })
     }
@@ -143,7 +145,9 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
         }
         await toChain.chain.newBlock()
 
-        await check(toBalance(toChain, toAccount.address)).redact({ number: precision }).toMatchSnapshot('balance on to chain')
+        await check(toBalance(toChain, toAccount.address))
+          .redact({ number: precision })
+          .toMatchSnapshot('balance on to chain')
         await checkSystemEvents(toChain, 'xcmpQueue', 'dmpQueue').toMatchSnapshot('to chain xcm events')
       })
     }
@@ -173,7 +177,9 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
         }
         await toChain.chain.newBlock()
 
-        await check(toBalance(toChain, toAccount.address)).redact({ number: precision }).toMatchSnapshot('balance on to chain')
+        await check(toBalance(toChain, toAccount.address))
+          .redact({ number: precision })
+          .toMatchSnapshot('balance on to chain')
         await checkSystemEvents(toChain, 'xcmpQueue', 'dmpQueue').toMatchSnapshot('to chain xcm events')
       })
     }
