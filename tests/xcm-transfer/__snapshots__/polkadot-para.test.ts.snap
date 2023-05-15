@@ -4,7 +4,7 @@ exports[`'acala' -> 'hydraDX' xcm transfer 'DAI' > xtokens transfer > balance on
 
 exports[`'acala' -> 'hydraDX' xcm transfer 'DAI' > xtokens transfer > balance on to chain 1`] = `
 {
-  "free": "(rounded 997000000000000000)",
+  "free": "(rounded 1000000000000000000)",
   "frozen": 0,
   "reserved": 0,
 }

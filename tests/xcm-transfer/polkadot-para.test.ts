@@ -73,6 +73,7 @@ const tests = [
     from: 'acala',
     to: 'hydraDX',
     name: 'DAI',
+    precision: 2, // fee varies a lot on hydraDX
     fromStorage: {
       Evm: {
         accountStorages: [
