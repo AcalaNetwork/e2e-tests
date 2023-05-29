@@ -22,7 +22,7 @@ describe.each([
   // },
   {
     name: 'acala2180',
-    relay: 'polkadot',
+    relay: 'polkadot9420',
     unbond: { para: 3482376, relay: 15333247, era: '0x27040000' },
   },
   {
@@ -64,11 +64,9 @@ describe.each([
       await checkEvents(tx1, { section: 'homa', method: 'CurrentEraBumped' }).toMatchSnapshot()
       await checkUmp(parachain).redact({ number: true, hex: true }).toMatchSnapshot()
 
-      await relaychain.pause()
-
       await relaychain.chain.newBlock()
 
-      await checkSystemEvents(relaychain).redact({ address: true, number: true }).toMatchSnapshot()
+      await checkSystemEvents(relaychain, 'ump', 'staking').redact({ address: true, number: true }).toMatchSnapshot()
     })
 
     it('Homa redeem unbond works', async () => {
@@ -123,7 +121,7 @@ describe.each([
       await checkUmp(parachain).toMatchSnapshot()
 
       await relaychain.chain.newBlock()
-      await checkSystemEvents(relaychain).toMatchSnapshot()
+      await checkSystemEvents(relaychain, 'ump', 'staking').toMatchSnapshot()
     })
   })
 })
