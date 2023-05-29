@@ -480,8 +480,8 @@ exports[`'karura' -> 'statemine' xcm transfer 'USDT' > xtokens transfer > to cha
     "data": {
       "messageHash": "(hash)",
       "weight": {
-        "proofSize": 0,
-        "refTime": "(rounded 300000000)",
+        "proofSize": "(rounded 3600)",
+        "refTime": "(rounded 310000000)",
       },
     },
     "method": "Success",
@@ -705,8 +705,8 @@ exports[`'statemine' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer > tx e
     "data": [
       {
         "Complete": {
-          "proofSize": 0,
-          "refTime": "(rounded 653000000)",
+          "proofSize": "(rounded 6200)",
+          "refTime": "(rounded 679000000)",
         },
       },
     ],
