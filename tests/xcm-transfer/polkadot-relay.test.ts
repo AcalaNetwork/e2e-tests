@@ -53,6 +53,29 @@ const tests = [
       },
     },
   },
+  // acala2180 <-> polkadot9420
+  {
+    from: 'acala2180',
+    to: 'polkadot9420',
+    name: 'DOT',
+    test: {
+      xtokensUp: {
+        tx: tx.xtokens.transfer(acala.dot, 1e12, tx.xtokens.relaychainV3),
+        balance: query.tokens(acala.dot),
+      },
+    },
+  },
+  {
+    from: 'polkadot9420',
+    to: 'acala2180',
+    name: 'DOT',
+    test: {
+      xcmPalletDown: {
+        tx: tx.xcmPallet.limitedReserveTransferAssetsV3(polkadot.dot, 1e12, tx.xcmPallet.parachainV3(0, acala.paraId)),
+        balance: query.tokens(acala.dot),
+      },
+    },
+  },
   // polkadot <-> astar
   {
     from: 'polkadot',

@@ -30,9 +30,9 @@ const tests = [
       },
     },
   },
-  // karura2160 <-> kusama
+  // karura2180 <-> kusama
   {
-    from: 'karura2160',
+    from: 'karura2180',
     to: 'kusama',
     name: 'KSM',
     test: {
@@ -44,30 +44,7 @@ const tests = [
   },
   {
     from: 'kusama',
-    to: 'karura2160',
-    name: 'KSM',
-    test: {
-      xcmPalletDown: {
-        tx: tx.xcmPallet.limitedReserveTransferAssetsV3(kusama.ksm, 1e12, tx.xcmPallet.parachainV3(0, karura.paraId)),
-        balance: query.tokens(karura.ksm),
-      },
-    },
-  },
-  // karura <-> kusama9420
-  {
-    from: 'karura',
-    to: 'kusama9420',
-    name: 'KSM',
-    test: {
-      xtokensUp: {
-        tx: tx.xtokens.transfer(karura.ksm, 1e12, tx.xtokens.relaychainV2),
-        balance: query.tokens(karura.ksm),
-      },
-    },
-  },
-  {
-    from: 'kusama9420',
-    to: 'karura',
+    to: 'karura2180',
     name: 'KSM',
     test: {
       xcmPalletDown: {

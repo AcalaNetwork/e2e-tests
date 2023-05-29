@@ -1,6 +1,6 @@
 import { Config } from './types'
 
-import acala2160Config from './acala2160'
+import acala2180Config from './acala2180'
 import acalaConfig from './acala'
 import astarConfig from './astar'
 import hydraDXConfig from './hydraDX'
@@ -15,7 +15,7 @@ const all = {
   statemint: statemintConfig,
   acala: acalaConfig,
   astar: astarConfig,
-  acala2160: acala2160Config,
+  acala2180: acala2180Config,
   moonbeam: moonbeamConfig,
   hydraDX: hydraDXConfig,
 } satisfies Record<string, Config>

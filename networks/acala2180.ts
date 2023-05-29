@@ -6,18 +6,18 @@ export default {
   ...acalaConfig,
   polkadot: {
     ...acalaConfig.polkadot,
-    name: 'acala2160' as const,
+    name: 'acala2180' as const,
   },
   kusama: {
     ...acalaConfig.kusama,
-    name: 'karura2160' as const,
+    name: 'karura2180' as const,
   },
   config: (opt) => ({
     ...acalaConfig.config(opt),
     options: {
       wasmOverride: {
-        polkadot: './wasm/acala-2160-dev.wasm',
-        kusama: './wasm/karura-2160-dev.wasm',
+        polkadot: './wasm/acala-2180.wasm',
+        kusama: './wasm/karura-2180.wasm',
       }[opt.network],
     },
   }),
