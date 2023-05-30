@@ -8,16 +8,21 @@ describe.each([
   {
     name: 'karura',
     relay: 'kusama',
-    unbond: { para: 4045222, relay: 17325226, era: '0x7e130000' },
+    unbond: { para: 4382523, relay: 18023827, era: '0x42140000' },
   },
   {
-    name: 'karura',
-    relay: 'kusama9420',
-    unbond: { para: 4045222, relay: 17325226, era: '0x7e130000' },
+    name: 'karura2180',
+    relay: 'kusama',
+    unbond: { para: 4382523, relay: 18023827, era: '0x42140000' },
   },
+  // { // Polkadot 9370 ump is broken
+  //   name: 'acala',
+  //   relay: 'polkadot',
+  //   unbond: { para: 3653931, relay: 15678497, era: '0x40040000' },
+  // },
   {
-    name: 'acala',
-    relay: 'polkadot',
+    name: 'acala2180',
+    relay: 'polkadot9420',
     unbond: { para: 3482376, relay: 15333247, era: '0x27040000' },
   },
   {
