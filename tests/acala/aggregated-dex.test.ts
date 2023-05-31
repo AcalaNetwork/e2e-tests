@@ -1,8 +1,9 @@
-import { afterAll, beforeEach, describe, it } from 'vitest'
-import { sendTransaction, testingPairs } from '@acala-network/chopsticks-testing'
+import { beforeEach, describe, it } from 'vitest'
+import { bnToHex } from '@polkadot/util'
+import { sendTransaction } from '@acala-network/chopsticks-testing'
 
+import { Network, createContext, createNetworks } from '../../networks'
 import { checkEvents } from '../../helpers'
-import { createNetworks } from '../../networks'
 
 import { acala, karura } from '../../networks/acala'
 
@@ -30,17 +31,25 @@ describe.each([
     ],
   },
 ] as const)('$name aggregatedDex', async ({ name, swapPath }) => {
-  const { [name]: chain } = await createNetworks({ [name]: undefined })
-  const { alice } = testingPairs()
+  let chain: Network
 
-  const head = chain.chain.head
-
-  afterAll(async () => {
-    await chain.teardown()
-  })
+  const ctx = createContext()
+  const { alice } = ctx
 
   beforeEach(async () => {
-    await chain.chain.setHead(head)
+    const { [name]: chain1 } = await createNetworks({ [name]: undefined }, ctx)
+    chain = chain1
+
+    // restore Homa.toBondPool to correct liquid token exchange rate
+    const apiAt = await chain.api.at(await chain.api.rpc.chain.getBlockHash(chain.chain.head.number - 1))
+    const toBondPool: bigint = ((await apiAt.query.homa.toBondPool()) as any).toBigInt()
+    await chain.dev.setStorage({
+      Homa: {
+        toBondPool: bnToHex(toBondPool + 10000000000n, { bitLength: 128, isLe: true }),
+      },
+    })
+
+    return async () => chain.teardown()
   })
 
   it('swapWithExactSupply', async () => {
