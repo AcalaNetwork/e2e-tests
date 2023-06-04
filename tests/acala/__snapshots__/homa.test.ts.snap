@@ -21,7 +21,7 @@ exports[`'acala' homa > with latest block > Homa redeem unbond works > events 2`
       "eraIndexWhenUnbond": 100,
       "liquidAmount": 1000000000000,
       "redeemer": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
-      "unbondingStakingAmount": "(rounded 120000000000)",
+      "unbondingStakingAmount": "(rounded 130000000000)",
     },
     "method": "RedeemedByUnbond",
     "section": "homa",
@@ -33,7 +33,7 @@ exports[`'acala' homa > with latest block > Homa redeem unbond works > system ev
 [
   {
     "data": {
-      "amount": "(rounded 120000000000)",
+      "amount": "(rounded 130000000000)",
       "stash": "(address)",
     },
     "method": "Unbonded",
@@ -408,7 +408,7 @@ exports[`'acala2180' homa > with latest block > Homa redeem unbond works > event
       "eraIndexWhenUnbond": 100,
       "liquidAmount": 1000000000000,
       "redeemer": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
-      "unbondingStakingAmount": "(rounded 120000000000)",
+      "unbondingStakingAmount": "(rounded 130000000000)",
     },
     "method": "RedeemedByUnbond",
     "section": "homa",
@@ -420,7 +420,7 @@ exports[`'acala2180' homa > with latest block > Homa redeem unbond works > syste
 [
   {
     "data": {
-      "amount": "(rounded 120000000000)",
+      "amount": "(rounded 130000000000)",
       "stash": "(address)",
     },
     "method": "Unbonded",
