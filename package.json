@@ -18,7 +18,7 @@
 		"@acala-network/chopsticks": "^0.6.4",
 		"@acala-network/chopsticks-testing": "^0.6.4",
 		"@polkadot/api": "^10.5.1",
-		"dotenv": "^16.0.3",
+		"dotenv": "^16.1.4",
 		"typescript": "^4.9.5",
 		"vitest": "^0.29.8"
 	},
