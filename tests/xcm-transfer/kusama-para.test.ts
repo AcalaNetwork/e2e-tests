@@ -36,7 +36,7 @@ const tests = [
     }),
     test: {
       xtokenstHorizontal: {
-        tx: tx.xtokens.transfer(karura.usdt, 1e6, tx.xtokens.parachainV2(statemine.paraId)),
+        tx: tx.xtokens.transfer(karura.usdt, 1e6, tx.xtokens.parachainV3(statemine.paraId)),
         fromBalance: query.tokens(karura.usdt),
         toBalance: query.assets(statemine.usdtIndex),
       },
@@ -62,7 +62,7 @@ const tests = [
     },
     test: {
       xtokenstHorizontal: {
-        tx: tx.xtokens.transfer(karura.dai, 10n ** 18n, tx.xtokens.parachainV2(basilisk.paraId)),
+        tx: tx.xtokens.transfer(karura.dai, 10n ** 18n, tx.xtokens.parachainV3(basilisk.paraId)),
         fromBalance: query.evm(karura.dai.Erc20, '0x2aef47e62c966f0695d5af370ddc1bc7c56902063eee60853e2872fc0ff4f88c'),
         toBalance: query.tokens(basilisk.dai),
       },
