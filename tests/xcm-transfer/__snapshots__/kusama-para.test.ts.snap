@@ -310,7 +310,10 @@ exports[`'karura' -> 'basilisk' xcm transfer 'DAI' > xtokens transfer > tx event
                     "Parachain": 2000,
                   },
                   {
-                    "GeneralKey": "0x024bb6afb5fa2b07a5d1c499e1c3ddb5a15e709a71",
+                    "GeneralKey": {
+                      "data": "(hash)",
+                      "length": 21,
+                    },
                   },
                 ],
               },
@@ -328,7 +331,7 @@ exports[`'karura' -> 'basilisk' xcm transfer 'DAI' > xtokens transfer > tx event
             {
               "AccountId32": {
                 "id": "(hash)",
-                "network": "Any",
+                "network": null,
               },
             },
           ],
@@ -347,7 +350,10 @@ exports[`'karura' -> 'basilisk' xcm transfer 'DAI' > xtokens transfer > tx event
                   "Parachain": 2000,
                 },
                 {
-                  "GeneralKey": "0x024bb6afb5fa2b07a5d1c499e1c3ddb5a15e709a71",
+                  "GeneralKey": {
+                    "data": "(hash)",
+                    "length": 21,
+                  },
                 },
               ],
             },
@@ -480,8 +486,8 @@ exports[`'karura' -> 'statemine' xcm transfer 'USDT' > xtokens transfer > to cha
     "data": {
       "messageHash": "(hash)",
       "weight": {
-        "proofSize": 0,
-        "refTime": "(rounded 300000000)",
+        "proofSize": "(rounded 3600)",
+        "refTime": "(rounded 310000000)",
       },
     },
     "method": "Success",
@@ -528,7 +534,7 @@ exports[`'karura' -> 'statemine' xcm transfer 'USDT' > xtokens transfer > tx eve
             {
               "AccountId32": {
                 "id": "(hash)",
-                "network": "Any",
+                "network": null,
               },
             },
           ],
@@ -591,7 +597,7 @@ exports[`'statemine' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer > from
     "data": [
       "ConcatenatedVersionedXcm",
       {
-        "v2": [
+        "v3": [
           {
             "reserveAssetDeposited": [
               {
@@ -656,7 +662,7 @@ exports[`'statemine' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer > from
             "depositAsset": {
               "assets": {
                 "wild": {
-                  "all": null,
+                  "allCounted": 1,
                 },
               },
               "beneficiary": {
@@ -664,15 +670,12 @@ exports[`'statemine' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer > from
                   "x1": {
                     "accountId32": {
                       "id": "0x88dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee",
-                      "network": {
-                        "any": null,
-                      },
+                      "network": null,
                     },
                   },
                 },
                 "parents": 0,
               },
-              "maxAssets": 1,
             },
           },
         ],
@@ -705,8 +708,8 @@ exports[`'statemine' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer > tx e
     "data": [
       {
         "Complete": {
-          "proofSize": 0,
-          "refTime": "(rounded 653000000)",
+          "proofSize": "(rounded 6200)",
+          "refTime": "(rounded 679000000)",
         },
       },
     ],

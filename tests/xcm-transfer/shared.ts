@@ -36,6 +36,11 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
       toAccount = opt.toAccount(ctx)
     }
 
+    let precision = 3
+    if ('precision' in opt) {
+      precision = opt.precision
+    }
+
     beforeEach(async () => {
       const networkOptions = {
         [from]: undefined,
@@ -80,15 +85,15 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
         await fromChain.chain.newBlock()
 
         await check(balance(fromChain, fromAccount.address))
-          .redact({ number: 3 })
+          .redact({ number: precision })
           .toMatchSnapshot('balance on from chain')
-        await checkEvents(tx0, 'xTokens').redact({ number: 3 }).toMatchSnapshot('tx events')
+        await checkEvents(tx0, 'xTokens').redact({ number: precision }).toMatchSnapshot('tx events')
         await checkUmp(fromChain).toMatchSnapshot('from chain ump messages')
 
         await toChain.chain.newBlock()
 
         await check(toChain.api.query.system.account(toAccount.address))
-          .redact({ number: 3 })
+          .redact({ number: precision })
           .toMatchSnapshot('balance on to chain')
         await checkSystemEvents(toChain, 'ump').toMatchSnapshot('to chain ump events')
       })
@@ -103,19 +108,21 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
         await fromChain.chain.newBlock()
 
         await check(fromChain.api.query.system.account(fromAccount.address))
-          .redact({ number: 3 })
+          .redact({ number: precision })
           .toMatchSnapshot('balance on from chain')
-        await checkEvents(tx0, 'xcmPallet').redact({ number: 3 }).toMatchSnapshot('tx events')
+        await checkEvents(tx0, 'xcmPallet').redact({ number: precision }).toMatchSnapshot('tx events')
 
         await toChain.chain.newBlock()
 
-        await check(balance(toChain, toAccount.address)).redact({ number: 3 }).toMatchSnapshot('balance on to chain')
+        await check(balance(toChain, toAccount.address))
+          .redact({ number: precision })
+          .toMatchSnapshot('balance on to chain')
         await checkSystemEvents(toChain, 'parachainSystem', 'dmpQueue').toMatchSnapshot('to chain dmp events')
       })
     }
 
-    if ('xcmPalletHorzontal' in test) {
-      const { fromBalance, toBalance, tx, ...testOpt } = test.xcmPalletHorzontal
+    if ('xcmPalletHorizontal' in test) {
+      const { fromBalance, toBalance, tx, ...testOpt } = test.xcmPalletHorizontal
 
       it('xcmPallet transfer', async () => {
         const tx0 = await sendTransaction(tx(fromChain, toAccount.addressRaw).signAsync(fromAccount))
@@ -123,9 +130,9 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
         await fromChain.chain.newBlock()
 
         await check(fromBalance(fromChain, fromAccount.address))
-          .redact({ number: 3 })
+          .redact({ number: precision })
           .toMatchSnapshot('balance on from chain')
-        await checkEvents(tx0, 'polkadotXcm').redact({ number: 3 }).toMatchSnapshot('tx events')
+        await checkEvents(tx0, 'polkadotXcm').redact({ number: precision }).toMatchSnapshot('tx events')
 
         if ('checkUmp' in testOpt) {
           await checkUmp(fromChain).toMatchSnapshot('from chain ump messages')
@@ -138,23 +145,24 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
         }
         await toChain.chain.newBlock()
 
-        await check(toBalance(toChain, toAccount.address)).redact({ number: 3 }).toMatchSnapshot('balance on to chain')
+        await check(toBalance(toChain, toAccount.address))
+          .redact({ number: precision })
+          .toMatchSnapshot('balance on to chain')
         await checkSystemEvents(toChain, 'xcmpQueue', 'dmpQueue').toMatchSnapshot('to chain xcm events')
       })
     }
 
-    if ('xtokenstHorzontal' in test) {
-      const { fromBalance, toBalance, tx, ...testOpt } = test.xtokenstHorzontal
+    if ('xtokenstHorizontal' in test) {
+      const { fromBalance, toBalance, tx, ...testOpt } = test.xtokenstHorizontal
 
       it('xtokens transfer', async () => {
         const txx = tx(fromChain, toAccount.addressRaw)
-        console.log(111, txx.toHex())
         const tx0 = await sendTransaction(txx.signAsync(fromAccount))
 
         await fromChain.chain.newBlock()
 
         await check(fromBalance(fromChain, fromAccount.address))
-          .redact({ number: 3 })
+          .redact({ number: precision })
           .toMatchSnapshot('balance on from chain')
         await checkEvents(tx0, 'xTokens').toMatchSnapshot('tx events')
 
@@ -169,7 +177,9 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
         }
         await toChain.chain.newBlock()
 
-        await check(toBalance(toChain, toAccount.address)).redact({ number: 3 }).toMatchSnapshot('balance on to chain')
+        await check(toBalance(toChain, toAccount.address))
+          .redact({ number: precision })
+          .toMatchSnapshot('balance on to chain')
         await checkSystemEvents(toChain, 'xcmpQueue', 'dmpQueue').toMatchSnapshot('to chain xcm events')
       })
     }

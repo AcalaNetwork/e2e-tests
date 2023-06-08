@@ -1,5 +1,5 @@
 endpoints:
-  - wss://rpc.polkadot.io:443
+  - wss://astar-rpc.dwellir.com:443
 
 stale_timeout_seconds: 180 # rotate endpoint if no new blocks for 3 minutes
 

@@ -4,6 +4,17 @@ End to end tests for Acala and Karura.
 
 Tests are powered by [Chopsticks](http://github.com/AcalaNetwork/chopsticks) to always run with latest mainnet block.
 
+## Running tests
+
+All tests:
+`yarn test`
+
+Run one test only:
+`yarn test ./tests/xcm-transfer/kusama-relay.test.ts`
+
+Or you can just use a keywork since it is using vitest and use regex to find tests:
+`yarn test xcm`
+
 ## Environment variables
 
 - `{NETWORK_NAME}_BLOCK_NUMBER` - block number to run tests against
@@ -15,8 +26,8 @@ Example `.env` file
 ```
 POLKADOT_BLOCK_NUMBER=15052153
 KUSAMA_BLOCK_NUMBER=17443980
-POLKADOT9381_BLOCK_NUMBER=15052153
-KUSAMA9381_BLOCK_NUMBER=17443980
+POLKADOT9420_BLOCK_NUMBER=15052153
+KUSAMA9420_BLOCK_NUMBER=17443980
 STATEMINT_BLOCK_NUMBER=3609016
 STATEMINE_BLOCK_NUMBER=4263656
 ACALA_BLOCK_NUMBER=3342960
@@ -33,9 +44,9 @@ ACALA2160_ENDPOINT=ws://0.0.0.0:9000
 KARURA_ENDPOINT=ws://0.0.0.0:9001
 KARURA2160_ENDPOINT=ws://0.0.0.0:9001
 KUSAMA_ENDPOINT=ws://0.0.0.0:9002
-KUSAMA9381_ENDPOINT=ws://0.0.0.0:9002
+KUSAMA9420_ENDPOINT=ws://0.0.0.0:9002
 POLKADOT_ENDPOINT=ws://0.0.0.0:9003
-POLKADOT9381_ENDPOINT=ws://0.0.0.0:9003
+POLKADOT9420_ENDPOINT=ws://0.0.0.0:9003
 STATEMINE_ENDPOINT=ws://0.0.0.0:9004
 STATEMINT_ENDPOINT=ws://0.0.0.0:9005
 BASILISK_ENDPOINT=ws://0.0.0.0:9006
@@ -47,6 +58,10 @@ DB_PATH=./db.sqlite
 ```
 
 Use specific block number for tests and db cache can signficantly improve test running speed.
+
+Run `yarn update-env` to update .env file with latest block number.
+
+To debug failing tests on CI, find the block number config from CI log and put them in .env to run the test with the same block height.
 
 ### Use Subway to catch RPC responses
 

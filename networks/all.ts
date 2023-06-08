@@ -1,19 +1,21 @@
 import { Config } from './types'
 
-import acala2160Config from './acala2160'
+import acala2180Config from './acala2180'
 import acalaConfig from './acala'
+import astarConfig from './astar'
 import hydraDXConfig from './hydraDX'
 import moonbeamConfig from './moonbeam'
-import polkadot9381Config from './polkadot9381'
+import polkadot9420Config from './polkadot9420'
 import polkadotConfig from './polkadot'
 import statemintConfig from './statemint'
 
 const all = {
   polkadot: polkadotConfig,
-  polkadot9381: polkadot9381Config,
+  polkadot9420: polkadot9420Config,
   statemint: statemintConfig,
   acala: acalaConfig,
-  acala2160: acala2160Config,
+  astar: astarConfig,
+  acala2180: acala2180Config,
   moonbeam: moonbeamConfig,
   hydraDX: hydraDXConfig,
 } satisfies Record<string, Config>

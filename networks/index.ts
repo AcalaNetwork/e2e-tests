@@ -65,7 +65,7 @@ for (const def of Object.values(networkDefs)) {
   }
 }
 
-export const createContext = () => testingPairs()
+export const createContext = (keyringType: 'ed25519' | 'sr25519' = 'ed25519') => testingPairs(keyringType)
 
 export const createNetworks = async (
   networkOptions: Partial<Record<NetworkNames, Partial<SetupOption> | undefined>>,

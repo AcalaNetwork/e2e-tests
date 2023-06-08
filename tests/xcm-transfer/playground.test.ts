@@ -1,11 +1,13 @@
 import { it } from 'vitest'
 
+// import { Context } from '../../networks/types'
 // import { query, tx } from '../../helpers/api'
 
-// import { acala } from '../../networks/acala'
+// import { acala , karura } from '../../networks/acala'
+// import { basilisk , hydraDX } from '../../networks/hydraDX'
+// import { kusama, polkadot } from '../../networks/polkadot'
 // import { moonbeam } from '../../networks/moonbeam'
-
-// import { Context } from '../../networks/types'
+// import { statemine , statemint } from '../../networks/statemint'
 
 import buildTest from './shared'
 

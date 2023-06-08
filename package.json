@@ -15,19 +15,19 @@
 		"update-env": "ts-node scripts/update-env.ts"
 	},
 	"dependencies": {
-		"@acala-network/chopsticks": "^0.6.0",
-		"@acala-network/chopsticks-testing": "^0.6.0",
-		"@polkadot/api": "^10.2.1",
-		"dotenv": "^16.0.3",
+		"@acala-network/chopsticks": "^0.6.4",
+		"@acala-network/chopsticks-testing": "^0.6.4",
+		"@polkadot/api": "^10.5.1",
+		"dotenv": "^16.1.4",
 		"typescript": "^4.9.5",
-		"vitest": "^0.29.8"
+		"vitest": "^0.31.4"
 	},
 	"devDependencies": {
-		"@types/node": "^18.15.11",
+		"@types/node": "^20.2.5",
 		"@typescript-eslint/eslint-plugin": "^5.54.0",
-		"@typescript-eslint/parser": "^5.57.0",
+		"@typescript-eslint/parser": "^5.59.8",
 		"@vitest/ui": "^0.29.8",
-		"eslint": "^8.37.0",
+		"eslint": "^8.41.0",
 		"eslint-config-prettier": "^8.6.0",
 		"eslint-import-resolver-typescript": "^3.5.3",
 		"eslint-plugin-import": "^2.27.5",
