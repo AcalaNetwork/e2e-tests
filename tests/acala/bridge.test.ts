@@ -203,13 +203,11 @@ describe.each([
       await fromchain.chain.newBlock()
       await tochain.chain.newBlock()
 
-      // await checkSystemEvents(tochain).redact({ address: true }).toMatchSnapshot()
-
-      // let tochainBalanceNow
       await sleep(2000)
       const chainBalanceNow = (await chainBalance(sdk, fromData, address))
       await check(chainBalanceNow).toMatchSnapshot()
-      // await check(await tochain.api.query.system.account(address)).toMatchSnapshot()
+
+      //Verify if Destination Chain Transfer Fee matches the app
       if (chainBalanceInitial.toChain == 0) {
         expect(fee).toEqual(amount.toNumber() - chainBalanceNow.toChain)
       } else {
