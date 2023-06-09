@@ -18,8 +18,8 @@ export default {
     ...polkadotConfig.config(opt),
     options: {
       wasmOverride: {
-        polkadot: process.env['POLKADOT_WASM'] || './wasm/polkadot_runtime-v9420.compact.compressed.wasm',
-        kusama: process.env['KUSAMA_WASM'] || './wasm/kusama_runtime-v9420.compact.compressed.wasm',
+        polkadot: process.env['POLKADOT9420_WASM'] || './wasm/polkadot_runtime-v9420.compact.compressed.wasm',
+        kusama: process.env['KUSAMA9420_WASM'] || './wasm/kusama_runtime-v9420.compact.compressed.wasm',
       }[opt.network],
     },
   }),
