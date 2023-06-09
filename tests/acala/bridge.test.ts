@@ -8,82 +8,82 @@ import { MoonbeamAdapter, MoonriverAdapter } from '@polkawallet/bridge/adapters/
 import { Network, createNetworks } from '../../networks'
 import { StatemineAdapter, StatemintAdapter } from '@polkawallet/bridge/adapters/statemint'
 import { beforeEach, describe, expect, it } from 'vitest'
-import { check, checkEvents, sendTransaction, testingPairs } from '@acala-network/chopsticks-testing'
+import { check, sendTransaction, testingPairs } from '@acala-network/chopsticks-testing'
 
 
 describe.each([
-  // {
-  //   from: 'karura',
-  //   to: 'kusama',
-  //   token: 'KSM',
-  //   fee: 0.00009028743600048017
-  // },
-  // {
-  //   from: 'kusama',
-  //   to: 'karura',
-  //   token: 'KSM',
-  //   fee: 0.00003313519900061124
-  // },
-  // {
-  //   from: 'statemine',
-  //   to: 'kusama',
-  //   token: 'KSM',
-  //   fee: 0.0000900492869995162
-  // },
-  // {
-  //   from: 'kusama',
-  //   to: 'statemine',
-  //   token: 'KSM',
-  //   fee: 0.000005275239999491532
-  // },
+  {
+    from: 'karura',
+    to: 'kusama',
+    token: 'KSM',
+    fee: 0.00009000580000062541
+  },
+  {
+    from: 'kusama',
+    to: 'karura',
+    token: 'KSM',
+    fee: 0.00003284986200036144
+  },
+  {
+    from: 'statemine',
+    to: 'kusama',
+    token: 'KSM',
+    fee: 0.00008976839299990047
+  },
+  {
+    from: 'kusama',
+    to: 'statemine',
+    token: 'KSM',
+    fee: 0.000004896952999544624
+  },
   {
     from: 'basilisk',
     to: 'karura',
     token: 'BSX',
-    fee: 0.003151
+    fee: 0.08012799999999998
   },
-  // {
-  //   from: 'karura',
-  //   to: 'basilisk',
-  //   token: 'KUSD',
-  //   fee: 0.011862697763999952
-  // },
-  // {
-  //   from: 'karura',
-  //   to: 'moonriver',
-  //   token: 'KAR',
-  //   fee: 0.039651778084
-  // },
-  // {
-  //   from: 'acala',
-  //   to: 'polkadot',
-  //   token: 'DOT',
-  //   fee: 0.04214341399995192
-  // },
-  // {
-  //   from: 'polkadot',
-  //   to: 'acala',
-  //   token: 'DOT',
-  //   fee: 0.00009390549996624031
-  // },
-  // {
-  //   from: 'polkadot',
-  //   to: 'statemint',
-  //   token: 'DOT',
-  //   fee: 0.00008
-  // },
-  // {
-  //   from: 'statemint',
-  //   to: 'polkadot',
-  //   token: 'DOT',
-  //   fee: 0.04214341399995192
-  // },
-  // {
-  //   from: 'acala',
-  //   to: 'moonbeam',
-  //   token: 'AUSD',
-  //   fee: 0.020000000000000018
-  // }
+  {
+    from: 'karura',
+    to: 'basilisk',
+    token: 'KUSD',
+    fee: 0.006796282032000001
+  },
+  {
+    from: 'karura',
+    to: 'moonriver',
+    token: 'KAR',
+    fee: 0.03965177808399978
+  },
+  {
+    from: 'acala',
+    to: 'polkadot',
+    token: 'DOT',
+    fee: 0.04214341399995192
+  },
+  {
+    from: 'polkadot',
+    to: 'acala',
+    token: 'DOT',
+    fee: 0.00009390549996624031
+  },
+  {
+    from: 'polkadot',
+    to: 'statemint',
+    token: 'DOT',
+    fee: 0.0010312677000001713
+  },
+  {
+    from: 'statemint',
+    to: 'polkadot',
+    token: 'DOT',
+    fee: 0.04214341399995192
+  },
+  {
+    from: 'acala',
+    to: 'moonbeam',
+    token: 'AUSD',
+    fee: 0.020000000000000018
+  }
 ] as const)('$from to $to using bridgeSDK', async ({ from, to, token, fee }) => {
   let fromchain: Network
   let tochain: Network
@@ -125,6 +125,9 @@ describe.each([
         }
       }
     )
+    async function sleep(ms:number) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
 
     async function chooseAdapter(chain: string, api: ApiPromise) {
       let adapter
@@ -156,6 +159,24 @@ describe.each([
       return adapter
     }
 
+    async function chainBalance(sdk: any, fromData: any, address: string) {
+      const fromChainBalance = ((await sdk.findAdapter(from).getTokenBalance(token, alice.address)).available).toNumber()
+      let toChainBalance
+      if (to == 'moonriver') {
+        const assetBalance = (await tochain.api.query.assets.account('10810581592933651521121702237638664357', address)).value.balance
+        toChainBalance = (String(assetBalance) as any !== 'undefined') ? (assetBalance.toNumber()) / 10 ** fromData.decimals : 0
+
+      } else if (to == 'moonbeam') {
+        const assetBalance = (await tochain.api.query.assets.account('110021739665376159354538090254163045594', address)).value.balance
+        toChainBalance = (String(assetBalance) as any !== 'undefined') ? (assetBalance.toNumber()) / 10 ** fromData.decimals : 0
+
+      } else {
+        toChainBalance = ((await sdk.findAdapter(to).getTokenBalance(token, address)).free).toNumber()
+        // await check(await tochain.api.query.system.account(address)).toMatchSnapshot()
+      }
+
+      return { 'address': address, 'fromChain': fromChainBalance, 'toChain': toChainBalance }
+    }
 
     it('Cross-chain using BridgeSDK works', async () => {
       const fromChain = await chooseAdapter(from, fromchain.api)
@@ -164,22 +185,11 @@ describe.each([
       const fromAdapter = sdk.findAdapter(from)
       const fromData = fromAdapter.getToken(token, fromAdapter.chain.id)
 
-      const amount = new FixedPointNumber(1, fromData.decimals)
+      const amount = new FixedPointNumber(2, fromData.decimals)
       const address = (to === 'moonriver' || to == 'moonbeam') ? '0x4E7440dB498561A46AAa82b9Bc7d2D5162b5c27B' : alice.address
-      await check(((await sdk.findAdapter(from).getTokenBalance(token, address)).available).toNumber()).toMatchSnapshot()
-      let tochainBalanceInitial
-      if (to == 'moonriver') {
-        const assetBalance = (await tochain.api.query.assets.account('10810581592933651521121702237638664357', address)).value.balance
-        tochainBalanceInitial = (String(assetBalance) as any !== 'undefined') ? (assetBalance.toNumber()) / 10 ** fromData.decimals : 0
-        await check(tochainBalanceInitial).toMatchSnapshot()
-      } else if (to == 'moonbeam') {
-        const assetBalance = (await tochain.api.query.assets.account('110021739665376159354538090254163045594', address)).value.balance
-        tochainBalanceInitial = (String(assetBalance) as any !== 'undefined') ? (assetBalance.toNumber()) / 10 ** fromData.decimals : 0
-        await check(tochainBalanceInitial).toMatchSnapshot()
-      } else {
-        tochainBalanceInitial = ((await sdk.findAdapter(to).getTokenBalance(token, address)).available).toNumber()
-        await check(tochainBalanceInitial.toString()).toMatchSnapshot()
-      }
+
+      const chainBalanceInitial = (await chainBalance(sdk, fromData, address))
+      await check(chainBalanceInitial).toMatchSnapshot()
 
       const tx = fromAdapter.createTx({
         amount: amount,
@@ -188,34 +198,22 @@ describe.each([
         address: address,
         signer: alice.address
       }).signAsync(alice)
-      const event = await sendTransaction(tx as any)
-      await checkEvents(event).toMatchSnapshot()
+      await check(tx).toMatchSnapshot()
+      await sendTransaction(tx as any)
       await fromchain.chain.newBlock()
       await tochain.chain.newBlock()
 
-      // await checkSystemEvents(parachain).redact({ address: true }).toMatchSnapshot()
       // await checkSystemEvents(tochain).redact({ address: true }).toMatchSnapshot()
 
-      let tochainBalanceNow
-      await tochain.chain.newBlock()
-      if (to == 'moonriver') {
-        const assetBalance = (await tochain.api.query.assets.account('10810581592933651521121702237638664357', address)).value.balance
-        tochainBalanceNow = (String(assetBalance) as any !== 'undefined') ? (assetBalance.toNumber()) / 10 ** fromData.decimals : 0
-        await check(tochainBalanceNow).toMatchSnapshot()
-      } else if (to == 'moonbeam') {
-        const assetBalance = (await tochain.api.query.assets.account('110021739665376159354538090254163045594', address)).value.balance
-        tochainBalanceNow = (String(assetBalance) as any !== 'undefined') ? (assetBalance.toNumber()) / 10 ** fromData.decimals : 0
-        await check(tochainBalanceNow).toMatchSnapshot()
-
+      // let tochainBalanceNow
+      await sleep(2000)
+      const chainBalanceNow = (await chainBalance(sdk, fromData, address))
+      await check(chainBalanceNow).toMatchSnapshot()
+      // await check(await tochain.api.query.system.account(address)).toMatchSnapshot()
+      if (chainBalanceInitial.toChain == 0) {
+        expect(fee).toEqual(amount.toNumber() - chainBalanceNow.toChain)
       } else {
-        tochainBalanceNow = ((await sdk.findAdapter(to).getTokenBalance(token, address)).available).toNumber()
-        await check(tochainBalanceNow.toString()).toMatchSnapshot()
-      }
-
-      if (tochainBalanceInitial == 0) {
-        expect(fee).toEqual(amount.toNumber() - tochainBalanceNow)
-      } else {
-        expect(fee).toEqual(amount.toNumber() - (tochainBalanceNow - tochainBalanceInitial))
+        expect(fee).toEqual(amount.toNumber() - (chainBalanceNow.toChain - chainBalanceInitial.toChain))
       }
     })
 
