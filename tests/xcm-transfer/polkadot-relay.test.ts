@@ -75,6 +75,17 @@ const tests = [
       },
     },
   },
+  {
+    from: 'acala',
+    to: 'polkadotdev',
+    name: 'DOT wiht limited weight',
+    test: {
+      xtokensUp: {
+        tx: tx.xtokens.transfer(acala.dot, 1e12, tx.xtokens.relaychainV2, { Limited: 5000000000 }),
+        balance: query.tokens(acala.dot),
+      },
+    },
+  },
   // acala2180 <-> polkadot9420
   {
     from: 'acala2180',

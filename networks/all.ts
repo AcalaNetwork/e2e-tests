@@ -7,11 +7,13 @@ import hydraDXConfig from './hydraDX'
 import moonbeamConfig from './moonbeam'
 import polkadot9420Config from './polkadot9420'
 import polkadotConfig from './polkadot'
+import polkadotdevConfig from './polkadotdev'
 import statemintConfig from './statemint'
 
 const all = {
   polkadot: polkadotConfig,
   polkadot9420: polkadot9420Config,
+  polkadotdev: polkadotdevConfig,
   statemint: statemintConfig,
   acala: acalaConfig,
   astar: astarConfig,
