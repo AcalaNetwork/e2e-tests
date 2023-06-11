@@ -3,6 +3,7 @@ import { Config } from './types'
 import acala2180Config from './acala2180'
 import acalaConfig from './acala'
 import astarConfig from './astar'
+import bifrostConfig from './bifrost'
 import hydraDXConfig from './hydraDX'
 import moonbeamConfig from './moonbeam'
 import polkadot9420Config from './polkadot9420'
@@ -18,6 +19,7 @@ const all = {
   acala2180: acala2180Config,
   moonbeam: moonbeamConfig,
   hydraDX: hydraDXConfig,
+  bifrost: bifrostConfig,
 } satisfies Record<string, Config>
 
 export default all

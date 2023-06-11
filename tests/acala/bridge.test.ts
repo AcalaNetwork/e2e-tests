@@ -1,6 +1,7 @@
 import { AcalaAdapter, KaruraAdapter } from '@polkawallet/bridge/adapters/acala'
 import { ApiPromise } from '@polkadot/api'
 import { BasiliskAdapter } from '@polkawallet/bridge/adapters/hydradx'
+import { BifrostAdapter } from '@polkawallet/bridge/adapters/bifrost'
 import { Bridge } from '@polkawallet/bridge'
 import { FixedPointNumber } from '@acala-network/sdk-core'
 import { KusamaAdapter, PolkadotAdapter } from '@polkawallet/bridge/adapters/polkadot'
@@ -83,6 +84,18 @@ describe.each([
     to: 'moonbeam',
     token: 'AUSD',
     fee: 0.020000000000000018
+  },
+  {
+    from: 'karura',
+    to: 'bifrost',
+    token: 'KUSD',
+    fee: 0.032051199999999946
+  },
+  {
+    from: 'bifrost',
+    to: 'karura',
+    token: 'BNC',
+    fee: 0.012403363982999904
   }
 ] as const)('$from to $to using bridgeSDK', async ({ from, to, token, fee }) => {
   let fromchain: Network
@@ -150,6 +163,8 @@ describe.each([
         adapter = new MoonbeamAdapter()
       } else if (chain == 'acala') {
         adapter = new AcalaAdapter()
+      } else if (chain == 'bifrost') {
+        adapter = new BifrostAdapter()
       }
 
       if (adapter) {
@@ -208,6 +223,7 @@ describe.each([
       await check(chainBalanceNow).toMatchSnapshot()
 
       //Verify if Destination Chain Transfer Fee matches the app
+      expect(chainBalanceNow.fromChain).not.toEqual(0)
       if (chainBalanceInitial.toChain == 0) {
         expect(fee).toEqual(amount.toNumber() - chainBalanceNow.toChain)
       } else {

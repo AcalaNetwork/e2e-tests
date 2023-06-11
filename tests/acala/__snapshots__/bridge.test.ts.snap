@@ -1,0 +1,37 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`'bifrost' to 'karura' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "fromChain": 1000,
+  "toChain": 0,
+}
+`;
+
+exports[`'bifrost' to 'karura' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `"0x9102840088dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee00c4e782e7fdc14b1acf8f20fbc41d9144d2bc406a2c352180aa5b6ed6d3f11e37589b890707e9a4cfa6faddfffe7878282e65795a653a81da529fc7be8df9680dd40100004600000100204aa9d1010000000000000000000003010200411f010088dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee00"`;
+
+exports[`'bifrost' to 'karura' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 3`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "fromChain": 997.804008343143,
+  "toChain": 1.987596636017,
+}
+`;
+
+exports[`'karura' to 'bifrost' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "fromChain": 10,
+  "toChain": 0,
+}
+`;
+
+exports[`'karura' to 'bifrost' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `"0x9102840088dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee00245014b8dc6163634757b2878fc61b4e7eec0f2db1c954f578bb7923bbff4e0afbb9dbb17bb4a61a3604eb1d0e1337e93687326d4344bd8e5ea61eb4c435a70d340100003600008100204aa9d1010000000000000000000003010200451f010088dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee00"`;
+
+exports[`'karura' to 'bifrost' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 3`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "fromChain": 8,
+  "toChain": 1.9679488,
+}
+`;
