@@ -95,7 +95,7 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
         await check(toChain.api.query.system.account(toAccount.address))
           .redact({ number: precision })
           .toMatchSnapshot('balance on to chain')
-        await checkSystemEvents(toChain, 'ump').toMatchSnapshot('to chain ump events')
+        await checkSystemEvents(toChain, 'ump', 'messageQueue').toMatchSnapshot('to chain ump events')
       })
     }
 
