@@ -15,6 +15,7 @@ PORT=9009 subway --config configs/moonriver.yml &
 PORT=9010 subway --config configs/astar.yml &
 PORT=9011 subway --config configs/shiden.yml &
 PORT=9012 subway --config configs/bifrost.yml &
+PORT=9013 subway --config configs/altair.yml &
 
 trap 'kill $(jobs -p)' EXIT
 

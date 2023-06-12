@@ -1,4 +1,5 @@
 import { AcalaAdapter, KaruraAdapter } from '@polkawallet/bridge/adapters/acala'
+import { AltairAdapter } from '@polkawallet/bridge/adapters/centrifuge'
 import { ApiPromise } from '@polkadot/api'
 import { BasiliskAdapter } from '@polkawallet/bridge/adapters/hydradx'
 import { BifrostAdapter } from '@polkawallet/bridge/adapters/bifrost'
@@ -47,7 +48,7 @@ describe.each([
     from: 'karura',
     to: 'basilisk',
     token: 'KUSD',
-    fee: 0.006796282032000001
+    fee: 0.0059531240449999245
   },
   {
     from: 'karura',
@@ -65,7 +66,7 @@ describe.each([
     from: 'polkadot',
     to: 'acala',
     token: 'DOT',
-    fee: 0.00009390549996624031
+    fee: 0.00006715029996939847
   },
   {
     from: 'polkadot',
@@ -96,6 +97,18 @@ describe.each([
     to: 'karura',
     token: 'BNC',
     fee: 0.012403363982999904
+  },
+  {
+    from: 'altair',
+    to: 'karura',
+    token: 'AIR',
+    fee: 0.008012799999999931
+  },
+  {
+    from: 'karura',
+    to: 'altair',
+    token: 'KUSD',
+    fee: 0.008082399999999934
   }
 ] as const)('$from to $to using bridgeSDK', async ({ from, to, token, fee }) => {
   let fromchain: Network
@@ -165,6 +178,8 @@ describe.each([
         adapter = new AcalaAdapter()
       } else if (chain == 'bifrost') {
         adapter = new BifrostAdapter()
+      } else if (chain == 'altair') {
+        adapter = new AltairAdapter()
       }
 
       if (adapter) {
