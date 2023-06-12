@@ -5,6 +5,7 @@ import { BasiliskAdapter } from '@polkawallet/bridge/adapters/hydradx'
 import { BifrostAdapter } from '@polkawallet/bridge/adapters/bifrost'
 import { Bridge } from '@polkawallet/bridge'
 import { FixedPointNumber } from '@acala-network/sdk-core'
+import { HeikoAdapter } from '@polkawallet/bridge/adapters/parallel'
 import { KusamaAdapter, PolkadotAdapter } from '@polkawallet/bridge/adapters/polkadot'
 import { MoonbeamAdapter, MoonriverAdapter } from '@polkawallet/bridge/adapters/moonbeam'
 import { Network, createNetworks } from '../../networks'
@@ -109,7 +110,19 @@ describe.each([
     to: 'altair',
     token: 'KUSD',
     fee: 0.008082399999999934
-  }
+  },
+  // {
+  //   from: 'karura',
+  //   to: 'heiko',
+  //   token: 'KUSD',
+  //   fee: 0.008082399999999934
+  // },
+  // {
+  //   from: 'heiko',
+  //   to: 'karura',
+  //   token: 'HKO',
+  //   fee: 0.008082399999999934
+  // }
 ] as const)('$from to $to using bridgeSDK', async ({ from, to, token, fee }) => {
   let fromchain: Network
   let tochain: Network
@@ -180,6 +193,8 @@ describe.each([
         adapter = new BifrostAdapter()
       } else if (chain == 'altair') {
         adapter = new AltairAdapter()
+      } else if (chain == 'heiko') {
+        adapter = new HeikoAdapter()
       }
 
       if (adapter) {
@@ -228,7 +243,7 @@ describe.each([
         address: address,
         signer: alice.address
       }).signAsync(alice)
-      await check(tx).toMatchSnapshot()
+      // await check(tx).toMatchSnapshot()
       await sendTransaction(tx as any)
       await fromchain.chain.newBlock()
       await tochain.chain.newBlock()

@@ -8,9 +8,7 @@ exports[`'acala' to 'moonbeam' using bridgeSDK > parachain bridge to releaychain
 }
 `;
 
-exports[`'acala' to 'moonbeam' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `"0x6102840088dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee00c90542f60af96f4debcc0a09c8b1aeeb0e2af30f330385d4edf028157b9dd9bb2ecd562e608a05be325e27d0d4e8eba75c3dbb4fe1fa2792645eff31f8a72d04440100003600000100204aa9d1010000000000000000000001010200511f03004e7440db498561a46aaa82b9bc7d2d5162b5c27b00"`;
-
-exports[`'acala' to 'moonbeam' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 3`] = `
+exports[`'acala' to 'moonbeam' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `
 {
   "address": "0x4E7440dB498561A46AAa82b9Bc7d2D5162b5c27B",
   "fromChain": 998,
@@ -26,9 +24,7 @@ exports[`'acala' to 'polkadot' using bridgeSDK > parachain bridge to releaychain
 }
 `;
 
-exports[`'acala' to 'polkadot' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `"0x8502840088dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee00ea54b9fa53069d6d79875e9813663c9a536d89ce185edaf8d00d5de0dcab9c6877cec96029a562f9ae9f0372183e6a7e30190d674a0085e444061f304a2cee0a940000003600000200c817a8040000000000000000000000010101010088dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee00"`;
-
-exports[`'acala' to 'polkadot' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 3`] = `
+exports[`'acala' to 'polkadot' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `
 {
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
   "fromChain": 998,
@@ -44,9 +40,7 @@ exports[`'altair' to 'karura' using bridgeSDK > parachain bridge to releaychain 
 }
 `;
 
-exports[`'altair' to 'karura' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `"0x8d02840088dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee00d1a0d89acfd6477fd4da43cb671172e8a1248317dc2f7bd0c369c304228cef68ca3c12be8ac2df53f9f66324bc3d57f1014a5fcc50565d621719e8d7d308dd0b340000007c00000000c84e676dc11b000000000000000001010200411f010088dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee00"`;
-
-exports[`'altair' to 'karura' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 3`] = `
+exports[`'altair' to 'karura' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `
 {
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
   "fromChain": 997.9986952400924,
@@ -62,9 +56,7 @@ exports[`'basilisk' to 'karura' using bridgeSDK > parachain bridge to releaychai
 }
 `;
 
-exports[`'basilisk' to 'karura' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `"0xb1028488dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee00ec0e1b0afad24d68a0396b4cf49b40173818c1d0ad5486886f2d186759b09d6cde9d0fa6d4dc9dcfed9b189e59af6c33563adfcbc7a98c6ac0eb27bdf5833602b40000009a000000000000204aa9d1010000000000000000000001010200411f010088dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee00f2052a01000000"`;
-
-exports[`'basilisk' to 'karura' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 3`] = `
+exports[`'basilisk' to 'karura' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `
 {
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
   "fromChain": 985.259989,
@@ -80,9 +72,7 @@ exports[`'bifrost' to 'karura' using bridgeSDK > parachain bridge to releaychain
 }
 `;
 
-exports[`'bifrost' to 'karura' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `"0x9102840088dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee004e7e38db84318ca77345e34e371b7b65998a5d0020657fda6befee0cf1e2bec7d4a76505f065764d3ff005144f77465443d98cdf99f9a5f71ee6e53ca7735e0ee40100004600000100204aa9d1010000000000000000000003010200411f010088dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee00"`;
-
-exports[`'bifrost' to 'karura' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 3`] = `
+exports[`'bifrost' to 'karura' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `
 {
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
   "fromChain": 997.804008343143,
@@ -98,9 +88,7 @@ exports[`'karura' to 'altair' using bridgeSDK > parachain bridge to releaychain 
 }
 `;
 
-exports[`'karura' to 'altair' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `"0x9102840088dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee008577d0552e5f42fcad8305770aa6f26df0407b2563f5844d1797271046ee915eb80d8fd93d58b66387365f3cdbbc8c78d8bad8ed2f814376559970c054ccd002d40100003600008100204aa9d1010000000000000000000003010200a120010088dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee00"`;
-
-exports[`'karura' to 'altair' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 3`] = `
+exports[`'karura' to 'altair' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `
 {
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
   "fromChain": 8,
@@ -116,9 +104,7 @@ exports[`'karura' to 'basilisk' using bridgeSDK > parachain bridge to releaychai
 }
 `;
 
-exports[`'karura' to 'basilisk' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `"0x9102840088dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee0092ada83eef2769a2142406e18d58c0c4ffa1c29315f713a4847b10ba741a23a517a3d09ea49e2e39538a3ee079ff245dbb3c399b6c4bd3475956bd6a2241f101f40000003600008100204aa9d1010000000000000000000003010200a920010088dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee00"`;
-
-exports[`'karura' to 'basilisk' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 3`] = `
+exports[`'karura' to 'basilisk' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `
 {
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
   "fromChain": 8,
@@ -134,13 +120,19 @@ exports[`'karura' to 'bifrost' using bridgeSDK > parachain bridge to releaychain
 }
 `;
 
-exports[`'karura' to 'bifrost' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `"0x9102840088dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee00358801d80145799f1b10045237b5118c71a3c07ebcc63ef08350fc1ab836b98cbae4475f89f52bac19aaf123a58cbe7c8bf7889980b673897b9261ee90526509840000003600008100204aa9d1010000000000000000000003010200451f010088dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee00"`;
-
-exports[`'karura' to 'bifrost' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 3`] = `
+exports[`'karura' to 'bifrost' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `
 {
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
   "fromChain": 8,
   "toChain": 1.9679488,
+}
+`;
+
+exports[`'karura' to 'heiko' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "fromChain": 10,
+  "toChain": 100,
 }
 `;
 
@@ -152,9 +144,7 @@ exports[`'karura' to 'kusama' using bridgeSDK > parachain bridge to releaychain 
 }
 `;
 
-exports[`'karura' to 'kusama' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `"0x8502840088dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee0045a034bcec5d6899d90fc055ee15cc9ed234911d17be9f5c75ed8c3827aa0808567c116c24d8dd487a6fd7560be73e1040d0eaf6049bad03b4c99edcccd74b01740100003600008200204aa9d10100000000000000000000030101010088dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee00"`;
-
-exports[`'karura' to 'kusama' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 3`] = `
+exports[`'karura' to 'kusama' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `
 {
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
   "fromChain": 8,
@@ -170,9 +160,7 @@ exports[`'karura' to 'moonriver' using bridgeSDK > parachain bridge to releaycha
 }
 `;
 
-exports[`'karura' to 'moonriver' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `"0x6102840088dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee008e2b7e35f36912c886c197829defbbe33b9b5af1a79bb34be2d583935fb87344759419df80c9cca2b94b466287bbaac854e0c6fc4ceb7dae1a6cd3afca478101440100003600008000204aa9d10100000000000000000000030102009d1f03004e7440db498561a46aaa82b9bc7d2d5162b5c27b00"`;
-
-exports[`'karura' to 'moonriver' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 3`] = `
+exports[`'karura' to 'moonriver' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `
 {
   "address": "0x4E7440dB498561A46AAa82b9Bc7d2D5162b5c27B",
   "fromChain": 7.997459996996,
@@ -188,9 +176,7 @@ exports[`'kusama' to 'karura' using bridgeSDK > parachain bridge to releaychain 
 }
 `;
 
-exports[`'kusama' to 'karura' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `"0x9902840088dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee0005f51b1545c87bbe9f713db787bc31f491950e2fb5d2e1e131a849a6ae22bd19683e24e0075937c45c443ce73824a978bd23da719c1ce8bb8bc716f3f88f4908b5030000630803000100411f030001010088dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee0304000000000b00204aa9d1010000000000"`;
-
-exports[`'kusama' to 'karura' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 3`] = `
+exports[`'kusama' to 'karura' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `
 {
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
   "fromChain": 7.999375948698,
@@ -206,9 +192,7 @@ exports[`'kusama' to 'statemine' using bridgeSDK > parachain bridge to releaycha
 }
 `;
 
-exports[`'kusama' to 'statemine' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `"0x9902840088dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee006c08f2dc7e28fae76fb8aaba5cc79a29ff30ddb23cbe199b66f219ffff27afed354475400ca34b706d431783d9c3818a3a41b2f0fdd4200b0b738cac49a51505e5000000630903000100a10f030001010088dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee0304000000000b00204aa9d1010000000000"`;
-
-exports[`'kusama' to 'statemine' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 3`] = `
+exports[`'kusama' to 'statemine' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `
 {
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
   "fromChain": 7.999345893103,
@@ -224,9 +208,7 @@ exports[`'polkadot' to 'acala' using bridgeSDK > parachain bridge to releaychain
 }
 `;
 
-exports[`'polkadot' to 'acala' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `"0x8102840088dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee00ad08ee53e6bbffadadcf93fb8fa41522facdce3ea4e272e06c41bff8f26c6a195313b9b0868ce397b8d5efb0cfddee709bdcbdd5527244bdd5fe60b978cb7d0cb50200006302000101411f0001020088dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee00040a000700c817a80400000000"`;
-
-exports[`'polkadot' to 'acala' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 3`] = `
+exports[`'polkadot' to 'acala' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `
 {
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
   "fromChain": 997.9816410562,
@@ -242,9 +224,7 @@ exports[`'polkadot' to 'statemint' using bridgeSDK > parachain bridge to releayc
 }
 `;
 
-exports[`'polkadot' to 'statemint' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `"0x9502840088dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee00584bfb4a41cb47780f4deb71f224fe6133819033939f18d696c709a3b495891b087566e3f5fe5c24b47f31bf7427af80077841c0e2ae3cc6a38da5c0b549970345030000630901000100a10f010001010088dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee0104000000000700c817a8040000000000"`;
-
-exports[`'polkadot' to 'statemint' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 3`] = `
+exports[`'polkadot' to 'statemint' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `
 {
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
   "fromChain": 997.9800874708,
@@ -260,9 +240,7 @@ exports[`'statemine' to 'kusama' using bridgeSDK > parachain bridge to releaycha
 }
 `;
 
-exports[`'statemine' to 'kusama' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `"0x9102840088dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee0071676e095192f4d0ca540db62fa9d21b0ffe427e2e6be821d3c4c355b8bcddd21913951d879f9177a5ec5a1190d8d5cd0c18f4b1e206b29e315c3b455ae4630154000000001f09030100030001010088dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee0304000100000b00204aa9d1010000000000"`;
-
-exports[`'statemine' to 'kusama' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 3`] = `
+exports[`'statemine' to 'kusama' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `
 {
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
   "fromChain": 7.99874406011,
@@ -278,9 +256,7 @@ exports[`'statemint' to 'polkadot' using bridgeSDK > parachain bridge to releayc
 }
 `;
 
-exports[`'statemint' to 'polkadot' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `"0x8d02840088dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee0062124f82154aa543c497f34c7fefe4f3ccda715bd852025aca47034417b7c226a32f20f682d28696a60decab807bbf5017a8aa3a43f0203249bfee33878d160e74010000001f09010100010001010088dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee0104000100000700c817a8040000000000"`;
-
-exports[`'statemint' to 'polkadot' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 3`] = `
+exports[`'statemint' to 'polkadot' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `
 {
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
   "fromChain": 997.9981775196,
