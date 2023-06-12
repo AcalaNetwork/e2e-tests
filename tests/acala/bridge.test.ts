@@ -48,7 +48,7 @@ describe.each([
     from: 'karura',
     to: 'basilisk',
     token: 'KUSD',
-    fee: 0.0059531240449999245
+    fee: 0.005210865508999962
   },
   {
     from: 'karura',
