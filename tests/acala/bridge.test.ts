@@ -169,38 +169,22 @@ describe.each([
     }
 
     async function chooseAdapter(chain: string, api: ApiPromise) {
-      let adapter
-
-      if (chain === 'karura') {
-        adapter = new KaruraAdapter()
-      } else if (chain === 'kusama') {
-        adapter = new KusamaAdapter()
-      } else if (chain == 'moonriver') {
-        adapter = new MoonriverAdapter()
-      } else if (chain == 'statemine') {
-        adapter = new StatemineAdapter()
-      } else if (chain == 'basilisk') {
-        adapter = new BasiliskAdapter()
-      } else if (chain == 'polkadot') {
-        adapter = new PolkadotAdapter()
-      } else if (chain == 'statemint') {
-        adapter = new StatemintAdapter()
-      } else if (chain == 'moonbeam') {
-        adapter = new MoonbeamAdapter()
-      } else if (chain == 'acala') {
-        adapter = new AcalaAdapter()
-      } else if (chain == 'bifrost') {
-        adapter = new BifrostAdapter()
-      } else if (chain == 'altair') {
-        adapter = new AltairAdapter()
-      } else if (chain == 'heiko') {
-        adapter = new HeikoAdapter()
-      }
-
-      if (adapter) {
-        await adapter.init(api)
-      }
-
+      const adapters = {
+        karura: KaruraAdapter,
+        kusama: KusamaAdapter,
+        moonriver: MoonriverAdapter,
+        statemine: StatemineAdapter,
+        basilisk: BasiliskAdapter,
+        polkadot: PolkadotAdapter,
+        statemint: StatemintAdapter,
+        moonbeam: MoonbeamAdapter,
+        acala: AcalaAdapter,
+        bifrost: BifrostAdapter,
+        altair: AltairAdapter,
+        heiko: HeikoAdapter,
+      } as any
+      const adapter = new adapters[chain]
+      await adapter.init(api)
       return adapter
     }
 
