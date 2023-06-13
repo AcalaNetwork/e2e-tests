@@ -2,12 +2,12 @@ import { Config } from './types'
 
 export default {
   polkadot: {
-    name: 'altair' as const,
-    endpoint: 'wss://fullnode.altair.centrifuge.io',
-  },
-  kusama: {
     name: 'centrifuge' as const,
     endpoint: 'wss://centrifuge-parachain.api.onfinality.io/public-ws',
+  },
+  kusama: {
+    name: 'altair' as const,
+    endpoint: 'wss://fullnode.altair.centrifuge.io',
   },
   config: ({ alice }) => ({
     storages: {
