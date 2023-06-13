@@ -1,27 +1,27 @@
 import { Config } from './types'
 
 export type Vars = {
-  relayToken: string
+  ausd: number
 }
 
 export default {
   polkadot: {
     name: 'parallel' as const,
-    relayToken: '104',
     endpoint: 'wss://rpc.parallel.fi',
+    ausd: 104,
   },
   kusama: {
     name: 'heiko' as const,
-    relayToken: '103',
     endpoint: 'wss://parallel-heiko.api.onfinality.io/public-ws',
+    ausd: 103,
   },
-  config: ({ alice, relayToken }) => ({
+  config: ({ alice, ausd }) => ({
     storages: {
       System: {
         account: [[[alice.address], { data: { free: 1000 * 1e12 } }]],
       },
       Assets: {
-        account: [[[relayToken, alice.address], { balance: 100 * 1e12 }]],
+        account: [[[ausd, alice.address], { balance: 100 * 1e12 }]],
       },
     },
   }),
