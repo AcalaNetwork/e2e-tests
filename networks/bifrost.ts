@@ -18,10 +18,9 @@ export default {
   }),
 } satisfies Config
 
-
 export const basilisk = {
-  paraId: 2001
+  paraId: 2001,
 }
 export const bifrostPolkadot = {
-  paraId: 2030
+  paraId: 2030,
 }

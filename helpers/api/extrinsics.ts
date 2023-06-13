@@ -136,7 +136,7 @@ export const xTokensV3 = (
         parents: 1,
         interior: multiLocation,
       },
-    },
+    } as any,
     'Unlimited'
   )
 }
@@ -312,7 +312,7 @@ export const xTokensTransferTransferMultiassetV3 = (
           ],
         },
       },
-    },
+    } as any,
     'Unlimited'
   )
 }
@@ -356,7 +356,7 @@ export const xTokensTransferMulticurrenciesV3 = (
           ],
         },
       },
-    },
+    } as any,
     'Unlimited'
   )
 }

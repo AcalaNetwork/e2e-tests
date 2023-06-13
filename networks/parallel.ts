@@ -34,5 +34,3 @@ export const parallel = {
 export const heiko = {
   paraId: 2085,
 }
-
-

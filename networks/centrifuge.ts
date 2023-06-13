@@ -19,9 +19,9 @@ export default {
 } satisfies Config
 
 export const altair = {
-  paraId: 2088
+  paraId: 2088,
 }
 
 export const basilisk = {
-  paraId: 2031
+  paraId: 2031,
 }
