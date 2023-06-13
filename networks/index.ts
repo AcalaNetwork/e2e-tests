@@ -1,13 +1,13 @@
 import { SetupOption, setupContext } from '@acala-network/chopsticks-testing'
 import { connectParachains, connectVertical } from '@acala-network/chopsticks'
-import dotenv from 'dotenv'
+import { config as dotenvConfig } from 'dotenv'
 
 import { testingPairs } from '../helpers'
 
 import { Config, Context, NetworkKind } from './types'
 import networkDefs from './all'
 
-dotenv.config()
+dotenvConfig()
 
 const toNumber = (value: string | undefined): number | undefined => {
   if (value === undefined) {

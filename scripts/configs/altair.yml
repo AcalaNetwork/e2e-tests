@@ -1,0 +1,11 @@
+endpoints:
+  - wss://fullnode.altair.centrifuge.io:443
+
+stale_timeout_seconds: 180 # rotate endpoint if no new blocks for 3 minutes
+
+server:
+  port: 9944
+  listen_address: '0.0.0.0'
+  max_connections: 2000
+
+rpcs: substrate

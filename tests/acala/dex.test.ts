@@ -33,11 +33,11 @@ describe.each([
   it.each([
     {
       name: 'swapWithExactSupply',
-      tx: chain.api.tx.dex.swapWithExactSupply(swapPair, 1e12, 0),
+      tx: chain.api.tx.dex.swapWithExactSupply(swapPair as any, 1e12, 0),
     },
     {
       name: 'swapWithExactTarget',
-      tx: chain.api.tx.dex.swapWithExactTarget(swapPair, 1e12, 1e15),
+      tx: chain.api.tx.dex.swapWithExactTarget(swapPair as any, 1e12, 1e15),
     },
   ])('$name works', async ({ tx }) => {
     const tx0 = await sendTransaction(tx.signAsync(alice))

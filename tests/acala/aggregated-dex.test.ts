@@ -54,7 +54,7 @@ describe.each([
 
   it('swapWithExactSupply', async () => {
     const tx = await sendTransaction(
-      chain.api.tx.aggregatedDex.swapWithExactSupply(swapPath, 1e12, 0).signAsync(alice, { nonce: 0 })
+      chain.api.tx.aggregatedDex.swapWithExactSupply(swapPath as any, 1e12, 0).signAsync(alice, { nonce: 0 })
     )
 
     await chain.chain.newBlock()
