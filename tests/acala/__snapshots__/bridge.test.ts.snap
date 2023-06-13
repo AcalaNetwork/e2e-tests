@@ -108,7 +108,7 @@ exports[`'karura' to 'basilisk' using bridgeSDK > parachain bridge to releaychai
 {
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
   "fromChain": 8,
-  "toChain": 1.994789134491,
+  "toChain": 1.99426169541,
 }
 `;
 
@@ -125,14 +125,6 @@ exports[`'karura' to 'bifrost' using bridgeSDK > parachain bridge to releaychain
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
   "fromChain": 8,
   "toChain": 1.9679488,
-}
-`;
-
-exports[`'karura' to 'heiko' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 1`] = `
-{
-  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
-  "fromChain": 10,
-  "toChain": 100,
 }
 `;
 
