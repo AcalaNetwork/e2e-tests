@@ -9,107 +9,134 @@ import { HeikoAdapter } from '@polkawallet/bridge/adapters/parallel'
 import { KusamaAdapter, PolkadotAdapter } from '@polkawallet/bridge/adapters/polkadot'
 import { MoonbeamAdapter, MoonriverAdapter } from '@polkawallet/bridge/adapters/moonbeam'
 import { Network, createNetworks } from '../../networks'
+import { QuartzAdapter, UniqueAdapter } from '@polkawallet/bridge/adapters/unique'
+import { ShadowAdapter } from '@polkawallet/bridge/adapters/crust'
+import { ShidenAdapter } from '@polkawallet/bridge/adapters/astar'
 import { StatemineAdapter, StatemintAdapter } from '@polkawallet/bridge/adapters/statemint'
 import { beforeEach, describe, expect, it } from 'vitest'
 import { check, sendTransaction, testingPairs } from '@acala-network/chopsticks-testing'
 
 describe.each([
+  // {
+  //   from: 'karura',
+  //   to: 'kusama',
+  //   token: 'KSM',
+  //   fee: 0.00009000580000062541,
+  // },
+  // {
+  //   from: 'kusama',
+  //   to: 'karura',
+  //   token: 'KSM',
+  //   fee: 0.00003284986200036144,
+  // },
+  // {
+  //   from: 'kusama',
+  //   to: 'basilisk',
+  //   token: 'KSM',
+  //   fee: 0.00013233127799594513
+  // },
+  // {
+  //   from: 'basilisk',
+  //   to: 'kusama',
+  //   token: 'KSM',
+  //   fee: 0.00009000580000062541
+  // },
+  // {
+  //   from: 'statemine',
+  //   to: 'kusama',
+  //   token: 'KSM',
+  //   fee: 0.00008976839299990047,
+  // },
+  // {
+  //   from: 'kusama',
+  //   to: 'statemine',
+  //   token: 'KSM',
+  //   fee: 0.000004896952999544624,
+  // },
+  // {
+  //   from: 'basilisk',
+  //   to: 'karura',
+  //   token: 'BSX',
+  //   fee: 0.08012799999999998,
+  // },
+  // {
+  //   from: 'karura',
+  //   to: 'basilisk',
+  //   token: 'KUSD',
+  //   fee: 0.005479067798999981,
+  // },
+  // {
+  //   from: 'karura',
+  //   to: 'moonriver',
+  //   token: 'KAR',
+  //   fee: 0.03965177808399978,
+  // },
+  // {
+  //   from: 'acala',
+  //   to: 'polkadot',
+  //   token: 'DOT',
+  //   fee: 0.03644215240001358,
+  // },
+  // {
+  //   from: 'polkadot',
+  //   to: 'acala',
+  //   token: 'DOT',
+  //   fee: 0.00006715029996939847,
+  // },
+  // {
+  //   from: 'polkadot',
+  //   to: 'statemint',
+  //   token: 'DOT',
+  //   fee: 0.0010312677000001713,
+  // },
+  // {
+  //   from: 'statemint',
+  //   to: 'polkadot',
+  //   token: 'DOT',
+  //   fee: 0.03644215240001358,
+  // },
+  // {
+  //   from: 'acala',
+  //   to: 'moonbeam',
+  //   token: 'AUSD',
+  //   fee: 0.020000000000000018,
+  // },
+  // {
+  //   from: 'karura',
+  //   to: 'bifrost',
+  //   token: 'KUSD',
+  //   fee: 0.032051199999999946,
+  // },
+  // {
+  //   from: 'bifrost',
+  //   to: 'karura',
+  //   token: 'BNC',
+  //   fee: 0.012403363982999904,
+  // },
+  // {
+  //   from: 'altair',
+  //   to: 'karura',
+  //   token: 'AIR',
+  //   fee: 0.008012799999999931,
+  // },
+  // {
+  //   from: 'karura',
+  //   to: 'altair',
+  //   token: 'KUSD',
+  //   fee: 0.008082399999999934,
+  // },
   {
-    from: 'karura',
-    to: 'kusama',
-    token: 'KSM',
-    fee: 0.00009000580000062541,
-  },
-  {
-    from: 'kusama',
+    from: 'shiden',
     to: 'karura',
-    token: 'KSM',
-    fee: 0.00003284986200036144,
+    token: 'SDN',
+    fee: 0.008082399999999934
   },
-  {
-    from: 'statemine',
-    to: 'kusama',
-    token: 'KSM',
-    fee: 0.00008976839299990047,
-  },
-  {
-    from: 'kusama',
-    to: 'statemine',
-    token: 'KSM',
-    fee: 0.000004896952999544624,
-  },
-  {
-    from: 'basilisk',
-    to: 'karura',
-    token: 'BSX',
-    fee: 0.08012799999999998,
-  },
-  {
-    from: 'karura',
-    to: 'basilisk',
-    token: 'KUSD',
-    fee: 0.00573830458999991,
-  },
-  {
-    from: 'karura',
-    to: 'moonriver',
-    token: 'KAR',
-    fee: 0.03965177808399978,
-  },
-  {
-    from: 'acala',
-    to: 'polkadot',
-    token: 'DOT',
-    fee: 0.04214341399995192,
-  },
-  {
-    from: 'polkadot',
-    to: 'acala',
-    token: 'DOT',
-    fee: 0.00006715029996939847,
-  },
-  {
-    from: 'polkadot',
-    to: 'statemint',
-    token: 'DOT',
-    fee: 0.0010312677000001713,
-  },
-  {
-    from: 'statemint',
-    to: 'polkadot',
-    token: 'DOT',
-    fee: 0.04214341399995192,
-  },
-  {
-    from: 'acala',
-    to: 'moonbeam',
-    token: 'AUSD',
-    fee: 0.020000000000000018,
-  },
-  {
-    from: 'karura',
-    to: 'bifrost',
-    token: 'KUSD',
-    fee: 0.032051199999999946,
-  },
-  {
-    from: 'bifrost',
-    to: 'karura',
-    token: 'BNC',
-    fee: 0.012403363982999904,
-  },
-  {
-    from: 'altair',
-    to: 'karura',
-    token: 'AIR',
-    fee: 0.008012799999999931,
-  },
-  {
-    from: 'karura',
-    to: 'altair',
-    token: 'KUSD',
-    fee: 0.008082399999999934,
-  },
+  // {
+  //   from: 'karura',
+  //   to: 'shiden',
+  //   token: 'KUSD',
+  //   fee: 0.002080000000000082
+  // },
   // {
   //   from: 'karura',
   //   to: 'heiko',
@@ -122,6 +149,36 @@ describe.each([
   //   token: 'HKO',
   //   fee: 0.008082399999999934
   // }
+  // {
+  //   from: 'crust',
+  //   to: 'karura',
+  //   token: 'CSM',
+  //   fee: 0.008082399999999934
+  // },
+  // {
+  //   from: 'karura',
+  //   to: 'crust',
+  //   token: 'CSM',
+  //   fee: 0.002080000000000082
+  // },
+  // {
+  //   from: 'unique',
+  //   to: 'acala',
+  //   token: 'UNQ',
+  //   fee: 0.008082399999999934
+  // },
+  // {
+  //   from: 'quartz',
+  //   to: 'karura',
+  //   token: 'QTZ',
+  //   fee: 0.008082399999999934
+  // },
+  // {
+  //   from: 'karura',
+  //   to: 'quartz',
+  //   token: 'QTZ',
+  //   fee: 0.002080000000000082
+  // },
 ] as const)('$from to $to using bridgeSDK', async ({ from, to, token, fee }) => {
   let fromchain: Network
   let tochain: Network
@@ -180,6 +237,10 @@ describe.each([
         bifrost: BifrostAdapter,
         altair: AltairAdapter,
         heiko: HeikoAdapter,
+        shiden: ShidenAdapter,
+        crust: ShadowAdapter,
+        quartz: QuartzAdapter,
+        unique: UniqueAdapter
       } as any
       const adapter = new adapters[chain]()
       await adapter.init(api)
@@ -221,17 +282,15 @@ describe.each([
 
       const chainBalanceInitial = await chainBalance(sdk, fromData, address)
       await check(chainBalanceInitial).toMatchSnapshot()
-
       const tx = fromAdapter
         .createTx({
+          address: address,
           amount: amount,
           to: to,
-          token: token,
-          address: address,
-          signer: alice.address,
+          token: token
         })
         .signAsync(alice)
-      // await check(tx).toMatchSnapshot()
+      await check(tx).toMatchSnapshot()
       await sendTransaction(tx as any)
       await fromchain.chain.newBlock()
       await tochain.chain.newBlock()

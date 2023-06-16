@@ -42,10 +42,10 @@ It is recommended use `yarn update-env` to update the `.env` file with latest bl
 - Add `-u` to automatically update snapshots and use git diff tool to compare the changes.
 - For failed CI tests, check the block numbers from the `update-env` steps in the logs to local `.env` file to be able to run the tests with the same block height.
 - Remove the system events filter to see all the events in snapshots.
-  - e.g. Replace `checkSystemEvents(toChain, 'parachainSystem', 'dmpQueue')` to `checkSystemEvents(toChain)`
+	- e.g. Replace `checkSystemEvents(toChain, 'parachainSystem', 'dmpQueue')` to `checkSystemEvents(toChain)`
 - Insert `await chain.pause()` to pause the test and inspect the Chopsticks instance in the console. The connection details will be displayed in the console log.
-  - Edit the timeout in `vitest.config.ts` to avoid timeout error.
-  - Try log the extrinsic hex and replay it in the Chopsticks instance to debug the issue.
+	- Edit the timeout in `vitest.config.ts` to avoid timeout error.
+	- Try log the extrinsic hex and replay it in the Chopsticks instance to debug the issue.
 - Try replicate the issue in Chopsticks directly to create a minimal reproducible case.
 - Once you are able to reproduce the issue in Chopsticks, you may add bunch logs in the runtime and make a wasm and override it. Then use `--runtime-log-level 5` to display logs.
 
@@ -74,25 +74,34 @@ It is recommended use `yarn update-env` to update the `.env` file with latest bl
 Example `.env` file
 
 ```
-POLKADOT_BLOCK_NUMBER=15052153
-KUSAMA_BLOCK_NUMBER=17443980
-POLKADOT9420_BLOCK_NUMBER=15052153
-KUSAMA9420_BLOCK_NUMBER=17443980
-STATEMINT_BLOCK_NUMBER=3609016
-STATEMINE_BLOCK_NUMBER=4263656
-ACALA_BLOCK_NUMBER=3342960
-KARURA_BLOCK_NUMBER=4103523
-ACALA2160_BLOCK_NUMBER=3342960
-KARURA2160_BLOCK_NUMBER=4103523
-MOONBEAM_BLOCK_NUMBER=3334880
-MOONRIVER_BLOCK_NUMBER=4017536
-HYDRADX_BLOCK_NUMBER=2328334
-BASILISK_BLOCK_NUMBER=3144786
+POLKADOT_BLOCK_NUMBER=15943997
+KUSAMA_BLOCK_NUMBER=18333291
+POLKADOT9420_BLOCK_NUMBER=15943997
+KUSAMA9420_BLOCK_NUMBER=18333291
+STATEMINT_BLOCK_NUMBER=3956812
+STATEMINE_BLOCK_NUMBER=4689863
+ACALA_BLOCK_NUMBER=3785107
+KARURA_BLOCK_NUMBER=4535779
+ASTAR_BLOCK_NUMBER=3776318
+SHIDEN_BLOCK_NUMBER=4203165
+ACALA2180_BLOCK_NUMBER=3785107
+KARURA2180_BLOCK_NUMBER=4535779
+MOONBEAM_BLOCK_NUMBER=3769096
+MOONRIVER_BLOCK_NUMBER=4446853
+HYDRADX_BLOCK_NUMBER=2750787
+BASILISK_BLOCK_NUMBER=3559987
+BIFROSTPOLKADOT_BLOCK_NUMBER=2522864
+BIFROST_BLOCK_NUMBER=4361576
+ALTAIR_BLOCK_NUMBER=3282796
+CENTRIFUGE_BLOCK_NUMBER=3161458
+PARALLEL_BLOCK_NUMBER=3706152
+HEIKO_BLOCK_NUMBER=3710234
+
 
 ACALA_ENDPOINT=ws://0.0.0.0:9000
-ACALA2160_ENDPOINT=ws://0.0.0.0:9000
+ACALA2180_ENDPOINT=ws://0.0.0.0:9000
 KARURA_ENDPOINT=ws://0.0.0.0:9001
-KARURA2160_ENDPOINT=ws://0.0.0.0:9001
+KARURA2180_ENDPOINT=ws://0.0.0.0:9001
 KUSAMA_ENDPOINT=ws://0.0.0.0:9002
 KUSAMA9420_ENDPOINT=ws://0.0.0.0:9002
 POLKADOT_ENDPOINT=ws://0.0.0.0:9003
@@ -103,6 +112,14 @@ BASILISK_ENDPOINT=ws://0.0.0.0:9006
 HYDRADX_ENDPOINT=ws://0.0.0.0:9007
 MOONBREAM_ENDPOINT=ws://0.0.0.0:9008
 MOONRIVER_ENDPOINT=ws://0.0.0.0:9009
+ASTAR_BLOCK_ENDPOINT=ws://0.0.0.0:9010
+SHIDEN_BLOCK_ENDPOINT=ws://0.0.0.0:9011
+BIFROST_BLOCK_ENDPOINT=ws://0.0.0.0:9012
+ALTAIR_BLOCK_ENDPOINT=ws://0.0.0.0:9013
+HEIKO_BLOCK_ENDPOINT=ws://0.0.0.0:9014
+BIFROSTPOLKADOT_BLOCK_ENDPOINT=ws://0.0.0.0:9015
+PARALLEL_BLOCK_ENDPOINT=ws://0.0.0.0:9016
+CENTRIFUGE_BLOCK_ENDPOINT=ws://0.0.0.0:9017
 
 DB_PATH=./db.sqlite
 ```
