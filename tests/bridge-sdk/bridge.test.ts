@@ -9,6 +9,9 @@ import { HeikoAdapter } from '@polkawallet/bridge/adapters/parallel'
 import { KusamaAdapter, PolkadotAdapter } from '@polkawallet/bridge/adapters/polkadot'
 import { MoonbeamAdapter, MoonriverAdapter } from '@polkawallet/bridge/adapters/moonbeam'
 import { Network, createNetworks } from '../../networks'
+import { QuartzAdapter, UniqueAdapter } from '@polkawallet/bridge/adapters/unique'
+import { ShadowAdapter } from '@polkawallet/bridge/adapters/crust'
+import { ShidenAdapter } from '@polkawallet/bridge/adapters/astar'
 import { StatemineAdapter, StatemintAdapter } from '@polkawallet/bridge/adapters/statemint'
 import { beforeEach, describe, expect, it } from 'vitest'
 import { check, sendTransaction, testingPairs } from '@acala-network/chopsticks-testing'
@@ -25,6 +28,18 @@ describe.each([
     to: 'karura',
     token: 'KSM',
     fee: 0.00003284986200036144,
+  },
+  {
+    from: 'kusama',
+    to: 'basilisk',
+    token: 'KSM',
+    fee: 0.00013397134898696095
+  },
+  {
+    from: 'basilisk',
+    to: 'kusama',
+    token: 'KSM',
+    fee: 0.00009000580000062541
   },
   {
     from: 'statemine',
@@ -48,7 +63,7 @@ describe.each([
     from: 'karura',
     to: 'basilisk',
     token: 'KUSD',
-    fee: 0.00573830458999991,
+    fee: 0.005479067798999981,
   },
   {
     from: 'karura',
@@ -60,7 +75,7 @@ describe.each([
     from: 'acala',
     to: 'polkadot',
     token: 'DOT',
-    fee: 0.04214341399995192,
+    fee: 0.03644215240001358,
   },
   {
     from: 'polkadot',
@@ -72,13 +87,13 @@ describe.each([
     from: 'polkadot',
     to: 'statemint',
     token: 'DOT',
-    fee: 0.0010312677000001713,
+    fee: 0.00014335790001496207,
   },
   {
     from: 'statemint',
     to: 'polkadot',
     token: 'DOT',
-    fee: 0.04214341399995192,
+    fee: 0.03644215240001358,
   },
   {
     from: 'acala',
@@ -110,18 +125,60 @@ describe.each([
     token: 'KUSD',
     fee: 0.008082399999999934,
   },
+  {
+    from: 'shiden',
+    to: 'karura',
+    token: 'SDN',
+    fee: 0.0008012799999999043
+  },
+  {
+    from: 'karura',
+    to: 'shiden',
+    token: 'KUSD',
+    fee: 0.002080000000000082
+  },
+  {
+    from: 'karura',
+    to: 'heiko',
+    token: 'KAR',
+    fee: 0.07407407407400002
+  },
+  {
+    from: 'heiko',
+    to: 'karura',
+    token: 'HKO',
+    fee: 0.008012799999999931
+  },
   // {
-  //   from: 'karura',
-  //   to: 'heiko',
-  //   token: 'KUSD',
+  //   from: 'crust',
+  //   to: 'karura',
+  //   token: 'CSM',
   //   fee: 0.008082399999999934
   // },
   // {
-  //   from: 'heiko',
-  //   to: 'karura',
-  //   token: 'HKO',
+  //   from: 'karura',
+  //   to: 'crust',
+  //   token: 'CSM',
+  //   fee: 0.002080000000000082
+  // },
+  // {
+  //   from: 'unique',
+  //   to: 'acala',
+  //   token: 'UNQ',
   //   fee: 0.008082399999999934
-  // }
+  // },
+  // {
+  //   from: 'quartz',
+  //   to: 'karura',
+  //   token: 'QTZ',
+  //   fee: 0.008082399999999934
+  // },
+  // {
+  //   from: 'karura',
+  //   to: 'quartz',
+  //   token: 'QTZ',
+  //   fee: 0.002080000000000082
+  // },
 ] as const)('$from to $to using bridgeSDK', async ({ from, to, token, fee }) => {
   let fromchain: Network
   let tochain: Network
@@ -180,6 +237,10 @@ describe.each([
         bifrost: BifrostAdapter,
         altair: AltairAdapter,
         heiko: HeikoAdapter,
+        shiden: ShidenAdapter,
+        crust: ShadowAdapter,
+        quartz: QuartzAdapter,
+        unique: UniqueAdapter
       } as any
       const adapter = new adapters[chain]()
       await adapter.init(api)
@@ -221,14 +282,12 @@ describe.each([
 
       const chainBalanceInitial = await chainBalance(sdk, fromData, address)
       await check(chainBalanceInitial).toMatchSnapshot()
-
       const tx = fromAdapter
         .createTx({
+          address: address,
           amount: amount,
           to: to,
-          token: token,
-          address: address,
-          signer: alice.address,
+          token: token
         })
         .signAsync(alice)
       // await check(tx).toMatchSnapshot()

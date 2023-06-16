@@ -18,7 +18,7 @@ export default {
   config: ({ alice, relayToken }) => ({
     storages: {
       System: {
-        account: [[[alice.address], { data: { free: 10 * 1e12 } }]],
+        account: [[[alice.address], { data: { free: '100000000000000000000' } }]],
       },
       Assets: {
         account: [[[relayToken, alice.address], { balance: 10 * 1e12 }]],

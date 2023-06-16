@@ -12,7 +12,7 @@ export default {
   },
   kusama: {
     name: 'heiko' as const,
-    endpoint: 'wss://parallel-heiko.api.onfinality.io/public-ws',
+    endpoint: 'wss://heiko-rpc.parallel.fi',
     ausd: 103,
   },
   config: ({ alice, ausd }) => ({
