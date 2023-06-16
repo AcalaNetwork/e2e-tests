@@ -25,38 +25,15 @@ const tests = [
     name: 'DOT',
     test: {
       xcmPalletDown: {
-        tx: tx.xcmPallet.limitedReserveTransferAssetsV2(polkadot.dot, 1e12, tx.xcmPallet.parachainV2(0, acala.paraId)),
-        balance: query.tokens(acala.dot),
-      },
-    },
-  },
-  // acala <-> polkadot9420
-  {
-    from: 'acala',
-    to: 'polkadot9420',
-    name: 'DOT',
-    test: {
-      xtokensUp: {
-        tx: tx.xtokens.transfer(acala.dot, 1e12, tx.xtokens.relaychainV2),
-        balance: query.tokens(acala.dot),
-      },
-    },
-  },
-  {
-    from: 'polkadot9420',
-    to: 'acala',
-    name: 'DOT',
-    test: {
-      xcmPalletDown: {
         tx: tx.xcmPallet.limitedReserveTransferAssetsV3(polkadot.dot, 1e12, tx.xcmPallet.parachainV3(0, acala.paraId)),
         balance: query.tokens(acala.dot),
       },
     },
   },
-  // acala2180 <-> polkadot9420
+  // acala2180 <-> polkadot
   {
     from: 'acala2180',
-    to: 'polkadot9420',
+    to: 'polkadot',
     name: 'DOT',
     test: {
       xtokensUp: {
@@ -66,7 +43,7 @@ const tests = [
     },
   },
   {
-    from: 'polkadot9420',
+    from: 'polkadot',
     to: 'acala2180',
     name: 'DOT',
     test: {
@@ -83,7 +60,7 @@ const tests = [
     name: 'DOT',
     test: {
       xcmPalletDown: {
-        tx: tx.xcmPallet.limitedReserveTransferAssetsV2(polkadot.dot, 1e12, tx.xcmPallet.parachainV2(0, astar.paraId)),
+        tx: tx.xcmPallet.limitedReserveTransferAssetsV3(polkadot.dot, 1e12, tx.xcmPallet.parachainV3(0, astar.paraId)),
         balance: query.assets(astar.dot),
       },
     },

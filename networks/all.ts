@@ -5,7 +5,10 @@ import acalaConfig from './acala'
 import astarConfig from './astar'
 import bifrostConfig from './bifrost'
 import centrifugeConfig from './centrifuge'
+<<<<<<< HEAD
 import crustConfig from './crust'
+=======
+>>>>>>> origin/master
 import hydraDXConfig from './hydraDX'
 import moonbeamConfig from './moonbeam'
 import parallelConfig from './parallel'

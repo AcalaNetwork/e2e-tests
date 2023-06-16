@@ -1,0 +1,257 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`'acala' to 'moonbeam' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 1`] = `
+{
+  "address": "0x4E7440dB498561A46AAa82b9Bc7d2D5162b5c27B",
+  "fromChain": 1000,
+  "toChain": 0,
+}
+`;
+
+exports[`'acala' to 'moonbeam' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `
+{
+  "address": "0x4E7440dB498561A46AAa82b9Bc7d2D5162b5c27B",
+  "fromChain": 998,
+  "toChain": 1.98,
+}
+`;
+
+exports[`'acala' to 'polkadot' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "fromChain": 1000,
+  "toChain": 1000,
+}
+`;
+
+exports[`'acala' to 'polkadot' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "fromChain": 998,
+  "toChain": 1001.957856586,
+}
+`;
+
+exports[`'altair' to 'karura' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "fromChain": 1000,
+  "toChain": 0,
+}
+`;
+
+exports[`'altair' to 'karura' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "fromChain": 997.9986952400924,
+  "toChain": 1.9919872,
+}
+`;
+
+exports[`'basilisk' to 'karura' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "fromChain": 1000,
+  "toChain": 0,
+}
+`;
+
+exports[`'basilisk' to 'karura' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "fromChain": 985.259989,
+  "toChain": 1.919872,
+}
+`;
+
+exports[`'bifrost' to 'karura' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "fromChain": 1000,
+  "toChain": 0,
+}
+`;
+
+exports[`'bifrost' to 'karura' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "fromChain": 997.804008343143,
+  "toChain": 1.987596636017,
+}
+`;
+
+exports[`'karura' to 'altair' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "fromChain": 10,
+  "toChain": 0,
+}
+`;
+
+exports[`'karura' to 'altair' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "fromChain": 8,
+  "toChain": 1.9919176,
+}
+`;
+
+exports[`'karura' to 'basilisk' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "fromChain": 10,
+  "toChain": 0,
+}
+`;
+
+exports[`'karura' to 'basilisk' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "fromChain": 8,
+  "toChain": 1.99426169541,
+}
+`;
+
+exports[`'karura' to 'bifrost' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "fromChain": 10,
+  "toChain": 0,
+}
+`;
+
+exports[`'karura' to 'bifrost' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "fromChain": 8,
+  "toChain": 1.9679488,
+}
+`;
+
+exports[`'karura' to 'kusama' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "fromChain": 10,
+  "toChain": 10,
+}
+`;
+
+exports[`'karura' to 'kusama' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "fromChain": 8,
+  "toChain": 11.9999099942,
+}
+`;
+
+exports[`'karura' to 'moonriver' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 1`] = `
+{
+  "address": "0x4E7440dB498561A46AAa82b9Bc7d2D5162b5c27B",
+  "fromChain": 10,
+  "toChain": 0.09012,
+}
+`;
+
+exports[`'karura' to 'moonriver' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `
+{
+  "address": "0x4E7440dB498561A46AAa82b9Bc7d2D5162b5c27B",
+  "fromChain": 7.997459996996,
+  "toChain": 2.050468221916,
+}
+`;
+
+exports[`'kusama' to 'karura' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "fromChain": 10,
+  "toChain": 10,
+}
+`;
+
+exports[`'kusama' to 'karura' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "fromChain": 7.999375948698,
+  "toChain": 11.999967150138,
+}
+`;
+
+exports[`'kusama' to 'statemine' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "fromChain": 10,
+  "toChain": 10,
+}
+`;
+
+exports[`'kusama' to 'statemine' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "fromChain": 7.999345893103,
+  "toChain": 11.999995103047,
+}
+`;
+
+exports[`'polkadot' to 'acala' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "fromChain": 1000,
+  "toChain": 1000,
+}
+`;
+
+exports[`'polkadot' to 'acala' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "fromChain": 997.9816410562,
+  "toChain": 1001.9999328497,
+}
+`;
+
+exports[`'polkadot' to 'statemint' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "fromChain": 1000,
+  "toChain": 1000,
+}
+`;
+
+exports[`'polkadot' to 'statemint' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "fromChain": 997.9800874708,
+  "toChain": 1001.9989687323,
+}
+`;
+
+exports[`'statemine' to 'kusama' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "fromChain": 10,
+  "toChain": 10,
+}
+`;
+
+exports[`'statemine' to 'kusama' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "fromChain": 7.99874406011,
+  "toChain": 11.999910231607,
+}
+`;
+
+exports[`'statemint' to 'polkadot' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "fromChain": 1000,
+  "toChain": 1000,
+}
+`;
+
+exports[`'statemint' to 'polkadot' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "fromChain": 997.9981775196,
+  "toChain": 1001.957856586,
+}
+`;

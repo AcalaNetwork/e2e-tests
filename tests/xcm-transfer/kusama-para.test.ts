@@ -79,7 +79,7 @@ const tests = [
     }),
     test: {
       xtokenstHorizontal: {
-        tx: tx.xtokens.transfer(basilisk.dai, 10n ** 18n, tx.xtokens.parachainV2(karura.paraId), 5e9),
+        tx: tx.xtokens.transfer(basilisk.dai, 10n ** 18n, tx.xtokens.parachainV3(karura.paraId)),
         fromBalance: query.tokens(basilisk.dai),
         toBalance: query.evm(karura.dai.Erc20, '0x2aef47e62c966f0695d5af370ddc1bc7c56902063eee60853e2872fc0ff4f88c'),
       },
