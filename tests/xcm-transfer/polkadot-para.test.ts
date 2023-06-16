@@ -25,7 +25,7 @@ const tests = [
     }),
     test: {
       xcmPalletHorizontal: {
-        tx: tx.xcmPallet.limitedReserveTransferAssetsV2(statemint.wbtc, 1e7, tx.xcmPallet.parachainV2(1, acala.paraId)),
+        tx: tx.xcmPallet.limitedReserveTransferAssetsV3(statemint.wbtc, 1e7, tx.xcmPallet.parachainV3(1, acala.paraId)),
         fromBalance: query.assets(statemint.wbtcIndex),
         toBalance: query.tokens(acala.wbtc),
       },

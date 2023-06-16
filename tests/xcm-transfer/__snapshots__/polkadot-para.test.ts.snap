@@ -509,7 +509,10 @@ exports[`'acala' -> 'statemint' xcm transfer 'WBTC' > xtokens transfer > to chai
     "data": {
       "messageId": "(hash)",
       "outcome": {
-        "Complete": "(rounded 1000000000)",
+        "Complete": {
+          "proofSize": 0,
+          "refTime": "(rounded 160000000)",
+        },
       },
     },
     "method": "ExecutedDownward",
@@ -520,8 +523,8 @@ exports[`'acala' -> 'statemint' xcm transfer 'WBTC' > xtokens transfer > to chai
       "error": "FailedToTransactAsset",
       "messageHash": "(hash)",
       "weight": {
-        "proofSize": 0,
-        "refTime": "(rounded 310000000)",
+        "proofSize": "(rounded 7200)",
+        "refTime": "(rounded 300000000)",
       },
     },
     "method": "Fail",
@@ -805,7 +808,7 @@ exports[`'moonbeam' -> 'acala' xcm transfer 'DOT' > xtokens transfer > balance o
 exports[`'moonbeam' -> 'acala' xcm transfer 'DOT' > xtokens transfer > from chain ump messages 1`] = `
 [
   {
-    "v2": [
+    "v3": [
       {
         "withdrawAsset": [
           {
@@ -850,7 +853,7 @@ exports[`'moonbeam' -> 'acala' xcm transfer 'DOT' > xtokens transfer > from chai
         "depositReserveAsset": {
           "assets": {
             "wild": {
-              "all": null,
+              "allCounted": 1,
             },
           },
           "dest": {
@@ -861,7 +864,6 @@ exports[`'moonbeam' -> 'acala' xcm transfer 'DOT' > xtokens transfer > from chai
             },
             "parents": 0,
           },
-          "maxAssets": 1,
           "xcm": [
             {
               "buyExecution": {
@@ -887,7 +889,7 @@ exports[`'moonbeam' -> 'acala' xcm transfer 'DOT' > xtokens transfer > from chai
               "depositAsset": {
                 "assets": {
                   "wild": {
-                    "all": null,
+                    "allCounted": 1,
                   },
                 },
                 "beneficiary": {
@@ -895,15 +897,12 @@ exports[`'moonbeam' -> 'acala' xcm transfer 'DOT' > xtokens transfer > from chai
                     "x1": {
                       "accountId32": {
                         "id": "0x88dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee",
-                        "network": {
-                          "any": null,
-                        },
+                        "network": null,
                       },
                     },
                   },
                   "parents": 0,
                 },
-                "maxAssets": 1,
               },
             },
           ],
@@ -1119,7 +1118,10 @@ exports[`'statemint' -> 'acala' xcm transfer 'WBTC' > xcmPallet transfer > tx ev
   {
     "data": [
       {
-        "Complete": "(rounded 653000000)",
+        "Complete": {
+          "proofSize": "(rounded 6200)",
+          "refTime": "(rounded 674000000)",
+        },
       },
     ],
     "method": "Attempted",

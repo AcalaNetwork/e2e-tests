@@ -21,7 +21,7 @@ exports[`'acala' homa > with latest block > Homa redeem unbond works > events 2`
       "eraIndexWhenUnbond": 100,
       "liquidAmount": 1000000000000,
       "redeemer": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
-      "unbondingStakingAmount": "(rounded 130000000000)",
+      "unbondingStakingAmount": "(rounded 120000000000)",
     },
     "method": "RedeemedByUnbond",
     "section": "homa",
@@ -33,7 +33,7 @@ exports[`'acala' homa > with latest block > Homa redeem unbond works > system ev
 [
   {
     "data": {
-      "amount": "(rounded 130000000000)",
+      "amount": "(rounded 120000000000)",
       "stash": "(address)",
     },
     "method": "Unbonded",
@@ -408,7 +408,7 @@ exports[`'acala2180' homa > with latest block > Homa redeem unbond works > event
       "eraIndexWhenUnbond": 100,
       "liquidAmount": 1000000000000,
       "redeemer": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
-      "unbondingStakingAmount": "(rounded 130000000000)",
+      "unbondingStakingAmount": "(rounded 120000000000)",
     },
     "method": "RedeemedByUnbond",
     "section": "homa",
@@ -420,7 +420,7 @@ exports[`'acala2180' homa > with latest block > Homa redeem unbond works > syste
 [
   {
     "data": {
-      "amount": "(rounded 130000000000)",
+      "amount": "(rounded 120000000000)",
       "stash": "(address)",
     },
     "method": "Unbonded",
@@ -431,7 +431,7 @@ exports[`'acala2180' homa > with latest block > Homa redeem unbond works > syste
       "(hash)",
       {
         "Complete": {
-          "proofSize": "(rounded 120000)",
+          "proofSize": "(rounded 59000)",
           "refTime": "(rounded 11000000000)",
         },
       },
@@ -511,7 +511,7 @@ exports[`'acala2180' homa > with latest block > Homa stake works > system events
 exports[`'acala2180' homa > with latest block > Homa stake works > ump 1`] = `
 [
   {
-    "v3": [
+    "v2": [
       {
         "withdrawAsset": [
           {
@@ -548,10 +548,7 @@ exports[`'acala2180' homa > with latest block > Homa stake works > ump 1`] = `
             },
           },
           "weightLimit": {
-            "limited": {
-              "proofSize": "(number)",
-              "refTime": "(number)",
-            },
+            "limited": "(number)",
           },
         },
       },
@@ -559,7 +556,7 @@ exports[`'acala2180' homa > with latest block > Homa stake works > ump 1`] = `
         "depositAsset": {
           "assets": {
             "wild": {
-              "allCounted": "(number)",
+              "all": null,
             },
           },
           "beneficiary": {
@@ -567,18 +564,21 @@ exports[`'acala2180' homa > with latest block > Homa stake works > ump 1`] = `
               "x1": {
                 "accountId32": {
                   "id": "(hex)",
-                  "network": null,
+                  "network": {
+                    "any": null,
+                  },
                 },
               },
             },
             "parents": "(number)",
           },
+          "maxAssets": "(number)",
         },
       },
     ],
   },
   {
-    "v3": [
+    "v2": [
       {
         "withdrawAsset": [
           {
@@ -621,11 +621,8 @@ exports[`'acala2180' homa > with latest block > Homa stake works > ump 1`] = `
           "call": {
             "encoded": "(hex)",
           },
-          "originKind": "SovereignAccount",
-          "requireWeightAtMost": {
-            "proofSize": "(number)",
-            "refTime": "(number)",
-          },
+          "originType": "SovereignAccount",
+          "requireWeightAtMost": "(number)",
         },
       },
       {
@@ -635,7 +632,7 @@ exports[`'acala2180' homa > with latest block > Homa stake works > ump 1`] = `
         "depositAsset": {
           "assets": {
             "wild": {
-              "allCounted": "(number)",
+              "all": null,
             },
           },
           "beneficiary": {
@@ -646,6 +643,7 @@ exports[`'acala2180' homa > with latest block > Homa stake works > ump 1`] = `
             },
             "parents": "(number)",
           },
+          "maxAssets": "(number)",
         },
       },
     ],

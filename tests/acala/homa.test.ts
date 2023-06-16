@@ -10,11 +10,6 @@ describe.each([
     relay: 'kusama',
     unbond: { para: 4382523, relay: 18023827, era: '0x42140000' },
   },
-  // { // Polkadot 9370 ump is broken
-  //   name: 'acala',
-  //   relay: 'polkadot',
-  //   unbond: { para: 3653931, relay: 15678497, era: '0x40040000' },
-  // },
   {
     name: 'acala2180',
     relay: 'polkadot9420',
