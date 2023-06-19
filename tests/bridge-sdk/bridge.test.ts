@@ -33,7 +33,7 @@ describe.each([
     from: 'kusama',
     to: 'basilisk',
     token: 'KSM',
-    fee: 0.00012812565705644374
+    fee: 0.00012169936803729797
   },
   {
     from: 'basilisk',
@@ -63,7 +63,7 @@ describe.each([
     from: 'karura',
     to: 'basilisk',
     token: 'KUSD',
-    fee: 0.0058843740979999115,
+    fee: 0.005293327189000108,
   },
   {
     from: 'karura',

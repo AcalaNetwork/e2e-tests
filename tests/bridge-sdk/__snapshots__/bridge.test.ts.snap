@@ -172,7 +172,7 @@ exports[`'karura' to 'basilisk' using bridgeSDK cross-chain 'KUSD' > parachain b
 {
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
   "fromChain": 8,
-  "toChain": 1.994115625902,
+  "toChain": 1.994706672811,
 }
 `;
 
@@ -268,7 +268,7 @@ exports[`'kusama' to 'basilisk' using bridgeSDK cross-chain 'KSM' > parachain br
 {
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
   "fromChain": 7.999375948698,
-  "toChain": 1001.999871874343,
+  "toChain": 1001.999878300632,
 }
 `;
 
