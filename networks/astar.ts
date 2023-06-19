@@ -2,6 +2,7 @@ import { Config } from './types'
 
 export type Vars = {
   relayToken: string
+  aUSDToken: string
 }
 
 export default {
@@ -9,19 +10,24 @@ export default {
     name: 'astar' as const,
     endpoint: 'wss://astar.api.onfinality.io/public-ws',
     relayToken: '340282366920938463463374607431768211455',
+    aUSDToken: '18446744073709551617',
   },
   kusama: {
     name: 'shiden' as const,
     endpoint: 'wss://shiden.api.onfinality.io/public-ws',
     relayToken: '340282366920938463463374607431768211455',
+    aUSDToken: '18446744073709551616',
   },
-  config: ({ alice, relayToken }) => ({
+  config: ({ alice, relayToken, aUSDToken}) => ({
     storages: {
       System: {
         account: [[[alice.address], { data: { free: '100000000000000000000' } }]],
       },
       Assets: {
-        account: [[[relayToken, alice.address], { balance: 10 * 1e12 }]],
+        account: [
+          [[relayToken, alice.address], { balance: 10 * 1e12 }],
+          [[aUSDToken, alice.address], { balance: 10 * 1e12 }],
+        ],
       },
       Sudo: {
         key: alice.address,

@@ -27,13 +27,13 @@ describe.each([
     from: 'kusama',
     to: 'karura',
     token: 'KSM',
-    fee: 0.00003284986200036144,
+    fee: 0.000028422591000776265,
   },
   {
     from: 'kusama',
     to: 'basilisk',
     token: 'KSM',
-    fee: 0.00013397134898696095
+    fee: 0.00012812565705644374
   },
   {
     from: 'basilisk',
@@ -63,7 +63,7 @@ describe.each([
     from: 'karura',
     to: 'basilisk',
     token: 'KUSD',
-    fee: 0.005479067798999981,
+    fee: 0.0058843740979999115,
   },
   {
     from: 'karura',
@@ -116,26 +116,38 @@ describe.each([
   {
     from: 'altair',
     to: 'karura',
+    token: 'KUSD',
+    fee: 0.0021202035879994696,
+  },
+  {
+    from: 'karura',
+    to: 'altair',
+    token: 'KUSD',
+    fee: 0.008082399999999268,
+  },
+  {
+    from: 'altair',
+    to: 'karura',
     token: 'AIR',
     fee: 0.008012799999999931,
   },
   {
     from: 'karura',
     to: 'altair',
-    token: 'KUSD',
-    fee: 0.008082399999999934,
+    token: 'AIR',
+    fee: 0.008082400000034795,
   },
   {
     from: 'shiden',
     to: 'karura',
-    token: 'SDN',
-    fee: 0.0008012799999999043
+    token: 'KUSD',
+    fee: 0.0021202035879994696
   },
   {
     from: 'karura',
     to: 'shiden',
     token: 'KUSD',
-    fee: 0.002080000000000082
+    fee: 0.0020799999999994156
   },
   {
     from: 'karura',
@@ -179,7 +191,7 @@ describe.each([
   //   token: 'QTZ',
   //   fee: 0.002080000000000082
   // },
-] as const)('$from to $to using bridgeSDK', async ({ from, to, token, fee }) => {
+] as const)('$from to $to using bridgeSDK cross-chain $token', async ({ from, to, token, fee }) => {
   let fromchain: Network
   let tochain: Network
 
@@ -195,6 +207,7 @@ describe.each([
         await fromchain1.dev.setStorage({
           Tokens: {
             Accounts: [
+              [[alice.address, { ForeignAsset: 12 }], { free: '100000000000000000000' }],
               [[alice.address, { Token: 'KUSD' }], { free: 10 * 1e12 }],
               [[alice.address, { Token: 'AUSD' }], { free: 10 * 1e12 }],
             ],
