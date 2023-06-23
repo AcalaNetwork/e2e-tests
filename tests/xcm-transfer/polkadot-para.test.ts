@@ -106,7 +106,7 @@ const tests = [
     }),
     test: {
       xtokenstHorizontal: {
-        tx: tx.xtokens.transfer(hydraDX.dai, 10n ** 18n, tx.xtokens.parachainV2(acala.paraId), 5e9),
+        tx: tx.xtokens.transfer(hydraDX.dai, 10n ** 18n, tx.xtokens.parachainV3(acala.paraId)),
         fromBalance: query.tokens(hydraDX.dai),
         toBalance: query.evm(acala.dai.Erc20, '0x2aef47e62c966f0695d5af370ddc1bc7c56902063eee60853e2872fc0ff4f88c'),
       },
