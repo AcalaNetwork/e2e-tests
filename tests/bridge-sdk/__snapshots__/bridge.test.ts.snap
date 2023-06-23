@@ -28,7 +28,7 @@ exports[`'acala' to 'polkadot' using bridgeSDK > parachain bridge to releaychain
 {
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
   "fromChain": 998,
-  "toChain": 1001.957856586,
+  "toChain": 1001.9635578476,
 }
 `;
 
@@ -53,14 +53,6 @@ exports[`'basilisk' to 'karura' using bridgeSDK > parachain bridge to releaychai
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
   "fromChain": 1000,
   "toChain": 0,
-}
-`;
-
-exports[`'basilisk' to 'karura' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `
-{
-  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
-  "fromChain": 985.259989,
-  "toChain": 1.919872,
 }
 `;
 
@@ -108,7 +100,7 @@ exports[`'karura' to 'basilisk' using bridgeSDK > parachain bridge to releaychai
 {
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
   "fromChain": 8,
-  "toChain": 1.99426169541,
+  "toChain": 1.994679499889,
 }
 `;
 
@@ -172,7 +164,7 @@ exports[`'kusama' to 'karura' using bridgeSDK > parachain bridge to releaychain 
 {
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
   "fromChain": 7.999375948698,
-  "toChain": 11.999967150138,
+  "toChain": 11.999971577409,
 }
 `;
 
@@ -203,7 +195,7 @@ exports[`'polkadot' to 'acala' using bridgeSDK > parachain bridge to releaychain
 exports[`'polkadot' to 'acala' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `
 {
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
-  "fromChain": 997.9816410562,
+  "fromChain": 997.981367101,
   "toChain": 1001.9999328497,
 }
 `;
@@ -219,8 +211,8 @@ exports[`'polkadot' to 'statemint' using bridgeSDK > parachain bridge to releayc
 exports[`'polkadot' to 'statemint' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `
 {
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
-  "fromChain": 997.9800874708,
-  "toChain": 1001.9989687323,
+  "fromChain": 997.9804553958,
+  "toChain": 1001.9998566421,
 }
 `;
 
@@ -251,7 +243,7 @@ exports[`'statemint' to 'polkadot' using bridgeSDK > parachain bridge to releayc
 exports[`'statemint' to 'polkadot' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 2`] = `
 {
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
-  "fromChain": 997.9981775196,
-  "toChain": 1001.957856586,
+  "fromChain": 997.9627018016,
+  "toChain": 1001.9635578476,
 }
 `;

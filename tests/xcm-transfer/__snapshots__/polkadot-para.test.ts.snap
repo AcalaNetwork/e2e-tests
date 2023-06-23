@@ -107,7 +107,10 @@ exports[`'acala' -> 'hydraDX' xcm transfer 'DAI' > xtokens transfer > to chain x
   {
     "data": {
       "messageHash": "(hash)",
-      "weight": 400000000,
+      "weight": {
+        "proofSize": 0,
+        "refTime": 400000000,
+      },
     },
     "method": "Success",
     "section": "xcmpQueue",
@@ -665,7 +668,7 @@ exports[`'hydraDX' -> 'acala' xcm transfer 'DAI' > xtokens transfer > from chain
                 },
               },
               "weightLimit": {
-                "limited": 5000000000,
+                "unlimited": null,
               },
             },
           },
@@ -733,7 +736,10 @@ exports[`'hydraDX' -> 'acala' xcm transfer 'DAI' > xtokens transfer > tx events 
                     "Parachain": 2000,
                   },
                   {
-                    "GeneralKey": "0x0254a37a01cd75b616d63e0ab665bffdb0143c52ae",
+                    "GeneralKey": {
+                      "data": "(hash)",
+                      "length": 21,
+                    },
                   },
                 ],
               },
@@ -751,7 +757,7 @@ exports[`'hydraDX' -> 'acala' xcm transfer 'DAI' > xtokens transfer > tx events 
             {
               "AccountId32": {
                 "id": "(hash)",
-                "network": "Any",
+                "network": null,
               },
             },
           ],
@@ -770,7 +776,10 @@ exports[`'hydraDX' -> 'acala' xcm transfer 'DAI' > xtokens transfer > tx events 
                   "Parachain": 2000,
                 },
                 {
-                  "GeneralKey": "0x0254a37a01cd75b616d63e0ab665bffdb0143c52ae",
+                  "GeneralKey": {
+                    "data": "(hash)",
+                    "length": 21,
+                  },
                 },
               ],
             },
