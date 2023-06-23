@@ -12,13 +12,13 @@ describe.each([
   },
   {
     name: 'acala2180',
-    relay: 'polkadot9420',
-    unbond: { para: 3482376, relay: 15333247, era: '0x27040000' },
+    relay: 'polkadot',
+    unbond: { para: 3853103, relay: 16080921, era: '0x5c040000' },
   },
   {
     name: 'acala',
-    relay: 'polkadot9420',
-    unbond: { para: 3482376, relay: 15333247, era: '0x27040000' },
+    relay: 'polkadot',
+    unbond: { para: 3853103, relay: 16080921, era: '0x5c040000' },
   },
 ] as const)('$name homa', async ({ name, relay, unbond }) => {
   let relaychain: Network
