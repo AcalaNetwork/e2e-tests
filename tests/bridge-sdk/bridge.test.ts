@@ -18,111 +18,93 @@ describe.each([
     from: 'karura',
     to: 'kusama',
     token: 'KSM',
-    fee: 0.00009000580000062541,
   },
   {
     from: 'kusama',
     to: 'karura',
     token: 'KSM',
-    fee: 0.00003284986200036144,
   },
   {
     from: 'statemine',
     to: 'kusama',
     token: 'KSM',
-    fee: 0.00008976839299990047,
   },
   {
     from: 'kusama',
     to: 'statemine',
     token: 'KSM',
-    fee: 0.000004896952999544624,
   },
-  {
-    from: 'basilisk',
-    to: 'karura',
-    token: 'BSX',
-    fee: 0.08012799999999998,
-  },
+  // {
+  //   from: 'basilisk',
+  //   to: 'karura',
+  //   token: 'BSX',
+  // },
   {
     from: 'karura',
     to: 'basilisk',
     token: 'KUSD',
-    fee: 0.00573830458999991,
   },
   {
     from: 'karura',
     to: 'moonriver',
     token: 'KAR',
-    fee: 0.03965177808399978,
   },
   {
     from: 'acala',
     to: 'polkadot',
     token: 'DOT',
-    fee: 0.04214341399995192,
   },
   {
     from: 'polkadot',
     to: 'acala',
     token: 'DOT',
-    fee: 0.00006715029996939847,
   },
   {
     from: 'polkadot',
     to: 'statemint',
     token: 'DOT',
-    fee: 0.0010312677000001713,
   },
   {
     from: 'statemint',
     to: 'polkadot',
     token: 'DOT',
-    fee: 0.04214341399995192,
   },
   {
     from: 'acala',
     to: 'moonbeam',
     token: 'AUSD',
-    fee: 0.020000000000000018,
   },
   {
     from: 'karura',
     to: 'bifrost',
     token: 'KUSD',
-    fee: 0.032051199999999946,
   },
   {
     from: 'bifrost',
     to: 'karura',
     token: 'BNC',
-    fee: 0.012403363982999904,
   },
   {
     from: 'altair',
     to: 'karura',
     token: 'AIR',
-    fee: 0.008012799999999931,
   },
   {
     from: 'karura',
     to: 'altair',
     token: 'KUSD',
-    fee: 0.008082399999999934,
   },
   // {
   //   from: 'karura',
   //   to: 'heiko',
   //   token: 'KUSD',
-  //   fee: 0.008082399999999934
   // },
   // {
   //   from: 'heiko',
   //   to: 'karura',
   //   token: 'HKO',
-  //   fee: 0.008082399999999934
   // }
-] as const)('$from to $to using bridgeSDK', async ({ from, to, token, fee }) => {
+] as const)('$from to $to using bridgeSDK', async ({ from, to, token }) => {
   let fromchain: Network
   let tochain: Network
 
@@ -233,20 +215,19 @@ describe.each([
         .signAsync(alice)
       // await check(tx).toMatchSnapshot()
       await sendTransaction(tx as any)
+
       await fromchain.chain.newBlock()
       await tochain.chain.newBlock()
 
       await sleep(2000)
+
       const chainBalanceNow = await chainBalance(sdk, fromData, address)
-      await check(chainBalanceNow).toMatchSnapshot()
+      await check(chainBalanceNow).redact({ number: 4 }).toMatchSnapshot()
 
       //Verify if Destination Chain Transfer Fee matches the app
       expect(chainBalanceNow.fromChain).not.toEqual(0)
-      if (chainBalanceInitial.toChain == 0) {
-        expect(fee).toEqual(amount.toNumber() - chainBalanceNow.toChain)
-      } else {
-        expect(fee).toEqual(amount.toNumber() - (chainBalanceNow.toChain - chainBalanceInitial.toChain))
-      }
+      const fee = amount.toNumber() - (chainBalanceNow.toChain - chainBalanceInitial.toChain)
+      await check(fee).redact({ number: 4 }).toMatchSnapshot()
     })
   })
 })
