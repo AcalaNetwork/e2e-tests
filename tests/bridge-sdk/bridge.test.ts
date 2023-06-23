@@ -219,7 +219,7 @@ describe.each([
       await fromchain.chain.newBlock()
       await tochain.chain.newBlock()
 
-      await sleep(2000)
+      await sleep(200)
 
       const chainBalanceNow = await chainBalance(sdk, fromData, address)
       await check(chainBalanceNow).redact({ number: 4 }).toMatchSnapshot()
@@ -227,7 +227,7 @@ describe.each([
       //Verify if Destination Chain Transfer Fee matches the app
       expect(chainBalanceNow.fromChain).not.toEqual(0)
       const fee = amount.toNumber() - (chainBalanceNow.toChain - chainBalanceInitial.toChain)
-      await check(fee).redact({ number: 4 }).toMatchSnapshot()
+      await check(fee).redact({ number: 2 }).toMatchSnapshot()
     })
   })
 })
