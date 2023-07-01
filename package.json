@@ -20,7 +20,7 @@
 		"@acala-network/eth-providers": "^2.7.3",
 		"@acala-network/sdk": "^4.1.9-2",
 		"@acala-network/sdk-core": "^4.1.9-2",
-		"@polkadot/api": "^10.7.2",
+		"@polkadot/api": "^10.9.1",
 		"@polkawallet/bridge": "^0.0.8-4",
 		"dotenv": "^16.1.4",
 		"typescript": "^4.9.5",
