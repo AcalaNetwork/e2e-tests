@@ -56,7 +56,7 @@ describe.each([
 
       await relaychain.chain.newBlock()
 
-      await checkSystemEvents(relaychain, 'ump', 'staking').redact({ address: true, number: true }).toMatchSnapshot()
+      await checkSystemEvents(relaychain, 'ump', 'staking', 'messageQueue').redact({ address: true, number: true }).toMatchSnapshot()
     })
 
     it('Homa redeem unbond works', async () => {
@@ -72,7 +72,7 @@ describe.each([
 
       await relaychain.chain.newBlock()
 
-      await checkSystemEvents(relaychain, 'ump', 'staking').redact({ address: true }).toMatchSnapshot()
+      await checkSystemEvents(relaychain, 'ump', 'staking', 'messageQueue').redact({ address: true }).toMatchSnapshot()
     })
   })
 
@@ -111,7 +111,7 @@ describe.each([
       await checkUmp(parachain).toMatchSnapshot()
 
       await relaychain.chain.newBlock()
-      await checkSystemEvents(relaychain, 'ump', 'staking').toMatchSnapshot()
+      await checkSystemEvents(relaychain, 'ump', 'staking', 'messageQueue').toMatchSnapshot()
     })
   })
 })

@@ -393,10 +393,10 @@ exports[`'karura' -> 'statemine' xcm transfer 'USDT' > xtokens transfer > balanc
 {
   "balance": "(rounded 1000000000)",
   "extra": null,
-  "isFrozen": false,
   "reason": {
     "consumer": null,
   },
+  "status": "Liquid",
 }
 `;
 
@@ -588,10 +588,10 @@ exports[`'statemine' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer > bala
 {
   "balance": 999000000,
   "extra": null,
-  "isFrozen": false,
   "reason": {
     "consumer": null,
   },
+  "status": "Liquid",
 }
 `;
 
@@ -721,7 +721,7 @@ exports[`'statemine' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer > tx e
       {
         "Complete": {
           "proofSize": "(rounded 6200)",
-          "refTime": "(rounded 679000000)",
+          "refTime": "(rounded 676000000)",
         },
       },
     ],
