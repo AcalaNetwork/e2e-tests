@@ -98,17 +98,21 @@ exports[`'karura' -> 'kusama' xcm transfer 'KSM' > xtokens transfer > from chain
 exports[`'karura' -> 'kusama' xcm transfer 'KSM' > xtokens transfer > to chain ump events 1`] = `
 [
   {
-    "data": [
-      "(hash)",
-      {
-        "Complete": {
-          "proofSize": 0,
-          "refTime": "(rounded 300000000)",
+    "data": {
+      "id": "(hash)",
+      "origin": {
+        "Ump": {
+          "Para": 2000,
         },
       },
-    ],
-    "method": "ExecutedUpward",
-    "section": "ump",
+      "success": true,
+      "weightUsed": {
+        "proofSize": 0,
+        "refTime": "(rounded 300000000)",
+      },
+    },
+    "method": "Processed",
+    "section": "messageQueue",
   },
 ]
 `;

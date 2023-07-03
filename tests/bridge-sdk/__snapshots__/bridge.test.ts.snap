@@ -142,7 +142,7 @@ exports[`'karura' to 'kusama' using bridgeSDK > parachain bridge to releaychain 
 }
 `;
 
-exports[`'karura' to 'kusama' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 3`] = `"(rounded 0.00009)"`;
+exports[`'karura' to 'kusama' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 3`] = `"(rounded 0.000092)"`;
 
 exports[`'karura' to 'moonriver' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 1`] = `
 {
@@ -196,7 +196,7 @@ exports[`'kusama' to 'statemine' using bridgeSDK > parachain bridge to releaycha
 }
 `;
 
-exports[`'kusama' to 'statemine' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 3`] = `"(rounded 0.0000049)"`;
+exports[`'kusama' to 'statemine' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 3`] = `"(rounded 0.0000048)"`;
 
 exports[`'polkadot' to 'acala' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 1`] = `
 {
@@ -250,7 +250,7 @@ exports[`'statemine' to 'kusama' using bridgeSDK > parachain bridge to releaycha
 }
 `;
 
-exports[`'statemine' to 'kusama' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 3`] = `"(rounded 0.00009)"`;
+exports[`'statemine' to 'kusama' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 3`] = `"(rounded 0.000092)"`;
 
 exports[`'statemint' to 'polkadot' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works 1`] = `
 {
