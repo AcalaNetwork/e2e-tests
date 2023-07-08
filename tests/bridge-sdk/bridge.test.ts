@@ -144,6 +144,7 @@ describe.each([
         await fromchain.teardown()
       }
     })
+
     async function sleep(ms: number) {
       return new Promise((resolve) => setTimeout(resolve, ms))
     }
@@ -169,7 +170,7 @@ describe.each([
     }
 
     async function chainBalance(sdk: any, fromData: any, address: string) {
-      const fromChainBalance = (await sdk.findAdapter(from).getTokenBalance(token, alice.address)).available.toNumber()
+      const fromChainBalance = (await sdk.findAdapter(from).getTokenBalance(token, alice.address)).free.toNumber()
       let toChainBalance
       if (to == 'moonriver') {
         const assetBalance = (await tochain.api.query.assets.account('10810581592933651521121702237638664357', address))
@@ -184,7 +185,6 @@ describe.each([
           (String(assetBalance) as any) !== 'undefined' ? assetBalance.toNumber() / 10 ** fromData.decimals : 0
       } else {
         toChainBalance = (await sdk.findAdapter(to).getTokenBalance(token, address)).free.toNumber()
-        // await check(await tochain.api.query.system.account(address)).toMatchSnapshot()
       }
 
       return { address: address, fromChain: fromChainBalance, toChain: toChainBalance }
@@ -202,7 +202,7 @@ describe.each([
         to === 'moonriver' || to == 'moonbeam' ? '0x4E7440dB498561A46AAa82b9Bc7d2D5162b5c27B' : alice.address
 
       const chainBalanceInitial = await chainBalance(sdk, fromData, address)
-      await check(chainBalanceInitial).toMatchSnapshot()
+      await check(chainBalanceInitial).toMatchSnapshot('initial')
 
       const tx = fromAdapter
         .createTx({
@@ -213,7 +213,7 @@ describe.each([
           signer: alice.address,
         })
         .signAsync(alice)
-      // await check(tx).toMatchSnapshot()
+
       await sendTransaction(tx as any)
 
       await fromchain.chain.newBlock()
@@ -222,12 +222,12 @@ describe.each([
       await sleep(200)
 
       const chainBalanceNow = await chainBalance(sdk, fromData, address)
-      await check(chainBalanceNow).redact({ number: 4 }).toMatchSnapshot()
+      await check(chainBalanceNow).redact({ number: 4 }).toMatchSnapshot('after')
 
       //Verify if Destination Chain Transfer Fee matches the app
       expect(chainBalanceNow.fromChain).not.toEqual(0)
       const fee = amount.toNumber() - (chainBalanceNow.toChain - chainBalanceInitial.toChain)
-      await check(fee).redact({ number: 2 }).toMatchSnapshot()
+      await check(fee).redact({ number: 2 }).toMatchSnapshot('fee')
     })
   })
 })
