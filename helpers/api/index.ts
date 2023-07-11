@@ -50,7 +50,6 @@ export const xtokens = {
           { Parachain: paraId },
           {
             AccountKey20: {
-              network: 'Any',
               key: acc,
             },
           },
