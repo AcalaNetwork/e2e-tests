@@ -94,11 +94,11 @@ exports[`'karura' to 'basilisk' using bridgeSDK > parachain bridge to releaychai
 {
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
   "fromChain": 8,
-  "toChain": "(rounded 1.995)",
+  "toChain": "(rounded 1.994)",
 }
 `;
 
-exports[`'karura' to 'basilisk' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.0053)"`;
+exports[`'karura' to 'basilisk' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.0059)"`;
 
 exports[`'karura' to 'basilisk' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
 {

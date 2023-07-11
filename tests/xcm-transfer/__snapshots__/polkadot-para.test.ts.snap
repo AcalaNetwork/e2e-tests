@@ -135,7 +135,10 @@ exports[`'acala' -> 'hydraDX' xcm transfer 'DAI' > xtokens transfer > tx events 
                     "Parachain": 2000,
                   },
                   {
-                    "GeneralKey": "0x0254a37a01cd75b616d63e0ab665bffdb0143c52ae",
+                    "GeneralKey": {
+                      "data": "(hash)",
+                      "length": 21,
+                    },
                   },
                 ],
               },
@@ -153,7 +156,7 @@ exports[`'acala' -> 'hydraDX' xcm transfer 'DAI' > xtokens transfer > tx events 
             {
               "AccountId32": {
                 "id": "(hash)",
-                "network": "Any",
+                "network": null,
               },
             },
           ],
@@ -172,211 +175,13 @@ exports[`'acala' -> 'hydraDX' xcm transfer 'DAI' > xtokens transfer > tx events 
                   "Parachain": 2000,
                 },
                 {
-                  "GeneralKey": "0x0254a37a01cd75b616d63e0ab665bffdb0143c52ae",
+                  "GeneralKey": {
+                    "data": "(hash)",
+                    "length": 21,
+                  },
                 },
               ],
             },
-            "parents": 1,
-          },
-        },
-      },
-      "sender": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
-    },
-    "method": "TransferredMultiAssets",
-    "section": "xTokens",
-  },
-]
-`;
-
-exports[`'acala' -> 'moonbeam' xcm transfer 'DOT' > xtokens transfer > balance on from chain 1`] = `
-{
-  "free": 9000000000000,
-  "frozen": 0,
-  "reserved": 0,
-}
-`;
-
-exports[`'acala' -> 'moonbeam' xcm transfer 'DOT' > xtokens transfer > balance on to chain 1`] = `
-{
-  "balance": "(rounded 1000000000000)",
-  "extra": null,
-  "isFrozen": false,
-  "reason": {
-    "sufficient": null,
-  },
-}
-`;
-
-exports[`'acala' -> 'moonbeam' xcm transfer 'DOT' > xtokens transfer > from chain ump messages 1`] = `
-[
-  {
-    "v2": [
-      {
-        "withdrawAsset": [
-          {
-            "fun": {
-              "fungible": 1000000000000,
-            },
-            "id": {
-              "concrete": {
-                "interior": {
-                  "here": null,
-                },
-                "parents": 0,
-              },
-            },
-          },
-        ],
-      },
-      {
-        "clearOrigin": null,
-      },
-      {
-        "buyExecution": {
-          "fees": {
-            "fun": {
-              "fungible": 500000000000,
-            },
-            "id": {
-              "concrete": {
-                "interior": {
-                  "here": null,
-                },
-                "parents": 0,
-              },
-            },
-          },
-          "weightLimit": {
-            "unlimited": null,
-          },
-        },
-      },
-      {
-        "depositReserveAsset": {
-          "assets": {
-            "wild": {
-              "all": null,
-            },
-          },
-          "dest": {
-            "interior": {
-              "x1": {
-                "parachain": 2004,
-              },
-            },
-            "parents": 0,
-          },
-          "maxAssets": 1,
-          "xcm": [
-            {
-              "buyExecution": {
-                "fees": {
-                  "fun": {
-                    "fungible": 500000000000,
-                  },
-                  "id": {
-                    "concrete": {
-                      "interior": {
-                        "here": null,
-                      },
-                      "parents": 1,
-                    },
-                  },
-                },
-                "weightLimit": {
-                  "unlimited": null,
-                },
-              },
-            },
-            {
-              "depositAsset": {
-                "assets": {
-                  "wild": {
-                    "all": null,
-                  },
-                },
-                "beneficiary": {
-                  "interior": {
-                    "x1": {
-                      "accountKey20": {
-                        "key": "0xf24ff3a9cf04c71dbc94d0b566f7a27b94566cac",
-                        "network": {
-                          "any": null,
-                        },
-                      },
-                    },
-                  },
-                  "parents": 0,
-                },
-                "maxAssets": 1,
-              },
-            },
-          ],
-        },
-      },
-    ],
-  },
-]
-`;
-
-exports[`'acala' -> 'moonbeam' xcm transfer 'DOT' > xtokens transfer > to chain xcm events 1`] = `
-[
-  {
-    "data": {
-      "messageId": "(hash)",
-      "outcome": {
-        "Complete": {
-          "proofSize": 0,
-          "refTime": 800000000,
-        },
-      },
-    },
-    "method": "ExecutedDownward",
-    "section": "dmpQueue",
-  },
-]
-`;
-
-exports[`'acala' -> 'moonbeam' xcm transfer 'DOT' > xtokens transfer > tx events 1`] = `
-[
-  {
-    "data": {
-      "assets": [
-        {
-          "fun": {
-            "Fungible": 1000000000000,
-          },
-          "id": {
-            "Concrete": {
-              "interior": "Here",
-              "parents": 1,
-            },
-          },
-        },
-      ],
-      "dest": {
-        "interior": {
-          "X2": [
-            {
-              "Parachain": "(rounded 2000)",
-            },
-            {
-              "AccountKey20": {
-                "key": "0xf24ff3a9cf04c71dbc94d0b566f7a27b94566cac",
-                "network": "Any",
-              },
-            },
-          ],
-        },
-        "parents": 1,
-      },
-      "fee": {
-        "fun": {
-          "Fungible": 1000000000000,
-        },
-        "id": {
-          "Concrete": {
-            "interior": "Here",
             "parents": 1,
           },
         },
@@ -585,7 +390,7 @@ exports[`'acala' -> 'statemint' xcm transfer 'WBTC' > xtokens transfer > tx even
             {
               "AccountId32": {
                 "id": "(hash)",
-                "network": "Any",
+                "network": null,
               },
             },
           ],
@@ -627,7 +432,7 @@ exports[`'hydraDX' -> 'acala' xcm transfer 'DAI' > xtokens transfer > from chain
     "data": [
       "ConcatenatedVersionedXcm",
       {
-        "v2": [
+        "v3": [
           {
             "withdrawAsset": [
               {
@@ -638,7 +443,10 @@ exports[`'hydraDX' -> 'acala' xcm transfer 'DAI' > xtokens transfer > from chain
                   "concrete": {
                     "interior": {
                       "x1": {
-                        "generalKey": "0x0254a37a01cd75b616d63e0ab665bffdb0143c52ae",
+                        "generalKey": {
+                          "data": "0x0254a37a01cd75b616d63e0ab665bffdb0143c52ae0000000000000000000000",
+                          "length": 21,
+                        },
                       },
                     },
                     "parents": 0,
@@ -660,7 +468,10 @@ exports[`'hydraDX' -> 'acala' xcm transfer 'DAI' > xtokens transfer > from chain
                   "concrete": {
                     "interior": {
                       "x1": {
-                        "generalKey": "0x0254a37a01cd75b616d63e0ab665bffdb0143c52ae",
+                        "generalKey": {
+                          "data": "0x0254a37a01cd75b616d63e0ab665bffdb0143c52ae0000000000000000000000",
+                          "length": 21,
+                        },
                       },
                     },
                     "parents": 0,
@@ -676,7 +487,7 @@ exports[`'hydraDX' -> 'acala' xcm transfer 'DAI' > xtokens transfer > from chain
             "depositAsset": {
               "assets": {
                 "wild": {
-                  "all": null,
+                  "allCounted": 1,
                 },
               },
               "beneficiary": {
@@ -684,15 +495,12 @@ exports[`'hydraDX' -> 'acala' xcm transfer 'DAI' > xtokens transfer > from chain
                   "x1": {
                     "accountId32": {
                       "id": "0x88dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee",
-                      "network": {
-                        "any": null,
-                      },
+                      "network": null,
                     },
                   },
                 },
                 "parents": 0,
               },
-              "maxAssets": 1,
             },
           },
         ],
@@ -928,7 +736,10 @@ exports[`'moonbeam' -> 'acala' xcm transfer 'DOT' > xtokens transfer > to chain 
     "data": {
       "messageId": "(hash)",
       "outcome": {
-        "Complete": 800000000,
+        "Complete": {
+          "proofSize": 0,
+          "refTime": 800000000,
+        },
       },
     },
     "method": "ExecutedDownward",
@@ -1014,7 +825,7 @@ exports[`'statemint' -> 'acala' xcm transfer 'WBTC' > xcmPallet transfer > from 
     "data": [
       "ConcatenatedVersionedXcm",
       {
-        "v2": [
+        "v3": [
           {
             "reserveAssetDeposited": [
               {
@@ -1079,7 +890,7 @@ exports[`'statemint' -> 'acala' xcm transfer 'WBTC' > xcmPallet transfer > from 
             "depositAsset": {
               "assets": {
                 "wild": {
-                  "all": null,
+                  "allCounted": 1,
                 },
               },
               "beneficiary": {
@@ -1087,15 +898,12 @@ exports[`'statemint' -> 'acala' xcm transfer 'WBTC' > xcmPallet transfer > from 
                   "x1": {
                     "accountId32": {
                       "id": "0x88dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee",
-                      "network": {
-                        "any": null,
-                      },
+                      "network": null,
                     },
                   },
                 },
                 "parents": 0,
               },
-              "maxAssets": 1,
             },
           },
         ],
