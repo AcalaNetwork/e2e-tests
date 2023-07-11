@@ -42,15 +42,14 @@ export const xtokens = {
       },
     },
   }),
-  parachainAccountId20V2: (paraId: number) => (acc: any) => ({
-    V1: {
+  parachainAccountId20V3: (paraId: number) => (acc: any) => ({
+    V3: {
       parents: 1,
       interior: {
         X2: [
           { Parachain: paraId },
           {
             AccountKey20: {
-              network: 'Any',
               key: acc,
             },
           },

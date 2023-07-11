@@ -61,7 +61,7 @@ const tests = [
           1e7,
           acala.dot, // fee
           1e10,
-          tx.xtokens.parachainV2(statemint.paraId)
+          tx.xtokens.parachainV3(statemint.paraId)
         ),
         fromBalance: query.tokens(acala.wbtc),
         toBalance: query.assets(statemint.wbtcIndex),
@@ -89,7 +89,7 @@ const tests = [
     },
     test: {
       xtokenstHorizontal: {
-        tx: tx.xtokens.transfer(acala.dai, 10n ** 18n, tx.xtokens.parachainV2(hydraDX.paraId)),
+        tx: tx.xtokens.transfer(acala.dai, 10n ** 18n, tx.xtokens.parachainV3(hydraDX.paraId)),
         fromBalance: query.evm(acala.dai.Erc20, '0x2aef47e62c966f0695d5af370ddc1bc7c56902063eee60853e2872fc0ff4f88c'),
         toBalance: query.tokens(hydraDX.dai),
       },
@@ -121,7 +121,7 @@ const tests = [
     toAccount: ({ alith }: Context) => alith,
     test: {
       xtokenstHorizontal: {
-        tx: tx.xtokens.transfer(acala.dot, 1e12, tx.xtokens.parachainAccountId20V2(moonbeam.paraId)),
+        tx: tx.xtokens.transfer(acala.dot, 1e12, tx.xtokens.parachainAccountId20V3(moonbeam.paraId)),
         fromBalance: query.tokens(acala.dot),
         toBalance: query.assets(moonbeam.dot),
         checkUmp: true,
