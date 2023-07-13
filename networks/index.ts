@@ -109,13 +109,3 @@ export const createNetworks = async (
 
   return ret
 }
-
-// to be compatible with old code
-
-const networks = {} as Record<NetworkNames, (options?: Partial<SetupOption>) => Promise<Network>>
-
-for (const [name, creator] of Object.entries(networkCreator)) {
-  networks[name as NetworkNames] = async (options?: Partial<SetupOption>) => creator(options)(createContext())
-}
-
-export default networks
