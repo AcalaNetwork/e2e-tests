@@ -94,11 +94,11 @@ exports[`'karura' to 'basilisk' using bridgeSDK > parachain bridge to releaychai
 {
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
   "fromChain": 8,
-  "toChain": "(rounded 1.994)",
+  "toChain": "(rounded 1.995)",
 }
 `;
 
-exports[`'karura' to 'basilisk' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.0059)"`;
+exports[`'karura' to 'basilisk' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.0051)"`;
 
 exports[`'karura' to 'basilisk' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
 {
@@ -148,11 +148,11 @@ exports[`'karura' to 'moonriver' using bridgeSDK > parachain bridge to releaycha
 {
   "address": "0x4E7440dB498561A46AAa82b9Bc7d2D5162b5c27B",
   "fromChain": "(rounded 7.997)",
-  "toChain": "(rounded 2.05)",
+  "toChain": "(rounded 2.056)",
 }
 `;
 
-exports[`'karura' to 'moonriver' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.04)"`;
+exports[`'karura' to 'moonriver' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.034)"`;
 
 exports[`'karura' to 'moonriver' using bridgeSDK > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
 {
