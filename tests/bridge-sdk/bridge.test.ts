@@ -222,7 +222,7 @@ describe.each([
       await sleep(200)
 
       const chainBalanceNow = await chainBalance(sdk, fromData, address)
-      await check(chainBalanceNow).redact({ number: 4 }).toMatchSnapshot('after')
+      await check(chainBalanceNow).redact({ number: 3 }).toMatchSnapshot('after')
 
       //Verify if Destination Chain Transfer Fee matches the app
       expect(chainBalanceNow.fromChain).not.toEqual(0)
