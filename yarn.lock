@@ -2780,9 +2780,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polkawallet/bridge@npm:^0.1.5-3":
-  version: 0.1.5-5
-  resolution: "@polkawallet/bridge@npm:0.1.5-5"
+"@polkawallet/bridge@npm:^0.1.5-8":
+  version: 0.1.5-8
+  resolution: "@polkawallet/bridge@npm:0.1.5-8"
   dependencies:
     "@acala-network/api": ^5
     "@acala-network/sdk": ^4.1.9-2
@@ -2797,7 +2797,7 @@ __metadata:
     "@acala-network/api": ^5
     "@polkadot/api": ^10
     ethers: ^5
-  checksum: 180d099471175d70e58bd0e23d535b927ef43b46737896e84656b8ca3c9b80d8d8e874fb971269e9b182e09d8333f302798226dab6192d46e4789d8c1dabf059
+  checksum: d944f565079e9ed10c9f6bb5905e6d1ad6d9fea6e71e471b2c7556c9475a3e9472eec6a0ebd60d88511416b4543c4172e0c45c4b6f4dbe6bfd9154532347993b
   languageName: node
   linkType: hard
 
@@ -4342,7 +4342,7 @@ __metadata:
     "@acala-network/sdk": ^4.1.9-2
     "@acala-network/sdk-core": ^4.1.9-2
     "@polkadot/api": ^10.7.2
-    "@polkawallet/bridge": ^0.1.5-3
+    "@polkawallet/bridge": ^0.1.5-8
     "@types/node": ^20.2.5
     "@typescript-eslint/eslint-plugin": ^5.54.0
     "@typescript-eslint/parser": ^5.59.8

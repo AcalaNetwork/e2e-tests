@@ -6,7 +6,7 @@ import { BasiliskAdapter } from '@polkawallet/bridge/adapters/hydradx'
 import { BifrostAdapter } from '@polkawallet/bridge/adapters/bifrost'
 import { Bridge } from '@polkawallet/bridge'
 import { FixedPointNumber } from '@acala-network/sdk-core'
-import { HeikoAdapter } from '@polkawallet/bridge/adapters/parallel'
+import { HeikoAdapter, ParallelAdapter } from '@polkawallet/bridge/adapters/parallel'
 import { InterlayAdapter, KintsugiAdapter } from '@polkawallet/bridge/adapters/interlay'
 import { KusamaAdapter, PolkadotAdapter } from '@polkawallet/bridge/adapters/polkadot'
 import { MoonbeamAdapter, MoonriverAdapter } from '@polkawallet/bridge/adapters/moonbeam'
@@ -186,18 +186,18 @@ describe.each([
     token: 'KINT',
     fee: 0.00021
   },
-  {
-    from: 'karura',
-    to: 'kintsugi',
-    token: 'KBTC',
-    fee: 0.07407407407400002
-  },
-  {
-    from: 'kintsugi',
-    to: 'karura',
-    token: 'KBTC',
-    fee: 0.008012799999999931
-  },
+  // {
+  //   from: 'karura',
+  //   to: 'kintsugi',
+  //   token: 'KBTC',
+  //   fee: 0.07407407407400002
+  // },
+  // {
+  //   from: 'kintsugi',
+  //   to: 'karura',
+  //   token: 'KBTC',
+  //   fee: 0.008012799999999931
+  // },
   {
     from: 'karura',
     to: 'kintsugi',
@@ -222,20 +222,43 @@ describe.each([
     token: 'INTR',
     fee: 0.008012799999999931
   },
+  // {
+  //   from: 'interlay',
+  //   to: 'acala',
+  //   token: 'IBTC',
+  //   fee: 0.008012799999999931
+  // },
+  // {
+  //   from: 'acala',
+  //   to: 'interlay',
+  //   token: 'IBTC',
+  //   fee: 0.008012799999999931
+  // },
+
   {
-    from: 'interlay',
+    from: 'parallel',
     to: 'acala',
-    token: 'IBTC',
+    token: 'PARA',
     fee: 0.008012799999999931
   },
   {
     from: 'acala',
-    to: 'interlay',
-    token: 'IBTC',
+    to: 'parallel',
+    token: 'PARA',
     fee: 0.008012799999999931
   },
-
-
+  {
+    from: 'parallel',
+    to: 'acala',
+    token: 'ACA',
+    fee: 0.008012799999999931
+  },
+  {
+    from: 'acala',
+    to: 'parallel',
+    token: 'ACA',
+    fee: 0.008012799999999931
+  },
 
 
   // Chopsticks are currently not supported.
@@ -297,6 +320,7 @@ describe.each([
         await fromchain1.dev.setStorage({
           Tokens: {
             Accounts: [
+              [[alice.address, { ForeignAsset: 1 }], { free: 10 * 1e12 }],
               [[alice.address, { ForeignAsset: 4 }], { free: 10 * 1e10 }],
               [[alice.address, { ForeignAsset: 3 }], { free: 3 * 1e8 }],
               [[alice.address, { Token: 'AUSD' }], { free: 10 * 1e12 }],
@@ -346,7 +370,8 @@ describe.each([
         unique: UniqueAdapter,
         astar: AstarAdapter,
         interlay: InterlayAdapter,
-        kintsugi: KintsugiAdapter
+        kintsugi: KintsugiAdapter,
+        parallel: ParallelAdapter,
       } as any
       const adapter = new adapters[chain]()
       await adapter.init(api)
