@@ -14,7 +14,7 @@ exports[`'acala' stable asset > mint overflow > events 1`] = `
         "class": "Normal",
         "paysFee": "Yes",
         "weight": {
-          "proofSize": 0,
+          "proofSize": "(rounded 46000)",
           "refTime": "(rounded 1300000000)",
         },
       },
@@ -67,8 +67,8 @@ exports[`'acala' stable asset > swap overflow > events 1`] = `
         "class": "Normal",
         "paysFee": "Yes",
         "weight": {
-          "proofSize": 0,
-          "refTime": "(rounded 2400000000)",
+          "proofSize": "(rounded 42000)",
+          "refTime": "(rounded 2500000000)",
         },
       },
     },

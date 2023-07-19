@@ -107,7 +107,10 @@ exports[`'acala' -> 'hydraDX' xcm transfer 'DAI' > xtokens transfer > to chain x
   {
     "data": {
       "messageHash": "(hash)",
-      "weight": 400000000,
+      "weight": {
+        "proofSize": 0,
+        "refTime": 400000000,
+      },
     },
     "method": "Success",
     "section": "xcmpQueue",
@@ -132,7 +135,10 @@ exports[`'acala' -> 'hydraDX' xcm transfer 'DAI' > xtokens transfer > tx events 
                     "Parachain": 2000,
                   },
                   {
-                    "GeneralKey": "0x0254a37a01cd75b616d63e0ab665bffdb0143c52ae",
+                    "GeneralKey": {
+                      "data": "(hash)",
+                      "length": 21,
+                    },
                   },
                 ],
               },
@@ -150,7 +156,7 @@ exports[`'acala' -> 'hydraDX' xcm transfer 'DAI' > xtokens transfer > tx events 
             {
               "AccountId32": {
                 "id": "(hash)",
-                "network": "Any",
+                "network": null,
               },
             },
           ],
@@ -169,7 +175,10 @@ exports[`'acala' -> 'hydraDX' xcm transfer 'DAI' > xtokens transfer > tx events 
                   "Parachain": 2000,
                 },
                 {
-                  "GeneralKey": "0x0254a37a01cd75b616d63e0ab665bffdb0143c52ae",
+                  "GeneralKey": {
+                    "data": "(hash)",
+                    "length": 21,
+                  },
                 },
               ],
             },
@@ -360,7 +369,7 @@ exports[`'acala' -> 'moonbeam' xcm transfer 'DOT' > xtokens transfer > tx events
             {
               "AccountKey20": {
                 "key": "0xf24ff3a9cf04c71dbc94d0b566f7a27b94566cac",
-                "network": "Any",
+                "network": null,
               },
             },
           ],
@@ -398,10 +407,10 @@ exports[`'acala' -> 'statemint' xcm transfer 'WBTC' > xtokens transfer > balance
 {
   "balance": 1000000000,
   "extra": null,
-  "isFrozen": false,
   "reason": {
     "consumer": null,
   },
+  "status": "Liquid",
 }
 `;
 
@@ -582,7 +591,7 @@ exports[`'acala' -> 'statemint' xcm transfer 'WBTC' > xtokens transfer > tx even
             {
               "AccountId32": {
                 "id": "(hash)",
-                "network": "Any",
+                "network": null,
               },
             },
           ],
@@ -624,7 +633,7 @@ exports[`'hydraDX' -> 'acala' xcm transfer 'DAI' > xtokens transfer > from chain
     "data": [
       "ConcatenatedVersionedXcm",
       {
-        "v2": [
+        "v3": [
           {
             "withdrawAsset": [
               {
@@ -635,7 +644,10 @@ exports[`'hydraDX' -> 'acala' xcm transfer 'DAI' > xtokens transfer > from chain
                   "concrete": {
                     "interior": {
                       "x1": {
-                        "generalKey": "0x0254a37a01cd75b616d63e0ab665bffdb0143c52ae",
+                        "generalKey": {
+                          "data": "0x0254a37a01cd75b616d63e0ab665bffdb0143c52ae0000000000000000000000",
+                          "length": 21,
+                        },
                       },
                     },
                     "parents": 0,
@@ -657,7 +669,10 @@ exports[`'hydraDX' -> 'acala' xcm transfer 'DAI' > xtokens transfer > from chain
                   "concrete": {
                     "interior": {
                       "x1": {
-                        "generalKey": "0x0254a37a01cd75b616d63e0ab665bffdb0143c52ae",
+                        "generalKey": {
+                          "data": "0x0254a37a01cd75b616d63e0ab665bffdb0143c52ae0000000000000000000000",
+                          "length": 21,
+                        },
                       },
                     },
                     "parents": 0,
@@ -665,7 +680,7 @@ exports[`'hydraDX' -> 'acala' xcm transfer 'DAI' > xtokens transfer > from chain
                 },
               },
               "weightLimit": {
-                "limited": 5000000000,
+                "unlimited": null,
               },
             },
           },
@@ -673,7 +688,7 @@ exports[`'hydraDX' -> 'acala' xcm transfer 'DAI' > xtokens transfer > from chain
             "depositAsset": {
               "assets": {
                 "wild": {
-                  "all": null,
+                  "allCounted": 1,
                 },
               },
               "beneficiary": {
@@ -681,15 +696,12 @@ exports[`'hydraDX' -> 'acala' xcm transfer 'DAI' > xtokens transfer > from chain
                   "x1": {
                     "accountId32": {
                       "id": "0x88dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee",
-                      "network": {
-                        "any": null,
-                      },
+                      "network": null,
                     },
                   },
                 },
                 "parents": 0,
               },
-              "maxAssets": 1,
             },
           },
         ],
@@ -733,7 +745,10 @@ exports[`'hydraDX' -> 'acala' xcm transfer 'DAI' > xtokens transfer > tx events 
                     "Parachain": 2000,
                   },
                   {
-                    "GeneralKey": "0x0254a37a01cd75b616d63e0ab665bffdb0143c52ae",
+                    "GeneralKey": {
+                      "data": "(hash)",
+                      "length": 21,
+                    },
                   },
                 ],
               },
@@ -751,7 +766,7 @@ exports[`'hydraDX' -> 'acala' xcm transfer 'DAI' > xtokens transfer > tx events 
             {
               "AccountId32": {
                 "id": "(hash)",
-                "network": "Any",
+                "network": null,
               },
             },
           ],
@@ -770,7 +785,10 @@ exports[`'hydraDX' -> 'acala' xcm transfer 'DAI' > xtokens transfer > tx events 
                   "Parachain": 2000,
                 },
                 {
-                  "GeneralKey": "0x0254a37a01cd75b616d63e0ab665bffdb0143c52ae",
+                  "GeneralKey": {
+                    "data": "(hash)",
+                    "length": 21,
+                  },
                 },
               ],
             },
@@ -919,7 +937,10 @@ exports[`'moonbeam' -> 'acala' xcm transfer 'DOT' > xtokens transfer > to chain 
     "data": {
       "messageId": "(hash)",
       "outcome": {
-        "Complete": 800000000,
+        "Complete": {
+          "proofSize": 0,
+          "refTime": 800000000,
+        },
       },
     },
     "method": "ExecutedDownward",
@@ -984,10 +1005,10 @@ exports[`'statemint' -> 'acala' xcm transfer 'WBTC' > xcmPallet transfer > balan
 {
   "balance": 90000000,
   "extra": null,
-  "isFrozen": false,
   "reason": {
     "consumer": null,
   },
+  "status": "Liquid",
 }
 `;
 
@@ -1005,7 +1026,7 @@ exports[`'statemint' -> 'acala' xcm transfer 'WBTC' > xcmPallet transfer > from 
     "data": [
       "ConcatenatedVersionedXcm",
       {
-        "v2": [
+        "v3": [
           {
             "reserveAssetDeposited": [
               {
@@ -1070,7 +1091,7 @@ exports[`'statemint' -> 'acala' xcm transfer 'WBTC' > xcmPallet transfer > from 
             "depositAsset": {
               "assets": {
                 "wild": {
-                  "all": null,
+                  "allCounted": 1,
                 },
               },
               "beneficiary": {
@@ -1078,15 +1099,12 @@ exports[`'statemint' -> 'acala' xcm transfer 'WBTC' > xcmPallet transfer > from 
                   "x1": {
                     "accountId32": {
                       "id": "0x88dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee",
-                      "network": {
-                        "any": null,
-                      },
+                      "network": null,
                     },
                   },
                 },
                 "parents": 0,
               },
-              "maxAssets": 1,
             },
           },
         ],
@@ -1120,7 +1138,7 @@ exports[`'statemint' -> 'acala' xcm transfer 'WBTC' > xcmPallet transfer > tx ev
       {
         "Complete": {
           "proofSize": "(rounded 6200)",
-          "refTime": "(rounded 674000000)",
+          "refTime": "(rounded 673000000)",
         },
       },
     ],

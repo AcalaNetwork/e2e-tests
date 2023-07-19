@@ -12,13 +12,13 @@ describe.each([
   },
   {
     name: 'acala2180',
-    relay: 'polkadot9420',
-    unbond: { para: 3482376, relay: 15333247, era: '0x27040000' },
+    relay: 'polkadot',
+    unbond: { para: 3853103, relay: 16080921, era: '0x5c040000' },
   },
   {
     name: 'acala',
-    relay: 'polkadot9420',
-    unbond: { para: 3482376, relay: 15333247, era: '0x27040000' },
+    relay: 'polkadot',
+    unbond: { para: 3853103, relay: 16080921, era: '0x5c040000' },
   },
 ] as const)('$name homa', async ({ name, relay, unbond }) => {
   let relaychain: Network
@@ -56,7 +56,9 @@ describe.each([
 
       await relaychain.chain.newBlock()
 
-      await checkSystemEvents(relaychain, 'ump', 'staking').redact({ address: true, number: true }).toMatchSnapshot()
+      await checkSystemEvents(relaychain, 'ump', 'staking', 'messageQueue')
+        .redact({ address: true, number: true })
+        .toMatchSnapshot()
     })
 
     it('Homa redeem unbond works', async () => {
@@ -72,7 +74,7 @@ describe.each([
 
       await relaychain.chain.newBlock()
 
-      await checkSystemEvents(relaychain, 'ump', 'staking').redact({ address: true }).toMatchSnapshot()
+      await checkSystemEvents(relaychain, 'ump', 'staking', 'messageQueue').redact({ address: true }).toMatchSnapshot()
     })
   })
 
@@ -111,7 +113,7 @@ describe.each([
       await checkUmp(parachain).toMatchSnapshot()
 
       await relaychain.chain.newBlock()
-      await checkSystemEvents(relaychain, 'ump', 'staking').toMatchSnapshot()
+      await checkSystemEvents(relaychain, 'ump', 'staking', 'messageQueue').toMatchSnapshot()
     })
   })
 })

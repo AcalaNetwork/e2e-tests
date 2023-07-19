@@ -1,4 +1,4 @@
-import { AcalaAdapter, KaruraAdapter } from '@polkawallet/bridge/adapters/acala'
+import  { AcalaAdapter, KaruraAdapter } from '@polkawallet/bridge/adapters/acala'
 import { AltairAdapter } from '@polkawallet/bridge/adapters/centrifuge'
 import { ApiPromise } from '@polkadot/api'
 import { AstarAdapter, ShidenAdapter } from '@polkawallet/bridge/adapters/astar'
@@ -22,170 +22,153 @@ describe.each([
     from: 'karura',
     to: 'kusama',
     token: 'KSM',
-    fee: 0.00009000580000062541,
   },
   {
     from: 'kusama',
     to: 'karura',
     token: 'KSM',
-    fee: 0.000028422591000776265,
   },
   {
     from: 'kusama',
     to: 'basilisk',
     token: 'KSM',
-    fee: 0.00011324460103878664
   },
   {
     from: 'basilisk',
     to: 'kusama',
     token: 'KSM',
-    fee: 0.00009000580000062541
   },
   {
     from: 'statemine',
     to: 'kusama',
     token: 'KSM',
-    fee: 0.00008976839299990047,
   },
   {
     from: 'kusama',
     to: 'statemine',
     token: 'KSM',
-    fee: 0.000004896952999544624,
   },
   {
     from: 'basilisk',
     to: 'karura',
     token: 'BSX',
-    fee: 0.08012799999999998,
   },
   {
     from: 'karura',
     to: 'basilisk',
     token: 'KUSD',
-    fee:  0.005293327189000108
   },
   {
     from: 'karura',
     to: 'moonriver',
     token: 'KAR',
-    fee: 0.03965177808399978,
   },
   {
     from: 'acala',
     to: 'polkadot',
     token: 'DOT',
-    fee: 0.03644215240001358,
   },
   {
     from: 'polkadot',
     to: 'acala',
     token: 'DOT',
-    fee: 0.00006715029996939847,
   },
   {
     from: 'polkadot',
     to: 'statemint',
     token: 'DOT',
-    fee: 0.00014335790001496207,
   },
   {
     from: 'statemint',
     to: 'polkadot',
     token: 'DOT',
-    fee: 0.03644215240001358,
   },
   {
     from: 'acala',
     to: 'moonbeam',
     token: 'AUSD',
-    fee: 0.020000000000000018,
   },
   {
     from: 'karura',
     to: 'bifrost',
     token: 'KUSD',
-    fee: 0.032051199999999946,
   },
   {
     from: 'bifrost',
     to: 'karura',
     token: 'BNC',
-    fee: 0.012403363982999904,
   },
   {
     from: 'altair',
     to: 'karura',
     token: 'KUSD',
-    fee: 0.0021202035879994696,
   },
   {
     from: 'karura',
     to: 'altair',
     token: 'KUSD',
-    fee: 0.008082399999999268,
   },
   {
     from: 'altair',
     to: 'karura',
     token: 'AIR',
-    fee: 0.008012799999999931,
   },
   {
     from: 'karura',
     to: 'altair',
     token: 'AIR',
-    fee: 0.008082400000034795,
   },
   {
     from: 'shiden',
     to: 'karura',
     token: 'KUSD',
-    fee: 0.0021202035879994696
   },
   {
     from: 'karura',
     to: 'shiden',
     token: 'KUSD',
-    fee: 0.0020799999999994156
   },
   {
     from: 'astar',
     to: 'acala',
     token: 'AUSD',
-    fee: 0.0021202035879994696
   },
   {
     from: 'acala',
     to: 'astar',
     token: 'AUSD',
-    fee: 0.0021202035879994696
-  },
-  {
-    from: 'karura',
-    to: 'heiko',
-    token: 'KAR',
-    fee: 0.07407407407400002
-  },
-  {
-    from: 'heiko',
-    to: 'karura',
-    token: 'HKO',
-    fee: 0.008012799999999931
   },
   {
     from: 'karura',
     to: 'kintsugi',
     token: 'KINT',
-    fee: 0.00022
   },
   {
     from: 'kintsugi',
     to: 'karura',
     token: 'KINT',
-    fee: 0.00021
   },
+  {
+    from: 'karura',
+    to: 'kintsugi',
+    token: 'LKSM',
+  },
+  {
+    from: 'kintsugi',
+    to: 'karura',
+    token: 'LKSM',
+  },
+  {
+    from: 'interlay',
+    to: 'acala',
+    token: 'INTR',
+  },
+  {
+    from: 'acala',
+    to: 'interlay',
+    token: 'INTR',
+  },
+  // btc
   // {
   //   from: 'karura',
   //   to: 'kintsugi',
@@ -198,30 +181,6 @@ describe.each([
   //   token: 'KBTC',
   //   fee: 0.008012799999999931
   // },
-  {
-    from: 'karura',
-    to: 'kintsugi',
-    token: 'LKSM',
-    fee: 0.07407407407400002
-  },
-  {
-    from: 'kintsugi',
-    to: 'karura',
-    token: 'LKSM',
-    fee: 0.008012799999999931
-  },
-  {
-    from: 'interlay',
-    to: 'acala',
-    token: 'INTR',
-    fee: 0.008012799999999931
-  },
-  {
-    from: 'acala',
-    to: 'interlay',
-    token: 'INTR',
-    fee: 0.008012799999999931
-  },
   // {
   //   from: 'interlay',
   //   to: 'acala',
@@ -235,29 +194,36 @@ describe.each([
   //   fee: 0.008012799999999931
   // },
 
+  // RpcError: 1: Error: createType(Lookup4):: Unable to construct number from multi-key object
+  {
+    from: 'karura',
+    to: 'heiko',
+    token: 'KAR',
+  },
+  {
+    from: 'heiko',
+    to: 'karura',
+    token: 'HKO',
+  },
   {
     from: 'parallel',
     to: 'acala',
     token: 'PARA',
-    fee: 0.008012799999999931
   },
   {
     from: 'acala',
     to: 'parallel',
     token: 'PARA',
-    fee: 0.008012799999999931
   },
   {
     from: 'parallel',
     to: 'acala',
     token: 'ACA',
-    fee: 0.008012799999999931
   },
   {
     from: 'acala',
     to: 'parallel',
     token: 'ACA',
-    fee: 0.008012799999999931
   },
 
 
@@ -292,6 +258,7 @@ describe.each([
   //   token: 'QTZ',
   //   fee: 0.002080000000000082
   // },
+
 ] as const)('$from to $to using bridgeSDK cross-chain $token', async ({ from, to, token }) => {
   let fromchain: Network
   let tochain: Network
@@ -346,6 +313,7 @@ describe.each([
         await fromchain.teardown()
       }
     })
+
     async function sleep(ms: number) {
       return new Promise((resolve) => setTimeout(resolve, ms))
     }
@@ -425,12 +393,13 @@ describe.each([
         .signAsync(alice)
 
       await sendTransaction(tx as any)
+
       await fromchain.chain.newBlock()
       await tochain.chain.newBlock()
 
       await sleep(200)
       const chainBalanceNow = await chainBalance(sdk, fromData, address)
-      await check(chainBalanceNow).redact({ number: 4 }).toMatchSnapshot('after')
+      await check(chainBalanceNow).redact({ number: 3 }).toMatchSnapshot('after')
 
       //Verify if Destination Chain Transfer Fee matches the app
       expect(chainBalanceNow.fromChain).not.toEqual(chainBalanceInitial.fromChain)

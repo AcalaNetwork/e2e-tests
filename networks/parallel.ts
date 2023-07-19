@@ -26,7 +26,7 @@ export default {
       Assets: {
         account: [
           [[acalaNativeToken, alice.address], { balance: 100 * 1e12 }],
-          [[[ausd, alice.address], { balance: 100 * 1e12 }]]
+          [[ausd, alice.address], { balance: 100 * 1e12 }]
         ],
       },
     },
