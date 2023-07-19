@@ -40,17 +40,21 @@ exports[`'acala' homa > with latest block > Homa redeem unbond works > system ev
     "section": "staking",
   },
   {
-    "data": [
-      "(hash)",
-      {
-        "Complete": {
-          "proofSize": "(rounded 59000)",
-          "refTime": "(rounded 11000000000)",
+    "data": {
+      "id": "(hash)",
+      "origin": {
+        "Ump": {
+          "Para": 2000,
         },
       },
-    ],
-    "method": "ExecutedUpward",
-    "section": "ump",
+      "success": true,
+      "weightUsed": {
+        "proofSize": "(rounded 59000)",
+        "refTime": "(rounded 11000000000)",
+      },
+    },
+    "method": "Processed",
+    "section": "messageQueue",
   },
 ]
 `;
@@ -85,17 +89,21 @@ exports[`'acala' homa > with latest block > Homa stake works > events 2`] = `
 exports[`'acala' homa > with latest block > Homa stake works > system events 1`] = `
 [
   {
-    "data": [
-      "(hash)",
-      {
-        "Complete": {
-          "proofSize": "(number)",
-          "refTime": "(number)",
+    "data": {
+      "id": "(hash)",
+      "origin": {
+        "Ump": {
+          "Para": "(number)",
         },
       },
-    ],
-    "method": "ExecutedUpward",
-    "section": "ump",
+      "success": true,
+      "weightUsed": {
+        "proofSize": "(number)",
+        "refTime": "(number)",
+      },
+    },
+    "method": "Processed",
+    "section": "messageQueue",
   },
   {
     "data": {
@@ -106,17 +114,21 @@ exports[`'acala' homa > with latest block > Homa stake works > system events 1`]
     "section": "staking",
   },
   {
-    "data": [
-      "(hash)",
-      {
-        "Complete": {
-          "proofSize": "(number)",
-          "refTime": "(number)",
+    "data": {
+      "id": "(hash)",
+      "origin": {
+        "Ump": {
+          "Para": "(number)",
         },
       },
-    ],
-    "method": "ExecutedUpward",
-    "section": "ump",
+      "success": true,
+      "weightUsed": {
+        "proofSize": "(number)",
+        "refTime": "(number)",
+      },
+    },
+    "method": "Processed",
+    "section": "messageQueue",
   },
 ]
 `;
@@ -427,17 +439,21 @@ exports[`'acala2180' homa > with latest block > Homa redeem unbond works > syste
     "section": "staking",
   },
   {
-    "data": [
-      "(hash)",
-      {
-        "Complete": {
-          "proofSize": "(rounded 59000)",
-          "refTime": "(rounded 11000000000)",
+    "data": {
+      "id": "(hash)",
+      "origin": {
+        "Ump": {
+          "Para": 2000,
         },
       },
-    ],
-    "method": "ExecutedUpward",
-    "section": "ump",
+      "success": true,
+      "weightUsed": {
+        "proofSize": "(rounded 59000)",
+        "refTime": "(rounded 11000000000)",
+      },
+    },
+    "method": "Processed",
+    "section": "messageQueue",
   },
 ]
 `;
@@ -472,17 +488,21 @@ exports[`'acala2180' homa > with latest block > Homa stake works > events 2`] = 
 exports[`'acala2180' homa > with latest block > Homa stake works > system events 1`] = `
 [
   {
-    "data": [
-      "(hash)",
-      {
-        "Complete": {
-          "proofSize": "(number)",
-          "refTime": "(number)",
+    "data": {
+      "id": "(hash)",
+      "origin": {
+        "Ump": {
+          "Para": "(number)",
         },
       },
-    ],
-    "method": "ExecutedUpward",
-    "section": "ump",
+      "success": true,
+      "weightUsed": {
+        "proofSize": "(number)",
+        "refTime": "(number)",
+      },
+    },
+    "method": "Processed",
+    "section": "messageQueue",
   },
   {
     "data": {
@@ -493,17 +513,21 @@ exports[`'acala2180' homa > with latest block > Homa stake works > system events
     "section": "staking",
   },
   {
-    "data": [
-      "(hash)",
-      {
-        "Complete": {
-          "proofSize": "(number)",
-          "refTime": "(number)",
+    "data": {
+      "id": "(hash)",
+      "origin": {
+        "Ump": {
+          "Para": "(number)",
         },
       },
-    ],
-    "method": "ExecutedUpward",
-    "section": "ump",
+      "success": true,
+      "weightUsed": {
+        "proofSize": "(number)",
+        "refTime": "(number)",
+      },
+    },
+    "method": "Processed",
+    "section": "messageQueue",
   },
 ]
 `;

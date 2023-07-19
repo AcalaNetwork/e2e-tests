@@ -98,17 +98,21 @@ exports[`'acala' -> 'polkadot' xcm transfer 'DOT' > xtokens transfer > from chai
 exports[`'acala' -> 'polkadot' xcm transfer 'DOT' > xtokens transfer > to chain ump events 1`] = `
 [
   {
-    "data": [
-      "(hash)",
-      {
-        "Complete": {
-          "proofSize": 0,
-          "refTime": 4000000000,
+    "data": {
+      "id": "(hash)",
+      "origin": {
+        "Ump": {
+          "Para": 2000,
         },
       },
-    ],
-    "method": "ExecutedUpward",
-    "section": "ump",
+      "success": true,
+      "weightUsed": {
+        "proofSize": 0,
+        "refTime": 4000000000,
+      },
+    },
+    "method": "Processed",
+    "section": "messageQueue",
   },
 ]
 `;

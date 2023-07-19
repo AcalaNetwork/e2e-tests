@@ -407,10 +407,10 @@ exports[`'acala' -> 'statemint' xcm transfer 'WBTC' > xtokens transfer > balance
 {
   "balance": 1000000000,
   "extra": null,
-  "isFrozen": false,
   "reason": {
     "consumer": null,
   },
+  "status": "Liquid",
 }
 `;
 
@@ -1005,10 +1005,10 @@ exports[`'statemint' -> 'acala' xcm transfer 'WBTC' > xcmPallet transfer > balan
 {
   "balance": 90000000,
   "extra": null,
-  "isFrozen": false,
   "reason": {
     "consumer": null,
   },
+  "status": "Liquid",
 }
 `;
 
@@ -1138,7 +1138,7 @@ exports[`'statemint' -> 'acala' xcm transfer 'WBTC' > xcmPallet transfer > tx ev
       {
         "Complete": {
           "proofSize": "(rounded 6200)",
-          "refTime": "(rounded 674000000)",
+          "refTime": "(rounded 673000000)",
         },
       },
     ],
