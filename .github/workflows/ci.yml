@@ -28,7 +28,7 @@ jobs:
         fail-fast: false
         matrix:
           tests: [xcm-transfer, acala, bridge-sdk]
-    runs-on: [self-hosted, linux]
+    runs-on: [self-hosted, Linux]
     steps:
     - uses: actions/checkout@v3
       with:
