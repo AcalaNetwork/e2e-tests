@@ -18,7 +18,7 @@ export default {
     relayToken: '340282366920938463463374607431768211455',
     aUSDToken: '18446744073709551616',
   },
-  config: ({ alice, relayToken, aUSDToken}) => ({
+  config: ({ alice, relayToken, aUSDToken }) => ({
     storages: {
       System: {
         account: [[[alice.address], { data: { free: '100000000000000000000' } }]],

@@ -13,7 +13,7 @@ import parallelConfig from './parallel'
 import polkadot9420Config from './polkadot9420'
 import polkadotConfig from './polkadot'
 import statemintConfig from './statemint'
-import  uniqueConfig  from './unique'
+import uniqueConfig from './unique'
 
 const all = {
   polkadot: polkadotConfig,

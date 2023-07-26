@@ -1,7 +1,7 @@
 import { Config } from './types'
 
 export type Vars = {
-  relayToken: number,
+  relayToken: number
   dai: number
 }
 
@@ -10,13 +10,13 @@ export default {
     name: 'hydraDX' as const,
     endpoint: 'wss://rpc.hydradx.cloud',
     relayToken: 5,
-    dai: 2
+    dai: 2,
   },
   kusama: {
     name: 'basilisk' as const,
     endpoint: 'wss://rpc.basilisk.cloud',
     relayToken: 1,
-    dai: 13
+    dai: 13,
   },
   config: ({ alice, relayToken, dai }) => ({
     storages: {

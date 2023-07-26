@@ -15,9 +15,7 @@ export default {
         Account: [[[alice.address], { data: { free: '1000000000000000000000' } }]],
       },
       OrmlTokens: {
-        accounts: [
-          [[alice.address, 'AUSD'], { free: 10 * 1e12 }],
-        ],
+        accounts: [[[alice.address, 'AUSD'], { free: 10 * 1e12 }]],
       },
     },
   }),
