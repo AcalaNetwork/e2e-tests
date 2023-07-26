@@ -153,7 +153,7 @@ export const buildTests = (tests: ReadonlyArray<TestTtype>) => {
           .createTx({
             address: address,
             amount: amount,
-            to: to,
+            to: to as any,
             token: token,
           })
           .signAsync(alice)
