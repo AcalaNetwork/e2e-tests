@@ -1,5 +1,25 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`'acala' to 'astar' using bridgeSDK cross-chain 'AUSD' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > after 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 8,
+  "toChain": "(rounded 12)",
+}
+`;
+
+exports[`'acala' to 'astar' using bridgeSDK cross-chain 'AUSD' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.00025)"`;
+
+exports[`'acala' to 'astar' using bridgeSDK cross-chain 'AUSD' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 10,
+  "toChain": 10,
+}
+`;
+
 exports[`'acala' to 'interlay' using bridgeSDK cross-chain 'INTR' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > after 1`] = `
 {
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
@@ -96,6 +116,26 @@ exports[`'acala' to 'polkadot' using bridgeSDK cross-chain 'DOT' > parachain bri
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
   "decimals": 10,
   "fromChain": 1000,
+  "toChain": 1000,
+}
+`;
+
+exports[`'astar' to 'acala' using bridgeSDK cross-chain 'AUSD' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > after 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 8,
+  "toChain": "(rounded 1000)",
+}
+`;
+
+exports[`'astar' to 'acala' using bridgeSDK cross-chain 'AUSD' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.0012)"`;
+
+exports[`'astar' to 'acala' using bridgeSDK cross-chain 'AUSD' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 10,
   "toChain": 1000,
 }
 `;
