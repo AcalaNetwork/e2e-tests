@@ -22,7 +22,7 @@
 		"@acala-network/sdk-core": "^4.1.9-2",
 		"@polkadot/api": "^10.7.2",
 		"@polkawallet/bridge": "^0.0.8-4",
-		"dotenv": "^16.1.4",
+		"dotenv": "^16.3.1",
 		"typescript": "^4.9.5",
 		"vitest": "^0.32.4"
 	},
