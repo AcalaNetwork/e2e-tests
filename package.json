@@ -18,7 +18,7 @@
 		"@acala-network/chopsticks": "^0.6.6",
 		"@acala-network/chopsticks-testing": "^0.6.6",
 		"@acala-network/eth-providers": "^2.7.3",
-		"@acala-network/sdk": "^4.1.9-2",
+		"@acala-network/sdk": "^4.1.9-5",
 		"@acala-network/sdk-core": "^4.1.9-2",
 		"@polkadot/api": "^10.7.2",
 		"@polkawallet/bridge": "^0.0.8-4",
