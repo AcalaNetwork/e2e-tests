@@ -24,7 +24,7 @@ export default {
   config: ({ alice, relayToken, relayLiquidToken, stableToken }) => ({
     storages: {
       System: {
-        account: [[[alice.address], { data: { free: 10 * 1e12 } }]],
+        account: [[[alice.address], { providers: 1, data: { free: 10 * 1e12 } }]],
       },
       Tokens: {
         accounts: [

@@ -56,10 +56,17 @@ describe.each([
 
     await checkEvents(tx0, 'dex', 'incentives', 'tokens').redact({ number: true }).toMatchSnapshot('addLiquidity')
 
-    const lp: any = await query.tokens({ DexShare: swapPair })(chain, alice.address)
+    let lpAmount
+    if (stake) {
+      lpAmount = (
+        await chain.api.query.rewards.sharesAndWithdrawnRewards({ Dex: { DexShare: swapPair } }, alice.address)
+      )[0]
+    } else {
+      lpAmount = (await query.tokens({ DexShare: swapPair })(chain, alice.address)).free
+    }
 
     const tx1 = await sendTransaction(
-      chain.api.tx.dex.removeLiquidity(swapPair[0], swapPair[1], lp.free, 0, 0, stake).signAsync(alice)
+      chain.api.tx.dex.removeLiquidity(swapPair[0], swapPair[1], lpAmount, 0, 0, stake).signAsync(alice)
     )
 
     await chain.chain.newBlock()

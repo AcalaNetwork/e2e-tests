@@ -68,23 +68,24 @@ const tests = [
       },
     },
   },
-  {
-    from: 'basilisk',
-    to: 'karura',
-    name: 'DAI',
-    fromStorage: ({ alice }: Context) => ({
-      Tokens: {
-        accounts: [[[alice.address, basilisk.dai], { free: 10n * 10n ** 18n }]],
-      },
-    }),
-    test: {
-      xtokenstHorizontal: {
-        tx: tx.xtokens.transfer(basilisk.dai, 10n ** 18n, tx.xtokens.parachainV3(karura.paraId)),
-        fromBalance: query.tokens(basilisk.dai),
-        toBalance: query.evm(karura.dai.Erc20, '0x2aef47e62c966f0695d5af370ddc1bc7c56902063eee60853e2872fc0ff4f88c'),
-      },
-    },
-  },
+  // TODO: restore this once Basilisk fixed the asset mapping issue
+  // {
+  //   from: 'basilisk',
+  //   to: 'karura',
+  //   name: 'DAI',
+  //   fromStorage: ({ alice }: Context) => ({
+  //     Tokens: {
+  //       accounts: [[[alice.address, basilisk.dai], { free: 10n * 10n ** 18n }]],
+  //     },
+  //   }),
+  //   test: {
+  //     xtokenstHorizontal: {
+  //       tx: tx.xtokens.transfer(basilisk.dai, 10n ** 18n, tx.xtokens.parachainV3(karura.paraId)),
+  //       fromBalance: query.tokens(basilisk.dai),
+  //       toBalance: query.evm(karura.dai.Erc20, '0x2aef47e62c966f0695d5af370ddc1bc7c56902063eee60853e2872fc0ff4f88c'),
+  //     },
+  //   },
+  // },
 ] as const
 
 export type TestType = (typeof tests)[number]

@@ -1,11 +1,28 @@
-endpoints:
-  - wss://shiden.api.onfinality.io:443/public-ws
+extensions:
+  client:
+    endpoints:
+      - wss://shiden.api.onfinality.io:443/public-ws
+  event_bus:
+  substrate_api:
+    stale_timeout_seconds: 60
+  cache:
+    default_ttl_seconds: 0
+    default_size: 2000
+  merge_subscription:
+    keep_alive_seconds: 60
+  server:
+    port: 9944
+    listen_address: '0.0.0.0'
+    max_connections: 2000
 
-stale_timeout_seconds: 180 # rotate endpoint if no new blocks for 3 minutes
-
-server:
-  port: 9944
-  listen_address: '0.0.0.0'
-  max_connections: 2000
+middlewares:
+  methods:
+    - response
+    - cache
+    - inject_params
+    - upstream
+  subscriptions:
+    - merge_subscription
+    - upstream
 
 rpcs: substrate

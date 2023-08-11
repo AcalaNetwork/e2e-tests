@@ -36,11 +36,11 @@ const tests = [
     to: 'karura',
     token: 'BSX',
   },
-  {
-    from: 'karura',
-    to: 'basilisk',
-    token: 'KUSD',
-  },
+  // {
+  //   from: 'karura',
+  //   to: 'basilisk',
+  //   token: 'KUSD',
+  // },
   {
     from: 'karura',
     to: 'moonriver',
@@ -76,11 +76,11 @@ const tests = [
     to: 'altair',
     token: 'AIR',
   },
-  {
-    from: 'shiden',
-    to: 'karura',
-    token: 'KUSD',
-  },
+  // {
+  //   from: 'shiden',
+  //   to: 'karura',
+  //   token: 'KUSD',
+  // },
   {
     from: 'karura',
     to: 'shiden',

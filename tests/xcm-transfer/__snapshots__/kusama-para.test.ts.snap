@@ -1,197 +1,10 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`'basilisk' -> 'karura' xcm transfer 'DAI' > xtokens transfer > balance on from chain 1`] = `
-{
-  "free": 9000000000000000000,
-  "frozen": 0,
-  "reserved": 0,
-}
-`;
-
-exports[`'basilisk' -> 'karura' xcm transfer 'DAI' > xtokens transfer > balance on to chain 1`] = `"(rounded 999000000000000000)"`;
-
-exports[`'basilisk' -> 'karura' xcm transfer 'DAI' > xtokens transfer > from chain hrmp messages 1`] = `
-[
-  {
-    "data": [
-      "ConcatenatedVersionedXcm",
-      {
-        "v3": [
-          {
-            "withdrawAsset": [
-              {
-                "fun": {
-                  "fungible": "0x00000000000000000de0b6b3a7640000",
-                },
-                "id": {
-                  "concrete": {
-                    "interior": {
-                      "x1": {
-                        "generalKey": {
-                          "data": "0x024bb6afb5fa2b07a5d1c499e1c3ddb5a15e709a710000000000000000000000",
-                          "length": 21,
-                        },
-                      },
-                    },
-                    "parents": 0,
-                  },
-                },
-              },
-            ],
-          },
-          {
-            "clearOrigin": null,
-          },
-          {
-            "buyExecution": {
-              "fees": {
-                "fun": {
-                  "fungible": "0x00000000000000000de0b6b3a7640000",
-                },
-                "id": {
-                  "concrete": {
-                    "interior": {
-                      "x1": {
-                        "generalKey": {
-                          "data": "0x024bb6afb5fa2b07a5d1c499e1c3ddb5a15e709a710000000000000000000000",
-                          "length": 21,
-                        },
-                      },
-                    },
-                    "parents": 0,
-                  },
-                },
-              },
-              "weightLimit": {
-                "unlimited": null,
-              },
-            },
-          },
-          {
-            "depositAsset": {
-              "assets": {
-                "wild": {
-                  "allCounted": 1,
-                },
-              },
-              "beneficiary": {
-                "interior": {
-                  "x1": {
-                    "accountId32": {
-                      "id": "0x88dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee",
-                      "network": null,
-                    },
-                  },
-                },
-                "parents": 0,
-              },
-            },
-          },
-        ],
-      },
-    ],
-    "recipient": 2000,
-  },
-]
-`;
-
-exports[`'basilisk' -> 'karura' xcm transfer 'DAI' > xtokens transfer > to chain xcm events 1`] = `
-[
-  {
-    "data": {
-      "messageHash": "(hash)",
-      "weight": {
-        "proofSize": 0,
-        "refTime": 800000000,
-      },
-    },
-    "method": "Success",
-    "section": "xcmpQueue",
-  },
-]
-`;
-
-exports[`'basilisk' -> 'karura' xcm transfer 'DAI' > xtokens transfer > tx events 1`] = `
-[
-  {
-    "data": {
-      "assets": [
-        {
-          "fun": {
-            "Fungible": 1000000000000000000,
-          },
-          "id": {
-            "Concrete": {
-              "interior": {
-                "X2": [
-                  {
-                    "Parachain": 2000,
-                  },
-                  {
-                    "GeneralKey": {
-                      "data": "(hash)",
-                      "length": 21,
-                    },
-                  },
-                ],
-              },
-              "parents": 1,
-            },
-          },
-        },
-      ],
-      "dest": {
-        "interior": {
-          "X2": [
-            {
-              "Parachain": 2000,
-            },
-            {
-              "AccountId32": {
-                "id": "(hash)",
-                "network": null,
-              },
-            },
-          ],
-        },
-        "parents": 1,
-      },
-      "fee": {
-        "fun": {
-          "Fungible": 1000000000000000000,
-        },
-        "id": {
-          "Concrete": {
-            "interior": {
-              "X2": [
-                {
-                  "Parachain": 2000,
-                },
-                {
-                  "GeneralKey": {
-                    "data": "(hash)",
-                    "length": 21,
-                  },
-                },
-              ],
-            },
-            "parents": 1,
-          },
-        },
-      },
-      "sender": "bXjgry3bkMHToRvMRedUhtPzEUUXdhyVX2UwY8hY156tWH4YB",
-    },
-    "method": "TransferredMultiAssets",
-    "section": "xTokens",
-  },
-]
-`;
-
 exports[`'karura' -> 'basilisk' xcm transfer 'DAI' > xtokens transfer > balance on from chain 1`] = `99000000000000000000`;
 
 exports[`'karura' -> 'basilisk' xcm transfer 'DAI' > xtokens transfer > balance on to chain 1`] = `
 {
-  "free": "(rounded 996000000000000000)",
+  "free": 100000000000000000000,
   "frozen": 0,
   "reserved": 0,
 }
@@ -293,13 +106,14 @@ exports[`'karura' -> 'basilisk' xcm transfer 'DAI' > xtokens transfer > to chain
 [
   {
     "data": {
+      "error": "AssetNotFound",
       "messageHash": "(hash)",
       "weight": {
         "proofSize": 0,
-        "refTime": 400000000,
+        "refTime": 300000000,
       },
     },
-    "method": "Success",
+    "method": "Fail",
     "section": "xcmpQueue",
   },
 ]

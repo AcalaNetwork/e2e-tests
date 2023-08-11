@@ -13,7 +13,7 @@ export default {
     storages: {
       System: {
         Account: [[[alice.address], { providers: 1, data: { free: 1000e12 } }]],
-      }
+      },
     },
   }),
 } satisfies Config

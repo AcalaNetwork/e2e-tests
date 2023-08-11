@@ -14,6 +14,9 @@
 		"test:dev": "vitest --inspect",
 		"update-env": "ts-node scripts/update-env.ts"
 	},
+	"resolutions": {
+		"@polkadot/api": "^10.7.2"
+	},
 	"dependencies": {
 		"@acala-network/chopsticks": "^0.6.6",
 		"@acala-network/chopsticks-testing": "^0.6.6",

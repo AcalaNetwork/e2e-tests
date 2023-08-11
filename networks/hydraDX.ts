@@ -26,7 +26,7 @@ export default {
       Tokens: {
         Accounts: [
           [[alice.address, relayToken], { free: 1000 * 1e12 }],
-          [[alice.address, dai], { free: '100000000000000000000' }],
+          [[alice.address, dai], { free: 100n * 10n ** 18n }],
         ],
       },
     },
