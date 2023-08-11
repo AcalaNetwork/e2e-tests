@@ -25,7 +25,7 @@ export type TestTtype = {
 
 export const buildTests = (tests: ReadonlyArray<TestTtype>) => {
   for (const { from, to, token } of tests) {
-    describe(`${from} to ${to} using bridgeSDK cross-chain ${token}`, async () => {
+    describe(`'${from}' to '${to}' using bridgeSDK cross-chain '${token}'`, async () => {
       let fromchain: Network
       let tochain: Network
 
