@@ -5,5 +5,6 @@ export default defineConfig({
     hookTimeout: 300000,
     testTimeout: 300000,
     maxThreads: process.env.CI ? 2 : undefined,
+    minThreads: process.env.CI ? 2 : undefined,
   },
 })
