@@ -1,6 +1,6 @@
 import { Config } from './types'
 
-import acala2180Config from './acala2180'
+import acala2200Config from './acala2200'
 import acalaConfig from './acala'
 import astarConfig from './astar'
 import bifrostConfig from './bifrost'
@@ -10,18 +10,16 @@ import hydraDXConfig from './hydraDX'
 import interlayConfig from './interlay'
 import moonbeamConfig from './moonbeam'
 import parallelConfig from './parallel'
-import polkadot9420Config from './polkadot9420'
 import polkadotConfig from './polkadot'
 import statemintConfig from './statemint'
 import uniqueConfig from './unique'
 
 const all = {
   polkadot: polkadotConfig,
-  polkadot9420: polkadot9420Config,
   statemint: statemintConfig,
   acala: acalaConfig,
   astar: astarConfig,
-  acala2180: acala2180Config,
+  acala2200: acala2200Config,
   moonbeam: moonbeamConfig,
   hydraDX: hydraDXConfig,
   bifrost: bifrostConfig,
