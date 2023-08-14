@@ -259,10 +259,10 @@ exports[`'kusama' -> 'shiden' xcm transfer 'KSM' > xcmPallet transfer > balance 
 {
   "balance": "(rounded 11000000000000)",
   "extra": null,
-  "isFrozen": false,
   "reason": {
     "consumer": null,
   },
+  "status": "Liquid",
 }
 `;
 
@@ -280,7 +280,7 @@ exports[`'kusama' -> 'shiden' xcm transfer 'KSM' > xcmPallet transfer > to chain
       "messageId": "(hash)",
       "outcome": {
         "Complete": {
-          "proofSize": "(rounded 4100)",
+          "proofSize": "(rounded 260000)",
           "refTime": 4000000000,
         },
       },
@@ -292,7 +292,7 @@ exports[`'kusama' -> 'shiden' xcm transfer 'KSM' > xcmPallet transfer > to chain
     "data": {
       "dmqHead": "(hash)",
       "weightUsed": {
-        "proofSize": "(rounded 4100)",
+        "proofSize": "(rounded 260000)",
         "refTime": 4000000000,
       },
     },

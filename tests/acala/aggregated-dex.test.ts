@@ -45,7 +45,7 @@ describe.each([
     const toBondPool: bigint = ((await apiAt.query.homa.toBondPool()) as any).toBigInt()
     await chain.dev.setStorage({
       Homa: {
-        toBondPool: bnToHex(toBondPool + 10000000000n, { bitLength: 128, isLe: true }),
+        toBondPool: bnToHex(toBondPool + 10n * 10n ** 10n, { bitLength: 128, isLe: true }),
       },
     })
 

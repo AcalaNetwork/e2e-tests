@@ -42,10 +42,10 @@ It is recommended use `yarn update-env` to update the `.env` file with latest bl
 - Add `-u` to automatically update snapshots and use git diff tool to compare the changes.
 - For failed CI tests, check the block numbers from the `update-env` steps in the logs to local `.env` file to be able to run the tests with the same block height.
 - Remove the system events filter to see all the events in snapshots.
-  - e.g. Replace `checkSystemEvents(toChain, 'parachainSystem', 'dmpQueue')` to `checkSystemEvents(toChain)`
+	- e.g. Replace `checkSystemEvents(toChain, 'parachainSystem', 'dmpQueue')` to `checkSystemEvents(toChain)`
 - Insert `await chain.pause()` to pause the test and inspect the Chopsticks instance in the console. The connection details will be displayed in the console log.
-  - Edit the timeout in `vitest.config.ts` to avoid timeout error.
-  - Try log the extrinsic hex and replay it in the Chopsticks instance to debug the issue.
+	- Edit the timeout in `vitest.config.ts` to avoid timeout error.
+	- Try log the extrinsic hex and replay it in the Chopsticks instance to debug the issue.
 - Try replicate the issue in Chopsticks directly to create a minimal reproducible case.
 - Once you are able to reproduce the issue in Chopsticks, you may add bunch logs in the runtime and make a wasm and override it. Then use `--runtime-log-level 5` to display logs.
 

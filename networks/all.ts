@@ -5,12 +5,15 @@ import acalaConfig from './acala'
 import astarConfig from './astar'
 import bifrostConfig from './bifrost'
 import centrifugeConfig from './centrifuge'
+import crustConfig from './crust'
 import hydraDXConfig from './hydraDX'
+import interlayConfig from './interlay'
 import moonbeamConfig from './moonbeam'
 import parallelConfig from './parallel'
 import polkadot9420Config from './polkadot9420'
 import polkadotConfig from './polkadot'
 import statemintConfig from './statemint'
+import uniqueConfig from './unique'
 
 const all = {
   polkadot: polkadotConfig,
@@ -24,6 +27,9 @@ const all = {
   bifrost: bifrostConfig,
   centrifuge: centrifugeConfig,
   parallel: parallelConfig,
+  crust: crustConfig,
+  unique: uniqueConfig,
+  interlay: interlayConfig,
 } satisfies Record<string, Config>
 
 export default all

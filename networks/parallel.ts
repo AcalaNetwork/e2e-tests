@@ -2,6 +2,7 @@ import { Config } from './types'
 
 export type Vars = {
   ausd: number
+  acalaNativeToken: number
 }
 
 export default {
@@ -9,19 +10,24 @@ export default {
     name: 'parallel' as const,
     endpoint: 'wss://rpc.parallel.fi',
     ausd: 104,
+    acalaNativeToken: 108,
   },
   kusama: {
     name: 'heiko' as const,
-    endpoint: 'wss://parallel-heiko.api.onfinality.io/public-ws',
+    endpoint: 'wss://heiko-rpc.parallel.fi',
     ausd: 103,
+    acalaNativeToken: 107,
   },
-  config: ({ alice, ausd }) => ({
+  config: ({ alice, ausd, acalaNativeToken }) => ({
     storages: {
       System: {
         account: [[[alice.address], { data: { free: 1000 * 1e12 } }]],
       },
       Assets: {
-        account: [[[ausd, alice.address], { balance: 100 * 1e12 }]],
+        account: [
+          [[acalaNativeToken, alice.address], { balance: 100 * 1e12 }],
+          [[ausd, alice.address], { balance: 100 * 1e12 }],
+        ],
       },
     },
   }),

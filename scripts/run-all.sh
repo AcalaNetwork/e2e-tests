@@ -20,7 +20,11 @@ PORT=9014 subway --config configs/heiko.yml &
 PORT=9015 subway --config configs/bifrostpolkadot.yml &
 PORT=9016 subway --config configs/parallel.yml &
 PORT=9017 subway --config configs/centrifuge.yml &
-
+PORT=9018 subway --config configs/crust.yml &
+PORT=9019 subway --config configs/quartz.yml &
+PORT=9020 subway --config configs/unique.yml &
+PORT=9021 subway --config configs/interlay.yml &
+PORT=9022 subway --config configs/kintsugi.yml &
 trap 'kill $(jobs -p)' EXIT
 
 wait

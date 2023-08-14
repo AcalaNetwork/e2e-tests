@@ -4,7 +4,7 @@ exports[`'acala' -> 'hydraDX' xcm transfer 'DAI' > xtokens transfer > balance on
 
 exports[`'acala' -> 'hydraDX' xcm transfer 'DAI' > xtokens transfer > balance on to chain 1`] = `
 {
-  "free": "(rounded 1000000000000000000)",
+  "free": "(rounded 100000000000000000000)",
   "frozen": 0,
   "reserved": 0,
 }
@@ -332,8 +332,8 @@ exports[`'acala' -> 'moonbeam' xcm transfer 'DOT' > xtokens transfer > to chain 
       "messageId": "(hash)",
       "outcome": {
         "Complete": {
-          "proofSize": 0,
-          "refTime": 800000000,
+          "proofSize": "(rounded 26000)",
+          "refTime": "(rounded 690000000)",
         },
       },
     },

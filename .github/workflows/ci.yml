@@ -28,12 +28,18 @@ jobs:
         fail-fast: false
         matrix:
           tests: [xcm-transfer, acala, bridge-sdk]
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux]
     steps:
     - uses: actions/checkout@v3
       with:
         submodules: recursive
-    - name: Use Node.js
+    - name: setup node
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18.x
+    - name: Setup yarn
+      run: npm install -g yarn
+    - name: setup node env
       uses: actions/setup-node@v3
       with:
         node-version: 18.x
