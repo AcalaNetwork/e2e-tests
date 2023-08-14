@@ -26,7 +26,7 @@ describe.each([
     chain = chain1
 
     // restore Homa.toBondPool to correct liquid token exchange rate
-    const apiAt = await chain.api.at(await chain.api.rpc.chain.getBlockHash(chain.chain.head.number - 1))
+    const apiAt = await chain.api.at(await chain.api.rpc.chain.getBlockHash(chain.chain.head.number - 3))
     const toBondPool: bigint = ((await apiAt.query.homa.toBondPool()) as any).toBigInt()
     await chain.dev.setStorage({
       Homa: {
