@@ -7,7 +7,7 @@ export default {
   },
   kusama: {
     name: 'quartz' as const,
-    endpoint: 'wss://quartz.api.onfinality.io/public-ws',
+    endpoint: 'wss://ws-quartz.unique.network',
   },
   config: ({ alice }) => ({
     storages: {
