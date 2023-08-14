@@ -20,6 +20,17 @@ const tests = [
     },
   },
   {
+    from: 'karura',
+    to: 'kusama',
+    name: 'KSM wiht limited weight',
+    test: {
+      xtokensUp: {
+        tx: tx.xtokens.transfer(karura.ksm, 1e12, tx.xtokens.relaychainV3, { Limited: { refTime: 5000000000 } }),
+        balance: query.tokens(karura.ksm),
+      },
+    },
+  },
+  {
     from: 'kusama',
     to: 'karura',
     name: 'KSM',

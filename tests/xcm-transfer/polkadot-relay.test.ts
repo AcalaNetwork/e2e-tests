@@ -20,6 +20,17 @@ const tests = [
     },
   },
   {
+    from: 'acala',
+    to: 'polkadot',
+    name: 'DOT wiht limited weight',
+    test: {
+      xtokensUp: {
+        tx: tx.xtokens.transfer(acala.dot, 1e12, tx.xtokens.relaychainV3, { Limited: { refTime: 5000000000 } }),
+        balance: query.tokens(acala.dot),
+      },
+    },
+  },
+  {
     from: 'polkadot',
     to: 'acala',
     name: 'DOT',
