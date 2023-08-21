@@ -19,7 +19,7 @@ export type Config<T = object> = {
   polkadot?: NetworkConfig & T
   kusama?: NetworkConfig & T
   config(context: FullContext & T): {
-    storages?: Record<string, unknown>
+    storages?: Record<string, Record<string, any>>
     options?: Partial<SetupOption>
   }
 }

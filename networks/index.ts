@@ -54,7 +54,9 @@ for (const def of Object.values(networkDefs)) {
 
       const network = await setupContext(finalOptions)
 
-      await network.dev.setStorage(setupConfig.storages)
+      if (setupConfig.storages) {
+        await network.dev.setStorage(setupConfig.storages)
+      }
 
       return {
         ...network,
