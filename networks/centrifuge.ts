@@ -3,7 +3,7 @@ import { Config } from './types'
 export default {
   polkadot: {
     name: 'centrifuge' as const,
-    endpoint: 'wss://centrifuge-parachain.api.onfinality.io/public-ws',
+    endpoint: 'wss://fullnode.centrifuge.io',
   },
   kusama: {
     name: 'altair' as const,
