@@ -4,7 +4,7 @@ exports[`'karura' -> 'basilisk' xcm transfer 'DAI' > xtokens transfer > balance 
 
 exports[`'karura' -> 'basilisk' xcm transfer 'DAI' > xtokens transfer > balance on to chain 1`] = `
 {
-  "free": 100000000000000000000,
+  "free": "(rounded 101000000000000000000)",
   "frozen": 0,
   "reserved": 0,
 }
@@ -106,14 +106,13 @@ exports[`'karura' -> 'basilisk' xcm transfer 'DAI' > xtokens transfer > to chain
 [
   {
     "data": {
-      "error": "AssetNotFound",
       "messageHash": "(hash)",
       "weight": {
         "proofSize": 0,
-        "refTime": 300000000,
+        "refTime": 400000000,
       },
     },
-    "method": "Fail",
+    "method": "Success",
     "section": "xcmpQueue",
   },
 ]
