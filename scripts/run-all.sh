@@ -25,6 +25,9 @@ PORT=9019 subway --config configs/quartz.yml &
 PORT=9020 subway --config configs/unique.yml &
 PORT=9021 subway --config configs/interlay.yml &
 PORT=9022 subway --config configs/kintsugi.yml &
+PORT=9023 subway --config configs/khala.yml &
+PORT=9024 subway --config configs/phala.yml &
+PORT=9025 subway --config configs/crab.yml &
 trap 'kill $(jobs -p)' EXIT
 
 wait

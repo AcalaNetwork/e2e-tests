@@ -76,11 +76,11 @@ const tests = [
     to: 'altair',
     token: 'AIR',
   },
-  // {
-  //   from: 'shiden',
-  //   to: 'karura',
-  //   token: 'KUSD',
-  // },
+  {
+    from: 'shiden',
+    to: 'karura',
+    token: 'KUSD',
+  },
   {
     from: 'karura',
     to: 'shiden',
@@ -129,6 +129,21 @@ const tests = [
     from: 'heiko',
     to: 'karura',
     token: 'HKO',
+  },
+  // {
+  //   from: 'crab',
+  //   to: 'karura',
+  //   token: 'CRAB',
+  // },
+  {
+    from: 'khala',
+    to: 'karura',
+    token: 'KUSD',
+  },
+  {
+    from: 'karura',
+    to: 'khala',
+    token: 'KUSD',
   },
   // Chopsticks are currently not supported.
   // {
