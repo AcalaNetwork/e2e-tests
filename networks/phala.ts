@@ -18,7 +18,7 @@ export default {
   config: ({ alice,  aUSDToken}) => ({
     storages: {
       System: {
-        Account: [[[alice.address], { data: { free: '1000000000000000' } }]],
+        Account: [[[alice.address], { providers: 1, data: { free: '1000000000000000' } }]],
       },
       Assets: {
         account: [[[aUSDToken, alice.address], { balance: 100 * 1e12 }]],
