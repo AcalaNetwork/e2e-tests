@@ -35,5 +35,5 @@ jobs:
         git checkout -b update-snapshots-$(git rev-parse --short HEAD)
         git add .
         git commit -m 'update snapshots'
-        git push remote origin HEAD:update-snapshots-$(git rev-parse --short HEAD)
+        git push origin HEAD:update-snapshots-$(git rev-parse --short HEAD)
         gh pr create -f --base master
