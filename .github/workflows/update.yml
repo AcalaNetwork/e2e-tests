@@ -1,0 +1,37 @@
+name: Update Snapshots
+
+on:
+  workflow_dispatch:
+
+env:
+  DB_PATH: ./db.sqlite
+
+jobs:
+  update:
+    runs-on: [self-hosted, linux]
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules: recursive
+    - name: setup node
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18.x
+    - name: Setup yarn
+      run: npm install -g yarn
+    - name: setup node env
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18.x
+        cache: 'yarn'
+    - run: yarn --immutable
+    - run: yarn ts-node scripts/update-env.ts
+    - run: yarn test -u
+    - name: Commit
+      run: |
+        git config user.email "hello@acala.network"
+        git config user.name "Acala Github Action Bot"
+        git checkout -b update-snapshots-$(git rev-parse --short HEAD)
+        git add .
+        git commit -m 'update snapshots'
+        gh pr create -f --base master
