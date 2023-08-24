@@ -5,6 +5,7 @@ on:
 
 env:
   DB_PATH: ./db.sqlite
+  GH_TOKEN: ${{ github.token }}
 
 jobs:
   update:
