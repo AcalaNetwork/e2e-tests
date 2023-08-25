@@ -30,9 +30,10 @@ jobs:
     - run: yarn test -u
     - name: Commit
       run: |
+        branch_name="update-snapshots-$(git rev-parse --short HEAD)"
         git config user.email "hello@acala.network"
         git config user.name "Acala Github Action Bot"
-        git checkout -b update-snapshots-$(git rev-parse --short HEAD)
+        git checkout -b $branch_name
         git commit -am 'update snapshots'
-        git push origin HEAD:update-snapshots-$(git rev-parse --short HEAD)
-        gh pr create -f --base master --head
+        git push origin HEAD:$branch_name
+        gh pr create -f --base master --head $branch_name
