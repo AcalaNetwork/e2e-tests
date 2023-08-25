@@ -39,4 +39,15 @@ jobs:
         git checkout -b $branch_name
         git commit -am 'update snapshots'
         git push origin HEAD:$branch_name
-        gh pr create -f --base master --head $branch_name
+    - name: Create PR
+      uses: actions/github-script@v6
+      with:
+        script: |
+          await github.pulls.create({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            title: 'Update snapshots',
+            head: context.repo.owner + ':' + context.ref,
+            base: 'master',
+            body: 'Update snapshots',
+          })
