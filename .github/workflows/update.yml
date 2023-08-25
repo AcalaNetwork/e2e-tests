@@ -3,8 +3,7 @@ name: Update Snapshots
 on:
   workflow_dispatch:
 
-permissions:
-  contents: write # for merge PRs
+permissions: write-all # required for gh pr create
 
 env:
   DB_PATH: ./db.sqlite
