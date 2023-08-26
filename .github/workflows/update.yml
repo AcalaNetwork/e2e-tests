@@ -44,7 +44,7 @@ jobs:
       uses: actions/github-script@v6
       with:
         script: |
-          await github.pulls.create({
+          await github.rest.pulls.create({
             owner: context.repo.owner,
             repo: context.repo.repo,
             title: 'Update snapshots',
