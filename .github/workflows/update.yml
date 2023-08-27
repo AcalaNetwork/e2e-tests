@@ -42,7 +42,7 @@ jobs:
           await exec.exec(`git config user.name "Acala Github Action Bot"`)
           await exec.exec(`git checkout -b ${branchName}`)
           await exec.exec(`git add .`)
-          await exec.exec(`git commit -m 'update snapshots'`)
+          await exec.exec(`git`, ['commit' '-m' 'update snapshots'])
           await exec.exec(`git push origin HEAD:${branchName}`)
           await github.rest.pulls.create({
             owner: context.repo.owner,
