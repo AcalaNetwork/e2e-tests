@@ -36,7 +36,7 @@ jobs:
       uses: actions/github-script@v6
       with:
         script: |
-          const branchName = `update-snapshots-${github.sha.slice(0, 7)}`
+          const branchName = `update-snapshots-${github.context.sha.slice(0, 7)}`
           await exec(`git config user.email "hello@acala.network"`)
           await exec(`git config user.name "Acala Github Action Bot"`)
           await exec(`git checkout -b ${branchName}`)
