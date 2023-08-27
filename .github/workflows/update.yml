@@ -38,11 +38,11 @@ jobs:
       with:
         script: |
           const branchName = `update-snapshots-${context.sha.slice(0, 7)}`
-          await exec(`git config user.email "hello@acala.network"`)
-          await exec(`git config user.name "Acala Github Action Bot"`)
-          await exec(`git checkout -b ${branchName}`)
-          await exec(`git commit -am 'update snapshots'`)
-          await exec(`git push origin HEAD:${branchName}`)
+          await exec.exec(`git config user.email "hello@acala.network"`)
+          await exec.exec(`git config user.name "Acala Github Action Bot"`)
+          await exec.exec(`git checkout -b ${branchName}`)
+          await exec.exec(`git commit -am 'update snapshots'`)
+          await exec.exec(`git push origin HEAD:${branchName}`)
           await github.rest.pulls.create({
             owner: context.repo.owner,
             repo: context.repo.repo,
