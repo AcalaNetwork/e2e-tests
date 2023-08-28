@@ -423,10 +423,10 @@ exports[`'polkadot' -> 'astar' xcm transfer 'DOT' > xcmPallet transfer > balance
 {
   "balance": "(rounded 11000000000000)",
   "extra": null,
-  "isFrozen": false,
   "reason": {
     "consumer": null,
   },
+  "status": "Liquid",
 }
 `;
 
@@ -444,7 +444,7 @@ exports[`'polkadot' -> 'astar' xcm transfer 'DOT' > xcmPallet transfer > to chai
       "messageId": "(hash)",
       "outcome": {
         "Complete": {
-          "proofSize": "(rounded 4100)",
+          "proofSize": "(rounded 260000)",
           "refTime": 4000000000,
         },
       },
@@ -456,7 +456,7 @@ exports[`'polkadot' -> 'astar' xcm transfer 'DOT' > xcmPallet transfer > to chai
     "data": {
       "dmqHead": "(hash)",
       "weightUsed": {
-        "proofSize": "(rounded 4100)",
+        "proofSize": "(rounded 260000)",
         "refTime": 4000000000,
       },
     },
