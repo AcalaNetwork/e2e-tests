@@ -516,6 +516,7 @@ exports[`'statemine' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer > to c
   {
     "data": {
       "messageHash": "(hash)",
+      "messageId": "(hash)",
       "weight": {
         "proofSize": 0,
         "refTime": 800000000,
