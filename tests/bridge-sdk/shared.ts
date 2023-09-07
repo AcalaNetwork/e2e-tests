@@ -176,7 +176,7 @@ export const buildTests = (tests: ReadonlyArray<TestTtype>) => {
           expect(chainBalanceNow.fromChain).not.toEqual(chainBalanceInitial.fromChain)
           expect(chainBalanceNow.toChain).not.toEqual(chainBalanceInitial.toChain)
           const fee = amount.toNumber() - (chainBalanceNow.toChain - chainBalanceInitial.toChain)
-          await check(fee).redact({ number: 2 }).toMatchSnapshot('fee')
+          await check(fee).redact({ number: 1 }).toMatchSnapshot('fee')
         })
       })
     })

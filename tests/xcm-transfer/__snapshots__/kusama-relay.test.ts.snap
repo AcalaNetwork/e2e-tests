@@ -362,6 +362,7 @@ exports[`'kusama' -> 'karura' xcm transfer 'KSM' > xcmPallet transfer > to chain
   },
   {
     "data": {
+      "messageHash": "(hash)",
       "messageId": "(hash)",
       "outcome": {
         "Complete": {
