@@ -100,15 +100,6 @@ exports[`'bifrost' to 'karura' using bridgeSDK cross-chain 'BNC' > parachain bri
 }
 `;
 
-exports[`'crab' to 'karura' using bridgeSDK cross-chain 'CRAB' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
-{
-  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
-  "decimals": 18,
-  "fromChain": 0,
-  "toChain": 0,
-}
-`;
-
 exports[`'heiko' to 'karura' using bridgeSDK cross-chain 'HKO' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > after 1`] = `
 {
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
@@ -338,7 +329,7 @@ exports[`'khala' to 'karura' using bridgeSDK cross-chain 'KUSD' > parachain brid
 }
 `;
 
-exports[`'khala' to 'karura' using bridgeSDK cross-chain 'KUSD' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.0021)"`;
+exports[`'khala' to 'karura' using bridgeSDK cross-chain 'KUSD' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.002)"`;
 
 exports[`'khala' to 'karura' using bridgeSDK cross-chain 'KUSD' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
 {
@@ -346,35 +337,6 @@ exports[`'khala' to 'karura' using bridgeSDK cross-chain 'KUSD' > parachain brid
   "decimals": 12,
   "fromChain": 100,
   "toChain": 10,
-}
-`;
-
-exports[`'khala' to 'karura' using bridgeSDK cross-chain 'KUSD' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 2`] = `
-{
-  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
-  "decimals": 12,
-  "fromChain": 100,
-  "toChain": 10,
-}
-`;
-
-exports[`'khala' to 'karura' using bridgeSDK cross-chain 'PHA' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > after 1`] = `
-{
-  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
-  "decimals": 12,
-  "fromChain": "(rounded 998)",
-  "toChain": "(rounded 1.94)",
-}
-`;
-
-exports[`'khala' to 'karura' using bridgeSDK cross-chain 'PHA' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.064)"`;
-
-exports[`'khala' to 'karura' using bridgeSDK cross-chain 'PHA' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
-{
-  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
-  "decimals": 12,
-  "fromChain": 1000,
-  "toChain": 0,
 }
 `;
 
@@ -487,7 +449,7 @@ exports[`'shiden' to 'karura' using bridgeSDK cross-chain 'KUSD' > parachain bri
 }
 `;
 
-exports[`'shiden' to 'karura' using bridgeSDK cross-chain 'KUSD' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.0021)"`;
+exports[`'shiden' to 'karura' using bridgeSDK cross-chain 'KUSD' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.002)"`;
 
 exports[`'shiden' to 'karura' using bridgeSDK cross-chain 'KUSD' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
 {
