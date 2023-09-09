@@ -717,6 +717,7 @@ exports[`'hydraDX' -> 'acala' xcm transfer 'DAI' > xtokens transfer > to chain x
   {
     "data": {
       "messageHash": "(hash)",
+      "messageId": "(hash)",
       "weight": {
         "proofSize": 0,
         "refTime": 800000000,
@@ -935,6 +936,7 @@ exports[`'moonbeam' -> 'acala' xcm transfer 'DOT' > xtokens transfer > to chain 
 [
   {
     "data": {
+      "messageHash": "(hash)",
       "messageId": "(hash)",
       "outcome": {
         "Complete": {
@@ -1120,6 +1122,7 @@ exports[`'statemint' -> 'acala' xcm transfer 'WBTC' > xcmPallet transfer > to ch
   {
     "data": {
       "messageHash": "(hash)",
+      "messageId": "(hash)",
       "weight": {
         "proofSize": 0,
         "refTime": 800000000,

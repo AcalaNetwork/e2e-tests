@@ -362,6 +362,7 @@ exports[`'polkadot' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > to chai
   },
   {
     "data": {
+      "messageHash": "(hash)",
       "messageId": "(hash)",
       "outcome": {
         "Complete": {
