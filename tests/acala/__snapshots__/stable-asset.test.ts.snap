@@ -5,17 +5,14 @@ exports[`'acala' stable asset > mint overflow > events 1`] = `
   {
     "data": {
       "dispatchError": {
-        "Module": {
-          "error": "0x00000000",
-          "index": 11,
-        },
+        "Arithmetic": "Overflow",
       },
       "dispatchInfo": {
         "class": "Normal",
         "paysFee": "Yes",
         "weight": {
-          "proofSize": "(rounded 46000)",
-          "refTime": "(rounded 1300000000)",
+          "proofSize": "(rounded 17000)",
+          "refTime": "(rounded 1400000000)",
         },
       },
     },
@@ -58,17 +55,14 @@ exports[`'acala' stable asset > swap overflow > events 1`] = `
   {
     "data": {
       "dispatchError": {
-        "Module": {
-          "error": "0x00000000",
-          "index": 11,
-        },
+        "Arithmetic": "Overflow",
       },
       "dispatchInfo": {
         "class": "Normal",
         "paysFee": "Yes",
         "weight": {
-          "proofSize": "(rounded 42000)",
-          "refTime": "(rounded 2500000000)",
+          "proofSize": "(rounded 11000)",
+          "refTime": "(rounded 3300000000)",
         },
       },
     },
