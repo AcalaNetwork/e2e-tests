@@ -120,6 +120,35 @@ export const xcmPallet = {
       },
     },
   }),
+  teleportAssets:
+    (token: any, amount: any, dest: any) =>
+      ({ api }: { api: ApiPromise }, acc: any) =>
+        (api.tx.xcmPallet || api.tx.polkadotXcm).limitedTeleportAssets(
+          dest,
+          {
+            V3: {
+              parents: 0,
+              interior: {
+                X1: {
+                  AccountId32: {
+                    // network: 'Any',
+                    id: acc,
+                  },
+                },
+              },
+            },
+          },
+          {
+            V3: [
+              {
+                id: token,
+                fun: { Fungible: amount },
+              },
+            ],
+          },
+          0,
+          'Unlimited'
+        ),
   limitedReserveTransferAssetsV2:
     (token: any, amount: any, dest: any) =>
     ({ api }: { api: ApiPromise }, acc: any) =>
