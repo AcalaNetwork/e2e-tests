@@ -120,7 +120,7 @@ export const xcmPallet = {
       },
     },
   }),
-  teleportAssets:
+  limitedTeleportAssets:
     (token: any, amount: any, dest: any) =>
       ({ api }: { api: ApiPromise }, acc: any) =>
         (api.tx.xcmPallet || api.tx.polkadotXcm).limitedTeleportAssets(
