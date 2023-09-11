@@ -2,6 +2,7 @@ import { Config } from './types'
 
 import acala2200Config from './acala2200'
 import acalaConfig from './acala'
+import acalaNextConfig from './acala-next'
 import astarConfig from './astar'
 import bifrostConfig from './bifrost'
 import centrifugeConfig from './centrifuge'
@@ -22,6 +23,7 @@ const all = {
   acala: acalaConfig,
   astar: astarConfig,
   acala2200: acala2200Config,
+  acalaNext: acalaNextConfig,
   moonbeam: moonbeamConfig,
   hydraDX: hydraDXConfig,
   bifrost: bifrostConfig,
