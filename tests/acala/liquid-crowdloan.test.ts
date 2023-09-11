@@ -44,24 +44,6 @@ describe('liquid crowdloan', async () => {
 
   it('works', async () => {
     await sendTransaction(
-      chain.api.tx.sudo
-        .sudo(
-          chain.api.tx.xcmInterface.updateXcmDestWeightAndFee([
-            [
-              'ProxyReserveTransferAssets',
-              {
-                refTime: 50e9,
-                proofSize: 128 * 1024,
-              },
-              2e10,
-            ],
-          ] as any)
-        )
-        .signAsync(alice)
-    )
-    await chain.dev.newBlock()
-
-    await sendTransaction(
       chain.api.tx.sudo.sudo(chain.api.tx.liquidCrowdloan.transferFromCrowdloanVault(10e10)).signAsync(alice)
     )
     await chain.dev.newBlock()
