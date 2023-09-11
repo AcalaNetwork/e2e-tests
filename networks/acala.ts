@@ -63,6 +63,7 @@ export const acala = {
   wbtc: { ForeignAsset: 5 },
   ausd: { Token: 'AUSD' },
   aca: { Token: 'ACA' },
+  lcdot: { LiquidCrowdloan: 13 },
 } as const
 
 export const karura = {
