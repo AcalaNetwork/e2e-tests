@@ -1,0 +1,371 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`liquid crowdloan > works > after all transfer relaychain events 1`] = `
+[
+  {
+    "data": {
+      "id": "(hash)",
+      "origin": {
+        "Ump": {
+          "Para": 2000,
+        },
+      },
+      "success": false,
+      "weightUsed": {
+        "proofSize": 0,
+        "refTime": 1000000000,
+      },
+    },
+    "method": "Processed",
+    "section": "messageQueue",
+  },
+  {
+    "data": {
+      "amount": 20000000000,
+      "who": "13YMK2eYoAvStnzReuxBjMrAvPXmmdsURwZvc62PrdXimbNy",
+    },
+    "method": "Withdraw",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 240000000000000000)",
+      "from": "132zsjMwGjNaUXF5XjUCDs2cDEq9Qao51TsL9RSUTGZbinVK",
+      "to": "13YMK2eYoAvStnzReuxBjMrAvPXmmdsURwZvc62PrdXimbNy",
+    },
+    "method": "Transfer",
+    "section": "balances",
+  },
+  {
+    "data": [
+      {
+        "Complete": {
+          "proofSize": 0,
+          "refTime": 2000000000,
+        },
+      },
+    ],
+    "method": "Attempted",
+    "section": "xcmPallet",
+  },
+  {
+    "data": {
+      "result": "Ok",
+    },
+    "method": "ProxyExecuted",
+    "section": "proxy",
+  },
+  {
+    "data": {
+      "amount": "(rounded 15000000000)",
+      "who": "13YMK2eYoAvStnzReuxBjMrAvPXmmdsURwZvc62PrdXimbNy",
+    },
+    "method": "Deposit",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 5100000000)",
+      "who": "14TSBiABUeR8Z5zgEkErb46WGcUyvAjTGJGMsrCxJbPmUJuB",
+    },
+    "method": "Deposit",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "id": "(hash)",
+      "origin": {
+        "Ump": {
+          "Para": 2000,
+        },
+      },
+      "success": true,
+      "weightUsed": {
+        "proofSize": "(rounded 66000)",
+        "refTime": 55000000000,
+      },
+    },
+    "method": "Processed",
+    "section": "messageQueue",
+  },
+]
+`;
+
+exports[`liquid crowdloan > works > after all transfer ump 1`] = `
+[
+  {
+    "v2": [
+      {
+        "withdrawAsset": [
+          {
+            "fun": {
+              "fungible": 20000000000,
+            },
+            "id": {
+              "concrete": {
+                "interior": {
+                  "here": null,
+                },
+                "parents": 0,
+              },
+            },
+          },
+        ],
+      },
+      {
+        "buyExecution": {
+          "fees": {
+            "fun": {
+              "fungible": 20000000000,
+            },
+            "id": {
+              "concrete": {
+                "interior": {
+                  "here": null,
+                },
+                "parents": 0,
+              },
+            },
+          },
+          "weightLimit": {
+            "unlimited": null,
+          },
+        },
+      },
+      {
+        "transact": {
+          "call": {
+            "encoded": "0x1d000059fe89295c2e57d7b4d4d8be9e00a3802e513703ab4b5b424ed0a646e899d3c900630803000100411f03000101006d6f646c6163612f6c71636c000000000000000000000000000000000000000003040000000013e783b85b01b558030000000000",
+          },
+          "originType": "SovereignAccount",
+          "requireWeightAtMost": 50000000000,
+        },
+      },
+      {
+        "refundSurplus": null,
+      },
+      {
+        "depositAsset": {
+          "assets": {
+            "wild": {
+              "all": null,
+            },
+          },
+          "beneficiary": {
+            "interior": {
+              "x1": {
+                "parachain": 2000,
+              },
+            },
+            "parents": 0,
+          },
+          "maxAssets": 1,
+        },
+      },
+    ],
+  },
+]
+`;
+
+exports[`liquid crowdloan > works > first redeem 1`] = `
+[
+  {
+    "data": {
+      "amount": 900000000000,
+      "currencyId": {
+        "Token": "DOT",
+      },
+    },
+    "method": "Redeemed",
+    "section": "liquidCrowdloan",
+  },
+]
+`;
+
+exports[`liquid crowdloan > works > pallet account balance 1`] = `
+{
+  "free": 999999216661,
+  "frozen": 0,
+  "reserved": 0,
+}
+`;
+
+exports[`liquid crowdloan > works > pallet account balance after all transfer 1`] = `
+{
+  "free": "0x00000000000000000358b518a4178411",
+  "frozen": 0,
+  "reserved": 0,
+}
+`;
+
+exports[`liquid crowdloan > works > second redeem 1`] = `
+[
+  {
+    "data": {
+      "amount": 4000000000000,
+      "currencyId": {
+        "Token": "DOT",
+      },
+    },
+    "method": "Redeemed",
+    "section": "liquidCrowdloan",
+  },
+]
+`;
+
+exports[`liquid crowdloan > works > system events 1`] = `
+[
+  {
+    "data": {
+      "amount": 20000000000,
+      "who": "13YMK2eYoAvStnzReuxBjMrAvPXmmdsURwZvc62PrdXimbNy",
+    },
+    "method": "Withdraw",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "who": "132zsjMwGjNaUXF5XjUCDs2cDEq9Qao51TsL9RSUTGZbinVK",
+    },
+    "method": "Upgraded",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": 1000000000000,
+      "from": "132zsjMwGjNaUXF5XjUCDs2cDEq9Qao51TsL9RSUTGZbinVK",
+      "to": "13YMK2eYoAvStnzReuxBjMrAvPXmmdsURwZvc62PrdXimbNy",
+    },
+    "method": "Transfer",
+    "section": "balances",
+  },
+  {
+    "data": [
+      {
+        "Complete": {
+          "proofSize": 0,
+          "refTime": 2000000000,
+        },
+      },
+    ],
+    "method": "Attempted",
+    "section": "xcmPallet",
+  },
+  {
+    "data": {
+      "result": "Ok",
+    },
+    "method": "ProxyExecuted",
+    "section": "proxy",
+  },
+  {
+    "data": {
+      "amount": "(rounded 15000000000)",
+      "who": "13YMK2eYoAvStnzReuxBjMrAvPXmmdsURwZvc62PrdXimbNy",
+    },
+    "method": "Deposit",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 5100000000)",
+      "who": "14TSBiABUeR8Z5zgEkErb46WGcUyvAjTGJGMsrCxJbPmUJuB",
+    },
+    "method": "Deposit",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "id": "(hash)",
+      "origin": {
+        "Ump": {
+          "Para": 2000,
+        },
+      },
+      "success": true,
+      "weightUsed": {
+        "proofSize": "(rounded 66000)",
+        "refTime": 55000000000,
+      },
+    },
+    "method": "Processed",
+    "section": "messageQueue",
+  },
+]
+`;
+
+exports[`liquid crowdloan > works > ump 1`] = `
+[
+  {
+    "v2": [
+      {
+        "withdrawAsset": [
+          {
+            "fun": {
+              "fungible": 20000000000,
+            },
+            "id": {
+              "concrete": {
+                "interior": {
+                  "here": null,
+                },
+                "parents": 0,
+              },
+            },
+          },
+        ],
+      },
+      {
+        "buyExecution": {
+          "fees": {
+            "fun": {
+              "fungible": 20000000000,
+            },
+            "id": {
+              "concrete": {
+                "interior": {
+                  "here": null,
+                },
+                "parents": 0,
+              },
+            },
+          },
+          "weightLimit": {
+            "unlimited": null,
+          },
+        },
+      },
+      {
+        "transact": {
+          "call": {
+            "encoded": "0x1d000059fe89295c2e57d7b4d4d8be9e00a3802e513703ab4b5b424ed0a646e899d3c900630803000100411f03000101006d6f646c6163612f6c71636c0000000000000000000000000000000000000000030400000000070010a5d4e80000000000",
+          },
+          "originType": "SovereignAccount",
+          "requireWeightAtMost": 50000000000,
+        },
+      },
+      {
+        "refundSurplus": null,
+      },
+      {
+        "depositAsset": {
+          "assets": {
+            "wild": {
+              "all": null,
+            },
+          },
+          "beneficiary": {
+            "interior": {
+              "x1": {
+                "parachain": 2000,
+              },
+            },
+            "parents": 0,
+          },
+          "maxAssets": 1,
+        },
+      },
+    ],
+  },
+]
+`;
