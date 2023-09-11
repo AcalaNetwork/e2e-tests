@@ -135,7 +135,7 @@ exports[`liquid crowdloan > works > after all transfer ump 1`] = `
       {
         "transact": {
           "call": {
-            "encoded": "0x1d000059fe89295c2e57d7b4d4d8be9e00a3802e513703ab4b5b424ed0a646e899d3c900630803000100411f03000101006d6f646c6163612f6c71636c000000000000000000000000000000000000000003040000000013e783b85b01b558030000000000",
+            "encoded": "0x1d000059fe89295c2e57d7b4d4d8be9e00a3802e513703ab4b5b424ed0a646e899d3c900630803000100411f03000101006d6f646c6163612f6c71636c000000000000000000000000000000000000000003040000000013e7db26b01ac758030000000000",
           },
           "originType": "SovereignAccount",
           "requireWeightAtMost": 50000000000,
@@ -171,7 +171,7 @@ exports[`liquid crowdloan > works > first redeem 1`] = `
 [
   {
     "data": {
-      "amount": 900000000000,
+      "amount": 90000000000,
       "currencyId": {
         "Token": "DOT",
       },
@@ -184,7 +184,7 @@ exports[`liquid crowdloan > works > first redeem 1`] = `
 
 exports[`liquid crowdloan > works > pallet account balance 1`] = `
 {
-  "free": 999999216661,
+  "free": 99999216661,
   "frozen": 0,
   "reserved": 0,
 }
@@ -192,7 +192,7 @@ exports[`liquid crowdloan > works > pallet account balance 1`] = `
 
 exports[`liquid crowdloan > works > pallet account balance after all transfer 1`] = `
 {
-  "free": "0x00000000000000000358b518a4178411",
+  "free": "0x00000000000000000358c71d041ad811",
   "frozen": 0,
   "reserved": 0,
 }
@@ -232,7 +232,7 @@ exports[`liquid crowdloan > works > system events 1`] = `
   },
   {
     "data": {
-      "amount": 1000000000000,
+      "amount": 100000000000,
       "from": "132zsjMwGjNaUXF5XjUCDs2cDEq9Qao51TsL9RSUTGZbinVK",
       "to": "13YMK2eYoAvStnzReuxBjMrAvPXmmdsURwZvc62PrdXimbNy",
     },
@@ -338,7 +338,7 @@ exports[`liquid crowdloan > works > ump 1`] = `
       {
         "transact": {
           "call": {
-            "encoded": "0x1d000059fe89295c2e57d7b4d4d8be9e00a3802e513703ab4b5b424ed0a646e899d3c900630803000100411f03000101006d6f646c6163612f6c71636c0000000000000000000000000000000000000000030400000000070010a5d4e80000000000",
+            "encoded": "0x1d000059fe89295c2e57d7b4d4d8be9e00a3802e513703ab4b5b424ed0a646e899d3c900630803000100411f03000101006d6f646c6163612f6c71636c00000000000000000000000000000000000000000304000000000700e87648170000000000",
           },
           "originType": "SovereignAccount",
           "requireWeightAtMost": 50000000000,
