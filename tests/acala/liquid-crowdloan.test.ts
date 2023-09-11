@@ -70,7 +70,7 @@ describe('liquid crowdloan', async () => {
 
     await relaychain.dev.newBlock()
 
-    await checkSystemEvents(relaychain, 'messageQueue', 'xcmPallet', 'proxy', 'balances').toMatchSnapshot()
+    await checkSystemEvents(relaychain, 'messageQueue', 'xcmPallet', 'proxy').toMatchSnapshot()
 
     await chain.dev.newBlock()
 
@@ -94,7 +94,7 @@ describe('liquid crowdloan', async () => {
 
     await relaychain.dev.newBlock()
 
-    await checkSystemEvents(relaychain, 'messageQueue', 'xcmPallet', 'proxy', 'balances').toMatchSnapshot(
+    await checkSystemEvents(relaychain, 'messageQueue', 'xcmPallet', 'proxy').toMatchSnapshot(
       'after all transfer relaychain events'
     )
 

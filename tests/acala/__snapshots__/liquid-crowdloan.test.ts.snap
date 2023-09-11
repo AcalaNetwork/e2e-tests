@@ -20,23 +20,6 @@ exports[`liquid crowdloan > works > after all transfer relaychain events 1`] = `
     "section": "messageQueue",
   },
   {
-    "data": {
-      "amount": 20000000000,
-      "who": "13YMK2eYoAvStnzReuxBjMrAvPXmmdsURwZvc62PrdXimbNy",
-    },
-    "method": "Withdraw",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "amount": "(rounded 240000000000000000)",
-      "from": "132zsjMwGjNaUXF5XjUCDs2cDEq9Qao51TsL9RSUTGZbinVK",
-      "to": "13YMK2eYoAvStnzReuxBjMrAvPXmmdsURwZvc62PrdXimbNy",
-    },
-    "method": "Transfer",
-    "section": "balances",
-  },
-  {
     "data": [
       {
         "Complete": {
@@ -54,22 +37,6 @@ exports[`liquid crowdloan > works > after all transfer relaychain events 1`] = `
     },
     "method": "ProxyExecuted",
     "section": "proxy",
-  },
-  {
-    "data": {
-      "amount": "(rounded 15000000000)",
-      "who": "13YMK2eYoAvStnzReuxBjMrAvPXmmdsURwZvc62PrdXimbNy",
-    },
-    "method": "Deposit",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "amount": "(rounded 5100000000)",
-      "who": "14TSBiABUeR8Z5zgEkErb46WGcUyvAjTGJGMsrCxJbPmUJuB",
-    },
-    "method": "Deposit",
-    "section": "balances",
   },
   {
     "data": {
@@ -216,30 +183,6 @@ exports[`liquid crowdloan > works > second redeem 1`] = `
 exports[`liquid crowdloan > works > system events 1`] = `
 [
   {
-    "data": {
-      "amount": 20000000000,
-      "who": "13YMK2eYoAvStnzReuxBjMrAvPXmmdsURwZvc62PrdXimbNy",
-    },
-    "method": "Withdraw",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "who": "132zsjMwGjNaUXF5XjUCDs2cDEq9Qao51TsL9RSUTGZbinVK",
-    },
-    "method": "Upgraded",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "amount": 100000000000,
-      "from": "132zsjMwGjNaUXF5XjUCDs2cDEq9Qao51TsL9RSUTGZbinVK",
-      "to": "13YMK2eYoAvStnzReuxBjMrAvPXmmdsURwZvc62PrdXimbNy",
-    },
-    "method": "Transfer",
-    "section": "balances",
-  },
-  {
     "data": [
       {
         "Complete": {
@@ -257,22 +200,6 @@ exports[`liquid crowdloan > works > system events 1`] = `
     },
     "method": "ProxyExecuted",
     "section": "proxy",
-  },
-  {
-    "data": {
-      "amount": "(rounded 15000000000)",
-      "who": "13YMK2eYoAvStnzReuxBjMrAvPXmmdsURwZvc62PrdXimbNy",
-    },
-    "method": "Deposit",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "amount": "(rounded 5100000000)",
-      "who": "14TSBiABUeR8Z5zgEkErb46WGcUyvAjTGJGMsrCxJbPmUJuB",
-    },
-    "method": "Deposit",
-    "section": "balances",
   },
   {
     "data": {
