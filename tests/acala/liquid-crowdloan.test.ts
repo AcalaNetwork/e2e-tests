@@ -44,7 +44,7 @@ describe('liquid crowdloan', async () => {
 
   it('works', async () => {
     await sendTransaction(
-      chain.api.tx.sudo.sudo(chain.api.tx.liquidCrowdloan.transferFromCrowdloanVault(10e10)).signAsync(alice)
+      chain.api.tx.sudo.sudo(chain.api.tx.liquidCrowdloan.transferFromCrowdloanVault(10e10)).signAsync(alice),
     )
     await chain.dev.newBlock()
 
@@ -67,7 +67,7 @@ describe('liquid crowdloan', async () => {
     await sendTransaction(
       chain.api.tx.sudo
         .sudo(chain.api.tx.liquidCrowdloan.transferFromCrowdloanVault(totalLcdot - 10n * 10n ** 10n))
-        .signAsync(alice)
+        .signAsync(alice),
     )
 
     await chain.dev.newBlock()
@@ -77,13 +77,13 @@ describe('liquid crowdloan', async () => {
     await relaychain.dev.newBlock()
 
     await checkSystemEvents(relaychain, 'messageQueue', 'xcmPallet', 'proxy').toMatchSnapshot(
-      'after all transfer relaychain events'
+      'after all transfer relaychain events',
     )
 
     await chain.dev.newBlock()
 
     await check(chain.api.query.tokens.accounts(palletAccount, acala.dot)).toMatchSnapshot(
-      'pallet account balance after all transfer'
+      'pallet account balance after all transfer',
     )
 
     const tx1 = await sendTransaction(chain.api.tx.liquidCrowdloan.redeem(400e10).signAsync(alice))
