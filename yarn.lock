@@ -154,7 +154,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@acala-network/sdk-core@npm:4.1.9-7, @acala-network/sdk-core@npm:^4.1.9-2, @acala-network/sdk-core@npm:^4.1.9-7":
+"@acala-network/sdk-core@npm:4.1.9-7, @acala-network/sdk-core@npm:^4.1.9-7":
   version: 4.1.9-7
   resolution: "@acala-network/sdk-core@npm:4.1.9-7"
   dependencies:
@@ -166,6 +166,21 @@ __metadata:
     "@acala-network/types": ^5
     "@polkadot/api": ^10
   checksum: 8a327e4c8ce0d7fdc72f21d549322f787a643c831c286e36a26a68e0004ec7b91207980eb67c3bf90c231ca0feba41b0984f5fc0c7d686c7aadea352c3c3a9db
+  languageName: node
+  linkType: hard
+
+"@acala-network/sdk-core@npm:^4.1.9-8":
+  version: 4.1.9-8
+  resolution: "@acala-network/sdk-core@npm:4.1.9-8"
+  dependencies:
+    "@acala-network/types": ^6.0.0-34
+    "@polkadot/api": ^10.9.1
+    bignumber.js: ^9.0.0
+    lodash: ^4.17.20
+  peerDependencies:
+    "@acala-network/types": ^6
+    "@polkadot/api": ^10
+  checksum: a1366fc0d61c07320794aa1d067d8a3af60f97fc48f9af89c0fd68377d22394692dc620875e4a96bbeb14287439ba91b8cb185e5bd10323c204eb73fe22e0cab
   languageName: node
   linkType: hard
 
@@ -221,6 +236,15 @@ __metadata:
   peerDependencies:
     "@polkadot/api": ^10.5.1
   checksum: 9f5b0e2a6d2924d49c27d4d4316cd2ac418eb4c9450e5487cb89430298dc8a56bf0357564358c5c66991a0c065d7c05b82a5451690a72df822a37830384244cb
+  languageName: node
+  linkType: hard
+
+"@acala-network/types@npm:^6.0.0-34":
+  version: 6.0.0
+  resolution: "@acala-network/types@npm:6.0.0"
+  peerDependencies:
+    "@polkadot/api": ^10.9.1
+  checksum: d5187f6eccf46e094cda7a69e23c6fd1f8221da4f1e7d30964c9769bb40795e0aa25c5a400c51b3ae4a2bb9dcc47996738febe08b7b4f2378ece7aa14461a74d
   languageName: node
   linkType: hard
 
@@ -3994,7 +4018,7 @@ __metadata:
     "@acala-network/chopsticks": ^0.8.1
     "@acala-network/chopsticks-testing": ^0.8.1
     "@acala-network/sdk": ^4.1.9-2
-    "@acala-network/sdk-core": ^4.1.9-2
+    "@acala-network/sdk-core": ^4.1.9-8
     "@polkadot/api": ^10.9.1
     "@polkawallet/bridge": ^0.1.5-9
     "@types/node": ^20.6.0
