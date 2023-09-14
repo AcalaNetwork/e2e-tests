@@ -18,7 +18,7 @@ const tests = [
         tx: tx.xcmPallet.limitedReserveTransferAssetsV3(
           statemine.usdt,
           1e6,
-          tx.xcmPallet.parachainV3(1, karura.paraId)
+          tx.xcmPallet.parachainV3(1, karura.paraId),
         ),
         fromBalance: query.assets(statemine.usdtIndex),
         toBalance: query.tokens(karura.usdt),

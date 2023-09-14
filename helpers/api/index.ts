@@ -86,7 +86,7 @@ export const xtokens = {
         ],
         1,
         dest(acc),
-        'Unlimited'
+        'Unlimited',
       ),
 }
 
@@ -147,7 +147,7 @@ export const xcmPallet = {
           ],
         },
         0,
-        'Unlimited'
+        'Unlimited',
       ),
   limitedReserveTransferAssetsV2:
     (token: any, amount: any, dest: any) =>
@@ -176,7 +176,7 @@ export const xcmPallet = {
           ],
         },
         0,
-        'Unlimited'
+        'Unlimited',
       ),
   limitedReserveTransferAssetsV3:
     (token: any, amount: any, dest: any) =>
@@ -204,7 +204,7 @@ export const xcmPallet = {
           ],
         },
         0,
-        'Unlimited'
+        'Unlimited',
       ),
 }
 
