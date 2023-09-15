@@ -26,7 +26,7 @@ export const xTokensForRelayChain = (api: ApiPromise, amount: string, address: U
         },
       },
     },
-    'Unlimited'
+    'Unlimited',
   )
 }
 
@@ -35,7 +35,7 @@ export const xTokensForParaChain = (
   token: object,
   parachainId: string,
   amount: string,
-  address: Uint8Array
+  address: Uint8Array,
 ) => {
   return api.tx.xTokens.transfer(
     token,
@@ -58,7 +58,7 @@ export const xTokensForParaChain = (
         },
       },
     },
-    'Unlimited'
+    'Unlimited',
   )
 }
 
@@ -68,7 +68,7 @@ export const xTokens = (
   parachainId: string,
   token: object,
   amount: string | bigint,
-  address: Uint8Array
+  address: Uint8Array,
 ) => {
   const multiLocation = isRelayChain
     ? { X1: { AccountId32: { network: 'Any', id: address } } }
@@ -95,7 +95,7 @@ export const xTokens = (
         interior: multiLocation,
       },
     },
-    'Unlimited'
+    'Unlimited',
   )
 }
 
@@ -105,7 +105,7 @@ export const xTokensV3 = (
   parachainId: string,
   token: object,
   amount: string | bigint,
-  address: Uint8Array
+  address: Uint8Array,
 ) => {
   const multiLocation = isRelayChain
     ? {
@@ -137,7 +137,7 @@ export const xTokensV3 = (
         interior: multiLocation,
       },
     } as any,
-    'Unlimited'
+    'Unlimited',
   )
 }
 
@@ -145,7 +145,7 @@ export const relayChainV3limitedReserveTransferAssets = (
   api: ApiPromise,
   parachainId: string,
   amount: string,
-  address: Uint8Array
+  address: Uint8Array,
 ) => {
   return api.tx.xcmPallet.limitedReserveTransferAssets(
     {
@@ -177,7 +177,7 @@ export const relayChainV3limitedReserveTransferAssets = (
       ],
     },
     0,
-    'Unlimited'
+    'Unlimited',
   )
 }
 
@@ -186,7 +186,7 @@ export const xTokensTransferMulticurrencies = (
   foreignAssetId: string,
   amount: string,
   parachainId: string,
-  address: Uint8Array
+  address: Uint8Array,
 ) => {
   return api.tx.xTokens.transferMulticurrencies(
     [
@@ -222,7 +222,7 @@ export const xTokensTransferMulticurrencies = (
         },
       },
     },
-    'Unlimited'
+    'Unlimited',
   )
 }
 
@@ -231,7 +231,7 @@ export const xTokensTransferTransferMultiasset = (
   interior: any[],
   amount: string,
   parachainId: string,
-  address: Uint8Array
+  address: Uint8Array,
 ) => {
   return api.tx.xTokens.transferMultiasset(
     {
@@ -268,7 +268,7 @@ export const xTokensTransferTransferMultiasset = (
         },
       },
     },
-    'Unlimited'
+    'Unlimited',
   )
 }
 
@@ -277,7 +277,7 @@ export const xTokensTransferTransferMultiassetV3 = (
   interior: any[],
   amount: string,
   parachainId: string,
-  address: Uint8Array
+  address: Uint8Array,
 ) => {
   return api.tx.xTokens.transferMultiasset(
     {
@@ -313,7 +313,7 @@ export const xTokensTransferTransferMultiassetV3 = (
         },
       },
     } as any,
-    'Unlimited'
+    'Unlimited',
   )
 }
 
@@ -322,7 +322,7 @@ export const xTokensTransferMulticurrenciesV3 = (
   foreignAssetId: string,
   amount: string,
   parachainId: string,
-  address: Uint8Array
+  address: Uint8Array,
 ) => {
   return api.tx.xTokens.transferMulticurrencies(
     [
@@ -357,7 +357,7 @@ export const xTokensTransferMulticurrenciesV3 = (
         },
       },
     } as any,
-    'Unlimited'
+    'Unlimited',
   )
 }
 
@@ -376,7 +376,7 @@ export const stableAssetSwap = (
   j: string,
   dx: string,
   minDy: string,
-  assetLength: string
+  assetLength: string,
 ) => {
   return api.tx.stableAsset.swap(poolId, i, j, dx, minDy, assetLength)
 }
@@ -385,7 +385,7 @@ export const aggregatedDexSwapWithExactSupply = (
   api: ApiPromise,
   paths: any[],
   supplyAmount: string,
-  minTargetAmount: string
+  minTargetAmount: string,
 ) => {
   return api.tx.aggregatedDex.swapWithExactSupply(paths, supplyAmount, minTargetAmount)
 }
@@ -397,7 +397,7 @@ export const addLiquidity = (
   maxAmountA: string,
   maxAmountB: string,
   minShareIncrement: string,
-  stakeIncrementShare: boolean
+  stakeIncrementShare: boolean,
 ) => {
   return api.tx.dex.addLiquidity(
     currencyIdA,
@@ -405,7 +405,7 @@ export const addLiquidity = (
     maxAmountA,
     maxAmountB,
     minShareIncrement,
-    stakeIncrementShare
+    stakeIncrementShare,
   )
 }
 
@@ -419,7 +419,7 @@ export const stableAssetRedeemSingle = (
   amount: string,
   i: string,
   minRedeemAmount: string,
-  assetLength: string
+  assetLength: string,
 ) => {
   return api.tx.stableAsset.redeemSingle(poolId, amount, i, minRedeemAmount, assetLength)
 }
@@ -428,7 +428,7 @@ export const stableAssetRedeemProportion = (
   api: ApiPromise,
   poolId: string,
   amount: string,
-  minRedeemAmount: any[]
+  minRedeemAmount: any[],
 ) => {
   return api.tx.stableAsset.redeemProportion(poolId, amount, minRedeemAmount)
 }
@@ -440,7 +440,7 @@ export const dexRemoveLiquidity = (
   removeShare: string,
   minWithdrawnA: string,
   minWithdrawnB: string,
-  byUnstake: boolean
+  byUnstake: boolean,
 ) => {
   return api.tx.dex.removeLiquidity(currencyIdA, currencyIdB, removeShare, minWithdrawnA, minWithdrawnB, byUnstake)
 }
@@ -453,7 +453,7 @@ export const adjustLoanByDebitValue = (
   api: ApiPromise,
   token: string,
   collateralAdjustment: string,
-  debitValueAdjustment: string
+  debitValueAdjustment: string,
 ) => {
   return api.tx.honzon.adjustLoanByDebitValue({ Token: token }, collateralAdjustment, debitValueAdjustment)
 }
@@ -481,7 +481,7 @@ export const incentivesClaimRewards = (api: ApiPromise, poolId: object) => {
 export const transactionPaymentWithFeeCurrency = (
   api: ApiPromise,
   currencyId: object,
-  call: SubmittableExtrinsic<'promise'>
+  call: SubmittableExtrinsic<'promise'>,
 ) => {
   return api.tx.transactionPayment.withFeeCurrency(currencyId, call)
 }

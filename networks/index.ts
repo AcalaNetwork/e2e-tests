@@ -71,7 +71,7 @@ export const createContext = (keyringType: 'ed25519' | 'sr25519' = 'ed25519') =>
 
 export const createNetworks = async (
   networkOptions: Partial<Record<NetworkNames, Partial<SetupOption> | undefined>>,
-  context = createContext()
+  context = createContext(),
 ) => {
   const ret = {} as Record<NetworkNames, Network>
 
@@ -83,7 +83,7 @@ export const createNetworks = async (
   }
 
   const relaychainName = Object.keys(ret).filter(
-    (x) => x.startsWith('polkadot') || x.startsWith('kusama')
+    (x) => x.startsWith('polkadot') || x.startsWith('kusama'),
   )[0] as NetworkKind
   const { [relaychainName]: relaychain, ...parachains } = ret
 

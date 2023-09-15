@@ -61,7 +61,7 @@ const tests = [
           1e7,
           acala.dot, // fee
           1e10,
-          tx.xtokens.parachainV3(statemint.paraId)
+          tx.xtokens.parachainV3(statemint.paraId),
         ),
         fromBalance: query.tokens(acala.wbtc),
         toBalance: query.assets(statemint.wbtcIndex),

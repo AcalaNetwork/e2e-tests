@@ -49,7 +49,7 @@ describe.each([
 
   it.each([true, false])('addLiquidity removeLiquidity works with stake %s', async (stake) => {
     const tx0 = await sendTransaction(
-      chain.api.tx.dex.addLiquidity(swapPair[0], swapPair[1], 1e12, 1e13, 0, stake).signAsync(alice)
+      chain.api.tx.dex.addLiquidity(swapPair[0], swapPair[1], 1e12, 1e13, 0, stake).signAsync(alice),
     )
 
     await chain.chain.newBlock()
@@ -66,7 +66,7 @@ describe.each([
     }
 
     const tx1 = await sendTransaction(
-      chain.api.tx.dex.removeLiquidity(swapPair[0], swapPair[1], lpAmount, 0, 0, stake).signAsync(alice)
+      chain.api.tx.dex.removeLiquidity(swapPair[0], swapPair[1], lpAmount, 0, 0, stake).signAsync(alice),
     )
 
     await chain.chain.newBlock()

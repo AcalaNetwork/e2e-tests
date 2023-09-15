@@ -40,7 +40,7 @@ describe.each([
     it('Homa stake works', async () => {
       const tx0 = await sendTransaction(parachain.api.tx.homa.mint(1e12).signAsync(alice, { nonce: 0 }))
       const tx1 = await sendTransaction(
-        parachain.api.tx.sudo.sudo(parachain.api.tx.homa.forceBumpCurrentEra(0)).signAsync(alice, { nonce: 1 })
+        parachain.api.tx.sudo.sudo(parachain.api.tx.homa.forceBumpCurrentEra(0)).signAsync(alice, { nonce: 1 }),
       )
 
       await parachain.chain.newBlock()
@@ -59,7 +59,7 @@ describe.each([
     it('Homa redeem unbond works', async () => {
       const tx0 = await sendTransaction(parachain.api.tx.homa.requestRedeem(1e12, false).signAsync(alice, { nonce: 0 }))
       const tx1 = await sendTransaction(
-        parachain.api.tx.sudo.sudo(parachain.api.tx.homa.forceBumpCurrentEra(0)).signAsync(alice, { nonce: 1 })
+        parachain.api.tx.sudo.sudo(parachain.api.tx.homa.forceBumpCurrentEra(0)).signAsync(alice, { nonce: 1 }),
       )
 
       await parachain.chain.newBlock()
@@ -101,7 +101,7 @@ describe.each([
 
     it('unbond withdraw works', async () => {
       const tx = await sendTransaction(
-        parachain.api.tx.sudo.sudo(parachain.api.tx.homa.forceBumpCurrentEra(1)).signAsync(alice)
+        parachain.api.tx.sudo.sudo(parachain.api.tx.homa.forceBumpCurrentEra(1)).signAsync(alice),
       )
       await parachain.chain.newBlock()
       await checkEvents(tx, { section: 'homa', method: 'CurrentEraBumped' }).toMatchSnapshot()
