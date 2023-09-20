@@ -1,7 +1,7 @@
 extensions:
   client:
     endpoints:
-      - wss://crab-rpc.darwinia.network:443
+      - wss://crab.api.onfinality.io/public-ws:443
   event_bus:
   substrate_api:
     stale_timeout_seconds: 60

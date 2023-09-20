@@ -14,7 +14,7 @@ export default {
   },
   kusama: {
     name: 'basilisk' as const,
-    endpoint: 'wss://rpc.basilisk.cloud',
+    endpoint: 'wss://basilisk-rpc.dwellir.com',
     relayToken: 1,
     dai: 13,
   },

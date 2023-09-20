@@ -3,11 +3,11 @@ import { Config } from './types'
 export default {
   polkadot: {
     name: 'darwinia' as const,
-    endpoint: 'wss://rpc.darwinia.network',
+    endpoint: 'wss://darwinia-rpc.dwellir.com',
   },
   kusama: {
     name: 'crab' as const,
-    endpoint: 'wss://crab-rpc.darwinia.network',
+    endpoint: 'wss://crab.api.onfinality.io/public-ws',
   },
   config: ({ alice}) => ({
     storages: {
