@@ -206,10 +206,10 @@ exports[`'acala' -> 'moonbeam' xcm transfer 'DOT' > xtokens transfer > balance o
 {
   "balance": "(rounded 1000000000000)",
   "extra": null,
-  "isFrozen": false,
   "reason": {
     "sufficient": null,
   },
+  "status": "Liquid",
 }
 `;
 
@@ -809,10 +809,10 @@ exports[`'moonbeam' -> 'acala' xcm transfer 'DOT' > xtokens transfer > balance o
 {
   "balance": 9000000000000,
   "extra": null,
-  "isFrozen": false,
   "reason": {
     "consumer": null,
   },
+  "status": "Liquid",
 }
 `;
 

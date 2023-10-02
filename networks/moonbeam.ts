@@ -12,7 +12,7 @@ export default {
   config: ({ alith }) => ({
     storages: {
       System: {
-        Account: [[[alith.address], { data: { free: 1000n * 10n ** 18n } }]],
+        Account: [[[alith.address], { providers: 1, data: { free: 1000n * 10n ** 18n } }]],
       },
       AuthorFilter: {
         EligibleRatio: 100,
