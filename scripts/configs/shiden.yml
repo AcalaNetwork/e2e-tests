@@ -1,7 +1,7 @@
 extensions:
   client:
     endpoints:
-      - wss://shiden.api.onfinality.io:443/public-ws
+      - wss://rpc.shiden.astar.network
   event_bus:
   substrate_api:
     stale_timeout_seconds: 60
