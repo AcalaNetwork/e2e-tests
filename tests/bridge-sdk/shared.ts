@@ -5,9 +5,11 @@ import { AstarAdapter, ShidenAdapter } from '@polkawallet/bridge/adapters/astar'
 import { BasiliskAdapter } from '@polkawallet/bridge/adapters/hydradx'
 import { BifrostAdapter } from '@polkawallet/bridge/adapters/bifrost'
 import { Bridge } from '@polkawallet/bridge'
+import { CrabAdapter } from '@polkawallet/bridge/adapters/darwinia'
 import { FixedPointNumber } from '@acala-network/sdk-core'
 import { HeikoAdapter, ParallelAdapter } from '@polkawallet/bridge/adapters/parallel'
 import { InterlayAdapter, KintsugiAdapter } from '@polkawallet/bridge/adapters/interlay'
+import { KhalaAdapter } from '@polkawallet/bridge/adapters/phala'
 import { KusamaAdapter, PolkadotAdapter } from '@polkawallet/bridge/adapters/polkadot'
 import { MoonbeamAdapter, MoonriverAdapter } from '@polkawallet/bridge/adapters/moonbeam'
 import { Network, NetworkNames, createNetworks } from '../../networks'
@@ -106,6 +108,8 @@ export const buildTests = (tests: ReadonlyArray<TestTtype>) => {
             interlay: InterlayAdapter,
             kintsugi: KintsugiAdapter,
             parallel: ParallelAdapter,
+            khala: KhalaAdapter,
+            crab: CrabAdapter,
           } as any
           const adapter = new adapters[chain]()
           await adapter.init(api)

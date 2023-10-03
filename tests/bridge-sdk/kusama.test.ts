@@ -76,11 +76,11 @@ const tests = [
     to: 'altair',
     token: 'AIR',
   },
-  // {
-  //   from: 'shiden',
-  //   to: 'karura',
-  //   token: 'KUSD',
-  // },
+  {
+    from: 'shiden',
+    to: 'karura',
+    token: 'KUSD',
+  },
   {
     from: 'karura',
     to: 'shiden',
@@ -106,20 +106,20 @@ const tests = [
     to: 'karura',
     token: 'LKSM',
   },
-  // btc
-  // {
-  //   from: 'karura',
-  //   to: 'kintsugi',
-  //   token: 'KBTC',
-  //   fee: 0.07407407407400002
-  // },
-  // {
-  //   from: 'kintsugi',
-  //   to: 'karura',
-  //   token: 'KBTC',
-  //   fee: 0.008012799999999931
-  // },
-  // RpcError: 1: Error: createType(Lookup4):: Unable to construct number from multi-key object
+  // // btc
+  // // {
+  // //   from: 'karura',
+  // //   to: 'kintsugi',
+  // //   token: 'KBTC',
+  // //   fee: 0.07407407407400002
+  // // },
+  // // {
+  // //   from: 'kintsugi',
+  // //   to: 'karura',
+  // //   token: 'KBTC',
+  // //   fee: 0.008012799999999931
+  // // },
+
   {
     from: 'karura',
     to: 'heiko',
@@ -129,6 +129,21 @@ const tests = [
     from: 'heiko',
     to: 'karura',
     token: 'HKO',
+  },
+  // {
+  //   from: 'crab',
+  //   to: 'karura',
+  //   token: 'CRAB',
+  // },
+  {
+    from: 'khala',
+    to: 'karura',
+    token: 'KUSD',
+  },
+  {
+    from: 'karura',
+    to: 'khala',
+    token: 'KUSD',
   },
   // Chopsticks are currently not supported.
   // {
