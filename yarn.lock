@@ -169,7 +169,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@acala-network/sdk@npm:^4.1.9-2, @acala-network/sdk@npm:^4.1.9-7":
+"@acala-network/sdk-core@npm:4.1.9-9":
+  version: 4.1.9-9
+  resolution: "@acala-network/sdk-core@npm:4.1.9-9"
+  dependencies:
+    "@acala-network/types": ^6.0.0-34
+    "@polkadot/api": ^10.9.1
+    bignumber.js: ^9.0.0
+    lodash: ^4.17.20
+  peerDependencies:
+    "@acala-network/types": ^6
+    "@polkadot/api": ^10
+  checksum: 13b32cbf2baf4162747e94737cf7d6ccb48e5cc0530fdb97d6c57d69d6bd9e8de742916d5ce724674874fbafe19026541d1f3ece1701fd37f678531d20a61d7a
+  languageName: node
+  linkType: hard
+
+"@acala-network/sdk@npm:^4.1.9-7":
   version: 4.1.9-8
   resolution: "@acala-network/sdk@npm:4.1.9-8"
   dependencies:
@@ -190,6 +205,30 @@ __metadata:
     "@polkadot/api": ^10
     ethers: ~5.7.0
   checksum: 9e673b6db68e52d4fcde6b2ecf2a126ff2f23b34e9845f24a19570116ff5a051c1bb1891fa24e76ed8d883f9191e2ee9091faf17230b67cdfd21856374238873
+  languageName: node
+  linkType: hard
+
+"@acala-network/sdk@npm:^4.1.9-9":
+  version: 4.1.9-9
+  resolution: "@acala-network/sdk@npm:4.1.9-9"
+  dependencies:
+    "@acala-network/api": ^5.1.1
+    "@acala-network/eth-providers": ~2.7.3
+    "@acala-network/sdk-core": 4.1.9-9
+    "@polkadot/api": ^10.9.1
+    axios: ^0.24.0
+    ethers: ~5.7.0
+    graphql: ^16.3.0
+    graphql-request: ^4.1.0
+    lodash: ^4.17.20
+    lru-cache: ^7.14.1
+    rxjs: ^7.8.1
+  peerDependencies:
+    "@acala-network/api": ^5
+    "@acala-network/eth-providers": ~2.7.3
+    "@polkadot/api": ^10
+    ethers: ~5.7.0
+  checksum: b3db1622de0155d2426871cbe6abcc4fd1a6c77ab54668c6a21a352da17ae4b6da735cede015df98b37122ea37a76f9dfcfcb3ee7dd27640a44d830d414988dd
   languageName: node
   linkType: hard
 
@@ -4067,7 +4106,7 @@ __metadata:
   dependencies:
     "@acala-network/chopsticks": ^0.8.1
     "@acala-network/chopsticks-testing": ^0.8.1
-    "@acala-network/sdk": ^4.1.9-2
+    "@acala-network/sdk": ^4.1.9-9
     "@acala-network/sdk-core": ^4.1.9-2
     "@polkadot/api": ^10.9.1
     "@polkawallet/bridge": ^0.1.5-16
