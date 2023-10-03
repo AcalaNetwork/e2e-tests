@@ -56,7 +56,7 @@ describe('liquid crowdloan', async () => {
 
     await chain.dev.newBlock()
 
-    await check(chain.api.query.tokens.accounts(palletAccount, acala.dot)).toMatchSnapshot('pallet account balance')
+    await check(chain.api.query.tokens.accounts(palletAccount, acala.dot)).redact().toMatchSnapshot('pallet account balance')
 
     const tx0 = await sendTransaction(chain.api.tx.liquidCrowdloan.redeem(9e10).signAsync(alice))
 
@@ -82,7 +82,7 @@ describe('liquid crowdloan', async () => {
 
     await chain.dev.newBlock()
 
-    await check(chain.api.query.tokens.accounts(palletAccount, acala.dot)).toMatchSnapshot(
+    await check(chain.api.query.tokens.accounts(palletAccount, acala.dot)).redact().toMatchSnapshot(
       'pallet account balance after all transfer',
     )
 

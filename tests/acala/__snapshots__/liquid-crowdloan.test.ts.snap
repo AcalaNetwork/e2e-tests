@@ -151,7 +151,7 @@ exports[`liquid crowdloan > works > first redeem 1`] = `
 
 exports[`liquid crowdloan > works > pallet account balance 1`] = `
 {
-  "free": 99999232850,
+  "free": "(rounded 100000000000)",
   "frozen": 0,
   "reserved": 0,
 }
@@ -159,7 +159,7 @@ exports[`liquid crowdloan > works > pallet account balance 1`] = `
 
 exports[`liquid crowdloan > works > pallet account balance after all transfer 1`] = `
 {
-  "free": "0x00000000000000000358c71d041b568b",
+  "free": "(rounded 240000000000000000)",
   "frozen": 0,
   "reserved": 0,
 }
