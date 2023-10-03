@@ -9,7 +9,7 @@ export default {
     name: 'crab' as const,
     endpoint: 'wss://crab.api.onfinality.io/public-ws',
   },
-  config: ({ alice}) => ({
+  config: ({ alice }) => ({
     storages: {
       System: {
         Account: [[[alice.address], { providers: 1, data: { free: '1000000000000000000000' } }]],

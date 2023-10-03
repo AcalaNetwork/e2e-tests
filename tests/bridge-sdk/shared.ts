@@ -109,7 +109,7 @@ export const buildTests = (tests: ReadonlyArray<TestTtype>) => {
             kintsugi: KintsugiAdapter,
             parallel: ParallelAdapter,
             khala: KhalaAdapter,
-            crab: CrabAdapter
+            crab: CrabAdapter,
           } as any
           const adapter = new adapters[chain]()
           await adapter.init(api)

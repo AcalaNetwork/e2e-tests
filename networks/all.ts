@@ -11,7 +11,7 @@ import hydraDXConfig from './hydraDX'
 import interlayConfig from './interlay'
 import moonbeamConfig from './moonbeam'
 import parallelConfig from './parallel'
-import phalaConfig  from './phala'
+import phalaConfig from './phala'
 import polkadotConfig from './polkadot'
 import statemintConfig from './statemint'
 import uniqueConfig from './unique'
@@ -31,7 +31,7 @@ const all = {
   unique: uniqueConfig,
   interlay: interlayConfig,
   phala: phalaConfig,
-  darwinia: darwiniaConfig
+  darwinia: darwiniaConfig,
 } satisfies Record<string, Config>
 
 export default all

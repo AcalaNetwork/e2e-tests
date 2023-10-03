@@ -8,14 +8,14 @@ export default {
   polkadot: {
     name: 'phala' as const,
     endpoint: 'wss://phala-rpc.dwellir.com',
-    aUSDToken: '3'
+    aUSDToken: '3',
   },
   kusama: {
     name: 'khala' as const,
     endpoint: 'wss://khala-rpc.dwellir.com',
-    aUSDToken: '4'
+    aUSDToken: '4',
   },
-  config: ({ alice,  aUSDToken}) => ({
+  config: ({ alice, aUSDToken }) => ({
     storages: {
       System: {
         Account: [[[alice.address], { providers: 1, data: { free: '1000000000000000' } }]],
