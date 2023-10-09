@@ -3,7 +3,6 @@ extensions:
     endpoints:
         - wss://statemine-rpc.polkadot.io:443
         - wss://statemine-rpc.dwellir.com:443
-        - wss://statemine.api.onfinality.io:443/public-ws
   event_bus:
   substrate_api:
     stale_timeout_seconds: 60
@@ -20,8 +19,8 @@ extensions:
 middlewares:
   methods:
     - response
-    - cache
     - inject_params
+    - cache
     - upstream
   subscriptions:
     - merge_subscription
