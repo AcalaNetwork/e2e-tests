@@ -17,8 +17,8 @@ describe('liquid crowdloan', async () => {
   const { alice } = ctx
 
   beforeEach(async () => {
-    const { acalaNext, polkadot } = await createNetworks({ acalaNext: undefined, polkadot: undefined }, ctx)
-    chain = acalaNext
+    const { acala: para, polkadot } = await createNetworks({ acala: undefined, polkadot: undefined }, ctx)
+    chain = para
     relaychain = polkadot
 
     // assume the crowdloan fund is returned
