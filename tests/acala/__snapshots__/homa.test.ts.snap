@@ -315,23 +315,6 @@ exports[`'acala' homa > with specific block > unbond withdraw works > system eve
     "method": "Processed",
     "section": "messageQueue",
   },
-  {
-    "data": {
-      "id": "(hash)",
-      "origin": {
-        "Ump": {
-          "Para": 2000,
-        },
-      },
-      "success": true,
-      "weightUsed": {
-        "proofSize": "(rounded 130000)",
-        "refTime": "(rounded 25000000000)",
-      },
-    },
-    "method": "Processed",
-    "section": "messageQueue",
-  },
 ]
 `;
 
@@ -389,86 +372,6 @@ exports[`'acala' homa > with specific block > unbond withdraw works > ump 1`] = 
         "transact": {
           "call": {
             "encoded": "0x1a01000005030070617261d00700000000000000000000000000000000000000000000000000000bd76e3b5f030a",
-          },
-          "originType": "SovereignAccount",
-          "requireWeightAtMost": 10000000000,
-        },
-      },
-      {
-        "refundSurplus": null,
-      },
-      {
-        "depositAsset": {
-          "assets": {
-            "wild": {
-              "all": null,
-            },
-          },
-          "beneficiary": {
-            "interior": {
-              "x1": {
-                "parachain": 2000,
-              },
-            },
-            "parents": 0,
-          },
-          "maxAssets": 1,
-        },
-      },
-    ],
-  },
-  {
-    "v2": [
-      {
-        "withdrawAsset": [
-          {
-            "fun": {
-              "fungible": 10000000000,
-            },
-            "id": {
-              "concrete": {
-                "interior": {
-                  "here": null,
-                },
-                "parents": 0,
-              },
-            },
-          },
-        ],
-      },
-      {
-        "buyExecution": {
-          "fees": {
-            "fun": {
-              "fungible": 10000000000,
-            },
-            "id": {
-              "concrete": {
-                "interior": {
-                  "here": null,
-                },
-                "parents": 0,
-              },
-            },
-          },
-          "weightLimit": {
-            "unlimited": null,
-          },
-        },
-      },
-      {
-        "transact": {
-          "call": {
-            "encoded": "0x1a010000070305000000",
-          },
-          "originType": "SovereignAccount",
-          "requireWeightAtMost": 10000000000,
-        },
-      },
-      {
-        "transact": {
-          "call": {
-            "encoded": "0x1a01000005030070617261d00700000000000000000000000000000000000000000000000000000b83839149150a",
           },
           "originType": "SovereignAccount",
           "requireWeightAtMost": 10000000000,
@@ -807,23 +710,6 @@ exports[`'karura' homa > with specific block > unbond withdraw works > system ev
     "method": "Processed",
     "section": "messageQueue",
   },
-  {
-    "data": {
-      "id": "(hash)",
-      "origin": {
-        "Ump": {
-          "Para": 2000,
-        },
-      },
-      "success": true,
-      "weightUsed": {
-        "proofSize": "(rounded 130000)",
-        "refTime": "(rounded 39000000000)",
-      },
-    },
-    "method": "Processed",
-    "section": "messageQueue",
-  },
 ]
 `;
 
@@ -881,86 +767,6 @@ exports[`'karura' homa > with specific block > unbond withdraw works > ump 1`] =
         "transact": {
           "call": {
             "encoded": "0x1801020004030070617261d00700000000000000000000000000000000000000000000000000000b07db23d49c4c",
-          },
-          "originType": "SovereignAccount",
-          "requireWeightAtMost": 20000000000,
-        },
-      },
-      {
-        "refundSurplus": null,
-      },
-      {
-        "depositAsset": {
-          "assets": {
-            "wild": {
-              "all": null,
-            },
-          },
-          "beneficiary": {
-            "interior": {
-              "x1": {
-                "parachain": 2000,
-              },
-            },
-            "parents": 0,
-          },
-          "maxAssets": 1,
-        },
-      },
-    ],
-  },
-  {
-    "v2": [
-      {
-        "withdrawAsset": [
-          {
-            "fun": {
-              "fungible": 20000000000,
-            },
-            "id": {
-              "concrete": {
-                "interior": {
-                  "here": null,
-                },
-                "parents": 0,
-              },
-            },
-          },
-        ],
-      },
-      {
-        "buyExecution": {
-          "fees": {
-            "fun": {
-              "fungible": 20000000000,
-            },
-            "id": {
-              "concrete": {
-                "interior": {
-                  "here": null,
-                },
-                "parents": 0,
-              },
-            },
-          },
-          "weightLimit": {
-            "unlimited": null,
-          },
-        },
-      },
-      {
-        "transact": {
-          "call": {
-            "encoded": "0x18010200060305000000",
-          },
-          "originType": "SovereignAccount",
-          "requireWeightAtMost": 20000000000,
-        },
-      },
-      {
-        "transact": {
-          "call": {
-            "encoded": "0x1801020004030070617261d00700000000000000000000000000000000000000000000000000000bfe891e275a19",
           },
           "originType": "SovereignAccount",
           "requireWeightAtMost": 20000000000,
