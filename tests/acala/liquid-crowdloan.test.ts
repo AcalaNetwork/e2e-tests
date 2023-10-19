@@ -11,7 +11,6 @@ describe('liquid crowdloan', async () => {
   let relaychain: Network
   const crowdloanVault = '132zsjMwGjNaUXF5XjUCDs2cDEq9Qao51TsL9RSUTGZbinVK'
   const palletAccount = '23M5ttkmR6KcoCwfEJnoAgczRQdDq85ZedwGc3uzyPwiCoq8'
-  const totalLcdot = 241161597502735335n
 
   const ctx = createContext()
   const { alice } = ctx
@@ -21,13 +20,6 @@ describe('liquid crowdloan', async () => {
     chain = para
     relaychain = polkadot
 
-    // assume the crowdloan fund is returned
-    await relaychain.dev.setStorage({
-      System: {
-        Account: [[[crowdloanVault], { providers: 1, data: { free: 24116165n * 10n ** 10n } }]],
-      },
-    })
-
     await chain.dev.setStorage({
       Tokens: {
         Accounts: [[[alice.address, acala.lcdot], { free: 1000 * 1e10 }]],
@@ -35,7 +27,7 @@ describe('liquid crowdloan', async () => {
     })
 
     await relaychain.dev.newBlock({
-      unsafeBlockHeight: 17_856_000,
+      unsafeBlockHeight: 17_855_999,
       count: 2,
     } as any)
 
@@ -43,6 +35,11 @@ describe('liquid crowdloan', async () => {
   })
 
   it('works', async () => {
+    await sendTransaction(
+      relaychain.api.tx.crowdloan.withdraw(crowdloanVault, 3336).signAsync(alice),
+    )
+    await relaychain.dev.newBlock()
+
     await sendTransaction(
       chain.api.tx.sudo.sudo(chain.api.tx.liquidCrowdloan.transferFromCrowdloanVault(10e10)).signAsync(alice),
     )
@@ -68,7 +65,7 @@ describe('liquid crowdloan', async () => {
 
     await sendTransaction(
       chain.api.tx.sudo
-        .sudo(chain.api.tx.liquidCrowdloan.transferFromCrowdloanVault(totalLcdot - 10n * 10n ** 10n))
+        .sudo(chain.api.tx.liquidCrowdloan.transferFromCrowdloanVault(241161497502735335n))
         .signAsync(alice),
     )
 

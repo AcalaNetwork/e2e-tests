@@ -1,9 +1,7 @@
 extensions:
   client:
     endpoints:
-        - wss://kusama-rpc.polkadot.io:443
-        - wss://kusama-rpc.dwellir.com:443
-        - wss://kusama.api.onfinality.io:443/public-ws
+        - wss://kusama-rpc.polkadot.io
   event_bus:
   substrate_api:
     stale_timeout_seconds: 60

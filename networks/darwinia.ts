@@ -7,7 +7,7 @@ export default {
   },
   kusama: {
     name: 'crab' as const,
-    endpoint: 'wss://crab.api.onfinality.io/public-ws',
+    endpoint: 'wss://crab-rpc.darwinia.network',
   },
   config: ({ alice }) => ({
     storages: {
