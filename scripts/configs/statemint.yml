@@ -1,9 +1,7 @@
 extensions:
   client:
     endpoints:
-        - wss://statemint-rpc.polkadot.io:443
-        - wss://statemint-rpc.dwellir.com:443
-        - wss://statemint.api.onfinality.io:443/public-ws
+        - wss://statemint-rpc.polkadot.io
   event_bus:
   substrate_api:
     stale_timeout_seconds: 60
