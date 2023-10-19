@@ -155,7 +155,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@acala-network/sdk-core@npm:4.1.9-8, @acala-network/sdk-core@npm:^4.1.9-2, @acala-network/sdk-core@npm:^4.1.9-7":
+"@acala-network/sdk-core@npm:4.1.9-8, @acala-network/sdk-core@npm:^4.1.9-7":
   version: 4.1.9-8
   resolution: "@acala-network/sdk-core@npm:4.1.9-8"
   dependencies:
@@ -167,6 +167,21 @@ __metadata:
     "@acala-network/types": ^6
     "@polkadot/api": ^10
   checksum: a1366fc0d61c07320794aa1d067d8a3af60f97fc48f9af89c0fd68377d22394692dc620875e4a96bbeb14287439ba91b8cb185e5bd10323c204eb73fe22e0cab
+  languageName: node
+  linkType: hard
+
+"@acala-network/sdk-core@npm:^4.1.9-10":
+  version: 4.1.9-10
+  resolution: "@acala-network/sdk-core@npm:4.1.9-10"
+  dependencies:
+    "@acala-network/types": ^6.0.0-34
+    "@polkadot/api": ^10.9.1
+    bignumber.js: ^9.0.0
+    lodash: ^4.17.20
+  peerDependencies:
+    "@acala-network/types": ^6
+    "@polkadot/api": ^10
+  checksum: 85ff7fc2ce1d188bba640915907949b5e998bd9e98bc5d1efbc41a563e50149e219a0d87b14496abd6bbc27c8659c836c434a69643272da20d44777121d7b57b
   languageName: node
   linkType: hard
 
@@ -4076,7 +4091,7 @@ __metadata:
     "@acala-network/chopsticks": ^0.8.4
     "@acala-network/chopsticks-testing": ^0.8.4
     "@acala-network/sdk": ^4.1.9-2
-    "@acala-network/sdk-core": ^4.1.9-2
+    "@acala-network/sdk-core": ^4.1.9-10
     "@polkadot/api": ^10.9.1
     "@polkawallet/bridge": ^0.1.5-16
     "@types/node": ^20.6.0
