@@ -35,9 +35,7 @@ describe('liquid crowdloan', async () => {
   })
 
   it('works', async () => {
-    await sendTransaction(
-      relaychain.api.tx.crowdloan.withdraw(crowdloanVault, 3336).signAsync(alice),
-    )
+    await sendTransaction(relaychain.api.tx.crowdloan.withdraw(crowdloanVault, 3336).signAsync(alice))
     await relaychain.dev.newBlock()
 
     await sendTransaction(
