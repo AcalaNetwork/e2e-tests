@@ -119,12 +119,13 @@ __metadata:
   linkType: hard
 
 "@acala-network/eth-providers@npm:~2.7.3":
-  version: 2.7.11
-  resolution: "@acala-network/eth-providers@npm:2.7.11"
+  version: 2.7.12
+  resolution: "@acala-network/eth-providers@npm:2.7.12"
   dependencies:
     "@acala-network/contracts": 4.3.4
-    "@acala-network/eth-transactions": 2.7.11
+    "@acala-network/eth-transactions": 2.7.12
     bn.js: ~5.2.0
+    dd-trace: ~4.16.0
     ethers: ~5.7.0
     graphql: ~16.0.1
     graphql-request: ~3.6.1
@@ -132,18 +133,18 @@ __metadata:
   peerDependencies:
     "@acala-network/api": ~6.0.0
     "@polkadot/api": ^10.9.1
-  checksum: 216dd8e9e02ec15487a8f3bc4d1699eed103a43ea2b88853287fa7a19d55be3ed9951ed9a3337a1e7d6ebd9e23211e0f6a19c7482c6d1f28fc307cc661321fdf
+  checksum: 7bd89d9479176aa48178d87bdf06d8f2754525ff97037fa0ee9f13580f0e9f72c39b748e3c51f3f5c9715d6049a8c7c3bc9b11288b0025001b45ca545cf2eb06
   languageName: node
   linkType: hard
 
-"@acala-network/eth-transactions@npm:2.7.11":
-  version: 2.7.11
-  resolution: "@acala-network/eth-transactions@npm:2.7.11"
+"@acala-network/eth-transactions@npm:2.7.12":
+  version: 2.7.12
+  resolution: "@acala-network/eth-transactions@npm:2.7.12"
   dependencies:
     ethers: ~5.7.0
   peerDependencies:
     "@polkadot/util-crypto": ^12.4.2
-  checksum: 16d234fcb61aa0548224e6c7207b816dd4d828fb2c328b0fc584285407ba42fa17022c02757f9decac86e1b6969c809e18f52f8bc09b8c04b6790f33bb7fe6c0
+  checksum: b2382d1a67792a0fba334b5f9d425f6d2ec8e2490f2f5f6eaba91c8f505f61974f0a116d94829c240586d57403ffd435309c448befa54d6c839be36acd8af67f
   languageName: node
   linkType: hard
 
@@ -296,13 +297,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@datadog/native-iast-taint-tracking@npm:1.6.1":
-  version: 1.6.1
-  resolution: "@datadog/native-iast-taint-tracking@npm:1.6.1"
+"@datadog/native-iast-taint-tracking@npm:1.5.0":
+  version: 1.5.0
+  resolution: "@datadog/native-iast-taint-tracking@npm:1.5.0"
   dependencies:
     node-gyp: latest
     node-gyp-build: ^3.9.0
-  checksum: c3d5184a8da38cd6ee76942386c800eff64da33e1012ae9d6d5085713020cd293639c226bed6909d797a338c60aaec53b9d2dba923428291e6e840748e5be932
+  checksum: b5d8e9e615218c32b9e39c5050ff6471acf12c528459f93955944ed0d59ff77e9a54c628b5e7b2dfb264cc0fb59eb24093da624f7e456b4a1dba2b5aad33210c
   languageName: node
   linkType: hard
 
@@ -317,9 +318,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@datadog/pprof@npm:4.0.0":
-  version: 4.0.0
-  resolution: "@datadog/pprof@npm:4.0.0"
+"@datadog/pprof@npm:3.2.0":
+  version: 3.2.0
+  resolution: "@datadog/pprof@npm:3.2.0"
   dependencies:
     delay: ^5.0.0
     node-gyp: latest
@@ -327,7 +328,7 @@ __metadata:
     p-limit: ^3.1.0
     pprof-format: ^2.0.7
     source-map: ^0.7.4
-  checksum: b61aedcc4dd541d615666a35a8854071fe271aa04fa7d533e4464de52ffa1ed56d789b27d331ab84f278d1398b5ae6952d3d96bbc27e420495cb9f05f83ddf68
+  checksum: e8d57b23eb228e897668a59150249167c254ac985f344ee8eafe8837f3d8680934fe99871bc7f9ec9ffcf18b2ec3b9886f8f1f8e8f833af67423a1e6ce546cc5
   languageName: node
   linkType: hard
 
@@ -4176,15 +4177,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dd-trace@npm:^4.17.0":
-  version: 4.17.0
-  resolution: "dd-trace@npm:4.17.0"
+"dd-trace@npm:~4.16.0":
+  version: 4.16.0
+  resolution: "dd-trace@npm:4.16.0"
   dependencies:
     "@datadog/native-appsec": ^4.0.0
     "@datadog/native-iast-rewriter": 2.1.3
-    "@datadog/native-iast-taint-tracking": 1.6.1
+    "@datadog/native-iast-taint-tracking": 1.5.0
     "@datadog/native-metrics": ^2.0.0
-    "@datadog/pprof": 4.0.0
+    "@datadog/pprof": 3.2.0
     "@datadog/sketches-js": ^2.1.0
     "@opentelemetry/api": ^1.0.0
     "@opentelemetry/core": ^1.14.0
@@ -4195,7 +4196,6 @@ __metadata:
     int64-buffer: ^0.1.9
     ipaddr.js: ^2.1.0
     istanbul-lib-coverage: 3.2.0
-    jest-docblock: ^29.7.0
     koalas: ^1.0.2
     limiter: ^1.1.4
     lodash.kebabcase: ^4.1.1
@@ -4212,7 +4212,7 @@ __metadata:
     protobufjs: ^7.2.4
     retry: ^0.13.1
     semver: ^7.5.4
-  checksum: a626335f917817cc792695a1588c7cacc00d1322f8ec53e7d72ab2cc46abf59c26bf84dd72fa7f4e9809398ccab41f9c6647ba429814a2c36177abb8cf14d763
+  checksum: 0fec0dcf1a0dfb48cbba2f817239940766fb56b7ab58d8675ef22e8f8450ee74b28c0c36e051cd71ad83b8974cc1421f46fcda2929ff6059aebefbed3c0cbdd8
   languageName: node
   linkType: hard
 
@@ -4312,13 +4312,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"detect-newline@npm:^3.0.0":
-  version: 3.1.0
-  resolution: "detect-newline@npm:3.1.0"
-  checksum: ae6cd429c41ad01b164c59ea36f264a2c479598e61cba7c99da24175a7ab80ddf066420f2bec9a1c57a6bead411b4655ff15ad7d281c000a89791f48cbe939e7
-  languageName: node
-  linkType: hard
-
 "detect-node@npm:^2.0.4":
   version: 2.1.0
   resolution: "detect-node@npm:2.1.0"
@@ -4402,7 +4395,6 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ^6.7.3
     "@typescript-eslint/parser": ^6.7.0
     "@vitest/ui": ^0.34.4
-    dd-trace: ^4.17.0
     dotenv: ^16.3.1
     eslint: ^8.50.0
     eslint-config-prettier: ^9.0.0
@@ -6103,15 +6095,6 @@ __metadata:
     "@pkgjs/parseargs":
       optional: true
   checksum: 57d43ad11eadc98cdfe7496612f6bbb5255ea69fe51ea431162db302c2a11011642f50cfad57288bd0aea78384a0612b16e131944ad8ecd09d619041c8531b54
-  languageName: node
-  linkType: hard
-
-"jest-docblock@npm:^29.7.0":
-  version: 29.7.0
-  resolution: "jest-docblock@npm:29.7.0"
-  dependencies:
-    detect-newline: ^3.0.0
-  checksum: 66390c3e9451f8d96c5da62f577a1dad701180cfa9b071c5025acab2f94d7a3efc2515cfa1654ebe707213241541ce9c5530232cdc8017c91ed64eea1bd3b192
   languageName: node
   linkType: hard
 
