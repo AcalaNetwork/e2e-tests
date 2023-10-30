@@ -15,12 +15,12 @@ const tests = [
     from: 'kusama',
     to: 'basilisk',
     token: 'KSM',
+    ignoreFee: true,
   },
   {
     from: 'basilisk',
     to: 'kusama',
     token: 'KSM',
-    ignoreFee: true,
   },
   {
     from: 'statemine',
