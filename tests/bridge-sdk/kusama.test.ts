@@ -20,6 +20,7 @@ const tests = [
     from: 'basilisk',
     to: 'kusama',
     token: 'KSM',
+    ignoreFee: true,
   },
   {
     from: 'statemine',
