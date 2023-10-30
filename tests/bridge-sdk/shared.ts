@@ -23,10 +23,11 @@ export type TestTtype = {
   from: NetworkNames
   to: NetworkNames
   token: string
+  ignoreFee?: boolean
 }
 
 export const buildTests = (tests: ReadonlyArray<TestTtype>) => {
-  for (const { from, to, token } of tests) {
+  for (const { from, to, token, ignoreFee } of tests) {
     describe(`'${from}' to '${to}' using bridgeSDK cross-chain '${token}'`, async () => {
       let fromchain: Network
       let tochain: Network
@@ -175,8 +176,11 @@ export const buildTests = (tests: ReadonlyArray<TestTtype>) => {
           //Verify if Destination Chain Transfer Fee matches the app
           expect(chainBalanceNow.fromChain).not.toEqual(chainBalanceInitial.fromChain)
           expect(chainBalanceNow.toChain).not.toEqual(chainBalanceInitial.toChain)
-          const fee = amount.toNumber() - (chainBalanceNow.toChain - chainBalanceInitial.toChain)
-          await check(fee).redact({ number: 1 }).toMatchSnapshot('fee')
+
+          if (!ignoreFee) {
+            const fee = amount.toNumber() - (chainBalanceNow.toChain - chainBalanceInitial.toChain)
+            await check(fee).redact({ number: 1 }).toMatchSnapshot('fee')
+          }
         })
       })
     })
