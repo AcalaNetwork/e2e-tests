@@ -53,6 +53,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@acala-network/chopsticks-core@npm:0.9.0":
+  version: 0.9.0
+  resolution: "@acala-network/chopsticks-core@npm:0.9.0"
+  dependencies:
+    "@acala-network/chopsticks-executor": 0.9.0
+    "@polkadot/api": ^10.10.1
+    "@polkadot/util-crypto": ^12.5.1
+    comlink: ^4.4.1
+    eventemitter3: ^5.0.1
+    lodash: ^4.17.21
+    pino: ^8.15.0
+    pino-pretty: ^10.2.0
+    zod: ^3.22.3
+  checksum: 6a9057494122c131291e91f9c858cde892abc7426f7b7b4eeeaa326fd4f8bf711e6d0f41ae2c641483ea29a748cfb2e76b109537b869db30b506c1c2e0510e04
+  languageName: node
+  linkType: hard
+
 "@acala-network/chopsticks-db@npm:0.8.5-2":
   version: 0.8.5-2
   resolution: "@acala-network/chopsticks-db@npm:0.8.5-2"
@@ -68,6 +85,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@acala-network/chopsticks-db@npm:0.9.0":
+  version: 0.9.0
+  resolution: "@acala-network/chopsticks-db@npm:0.9.0"
+  dependencies:
+    "@acala-network/chopsticks-core": 0.9.0
+    idb: ^7.1.1
+    sqlite3: ^5.1.6
+    typeorm: ^0.3.17
+  checksum: e4fdd100b44715fc9b7208ec005b4ccca243151335c16e575f55ff0d7fc6003ab9d51be3e82b9bb1eba530d21a27452948676104ec00ca31688314c53f32722d
+  languageName: node
+  linkType: hard
+
 "@acala-network/chopsticks-executor@npm:0.8.5-2":
   version: 0.8.5-2
   resolution: "@acala-network/chopsticks-executor@npm:0.8.5-2"
@@ -75,6 +104,16 @@ __metadata:
     "@polkadot/util": ^12.5.1
     "@polkadot/wasm-util": ^7.2.2
   checksum: ff88e2f0f9b0fb55cc8124b145f532f5c2d3d94b8817ea4d75ae4ce3177c1c9953da53b01e2937e84eaf577435e7b49ad9a422335a344fab5b7e91cc97c8baab
+  languageName: node
+  linkType: hard
+
+"@acala-network/chopsticks-executor@npm:0.9.0":
+  version: 0.9.0
+  resolution: "@acala-network/chopsticks-executor@npm:0.9.0"
+  dependencies:
+    "@polkadot/util": ^12.5.1
+    "@polkadot/wasm-util": ^7.2.2
+  checksum: e2914fc3d3cfb02e9777e6b7713411eccb9ea51199cbed52b80bcab58902bc07d43feb37378e585b3df0e8dd51c9b083932ad2a6281b35078482d19708ad3c15
   languageName: node
   linkType: hard
 
@@ -89,7 +128,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@acala-network/chopsticks@npm:0.8.5-2, @acala-network/chopsticks@npm:^0.8.5-2":
+"@acala-network/chopsticks@npm:0.8.5-2":
   version: 0.8.5-2
   resolution: "@acala-network/chopsticks@npm:0.8.5-2"
   dependencies:
@@ -108,6 +147,28 @@ __metadata:
   bin:
     chopsticks: ./chopsticks.js
   checksum: c3db4da8a22b1b1cc3e2ff5daa20129ee40062dbb91c139e78059b5b003e52802ca0652431b38c0bb1c317c3633eadef7dba40262bc2a08f72bf971f9b71adab
+  languageName: node
+  linkType: hard
+
+"@acala-network/chopsticks@npm:^0.9.0":
+  version: 0.9.0
+  resolution: "@acala-network/chopsticks@npm:0.9.0"
+  dependencies:
+    "@acala-network/chopsticks-core": 0.9.0
+    "@acala-network/chopsticks-db": 0.9.0
+    "@pnpm/npm-conf": ^2.2.2
+    axios: ^1.5.1
+    dotenv: ^16.3.1
+    global-agent: ^3.0.0
+    js-yaml: ^4.1.0
+    jsondiffpatch: ^0.5.0
+    lodash: ^4.17.21
+    ws: ^8.14.2
+    yargs: ^17.7.2
+    zod: ^3.22.3
+  bin:
+    chopsticks: ./chopsticks.js
+  checksum: ccdbe1d3956f1985579271b0fb90389efb469e587d36812571ec8b7e1c099b93ec0bf036259150ccb6c4fff5eddc53d8ac98cdff38d645d32e5a333a1ab612dc
   languageName: node
   linkType: hard
 
@@ -4385,7 +4446,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "e2e-tests@workspace:."
   dependencies:
-    "@acala-network/chopsticks": ^0.8.5-2
+    "@acala-network/chopsticks": ^0.9.0
     "@acala-network/chopsticks-testing": ^0.8.5-2
     "@acala-network/sdk": ^4.1.9-10
     "@acala-network/sdk-core": ^4.1.9-10
@@ -5729,6 +5790,13 @@ __metadata:
   dependencies:
     safer-buffer: ">= 2.1.2 < 3.0.0"
   checksum: 3f60d47a5c8fc3313317edfd29a00a692cc87a19cac0159e2ce711d0ebc9019064108323b5e493625e25594f11c6236647d8e256fbe7a58f4a3b33b89e6d30bf
+  languageName: node
+  linkType: hard
+
+"idb@npm:^7.1.1":
+  version: 7.1.1
+  resolution: "idb@npm:7.1.1"
+  checksum: 1973c28d53c784b177bdef9f527ec89ec239ec7cf5fcbd987dae75a16c03f5b7dfcc8c6d3285716fd0309dd57739805390bd9f98ce23b1b7d8849a3b52de8d56
   languageName: node
   linkType: hard
 
