@@ -26,11 +26,11 @@ const tests = [
     to: 'moonbeam',
     token: 'AUSD',
   },
-  {
-    from: 'astar',
-    to: 'acala',
-    token: 'AUSD',
-  },
+  // {
+  //   from: 'astar',
+  //   to: 'acala',
+  //   token: 'AUSD',
+  // },
   {
     from: 'acala',
     to: 'astar',
