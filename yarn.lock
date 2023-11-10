@@ -35,11 +35,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@acala-network/chopsticks-core@npm:0.9.2-2":
-  version: 0.9.2-2
-  resolution: "@acala-network/chopsticks-core@npm:0.9.2-2"
+"@acala-network/chopsticks-core@npm:0.9.2-3":
+  version: 0.9.2-3
+  resolution: "@acala-network/chopsticks-core@npm:0.9.2-3"
   dependencies:
-    "@acala-network/chopsticks-executor": 0.9.2-2
+    "@acala-network/chopsticks-executor": 0.9.2-3
     "@polkadot/api": ^10.10.1
     "@polkadot/util-crypto": ^12.5.1
     comlink: ^4.4.1
@@ -48,49 +48,49 @@ __metadata:
     pino: ^8.16.1
     pino-pretty: ^10.2.3
     zod: ^3.22.4
-  checksum: 132cc1da1e7bc2f94b013ef4dd90bd156549ab9f8ee02c8abfaed31b8ea6a3f639d6710e29beae3c968e95adf5f16f7ea3718715d89cc83806d7af1eb0de1a14
+  checksum: dc8559f397ee9fe5afa31081b613427ec54b08ef638975c8be8cc12f1d999bca2d56ebb894ac987b94e2b6a4a746c2f8cc70f5cfebfa261f3ac5f44503e2d49c
   languageName: node
   linkType: hard
 
-"@acala-network/chopsticks-db@npm:0.9.2-2":
-  version: 0.9.2-2
-  resolution: "@acala-network/chopsticks-db@npm:0.9.2-2"
+"@acala-network/chopsticks-db@npm:0.9.2-3":
+  version: 0.9.2-3
+  resolution: "@acala-network/chopsticks-db@npm:0.9.2-3"
   dependencies:
-    "@acala-network/chopsticks-core": 0.9.2-2
+    "@acala-network/chopsticks-core": 0.9.2-3
     idb: ^7.1.1
     sqlite3: ^5.1.6
     typeorm: ^0.3.17
-  checksum: 96e906b7b82ab214bd28da25bdaed4cfa4bd4975472e94af662c97ed025609bb01f9c5010fba94880c2e2bf4cb09b876a56cf7e5996ae0b5f9dccc43280df21d
+  checksum: 993209968824248a0958e54fa7f5ac4b8890282208640f45c9c9705c78d5841d1ebc47ec90fa4266cf5d0ae1290f2281997243970e13182ec14095a4fb91c68e
   languageName: node
   linkType: hard
 
-"@acala-network/chopsticks-executor@npm:0.9.2-2":
-  version: 0.9.2-2
-  resolution: "@acala-network/chopsticks-executor@npm:0.9.2-2"
+"@acala-network/chopsticks-executor@npm:0.9.2-3":
+  version: 0.9.2-3
+  resolution: "@acala-network/chopsticks-executor@npm:0.9.2-3"
   dependencies:
     "@polkadot/util": ^12.5.1
     "@polkadot/wasm-util": ^7.2.2
-  checksum: 7f1c5d3c28031d7c254b07188c3880170232fe500317d0be97c95978279d1b4403f2f16f49099836b50e50d6ff80ca12810e6c86342e5f8316b6422b8be5f941
+  checksum: 4abf2973070ec05353e27252079f3778b595e4bca04e71f4418b326b3e23e7df1158785650e103184153e5812bf8fc514bd3ea4a19ef05d0943dc0cf0bbe0b25
   languageName: node
   linkType: hard
 
-"@acala-network/chopsticks-testing@npm:^0.9.2-2":
-  version: 0.9.2-2
-  resolution: "@acala-network/chopsticks-testing@npm:0.9.2-2"
+"@acala-network/chopsticks-testing@npm:^0.9.2-3":
+  version: 0.9.2-3
+  resolution: "@acala-network/chopsticks-testing@npm:0.9.2-3"
   dependencies:
-    "@acala-network/chopsticks": 0.9.2-2
+    "@acala-network/chopsticks": 0.9.2-3
   peerDependencies:
     vitest: ^0.34.0
-  checksum: aa7bc013382efa29991f3e77d818047d1d98d1ef4358245d7507cfa383058d3527acf3bf78b052f6c2d90393e61f98d3994d39a9dd77a1718b6761e0535bffa9
+  checksum: facfd1667ad1a45220b31189d19254c63a25194485edc0f200898ca611c1fd3bf486ac0308a2ada0f3d10780381d4f99f37fd74f4e2631c6d5b8f09ebc7c54f7
   languageName: node
   linkType: hard
 
-"@acala-network/chopsticks@npm:0.9.2-2, @acala-network/chopsticks@npm:^0.9.2-2":
-  version: 0.9.2-2
-  resolution: "@acala-network/chopsticks@npm:0.9.2-2"
+"@acala-network/chopsticks@npm:0.9.2-3, @acala-network/chopsticks@npm:^0.9.2-3":
+  version: 0.9.2-3
+  resolution: "@acala-network/chopsticks@npm:0.9.2-3"
   dependencies:
-    "@acala-network/chopsticks-core": 0.9.2-2
-    "@acala-network/chopsticks-db": 0.9.2-2
+    "@acala-network/chopsticks-core": 0.9.2-3
+    "@acala-network/chopsticks-db": 0.9.2-3
     "@pnpm/npm-conf": ^2.2.2
     axios: ^1.6.0
     dotenv: ^16.3.1
@@ -103,7 +103,7 @@ __metadata:
     zod: ^3.22.4
   bin:
     chopsticks: ./chopsticks.cjs
-  checksum: 5665ba768a811e8d0c56514707cf0ecac329b2e67509de127c10520fb221bd96896e510264043c174c832c1a257102c2acadf46789e6a0fa4ced2d0cef393bf4
+  checksum: 8487e760afd7eb20515f5fe5b85f982474ca7698ff8f8e7bfcb01f67f466d1d7c19171fd952d83f18e79be15a397ae9a1e09df198d4127db7e5b6115e5bdc8d6
   languageName: node
   linkType: hard
 
@@ -4381,8 +4381,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "e2e-tests@workspace:."
   dependencies:
-    "@acala-network/chopsticks": ^0.9.2-2
-    "@acala-network/chopsticks-testing": ^0.9.2-2
+    "@acala-network/chopsticks": ^0.9.2-3
+    "@acala-network/chopsticks-testing": ^0.9.2-3
     "@acala-network/sdk": ^4.1.9-10
     "@acala-network/sdk-core": ^4.1.9-10
     "@polkadot/api": ^10.10.1
