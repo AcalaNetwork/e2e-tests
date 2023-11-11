@@ -1,0 +1,58 @@
+// TODO: move to its own test file
+// const tests = [
+  // {
+  //   from: 'karura',
+  //   to: 'basilisk',
+  //   token: 'KUSD',
+  // },
+  // // btc
+  // // {
+  // //   from: 'karura',
+  // //   to: 'kintsugi',
+  // //   token: 'KBTC',
+  // //   fee: 0.07407407407400002
+  // // },
+  // // {
+  // //   from: 'kintsugi',
+  // //   to: 'karura',
+  // //   token: 'KBTC',
+  // //   fee: 0.008012799999999931
+  // // },
+  // {
+  //   from: 'crab',
+  //   to: 'karura',
+  //   token: 'CRAB',
+  // },
+  // Chopsticks are currently not supported.
+  // {
+  //   from: 'crust',
+  //   to: 'karura',
+  //   token: 'CSM',
+  //   fee: 0.008082399999999934
+  // },
+  // {
+  //   from: 'karura',
+  //   to: 'crust',
+  //   token: 'CSM',
+  //   fee: 0.002080000000000082
+  // },
+  // {
+  //   from: 'unique',
+  //   to: 'acala',
+  //   token: 'UNQ',
+  //   fee: 0.008082399999999934
+  // },
+  // {
+  //   from: 'quartz',
+  //   to: 'karura',
+  //   token: 'QTZ',
+  //   fee: 0.008082399999999934
+  // },
+  // {
+  //   from: 'karura',
+  //   to: 'quartz',
+  //   token: 'QTZ',
+  //   fee: 0.002080000000000082
+  // },
+// ] as const
+

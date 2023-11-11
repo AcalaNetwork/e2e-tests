@@ -1,5 +1,6 @@
 import { beforeEach, describe, it } from 'vitest'
 import { sendTransaction } from '@acala-network/chopsticks-testing'
+import _ from 'lodash'
 
 import { Network, NetworkNames, createContext, createNetworks } from '../../networks'
 import { check, checkEvents, checkHrmp, checkSystemEvents, checkUmp } from '../../helpers'
@@ -138,7 +139,11 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
           if ('checkUmp' in testOpt) {
             await checkUmp(fromChain).toMatchSnapshot('from chain ump messages')
           } else {
-            await checkHrmp(fromChain).toMatchSnapshot('from chain hrmp messages')
+            await checkHrmp(fromChain)
+              .map((v) => JSON.parse(JSON.stringify(v)))
+              // redact setTopic
+              .map((v) => _.update(v, '[0].data[1].v3[4].setTopic', () => 'redacted'))
+              .toMatchSnapshot('from chain hrmp messages')
           }
 
           if (routeChain) {

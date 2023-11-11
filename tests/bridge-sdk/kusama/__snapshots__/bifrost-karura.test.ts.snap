@@ -1,0 +1,21 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`'bifrost' to 'karura' using bridgeSDK cross-chain 'BNC' > after 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": "(rounded 998)",
+  "toChain": "(rounded 1.99)",
+}
+`;
+
+exports[`'bifrost' to 'karura' using bridgeSDK cross-chain 'BNC' > fee 1`] = `"(rounded 0.01)"`;
+
+exports[`'bifrost' to 'karura' using bridgeSDK cross-chain 'BNC' > initial 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 1000,
+  "toChain": 0,
+}
+`;

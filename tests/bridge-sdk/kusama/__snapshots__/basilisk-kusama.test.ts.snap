@@ -1,0 +1,21 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`'basilisk' to 'kusama' using bridgeSDK cross-chain 'KSM' > after 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 998,
+  "toChain": "(rounded 12)",
+}
+`;
+
+exports[`'basilisk' to 'kusama' using bridgeSDK cross-chain 'KSM' > fee 1`] = `"(rounded 0.00008)"`;
+
+exports[`'basilisk' to 'kusama' using bridgeSDK cross-chain 'KSM' > initial 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 1000,
+  "toChain": 10,
+}
+`;

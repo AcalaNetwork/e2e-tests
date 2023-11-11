@@ -1,0 +1,41 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`'karura' to 'altair' using bridgeSDK cross-chain 'AIR' > after 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 18,
+  "fromChain": 98,
+  "toChain": "(rounded 1000)",
+}
+`;
+
+exports[`'karura' to 'altair' using bridgeSDK cross-chain 'AIR' > fee 1`] = `"(rounded 0.008)"`;
+
+exports[`'karura' to 'altair' using bridgeSDK cross-chain 'AIR' > initial 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 18,
+  "fromChain": 100,
+  "toChain": 1000,
+}
+`;
+
+exports[`'karura' to 'altair' using bridgeSDK cross-chain 'KUSD' > after 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 8,
+  "toChain": "(rounded 12)",
+}
+`;
+
+exports[`'karura' to 'altair' using bridgeSDK cross-chain 'KUSD' > fee 1`] = `"(rounded 0.008)"`;
+
+exports[`'karura' to 'altair' using bridgeSDK cross-chain 'KUSD' > initial 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 10,
+  "toChain": 10,
+}
+`;

@@ -12,12 +12,12 @@ import { InterlayAdapter, KintsugiAdapter } from '@polkawallet/bridge/adapters/i
 import { KhalaAdapter } from '@polkawallet/bridge/adapters/phala'
 import { KusamaAdapter, PolkadotAdapter } from '@polkawallet/bridge/adapters/polkadot'
 import { MoonbeamAdapter, MoonriverAdapter } from '@polkawallet/bridge/adapters/moonbeam'
-import { Network, NetworkNames, createNetworks } from '../../networks'
+import { NetworkNames, createNetworks } from '../../networks'
 import { QuartzAdapter, UniqueAdapter } from '@polkawallet/bridge/adapters/unique'
 import { ShadowAdapter } from '@polkawallet/bridge/adapters/crust'
 import { StatemineAdapter, StatemintAdapter } from '@polkawallet/bridge/adapters/statemint'
-import { beforeEach, describe, expect, it } from 'vitest'
 import { check, sendTransaction, testingPairs } from '@acala-network/chopsticks-testing'
+import { expect, test } from 'vitest'
 
 export type TestTtype = {
   from: NetworkNames
@@ -26,163 +26,149 @@ export type TestTtype = {
   ignoreFee?: boolean
 }
 
-export const buildTests = (tests: ReadonlyArray<TestTtype>) => {
-  for (const { from, to, token, ignoreFee } of tests) {
-    describe(`'${from}' to '${to}' using bridgeSDK cross-chain '${token}'`, async () => {
-      let fromchain: Network
-      let tochain: Network
+async function sleep(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms))
+}
 
-      const { alice } = testingPairs()
+async function chooseAdapter(chain: string, api: ApiPromise) {
+  const adapters = {
+    karura: KaruraAdapter,
+    kusama: KusamaAdapter,
+    moonriver: MoonriverAdapter,
+    statemine: StatemineAdapter,
+    basilisk: BasiliskAdapter,
+    polkadot: PolkadotAdapter,
+    statemint: StatemintAdapter,
+    moonbeam: MoonbeamAdapter,
+    acala: AcalaAdapter,
+    bifrost: BifrostAdapter,
+    altair: AltairAdapter,
+    heiko: HeikoAdapter,
+    shiden: ShidenAdapter,
+    crust: ShadowAdapter,
+    quartz: QuartzAdapter,
+    unique: UniqueAdapter,
+    astar: AstarAdapter,
+    interlay: InterlayAdapter,
+    kintsugi: KintsugiAdapter,
+    parallel: ParallelAdapter,
+    khala: KhalaAdapter,
+    crab: CrabAdapter,
+  } as any
+  const adapter = new adapters[chain]()
+  await adapter.init(api)
+  return adapter
+}
 
-      describe('parachain bridge to releaychain', () => {
-        beforeEach(async () => {
-          const { [from]: fromchain1, [to]: tochain1 } = await createNetworks({
-            [from]: undefined,
-            [to]: undefined,
-          })
-          if (from == 'karura') {
-            await fromchain1.dev.setStorage({
-              Tokens: {
-                Accounts: [
-                  [[alice.address, { Token: 'KINT' }], { free: '1000000000000000' }],
-                  [[alice.address, { Token: 'KBTC' }], { free: 3 * 1e8 }],
-                  [[alice.address, { ForeignAsset: 12 }], { free: '100000000000000000000' }],
-                  [[alice.address, { Token: 'KUSD' }], { free: 10 * 1e12 }],
-                ],
-              },
-            })
-          }
-          if (from == 'acala') {
-            await fromchain1.dev.setStorage({
-              Tokens: {
-                Accounts: [
-                  [[alice.address, { ForeignAsset: 1 }], { free: 10 * 1e12 }],
-                  [[alice.address, { ForeignAsset: 4 }], { free: 10 * 1e10 }],
-                  [[alice.address, { ForeignAsset: 3 }], { free: 3 * 1e8 }],
-                  [[alice.address, { Token: 'AUSD' }], { free: 10 * 1e12 }],
-                ],
-              },
-            })
-          }
-          if (to == 'karura') {
-            await tochain1.dev.setStorage({
-              Tokens: {
-                Accounts: [
-                  [[alice.address, { Token: 'KUSD' }], { free: 10 * 1e12 }],
-                  [[alice.address, { Token: 'AUSD' }], { free: 10 * 1e12 }],
-                ],
-              },
-            })
-          }
-          tochain = tochain1
-          fromchain = fromchain1
+export const bridgeSDKTest = ({ from, to, token, ignoreFee }: TestTtype) => {
+  test(`'${from}' to '${to}' using bridgeSDK cross-chain '${token}'`, async () => {
+    const { alice } = testingPairs()
 
-          return async () => {
-            await tochain.teardown()
-            await fromchain.teardown()
-          }
-        })
-
-        async function sleep(ms: number) {
-          return new Promise((resolve) => setTimeout(resolve, ms))
-        }
-
-        async function chooseAdapter(chain: string, api: ApiPromise) {
-          const adapters = {
-            karura: KaruraAdapter,
-            kusama: KusamaAdapter,
-            moonriver: MoonriverAdapter,
-            statemine: StatemineAdapter,
-            basilisk: BasiliskAdapter,
-            polkadot: PolkadotAdapter,
-            statemint: StatemintAdapter,
-            moonbeam: MoonbeamAdapter,
-            acala: AcalaAdapter,
-            bifrost: BifrostAdapter,
-            altair: AltairAdapter,
-            heiko: HeikoAdapter,
-            shiden: ShidenAdapter,
-            crust: ShadowAdapter,
-            quartz: QuartzAdapter,
-            unique: UniqueAdapter,
-            astar: AstarAdapter,
-            interlay: InterlayAdapter,
-            kintsugi: KintsugiAdapter,
-            parallel: ParallelAdapter,
-            khala: KhalaAdapter,
-            crab: CrabAdapter,
-          } as any
-          const adapter = new adapters[chain]()
-          await adapter.init(api)
-          return adapter
-        }
-
-        async function chainBalance(sdk: any, fromData: any, address: string) {
-          const fromChainBalance = (await sdk.findAdapter(from).getTokenBalance(token, alice.address)).free.toNumber()
-          let tokenDecimals = fromData.decimals
-          let toChainBalance
-          if (to == 'moonriver') {
-            const assetBalance = (
-              await tochain.api.query.assets.account('10810581592933651521121702237638664357', address)
-            ).value.balance
-            toChainBalance =
-              (String(assetBalance) as any) !== 'undefined' ? assetBalance.toNumber() / 10 ** fromData.decimals : 0
-            tokenDecimals = 18
-          } else if (to == 'moonbeam') {
-            const assetBalance = (
-              await tochain.api.query.assets.account('110021739665376159354538090254163045594', address)
-            ).value.balance
-            toChainBalance =
-              (String(assetBalance) as any) !== 'undefined' ? assetBalance.toNumber() / 10 ** fromData.decimals : 0
-            tokenDecimals = 18
-          } else {
-            toChainBalance = (await sdk.findAdapter(to).getTokenBalance(token, address)).free.toNumber()
-          }
-
-          return { address: address, fromChain: fromChainBalance, toChain: toChainBalance, decimals: tokenDecimals }
-        }
-
-        it('Cross-chain using BridgeSDK works', async () => {
-          const fromChain = await chooseAdapter(from, fromchain.api)
-          const toChain = await chooseAdapter(to, tochain.api)
-          const sdk = new Bridge({ adapters: [fromChain as any, toChain as any] })
-          const fromAdapter = sdk.findAdapter(from as any)
-          const fromData = fromAdapter.getToken(token, fromAdapter.chain.id)
-
-          const amount = new FixedPointNumber(2, fromData.decimals)
-          const address =
-            to === 'moonriver' || to == 'moonbeam' ? '0x4E7440dB498561A46AAa82b9Bc7d2D5162b5c27B' : alice.address
-
-          const chainBalanceInitial = await chainBalance(sdk, fromData, address)
-          await check(chainBalanceInitial).toMatchSnapshot('initial')
-          const tx = fromAdapter
-            .createTx({
-              address: address,
-              amount: amount,
-              to: to as any,
-              token: token,
-            })
-            .signAsync(alice)
-
-          await sendTransaction(tx as any)
-
-          await fromchain.chain.newBlock()
-          await tochain.chain.newBlock()
-
-          await sleep(100)
-          const chainBalanceNow = await chainBalance(sdk, fromData, address)
-          await check(chainBalanceNow).redact({ number: 3 }).toMatchSnapshot('after')
-
-          //Verify if Destination Chain Transfer Fee matches the app
-          expect(chainBalanceNow.fromChain).not.toEqual(chainBalanceInitial.fromChain)
-          expect(chainBalanceNow.toChain).not.toEqual(chainBalanceInitial.toChain)
-
-          if (!ignoreFee) {
-            const fee = amount.toNumber() - (chainBalanceNow.toChain - chainBalanceInitial.toChain)
-            await check(fee).redact({ number: 1 }).toMatchSnapshot('fee')
-          }
-        })
-      })
+    const { [from]: fromchain, [to]: tochain } = await createNetworks({
+      [from]: undefined,
+      [to]: undefined,
     })
-  }
+    if (from == 'karura') {
+      await fromchain.dev.setStorage({
+        Tokens: {
+          Accounts: [
+            [[alice.address, { Token: 'KINT' }], { free: '1000000000000000' }],
+            [[alice.address, { Token: 'KBTC' }], { free: 3 * 1e8 }],
+            [[alice.address, { ForeignAsset: 12 }], { free: '100000000000000000000' }],
+            [[alice.address, { Token: 'KUSD' }], { free: 10 * 1e12 }],
+          ],
+        },
+      })
+    }
+    if (from == 'acala') {
+      await fromchain.dev.setStorage({
+        Tokens: {
+          Accounts: [
+            [[alice.address, { ForeignAsset: 1 }], { free: 10 * 1e12 }],
+            [[alice.address, { ForeignAsset: 4 }], { free: 10 * 1e10 }],
+            [[alice.address, { ForeignAsset: 3 }], { free: 3 * 1e8 }],
+            [[alice.address, { Token: 'AUSD' }], { free: 10 * 1e12 }],
+          ],
+        },
+      })
+    }
+    if (to == 'karura') {
+      await tochain.dev.setStorage({
+        Tokens: {
+          Accounts: [
+            [[alice.address, { Token: 'KUSD' }], { free: 10 * 1e12 }],
+            [[alice.address, { Token: 'AUSD' }], { free: 10 * 1e12 }],
+          ],
+        },
+      })
+    }
+
+    async function chainBalance(sdk: any, fromData: any, address: string) {
+      const fromChainBalance = (await sdk.findAdapter(from).getTokenBalance(token, alice.address)).free.toNumber()
+      let tokenDecimals = fromData.decimals
+      let toChainBalance
+      if (to == 'moonriver') {
+        const assetBalance = (await tochain.api.query.assets.account('10810581592933651521121702237638664357', address))
+          .value.balance
+        toChainBalance =
+          (String(assetBalance) as any) !== 'undefined' ? assetBalance.toNumber() / 10 ** fromData.decimals : 0
+        tokenDecimals = 18
+      } else if (to == 'moonbeam') {
+        const assetBalance = (
+          await tochain.api.query.assets.account('110021739665376159354538090254163045594', address)
+        ).value.balance
+        toChainBalance =
+          (String(assetBalance) as any) !== 'undefined' ? assetBalance.toNumber() / 10 ** fromData.decimals : 0
+        tokenDecimals = 18
+      } else {
+        toChainBalance = (await sdk.findAdapter(to).getTokenBalance(token, address)).free.toNumber()
+      }
+
+      return { address: address, fromChain: fromChainBalance, toChain: toChainBalance, decimals: tokenDecimals }
+    }
+
+    // Run the test
+    const fromChain = await chooseAdapter(from, fromchain.api)
+    const toChain = await chooseAdapter(to, tochain.api)
+    const sdk = new Bridge({ adapters: [fromChain as any, toChain as any] })
+    const fromAdapter = sdk.findAdapter(from as any)
+    const fromData = fromAdapter.getToken(token, fromAdapter.chain.id)
+
+    const amount = new FixedPointNumber(2, fromData.decimals)
+    const address =
+      to === 'moonriver' || to == 'moonbeam' ? '0x4E7440dB498561A46AAa82b9Bc7d2D5162b5c27B' : alice.address
+
+    const chainBalanceInitial = await chainBalance(sdk, fromData, address)
+    await check(chainBalanceInitial).toMatchSnapshot('initial')
+    const tx = fromAdapter
+      .createTx({
+        address: address,
+        amount: amount,
+        to: to as any,
+        token: token,
+      })
+      .signAsync(alice)
+
+    await sendTransaction(tx as any)
+
+    await fromchain.chain.newBlock()
+    await tochain.chain.newBlock()
+
+    await sleep(100)
+    const chainBalanceNow = await chainBalance(sdk, fromData, address)
+    await check(chainBalanceNow).redact({ number: 3 }).toMatchSnapshot('after')
+
+    // Verify if Destination Chain Transfer Fee matches the app
+    expect(chainBalanceNow.fromChain).not.toEqual(chainBalanceInitial.fromChain)
+    expect(chainBalanceNow.toChain).not.toEqual(chainBalanceInitial.toChain)
+
+    if (!ignoreFee) {
+      const fee = amount.toNumber() - (chainBalanceNow.toChain - chainBalanceInitial.toChain)
+      await check(fee).redact({ number: 1 }).toMatchSnapshot('fee')
+    }
+
+    // Teardown
+    await tochain.teardown()
+    await fromchain.teardown()
+  })
 }

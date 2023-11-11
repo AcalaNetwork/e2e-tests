@@ -1,0 +1,41 @@
+// TODO: move to its own test file
+// const tests = [
+  // {
+  //   from: 'astar',
+  //   to: 'acala',
+  //   token: 'AUSD',
+  // },
+  // btc
+  // {
+  //   from: 'interlay',
+  //   to: 'acala',
+  //   token: 'IBTC',
+  //   fee: 0.008012799999999931
+  // },
+  // {
+  //   from: 'acala',
+  //   to: 'interlay',
+  //   token: 'IBTC',
+  //   fee: 0.008012799999999931
+  // },
+  // RpcError: 1: Error: createType(Lookup4):: Unable to construct number from multi-key object
+  // Chopsticks are currently not supported.
+  // {
+  //   from: 'crust',
+  //   to: 'karura',
+  //   token: 'CSM',
+  //   fee: 0.008082399999999934
+  // },
+  // {
+  //   from: 'karura',
+  //   to: 'crust',
+  //   token: 'CSM',
+  //   fee: 0.002080000000000082
+  // },
+  // {
+  //   from: 'unique',
+  //   to: 'acala',
+  //   token: 'UNQ',
+  //   fee: 0.008082399999999934
+  // },
+// ] as const

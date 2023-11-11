@@ -42,12 +42,15 @@ for (const def of Object.values(networkDefs)) {
         ...ctx,
       })
 
+      const runtimeLogLevel = process.env.RUNTIME_LOG_LEVEL ? +process.env.RUNTIME_LOG_LEVEL : 0
+
       const finalOptions: SetupOption = {
         timeout: 600000,
         wasmOverride: process.env[`${upperName}_WASM`],
         blockNumber: toNumber(process.env[`${upperName}_BLOCK_NUMBER`]),
         endpoint: process.env[`${upperName}_ENDPOINT`] ?? endpoint,
         db: process.env.DB_PATH,
+        runtimeLogLevel,
         ...setupConfig.options,
         ...options,
       }

@@ -1,0 +1,21 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`'karura' to 'moonriver' using bridgeSDK cross-chain 'KAR' > after 1`] = `
+{
+  "address": "0x4E7440dB498561A46AAa82b9Bc7d2D5162b5c27B",
+  "decimals": 18,
+  "fromChain": "(rounded 8)",
+  "toChain": "(rounded 2.06)",
+}
+`;
+
+exports[`'karura' to 'moonriver' using bridgeSDK cross-chain 'KAR' > fee 1`] = `"(rounded 0.03)"`;
+
+exports[`'karura' to 'moonriver' using bridgeSDK cross-chain 'KAR' > initial 1`] = `
+{
+  "address": "0x4E7440dB498561A46AAa82b9Bc7d2D5162b5c27B",
+  "decimals": 18,
+  "fromChain": 10,
+  "toChain": 0.09012,
+}
+`;
