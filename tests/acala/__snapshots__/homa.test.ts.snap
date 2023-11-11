@@ -21,7 +21,7 @@ exports[`'acala' homa > with latest block > Homa redeem unbond works > events 2`
       "eraIndexWhenUnbond": 100,
       "liquidAmount": 1000000000000,
       "redeemer": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
-      "unbondingStakingAmount": "(rounded 130000000000)",
+      "unbondingStakingAmount": "(rounded 140000000000)",
     },
     "method": "RedeemedByUnbond",
     "section": "homa",
