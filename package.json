@@ -11,6 +11,9 @@
 		"test:dev": "vitest --inspect --single-thread",
 		"update-env": "ts-node scripts/update-env.ts"
 	},
+	"resolutions": {
+		"@polkadot/api": "^10.11.1"
+	},
 	"dependencies": {
 		"@acala-network/chopsticks": "^0.9.3-1",
 		"@acala-network/chopsticks-testing": "^0.9.3-1",
@@ -19,10 +22,12 @@
 		"@polkadot/api": "^10.11.1",
 		"@polkawallet/bridge": "^0.1.5-19",
 		"dotenv": "^16.3.1",
+		"lodash": "^4.17.21",
 		"typescript": "^5.2.2",
 		"vitest": "^0.34.4"
 	},
 	"devDependencies": {
+		"@types/lodash": "^4",
 		"@types/node": "^20.6.0",
 		"@typescript-eslint/eslint-plugin": "^6.7.3",
 		"@typescript-eslint/parser": "^6.7.0",

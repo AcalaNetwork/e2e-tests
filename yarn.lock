@@ -3194,6 +3194,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/lodash@npm:^4":
+  version: 4.14.202
+  resolution: "@types/lodash@npm:4.14.202"
+  checksum: 1bb9760a5b1dda120132c4b987330d67979c95dbc22612678682cd61b00302e190f4207228f3728580059cdab5582362262e3819aea59960c1017bd2b9fb26f6
+  languageName: node
+  linkType: hard
+
 "@types/node-fetch@npm:^2.6.2":
   version: 2.6.7
   resolution: "@types/node-fetch@npm:2.6.7"
@@ -4578,6 +4585,7 @@ __metadata:
     "@acala-network/sdk-core": "npm:^4.1.9-10"
     "@polkadot/api": "npm:^10.11.1"
     "@polkawallet/bridge": "npm:^0.1.5-19"
+    "@types/lodash": "npm:^4"
     "@types/node": "npm:^20.6.0"
     "@typescript-eslint/eslint-plugin": "npm:^6.7.3"
     "@typescript-eslint/parser": "npm:^6.7.0"
@@ -4590,6 +4598,7 @@ __metadata:
     eslint-plugin-sort-imports-es6-autofix: "npm:^0.6.0"
     husky: "npm:^8.0.3"
     lint-staged: "npm:^14.0.1"
+    lodash: "npm:^4.17.21"
     prettier: "npm:^3.0.3"
     ts-node: "npm:^10.9.1"
     typescript: "npm:^5.2.2"
