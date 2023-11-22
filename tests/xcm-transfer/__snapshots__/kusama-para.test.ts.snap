@@ -310,6 +310,7 @@ exports[`'karura' -> 'statemine' xcm transfer 'USDT' > xtokens transfer > to cha
   {
     "data": {
       "messageHash": "(hash)",
+      "messageId": "(hash)",
       "weight": {
         "proofSize": "(rounded 3600)",
         "refTime": "(rounded 310000000)",
@@ -503,6 +504,9 @@ exports[`'statemine' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer > from
               },
             },
           },
+          {
+            "setTopic": "0xc0e6a0c3853cb3d5ae11c7d3d2d300440f048db7496c2db6e75f57a76e04ebd1",
+          },
         ],
       },
     ],
@@ -519,7 +523,7 @@ exports[`'statemine' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer > to c
       "messageId": "(hash)",
       "weight": {
         "proofSize": 0,
-        "refTime": 800000000,
+        "refTime": 1000000000,
       },
     },
     "method": "Success",
@@ -531,14 +535,14 @@ exports[`'statemine' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer > to c
 exports[`'statemine' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer > tx events 1`] = `
 [
   {
-    "data": [
-      {
+    "data": {
+      "outcome": {
         "Complete": {
           "proofSize": "(rounded 6200)",
-          "refTime": "(rounded 676000000)",
+          "refTime": "(rounded 683000000)",
         },
       },
-    ],
+    },
     "method": "Attempted",
     "section": "polkadotXcm",
   },
