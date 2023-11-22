@@ -7,7 +7,7 @@ export default {
   },
   kusama: {
     name: 'statemine' as const,
-    endpoint: 'wss://statemine-rpc.polkadot.io',
+    endpoint: 'wss://kusama-asset-hub-rpc.polkadot.io',
   },
   config: ({ alice }) => ({
     storages: {
