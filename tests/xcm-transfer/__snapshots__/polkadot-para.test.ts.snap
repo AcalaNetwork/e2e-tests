@@ -1109,6 +1109,9 @@ exports[`'statemint' -> 'acala' xcm transfer 'WBTC' > xcmPallet transfer > from 
               },
             },
           },
+          {
+            "setTopic": "redacted",
+          },
         ],
       },
     ],
