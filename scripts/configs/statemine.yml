@@ -1,7 +1,6 @@
 extensions:
   client:
     endpoints:
-        - wss://statemine-rpc.polkadot.io:443
         - wss://statemine-rpc.dwellir.com:443
   event_bus:
   substrate_api:

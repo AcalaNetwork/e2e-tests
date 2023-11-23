@@ -140,9 +140,7 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
             await checkUmp(fromChain).toMatchSnapshot('from chain ump messages')
           } else {
             await checkHrmp(fromChain)
-              .map((v) => JSON.parse(JSON.stringify(v)))
-              // redact setTopic
-              .map((v) => _.update(v, '[0].data[1].v3[4].setTopic', () => 'redacted'))
+              .redact({ redactKeys: /setTopic/ })
               .toMatchSnapshot('from chain hrmp messages')
           }
 

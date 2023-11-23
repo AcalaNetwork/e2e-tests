@@ -35,11 +35,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@acala-network/chopsticks-core@npm:0.9.3-1":
-  version: 0.9.3-1
-  resolution: "@acala-network/chopsticks-core@npm:0.9.3-1"
+"@acala-network/chopsticks-core@npm:0.9.3-2":
+  version: 0.9.3-2
+  resolution: "@acala-network/chopsticks-core@npm:0.9.3-2"
   dependencies:
-    "@acala-network/chopsticks-executor": "npm:0.9.3-1"
+    "@acala-network/chopsticks-executor": "npm:0.9.3-2"
     "@polkadot/rpc-provider": "npm:^10.10.1"
     "@polkadot/types": "npm:^10.10.1"
     "@polkadot/types-codec": "npm:^10.10.1"
@@ -54,63 +54,63 @@ __metadata:
     pino-pretty: "npm:^10.2.3"
     rxjs: "npm:^7.8.1"
     zod: "npm:^3.22.4"
-  checksum: 4fdbb72f290240ae18c279e0fb4c007fde8521cc18db81acf65dfbe0ffaeddb0f22273979555ea8186893a6d3fd68901e5a57902365f2d48788ab3c1f1d4b900
+  checksum: e5adb68cba6123374cd09887de1cd9c96a8ef8a6d39161f2ada64a22ff419cb8d63aacc826eb7df49522ad9de1479b6c31a65b221d2087211b61062a8c5a1f0f
   languageName: node
   linkType: hard
 
-"@acala-network/chopsticks-db@npm:0.9.3-1":
-  version: 0.9.3-1
-  resolution: "@acala-network/chopsticks-db@npm:0.9.3-1"
+"@acala-network/chopsticks-db@npm:0.9.3-2":
+  version: 0.9.3-2
+  resolution: "@acala-network/chopsticks-db@npm:0.9.3-2"
   dependencies:
-    "@acala-network/chopsticks-core": "npm:0.9.3-1"
+    "@acala-network/chopsticks-core": "npm:0.9.3-2"
     "@polkadot/util": "npm:^12.5.1"
     idb: "npm:^7.1.1"
     sqlite3: "npm:^5.1.6"
     typeorm: "npm:^0.3.17"
-  checksum: f0c1c25eea0e9b5ec093fee567c47c13ac910666eb64dfb74b805f7147dee95867a5e3a9be57dfb71dcbebef7716052c91e3c4e0c35c4c1a4e6cb0c969b17e66
+  checksum: cc8b59544afd9be370334510f373a50906ce84f380abf0d151edc28f61ef3cadaee0685722504dec72703fbfb8be31b107cf810d2d248e297f27ce7f15aaea2d
   languageName: node
   linkType: hard
 
-"@acala-network/chopsticks-executor@npm:0.9.3-1":
-  version: 0.9.3-1
-  resolution: "@acala-network/chopsticks-executor@npm:0.9.3-1"
+"@acala-network/chopsticks-executor@npm:0.9.3-2":
+  version: 0.9.3-2
+  resolution: "@acala-network/chopsticks-executor@npm:0.9.3-2"
   dependencies:
     "@polkadot/util": "npm:^12.5.1"
     "@polkadot/wasm-util": "npm:^7.2.2"
-  checksum: fd92d98c5a1bf2340ccb52cbf9be7fd206ab3dce3b9952913575d93659d423151cc3d42c211ee4754ed3f9355a0e3b11127bb083c06105f1697a5ad6f72ff97a
+  checksum: 7b99fb66cbab95387fe18a7b7e42293e7fc3beb0f843c7907bac7d80566732fa7fac0e2288823307b2cff4e240763cce760024c19b1c0098fddce24dfc747302
   languageName: node
   linkType: hard
 
-"@acala-network/chopsticks-testing@npm:^0.9.3-1":
-  version: 0.9.3-1
-  resolution: "@acala-network/chopsticks-testing@npm:0.9.3-1"
+"@acala-network/chopsticks-testing@npm:^0.9.3-2":
+  version: 0.9.3-2
+  resolution: "@acala-network/chopsticks-testing@npm:0.9.3-2"
   dependencies:
-    "@acala-network/chopsticks-utils": "npm:0.9.3-1"
+    "@acala-network/chopsticks-utils": "npm:0.9.3-2"
     "@polkadot/api": "npm:^10.10.1"
     "@polkadot/types": "npm:^10.10.1"
   peerDependencies:
-    vitest: ^0.34.0
-  checksum: 448f8724cfae9799b15ae43ac4d404ae405ddbe00372f098ac3fd63e09e3565dccd83cde1b2edc7b838845a704f0f4386659d71c53b1dd2b976b33df03c9dbbd
+    vitest: "*"
+  checksum: 723d24096701e23d64eca5eb07a25c270bdee3a737d3a0075accf1ac41d75d5a981117c8c6cef6e6fbecf94c41844ae2ce2a10733b75f1fddaa027be9ca112dc
   languageName: node
   linkType: hard
 
-"@acala-network/chopsticks-utils@npm:0.9.3-1":
-  version: 0.9.3-1
-  resolution: "@acala-network/chopsticks-utils@npm:0.9.3-1"
+"@acala-network/chopsticks-utils@npm:0.9.3-2":
+  version: 0.9.3-2
+  resolution: "@acala-network/chopsticks-utils@npm:0.9.3-2"
   dependencies:
-    "@acala-network/chopsticks": "npm:0.9.3-1"
+    "@acala-network/chopsticks": "npm:0.9.3-2"
     "@polkadot/api": "npm:^10.10.1"
     "@polkadot/types": "npm:^10.10.1"
-  checksum: 5f747fdcf42e5d811174437dd93776ce923e3b396d3ce8161d6e4641930b00689e485f09a27e4219dd3f666885cca1af03130883ab60e20ff65f2cae5cb613db
+  checksum: de020f9ecd2a916a1aaec8a528b72e36f781106405bacf297f47d3a516bc230261eb1ab75dd61bdae215fba49fb7880b92c9aaf2dfcb4976ad4ef92928a01bab
   languageName: node
   linkType: hard
 
-"@acala-network/chopsticks@npm:0.9.3-1, @acala-network/chopsticks@npm:^0.9.3-1":
-  version: 0.9.3-1
-  resolution: "@acala-network/chopsticks@npm:0.9.3-1"
+"@acala-network/chopsticks@npm:0.9.3-2, @acala-network/chopsticks@npm:^0.9.3-2":
+  version: 0.9.3-2
+  resolution: "@acala-network/chopsticks@npm:0.9.3-2"
   dependencies:
-    "@acala-network/chopsticks-core": "npm:0.9.3-1"
-    "@acala-network/chopsticks-db": "npm:0.9.3-1"
+    "@acala-network/chopsticks-core": "npm:0.9.3-2"
+    "@acala-network/chopsticks-db": "npm:0.9.3-2"
     "@pnpm/npm-conf": "npm:^2.2.2"
     "@polkadot/api-augment": "npm:^10.10.1"
     "@polkadot/types": "npm:^10.10.1"
@@ -127,7 +127,7 @@ __metadata:
     zod: "npm:^3.22.4"
   bin:
     chopsticks: ./chopsticks.cjs
-  checksum: d5330283e4d5c6f5cb333e6d6a72d6b821253f16cdb2749c4dd1e57f66755e93d9fb4838f3b45cd2ceacfa09beadb4ec12fb771fded0b1e4b15a508d1324d218
+  checksum: b9933cf6ee20d39e28fa5680ad6934ee94a78b86b9cb48e036751cc918e27c1802d7c48f055c29b6cdcfd5a53688b48dee99b47009b06e7c88f8e21bed97a0d8
   languageName: node
   linkType: hard
 
@@ -2907,86 +2907,86 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rollup/rollup-android-arm-eabi@npm:4.1.5":
-  version: 4.1.5
-  resolution: "@rollup/rollup-android-arm-eabi@npm:4.1.5"
+"@rollup/rollup-android-arm-eabi@npm:4.5.1":
+  version: 4.5.1
+  resolution: "@rollup/rollup-android-arm-eabi@npm:4.5.1"
   conditions: os=android & cpu=arm
   languageName: node
   linkType: hard
 
-"@rollup/rollup-android-arm64@npm:4.1.5":
-  version: 4.1.5
-  resolution: "@rollup/rollup-android-arm64@npm:4.1.5"
+"@rollup/rollup-android-arm64@npm:4.5.1":
+  version: 4.5.1
+  resolution: "@rollup/rollup-android-arm64@npm:4.5.1"
   conditions: os=android & cpu=arm64
   languageName: node
   linkType: hard
 
-"@rollup/rollup-darwin-arm64@npm:4.1.5":
-  version: 4.1.5
-  resolution: "@rollup/rollup-darwin-arm64@npm:4.1.5"
+"@rollup/rollup-darwin-arm64@npm:4.5.1":
+  version: 4.5.1
+  resolution: "@rollup/rollup-darwin-arm64@npm:4.5.1"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@rollup/rollup-darwin-x64@npm:4.1.5":
-  version: 4.1.5
-  resolution: "@rollup/rollup-darwin-x64@npm:4.1.5"
+"@rollup/rollup-darwin-x64@npm:4.5.1":
+  version: 4.5.1
+  resolution: "@rollup/rollup-darwin-x64@npm:4.5.1"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@rollup/rollup-linux-arm-gnueabihf@npm:4.1.5":
-  version: 4.1.5
-  resolution: "@rollup/rollup-linux-arm-gnueabihf@npm:4.1.5"
+"@rollup/rollup-linux-arm-gnueabihf@npm:4.5.1":
+  version: 4.5.1
+  resolution: "@rollup/rollup-linux-arm-gnueabihf@npm:4.5.1"
   conditions: os=linux & cpu=arm
   languageName: node
   linkType: hard
 
-"@rollup/rollup-linux-arm64-gnu@npm:4.1.5":
-  version: 4.1.5
-  resolution: "@rollup/rollup-linux-arm64-gnu@npm:4.1.5"
+"@rollup/rollup-linux-arm64-gnu@npm:4.5.1":
+  version: 4.5.1
+  resolution: "@rollup/rollup-linux-arm64-gnu@npm:4.5.1"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@rollup/rollup-linux-arm64-musl@npm:4.1.5":
-  version: 4.1.5
-  resolution: "@rollup/rollup-linux-arm64-musl@npm:4.1.5"
+"@rollup/rollup-linux-arm64-musl@npm:4.5.1":
+  version: 4.5.1
+  resolution: "@rollup/rollup-linux-arm64-musl@npm:4.5.1"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@rollup/rollup-linux-x64-gnu@npm:4.1.5":
-  version: 4.1.5
-  resolution: "@rollup/rollup-linux-x64-gnu@npm:4.1.5"
+"@rollup/rollup-linux-x64-gnu@npm:4.5.1":
+  version: 4.5.1
+  resolution: "@rollup/rollup-linux-x64-gnu@npm:4.5.1"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@rollup/rollup-linux-x64-musl@npm:4.1.5":
-  version: 4.1.5
-  resolution: "@rollup/rollup-linux-x64-musl@npm:4.1.5"
+"@rollup/rollup-linux-x64-musl@npm:4.5.1":
+  version: 4.5.1
+  resolution: "@rollup/rollup-linux-x64-musl@npm:4.5.1"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@rollup/rollup-win32-arm64-msvc@npm:4.1.5":
-  version: 4.1.5
-  resolution: "@rollup/rollup-win32-arm64-msvc@npm:4.1.5"
+"@rollup/rollup-win32-arm64-msvc@npm:4.5.1":
+  version: 4.5.1
+  resolution: "@rollup/rollup-win32-arm64-msvc@npm:4.5.1"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@rollup/rollup-win32-ia32-msvc@npm:4.1.5":
-  version: 4.1.5
-  resolution: "@rollup/rollup-win32-ia32-msvc@npm:4.1.5"
+"@rollup/rollup-win32-ia32-msvc@npm:4.5.1":
+  version: 4.5.1
+  resolution: "@rollup/rollup-win32-ia32-msvc@npm:4.5.1"
   conditions: os=win32 & cpu=ia32
   languageName: node
   linkType: hard
 
-"@rollup/rollup-win32-x64-msvc@npm:4.1.5":
-  version: 4.1.5
-  resolution: "@rollup/rollup-win32-x64-msvc@npm:4.1.5"
+"@rollup/rollup-win32-x64-msvc@npm:4.5.1":
+  version: 4.5.1
+  resolution: "@rollup/rollup-win32-x64-msvc@npm:4.5.1"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
@@ -3161,22 +3161,6 @@ __metadata:
   dependencies:
     "@types/node": "npm:*"
   checksum: 9719330c86aeae0a6a447c974cf0f853ba3660ede20de61f435b03d699e30e6d8b35bf71a8dc9fdc8317784438e83177644ba068ed653d0ae0106e1ecbfe289e
-  languageName: node
-  linkType: hard
-
-"@types/chai-subset@npm:^1.3.3":
-  version: 1.3.4
-  resolution: "@types/chai-subset@npm:1.3.4"
-  dependencies:
-    "@types/chai": "npm:*"
-  checksum: c40035d29599bc72994dc52a6c1807b9240135811ad2b615c29d1378abf38990ec4d1189044c42de5b714106531401e8220fa35e4afe69b8cc26a5d7379bee6e
-  languageName: node
-  linkType: hard
-
-"@types/chai@npm:*, @types/chai@npm:^4.3.5":
-  version: 4.3.9
-  resolution: "@types/chai@npm:4.3.9"
-  checksum: 8f48986c3b6e0b3b2be392bc2736fbb43044b18fa18272b277433d445d87b76398012f4c05dd0e501c4ef0f26bc3934139d0ebcd362f8289bb5bc7158de4c81e
   languageName: node
   linkType: hard
 
@@ -3421,45 +3405,45 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitest/expect@npm:0.34.6":
-  version: 0.34.6
-  resolution: "@vitest/expect@npm:0.34.6"
+"@vitest/expect@npm:1.0.0-beta.5":
+  version: 1.0.0-beta.5
+  resolution: "@vitest/expect@npm:1.0.0-beta.5"
   dependencies:
-    "@vitest/spy": "npm:0.34.6"
-    "@vitest/utils": "npm:0.34.6"
+    "@vitest/spy": "npm:1.0.0-beta.5"
+    "@vitest/utils": "npm:1.0.0-beta.5"
     chai: "npm:^4.3.10"
-  checksum: c5dbd3db4d914857287dcff5dd7084070a2f73ed616197c80acaa54c27e5563cecf7a11e86d6aeef002e38f2ca52626f4b9c765db9b56add736f4e94a7fb0954
+  checksum: 993e5e6fd35948d49ee7cb5f34faf6a15600c026824ab042bc45a51dfa113ccf6f6b4ec139b1a4939c5e8b61637faa302c9fc321b844263bff0b48d2a65e2c48
   languageName: node
   linkType: hard
 
-"@vitest/runner@npm:0.34.6":
-  version: 0.34.6
-  resolution: "@vitest/runner@npm:0.34.6"
+"@vitest/runner@npm:1.0.0-beta.5":
+  version: 1.0.0-beta.5
+  resolution: "@vitest/runner@npm:1.0.0-beta.5"
   dependencies:
-    "@vitest/utils": "npm:0.34.6"
-    p-limit: "npm:^4.0.0"
+    "@vitest/utils": "npm:1.0.0-beta.5"
+    p-limit: "npm:^5.0.0"
     pathe: "npm:^1.1.1"
-  checksum: 3525d8e4f8cd8a8b3f8f43a7b2604cda891fe31cfa1604e179628ced89d21114a55d6bb3bf192c02b4419e760eb15188d490e861cb46ddab2786193f8a999b0e
+  checksum: 445c7b5e411dca17ce98805f04e8fb7fd8b532372b3c1472c47638876c3c72a0ba7b66c0543b9771058735352b792870d9f5a7dc170b10346a3239f0ab154d0a
   languageName: node
   linkType: hard
 
-"@vitest/snapshot@npm:0.34.6":
-  version: 0.34.6
-  resolution: "@vitest/snapshot@npm:0.34.6"
+"@vitest/snapshot@npm:1.0.0-beta.5":
+  version: 1.0.0-beta.5
+  resolution: "@vitest/snapshot@npm:1.0.0-beta.5"
   dependencies:
-    magic-string: "npm:^0.30.1"
+    magic-string: "npm:^0.30.5"
     pathe: "npm:^1.1.1"
-    pretty-format: "npm:^29.5.0"
-  checksum: a9a321a089b22a383253b8cf3092c3af9b35453bb1c0ba0762760644a6ab0f727a4083872c7fd5a7d18c9a4fc4a798c4392872e337858a7c8ccc25ada6bf4d96
+    pretty-format: "npm:^29.7.0"
+  checksum: 78d186f7cb4eacc583fccce4c3560f2b4fc59bd43d334ca2ff37a460793d14fa9e2345bc8807d181441b9b146953eafc306b0779172c6a5ed2a1f574bef7ac48
   languageName: node
   linkType: hard
 
-"@vitest/spy@npm:0.34.6":
-  version: 0.34.6
-  resolution: "@vitest/spy@npm:0.34.6"
+"@vitest/spy@npm:1.0.0-beta.5":
+  version: 1.0.0-beta.5
+  resolution: "@vitest/spy@npm:1.0.0-beta.5"
   dependencies:
-    tinyspy: "npm:^2.1.1"
-  checksum: 9de152ac928c31e21bb4d8e1262b70db50dd11479efe8babce6bd993cc89957b974a584414a99d66ca188775b50baea1b934fdfb8d0d53c66fc2feb6dc2e348d
+    tinyspy: "npm:^2.2.0"
+  checksum: 576f2f0c06288e113cedd7a8264e2d5022b3aed41e686b3ea630d6ca9082a4bdaa5569548bfdb8d3f541bb3eb2546ac701008d938d6e603736f00b21844d4ebc
   languageName: node
   linkType: hard
 
@@ -3488,6 +3472,17 @@ __metadata:
     loupe: "npm:^2.3.6"
     pretty-format: "npm:^29.5.0"
   checksum: 09a1b2122ceb5541b4f3d64410088e363a36d6e4addf208b6458615ac856adf36c1c9b5431a45ea13a78c30e6a7dcb0696854abe69a710089ffa229356a5202b
+  languageName: node
+  linkType: hard
+
+"@vitest/utils@npm:1.0.0-beta.5":
+  version: 1.0.0-beta.5
+  resolution: "@vitest/utils@npm:1.0.0-beta.5"
+  dependencies:
+    diff-sequences: "npm:^29.6.3"
+    loupe: "npm:^2.3.7"
+    pretty-format: "npm:^29.7.0"
+  checksum: bf3f0286f8f42d11de1860df7775378161abae95844a26ed96c16b56378893cd207d48dabddf260a6010b39e06e8ef4d72e6df608a0751fc4f2856d0f82fb207
   languageName: node
   linkType: hard
 
@@ -3546,7 +3541,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"acorn-walk@npm:^8.1.1, acorn-walk@npm:^8.2.0":
+"acorn-walk@npm:^8.1.1, acorn-walk@npm:^8.3.0":
   version: 8.3.0
   resolution: "acorn-walk@npm:8.3.0"
   checksum: 7673f342db939adc16ac3596c374a56be33e6ef84e01dfb3a0b50cc87cf9b8e46d84c337dcd7d5644f75bf219ad5a36bf33795e9f1af15298e6bceacf46c5f1f
@@ -4525,7 +4520,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"diff-sequences@npm:^29.4.3":
+"diff-sequences@npm:^29.4.3, diff-sequences@npm:^29.6.3":
   version: 29.6.3
   resolution: "diff-sequences@npm:29.6.3"
   checksum: 179daf9d2f9af5c57ad66d97cb902a538bcf8ed64963fa7aa0c329b3de3665ce2eb6ffdc2f69f29d445fa4af2517e5e55e5b6e00c00a9ae4f43645f97f7078cb
@@ -4577,8 +4572,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "e2e-tests@workspace:."
   dependencies:
-    "@acala-network/chopsticks": "npm:^0.9.3-1"
-    "@acala-network/chopsticks-testing": "npm:^0.9.3-1"
+    "@acala-network/chopsticks": "npm:^0.9.3-2"
+    "@acala-network/chopsticks-testing": "npm:^0.9.3-2"
     "@acala-network/sdk": "npm:^4.1.9-10"
     "@acala-network/sdk-core": "npm:^4.1.9-10"
     "@polkadot/api": "npm:^10.11.1"
@@ -4600,7 +4595,7 @@ __metadata:
     prettier: "npm:^3.1.0"
     ts-node: "npm:^10.9.1"
     typescript: "npm:^5.3.2"
-    vitest: "npm:^0.34.6"
+    vitest: "npm:^1.0.0-beta.5"
   languageName: unknown
   linkType: soft
 
@@ -5168,7 +5163,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"execa@npm:8.0.1":
+"execa@npm:8.0.1, execa@npm:^8.0.1":
   version: 8.0.1
   resolution: "execa@npm:8.0.1"
   dependencies:
@@ -6449,10 +6444,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"local-pkg@npm:^0.4.3":
-  version: 0.4.3
-  resolution: "local-pkg@npm:0.4.3"
-  checksum: 48f38c12721881370bca50ed3b5e3cc6fef741cfb4de7e48666f6ded07c1aaea53cf770cfef84a89bed286c17631111bf99a86241ddf6f679408c79c56f29560
+"local-pkg@npm:^0.5.0":
+  version: 0.5.0
+  resolution: "local-pkg@npm:0.5.0"
+  dependencies:
+    mlly: "npm:^1.4.2"
+    pkg-types: "npm:^1.0.3"
+  checksum: 20f4caba50dc6fb00ffcc1a78bc94b5acb33995e0aadf4d4edcdeab257e891aa08f50afddf02f3240b2c3d02432bc2078f2a916a280ed716b64753a3d250db70
   languageName: node
   linkType: hard
 
@@ -6534,7 +6532,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"loupe@npm:^2.3.6":
+"loupe@npm:^2.3.6, loupe@npm:^2.3.7":
   version: 2.3.7
   resolution: "loupe@npm:2.3.7"
   dependencies:
@@ -6573,7 +6571,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"magic-string@npm:^0.30.1":
+"magic-string@npm:^0.30.5":
   version: 0.30.5
   resolution: "magic-string@npm:0.30.5"
   dependencies:
@@ -6894,7 +6892,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mlly@npm:^1.2.0, mlly@npm:^1.4.0":
+"mlly@npm:^1.2.0, mlly@npm:^1.4.2":
   version: 1.4.2
   resolution: "mlly@npm:1.4.2"
   dependencies:
@@ -7329,12 +7327,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"p-limit@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "p-limit@npm:4.0.0"
+"p-limit@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "p-limit@npm:5.0.0"
   dependencies:
     yocto-queue: "npm:^1.0.0"
-  checksum: 01d9d70695187788f984226e16c903475ec6a947ee7b21948d6f597bed788e3112cc7ec2e171c1d37125057a5f45f3da21d8653e04a3a793589e12e9e80e756b
+  checksum: 87bf5837dee6942f0dbeff318436179931d9a97848d1b07dbd86140a477a5d2e6b90d9701b210b4e21fe7beaea2979dfde366e4f576fa644a59bd4d6a6371da7
   languageName: node
   linkType: hard
 
@@ -7609,7 +7607,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pretty-format@npm:^29.5.0":
+"pretty-format@npm:^29.5.0, pretty-format@npm:^29.7.0":
   version: 29.7.0
   resolution: "pretty-format@npm:29.7.0"
   dependencies:
@@ -7913,22 +7911,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rollup@npm:^4.1.4":
-  version: 4.1.5
-  resolution: "rollup@npm:4.1.5"
+"rollup@npm:^4.2.0":
+  version: 4.5.1
+  resolution: "rollup@npm:4.5.1"
   dependencies:
-    "@rollup/rollup-android-arm-eabi": "npm:4.1.5"
-    "@rollup/rollup-android-arm64": "npm:4.1.5"
-    "@rollup/rollup-darwin-arm64": "npm:4.1.5"
-    "@rollup/rollup-darwin-x64": "npm:4.1.5"
-    "@rollup/rollup-linux-arm-gnueabihf": "npm:4.1.5"
-    "@rollup/rollup-linux-arm64-gnu": "npm:4.1.5"
-    "@rollup/rollup-linux-arm64-musl": "npm:4.1.5"
-    "@rollup/rollup-linux-x64-gnu": "npm:4.1.5"
-    "@rollup/rollup-linux-x64-musl": "npm:4.1.5"
-    "@rollup/rollup-win32-arm64-msvc": "npm:4.1.5"
-    "@rollup/rollup-win32-ia32-msvc": "npm:4.1.5"
-    "@rollup/rollup-win32-x64-msvc": "npm:4.1.5"
+    "@rollup/rollup-android-arm-eabi": "npm:4.5.1"
+    "@rollup/rollup-android-arm64": "npm:4.5.1"
+    "@rollup/rollup-darwin-arm64": "npm:4.5.1"
+    "@rollup/rollup-darwin-x64": "npm:4.5.1"
+    "@rollup/rollup-linux-arm-gnueabihf": "npm:4.5.1"
+    "@rollup/rollup-linux-arm64-gnu": "npm:4.5.1"
+    "@rollup/rollup-linux-arm64-musl": "npm:4.5.1"
+    "@rollup/rollup-linux-x64-gnu": "npm:4.5.1"
+    "@rollup/rollup-linux-x64-musl": "npm:4.5.1"
+    "@rollup/rollup-win32-arm64-msvc": "npm:4.5.1"
+    "@rollup/rollup-win32-ia32-msvc": "npm:4.5.1"
+    "@rollup/rollup-win32-x64-msvc": "npm:4.5.1"
     fsevents: "npm:~2.3.2"
   dependenciesMeta:
     "@rollup/rollup-android-arm-eabi":
@@ -7959,7 +7957,7 @@ __metadata:
       optional: true
   bin:
     rollup: dist/bin/rollup
-  checksum: 4bc069452261e69672ce1689dc5f8c3330bd9b282ed2958c4069fc5d67538013aecaf415ce5151507b91c8e034b4e5e70daa23a1fdad8d05f635f48d7b40ef45
+  checksum: dbbd4d7b8b0f6814d58b24149d2883ecdfbc2a35f8b206ff8d7d2a6e28666cb385bd0b340b338d70f9493455aafed3be6e7fc5273ff786713d4ac41d37480fb0
   languageName: node
   linkType: hard
 
@@ -8348,10 +8346,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"std-env@npm:^3.3.3":
-  version: 3.4.3
-  resolution: "std-env@npm:3.4.3"
-  checksum: 3087e9b2f6f9f40f1562b765c2d0768ad12f04a4d039fa5848e9e951263266b533590464e5d90e412680ec37e4febabf0c8fb3d15c4c7b8c5eb21ebcb09bf393
+"std-env@npm:^3.4.3":
+  version: 3.5.0
+  resolution: "std-env@npm:3.5.0"
+  checksum: 6071a727e1f1e67d6598648a085473671672ad6b2e0fc7220bb731c4c7584979047565c81b4c482a59cc25b7f14d5e6d06d5682250d06a9fefd1a571daaa711c
   languageName: node
   linkType: hard
 
@@ -8465,7 +8463,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"strip-literal@npm:^1.0.1":
+"strip-literal@npm:^1.3.0":
   version: 1.3.0
   resolution: "strip-literal@npm:1.3.0"
   dependencies:
@@ -8545,21 +8543,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tinybench@npm:^2.5.0":
+"tinybench@npm:^2.5.1":
   version: 2.5.1
   resolution: "tinybench@npm:2.5.1"
   checksum: f64ea142e048edc5010027eca36aff5aef74cd849ab9c6ba6e39475f911309694cb5a7ff894d47216ab4a3abcf4291e4bdc7a57796e96bf5b06e67452b5ac54d
   languageName: node
   linkType: hard
 
-"tinypool@npm:^0.7.0":
-  version: 0.7.0
-  resolution: "tinypool@npm:0.7.0"
-  checksum: e1fb1f430647525c6bb0bac71acc4c1594c7687fe8e4f08c8f389d9a672fb69746869e9d9818b55f1ab85ea6308d42f92cbc32a9847088abf6bc55a8700be390
+"tinypool@npm:^0.8.1":
+  version: 0.8.1
+  resolution: "tinypool@npm:0.8.1"
+  checksum: 3fae8acc22b7d0364eb202b64f61f0d8b10dcead6bef9b8fab1836857dcecd0e34fadc47ab309754ead2cb29bfa4b3467a9fc0daae23669b19ff403ae1364b5c
   languageName: node
   linkType: hard
 
-"tinyspy@npm:^2.1.1":
+"tinyspy@npm:^2.2.0":
   version: 2.2.0
   resolution: "tinyspy@npm:2.2.0"
   checksum: bcc5a08c2dc7574d32e6dcc2e760ad95a3cf30249c22799815b6389179427c95573d27d2d965ebc5fca2b6d338c46678cd7337ea2a9cebacee3dc662176b07cb
@@ -9009,30 +9007,29 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite-node@npm:0.34.6":
-  version: 0.34.6
-  resolution: "vite-node@npm:0.34.6"
+"vite-node@npm:1.0.0-beta.5":
+  version: 1.0.0-beta.5
+  resolution: "vite-node@npm:1.0.0-beta.5"
   dependencies:
     cac: "npm:^6.7.14"
     debug: "npm:^4.3.4"
-    mlly: "npm:^1.4.0"
     pathe: "npm:^1.1.1"
     picocolors: "npm:^1.0.0"
-    vite: "npm:^3.0.0 || ^4.0.0 || ^5.0.0-0"
+    vite: "npm:^5.0.0-beta.15 || ^5.0.0"
   bin:
     vite-node: vite-node.mjs
-  checksum: ae49fd24874162196dd41477afe51dd8dc0bd1e8cb4ae885455d1d5569e14f628941f9867044bff263620536446e17d7e2c0828c9ea84b6308b9eb5711e80991
+  checksum: 4134011aff89cfe9a3773848e5aecfe5965cbca8908aa09150e119c1ca2f2d4294bd75456a8b1e5928377f230bc90c55d9e8a8e5f338ef73f88e7014266afd6e
   languageName: node
   linkType: hard
 
-"vite@npm:^3.0.0 || ^4.0.0 || ^5.0.0-0, vite@npm:^3.1.0 || ^4.0.0 || ^5.0.0-0":
-  version: 5.0.0-beta.13
-  resolution: "vite@npm:5.0.0-beta.13"
+"vite@npm:^5.0.0-beta.15 || ^5.0.0, vite@npm:^5.0.0-beta.19 || ^5.0.0":
+  version: 5.0.2
+  resolution: "vite@npm:5.0.2"
   dependencies:
     esbuild: "npm:^0.19.3"
     fsevents: "npm:~2.3.3"
     postcss: "npm:^8.4.31"
-    rollup: "npm:^4.1.4"
+    rollup: "npm:^4.2.0"
   peerDependencies:
     "@types/node": ^18.0.0 || >=20.0.0
     less: "*"
@@ -9061,49 +9058,46 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 2007bc08a6c7e427b732d692be85d003ffe1adf2acbcb0cbe070f8eff47174c31c00aab318aba86038267d153a8c1ffd68b10689d6d178ff65f66a25b9c5e069
+  checksum: 74f1a6d49a02106796b5fcc04dbe4a92925fba413191718fb37485a29f606b7f80abd371a3ef6b598e8a04f05c09c0b9a5de6bf844dfecb7253798097ddaab35
   languageName: node
   linkType: hard
 
-"vitest@npm:^0.34.6":
-  version: 0.34.6
-  resolution: "vitest@npm:0.34.6"
+"vitest@npm:^1.0.0-beta.5":
+  version: 1.0.0-beta.5
+  resolution: "vitest@npm:1.0.0-beta.5"
   dependencies:
-    "@types/chai": "npm:^4.3.5"
-    "@types/chai-subset": "npm:^1.3.3"
-    "@types/node": "npm:*"
-    "@vitest/expect": "npm:0.34.6"
-    "@vitest/runner": "npm:0.34.6"
-    "@vitest/snapshot": "npm:0.34.6"
-    "@vitest/spy": "npm:0.34.6"
-    "@vitest/utils": "npm:0.34.6"
-    acorn: "npm:^8.9.0"
-    acorn-walk: "npm:^8.2.0"
+    "@vitest/expect": "npm:1.0.0-beta.5"
+    "@vitest/runner": "npm:1.0.0-beta.5"
+    "@vitest/snapshot": "npm:1.0.0-beta.5"
+    "@vitest/spy": "npm:1.0.0-beta.5"
+    "@vitest/utils": "npm:1.0.0-beta.5"
+    acorn-walk: "npm:^8.3.0"
     cac: "npm:^6.7.14"
     chai: "npm:^4.3.10"
     debug: "npm:^4.3.4"
-    local-pkg: "npm:^0.4.3"
-    magic-string: "npm:^0.30.1"
+    execa: "npm:^8.0.1"
+    local-pkg: "npm:^0.5.0"
+    magic-string: "npm:^0.30.5"
     pathe: "npm:^1.1.1"
     picocolors: "npm:^1.0.0"
-    std-env: "npm:^3.3.3"
-    strip-literal: "npm:^1.0.1"
-    tinybench: "npm:^2.5.0"
-    tinypool: "npm:^0.7.0"
-    vite: "npm:^3.1.0 || ^4.0.0 || ^5.0.0-0"
-    vite-node: "npm:0.34.6"
+    std-env: "npm:^3.4.3"
+    strip-literal: "npm:^1.3.0"
+    tinybench: "npm:^2.5.1"
+    tinypool: "npm:^0.8.1"
+    vite: "npm:^5.0.0-beta.19 || ^5.0.0"
+    vite-node: "npm:1.0.0-beta.5"
     why-is-node-running: "npm:^2.2.2"
   peerDependencies:
     "@edge-runtime/vm": "*"
+    "@types/node": ^18.0.0 || >=20.0.0
     "@vitest/browser": "*"
     "@vitest/ui": "*"
     happy-dom: "*"
     jsdom: "*"
-    playwright: "*"
-    safaridriver: "*"
-    webdriverio: "*"
   peerDependenciesMeta:
     "@edge-runtime/vm":
+      optional: true
+    "@types/node":
       optional: true
     "@vitest/browser":
       optional: true
@@ -9113,15 +9107,9 @@ __metadata:
       optional: true
     jsdom:
       optional: true
-    playwright:
-      optional: true
-    safaridriver:
-      optional: true
-    webdriverio:
-      optional: true
   bin:
     vitest: vitest.mjs
-  checksum: 0191422ab979823803aac64e657e288f1b84bb518a2b653fe9928b4f1c931b04efde14990d263ff76a18dc6c35ab34652db3ae7cbecea771cfa36abe547dd705
+  checksum: d4c5da6ed26b186abb8037198bbbf1e7c3ac83153b5f7d5e68b0eef4ef89088244775eb790c4698822701e57e7acdfebd68e941675ed17712c60dff40e799c82
   languageName: node
   linkType: hard
 
