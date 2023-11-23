@@ -505,7 +505,7 @@ exports[`'statemine' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer > from
             },
           },
           {
-            "setTopic": "redacted",
+            "setTopic": "(redacted)",
           },
         ],
       },

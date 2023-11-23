@@ -1,7 +1,7 @@
 extensions:
   client:
     endpoints:
-        - wss://statemint-rpc.polkadot.io
+        - wss://statemint-rpc.dwellir.com
   event_bus:
   substrate_api:
     stale_timeout_seconds: 60
