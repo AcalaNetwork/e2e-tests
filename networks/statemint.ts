@@ -3,7 +3,7 @@ import { Config } from './types'
 export default {
   polkadot: {
     name: 'statemint' as const,
-    endpoint: 'wss://statemine-rpc-tn.dwellir.com',
+    endpoint: 'wss://statemint-rpc-tn.dwellir.com',
   },
   kusama: {
     name: 'statemine' as const,
