@@ -20,7 +20,7 @@
 		"@acala-network/sdk": "^4.1.9-10",
 		"@acala-network/sdk-core": "^4.1.9-10",
 		"@polkadot/api": "^10.11.1",
-		"@polkawallet/bridge": "^0.1.5-19",
+		"@polkawallet/bridge": "^0.1.5-21",
 		"dotenv": "^16.3.1",
 		"lodash": "^4.17.21",
 		"typescript": "^5.3.2",
