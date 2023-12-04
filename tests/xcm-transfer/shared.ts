@@ -30,12 +30,12 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
 
       let fromAccount = alice
       if ('fromAccount' in opt) {
-        fromAccount = opt.fromAccount(ctx)
+        fromAccount = (opt.fromAccount as any)(ctx)
       }
 
       let toAccount = alice
       if ('toAccount' in opt) {
-        toAccount = opt.toAccount(ctx)
+        toAccount = (opt.toAccount as any)(ctx)
       }
 
       let precision = 3

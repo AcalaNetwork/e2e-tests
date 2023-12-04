@@ -13,11 +13,11 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         submodules: recursive
     - name: Use Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: 18.x
         cache: 'yarn'
@@ -26,25 +26,25 @@ jobs:
   tests:
     timeout-minutes: 30
     strategy:
-        fail-fast: false
-        matrix:
-          tests: [xcm-transfer, acala, bridge-sdk]
+      fail-fast: false
+      matrix:
+        tests: [xcm-transfer, acala, bridge-sdk]
     runs-on: [self-hosted, linux]
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         submodules: recursive
     - name: setup node
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: 18.x
     - name: Setup yarn
       run: npm install -g yarn
     - name: setup node env
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: 18.x
         cache: 'yarn'
     - run: yarn --immutable
-    - run: yarn ts-node scripts/update-env.ts
+    - run: yarn update-env
     - run: yarn test tests/${{ matrix.tests }}

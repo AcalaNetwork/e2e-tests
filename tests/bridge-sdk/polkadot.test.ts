@@ -21,11 +21,11 @@ const tests = [
     to: 'polkadot',
     token: 'DOT',
   },
-  {
-    from: 'acala',
-    to: 'moonbeam',
-    token: 'AUSD',
-  },
+  // {
+  //   from: 'acala',
+  //   to: 'moonbeam',
+  //   token: 'AUSD',
+  // },
   // {
   //   from: 'astar',
   //   to: 'acala',

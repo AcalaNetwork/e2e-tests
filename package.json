@@ -9,7 +9,7 @@
 		"test": "LOG_LEVEL=error vitest --silent",
 		"test:ui": "yarn test --ui",
 		"test:dev": "vitest --inspect --single-thread",
-		"update-env": "ts-node scripts/update-env.ts"
+		"update-env": "tsx scripts/update-env.ts"
 	},
 	"resolutions": {
 		"@polkadot/api": "^10.11.1"
@@ -40,7 +40,8 @@
 		"husky": "^8.0.3",
 		"lint-staged": "^15.1.0",
 		"prettier": "^3.1.0",
-		"ts-node": "^10.9.1"
+		"ts-node": "^10.9.1",
+		"tsx": "^4.6.2"
 	},
 	"prettier": {
 		"tabWidth": 2,

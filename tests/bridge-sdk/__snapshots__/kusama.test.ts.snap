@@ -280,26 +280,6 @@ exports[`'karura' to 'kusama' using bridgeSDK cross-chain 'KSM' > parachain brid
 }
 `;
 
-exports[`'karura' to 'moonriver' using bridgeSDK cross-chain 'KAR' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > after 1`] = `
-{
-  "address": "0x4E7440dB498561A46AAa82b9Bc7d2D5162b5c27B",
-  "decimals": 18,
-  "fromChain": "(rounded 8)",
-  "toChain": "(rounded 2.06)",
-}
-`;
-
-exports[`'karura' to 'moonriver' using bridgeSDK cross-chain 'KAR' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.03)"`;
-
-exports[`'karura' to 'moonriver' using bridgeSDK cross-chain 'KAR' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
-{
-  "address": "0x4E7440dB498561A46AAa82b9Bc7d2D5162b5c27B",
-  "decimals": 18,
-  "fromChain": 10,
-  "toChain": 0.09012,
-}
-`;
-
 exports[`'karura' to 'shiden' using bridgeSDK cross-chain 'KUSD' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > after 1`] = `
 {
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
