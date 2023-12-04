@@ -107,8 +107,8 @@ exports[`'acala' -> 'polkadot' xcm transfer 'DOT wiht limited weight' > xtokens 
       },
       "success": true,
       "weightUsed": {
-        "proofSize": 0,
-        "refTime": 4000000000,
+        "proofSize": "(rounded 7200)",
+        "refTime": "(rounded 270000000)",
       },
     },
     "method": "Processed",
@@ -271,8 +271,8 @@ exports[`'acala' -> 'polkadot' xcm transfer 'DOT' > xtokens transfer > to chain 
       },
       "success": true,
       "weightUsed": {
-        "proofSize": 0,
-        "refTime": 4000000000,
+        "proofSize": "(rounded 7200)",
+        "refTime": "(rounded 270000000)",
       },
     },
     "method": "Processed",
@@ -367,7 +367,7 @@ exports[`'polkadot' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > to chai
       "outcome": {
         "Complete": {
           "proofSize": 0,
-          "refTime": 800000000,
+          "refTime": 1000000000,
         },
       },
     },
@@ -379,7 +379,7 @@ exports[`'polkadot' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > to chai
       "dmqHead": "(hash)",
       "weightUsed": {
         "proofSize": 0,
-        "refTime": 800000000,
+        "refTime": 1000000000,
       },
     },
     "method": "DownwardMessagesProcessed",
@@ -391,14 +391,14 @@ exports[`'polkadot' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > to chai
 exports[`'polkadot' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > tx events 1`] = `
 [
   {
-    "data": [
-      {
+    "data": {
+      "outcome": {
         "Complete": {
-          "proofSize": 0,
-          "refTime": 2000000000,
+          "proofSize": "(rounded 6200)",
+          "refTime": "(rounded 686000000)",
         },
       },
-    ],
+    },
     "method": "Attempted",
     "section": "xcmPallet",
   },
@@ -445,8 +445,8 @@ exports[`'polkadot' -> 'astar' xcm transfer 'DOT' > xcmPallet transfer > to chai
       "messageId": "(hash)",
       "outcome": {
         "Complete": {
-          "proofSize": "(rounded 16000)",
-          "refTime": 4000000000,
+          "proofSize": "(rounded 20000)",
+          "refTime": 5000000000,
         },
       },
     },
@@ -457,8 +457,8 @@ exports[`'polkadot' -> 'astar' xcm transfer 'DOT' > xcmPallet transfer > to chai
     "data": {
       "dmqHead": "(hash)",
       "weightUsed": {
-        "proofSize": "(rounded 16000)",
-        "refTime": 4000000000,
+        "proofSize": "(rounded 20000)",
+        "refTime": 5000000000,
       },
     },
     "method": "DownwardMessagesProcessed",
@@ -470,14 +470,14 @@ exports[`'polkadot' -> 'astar' xcm transfer 'DOT' > xcmPallet transfer > to chai
 exports[`'polkadot' -> 'astar' xcm transfer 'DOT' > xcmPallet transfer > tx events 1`] = `
 [
   {
-    "data": [
-      {
+    "data": {
+      "outcome": {
         "Complete": {
-          "proofSize": 0,
-          "refTime": 2000000000,
+          "proofSize": "(rounded 6200)",
+          "refTime": "(rounded 686000000)",
         },
       },
-    ],
+    },
     "method": "Attempted",
     "section": "xcmPallet",
   },

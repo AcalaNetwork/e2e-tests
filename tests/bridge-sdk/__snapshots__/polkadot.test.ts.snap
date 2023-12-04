@@ -89,7 +89,7 @@ exports[`'acala' to 'polkadot' using bridgeSDK cross-chain 'DOT' > parachain bri
 }
 `;
 
-exports[`'acala' to 'polkadot' using bridgeSDK cross-chain 'DOT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.04)"`;
+exports[`'acala' to 'polkadot' using bridgeSDK cross-chain 'DOT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.002)"`;
 
 exports[`'acala' to 'polkadot' using bridgeSDK cross-chain 'DOT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
 {
@@ -169,7 +169,7 @@ exports[`'polkadot' to 'acala' using bridgeSDK cross-chain 'DOT' > parachain bri
 }
 `;
 
-exports[`'polkadot' to 'acala' using bridgeSDK cross-chain 'DOT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.00007)"`;
+exports[`'polkadot' to 'acala' using bridgeSDK cross-chain 'DOT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.00009)"`;
 
 exports[`'polkadot' to 'acala' using bridgeSDK cross-chain 'DOT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
 {
@@ -209,7 +209,7 @@ exports[`'statemint' to 'polkadot' using bridgeSDK cross-chain 'DOT' > parachain
 }
 `;
 
-exports[`'statemint' to 'polkadot' using bridgeSDK cross-chain 'DOT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.04)"`;
+exports[`'statemint' to 'polkadot' using bridgeSDK cross-chain 'DOT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.003)"`;
 
 exports[`'statemint' to 'polkadot' using bridgeSDK cross-chain 'DOT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
 {

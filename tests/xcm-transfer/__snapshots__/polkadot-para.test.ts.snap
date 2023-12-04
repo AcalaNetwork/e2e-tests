@@ -315,11 +315,12 @@ exports[`'acala' -> 'statemint' xcm transfer 'WBTC' > xtokens transfer > to chai
 [
   {
     "data": {
+      "messageHash": "(hash)",
       "messageId": "(hash)",
       "outcome": {
         "Complete": {
           "proofSize": 0,
-          "refTime": "(rounded 160000000)",
+          "refTime": "(rounded 170000000)",
         },
       },
     },
@@ -330,6 +331,7 @@ exports[`'acala' -> 'statemint' xcm transfer 'WBTC' > xtokens transfer > to chai
     "data": {
       "error": "FailedToTransactAsset",
       "messageHash": "(hash)",
+      "messageId": "(hash)",
       "weight": {
         "proofSize": "(rounded 7200)",
         "refTime": "(rounded 300000000)",
@@ -710,6 +712,9 @@ exports[`'statemint' -> 'acala' xcm transfer 'WBTC' > xcmPallet transfer > from 
               },
             },
           },
+          {
+            "setTopic": "(redacted)",
+          },
         ],
       },
     ],
@@ -726,7 +731,7 @@ exports[`'statemint' -> 'acala' xcm transfer 'WBTC' > xcmPallet transfer > to ch
       "messageId": "(hash)",
       "weight": {
         "proofSize": 0,
-        "refTime": 800000000,
+        "refTime": 1000000000,
       },
     },
     "method": "Success",
@@ -738,14 +743,14 @@ exports[`'statemint' -> 'acala' xcm transfer 'WBTC' > xcmPallet transfer > to ch
 exports[`'statemint' -> 'acala' xcm transfer 'WBTC' > xcmPallet transfer > tx events 1`] = `
 [
   {
-    "data": [
-      {
+    "data": {
+      "outcome": {
         "Complete": {
           "proofSize": "(rounded 6200)",
-          "refTime": "(rounded 673000000)",
+          "refTime": "(rounded 677000000)",
         },
       },
-    ],
+    },
     "method": "Attempted",
     "section": "polkadotXcm",
   },
