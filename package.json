@@ -9,7 +9,7 @@
 		"test": "LOG_LEVEL=error vitest --silent",
 		"test:ui": "yarn test --ui",
 		"test:dev": "vitest --inspect --single-thread",
-		"update-env": "ts-node scripts/update-env.ts"
+		"update-env": "yarn ts-node --esm scripts/update-env.ts"
 	},
 	"resolutions": {
 		"@polkadot/api": "^10.11.1"
