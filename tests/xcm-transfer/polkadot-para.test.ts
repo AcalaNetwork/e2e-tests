@@ -3,7 +3,7 @@ import { query, tx } from '../../helpers/api'
 
 import { acala } from '../../networks/acala'
 import { hydraDX } from '../../networks/hydraDX'
-import { moonbeam } from '../../networks/moonbeam'
+// import { moonbeam } from '../../networks/moonbeam'
 import { statemint } from '../../networks/statemint'
 
 import buildTest from './shared'
