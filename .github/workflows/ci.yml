@@ -26,13 +26,13 @@ jobs:
   tests:
     timeout-minutes: 30
     strategy:
-        fail-fast: false
-        matrix:
-          tests: [xcm-transfer, acala, bridge-sdk]
+      fail-fast: false
+      matrix:
+        tests: [xcm-transfer, acala, bridge-sdk]
     runs-on: [self-hosted, linux]
     steps:
     - uses: actions/checkout@v4
-    with:
+      with:
         submodules: recursive
     - name: setup node
       uses: actions/setup-node@v4
