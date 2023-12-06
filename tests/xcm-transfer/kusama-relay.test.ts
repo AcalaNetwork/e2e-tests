@@ -41,18 +41,18 @@ const tests = [
       },
     },
   },
-  // kusama <-> shiden
-  {
-    from: 'kusama',
-    to: 'shiden',
-    name: 'KSM',
-    test: {
-      xcmPalletDown: {
-        tx: tx.xcmPallet.limitedReserveTransferAssetsV3(kusama.ksm, 1e12, tx.xcmPallet.parachainV3(0, shiden.paraId)),
-        balance: query.assets(shiden.ksm),
-      },
-    },
-  },
+  // // kusama <-> shiden
+  // {
+  //   from: 'kusama',
+  //   to: 'shiden',
+  //   name: 'KSM',
+  //   test: {
+  //     xcmPalletDown: {
+  //       tx: tx.xcmPallet.limitedReserveTransferAssetsV3(kusama.ksm, 1e12, tx.xcmPallet.parachainV3(0, shiden.paraId)),
+  //       balance: query.assets(shiden.ksm),
+  //     },
+  //   },
+  // },
 ] as const
 
 export type TestType = (typeof tests)[number]

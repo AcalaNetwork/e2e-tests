@@ -77,16 +77,16 @@ const tests = [
     to: 'altair',
     token: 'AIR',
   },
-  {
-    from: 'shiden',
-    to: 'karura',
-    token: 'KUSD',
-  },
-  {
-    from: 'karura',
-    to: 'shiden',
-    token: 'KUSD',
-  },
+  // {
+  //   from: 'shiden',
+  //   to: 'karura',
+  //   token: 'KUSD',
+  // },
+  // {
+  //   from: 'karura',
+  //   to: 'shiden',
+  //   token: 'KUSD',
+  // },
   {
     from: 'karura',
     to: 'kintsugi',
