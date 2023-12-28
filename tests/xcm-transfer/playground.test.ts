@@ -16,4 +16,4 @@ const tests = [] as const
 
 export type TestType = (typeof tests)[number]
 
-buildTest(tests)
+buildTest(tests, import.meta.path)

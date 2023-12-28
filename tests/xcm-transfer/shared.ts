@@ -1,4 +1,3 @@
-import { beforeEach, describe, it } from 'bun:test'
 import { sendTransaction } from '@acala-network/chopsticks-testing'
 import _ from 'lodash'
 
@@ -18,7 +17,9 @@ type TestType =
   | PolkadotParaTestType
   | PlaygroundTestType
 
-export default function buildTest(tests: ReadonlyArray<TestType>) {
+export default function buildTest(tests: ReadonlyArray<TestType>, filename: string) {
+  const { beforeEach, describe, it } = (Bun as any).jest(filename) // workaround https://github.com/oven-sh/bun/issues/7873
+
   for (const { from, to, test, name, ...opt } of tests) {
     describe(`'${from}' -> '${to}' xcm transfer '${name}'`, async () => {
       let fromChain: Network
