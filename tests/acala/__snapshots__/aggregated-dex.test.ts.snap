@@ -1,34 +1,6 @@
-// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+// Bun Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`'acala' aggregatedDex > swapWithExactSupply > events 1`] = `
-[
-  {
-    "data": {
-      "liquidityChanges": [
-        "(number)",
-        "(number)",
-        "(number)",
-      ],
-      "path": [
-        {
-          "Token": "ACA",
-        },
-        {
-          "Token": "AUSD",
-        },
-        {
-          "Token": "LDOT",
-        },
-      ],
-      "trader": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
-    },
-    "method": "Swap",
-    "section": "dex",
-  },
-]
-`;
-
-exports[`'karura' aggregatedDex > swapWithExactSupply > events 1`] = `
+exports[`karura aggregatedDex' swapWithExactSupply: events 1`] = `
 [
   {
     "data": {
@@ -49,6 +21,34 @@ exports[`'karura' aggregatedDex > swapWithExactSupply > events 1`] = `
         },
       ],
       "trader": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "Swap",
+    "section": "dex",
+  },
+]
+`;
+
+exports[`acala aggregatedDex' swapWithExactSupply: events 1`] = `
+[
+  {
+    "data": {
+      "liquidityChanges": [
+        "(number)",
+        "(number)",
+        "(number)",
+      ],
+      "path": [
+        {
+          "Token": "ACA",
+        },
+        {
+          "Token": "AUSD",
+        },
+        {
+          "Token": "LDOT",
+        },
+      ],
+      "trader": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
     },
     "method": "Swap",
     "section": "dex",

@@ -1,4 +1,4 @@
-import { beforeEach, describe, it } from 'vitest'
+import { beforeEach, describe, it } from 'bun:test'
 import { sendTransaction } from '@acala-network/chopsticks-testing'
 import _ from 'lodash'
 
@@ -98,7 +98,7 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
             .redact({ number: precision })
             .toMatchSnapshot('balance on to chain')
           await checkSystemEvents(toChain, 'ump', 'messageQueue').toMatchSnapshot('to chain ump events')
-        })
+        }, 240000)
       }
 
       if ('xcmPalletDown' in test) {
@@ -120,7 +120,7 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
             .redact({ number: precision })
             .toMatchSnapshot('balance on to chain')
           await checkSystemEvents(toChain, 'parachainSystem', 'dmpQueue').toMatchSnapshot('to chain dmp events')
-        })
+        }, 240000)
       }
 
       if ('xcmPalletHorizontal' in test) {
@@ -153,7 +153,7 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
             .redact({ number: precision })
             .toMatchSnapshot('balance on to chain')
           await checkSystemEvents(toChain, 'xcmpQueue', 'dmpQueue').toMatchSnapshot('to chain xcm events')
-        })
+        }, 240000)
       }
 
       if ('xtokenstHorizontal' in test) {
@@ -185,7 +185,7 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
             .redact({ number: precision })
             .toMatchSnapshot('balance on to chain')
           await checkSystemEvents(toChain, 'xcmpQueue', 'dmpQueue').toMatchSnapshot('to chain xcm events')
-        })
+        }, 240000)
       }
     })
   }

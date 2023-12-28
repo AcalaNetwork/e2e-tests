@@ -16,13 +16,11 @@ jobs:
     - uses: actions/checkout@v4
       with:
         submodules: recursive
-    - name: Use Node.js
-      uses: actions/setup-node@v4
+    - uses: oven-sh/setup-bun@v1
       with:
-        node-version: 18.x
-        cache: 'yarn'
-    - run: yarn --immutable
-    - run: yarn lint
+        bun-version: latest
+    - run: bun install --frozen-lockfile
+    - run: bun lint
   tests:
     timeout-minutes: 30
     strategy:
@@ -34,17 +32,9 @@ jobs:
     - uses: actions/checkout@v4
       with:
         submodules: recursive
-    - name: setup node
-      uses: actions/setup-node@v4
+    - uses: oven-sh/setup-bun@v1
       with:
-        node-version: 18.x
-    - name: Setup yarn
-      run: npm install -g yarn
-    - name: setup node env
-      uses: actions/setup-node@v4
-      with:
-        node-version: 18.x
-        cache: 'yarn'
-    - run: yarn --immutable
-    - run: yarn update-env
-    - run: yarn test tests/${{ matrix.tests }}
+        bun-version: latest
+    - run: bun install --frozen-lockfile
+    - run: bun update-env
+    - run: bun test tests/${{ matrix.tests }}

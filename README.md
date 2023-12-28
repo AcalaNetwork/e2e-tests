@@ -7,13 +7,13 @@ Tests are powered by [Chopsticks](http://github.com/AcalaNetwork/chopsticks) to 
 ## Running tests
 
 All tests:
-`yarn test`
+`bun test`
 
 Run one test only:
-`yarn test ./tests/xcm-transfer/kusama-relay.test.ts`
+`bun test ./tests/xcm-transfer/kusama-relay.test.ts`
 
 Or you can just use a keywork since it is using vitest and use regex to find tests:
-`yarn test xcm`
+`bun test xcm`
 
 ## Check compatibility with upcoming runtime
 
@@ -27,7 +27,7 @@ This repo is using [vitest](https://vitest.dev) as the test runner. Most of the 
 
 There is [periodic check](https://github.com/AcalaNetwork/e2e-tests/actions/workflows/check.yml) Github Action to run the tests against latest mainnet block to detect compatibility issues with live networks.
 
-It is recommended use `yarn update-env` to update the `.env` file with latest block number before running the tests. This ensures tests are always running against the same blocks so that block data can be cached and reused to speed up test running time. Once you have a working test, update the blocks number again and rerun the tests to ensure the tests are block number indpendent. Use `redact` and event filters to make the snapshot be consistent regardless the block number.
+It is recommended use `bun update-env` to update the `.env` file with latest block number before running the tests. This ensures tests are always running against the same blocks so that block data can be cached and reused to speed up test running time. Once you have a working test, update the blocks number again and rerun the tests to ensure the tests are block number indpendent. Use `redact` and event filters to make the snapshot be consistent regardless the block number.
 
 ### Files
 
@@ -38,8 +38,7 @@ It is recommended use `yarn update-env` to update the `.env` file with latest bl
 ### Debugging Tips
 
 - Move the failed test to [playground.test.ts](./tests/xcm-transfer/playground.test.ts) to only run the failed test.
-- Use `yarn vitest` instead of `yarn test` to display logs.
-- Add `-u` to automatically update snapshots and use git diff tool to compare the changes.
+- Add `--update-snapshots` to automatically update snapshots and use git diff tool to compare the changes.
 - For failed CI tests, check the block numbers from the `update-env` steps in the logs to local `.env` file to be able to run the tests with the same block height.
 - Remove the system events filter to see all the events in snapshots.
 	- e.g. Replace `checkSystemEvents(toChain, 'parachainSystem', 'dmpQueue')` to `checkSystemEvents(toChain)`
@@ -126,7 +125,7 @@ DB_PATH=./db.sqlite
 
 Use specific block number for tests and db cache can signficantly improve test running speed.
 
-Run `yarn update-env` to update .env file with latest block number.
+Run `bun update-env` to update .env file with latest block number.
 
 To debug failing tests on CI, find the block number config from CI log and put them in .env to run the test with the same block height.
 
