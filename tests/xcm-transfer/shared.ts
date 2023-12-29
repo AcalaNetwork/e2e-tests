@@ -4,7 +4,6 @@ import _ from 'lodash'
 import { Network, NetworkNames, createContext, createNetworks } from '../../networks'
 import { check, checkEvents, checkHrmp, checkSystemEvents, checkUmp } from '../../helpers'
 
-import { afterEach } from 'bun:test'
 import type { TestType as KusamaParaTestType } from './kusama-para.test'
 import type { TestType as KusamaRelayTestType } from './kusama-relay.test'
 import type { TestType as PlaygroundTestType } from './playground.test'
@@ -19,7 +18,7 @@ type TestType =
   | PlaygroundTestType
 
 export default function buildTest(tests: ReadonlyArray<TestType>, filename: string) {
-  const { beforeEach, describe, it } = (Bun as any).jest(filename) // workaround https://github.com/oven-sh/bun/issues/7873
+  const { beforeEach, describe, it, afterEach } = (Bun as any).jest(filename) // workaround https://github.com/oven-sh/bun/issues/7873
 
   for (const { from, to, test, name, ...opt } of tests) {
     describe(`'${from}' -> '${to}' xcm transfer '${name}'`, async () => {
