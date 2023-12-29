@@ -4,6 +4,7 @@ import _ from 'lodash'
 import { Network, NetworkNames, createContext, createNetworks } from '../../networks'
 import { check, checkEvents, checkHrmp, checkSystemEvents, checkUmp } from '../../helpers'
 
+import { afterEach } from 'bun:test'
 import type { TestType as KusamaParaTestType } from './kusama-para.test'
 import type { TestType as KusamaRelayTestType } from './kusama-relay.test'
 import type { TestType as PlaygroundTestType } from './playground.test'
@@ -69,13 +70,13 @@ export default function buildTest(tests: ReadonlyArray<TestType>, filename: stri
           const override = typeof opt.toStorage === 'function' ? opt.toStorage(ctx) : opt.toStorage
           await toChain.dev.setStorage(override)
         }
+      })
 
-        return async () => {
-          await toChain.teardown()
-          await fromChain.teardown()
-          if (routeChain) {
-            await routeChain.teardown()
-          }
+      afterEach(async () => {
+        await toChain.teardown()
+        await fromChain.teardown()
+        if (routeChain) {
+          await routeChain.teardown()
         }
       })
 

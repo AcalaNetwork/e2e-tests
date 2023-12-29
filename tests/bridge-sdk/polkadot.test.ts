@@ -103,4 +103,4 @@ const tests = [
   // },
 ] as const
 
-buildTests(tests)
+buildTests(tests, import.meta.path)
