@@ -23,7 +23,7 @@ If there are expected breaking change, you can add a new network with the new ru
 
 ## Contributing
 
-This repo is using [vitest](https://vitest.dev) as the test runner. Most of the tests are written as [snapshot tests](https://vitest.dev/guide/snapshot.html). The test will run and save the result as snapshot in a `.snap` file, and next time when the test runs again, it will compare the result with the snapshot. This eliminates the need to write assertions and make the test more readable.
+This repo is using [bun test](https://bun.sh/docs/cli/test) as the test runner. Most of the tests are written as [snapshot tests](https://bun.sh/guides/test/snapshot). The test will run and save the result as snapshot in a `.snap` file, and next time when the test runs again, it will compare the result with the snapshot. This eliminates the need to write assertions and make the test more readable.
 
 There is [periodic check](https://github.com/AcalaNetwork/e2e-tests/actions/workflows/check.yml) Github Action to run the tests against latest mainnet block to detect compatibility issues with live networks.
 
