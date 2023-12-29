@@ -297,3 +297,103 @@ exports[`'karura' to 'khala' using bridgeSDK cross-chain 'KUSD' parachain bridge
 `;
 
 exports[`'karura' to 'khala' using bridgeSDK cross-chain 'KUSD' parachain bridge to releaychain Cross-chain using BridgeSDK works: fee 1`] = `"(rounded 0.008)"`;
+
+exports[`'karura' to 'kintsugi' using bridgeSDK cross-chain 'KINT' parachain bridge to releaychain Cross-chain using BridgeSDK works: initial 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 1000,
+  "toChain": 1000,
+}
+`;
+
+exports[`'karura' to 'kintsugi' using bridgeSDK cross-chain 'KINT' parachain bridge to releaychain Cross-chain using BridgeSDK works: after 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 998,
+  "toChain": "(rounded 1000)",
+}
+`;
+
+exports[`'karura' to 'kintsugi' using bridgeSDK cross-chain 'KINT' parachain bridge to releaychain Cross-chain using BridgeSDK works: fee 1`] = `"(rounded 0.0002)"`;
+
+exports[`'kintsugi' to 'karura' using bridgeSDK cross-chain 'KINT' parachain bridge to releaychain Cross-chain using BridgeSDK works: initial 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 1000,
+  "toChain": 0,
+}
+`;
+
+exports[`'kintsugi' to 'karura' using bridgeSDK cross-chain 'KINT' parachain bridge to releaychain Cross-chain using BridgeSDK works: after 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": "(rounded 998)",
+  "toChain": "(rounded 2)",
+}
+`;
+
+exports[`'kintsugi' to 'karura' using bridgeSDK cross-chain 'KINT' parachain bridge to releaychain Cross-chain using BridgeSDK works: fee 1`] = `"(rounded 0.0002)"`;
+
+exports[`'karura' to 'kintsugi' using bridgeSDK cross-chain 'LKSM' parachain bridge to releaychain Cross-chain using BridgeSDK works: initial 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 100,
+  "toChain": 100,
+}
+`;
+
+exports[`'karura' to 'kintsugi' using bridgeSDK cross-chain 'LKSM' parachain bridge to releaychain Cross-chain using BridgeSDK works: after 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 98,
+  "toChain": "(rounded 102)",
+}
+`;
+
+exports[`'karura' to 'kintsugi' using bridgeSDK cross-chain 'LKSM' parachain bridge to releaychain Cross-chain using BridgeSDK works: fee 1`] = `"(rounded 0.0002)"`;
+
+exports[`'kintsugi' to 'karura' using bridgeSDK cross-chain 'LKSM' parachain bridge to releaychain Cross-chain using BridgeSDK works: initial 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 100,
+  "toChain": 100,
+}
+`;
+
+exports[`'kintsugi' to 'karura' using bridgeSDK cross-chain 'LKSM' parachain bridge to releaychain Cross-chain using BridgeSDK works: after 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 98,
+  "toChain": "(rounded 102)",
+}
+`;
+
+exports[`'kintsugi' to 'karura' using bridgeSDK cross-chain 'LKSM' parachain bridge to releaychain Cross-chain using BridgeSDK works: fee 1`] = `"(rounded 0.0002)"`;
+
+exports[`'karura' to 'moonriver' using bridgeSDK cross-chain 'KAR' parachain bridge to releaychain Cross-chain using BridgeSDK works: initial 1`] = `
+{
+  "address": "0x4E7440dB498561A46AAa82b9Bc7d2D5162b5c27B",
+  "decimals": 18,
+  "fromChain": 10,
+  "toChain": 0.09012,
+}
+`;
+
+exports[`'karura' to 'moonriver' using bridgeSDK cross-chain 'KAR' parachain bridge to releaychain Cross-chain using BridgeSDK works: after 1`] = `
+{
+  "address": "0x4E7440dB498561A46AAa82b9Bc7d2D5162b5c27B",
+  "decimals": 18,
+  "fromChain": "(rounded 8)",
+  "toChain": "(rounded 2.06)",
+}
+`;
+
+exports[`'karura' to 'moonriver' using bridgeSDK cross-chain 'KAR' parachain bridge to releaychain Cross-chain using BridgeSDK works: fee 1`] = `"(rounded 0.03)"`;

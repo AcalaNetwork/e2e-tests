@@ -37,16 +37,16 @@ const tests = [
     to: 'karura',
     token: 'BSX',
   },
-  // {
-  //   from: 'karura',
-  //   to: 'basilisk',
-  //   token: 'KUSD',
-  // },
-  // {
-  //   from: 'karura',
-  //   to: 'moonriver',
-  //   token: 'KAR',
-  // },
+  {
+    from: 'karura',
+    to: 'basilisk',
+    token: 'BSX',
+  },
+  {
+    from: 'karura',
+    to: 'moonriver',
+    token: 'KAR',
+  },
   {
     from: 'karura',
     to: 'bifrost',
@@ -87,26 +87,26 @@ const tests = [
   //   to: 'shiden',
   //   token: 'KUSD',
   // },
-  // {
-  //   from: 'karura',
-  //   to: 'kintsugi',
-  //   token: 'KINT',
-  // },
-  // {
-  //   from: 'kintsugi',
-  //   to: 'karura',
-  //   token: 'KINT',
-  // },
-  // {
-  //   from: 'karura',
-  //   to: 'kintsugi',
-  //   token: 'LKSM',
-  // },
-  // {
-  //   from: 'kintsugi',
-  //   to: 'karura',
-  //   token: 'LKSM',
-  // },
+  {
+    from: 'karura',
+    to: 'kintsugi',
+    token: 'KINT',
+  },
+  {
+    from: 'kintsugi',
+    to: 'karura',
+    token: 'KINT',
+  },
+  {
+    from: 'karura',
+    to: 'kintsugi',
+    token: 'LKSM',
+  },
+  {
+    from: 'kintsugi',
+    to: 'karura',
+    token: 'LKSM',
+  },
   // // btc
   // // {
   // //   from: 'karura',

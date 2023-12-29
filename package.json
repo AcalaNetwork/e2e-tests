@@ -12,8 +12,8 @@
 		"@polkadot/api": "^10.11.1"
 	},
 	"dependencies": {
-		"@acala-network/chopsticks": "^0.9.5-3",
-		"@acala-network/chopsticks-testing": "^0.9.5-3",
+		"@acala-network/chopsticks": "^0.9.6-1",
+		"@acala-network/chopsticks-testing": "^0.9.6-1",
 		"@acala-network/sdk": "^4.1.9-10",
 		"@acala-network/sdk-core": "^4.1.9-10",
 		"@polkadot/api": "^10.11.1",

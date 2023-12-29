@@ -49,6 +49,7 @@ for (const def of Object.values(networkDefs)) {
         endpoint: process.env[`${upperName}_ENDPOINT`] ?? endpoint,
         db: process.env.DB_PATH,
         port: 0,
+        allowUnresolvedImports: true,
         ...setupConfig.options,
         ...options,
       }
