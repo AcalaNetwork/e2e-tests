@@ -48,6 +48,7 @@ for (const def of Object.values(networkDefs)) {
         blockNumber: toNumber(process.env[`${upperName}_BLOCK_NUMBER`]),
         endpoint: process.env[`${upperName}_ENDPOINT`] ?? endpoint,
         db: process.env.DB_PATH,
+        port: 0,
         ...setupConfig.options,
         ...options,
       }

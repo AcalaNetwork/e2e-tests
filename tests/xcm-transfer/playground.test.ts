@@ -1,5 +1,3 @@
-import { it } from 'vitest'
-
 // import { Context } from '../../networks/types'
 // import { query, tx } from '../../helpers/api'
 
@@ -18,6 +16,4 @@ const tests = [] as const
 
 export type TestType = (typeof tests)[number]
 
-buildTest(tests)
-
-it('makes vitest happy when no tests in ths file', () => {})
+buildTest(tests, import.meta.path)

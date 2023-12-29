@@ -1,23 +1,27 @@
-import { AcalaAdapter, KaruraAdapter } from '@polkawallet/bridge/adapters/acala'
-import { AltairAdapter } from '@polkawallet/bridge/adapters/centrifuge'
 import { ApiPromise } from '@polkadot/api'
+
+import { FixedPointNumber } from '@acala-network/sdk-core'
+import { sendTransaction, testingPairs } from '@acala-network/chopsticks-testing'
+
+import { AcalaAdapter } from '@polkawallet/bridge/adapters/acala/acala'
+import { AltairAdapter } from '@polkawallet/bridge/adapters/centrifuge'
 import { AstarAdapter, ShidenAdapter } from '@polkawallet/bridge/adapters/astar'
 import { BasiliskAdapter } from '@polkawallet/bridge/adapters/hydradx'
 import { BifrostAdapter } from '@polkawallet/bridge/adapters/bifrost'
 import { Bridge } from '@polkawallet/bridge'
 import { CrabAdapter } from '@polkawallet/bridge/adapters/darwinia'
-import { FixedPointNumber } from '@acala-network/sdk-core'
 import { HeikoAdapter, ParallelAdapter } from '@polkawallet/bridge/adapters/parallel'
 import { InterlayAdapter, KintsugiAdapter } from '@polkawallet/bridge/adapters/interlay'
+import { KaruraAdapter } from '@polkawallet/bridge/adapters/acala'
 import { KhalaAdapter } from '@polkawallet/bridge/adapters/phala'
 import { KusamaAdapter, PolkadotAdapter } from '@polkawallet/bridge/adapters/polkadot'
 import { MoonbeamAdapter, MoonriverAdapter } from '@polkawallet/bridge/adapters/moonbeam'
-import { Network, NetworkNames, createNetworks } from '../../networks'
 import { QuartzAdapter, UniqueAdapter } from '@polkawallet/bridge/adapters/unique'
 import { ShadowAdapter } from '@polkawallet/bridge/adapters/crust'
 import { StatemineAdapter, StatemintAdapter } from '@polkawallet/bridge/adapters/statemint'
-import { beforeEach, describe, expect, it } from 'vitest'
-import { check, sendTransaction, testingPairs } from '@acala-network/chopsticks-testing'
+
+import { Network, NetworkNames, createNetworks } from '../../networks'
+import { check } from '../../helpers'
 
 export type TestTtype = {
   from: NetworkNames
@@ -26,7 +30,9 @@ export type TestTtype = {
   ignoreFee?: boolean
 }
 
-export const buildTests = (tests: ReadonlyArray<TestTtype>) => {
+export const buildTests = (tests: ReadonlyArray<TestTtype>, filename: string) => {
+  const { beforeEach, afterEach, expect, describe, it } = (Bun as any).jest(filename) // workaround https://github.com/oven-sh/bun/issues/7873
+
   for (const { from, to, token, ignoreFee } of tests) {
     describe(`'${from}' to '${to}' using bridgeSDK cross-chain '${token}'`, async () => {
       let fromchain: Network
@@ -76,11 +82,11 @@ export const buildTests = (tests: ReadonlyArray<TestTtype>) => {
           }
           tochain = tochain1
           fromchain = fromchain1
+        })
 
-          return async () => {
-            await tochain.teardown()
-            await fromchain.teardown()
-          }
+        afterEach(async () => {
+          await tochain.teardown()
+          await fromchain.teardown()
         })
 
         async function sleep(ms: number) {
@@ -181,7 +187,7 @@ export const buildTests = (tests: ReadonlyArray<TestTtype>) => {
             const fee = amount.toNumber() - (chainBalanceNow.toChain - chainBalanceInitial.toChain)
             await check(fee).redact({ number: 1 }).toMatchSnapshot('fee')
           }
-        })
+        }, 300000)
       })
     })
   }

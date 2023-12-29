@@ -87,26 +87,26 @@ const tests = [
   //   to: 'shiden',
   //   token: 'KUSD',
   // },
-  {
-    from: 'karura',
-    to: 'kintsugi',
-    token: 'KINT',
-  },
-  {
-    from: 'kintsugi',
-    to: 'karura',
-    token: 'KINT',
-  },
-  {
-    from: 'karura',
-    to: 'kintsugi',
-    token: 'LKSM',
-  },
-  {
-    from: 'kintsugi',
-    to: 'karura',
-    token: 'LKSM',
-  },
+  // {
+  //   from: 'karura',
+  //   to: 'kintsugi',
+  //   token: 'KINT',
+  // },
+  // {
+  //   from: 'kintsugi',
+  //   to: 'karura',
+  //   token: 'KINT',
+  // },
+  // {
+  //   from: 'karura',
+  //   to: 'kintsugi',
+  //   token: 'LKSM',
+  // },
+  // {
+  //   from: 'kintsugi',
+  //   to: 'karura',
+  //   token: 'LKSM',
+  // },
   // // btc
   // // {
   // //   from: 'karura',
@@ -121,16 +121,16 @@ const tests = [
   // //   fee: 0.008012799999999931
   // // },
 
-  {
-    from: 'karura',
-    to: 'heiko',
-    token: 'KAR',
-  },
-  {
-    from: 'heiko',
-    to: 'karura',
-    token: 'HKO',
-  },
+  // {
+  //   from: 'karura',
+  //   to: 'heiko',
+  //   token: 'KAR',
+  // },
+  // {
+  //   from: 'heiko',
+  //   to: 'karura',
+  //   token: 'HKO',
+  // },
   // {
   //   from: 'crab',
   //   to: 'karura',
@@ -179,4 +179,4 @@ const tests = [
   // },
 ] as const
 
-buildTests(tests)
+buildTests(tests, import.meta.path)

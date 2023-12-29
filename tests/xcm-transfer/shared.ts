@@ -1,4 +1,3 @@
-import { beforeEach, describe, it } from 'vitest'
 import { sendTransaction } from '@acala-network/chopsticks-testing'
 import _ from 'lodash'
 
@@ -18,7 +17,9 @@ type TestType =
   | PolkadotParaTestType
   | PlaygroundTestType
 
-export default function buildTest(tests: ReadonlyArray<TestType>) {
+export default function buildTest(tests: ReadonlyArray<TestType>, filename: string) {
+  const { beforeEach, describe, it, afterEach } = (Bun as any).jest(filename) // workaround https://github.com/oven-sh/bun/issues/7873
+
   for (const { from, to, test, name, ...opt } of tests) {
     describe(`'${from}' -> '${to}' xcm transfer '${name}'`, async () => {
       let fromChain: Network
@@ -68,13 +69,13 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
           const override = typeof opt.toStorage === 'function' ? opt.toStorage(ctx) : opt.toStorage
           await toChain.dev.setStorage(override)
         }
+      })
 
-        return async () => {
-          await toChain.teardown()
-          await fromChain.teardown()
-          if (routeChain) {
-            await routeChain.teardown()
-          }
+      afterEach(async () => {
+        await toChain.teardown()
+        await fromChain.teardown()
+        if (routeChain) {
+          await routeChain.teardown()
         }
       })
 
@@ -98,7 +99,7 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
             .redact({ number: precision })
             .toMatchSnapshot('balance on to chain')
           await checkSystemEvents(toChain, 'ump', 'messageQueue').toMatchSnapshot('to chain ump events')
-        })
+        }, 240000)
       }
 
       if ('xcmPalletDown' in test) {
@@ -120,7 +121,7 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
             .redact({ number: precision })
             .toMatchSnapshot('balance on to chain')
           await checkSystemEvents(toChain, 'parachainSystem', 'dmpQueue').toMatchSnapshot('to chain dmp events')
-        })
+        }, 240000)
       }
 
       if ('xcmPalletHorizontal' in test) {
@@ -153,7 +154,7 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
             .redact({ number: precision })
             .toMatchSnapshot('balance on to chain')
           await checkSystemEvents(toChain, 'xcmpQueue', 'dmpQueue').toMatchSnapshot('to chain xcm events')
-        })
+        }, 240000)
       }
 
       if ('xtokenstHorizontal' in test) {
@@ -185,7 +186,7 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
             .redact({ number: precision })
             .toMatchSnapshot('balance on to chain')
           await checkSystemEvents(toChain, 'xcmpQueue', 'dmpQueue').toMatchSnapshot('to chain xcm events')
-        })
+        }, 240000)
       }
     })
   }

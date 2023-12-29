@@ -1,6 +1,6 @@
-// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+// Bun Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`'acala' -> 'polkadot' xcm transfer 'DOT wiht limited weight' > xtokens transfer > balance on from chain 1`] = `
+exports[`'acala' -> 'polkadot' xcm transfer 'DOT' xtokens transfer: balance on from chain 1`] = `
 {
   "free": 9000000000000,
   "frozen": 0,
@@ -8,116 +8,7 @@ exports[`'acala' -> 'polkadot' xcm transfer 'DOT wiht limited weight' > xtokens 
 }
 `;
 
-exports[`'acala' -> 'polkadot' xcm transfer 'DOT wiht limited weight' > xtokens transfer > balance on to chain 1`] = `
-{
-  "consumers": 0,
-  "data": {
-    "flags": "0x80000000000000000000000000000000",
-    "free": "(rounded 11000000000000)",
-    "frozen": 0,
-    "reserved": 0,
-  },
-  "nonce": 0,
-  "providers": 1,
-  "sufficients": 0,
-}
-`;
-
-exports[`'acala' -> 'polkadot' xcm transfer 'DOT wiht limited weight' > xtokens transfer > from chain ump messages 1`] = `
-[
-  {
-    "v2": [
-      {
-        "withdrawAsset": [
-          {
-            "fun": {
-              "fungible": 1000000000000,
-            },
-            "id": {
-              "concrete": {
-                "interior": {
-                  "here": null,
-                },
-                "parents": 0,
-              },
-            },
-          },
-        ],
-      },
-      {
-        "clearOrigin": null,
-      },
-      {
-        "buyExecution": {
-          "fees": {
-            "fun": {
-              "fungible": 1000000000000,
-            },
-            "id": {
-              "concrete": {
-                "interior": {
-                  "here": null,
-                },
-                "parents": 0,
-              },
-            },
-          },
-          "weightLimit": {
-            "limited": 5000000000,
-          },
-        },
-      },
-      {
-        "depositAsset": {
-          "assets": {
-            "wild": {
-              "all": null,
-            },
-          },
-          "beneficiary": {
-            "interior": {
-              "x1": {
-                "accountId32": {
-                  "id": "0x88dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee",
-                  "network": {
-                    "any": null,
-                  },
-                },
-              },
-            },
-            "parents": 0,
-          },
-          "maxAssets": 1,
-        },
-      },
-    ],
-  },
-]
-`;
-
-exports[`'acala' -> 'polkadot' xcm transfer 'DOT wiht limited weight' > xtokens transfer > to chain ump events 1`] = `
-[
-  {
-    "data": {
-      "id": "(hash)",
-      "origin": {
-        "Ump": {
-          "Para": 2000,
-        },
-      },
-      "success": true,
-      "weightUsed": {
-        "proofSize": "(rounded 7200)",
-        "refTime": "(rounded 270000000)",
-      },
-    },
-    "method": "Processed",
-    "section": "messageQueue",
-  },
-]
-`;
-
-exports[`'acala' -> 'polkadot' xcm transfer 'DOT wiht limited weight' > xtokens transfer > tx events 1`] = `
+exports[`'acala' -> 'polkadot' xcm transfer 'DOT' xtokens transfer: tx events 1`] = `
 [
   {
     "data": {
@@ -164,30 +55,7 @@ exports[`'acala' -> 'polkadot' xcm transfer 'DOT wiht limited weight' > xtokens 
 ]
 `;
 
-exports[`'acala' -> 'polkadot' xcm transfer 'DOT' > xtokens transfer > balance on from chain 1`] = `
-{
-  "free": 9000000000000,
-  "frozen": 0,
-  "reserved": 0,
-}
-`;
-
-exports[`'acala' -> 'polkadot' xcm transfer 'DOT' > xtokens transfer > balance on to chain 1`] = `
-{
-  "consumers": 0,
-  "data": {
-    "flags": "0x80000000000000000000000000000000",
-    "free": "(rounded 11000000000000)",
-    "frozen": 0,
-    "reserved": 0,
-  },
-  "nonce": 0,
-  "providers": 1,
-  "sufficients": 0,
-}
-`;
-
-exports[`'acala' -> 'polkadot' xcm transfer 'DOT' > xtokens transfer > from chain ump messages 1`] = `
+exports[`'acala' -> 'polkadot' xcm transfer 'DOT' xtokens transfer: from chain ump messages 1`] = `
 [
   {
     "v2": [
@@ -259,7 +127,22 @@ exports[`'acala' -> 'polkadot' xcm transfer 'DOT' > xtokens transfer > from chai
 ]
 `;
 
-exports[`'acala' -> 'polkadot' xcm transfer 'DOT' > xtokens transfer > to chain ump events 1`] = `
+exports[`'acala' -> 'polkadot' xcm transfer 'DOT' xtokens transfer: balance on to chain 1`] = `
+{
+  "consumers": 0,
+  "data": {
+    "flags": "0x80000000000000000000000000000000",
+    "free": "(rounded 11000000000000)",
+    "frozen": 0,
+    "reserved": 0,
+  },
+  "nonce": 0,
+  "providers": 1,
+  "sufficients": 0,
+}
+`;
+
+exports[`'acala' -> 'polkadot' xcm transfer 'DOT' xtokens transfer: to chain ump events 1`] = `
 [
   {
     "data": {
@@ -281,7 +164,15 @@ exports[`'acala' -> 'polkadot' xcm transfer 'DOT' > xtokens transfer > to chain 
 ]
 `;
 
-exports[`'acala' -> 'polkadot' xcm transfer 'DOT' > xtokens transfer > tx events 1`] = `
+exports[`'acala' -> 'polkadot' xcm transfer 'DOT wiht limited weight' xtokens transfer: balance on from chain 1`] = `
+{
+  "free": 9000000000000,
+  "frozen": 0,
+  "reserved": 0,
+}
+`;
+
+exports[`'acala' -> 'polkadot' xcm transfer 'DOT wiht limited weight' xtokens transfer: tx events 1`] = `
 [
   {
     "data": {
@@ -328,7 +219,116 @@ exports[`'acala' -> 'polkadot' xcm transfer 'DOT' > xtokens transfer > tx events
 ]
 `;
 
-exports[`'polkadot' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > balance on from chain 1`] = `
+exports[`'acala' -> 'polkadot' xcm transfer 'DOT wiht limited weight' xtokens transfer: from chain ump messages 1`] = `
+[
+  {
+    "v2": [
+      {
+        "withdrawAsset": [
+          {
+            "fun": {
+              "fungible": 1000000000000,
+            },
+            "id": {
+              "concrete": {
+                "interior": {
+                  "here": null,
+                },
+                "parents": 0,
+              },
+            },
+          },
+        ],
+      },
+      {
+        "clearOrigin": null,
+      },
+      {
+        "buyExecution": {
+          "fees": {
+            "fun": {
+              "fungible": 1000000000000,
+            },
+            "id": {
+              "concrete": {
+                "interior": {
+                  "here": null,
+                },
+                "parents": 0,
+              },
+            },
+          },
+          "weightLimit": {
+            "limited": 5000000000,
+          },
+        },
+      },
+      {
+        "depositAsset": {
+          "assets": {
+            "wild": {
+              "all": null,
+            },
+          },
+          "beneficiary": {
+            "interior": {
+              "x1": {
+                "accountId32": {
+                  "id": "0x88dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee",
+                  "network": {
+                    "any": null,
+                  },
+                },
+              },
+            },
+            "parents": 0,
+          },
+          "maxAssets": 1,
+        },
+      },
+    ],
+  },
+]
+`;
+
+exports[`'acala' -> 'polkadot' xcm transfer 'DOT wiht limited weight' xtokens transfer: balance on to chain 1`] = `
+{
+  "consumers": 0,
+  "data": {
+    "flags": "0x80000000000000000000000000000000",
+    "free": "(rounded 11000000000000)",
+    "frozen": 0,
+    "reserved": 0,
+  },
+  "nonce": 0,
+  "providers": 1,
+  "sufficients": 0,
+}
+`;
+
+exports[`'acala' -> 'polkadot' xcm transfer 'DOT wiht limited weight' xtokens transfer: to chain ump events 1`] = `
+[
+  {
+    "data": {
+      "id": "(hash)",
+      "origin": {
+        "Ump": {
+          "Para": 2000,
+        },
+      },
+      "success": true,
+      "weightUsed": {
+        "proofSize": "(rounded 7200)",
+        "refTime": "(rounded 270000000)",
+      },
+    },
+    "method": "Processed",
+    "section": "messageQueue",
+  },
+]
+`;
+
+exports[`'polkadot' -> 'acala' xcm transfer 'DOT' xcmPallet transfer: balance on from chain 1`] = `
 {
   "consumers": 0,
   "data": {
@@ -343,7 +343,24 @@ exports[`'polkadot' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > balance
 }
 `;
 
-exports[`'polkadot' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > balance on to chain 1`] = `
+exports[`'polkadot' -> 'acala' xcm transfer 'DOT' xcmPallet transfer: tx events 1`] = `
+[
+  {
+    "data": {
+      "outcome": {
+        "Complete": {
+          "proofSize": "(rounded 6200)",
+          "refTime": "(rounded 686000000)",
+        },
+      },
+    },
+    "method": "Attempted",
+    "section": "xcmPallet",
+  },
+]
+`;
+
+exports[`'polkadot' -> 'acala' xcm transfer 'DOT' xcmPallet transfer: balance on to chain 1`] = `
 {
   "free": "(rounded 11000000000000)",
   "frozen": 0,
@@ -351,7 +368,7 @@ exports[`'polkadot' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > balance
 }
 `;
 
-exports[`'polkadot' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > to chain dmp events 1`] = `
+exports[`'polkadot' -> 'acala' xcm transfer 'DOT' xcmPallet transfer: to chain dmp events 1`] = `
 [
   {
     "data": {
@@ -388,7 +405,22 @@ exports[`'polkadot' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > to chai
 ]
 `;
 
-exports[`'polkadot' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > tx events 1`] = `
+exports[`'polkadot' -> 'astar' xcm transfer 'DOT' xcmPallet transfer: balance on from chain 1`] = `
+{
+  "consumers": 0,
+  "data": {
+    "flags": "0x80000000000000000000000000000000",
+    "free": "(rounded 9000000000000)",
+    "frozen": 0,
+    "reserved": 0,
+  },
+  "nonce": 1,
+  "providers": 1,
+  "sufficients": 0,
+}
+`;
+
+exports[`'polkadot' -> 'astar' xcm transfer 'DOT' xcmPallet transfer: tx events 1`] = `
 [
   {
     "data": {
@@ -405,22 +437,7 @@ exports[`'polkadot' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > tx even
 ]
 `;
 
-exports[`'polkadot' -> 'astar' xcm transfer 'DOT' > xcmPallet transfer > balance on from chain 1`] = `
-{
-  "consumers": 0,
-  "data": {
-    "flags": "0x80000000000000000000000000000000",
-    "free": "(rounded 9000000000000)",
-    "frozen": 0,
-    "reserved": 0,
-  },
-  "nonce": 1,
-  "providers": 1,
-  "sufficients": 0,
-}
-`;
-
-exports[`'polkadot' -> 'astar' xcm transfer 'DOT' > xcmPallet transfer > balance on to chain 1`] = `
+exports[`'polkadot' -> 'astar' xcm transfer 'DOT' xcmPallet transfer: balance on to chain 1`] = `
 {
   "balance": "(rounded 11000000000000)",
   "extra": null,
@@ -431,7 +448,7 @@ exports[`'polkadot' -> 'astar' xcm transfer 'DOT' > xcmPallet transfer > balance
 }
 `;
 
-exports[`'polkadot' -> 'astar' xcm transfer 'DOT' > xcmPallet transfer > to chain dmp events 1`] = `
+exports[`'polkadot' -> 'astar' xcm transfer 'DOT' xcmPallet transfer: to chain dmp events 1`] = `
 [
   {
     "data": {
@@ -463,23 +480,6 @@ exports[`'polkadot' -> 'astar' xcm transfer 'DOT' > xcmPallet transfer > to chai
     },
     "method": "DownwardMessagesProcessed",
     "section": "parachainSystem",
-  },
-]
-`;
-
-exports[`'polkadot' -> 'astar' xcm transfer 'DOT' > xcmPallet transfer > tx events 1`] = `
-[
-  {
-    "data": {
-      "outcome": {
-        "Complete": {
-          "proofSize": "(rounded 6200)",
-          "refTime": "(rounded 686000000)",
-        },
-      },
-    },
-    "method": "Attempted",
-    "section": "xcmPallet",
   },
 ]
 `;
