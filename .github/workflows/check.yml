@@ -15,11 +15,14 @@ jobs:
         fail-fast: false
         matrix:
           tests: [xcm-transfer, acala, bridge-sdk]
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted]
     steps:
     - uses: actions/checkout@v4
       with:
         submodules: recursive
+    - uses: actions/setup-node@v4
+      with:
+        node-version: 18
     - uses: oven-sh/setup-bun@v1
       with:
         bun-version: latest
