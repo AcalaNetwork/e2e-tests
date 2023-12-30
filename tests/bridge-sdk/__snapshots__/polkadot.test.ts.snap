@@ -80,6 +80,46 @@ exports[`'statemint' to 'polkadot' using bridgeSDK cross-chain 'DOT' parachain b
 
 exports[`'statemint' to 'polkadot' using bridgeSDK cross-chain 'DOT' parachain bridge to releaychain Cross-chain using BridgeSDK works: fee 1`] = `"(rounded 0.003)"`;
 
+exports[`'acala' to 'moonbeam' using bridgeSDK cross-chain 'AUSD' parachain bridge to releaychain Cross-chain using BridgeSDK works: initial 1`] = `
+{
+  "address": "0x4E7440dB498561A46AAa82b9Bc7d2D5162b5c27B",
+  "decimals": 18,
+  "fromChain": 10,
+  "toChain": 0,
+}
+`;
+
+exports[`'acala' to 'moonbeam' using bridgeSDK cross-chain 'AUSD' parachain bridge to releaychain Cross-chain using BridgeSDK works: after 1`] = `
+{
+  "address": "0x4E7440dB498561A46AAa82b9Bc7d2D5162b5c27B",
+  "decimals": 18,
+  "fromChain": 8,
+  "toChain": "(rounded 1.98)",
+}
+`;
+
+exports[`'acala' to 'moonbeam' using bridgeSDK cross-chain 'AUSD' parachain bridge to releaychain Cross-chain using BridgeSDK works: fee 1`] = `"(rounded 0.02)"`;
+
+exports[`'astar' to 'acala' using bridgeSDK cross-chain 'AUSD' parachain bridge to releaychain Cross-chain using BridgeSDK works: initial 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 10,
+  "toChain": 1000,
+}
+`;
+
+exports[`'astar' to 'acala' using bridgeSDK cross-chain 'AUSD' parachain bridge to releaychain Cross-chain using BridgeSDK works: after 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 8,
+  "toChain": "(rounded 1000)",
+}
+`;
+
+exports[`'astar' to 'acala' using bridgeSDK cross-chain 'AUSD' parachain bridge to releaychain Cross-chain using BridgeSDK works: fee 1`] = `"(rounded 0.0007)"`;
+
 exports[`'acala' to 'astar' using bridgeSDK cross-chain 'AUSD' parachain bridge to releaychain Cross-chain using BridgeSDK works: initial 1`] = `
 {
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
