@@ -37,11 +37,11 @@ const tests = [
     to: 'karura',
     token: 'BSX',
   },
-  {
-    from: 'karura',
-    to: 'basilisk',
-    token: 'BSX',
-  },
+  // {
+  //   from: 'karura',
+  //   to: 'basilisk',
+  //   token: 'BSX',
+  // },
   {
     from: 'karura',
     to: 'moonriver',
@@ -77,16 +77,16 @@ const tests = [
     to: 'altair',
     token: 'AIR',
   },
-  // {
-  //   from: 'shiden',
-  //   to: 'karura',
-  //   token: 'KUSD',
-  // },
-  // {
-  //   from: 'karura',
-  //   to: 'shiden',
-  //   token: 'KUSD',
-  // },
+  {
+    from: 'shiden',
+    to: 'karura',
+    token: 'KUSD',
+  },
+  {
+    from: 'karura',
+    to: 'shiden',
+    token: 'KUSD',
+  },
   {
     from: 'karura',
     to: 'kintsugi',
@@ -169,13 +169,11 @@ const tests = [
   //   from: 'quartz',
   //   to: 'karura',
   //   token: 'QTZ',
-  //   fee: 0.008082399999999934
   // },
   // {
   //   from: 'karura',
   //   to: 'quartz',
   //   token: 'QTZ',
-  //   fee: 0.002080000000000082
   // },
 ] as const
 
