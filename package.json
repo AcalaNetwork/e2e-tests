@@ -30,7 +30,7 @@
 		"bun-types": "latest",
 		"eslint": "^8.54.0",
 		"eslint-config-prettier": "^9.0.0",
-		"eslint-import-resolver-typescript-bun": "^0.0.58",
+		"eslint-import-resolver-typescript-bun": "^0.0.70",
 		"eslint-plugin-import": "^2.29.0",
 		"eslint-plugin-sort-imports-es6-autofix": "^0.6.0",
 		"husky": "^8.0.3",
