@@ -1,7 +1,7 @@
 extensions:
   client:
     endpoints:
-      - wss://rpc.parallel.fi:443
+      - wss://parallel-rpc.dwellir.com
   event_bus:
   substrate_api:
     stale_timeout_seconds: 60
