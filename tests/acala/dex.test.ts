@@ -1,11 +1,12 @@
-import { afterAll, beforeEach, describe, it } from 'bun:test'
 import { sendTransaction, testingPairs } from '@acala-network/chopsticks-testing'
 
-import { checkEvents } from '../../helpers'
+import { checkEvents, jest } from '../../helpers'
 import { createNetworks } from '../../networks'
 
 import { acala, karura } from '../../networks/acala'
 import { query } from '../../helpers/api'
+
+const { beforeEach, afterAll, describe, it } = jest(import.meta.path)
 
 for (const { name, swapPair } of [
   {
@@ -78,7 +79,7 @@ for (const { name, swapPair } of [
         await checkEvents(tx1, 'dex', 'incentives', 'tokens')
           .redact({ number: true })
           .toMatchSnapshot('removeLiquidity')
-      }, 120000)
+      })
     }
   })
 }

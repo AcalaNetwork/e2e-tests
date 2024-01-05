@@ -1,11 +1,11 @@
-import { afterEach, beforeEach, describe, it } from 'bun:test'
-import { bnToHex } from '@polkadot/util'
 import { sendTransaction } from '@acala-network/chopsticks-testing'
 
 import { Network, createContext, createNetworks } from '../../networks'
-import { checkEvents } from '../../helpers'
+import { checkEvents, jest } from '../../helpers'
 
 import { acala, karura } from '../../networks/acala'
+
+const { beforeEach, afterEach, describe, it } = jest(import.meta.path)
 
 for (const { name, swapPath } of [
   {
@@ -46,13 +46,12 @@ for (const { name, swapPath } of [
       const toBondPool: bigint = ((await apiAt.query.homa.toBondPool()) as any).toBigInt()
       await chain.dev.setStorage({
         Homa: {
-          toBondPool: bnToHex(toBondPool + 10n * 10n ** 10n, { bitLength: 128, isLe: true }),
+          toBondPool: toBondPool + 10n * 10n ** 10n,
         },
       })
     })
 
     afterEach(async () => {
-      console.log('teardown')
       await chain.teardown()
     })
 
@@ -64,6 +63,6 @@ for (const { name, swapPath } of [
       await chain.chain.newBlock()
 
       await checkEvents(tx, 'dex').redact({ number: true }).toMatchSnapshot()
-    }, 120000)
+    })
   })
 }
