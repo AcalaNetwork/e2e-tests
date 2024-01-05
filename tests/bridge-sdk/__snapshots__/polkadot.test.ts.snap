@@ -118,7 +118,7 @@ exports[`'astar' to 'acala' using bridgeSDK cross-chain 'AUSD' parachain bridge 
 }
 `;
 
-exports[`'astar' to 'acala' using bridgeSDK cross-chain 'AUSD' parachain bridge to releaychain Cross-chain using BridgeSDK works: fee 1`] = `"(rounded 0.0007)"`;
+exports[`'astar' to 'acala' using bridgeSDK cross-chain 'AUSD' parachain bridge to releaychain Cross-chain using BridgeSDK works: fee 1`] = `"(rounded 0.001)"`;
 
 exports[`'acala' to 'astar' using bridgeSDK cross-chain 'AUSD' parachain bridge to releaychain Cross-chain using BridgeSDK works: initial 1`] = `
 {
