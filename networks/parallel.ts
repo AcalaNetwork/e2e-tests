@@ -8,7 +8,7 @@ export type Vars = {
 export default {
   polkadot: {
     name: 'parallel' as const,
-    endpoint: 'wss://rpc.parallel.fi',
+    endpoint: 'wss://parallel-rpc.dwellir.com',
     ausd: 104,
     acalaNativeToken: 108,
   },

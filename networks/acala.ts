@@ -44,7 +44,7 @@ export default {
         // avoid impact test outcome
         $removePrefix: ['redeemRequests', 'unbondings', 'toBondPool'],
         // so that bump era won't trigger unbond
-        relayChainCurrentEra: '0x64000000',
+        relayChainCurrentEra: 100,
       },
       PolkadotXcm: {
         // avoid sending xcm version change notifications to makes things faster

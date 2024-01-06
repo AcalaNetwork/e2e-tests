@@ -137,6 +137,9 @@ exports[`karura homa with latest block Homa stake works: ump 1`] = `
       },
       {
         "transact": {
+          "call": {
+            "encoded": "(hex)",
+          },
           "originType": "SovereignAccount",
           "requireWeightAtMost": "(number)",
         },
@@ -328,12 +331,18 @@ exports[`karura homa with specific block unbond withdraw works: ump 1`] = `
       },
       {
         "transact": {
+          "call": {
+            "encoded": "0x18010200060305000000",
+          },
           "originType": "SovereignAccount",
           "requireWeightAtMost": 20000000000,
         },
       },
       {
         "transact": {
+          "call": {
+            "encoded": "0x1801020004030070617261d00700000000000000000000000000000000000000000000000000000b07db23d49c4c",
+          },
           "originType": "SovereignAccount",
           "requireWeightAtMost": 20000000000,
         },
@@ -523,6 +532,9 @@ exports[`acala homa with latest block Homa stake works: ump 1`] = `
       },
       {
         "transact": {
+          "call": {
+            "encoded": "(hex)",
+          },
           "originType": "SovereignAccount",
           "requireWeightAtMost": "(number)",
         },
@@ -714,12 +726,18 @@ exports[`acala homa with specific block unbond withdraw works: ump 1`] = `
       },
       {
         "transact": {
+          "call": {
+            "encoded": "0x1a010000070305000000",
+          },
           "originType": "SovereignAccount",
           "requireWeightAtMost": 10000000000,
         },
       },
       {
         "transact": {
+          "call": {
+            "encoded": "0x1a01000005030070617261d00700000000000000000000000000000000000000000000000000000bd76e3b5f030a",
+          },
           "originType": "SovereignAccount",
           "requireWeightAtMost": 10000000000,
         },

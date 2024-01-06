@@ -40,13 +40,13 @@ const tests = [
   // {
   //   from: 'karura',
   //   to: 'basilisk',
-  //   token: 'KUSD',
+  //   token: 'BSX',
   // },
-  // {
-  //   from: 'karura',
-  //   to: 'moonriver',
-  //   token: 'KAR',
-  // },
+  {
+    from: 'karura',
+    to: 'moonriver',
+    token: 'KAR',
+  },
   {
     from: 'karura',
     to: 'bifrost',
@@ -77,36 +77,36 @@ const tests = [
     to: 'altair',
     token: 'AIR',
   },
-  // {
-  //   from: 'shiden',
-  //   to: 'karura',
-  //   token: 'KUSD',
-  // },
-  // {
-  //   from: 'karura',
-  //   to: 'shiden',
-  //   token: 'KUSD',
-  // },
-  // {
-  //   from: 'karura',
-  //   to: 'kintsugi',
-  //   token: 'KINT',
-  // },
-  // {
-  //   from: 'kintsugi',
-  //   to: 'karura',
-  //   token: 'KINT',
-  // },
-  // {
-  //   from: 'karura',
-  //   to: 'kintsugi',
-  //   token: 'LKSM',
-  // },
-  // {
-  //   from: 'kintsugi',
-  //   to: 'karura',
-  //   token: 'LKSM',
-  // },
+  {
+    from: 'shiden',
+    to: 'karura',
+    token: 'KUSD',
+  },
+  {
+    from: 'karura',
+    to: 'shiden',
+    token: 'KUSD',
+  },
+  {
+    from: 'karura',
+    to: 'kintsugi',
+    token: 'KINT',
+  },
+  {
+    from: 'kintsugi',
+    to: 'karura',
+    token: 'KINT',
+  },
+  {
+    from: 'karura',
+    to: 'kintsugi',
+    token: 'LKSM',
+  },
+  {
+    from: 'kintsugi',
+    to: 'karura',
+    token: 'LKSM',
+  },
   // // btc
   // // {
   // //   from: 'karura',
@@ -169,13 +169,11 @@ const tests = [
   //   from: 'quartz',
   //   to: 'karura',
   //   token: 'QTZ',
-  //   fee: 0.008082399999999934
   // },
   // {
   //   from: 'karura',
   //   to: 'quartz',
   //   token: 'QTZ',
-  //   fee: 0.002080000000000082
   // },
 ] as const
 

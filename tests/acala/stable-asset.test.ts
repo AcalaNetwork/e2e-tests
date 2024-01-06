@@ -1,10 +1,10 @@
-import { beforeEach, describe, it } from 'bun:test'
-import { bnToHex } from '@polkadot/util'
 import { sendTransaction } from '@acala-network/chopsticks-testing'
 
 import { Network, createContext, createNetworks } from '../../networks'
-import { checkEvents, checkSystemEvents } from '../../helpers'
+import { checkEvents, checkSystemEvents, jest } from '../../helpers'
 import { query } from '../../helpers/api'
+
+const { beforeEach, afterEach, describe, it } = jest(import.meta.path)
 
 for (const name of ['karura', 'acala'] as const) {
   describe(`${name} stable asset`, async () => {
@@ -22,11 +22,13 @@ for (const name of ['karura', 'acala'] as const) {
       const toBondPool: bigint = ((await apiAt.query.homa.toBondPool()) as any).toBigInt()
       await chain.dev.setStorage({
         Homa: {
-          toBondPool: bnToHex(toBondPool + 10n * 10n ** 10n, { bitLength: 128, isLe: true }),
+          toBondPool: toBondPool + 100n * 10n ** 10n,
         },
       })
+    })
 
-      return async () => chain.teardown()
+    afterEach(async () => {
+      await chain.teardown()
     })
 
     it('swap', async () => {
@@ -64,19 +66,15 @@ for (const name of ['karura', 'acala'] as const) {
           event: 'RedeemedProportion',
         },
       ] as const) {
-        it(
-          name,
-          async () => {
-            const balData: any = await query.tokens({ StableAssetPoolToken: 0 })(chain, alice.address)
+        it(name, async () => {
+          const balData: any = await query.tokens({ StableAssetPoolToken: 0 })(chain, alice.address)
 
-            const tx0 = await sendTransaction(tx(balData.free).signAsync(alice))
+          const tx0 = await sendTransaction(tx(balData.free).signAsync(alice))
 
-            await chain.chain.newBlock()
+          await chain.chain.newBlock()
 
-            await checkEvents(tx0, { section: 'stableAsset', method: event }).redact({ number: true }).toMatchSnapshot()
-          },
-          120000,
-        )
+          await checkEvents(tx0, { section: 'stableAsset', method: event }).redact({ number: true }).toMatchSnapshot()
+        })
       }
     })
 
