@@ -132,7 +132,7 @@ exports[`'basilisk' to 'karura' using bridgeSDK cross-chain 'BSX' parachain brid
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
   "decimals": 12,
   "fromChain": "(rounded 985)",
-  "toChain": "(rounded 1.94)",
+  "toChain": "(rounded 1.95)",
 }
 `;
 
