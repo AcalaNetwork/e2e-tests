@@ -8,6 +8,7 @@ on:
 
 env:
   DB_PATH: ./db.sqlite
+  FORCE_COLOR: 1
 
 jobs:
   lint:
