@@ -7,7 +7,7 @@ export default {
   },
   kusama: {
     name: 'bifrost' as const,
-    endpoint: 'wss://bifrost-rpc.dwellir.com',
+    endpoint: 'wss://bifrost-rpc.liebi.com/ws',
   },
   config: ({ alice }) => ({
     storages: {
