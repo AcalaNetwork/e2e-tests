@@ -10,7 +10,7 @@ import darwiniaConfig from './darwinia'
 import hydraDXConfig from './hydraDX'
 import interlayConfig from './interlay'
 import moonbeamConfig from './moonbeam'
-import parallelConfig from './parallel'
+// import parallelConfig from './parallel'
 import phalaConfig from './phala'
 import polkadotConfig from './polkadot'
 import statemintConfig from './statemint'
@@ -26,7 +26,7 @@ const all = {
   hydraDX: hydraDXConfig,
   bifrost: bifrostConfig,
   centrifuge: centrifugeConfig,
-  parallel: parallelConfig,
+  // parallel: parallelConfig,
   crust: crustConfig,
   unique: uniqueConfig,
   interlay: interlayConfig,

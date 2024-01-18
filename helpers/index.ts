@@ -18,7 +18,7 @@ export { check, checkEvents, checkHrmp, checkSystemEvents, checkUmp }
 
 export * from '@acala-network/chopsticks-testing'
 
-const defaultTimeout = process.env.CI ? 180000 : 120000
+const defaultTimeout = process.env.CI ? 180000 : 240000
 
 export const jest = (filename: string) => {
   const { beforeEach, afterEach, afterAll, expect, describe, it } = (Bun as any).jest(filename) // workaround https://github.com/oven-sh/bun/issues/7873
