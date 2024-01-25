@@ -116,7 +116,7 @@ exports[`'kusama' to 'statemine' using bridgeSDK cross-chain 'KSM' parachain bri
 }
 `;
 
-exports[`'kusama' to 'statemine' using bridgeSDK cross-chain 'KSM' parachain bridge to releaychain Cross-chain using BridgeSDK works: fee 1`] = `"(rounded 0.000004)"`;
+exports[`'kusama' to 'statemine' using bridgeSDK cross-chain 'KSM' parachain bridge to releaychain Cross-chain using BridgeSDK works: fee 1`] = `"(rounded 0.0001)"`;
 
 exports[`'basilisk' to 'karura' using bridgeSDK cross-chain 'BSX' parachain bridge to releaychain Cross-chain using BridgeSDK works: initial 1`] = `
 {
