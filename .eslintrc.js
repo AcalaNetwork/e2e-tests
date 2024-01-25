@@ -1,6 +1,7 @@
 module.exports = {
   root: true,
   parser: '@typescript-eslint/parser',
+  parserOptions: { project: 'tsconfig.json' },
   plugins: ['@typescript-eslint', 'import', 'sort-imports-es6-autofix'],
   extends: [
     'eslint:recommended',
@@ -26,7 +27,7 @@ module.exports = {
   },
   settings: {
     'import/resolver': {
-      'typescript-bun': {
+      typescript: {
         project: 'tsconfig.json',
       },
     },

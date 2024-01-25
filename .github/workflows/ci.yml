@@ -8,7 +8,6 @@ on:
 
 env:
   DB_PATH: ./db.sqlite
-  FORCE_COLOR: 1
 
 jobs:
   lint:
@@ -17,28 +16,35 @@ jobs:
     - uses: actions/checkout@v4
       with:
         submodules: recursive
-    - uses: oven-sh/setup-bun@v1
+    - name: Use Node.js
+      uses: actions/setup-node@v4
       with:
-        bun-version: latest
-    - run: bun install --frozen-lockfile
-    - run: bun lint
+        node-version: 18.x
+        cache: 'yarn'
+    - run: yarn --immutable
+    - run: yarn lint
   tests:
     timeout-minutes: 30
     strategy:
       fail-fast: false
       matrix:
         tests: [xcm-transfer, acala, bridge-sdk]
-    runs-on: [self-hosted]
+    runs-on: [self-hosted, linux]
     steps:
     - uses: actions/checkout@v4
       with:
         submodules: recursive
-    - uses: actions/setup-node@v4
+    - name: setup node
+      uses: actions/setup-node@v4
       with:
-        node-version: 18
-    - uses: oven-sh/setup-bun@v1
+        node-version: 18.x
+    - name: Setup yarn
+      run: npm install -g yarn
+    - name: setup node env
+      uses: actions/setup-node@v4
       with:
-        bun-version: latest
-    - run: bun install --frozen-lockfile
-    - run: bun update-env
-    - run: bun test tests/${{ matrix.tests }}
+        node-version: 18.x
+        cache: 'yarn'
+    - run: yarn --immutable
+    - run: yarn update-env
+    - run: yarn test tests/${{ matrix.tests }}

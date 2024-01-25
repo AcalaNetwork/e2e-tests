@@ -152,4 +152,4 @@ const tests = [
 
 export type TestType = (typeof tests)[number]
 
-buildTest(tests, import.meta.path)
+buildTest(tests)

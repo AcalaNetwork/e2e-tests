@@ -1,115 +1,6 @@
-// Bun Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`karura stable asset with liquidity mint: system events 1`] = `
-[
-  {
-    "data": {
-      "a": "(number)",
-      "balances": [
-        "(number)",
-        "(number)",
-      ],
-      "feeAmount": "(number)",
-      "inputAmounts": [
-        "(number)",
-        "(number)",
-      ],
-      "minOutputAmount": "(number)",
-      "minter": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-      "outputAmount": "(number)",
-      "poolId": "(number)",
-      "totalSupply": "(number)",
-    },
-    "method": "Minted",
-    "section": "stableAsset",
-  },
-]
-`;
-
-exports[`karura stable asset with liquidity redeemSingle: events 1`] = `
-[
-  {
-    "data": {
-      "a": "(number)",
-      "balances": [
-        "(number)",
-        "(number)",
-      ],
-      "feeAmount": "(number)",
-      "inputAmount": "(number)",
-      "minOutputAmount": "(number)",
-      "outputAmount": "(number)",
-      "outputAsset": {
-        "Token": "KSM",
-      },
-      "poolId": "(number)",
-      "redeemer": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-      "totalSupply": "(number)",
-    },
-    "method": "RedeemedSingle",
-    "section": "stableAsset",
-  },
-]
-`;
-
-exports[`karura stable asset with liquidity redeemProportion: events 1`] = `
-[
-  {
-    "data": {
-      "a": "(number)",
-      "balances": [
-        "(number)",
-        "(number)",
-      ],
-      "feeAmount": "(number)",
-      "inputAmount": "(number)",
-      "minOutputAmounts": [
-        "(number)",
-        "(number)",
-      ],
-      "outputAmounts": [
-        "(number)",
-        "(number)",
-      ],
-      "poolId": "(number)",
-      "redeemer": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-      "totalSupply": "(number)",
-    },
-    "method": "RedeemedProportion",
-    "section": "stableAsset",
-  },
-]
-`;
-
-exports[`karura stable asset swap: events 1`] = `
-[
-  {
-    "data": {
-      "a": "(number)",
-      "balances": [
-        "(number)",
-        "(number)",
-      ],
-      "inputAmount": "(number)",
-      "inputAsset": {
-        "Token": "KSM",
-      },
-      "minOutputAmount": "(number)",
-      "outputAmount": "(number)",
-      "outputAsset": {
-        "Token": "LKSM",
-      },
-      "poolId": "(number)",
-      "swapper": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-      "totalSupply": "(number)",
-    },
-    "method": "TokenSwapped",
-    "section": "stableAsset",
-  },
-]
-`;
-
-exports[`karura stable asset mint overflow: events 1`] = `
+exports[`acala stable asset > mint overflow > events 1`] = `
 [
   {
     "data": {
@@ -131,110 +22,7 @@ exports[`karura stable asset mint overflow: events 1`] = `
 ]
 `;
 
-exports[`karura stable asset swap overflow: events 1`] = `
-[
-  {
-    "data": {
-      "dispatchError": {
-        "Arithmetic": "Overflow",
-      },
-      "dispatchInfo": {
-        "class": "Normal",
-        "paysFee": "Yes",
-        "weight": {
-          "proofSize": "(rounded 11000)",
-          "refTime": "(rounded 3300000000)",
-        },
-      },
-    },
-    "method": "ExtrinsicFailed",
-    "section": "system",
-  },
-]
-`;
-
-exports[`acala stable asset with liquidity mint: system events 1`] = `
-[
-  {
-    "data": {
-      "a": "(number)",
-      "balances": [
-        "(number)",
-        "(number)",
-      ],
-      "feeAmount": "(number)",
-      "inputAmounts": [
-        "(number)",
-        "(number)",
-      ],
-      "minOutputAmount": "(number)",
-      "minter": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
-      "outputAmount": "(number)",
-      "poolId": "(number)",
-      "totalSupply": "(number)",
-    },
-    "method": "Minted",
-    "section": "stableAsset",
-  },
-]
-`;
-
-exports[`acala stable asset with liquidity redeemSingle: events 1`] = `
-[
-  {
-    "data": {
-      "a": "(number)",
-      "balances": [
-        "(number)",
-        "(number)",
-      ],
-      "feeAmount": "(number)",
-      "inputAmount": "(number)",
-      "minOutputAmount": "(number)",
-      "outputAmount": "(number)",
-      "outputAsset": {
-        "Token": "DOT",
-      },
-      "poolId": "(number)",
-      "redeemer": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
-      "totalSupply": "(number)",
-    },
-    "method": "RedeemedSingle",
-    "section": "stableAsset",
-  },
-]
-`;
-
-exports[`acala stable asset with liquidity redeemProportion: events 1`] = `
-[
-  {
-    "data": {
-      "a": "(number)",
-      "balances": [
-        "(number)",
-        "(number)",
-      ],
-      "feeAmount": "(number)",
-      "inputAmount": "(number)",
-      "minOutputAmounts": [
-        "(number)",
-        "(number)",
-      ],
-      "outputAmounts": [
-        "(number)",
-        "(number)",
-      ],
-      "poolId": "(number)",
-      "redeemer": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
-      "totalSupply": "(number)",
-    },
-    "method": "RedeemedProportion",
-    "section": "stableAsset",
-  },
-]
-`;
-
-exports[`acala stable asset swap: events 1`] = `
+exports[`acala stable asset > swap > events 1`] = `
 [
   {
     "data": {
@@ -262,7 +50,110 @@ exports[`acala stable asset swap: events 1`] = `
 ]
 `;
 
-exports[`acala stable asset mint overflow: events 1`] = `
+exports[`acala stable asset > swap overflow > events 1`] = `
+[
+  {
+    "data": {
+      "dispatchError": {
+        "Arithmetic": "Overflow",
+      },
+      "dispatchInfo": {
+        "class": "Normal",
+        "paysFee": "Yes",
+        "weight": {
+          "proofSize": "(rounded 11000)",
+          "refTime": "(rounded 3300000000)",
+        },
+      },
+    },
+    "method": "ExtrinsicFailed",
+    "section": "system",
+  },
+]
+`;
+
+exports[`acala stable asset > with liquidity > mint > system events 1`] = `
+[
+  {
+    "data": {
+      "a": "(number)",
+      "balances": [
+        "(number)",
+        "(number)",
+      ],
+      "feeAmount": "(number)",
+      "inputAmounts": [
+        "(number)",
+        "(number)",
+      ],
+      "minOutputAmount": "(number)",
+      "minter": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+      "outputAmount": "(number)",
+      "poolId": "(number)",
+      "totalSupply": "(number)",
+    },
+    "method": "Minted",
+    "section": "stableAsset",
+  },
+]
+`;
+
+exports[`acala stable asset > with liquidity > redeemProportion > events 1`] = `
+[
+  {
+    "data": {
+      "a": "(number)",
+      "balances": [
+        "(number)",
+        "(number)",
+      ],
+      "feeAmount": "(number)",
+      "inputAmount": "(number)",
+      "minOutputAmounts": [
+        "(number)",
+        "(number)",
+      ],
+      "outputAmounts": [
+        "(number)",
+        "(number)",
+      ],
+      "poolId": "(number)",
+      "redeemer": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+      "totalSupply": "(number)",
+    },
+    "method": "RedeemedProportion",
+    "section": "stableAsset",
+  },
+]
+`;
+
+exports[`acala stable asset > with liquidity > redeemSingle > events 1`] = `
+[
+  {
+    "data": {
+      "a": "(number)",
+      "balances": [
+        "(number)",
+        "(number)",
+      ],
+      "feeAmount": "(number)",
+      "inputAmount": "(number)",
+      "minOutputAmount": "(number)",
+      "outputAmount": "(number)",
+      "outputAsset": {
+        "Token": "DOT",
+      },
+      "poolId": "(number)",
+      "redeemer": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+      "totalSupply": "(number)",
+    },
+    "method": "RedeemedSingle",
+    "section": "stableAsset",
+  },
+]
+`;
+
+exports[`karura stable asset > mint overflow > events 1`] = `
 [
   {
     "data": {
@@ -284,7 +175,35 @@ exports[`acala stable asset mint overflow: events 1`] = `
 ]
 `;
 
-exports[`acala stable asset swap overflow: events 1`] = `
+exports[`karura stable asset > swap > events 1`] = `
+[
+  {
+    "data": {
+      "a": "(number)",
+      "balances": [
+        "(number)",
+        "(number)",
+      ],
+      "inputAmount": "(number)",
+      "inputAsset": {
+        "Token": "KSM",
+      },
+      "minOutputAmount": "(number)",
+      "outputAmount": "(number)",
+      "outputAsset": {
+        "Token": "LKSM",
+      },
+      "poolId": "(number)",
+      "swapper": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+      "totalSupply": "(number)",
+    },
+    "method": "TokenSwapped",
+    "section": "stableAsset",
+  },
+]
+`;
+
+exports[`karura stable asset > swap overflow > events 1`] = `
 [
   {
     "data": {
@@ -302,6 +221,87 @@ exports[`acala stable asset swap overflow: events 1`] = `
     },
     "method": "ExtrinsicFailed",
     "section": "system",
+  },
+]
+`;
+
+exports[`karura stable asset > with liquidity > mint > system events 1`] = `
+[
+  {
+    "data": {
+      "a": "(number)",
+      "balances": [
+        "(number)",
+        "(number)",
+      ],
+      "feeAmount": "(number)",
+      "inputAmounts": [
+        "(number)",
+        "(number)",
+      ],
+      "minOutputAmount": "(number)",
+      "minter": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+      "outputAmount": "(number)",
+      "poolId": "(number)",
+      "totalSupply": "(number)",
+    },
+    "method": "Minted",
+    "section": "stableAsset",
+  },
+]
+`;
+
+exports[`karura stable asset > with liquidity > redeemProportion > events 1`] = `
+[
+  {
+    "data": {
+      "a": "(number)",
+      "balances": [
+        "(number)",
+        "(number)",
+      ],
+      "feeAmount": "(number)",
+      "inputAmount": "(number)",
+      "minOutputAmounts": [
+        "(number)",
+        "(number)",
+      ],
+      "outputAmounts": [
+        "(number)",
+        "(number)",
+      ],
+      "poolId": "(number)",
+      "redeemer": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+      "totalSupply": "(number)",
+    },
+    "method": "RedeemedProportion",
+    "section": "stableAsset",
+  },
+]
+`;
+
+exports[`karura stable asset > with liquidity > redeemSingle > events 1`] = `
+[
+  {
+    "data": {
+      "a": "(number)",
+      "balances": [
+        "(number)",
+        "(number)",
+      ],
+      "feeAmount": "(number)",
+      "inputAmount": "(number)",
+      "minOutputAmount": "(number)",
+      "outputAmount": "(number)",
+      "outputAsset": {
+        "Token": "KSM",
+      },
+      "poolId": "(number)",
+      "redeemer": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+      "totalSupply": "(number)",
+    },
+    "method": "RedeemedSingle",
+    "section": "stableAsset",
   },
 ]
 `;
