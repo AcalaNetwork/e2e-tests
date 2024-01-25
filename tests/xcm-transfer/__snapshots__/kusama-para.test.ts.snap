@@ -17,8 +17,8 @@ exports[`'statemine' -> 'karura' xcm transfer 'USDT' xcmPallet transfer: tx even
     "data": {
       "outcome": {
         "Complete": {
-          "proofSize": "(rounded 6200)",
-          "refTime": "(rounded 683000000)",
+          "proofSize": "(rounded 8800)",
+          "refTime": "(rounded 841000000)",
         },
       },
     },
@@ -345,8 +345,8 @@ exports[`'karura' -> 'statemine' xcm transfer 'USDT' xtokens transfer: to chain 
       "messageHash": "(hash)",
       "messageId": "(hash)",
       "weight": {
-        "proofSize": "(rounded 3600)",
-        "refTime": "(rounded 310000000)",
+        "proofSize": "(rounded 7200)",
+        "refTime": "(rounded 300000000)",
       },
     },
     "method": "Success",
@@ -538,6 +538,7 @@ exports[`'karura' -> 'basilisk' xcm transfer 'DAI' xtokens transfer: to chain xc
   {
     "data": {
       "messageHash": "(hash)",
+      "messageId": "(hash)",
       "weight": {
         "proofSize": 0,
         "refTime": 400000000,

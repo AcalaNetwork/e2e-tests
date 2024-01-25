@@ -12,7 +12,7 @@ export default {
   config: ({ alice }) => ({
     storages: {
       System: {
-        account: [[[alice.address], { data: { free: 1000 * 1e12 } }]],
+        account: [[[alice.address], { providers: 1, data: { free: 1000 * 1e12 } }]],
       },
     },
   }),

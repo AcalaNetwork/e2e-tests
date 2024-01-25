@@ -21,7 +21,7 @@ export default {
   config: ({ alice, ausd, acalaNativeToken }) => ({
     storages: {
       System: {
-        account: [[[alice.address], { data: { free: 1000 * 1e12 } }]],
+        account: [[[alice.address], { providers: 1, data: { free: 1000 * 1e12 } }]],
       },
       Assets: {
         account: [

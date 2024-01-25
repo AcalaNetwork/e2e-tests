@@ -5,7 +5,7 @@ export type NetworkKind = 'polkadot' | 'kusama'
 
 export type NetworkConfig = {
   name: string
-  endpoint: string
+  endpoint: string | string[]
 }
 
 export type Context = ReturnType<typeof testingPairs>

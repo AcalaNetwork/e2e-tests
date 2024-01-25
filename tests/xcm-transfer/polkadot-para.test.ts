@@ -16,7 +16,7 @@ const tests = [
     name: 'WBTC',
     fromStorage: ({ alice }: Context) => ({
       System: {
-        account: [[[acala.paraAccount], { data: { free: 10e10 } }]],
+        account: [[[acala.paraAccount], { providers: 1, data: { free: 10e10 } }]],
       },
       Assets: {
         account: [[[statemint.wbtcIndex, alice.address], { balance: 1e8 }]],
@@ -44,7 +44,7 @@ const tests = [
     }),
     toStorage: ({ alice }: Context) => ({
       System: {
-        account: [[[acala.paraAccount], { data: { free: 10e10 } }]],
+        account: [[[acala.paraAccount], { providers: 1, data: { free: 10e10 } }]],
       },
       Assets: {
         account: [
