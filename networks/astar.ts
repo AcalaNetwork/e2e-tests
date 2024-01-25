@@ -14,7 +14,7 @@ export default {
   },
   kusama: {
     name: 'shiden' as const,
-    endpoint: 'wss://rpc.shiden.astar.network',
+    endpoint: ['wss://rpc.shiden.astar.network', 'wss://shiden-rpc.dwellir.com'],
     relayToken: '340282366920938463463374607431768211455',
     aUSDToken: '18446744073709551616',
   },
