@@ -1,11 +1,11 @@
 import { sendTransaction } from '@acala-network/chopsticks-testing'
 
 import { Network, createContext, createNetworks } from '../../networks'
-import { checkEvents, jest } from '../../helpers'
+import { checkEvents } from '../../helpers'
 
 import { acala, karura } from '../../networks/acala'
 
-const { beforeEach, afterEach, describe, it } = jest(import.meta.path)
+import { afterEach, beforeEach, describe, it } from 'vitest'
 
 for (const { name, swapPath } of [
   {

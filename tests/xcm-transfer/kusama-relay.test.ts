@@ -2,7 +2,7 @@ import { query, tx } from '../../helpers/api'
 
 import { karura } from '../../networks/acala'
 import { kusama } from '../../networks/polkadot'
-import { shiden } from '../../networks/astar'
+// import { shiden } from '../../networks/astar'
 
 import buildTest from './shared'
 
@@ -57,4 +57,4 @@ const tests = [
 
 export type TestType = (typeof tests)[number]
 
-buildTest(tests, import.meta.path)
+buildTest(tests)

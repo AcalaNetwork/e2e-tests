@@ -1,9 +1,9 @@
 import { sendTransaction, testingPairs } from '@acala-network/chopsticks-testing'
 
 import { Network, createNetworks } from '../../networks'
-import { checkEvents, checkSystemEvents, checkUmp, jest } from '../../helpers'
+import { checkEvents, checkSystemEvents, checkUmp } from '../../helpers'
 
-const { beforeEach, afterEach, describe, it } = jest(import.meta.path)
+import { afterEach, beforeEach, describe, it } from 'vitest'
 
 for (const { name, relay, unbond } of [
   {

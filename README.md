@@ -7,13 +7,13 @@ Tests are powered by [Chopsticks](http://github.com/AcalaNetwork/chopsticks) to 
 ## Running tests
 
 All tests:
-`bun test`
+`yarn test`
 
 Run one test only:
-`bun test ./tests/xcm-transfer/kusama-relay.test.ts`
+`yarn test ./tests/xcm-transfer/kusama-relay.test.ts`
 
 Or you can just use a keywork since it is using vitest and use regex to find tests:
-`bun test xcm`
+`yarn test xcm`
 
 ## Check compatibility with upcoming runtime
 
@@ -23,11 +23,11 @@ If there are expected breaking change, you can add a new network with the new ru
 
 ## Contributing
 
-This repo is using [bun test](https://bun.sh/docs/cli/test) as the test runner. Most of the tests are written as [snapshot tests](https://bun.sh/guides/test/snapshot). The test will run and save the result as snapshot in a `.snap` file, and next time when the test runs again, it will compare the result with the snapshot. This eliminates the need to write assertions and make the test more readable.
+This repo is using [vitest](https://vitest.dev) as the test runner. Most of the tests are written as [snapshot tests](https://vitest.dev/guide/snapshot.html#snapshot). The test will run and save the result as snapshot in a `.snap` file, and next time when the test runs again, it will compare the result with the snapshot. This eliminates the need to write assertions and make the test more readable.
 
 There is [periodic check](https://github.com/AcalaNetwork/e2e-tests/actions/workflows/check.yml) Github Action to run the tests against latest mainnet block to detect compatibility issues with live networks.
 
-It is recommended use `bun update-env` to update the `.env` file with latest block number before running the tests. This ensures tests are always running against the same blocks so that block data can be cached and reused to speed up test running time. Once you have a working test, update the blocks number again and rerun the tests to ensure the tests are block number indpendent. Use `redact` and event filters to make the snapshot be consistent regardless the block number.
+It is recommended use `yarn update-env` to update the `.env` file with latest block number before running the tests. This ensures tests are always running against the same blocks so that block data can be cached and reused to speed up test running time. Once you have a working test, update the blocks number again and rerun the tests to ensure the tests are block number indpendent. Use `redact` and event filters to make the snapshot be consistent regardless the block number.
 
 ### Files
 
@@ -125,7 +125,7 @@ DB_PATH=./db.sqlite
 
 Use specific block number for tests and db cache can signficantly improve test running speed.
 
-Run `bun update-env` to update .env file with latest block number.
+Run `yarn update-env` to update .env file with latest block number.
 
 To debug failing tests on CI, find the block number config from CI log and put them in .env to run the test with the same block height.
 

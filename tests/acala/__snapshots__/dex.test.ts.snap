@@ -1,482 +1,6 @@
-// Bun Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`karura dex swapWithExactSupply works: events 1`] = `
-[
-  {
-    "data": {
-      "amount": "(number)",
-      "currencyId": {
-        "Token": "KSM",
-      },
-      "from": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-      "to": "qmmNufxeWaAUqqs5k5ZwsenBmhm75jDRbsPrU5GBYgnrf5c",
-    },
-    "method": "Transfer",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "amount": "(number)",
-      "currencyId": {
-        "Token": "LKSM",
-      },
-      "from": "qmmNufxeWaAUqqs5k5ZwsenBmhm75jDRbsPrU5GBYgnrf5c",
-      "to": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "Transfer",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "liquidityChanges": [
-        "(number)",
-        "(number)",
-      ],
-      "path": [
-        {
-          "Token": "KSM",
-        },
-        {
-          "Token": "LKSM",
-        },
-      ],
-      "trader": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "Swap",
-    "section": "dex",
-  },
-]
-`;
-
-exports[`karura dex swapWithExactTarget works: events 1`] = `
-[
-  {
-    "data": {
-      "amount": "(number)",
-      "currencyId": {
-        "Token": "KSM",
-      },
-      "from": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-      "to": "qmmNufxeWaAUqqs5k5ZwsenBmhm75jDRbsPrU5GBYgnrf5c",
-    },
-    "method": "Transfer",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "amount": "(number)",
-      "currencyId": {
-        "Token": "LKSM",
-      },
-      "from": "qmmNufxeWaAUqqs5k5ZwsenBmhm75jDRbsPrU5GBYgnrf5c",
-      "to": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "Transfer",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "liquidityChanges": [
-        "(number)",
-        "(number)",
-      ],
-      "path": [
-        {
-          "Token": "KSM",
-        },
-        {
-          "Token": "LKSM",
-        },
-      ],
-      "trader": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "Swap",
-    "section": "dex",
-  },
-]
-`;
-
-exports[`karura dex addLiquidity removeLiquidity works with stake true: addLiquidity 1`] = `
-[
-  {
-    "data": {
-      "amount": "(number)",
-      "currencyId": {
-        "Token": "KSM",
-      },
-      "from": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-      "to": "qmmNufxeWaAUqqs5k5ZwsenBmhm75jDRbsPrU5GBYgnrf5c",
-    },
-    "method": "Transfer",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "amount": "(number)",
-      "currencyId": {
-        "Token": "LKSM",
-      },
-      "from": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-      "to": "qmmNufxeWaAUqqs5k5ZwsenBmhm75jDRbsPrU5GBYgnrf5c",
-    },
-    "method": "Transfer",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "amount": "(number)",
-      "currencyId": {
-        "DexShare": [
-          {
-            "Token": "KSM",
-          },
-          {
-            "Token": "LKSM",
-          },
-        ],
-      },
-      "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "Endowed",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "amount": "(number)",
-      "currencyId": {
-        "DexShare": [
-          {
-            "Token": "KSM",
-          },
-          {
-            "Token": "LKSM",
-          },
-        ],
-      },
-      "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "Deposited",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "amount": "(number)",
-      "currencyId": {
-        "DexShare": [
-          {
-            "Token": "KSM",
-          },
-          {
-            "Token": "LKSM",
-          },
-        ],
-      },
-      "from": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-      "to": "qmmNufxeWaAUznVqMTstJ4ZBTt2qUPZD1hnS8yhcssiewPk",
-    },
-    "method": "Transfer",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "deposit": "(number)",
-      "dexShareType": {
-        "DexShare": [
-          {
-            "Token": "KSM",
-          },
-          {
-            "Token": "LKSM",
-          },
-        ],
-      },
-      "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "DepositDexShare",
-    "section": "incentives",
-  },
-  {
-    "data": {
-      "currency0": {
-        "Token": "KSM",
-      },
-      "currency1": {
-        "Token": "LKSM",
-      },
-      "pool0": "(number)",
-      "pool1": "(number)",
-      "shareIncrement": "(number)",
-      "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "AddLiquidity",
-    "section": "dex",
-  },
-]
-`;
-
-exports[`karura dex addLiquidity removeLiquidity works with stake true: removeLiquidity 1`] = `
-[
-  {
-    "data": {
-      "amount": "(number)",
-      "currencyId": {
-        "DexShare": [
-          {
-            "Token": "KSM",
-          },
-          {
-            "Token": "LKSM",
-          },
-        ],
-      },
-      "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "Endowed",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "amount": "(number)",
-      "currencyId": {
-        "DexShare": [
-          {
-            "Token": "KSM",
-          },
-          {
-            "Token": "LKSM",
-          },
-        ],
-      },
-      "from": "qmmNufxeWaAUznVqMTstJ4ZBTt2qUPZD1hnS8yhcssiewPk",
-      "to": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "Transfer",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "dexShareType": {
-        "DexShare": [
-          {
-            "Token": "KSM",
-          },
-          {
-            "Token": "LKSM",
-          },
-        ],
-      },
-      "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-      "withdraw": "(number)",
-    },
-    "method": "WithdrawDexShare",
-    "section": "incentives",
-  },
-  {
-    "data": {
-      "amount": "(number)",
-      "currencyId": {
-        "DexShare": [
-          {
-            "Token": "KSM",
-          },
-          {
-            "Token": "LKSM",
-          },
-        ],
-      },
-      "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "Withdrawn",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "amount": "(number)",
-      "currencyId": {
-        "Token": "KSM",
-      },
-      "from": "qmmNufxeWaAUqqs5k5ZwsenBmhm75jDRbsPrU5GBYgnrf5c",
-      "to": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "Transfer",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "amount": "(number)",
-      "currencyId": {
-        "Token": "LKSM",
-      },
-      "from": "qmmNufxeWaAUqqs5k5ZwsenBmhm75jDRbsPrU5GBYgnrf5c",
-      "to": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "Transfer",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "currency0": {
-        "Token": "KSM",
-      },
-      "currency1": {
-        "Token": "LKSM",
-      },
-      "pool0": "(number)",
-      "pool1": "(number)",
-      "shareDecrement": "(number)",
-      "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "RemoveLiquidity",
-    "section": "dex",
-  },
-]
-`;
-
-exports[`karura dex addLiquidity removeLiquidity works with stake false: addLiquidity 1`] = `
-[
-  {
-    "data": {
-      "amount": "(number)",
-      "currencyId": {
-        "Token": "KSM",
-      },
-      "from": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-      "to": "qmmNufxeWaAUqqs5k5ZwsenBmhm75jDRbsPrU5GBYgnrf5c",
-    },
-    "method": "Transfer",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "amount": "(number)",
-      "currencyId": {
-        "Token": "LKSM",
-      },
-      "from": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-      "to": "qmmNufxeWaAUqqs5k5ZwsenBmhm75jDRbsPrU5GBYgnrf5c",
-    },
-    "method": "Transfer",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "amount": "(number)",
-      "currencyId": {
-        "DexShare": [
-          {
-            "Token": "KSM",
-          },
-          {
-            "Token": "LKSM",
-          },
-        ],
-      },
-      "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "Endowed",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "amount": "(number)",
-      "currencyId": {
-        "DexShare": [
-          {
-            "Token": "KSM",
-          },
-          {
-            "Token": "LKSM",
-          },
-        ],
-      },
-      "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "Deposited",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "currency0": {
-        "Token": "KSM",
-      },
-      "currency1": {
-        "Token": "LKSM",
-      },
-      "pool0": "(number)",
-      "pool1": "(number)",
-      "shareIncrement": "(number)",
-      "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "AddLiquidity",
-    "section": "dex",
-  },
-]
-`;
-
-exports[`karura dex addLiquidity removeLiquidity works with stake false: removeLiquidity 1`] = `
-[
-  {
-    "data": {
-      "amount": "(number)",
-      "currencyId": {
-        "DexShare": [
-          {
-            "Token": "KSM",
-          },
-          {
-            "Token": "LKSM",
-          },
-        ],
-      },
-      "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "Withdrawn",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "amount": "(number)",
-      "currencyId": {
-        "Token": "KSM",
-      },
-      "from": "qmmNufxeWaAUqqs5k5ZwsenBmhm75jDRbsPrU5GBYgnrf5c",
-      "to": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "Transfer",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "amount": "(number)",
-      "currencyId": {
-        "Token": "LKSM",
-      },
-      "from": "qmmNufxeWaAUqqs5k5ZwsenBmhm75jDRbsPrU5GBYgnrf5c",
-      "to": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "Transfer",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "currency0": {
-        "Token": "KSM",
-      },
-      "currency1": {
-        "Token": "LKSM",
-      },
-      "pool0": "(number)",
-      "pool1": "(number)",
-      "shareDecrement": "(number)",
-      "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "RemoveLiquidity",
-    "section": "dex",
-  },
-]
-`;
-
-exports[`acala dex swapWithExactSupply works: events 1`] = `
+exports[`acala dex > addLiquidity removeLiquidity works with stake false > addLiquidity 1`] = `
 [
   {
     "data": {
@@ -496,44 +20,95 @@ exports[`acala dex swapWithExactSupply works: events 1`] = `
       "currencyId": {
         "Token": "LDOT",
       },
-      "from": "23M5ttkmR6KcnxentoqchgBdUjzMDSzFoUyf5qMs7FsmRMvV",
-      "to": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+      "from": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+      "to": "23M5ttkmR6KcnxentoqchgBdUjzMDSzFoUyf5qMs7FsmRMvV",
     },
     "method": "Transfer",
     "section": "tokens",
   },
   {
     "data": {
-      "liquidityChanges": [
-        "(number)",
-        "(number)",
-      ],
-      "path": [
-        {
-          "Token": "AUSD",
-        },
-        {
-          "Token": "LDOT",
-        },
-      ],
-      "trader": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+      "amount": "(number)",
+      "currencyId": {
+        "DexShare": [
+          {
+            "Token": "AUSD",
+          },
+          {
+            "Token": "LDOT",
+          },
+        ],
+      },
+      "who": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
     },
-    "method": "Swap",
+    "method": "Endowed",
+    "section": "tokens",
+  },
+  {
+    "data": {
+      "amount": "(number)",
+      "currencyId": {
+        "DexShare": [
+          {
+            "Token": "AUSD",
+          },
+          {
+            "Token": "LDOT",
+          },
+        ],
+      },
+      "who": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+    },
+    "method": "Deposited",
+    "section": "tokens",
+  },
+  {
+    "data": {
+      "currency0": {
+        "Token": "AUSD",
+      },
+      "currency1": {
+        "Token": "LDOT",
+      },
+      "pool0": "(number)",
+      "pool1": "(number)",
+      "shareIncrement": "(number)",
+      "who": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+    },
+    "method": "AddLiquidity",
     "section": "dex",
   },
 ]
 `;
 
-exports[`acala dex swapWithExactTarget works: events 1`] = `
+exports[`acala dex > addLiquidity removeLiquidity works with stake false > removeLiquidity 1`] = `
 [
+  {
+    "data": {
+      "amount": "(number)",
+      "currencyId": {
+        "DexShare": [
+          {
+            "Token": "AUSD",
+          },
+          {
+            "Token": "LDOT",
+          },
+        ],
+      },
+      "who": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+    },
+    "method": "Withdrawn",
+    "section": "tokens",
+  },
   {
     "data": {
       "amount": "(number)",
       "currencyId": {
         "Token": "AUSD",
       },
-      "from": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
-      "to": "23M5ttkmR6KcnxentoqchgBdUjzMDSzFoUyf5qMs7FsmRMvV",
+      "from": "23M5ttkmR6KcnxentoqchgBdUjzMDSzFoUyf5qMs7FsmRMvV",
+      "to": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
     },
     "method": "Transfer",
     "section": "tokens",
@@ -552,27 +127,24 @@ exports[`acala dex swapWithExactTarget works: events 1`] = `
   },
   {
     "data": {
-      "liquidityChanges": [
-        "(number)",
-        "(number)",
-      ],
-      "path": [
-        {
-          "Token": "AUSD",
-        },
-        {
-          "Token": "LDOT",
-        },
-      ],
-      "trader": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+      "currency0": {
+        "Token": "AUSD",
+      },
+      "currency1": {
+        "Token": "LDOT",
+      },
+      "pool0": "(number)",
+      "pool1": "(number)",
+      "shareDecrement": "(number)",
+      "who": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
     },
-    "method": "Swap",
+    "method": "RemoveLiquidity",
     "section": "dex",
   },
 ]
 `;
 
-exports[`acala dex addLiquidity removeLiquidity works with stake true: addLiquidity 1`] = `
+exports[`acala dex > addLiquidity removeLiquidity works with stake true > addLiquidity 1`] = `
 [
   {
     "data": {
@@ -690,7 +262,7 @@ exports[`acala dex addLiquidity removeLiquidity works with stake true: addLiquid
 ]
 `;
 
-exports[`acala dex addLiquidity removeLiquidity works with stake true: removeLiquidity 1`] = `
+exports[`acala dex > addLiquidity removeLiquidity works with stake true > removeLiquidity 1`] = `
 [
   {
     "data": {
@@ -808,7 +380,7 @@ exports[`acala dex addLiquidity removeLiquidity works with stake true: removeLiq
 ]
 `;
 
-exports[`acala dex addLiquidity removeLiquidity works with stake false: addLiquidity 1`] = `
+exports[`acala dex > swapWithExactSupply works > events 1`] = `
 [
   {
     "data": {
@@ -828,6 +400,42 @@ exports[`acala dex addLiquidity removeLiquidity works with stake false: addLiqui
       "currencyId": {
         "Token": "LDOT",
       },
+      "from": "23M5ttkmR6KcnxentoqchgBdUjzMDSzFoUyf5qMs7FsmRMvV",
+      "to": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+    },
+    "method": "Transfer",
+    "section": "tokens",
+  },
+  {
+    "data": {
+      "liquidityChanges": [
+        "(number)",
+        "(number)",
+      ],
+      "path": [
+        {
+          "Token": "AUSD",
+        },
+        {
+          "Token": "LDOT",
+        },
+      ],
+      "trader": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+    },
+    "method": "Swap",
+    "section": "dex",
+  },
+]
+`;
+
+exports[`acala dex > swapWithExactTarget works > events 1`] = `
+[
+  {
+    "data": {
+      "amount": "(number)",
+      "currencyId": {
+        "Token": "AUSD",
+      },
       "from": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
       "to": "23M5ttkmR6KcnxentoqchgBdUjzMDSzFoUyf5qMs7FsmRMvV",
     },
@@ -838,16 +446,76 @@ exports[`acala dex addLiquidity removeLiquidity works with stake false: addLiqui
     "data": {
       "amount": "(number)",
       "currencyId": {
+        "Token": "LDOT",
+      },
+      "from": "23M5ttkmR6KcnxentoqchgBdUjzMDSzFoUyf5qMs7FsmRMvV",
+      "to": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+    },
+    "method": "Transfer",
+    "section": "tokens",
+  },
+  {
+    "data": {
+      "liquidityChanges": [
+        "(number)",
+        "(number)",
+      ],
+      "path": [
+        {
+          "Token": "AUSD",
+        },
+        {
+          "Token": "LDOT",
+        },
+      ],
+      "trader": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+    },
+    "method": "Swap",
+    "section": "dex",
+  },
+]
+`;
+
+exports[`karura dex > addLiquidity removeLiquidity works with stake false > addLiquidity 1`] = `
+[
+  {
+    "data": {
+      "amount": "(number)",
+      "currencyId": {
+        "Token": "KSM",
+      },
+      "from": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+      "to": "qmmNufxeWaAUqqs5k5ZwsenBmhm75jDRbsPrU5GBYgnrf5c",
+    },
+    "method": "Transfer",
+    "section": "tokens",
+  },
+  {
+    "data": {
+      "amount": "(number)",
+      "currencyId": {
+        "Token": "LKSM",
+      },
+      "from": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+      "to": "qmmNufxeWaAUqqs5k5ZwsenBmhm75jDRbsPrU5GBYgnrf5c",
+    },
+    "method": "Transfer",
+    "section": "tokens",
+  },
+  {
+    "data": {
+      "amount": "(number)",
+      "currencyId": {
         "DexShare": [
           {
-            "Token": "AUSD",
+            "Token": "KSM",
           },
           {
-            "Token": "LDOT",
+            "Token": "LKSM",
           },
         ],
       },
-      "who": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+      "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
     },
     "method": "Endowed",
     "section": "tokens",
@@ -858,14 +526,14 @@ exports[`acala dex addLiquidity removeLiquidity works with stake false: addLiqui
       "currencyId": {
         "DexShare": [
           {
-            "Token": "AUSD",
+            "Token": "KSM",
           },
           {
-            "Token": "LDOT",
+            "Token": "LKSM",
           },
         ],
       },
-      "who": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+      "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
     },
     "method": "Deposited",
     "section": "tokens",
@@ -873,15 +541,15 @@ exports[`acala dex addLiquidity removeLiquidity works with stake false: addLiqui
   {
     "data": {
       "currency0": {
-        "Token": "AUSD",
+        "Token": "KSM",
       },
       "currency1": {
-        "Token": "LDOT",
+        "Token": "LKSM",
       },
       "pool0": "(number)",
       "pool1": "(number)",
       "shareIncrement": "(number)",
-      "who": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+      "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
     },
     "method": "AddLiquidity",
     "section": "dex",
@@ -889,7 +557,7 @@ exports[`acala dex addLiquidity removeLiquidity works with stake false: addLiqui
 ]
 `;
 
-exports[`acala dex addLiquidity removeLiquidity works with stake false: removeLiquidity 1`] = `
+exports[`karura dex > addLiquidity removeLiquidity works with stake false > removeLiquidity 1`] = `
 [
   {
     "data": {
@@ -897,14 +565,14 @@ exports[`acala dex addLiquidity removeLiquidity works with stake false: removeLi
       "currencyId": {
         "DexShare": [
           {
-            "Token": "AUSD",
+            "Token": "KSM",
           },
           {
-            "Token": "LDOT",
+            "Token": "LKSM",
           },
         ],
       },
-      "who": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+      "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
     },
     "method": "Withdrawn",
     "section": "tokens",
@@ -913,10 +581,10 @@ exports[`acala dex addLiquidity removeLiquidity works with stake false: removeLi
     "data": {
       "amount": "(number)",
       "currencyId": {
-        "Token": "AUSD",
+        "Token": "KSM",
       },
-      "from": "23M5ttkmR6KcnxentoqchgBdUjzMDSzFoUyf5qMs7FsmRMvV",
-      "to": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+      "from": "qmmNufxeWaAUqqs5k5ZwsenBmhm75jDRbsPrU5GBYgnrf5c",
+      "to": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
     },
     "method": "Transfer",
     "section": "tokens",
@@ -925,10 +593,10 @@ exports[`acala dex addLiquidity removeLiquidity works with stake false: removeLi
     "data": {
       "amount": "(number)",
       "currencyId": {
-        "Token": "LDOT",
+        "Token": "LKSM",
       },
-      "from": "23M5ttkmR6KcnxentoqchgBdUjzMDSzFoUyf5qMs7FsmRMvV",
-      "to": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+      "from": "qmmNufxeWaAUqqs5k5ZwsenBmhm75jDRbsPrU5GBYgnrf5c",
+      "to": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
     },
     "method": "Transfer",
     "section": "tokens",
@@ -936,17 +604,349 @@ exports[`acala dex addLiquidity removeLiquidity works with stake false: removeLi
   {
     "data": {
       "currency0": {
-        "Token": "AUSD",
+        "Token": "KSM",
       },
       "currency1": {
-        "Token": "LDOT",
+        "Token": "LKSM",
       },
       "pool0": "(number)",
       "pool1": "(number)",
       "shareDecrement": "(number)",
-      "who": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+      "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
     },
     "method": "RemoveLiquidity",
+    "section": "dex",
+  },
+]
+`;
+
+exports[`karura dex > addLiquidity removeLiquidity works with stake true > addLiquidity 1`] = `
+[
+  {
+    "data": {
+      "amount": "(number)",
+      "currencyId": {
+        "Token": "KSM",
+      },
+      "from": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+      "to": "qmmNufxeWaAUqqs5k5ZwsenBmhm75jDRbsPrU5GBYgnrf5c",
+    },
+    "method": "Transfer",
+    "section": "tokens",
+  },
+  {
+    "data": {
+      "amount": "(number)",
+      "currencyId": {
+        "Token": "LKSM",
+      },
+      "from": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+      "to": "qmmNufxeWaAUqqs5k5ZwsenBmhm75jDRbsPrU5GBYgnrf5c",
+    },
+    "method": "Transfer",
+    "section": "tokens",
+  },
+  {
+    "data": {
+      "amount": "(number)",
+      "currencyId": {
+        "DexShare": [
+          {
+            "Token": "KSM",
+          },
+          {
+            "Token": "LKSM",
+          },
+        ],
+      },
+      "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "Endowed",
+    "section": "tokens",
+  },
+  {
+    "data": {
+      "amount": "(number)",
+      "currencyId": {
+        "DexShare": [
+          {
+            "Token": "KSM",
+          },
+          {
+            "Token": "LKSM",
+          },
+        ],
+      },
+      "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "Deposited",
+    "section": "tokens",
+  },
+  {
+    "data": {
+      "amount": "(number)",
+      "currencyId": {
+        "DexShare": [
+          {
+            "Token": "KSM",
+          },
+          {
+            "Token": "LKSM",
+          },
+        ],
+      },
+      "from": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+      "to": "qmmNufxeWaAUznVqMTstJ4ZBTt2qUPZD1hnS8yhcssiewPk",
+    },
+    "method": "Transfer",
+    "section": "tokens",
+  },
+  {
+    "data": {
+      "deposit": "(number)",
+      "dexShareType": {
+        "DexShare": [
+          {
+            "Token": "KSM",
+          },
+          {
+            "Token": "LKSM",
+          },
+        ],
+      },
+      "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "DepositDexShare",
+    "section": "incentives",
+  },
+  {
+    "data": {
+      "currency0": {
+        "Token": "KSM",
+      },
+      "currency1": {
+        "Token": "LKSM",
+      },
+      "pool0": "(number)",
+      "pool1": "(number)",
+      "shareIncrement": "(number)",
+      "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "AddLiquidity",
+    "section": "dex",
+  },
+]
+`;
+
+exports[`karura dex > addLiquidity removeLiquidity works with stake true > removeLiquidity 1`] = `
+[
+  {
+    "data": {
+      "amount": "(number)",
+      "currencyId": {
+        "DexShare": [
+          {
+            "Token": "KSM",
+          },
+          {
+            "Token": "LKSM",
+          },
+        ],
+      },
+      "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "Endowed",
+    "section": "tokens",
+  },
+  {
+    "data": {
+      "amount": "(number)",
+      "currencyId": {
+        "DexShare": [
+          {
+            "Token": "KSM",
+          },
+          {
+            "Token": "LKSM",
+          },
+        ],
+      },
+      "from": "qmmNufxeWaAUznVqMTstJ4ZBTt2qUPZD1hnS8yhcssiewPk",
+      "to": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "Transfer",
+    "section": "tokens",
+  },
+  {
+    "data": {
+      "dexShareType": {
+        "DexShare": [
+          {
+            "Token": "KSM",
+          },
+          {
+            "Token": "LKSM",
+          },
+        ],
+      },
+      "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+      "withdraw": "(number)",
+    },
+    "method": "WithdrawDexShare",
+    "section": "incentives",
+  },
+  {
+    "data": {
+      "amount": "(number)",
+      "currencyId": {
+        "DexShare": [
+          {
+            "Token": "KSM",
+          },
+          {
+            "Token": "LKSM",
+          },
+        ],
+      },
+      "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "Withdrawn",
+    "section": "tokens",
+  },
+  {
+    "data": {
+      "amount": "(number)",
+      "currencyId": {
+        "Token": "KSM",
+      },
+      "from": "qmmNufxeWaAUqqs5k5ZwsenBmhm75jDRbsPrU5GBYgnrf5c",
+      "to": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "Transfer",
+    "section": "tokens",
+  },
+  {
+    "data": {
+      "amount": "(number)",
+      "currencyId": {
+        "Token": "LKSM",
+      },
+      "from": "qmmNufxeWaAUqqs5k5ZwsenBmhm75jDRbsPrU5GBYgnrf5c",
+      "to": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "Transfer",
+    "section": "tokens",
+  },
+  {
+    "data": {
+      "currency0": {
+        "Token": "KSM",
+      },
+      "currency1": {
+        "Token": "LKSM",
+      },
+      "pool0": "(number)",
+      "pool1": "(number)",
+      "shareDecrement": "(number)",
+      "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "RemoveLiquidity",
+    "section": "dex",
+  },
+]
+`;
+
+exports[`karura dex > swapWithExactSupply works > events 1`] = `
+[
+  {
+    "data": {
+      "amount": "(number)",
+      "currencyId": {
+        "Token": "KSM",
+      },
+      "from": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+      "to": "qmmNufxeWaAUqqs5k5ZwsenBmhm75jDRbsPrU5GBYgnrf5c",
+    },
+    "method": "Transfer",
+    "section": "tokens",
+  },
+  {
+    "data": {
+      "amount": "(number)",
+      "currencyId": {
+        "Token": "LKSM",
+      },
+      "from": "qmmNufxeWaAUqqs5k5ZwsenBmhm75jDRbsPrU5GBYgnrf5c",
+      "to": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "Transfer",
+    "section": "tokens",
+  },
+  {
+    "data": {
+      "liquidityChanges": [
+        "(number)",
+        "(number)",
+      ],
+      "path": [
+        {
+          "Token": "KSM",
+        },
+        {
+          "Token": "LKSM",
+        },
+      ],
+      "trader": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "Swap",
+    "section": "dex",
+  },
+]
+`;
+
+exports[`karura dex > swapWithExactTarget works > events 1`] = `
+[
+  {
+    "data": {
+      "amount": "(number)",
+      "currencyId": {
+        "Token": "KSM",
+      },
+      "from": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+      "to": "qmmNufxeWaAUqqs5k5ZwsenBmhm75jDRbsPrU5GBYgnrf5c",
+    },
+    "method": "Transfer",
+    "section": "tokens",
+  },
+  {
+    "data": {
+      "amount": "(number)",
+      "currencyId": {
+        "Token": "LKSM",
+      },
+      "from": "qmmNufxeWaAUqqs5k5ZwsenBmhm75jDRbsPrU5GBYgnrf5c",
+      "to": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "Transfer",
+    "section": "tokens",
+  },
+  {
+    "data": {
+      "liquidityChanges": [
+        "(number)",
+        "(number)",
+      ],
+      "path": [
+        {
+          "Token": "KSM",
+        },
+        {
+          "Token": "LKSM",
+        },
+      ],
+      "trader": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "Swap",
     "section": "dex",
   },
 ]

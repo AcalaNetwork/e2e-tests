@@ -1,6 +1,6 @@
 import { ApiPromise } from '@polkadot/api'
-
 import { FixedPointNumber } from '@acala-network/sdk-core'
+import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import { sendTransaction, testingPairs } from '@acala-network/chopsticks-testing'
 
 import { AcalaAdapter } from '@polkawallet/bridge/adapters/acala/acala'
@@ -30,9 +30,7 @@ export type TestTtype = {
   ignoreFee?: boolean
 }
 
-export const buildTests = (tests: ReadonlyArray<TestTtype>, filename: string) => {
-  const { beforeEach, afterEach, expect, describe, it } = (Bun as any).jest(filename) // workaround https://github.com/oven-sh/bun/issues/7873
-
+export const buildTests = (tests: ReadonlyArray<TestTtype>) => {
   for (const { from, to, token, ignoreFee } of tests) {
     describe(`'${from}' to '${to}' using bridgeSDK cross-chain '${token}'`, async () => {
       let fromchain: Network

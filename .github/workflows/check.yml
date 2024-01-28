@@ -15,21 +15,28 @@ jobs:
         fail-fast: false
         matrix:
           tests: [xcm-transfer, acala, bridge-sdk]
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux]
     steps:
     - uses: actions/checkout@v4
       with:
         submodules: recursive
-    - uses: oven-sh/setup-bun@v1
+    - name: setup node
+      uses: actions/setup-node@v4
       with:
-        bun-version: latest
-    - run: bun install --frozen-lockfile
-    - run: bun update-env
-    - run: bun test tests/${{ matrix.tests }}
+        node-version: 18.x
+    - name: Setup yarn
+      run: npm install -g yarn
+    - name: setup node env
+      uses: actions/setup-node@v4
+      with:
+        node-version: 18.x
+        cache: 'yarn'
+    - run: yarn --immutable
+    - run: yarn update-env
+    - run: yarn test tests/${{ matrix.tests }}
     - uses: ravsamhq/notify-slack-action@v2
       if: ${{ failure() }}
       with:
         status: ${{ job.status }}
       env:
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-

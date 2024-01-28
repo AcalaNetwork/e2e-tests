@@ -1,12 +1,12 @@
 import { sendTransaction, testingPairs } from '@acala-network/chopsticks-testing'
 
-import { checkEvents, jest } from '../../helpers'
+import { checkEvents } from '../../helpers'
 import { createNetworks } from '../../networks'
 
 import { acala, karura } from '../../networks/acala'
 import { query } from '../../helpers/api'
 
-const { beforeEach, afterAll, describe, it } = jest(import.meta.path)
+import { afterAll, beforeEach, describe, it } from 'vitest'
 
 for (const { name, swapPair } of [
   {

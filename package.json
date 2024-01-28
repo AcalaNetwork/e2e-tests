@@ -5,7 +5,8 @@
 		"lint": "tsc --noEmit && eslint . --ext .js,.ts && prettier --check .",
 		"fix": "eslint . --ext .js,.ts --fix && prettier -w .",
 		"prepare": "husky install",
-		"test": "LOG_LEVEL=error bun test",
+		"test": "LOG_LEVEL=error vitest",
+		"test:ui": "LOG_LEVEL=error vitest --ui",
 		"update-env": "tsx scripts/update-env.ts"
 	},
 	"resolutions": {
@@ -18,19 +19,23 @@
 		"@acala-network/sdk-core": "^4.1.9-10",
 		"@polkadot/api": "^10.11.2",
 		"@polkawallet/bridge": "^0.1.5-19",
+		"@swc/core": "^1.3.106",
+		"axios": "^1.6.6",
 		"dotenv": "^16.3.1",
 		"lodash": "^4.17.21",
-		"typescript": "^5.3.2"
+		"typescript": "^5.3.3",
+		"unplugin-swc": "^1.4.4",
+		"vitest": "^1.2.1"
 	},
 	"devDependencies": {
 		"@types/lodash": "^4",
 		"@types/node": "^20.9.4",
 		"@typescript-eslint/eslint-plugin": "^6.12.0",
 		"@typescript-eslint/parser": "^6.12.0",
-		"bun-types": "latest",
+		"@vitest/ui": "^1.2.1",
 		"eslint": "^8.54.0",
 		"eslint-config-prettier": "^9.0.0",
-		"eslint-import-resolver-typescript-bun": "^0.0.58",
+		"eslint-import-resolver-typescript": "^3.6.1",
 		"eslint-plugin-import": "^2.29.0",
 		"eslint-plugin-sort-imports-es6-autofix": "^0.6.0",
 		"husky": "^8.0.3",
@@ -46,5 +51,6 @@
 	"lint-staged": {
 		"*.ts": "eslint --cache --fix",
 		"*.{ts,css}": "prettier --write"
-	}
+	},
+	"packageManager": "yarn@4.0.2"
 }

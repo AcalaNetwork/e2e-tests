@@ -9,14 +9,18 @@ export type Vars = {
 export default {
   polkadot: {
     name: 'acala' as const,
-    endpoint: 'wss://acala-rpc.aca-api.network',
+    endpoint: ['wss://acala-rpc.aca-api.network', 'wss://acala-rpc.dwellir.com'],
     relayToken: 'DOT',
     relayLiquidToken: 'LDOT',
     stableToken: 'AUSD',
   },
   kusama: {
     name: 'karura' as const,
-    endpoint: 'wss://karura-rpc.aca-api.network',
+    endpoint: [
+      'wss://karura-rpc.aca-api.network',
+      'wss://rpc-karura.luckyfriday.io',
+      'wss://karura.api.onfinality.io/public-ws',
+    ],
     relayToken: 'KSM',
     relayLiquidToken: 'LKSM',
     stableToken: 'KUSD',

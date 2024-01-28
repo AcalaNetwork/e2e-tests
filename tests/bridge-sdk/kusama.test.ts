@@ -177,4 +177,4 @@ const tests = [
   // },
 ] as const
 
-buildTests(tests, import.meta.path)
+buildTests(tests)
