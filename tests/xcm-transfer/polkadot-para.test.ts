@@ -3,7 +3,7 @@ import { query, tx } from '../../helpers/api'
 
 import { acala } from '../../networks/acala'
 import { hydraDX } from '../../networks/hydraDX'
-// import { moonbeam } from '../../networks/moonbeam'
+import { moonbeam } from '../../networks/moonbeam'
 import { statemint } from '../../networks/statemint'
 
 import buildTest from './shared'
@@ -95,39 +95,39 @@ const tests = [
       },
     },
   },
-  {
-    from: 'hydraDX',
-    to: 'acala',
-    name: 'DAI',
-    fromStorage: ({ alice }: Context) => ({
-      Tokens: {
-        accounts: [[[alice.address, hydraDX.dai], { free: 10n * 10n ** 18n }]],
-      },
-    }),
-    test: {
-      xtokenstHorizontal: {
-        tx: tx.xtokens.transfer(hydraDX.dai, 10n ** 18n, tx.xtokens.parachainV3(acala.paraId)),
-        fromBalance: query.tokens(hydraDX.dai),
-        toBalance: query.evm(acala.dai.Erc20, '0x2aef47e62c966f0695d5af370ddc1bc7c56902063eee60853e2872fc0ff4f88c'),
-      },
-    },
-  },
-  // // acala <-> moonbeam
   // {
-  //   from: 'acala',
-  //   to: 'moonbeam',
-  //   route: 'polkadot',
-  //   name: 'DOT',
-  //   toAccount: ({ alith }: Context) => alith,
+  //   from: 'hydraDX',
+  //   to: 'acala',
+  //   name: 'DAI',
+  //   fromStorage: ({ alice }: Context) => ({
+  //     Tokens: {
+  //       accounts: [[[alice.address, hydraDX.dai], { free: 10n * 10n ** 18n }]],
+  //     },
+  //   }),
   //   test: {
   //     xtokenstHorizontal: {
-  //       tx: tx.xtokens.transfer(acala.dot, 1e12, tx.xtokens.parachainAccountId20V3(moonbeam.paraId)),
-  //       fromBalance: query.tokens(acala.dot),
-  //       toBalance: query.assets(moonbeam.dot),
-  //       checkUmp: true,
+  //       tx: tx.xtokens.transfer(hydraDX.dai, 10n ** 18n, tx.xtokens.parachainV3(acala.paraId)),
+  //       fromBalance: query.tokens(hydraDX.dai),
+  //       toBalance: query.evm(acala.dai.Erc20, '0x2aef47e62c966f0695d5af370ddc1bc7c56902063eee60853e2872fc0ff4f88c'),
   //     },
   //   },
   // },
+  // acala <-> moonbeam
+  {
+    from: 'acala',
+    to: 'moonbeam',
+    route: 'polkadot',
+    name: 'DOT',
+    toAccount: ({ alith }: Context) => alith,
+    test: {
+      xtokenstHorizontal: {
+        tx: tx.xtokens.transfer(acala.dot, 1e12, tx.xtokens.parachainAccountId20V3(moonbeam.paraId)),
+        fromBalance: query.tokens(acala.dot),
+        toBalance: query.assets(moonbeam.dot),
+        checkUmp: true,
+      },
+    },
+  },
   // {
   //   from: 'moonbeam',
   //   to: 'acala',
