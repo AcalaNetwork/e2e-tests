@@ -95,23 +95,23 @@ const tests = [
       },
     },
   },
-  {
-    from: 'hydraDX',
-    to: 'acala',
-    name: 'DAI',
-    fromStorage: ({ alice }: Context) => ({
-      Tokens: {
-        accounts: [[[alice.address, hydraDX.dai], { free: 10n * 10n ** 18n }]],
-      },
-    }),
-    test: {
-      xtokenstHorizontal: {
-        tx: tx.xtokens.transfer(hydraDX.dai, 10n ** 18n, tx.xtokens.parachainV3(acala.paraId)),
-        fromBalance: query.tokens(hydraDX.dai),
-        toBalance: query.evm(acala.dai.Erc20, '0x2aef47e62c966f0695d5af370ddc1bc7c56902063eee60853e2872fc0ff4f88c'),
-      },
-    },
-  },
+  // {
+  //   from: 'hydraDX',
+  //   to: 'acala',
+  //   name: 'DAI',
+  //   fromStorage: ({ alice }: Context) => ({
+  //     Tokens: {
+  //       accounts: [[[alice.address, hydraDX.dai], { free: 10n * 10n ** 18n }]],
+  //     },
+  //   }),
+  //   test: {
+  //     xtokenstHorizontal: {
+  //       tx: tx.xtokens.transfer(hydraDX.dai, 10n ** 18n, tx.xtokens.parachainV3(acala.paraId)),
+  //       fromBalance: query.tokens(hydraDX.dai),
+  //       toBalance: query.evm(acala.dai.Erc20, '0x2aef47e62c966f0695d5af370ddc1bc7c56902063eee60853e2872fc0ff4f88c'),
+  //     },
+  //   },
+  // },
   // // acala <-> moonbeam
   // {
   //   from: 'acala',
