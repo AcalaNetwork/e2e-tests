@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`acala aggregatedDex' > swapWithExactSupply > events 1`] = `
+exports[`'acala' aggregatedDex > swapWithExactSupply > events 1`] = `
 [
   {
     "data": {
@@ -28,7 +28,7 @@ exports[`acala aggregatedDex' > swapWithExactSupply > events 1`] = `
 ]
 `;
 
-exports[`karura aggregatedDex' > swapWithExactSupply > events 1`] = `
+exports[`'karura' aggregatedDex > swapWithExactSupply > events 1`] = `
 [
   {
     "data": {
