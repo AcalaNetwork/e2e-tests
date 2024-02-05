@@ -1,6 +1,102 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`acala dex > addLiquidity removeLiquidity works with stake false > addLiquidity 1`] = `
+exports[`'acala' dex > 'swapWithExactSupply' works > events 1`] = `
+[
+  {
+    "data": {
+      "amount": "(number)",
+      "currencyId": {
+        "Token": "AUSD",
+      },
+      "from": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+      "to": "23M5ttkmR6KcnxentoqchgBdUjzMDSzFoUyf5qMs7FsmRMvV",
+    },
+    "method": "Transfer",
+    "section": "tokens",
+  },
+  {
+    "data": {
+      "amount": "(number)",
+      "currencyId": {
+        "Token": "LDOT",
+      },
+      "from": "23M5ttkmR6KcnxentoqchgBdUjzMDSzFoUyf5qMs7FsmRMvV",
+      "to": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+    },
+    "method": "Transfer",
+    "section": "tokens",
+  },
+  {
+    "data": {
+      "liquidityChanges": [
+        "(number)",
+        "(number)",
+      ],
+      "path": [
+        {
+          "Token": "AUSD",
+        },
+        {
+          "Token": "LDOT",
+        },
+      ],
+      "trader": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+    },
+    "method": "Swap",
+    "section": "dex",
+  },
+]
+`;
+
+exports[`'acala' dex > 'swapWithExactTarget' works > events 1`] = `
+[
+  {
+    "data": {
+      "amount": "(number)",
+      "currencyId": {
+        "Token": "AUSD",
+      },
+      "from": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+      "to": "23M5ttkmR6KcnxentoqchgBdUjzMDSzFoUyf5qMs7FsmRMvV",
+    },
+    "method": "Transfer",
+    "section": "tokens",
+  },
+  {
+    "data": {
+      "amount": "(number)",
+      "currencyId": {
+        "Token": "LDOT",
+      },
+      "from": "23M5ttkmR6KcnxentoqchgBdUjzMDSzFoUyf5qMs7FsmRMvV",
+      "to": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+    },
+    "method": "Transfer",
+    "section": "tokens",
+  },
+  {
+    "data": {
+      "liquidityChanges": [
+        "(number)",
+        "(number)",
+      ],
+      "path": [
+        {
+          "Token": "AUSD",
+        },
+        {
+          "Token": "LDOT",
+        },
+      ],
+      "trader": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+    },
+    "method": "Swap",
+    "section": "dex",
+  },
+]
+`;
+
+exports[`'acala' dex > addLiquidity removeLiquidity works with stake false > addLiquidity 1`] = `
 [
   {
     "data": {
@@ -81,7 +177,7 @@ exports[`acala dex > addLiquidity removeLiquidity works with stake false > addLi
 ]
 `;
 
-exports[`acala dex > addLiquidity removeLiquidity works with stake false > removeLiquidity 1`] = `
+exports[`'acala' dex > addLiquidity removeLiquidity works with stake false > removeLiquidity 1`] = `
 [
   {
     "data": {
@@ -144,7 +240,7 @@ exports[`acala dex > addLiquidity removeLiquidity works with stake false > remov
 ]
 `;
 
-exports[`acala dex > addLiquidity removeLiquidity works with stake true > addLiquidity 1`] = `
+exports[`'acala' dex > addLiquidity removeLiquidity works with stake true > addLiquidity 1`] = `
 [
   {
     "data": {
@@ -262,7 +358,7 @@ exports[`acala dex > addLiquidity removeLiquidity works with stake true > addLiq
 ]
 `;
 
-exports[`acala dex > addLiquidity removeLiquidity works with stake true > removeLiquidity 1`] = `
+exports[`'acala' dex > addLiquidity removeLiquidity works with stake true > removeLiquidity 1`] = `
 [
   {
     "data": {
@@ -380,16 +476,16 @@ exports[`acala dex > addLiquidity removeLiquidity works with stake true > remove
 ]
 `;
 
-exports[`acala dex > swapWithExactSupply works > events 1`] = `
+exports[`'karura' dex > 'swapWithExactSupply' works > events 1`] = `
 [
   {
     "data": {
       "amount": "(number)",
       "currencyId": {
-        "Token": "AUSD",
+        "Token": "KSM",
       },
-      "from": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
-      "to": "23M5ttkmR6KcnxentoqchgBdUjzMDSzFoUyf5qMs7FsmRMvV",
+      "from": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+      "to": "qmmNufxeWaAUqqs5k5ZwsenBmhm75jDRbsPrU5GBYgnrf5c",
     },
     "method": "Transfer",
     "section": "tokens",
@@ -398,10 +494,10 @@ exports[`acala dex > swapWithExactSupply works > events 1`] = `
     "data": {
       "amount": "(number)",
       "currencyId": {
-        "Token": "LDOT",
+        "Token": "LKSM",
       },
-      "from": "23M5ttkmR6KcnxentoqchgBdUjzMDSzFoUyf5qMs7FsmRMvV",
-      "to": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+      "from": "qmmNufxeWaAUqqs5k5ZwsenBmhm75jDRbsPrU5GBYgnrf5c",
+      "to": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
     },
     "method": "Transfer",
     "section": "tokens",
@@ -414,13 +510,13 @@ exports[`acala dex > swapWithExactSupply works > events 1`] = `
       ],
       "path": [
         {
-          "Token": "AUSD",
+          "Token": "KSM",
         },
         {
-          "Token": "LDOT",
+          "Token": "LKSM",
         },
       ],
-      "trader": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+      "trader": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
     },
     "method": "Swap",
     "section": "dex",
@@ -428,16 +524,16 @@ exports[`acala dex > swapWithExactSupply works > events 1`] = `
 ]
 `;
 
-exports[`acala dex > swapWithExactTarget works > events 1`] = `
+exports[`'karura' dex > 'swapWithExactTarget' works > events 1`] = `
 [
   {
     "data": {
       "amount": "(number)",
       "currencyId": {
-        "Token": "AUSD",
+        "Token": "KSM",
       },
-      "from": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
-      "to": "23M5ttkmR6KcnxentoqchgBdUjzMDSzFoUyf5qMs7FsmRMvV",
+      "from": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+      "to": "qmmNufxeWaAUqqs5k5ZwsenBmhm75jDRbsPrU5GBYgnrf5c",
     },
     "method": "Transfer",
     "section": "tokens",
@@ -446,10 +542,10 @@ exports[`acala dex > swapWithExactTarget works > events 1`] = `
     "data": {
       "amount": "(number)",
       "currencyId": {
-        "Token": "LDOT",
+        "Token": "LKSM",
       },
-      "from": "23M5ttkmR6KcnxentoqchgBdUjzMDSzFoUyf5qMs7FsmRMvV",
-      "to": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+      "from": "qmmNufxeWaAUqqs5k5ZwsenBmhm75jDRbsPrU5GBYgnrf5c",
+      "to": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
     },
     "method": "Transfer",
     "section": "tokens",
@@ -462,13 +558,13 @@ exports[`acala dex > swapWithExactTarget works > events 1`] = `
       ],
       "path": [
         {
-          "Token": "AUSD",
+          "Token": "KSM",
         },
         {
-          "Token": "LDOT",
+          "Token": "LKSM",
         },
       ],
-      "trader": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+      "trader": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
     },
     "method": "Swap",
     "section": "dex",
@@ -476,7 +572,7 @@ exports[`acala dex > swapWithExactTarget works > events 1`] = `
 ]
 `;
 
-exports[`karura dex > addLiquidity removeLiquidity works with stake false > addLiquidity 1`] = `
+exports[`'karura' dex > addLiquidity removeLiquidity works with stake false > addLiquidity 1`] = `
 [
   {
     "data": {
@@ -557,7 +653,7 @@ exports[`karura dex > addLiquidity removeLiquidity works with stake false > addL
 ]
 `;
 
-exports[`karura dex > addLiquidity removeLiquidity works with stake false > removeLiquidity 1`] = `
+exports[`'karura' dex > addLiquidity removeLiquidity works with stake false > removeLiquidity 1`] = `
 [
   {
     "data": {
@@ -620,7 +716,7 @@ exports[`karura dex > addLiquidity removeLiquidity works with stake false > remo
 ]
 `;
 
-exports[`karura dex > addLiquidity removeLiquidity works with stake true > addLiquidity 1`] = `
+exports[`'karura' dex > addLiquidity removeLiquidity works with stake true > addLiquidity 1`] = `
 [
   {
     "data": {
@@ -738,7 +834,7 @@ exports[`karura dex > addLiquidity removeLiquidity works with stake true > addLi
 ]
 `;
 
-exports[`karura dex > addLiquidity removeLiquidity works with stake true > removeLiquidity 1`] = `
+exports[`'karura' dex > addLiquidity removeLiquidity works with stake true > removeLiquidity 1`] = `
 [
   {
     "data": {
@@ -851,102 +947,6 @@ exports[`karura dex > addLiquidity removeLiquidity works with stake true > remov
       "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
     },
     "method": "RemoveLiquidity",
-    "section": "dex",
-  },
-]
-`;
-
-exports[`karura dex > swapWithExactSupply works > events 1`] = `
-[
-  {
-    "data": {
-      "amount": "(number)",
-      "currencyId": {
-        "Token": "KSM",
-      },
-      "from": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-      "to": "qmmNufxeWaAUqqs5k5ZwsenBmhm75jDRbsPrU5GBYgnrf5c",
-    },
-    "method": "Transfer",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "amount": "(number)",
-      "currencyId": {
-        "Token": "LKSM",
-      },
-      "from": "qmmNufxeWaAUqqs5k5ZwsenBmhm75jDRbsPrU5GBYgnrf5c",
-      "to": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "Transfer",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "liquidityChanges": [
-        "(number)",
-        "(number)",
-      ],
-      "path": [
-        {
-          "Token": "KSM",
-        },
-        {
-          "Token": "LKSM",
-        },
-      ],
-      "trader": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "Swap",
-    "section": "dex",
-  },
-]
-`;
-
-exports[`karura dex > swapWithExactTarget works > events 1`] = `
-[
-  {
-    "data": {
-      "amount": "(number)",
-      "currencyId": {
-        "Token": "KSM",
-      },
-      "from": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-      "to": "qmmNufxeWaAUqqs5k5ZwsenBmhm75jDRbsPrU5GBYgnrf5c",
-    },
-    "method": "Transfer",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "amount": "(number)",
-      "currencyId": {
-        "Token": "LKSM",
-      },
-      "from": "qmmNufxeWaAUqqs5k5ZwsenBmhm75jDRbsPrU5GBYgnrf5c",
-      "to": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "Transfer",
-    "section": "tokens",
-  },
-  {
-    "data": {
-      "liquidityChanges": [
-        "(number)",
-        "(number)",
-      ],
-      "path": [
-        {
-          "Token": "KSM",
-        },
-        {
-          "Token": "LKSM",
-        },
-      ],
-      "trader": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "Swap",
     "section": "dex",
   },
 ]

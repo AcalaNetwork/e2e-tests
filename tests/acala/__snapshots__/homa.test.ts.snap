@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`acala homa > with latest block > Homa redeem unbond works > events 1`] = `
+exports[`'acala' homa > with latest block > Homa redeem unbond works > events 1`] = `
 [
   {
     "data": {
@@ -14,7 +14,7 @@ exports[`acala homa > with latest block > Homa redeem unbond works > events 1`] 
 ]
 `;
 
-exports[`acala homa > with latest block > Homa redeem unbond works > events 2`] = `
+exports[`'acala' homa > with latest block > Homa redeem unbond works > events 2`] = `
 [
   {
     "data": {
@@ -29,7 +29,7 @@ exports[`acala homa > with latest block > Homa redeem unbond works > events 2`] 
 ]
 `;
 
-exports[`acala homa > with latest block > Homa redeem unbond works > system events 1`] = `
+exports[`'acala' homa > with latest block > Homa redeem unbond works > system events 1`] = `
 [
   {
     "data": {
@@ -59,7 +59,7 @@ exports[`acala homa > with latest block > Homa redeem unbond works > system even
 ]
 `;
 
-exports[`acala homa > with latest block > Homa stake works > events 1`] = `
+exports[`'acala' homa > with latest block > Homa stake works > events 1`] = `
 [
   {
     "data": {
@@ -74,7 +74,7 @@ exports[`acala homa > with latest block > Homa stake works > events 1`] = `
 ]
 `;
 
-exports[`acala homa > with latest block > Homa stake works > events 2`] = `
+exports[`'acala' homa > with latest block > Homa stake works > events 2`] = `
 [
   {
     "data": {
@@ -86,7 +86,7 @@ exports[`acala homa > with latest block > Homa stake works > events 2`] = `
 ]
 `;
 
-exports[`acala homa > with latest block > Homa stake works > system events 1`] = `
+exports[`'acala' homa > with latest block > Homa stake works > system events 1`] = `
 [
   {
     "data": {
@@ -133,7 +133,7 @@ exports[`acala homa > with latest block > Homa stake works > system events 1`] =
 ]
 `;
 
-exports[`acala homa > with latest block > Homa stake works > ump 1`] = `
+exports[`'acala' homa > with latest block > Homa stake works > ump 1`] = `
 [
   {
     "v2": [
@@ -276,7 +276,7 @@ exports[`acala homa > with latest block > Homa stake works > ump 1`] = `
 ]
 `;
 
-exports[`acala homa > with specific block > unbond withdraw works > events 1`] = `
+exports[`'acala' homa > with specific block > unbond withdraw works > events 1`] = `
 [
   {
     "data": {
@@ -288,7 +288,7 @@ exports[`acala homa > with specific block > unbond withdraw works > events 1`] =
 ]
 `;
 
-exports[`acala homa > with specific block > unbond withdraw works > system events 1`] = `
+exports[`'acala' homa > with specific block > unbond withdraw works > system events 1`] = `
 [
   {
     "data": {
@@ -318,7 +318,7 @@ exports[`acala homa > with specific block > unbond withdraw works > system event
 ]
 `;
 
-exports[`acala homa > with specific block > unbond withdraw works > ump 1`] = `
+exports[`'acala' homa > with specific block > unbond withdraw works > ump 1`] = `
 [
   {
     "v2": [
@@ -403,7 +403,7 @@ exports[`acala homa > with specific block > unbond withdraw works > ump 1`] = `
 ]
 `;
 
-exports[`karura homa > with latest block > Homa redeem unbond works > events 1`] = `
+exports[`'karura' homa > with latest block > Homa redeem unbond works > events 1`] = `
 [
   {
     "data": {
@@ -417,7 +417,7 @@ exports[`karura homa > with latest block > Homa redeem unbond works > events 1`]
 ]
 `;
 
-exports[`karura homa > with latest block > Homa redeem unbond works > events 2`] = `
+exports[`'karura' homa > with latest block > Homa redeem unbond works > events 2`] = `
 [
   {
     "data": {
@@ -432,7 +432,7 @@ exports[`karura homa > with latest block > Homa redeem unbond works > events 2`]
 ]
 `;
 
-exports[`karura homa > with latest block > Homa redeem unbond works > system events 1`] = `
+exports[`'karura' homa > with latest block > Homa redeem unbond works > system events 1`] = `
 [
   {
     "data": {
@@ -462,7 +462,7 @@ exports[`karura homa > with latest block > Homa redeem unbond works > system eve
 ]
 `;
 
-exports[`karura homa > with latest block > Homa stake works > events 1`] = `
+exports[`'karura' homa > with latest block > Homa stake works > events 1`] = `
 [
   {
     "data": {
@@ -477,7 +477,7 @@ exports[`karura homa > with latest block > Homa stake works > events 1`] = `
 ]
 `;
 
-exports[`karura homa > with latest block > Homa stake works > events 2`] = `
+exports[`'karura' homa > with latest block > Homa stake works > events 2`] = `
 [
   {
     "data": {
@@ -489,7 +489,7 @@ exports[`karura homa > with latest block > Homa stake works > events 2`] = `
 ]
 `;
 
-exports[`karura homa > with latest block > Homa stake works > system events 1`] = `
+exports[`'karura' homa > with latest block > Homa stake works > system events 1`] = `
 [
   {
     "data": {
@@ -536,7 +536,7 @@ exports[`karura homa > with latest block > Homa stake works > system events 1`] 
 ]
 `;
 
-exports[`karura homa > with latest block > Homa stake works > ump 1`] = `
+exports[`'karura' homa > with latest block > Homa stake works > ump 1`] = `
 [
   {
     "v2": [
@@ -679,7 +679,7 @@ exports[`karura homa > with latest block > Homa stake works > ump 1`] = `
 ]
 `;
 
-exports[`karura homa > with specific block > unbond withdraw works > events 1`] = `
+exports[`'karura' homa > with specific block > unbond withdraw works > events 1`] = `
 [
   {
     "data": {
@@ -691,7 +691,7 @@ exports[`karura homa > with specific block > unbond withdraw works > events 1`] 
 ]
 `;
 
-exports[`karura homa > with specific block > unbond withdraw works > system events 1`] = `
+exports[`'karura' homa > with specific block > unbond withdraw works > system events 1`] = `
 [
   {
     "data": {
@@ -713,7 +713,7 @@ exports[`karura homa > with specific block > unbond withdraw works > system even
 ]
 `;
 
-exports[`karura homa > with specific block > unbond withdraw works > ump 1`] = `
+exports[`'karura' homa > with specific block > unbond withdraw works > ump 1`] = `
 [
   {
     "v2": [

@@ -1,13 +1,11 @@
+import { afterAll, describe, it } from 'vitest'
 import { sendTransaction } from '@acala-network/chopsticks-testing'
 
-import { Network, createContext, createNetworks } from '../../networks'
-import { checkEvents } from '../../helpers'
-
 import { acala, karura } from '../../networks/acala'
+import { checkEvents } from '../../helpers'
+import { createContext, createNetworks } from '../../networks'
 
-import { afterEach, beforeEach, describe, it } from 'vitest'
-
-for (const { name, swapPath } of [
+describe.each([
   {
     name: 'karura',
     swapPath: [
@@ -30,39 +28,32 @@ for (const { name, swapPath } of [
       },
     ],
   },
-] as const) {
-  describe(`${name} aggregatedDex'`, () => {
-    let chain: Network
+] as const)('$name aggregatedDex', async ({ name, swapPath }) => {
+  const ctx = createContext()
+  const { alice } = ctx
 
-    const ctx = createContext()
-    const { alice } = ctx
+  const { [name]: chain } = await createNetworks({ [name]: undefined }, ctx)
 
-    beforeEach(async () => {
-      const { [name]: chain1 } = await createNetworks({ [name]: undefined }, ctx)
-      chain = chain1
-
-      // restore Homa.toBondPool to correct liquid token exchange rate
-      const apiAt = await chain.api.at(await chain.api.rpc.chain.getBlockHash(chain.chain.head.number - 3))
-      const toBondPool: bigint = ((await apiAt.query.homa.toBondPool()) as any).toBigInt()
-      await chain.dev.setStorage({
-        Homa: {
-          toBondPool: toBondPool + 10n * 10n ** 10n,
-        },
-      })
-    })
-
-    afterEach(async () => {
-      await chain.teardown()
-    })
-
-    it('swapWithExactSupply', async () => {
-      const tx = await sendTransaction(
-        chain.api.tx.aggregatedDex.swapWithExactSupply(swapPath as any, 1e12, 0).signAsync(alice),
-      )
-
-      await chain.chain.newBlock()
-
-      await checkEvents(tx, 'dex').redact({ number: true }).toMatchSnapshot()
-    })
+  // restore Homa.toBondPool to correct liquid token exchange rate
+  const apiAt = await chain.api.at(await chain.api.rpc.chain.getBlockHash(chain.chain.head.number - 3))
+  const toBondPool: bigint = ((await apiAt.query.homa.toBondPool()) as any).toBigInt()
+  await chain.dev.setStorage({
+    Homa: {
+      toBondPool: toBondPool + 10n * 10n ** 10n,
+    },
   })
-}
+
+  afterAll(async () => {
+    await chain.teardown()
+  })
+
+  it('swapWithExactSupply', async () => {
+    const tx = await sendTransaction(
+      chain.api.tx.aggregatedDex.swapWithExactSupply(swapPath as any, 1e12, 0).signAsync(alice),
+    )
+
+    await chain.chain.newBlock()
+
+    await checkEvents(tx, 'dex').redact({ number: true }).toMatchSnapshot()
+  })
+})
