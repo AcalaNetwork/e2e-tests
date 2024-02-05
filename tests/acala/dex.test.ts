@@ -39,6 +39,7 @@ describe.each([
       tx: chain.api.tx.dex.swapWithExactTarget(swapPair as any, 1e12, 1e15),
     },
   ] as const)('$name works', async ({ name, tx }) => {
+    const _name = name
     const tx0 = await sendTransaction(tx.signAsync(alice))
 
     await chain.chain.newBlock()
