@@ -13,8 +13,8 @@
 		"@polkadot/api": "^10.11.1"
 	},
 	"dependencies": {
-		"@acala-network/chopsticks": "^0.9.8-3",
-		"@acala-network/chopsticks-testing": "^0.9.8-3",
+		"@acala-network/chopsticks": "^0.9.9-1",
+		"@acala-network/chopsticks-testing": "^0.9.9-1",
 		"@acala-network/sdk": "^4.1.9-10",
 		"@acala-network/sdk-core": "^4.1.9-10",
 		"@polkadot/api": "^10.11.2",
@@ -25,7 +25,7 @@
 		"lodash": "^4.17.21",
 		"typescript": "^5.3.3",
 		"unplugin-swc": "^1.4.4",
-		"vitest": "^1.2.1"
+		"vitest": "^1.2.2"
 	},
 	"devDependencies": {
 		"@types/lodash": "^4",
@@ -52,5 +52,5 @@
 		"*.ts": "eslint --cache --fix",
 		"*.{ts,css}": "prettier --write"
 	},
-	"packageManager": "yarn@4.0.2"
+	"packageManager": "yarn@4.1.0"
 }
