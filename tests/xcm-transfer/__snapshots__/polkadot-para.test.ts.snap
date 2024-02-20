@@ -518,26 +518,12 @@ exports[`'acala' -> 'statemint' xcm transfer 'WBTC' > xtokens transfer > to chai
 [
   {
     "data": {
-      "messageHash": "(hash)",
-      "messageId": "(hash)",
-      "outcome": {
-        "Complete": {
-          "proofSize": 0,
-          "refTime": "(rounded 170000000)",
-        },
-      },
-    },
-    "method": "ExecutedDownward",
-    "section": "dmpQueue",
-  },
-  {
-    "data": {
       "error": "FailedToTransactAsset",
       "messageHash": "(hash)",
       "messageId": "(hash)",
       "weight": {
         "proofSize": "(rounded 7200)",
-        "refTime": "(rounded 300000000)",
+        "refTime": "(rounded 290000000)",
       },
     },
     "method": "Fail",
@@ -761,8 +747,8 @@ exports[`'statemint' -> 'acala' xcm transfer 'WBTC' > xcmPallet transfer > tx ev
     "data": {
       "outcome": {
         "Complete": {
-          "proofSize": "(rounded 6200)",
-          "refTime": "(rounded 677000000)",
+          "proofSize": "(rounded 8800)",
+          "refTime": "(rounded 731000000)",
         },
       },
     },
