@@ -245,11 +245,11 @@ exports[`'karura' to 'moonriver' using bridgeSDK cross-chain 'KAR' > parachain b
   "address": "0x4E7440dB498561A46AAa82b9Bc7d2D5162b5c27B",
   "decimals": 18,
   "fromChain": "(rounded 8)",
-  "toChain": "(rounded 2.06)",
+  "toChain": "(rounded 2.01)",
 }
 `;
 
-exports[`'karura' to 'moonriver' using bridgeSDK cross-chain 'KAR' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.03)"`;
+exports[`'karura' to 'moonriver' using bridgeSDK cross-chain 'KAR' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.09)"`;
 
 exports[`'karura' to 'moonriver' using bridgeSDK cross-chain 'KAR' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
 {
@@ -367,7 +367,7 @@ exports[`'kusama' to 'karura' using bridgeSDK cross-chain 'KSM' > parachain brid
 }
 `;
 
-exports[`'kusama' to 'karura' using bridgeSDK cross-chain 'KSM' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.00004)"`;
+exports[`'kusama' to 'karura' using bridgeSDK cross-chain 'KSM' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.00003)"`;
 
 exports[`'kusama' to 'karura' using bridgeSDK cross-chain 'KSM' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
 {

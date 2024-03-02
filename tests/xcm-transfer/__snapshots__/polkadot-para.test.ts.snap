@@ -447,7 +447,7 @@ exports[`'acala' -> 'statemint' xcm transfer 'WBTC' > xtokens transfer > from ch
               },
               {
                 "fun": {
-                  "fungible": 80000000,
+                  "fungible": 150000000,
                 },
                 "id": {
                   "concrete": {
@@ -467,7 +467,7 @@ exports[`'acala' -> 'statemint' xcm transfer 'WBTC' > xtokens transfer > from ch
             "buyExecution": {
               "fees": {
                 "fun": {
-                  "fungible": 80000000,
+                  "fungible": 150000000,
                 },
                 "id": {
                   "concrete": {

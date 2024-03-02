@@ -355,7 +355,7 @@ exports[`'kusama' -> 'karura' xcm transfer 'KSM' > xcmPallet transfer > to chain
 [
   {
     "data": {
-      "count": 1,
+      "count": 2,
     },
     "method": "DownwardMessagesReceived",
     "section": "parachainSystem",
@@ -376,10 +376,24 @@ exports[`'kusama' -> 'karura' xcm transfer 'KSM' > xcmPallet transfer > to chain
   },
   {
     "data": {
+      "messageHash": "(hash)",
+      "messageId": "(hash)",
+      "outcome": {
+        "Complete": {
+          "proofSize": 0,
+          "refTime": 1000000000,
+        },
+      },
+    },
+    "method": "ExecutedDownward",
+    "section": "dmpQueue",
+  },
+  {
+    "data": {
       "dmqHead": "(hash)",
       "weightUsed": {
         "proofSize": 0,
-        "refTime": 1000000000,
+        "refTime": 2000000000,
       },
     },
     "method": "DownwardMessagesProcessed",
