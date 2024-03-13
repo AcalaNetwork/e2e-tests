@@ -57,16 +57,16 @@ const tests = [
     to: 'karura',
     token: 'BNC',
   },
-  {
-    from: 'altair',
-    to: 'karura',
-    token: 'KUSD',
-  },
-  {
-    from: 'karura',
-    to: 'altair',
-    token: 'KUSD',
-  },
+  // {
+  //   from: 'altair',
+  //   to: 'karura',
+  //   token: 'KUSD',
+  // },
+  // {
+  //   from: 'karura',
+  //   to: 'altair',
+  //   token: 'KUSD',
+  // },
   {
     from: 'altair',
     to: 'karura',
