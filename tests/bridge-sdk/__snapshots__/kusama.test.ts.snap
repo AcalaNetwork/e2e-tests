@@ -20,26 +20,6 @@ exports[`'altair' to 'karura' using bridgeSDK cross-chain 'AIR' > parachain brid
 }
 `;
 
-exports[`'altair' to 'karura' using bridgeSDK cross-chain 'KUSD' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > after 1`] = `
-{
-  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
-  "decimals": 12,
-  "fromChain": 8,
-  "toChain": "(rounded 12)",
-}
-`;
-
-exports[`'altair' to 'karura' using bridgeSDK cross-chain 'KUSD' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.002)"`;
-
-exports[`'altair' to 'karura' using bridgeSDK cross-chain 'KUSD' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
-{
-  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
-  "decimals": 12,
-  "fromChain": 10,
-  "toChain": 10,
-}
-`;
-
 exports[`'basilisk' to 'karura' using bridgeSDK cross-chain 'BSX' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > after 1`] = `
 {
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
@@ -109,7 +89,7 @@ exports[`'karura' to 'altair' using bridgeSDK cross-chain 'AIR' > parachain brid
 }
 `;
 
-exports[`'karura' to 'altair' using bridgeSDK cross-chain 'AIR' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.008)"`;
+exports[`'karura' to 'altair' using bridgeSDK cross-chain 'AIR' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.007)"`;
 
 exports[`'karura' to 'altair' using bridgeSDK cross-chain 'AIR' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
 {
@@ -117,26 +97,6 @@ exports[`'karura' to 'altair' using bridgeSDK cross-chain 'AIR' > parachain brid
   "decimals": 18,
   "fromChain": 100,
   "toChain": 1000,
-}
-`;
-
-exports[`'karura' to 'altair' using bridgeSDK cross-chain 'KUSD' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > after 1`] = `
-{
-  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
-  "decimals": 12,
-  "fromChain": 8,
-  "toChain": "(rounded 12)",
-}
-`;
-
-exports[`'karura' to 'altair' using bridgeSDK cross-chain 'KUSD' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.008)"`;
-
-exports[`'karura' to 'altair' using bridgeSDK cross-chain 'KUSD' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
-{
-  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
-  "decimals": 12,
-  "fromChain": 10,
-  "toChain": 10,
 }
 `;
 
