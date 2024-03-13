@@ -13,12 +13,12 @@ import moonbeamConfig from './moonbeam'
 // import parallelConfig from './parallel'
 import phalaConfig from './phala'
 import polkadotConfig from './polkadot'
-import statemintConfig from './statemint'
+import assetHubConfig from './assetHub'
 import uniqueConfig from './unique'
 
 const all = {
   polkadot: polkadotConfig,
-  statemint: statemintConfig,
+  assetHub: assetHubConfig,
   acala: acalaConfig,
   astar: astarConfig,
   acalaNext: acalaNextConfig,

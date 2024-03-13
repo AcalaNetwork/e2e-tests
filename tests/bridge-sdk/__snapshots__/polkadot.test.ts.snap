@@ -1,5 +1,212 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`'acala' to 'assetHubPolkadot' using bridgeSDK cross-chain 'USDT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > after 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 6,
+  "fromChain": 8,
+  "toChain": "(rounded 1000)",
+}
+`;
+
+exports[`'acala' to 'assetHubPolkadot' using bridgeSDK cross-chain 'USDT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `0`;
+
+exports[`'acala' to 'assetHubPolkadot' using bridgeSDK cross-chain 'USDT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > from chain withdraw events 1`] = `
+[
+  {
+    "data": {
+      "amount": "(rounded 96000000000000)",
+      "from": "23M5ttkmR6KcoUwA7NqBjLuMJFWCvobsD9Zy95MgaAECEhit",
+      "to": "23M5ttkmR6Kco7bReRDve6bQUSAcwqebatp3fWGJYb4hDSDJ",
+    },
+    "method": "Transfer",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 2700000000000)",
+      "from": "23M5ttkmR6KcoUwA7NqBjLuMJFWCvobsD9Zy95MgaAECEhit",
+      "to": "23M5ttkmR6Kco7bReRDve6bQUSAcwqebatp3fWGJYb4hDSDJ",
+    },
+    "method": "Transfer",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "who": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+    },
+    "method": "Upgraded",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 2700000000)",
+      "who": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+    },
+    "method": "Withdraw",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 2700000000)",
+      "who": "23M5ttkmR6KcoPWv3spZT4dLSyv87w8fQ8EzBjbyXUZXwmze",
+    },
+    "method": "Deposit",
+    "section": "balances",
+  },
+]
+`;
+
+exports[`'acala' to 'assetHubPolkadot' using bridgeSDK cross-chain 'USDT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 6,
+  "fromChain": 10,
+  "toChain": 1000,
+}
+`;
+
+exports[`'acala' to 'astar' using bridgeSDK cross-chain 'ACA' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > after 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": "(rounded 8)",
+  "toChain": "(rounded 12)",
+}
+`;
+
+exports[`'acala' to 'astar' using bridgeSDK cross-chain 'ACA' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.001)"`;
+
+exports[`'acala' to 'astar' using bridgeSDK cross-chain 'ACA' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > from chain withdraw events 1`] = `
+[
+  {
+    "data": {
+      "amount": "(rounded 96000000000000)",
+      "from": "23M5ttkmR6KcoUwA7NqBjLuMJFWCvobsD9Zy95MgaAECEhit",
+      "to": "23M5ttkmR6Kco7bReRDve6bQUSAcwqebatp3fWGJYb4hDSDJ",
+    },
+    "method": "Transfer",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 2700000000000)",
+      "from": "23M5ttkmR6KcoUwA7NqBjLuMJFWCvobsD9Zy95MgaAECEhit",
+      "to": "23M5ttkmR6Kco7bReRDve6bQUSAcwqebatp3fWGJYb4hDSDJ",
+    },
+    "method": "Transfer",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "who": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+    },
+    "method": "Upgraded",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 2700000000)",
+      "who": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+    },
+    "method": "Withdraw",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": 2000000000000,
+      "from": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+      "to": "23UvQ3ZQvYBhhhL4C1Zsn7gfDWcWu3pWyG5boWyGufhyoPbc",
+    },
+    "method": "Transfer",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 2700000000)",
+      "who": "23M5ttkmR6KcoPWv3spZT4dLSyv87w8fQ8EzBjbyXUZXwmze",
+    },
+    "method": "Deposit",
+    "section": "balances",
+  },
+]
+`;
+
+exports[`'acala' to 'astar' using bridgeSDK cross-chain 'ACA' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 10,
+  "toChain": 10,
+}
+`;
+
+exports[`'acala' to 'astar' using bridgeSDK cross-chain 'ASTR' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > after 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 18,
+  "fromChain": 8,
+  "toChain": "(rounded 102)",
+}
+`;
+
+exports[`'acala' to 'astar' using bridgeSDK cross-chain 'ASTR' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.1)"`;
+
+exports[`'acala' to 'astar' using bridgeSDK cross-chain 'ASTR' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > from chain withdraw events 1`] = `
+[
+  {
+    "data": {
+      "amount": "(rounded 96000000000000)",
+      "from": "23M5ttkmR6KcoUwA7NqBjLuMJFWCvobsD9Zy95MgaAECEhit",
+      "to": "23M5ttkmR6Kco7bReRDve6bQUSAcwqebatp3fWGJYb4hDSDJ",
+    },
+    "method": "Transfer",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 2700000000000)",
+      "from": "23M5ttkmR6KcoUwA7NqBjLuMJFWCvobsD9Zy95MgaAECEhit",
+      "to": "23M5ttkmR6Kco7bReRDve6bQUSAcwqebatp3fWGJYb4hDSDJ",
+    },
+    "method": "Transfer",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "who": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+    },
+    "method": "Upgraded",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 2700000000)",
+      "who": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+    },
+    "method": "Withdraw",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 2700000000)",
+      "who": "23M5ttkmR6KcoPWv3spZT4dLSyv87w8fQ8EzBjbyXUZXwmze",
+    },
+    "method": "Deposit",
+    "section": "balances",
+  },
+]
+`;
+
+exports[`'acala' to 'astar' using bridgeSDK cross-chain 'ASTR' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 18,
+  "fromChain": 10,
+  "toChain": 100,
+}
+`;
+
 exports[`'acala' to 'astar' using bridgeSDK cross-chain 'AUSD' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > after 1`] = `
 {
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
@@ -11,12 +218,124 @@ exports[`'acala' to 'astar' using bridgeSDK cross-chain 'AUSD' > parachain bridg
 
 exports[`'acala' to 'astar' using bridgeSDK cross-chain 'AUSD' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.0003)"`;
 
+exports[`'acala' to 'astar' using bridgeSDK cross-chain 'AUSD' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > from chain withdraw events 1`] = `
+[
+  {
+    "data": {
+      "amount": "(rounded 96000000000000)",
+      "from": "23M5ttkmR6KcoUwA7NqBjLuMJFWCvobsD9Zy95MgaAECEhit",
+      "to": "23M5ttkmR6Kco7bReRDve6bQUSAcwqebatp3fWGJYb4hDSDJ",
+    },
+    "method": "Transfer",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 2700000000000)",
+      "from": "23M5ttkmR6KcoUwA7NqBjLuMJFWCvobsD9Zy95MgaAECEhit",
+      "to": "23M5ttkmR6Kco7bReRDve6bQUSAcwqebatp3fWGJYb4hDSDJ",
+    },
+    "method": "Transfer",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "who": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+    },
+    "method": "Upgraded",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 2700000000)",
+      "who": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+    },
+    "method": "Withdraw",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 2700000000)",
+      "who": "23M5ttkmR6KcoPWv3spZT4dLSyv87w8fQ8EzBjbyXUZXwmze",
+    },
+    "method": "Deposit",
+    "section": "balances",
+  },
+]
+`;
+
 exports[`'acala' to 'astar' using bridgeSDK cross-chain 'AUSD' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
 {
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
   "decimals": 12,
   "fromChain": 10,
   "toChain": 10,
+}
+`;
+
+exports[`'acala' to 'astar' using bridgeSDK cross-chain 'LDOT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > after 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 10,
+  "fromChain": "(rounded 10000)",
+  "toChain": "(rounded 1000)",
+}
+`;
+
+exports[`'acala' to 'astar' using bridgeSDK cross-chain 'LDOT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.0004)"`;
+
+exports[`'acala' to 'astar' using bridgeSDK cross-chain 'LDOT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > from chain withdraw events 1`] = `
+[
+  {
+    "data": {
+      "amount": "(rounded 96000000000000)",
+      "from": "23M5ttkmR6KcoUwA7NqBjLuMJFWCvobsD9Zy95MgaAECEhit",
+      "to": "23M5ttkmR6Kco7bReRDve6bQUSAcwqebatp3fWGJYb4hDSDJ",
+    },
+    "method": "Transfer",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 2700000000000)",
+      "from": "23M5ttkmR6KcoUwA7NqBjLuMJFWCvobsD9Zy95MgaAECEhit",
+      "to": "23M5ttkmR6Kco7bReRDve6bQUSAcwqebatp3fWGJYb4hDSDJ",
+    },
+    "method": "Transfer",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "who": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+    },
+    "method": "Upgraded",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 2700000000)",
+      "who": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+    },
+    "method": "Withdraw",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 2700000000)",
+      "who": "23M5ttkmR6KcoPWv3spZT4dLSyv87w8fQ8EzBjbyXUZXwmze",
+    },
+    "method": "Deposit",
+    "section": "balances",
+  },
+]
+`;
+
+exports[`'acala' to 'astar' using bridgeSDK cross-chain 'LDOT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 10,
+  "fromChain": 10000,
+  "toChain": 1000,
 }
 `;
 
@@ -30,6 +349,52 @@ exports[`'acala' to 'interlay' using bridgeSDK cross-chain 'INTR' > parachain br
 `;
 
 exports[`'acala' to 'interlay' using bridgeSDK cross-chain 'INTR' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.002)"`;
+
+exports[`'acala' to 'interlay' using bridgeSDK cross-chain 'INTR' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > from chain withdraw events 1`] = `
+[
+  {
+    "data": {
+      "amount": "(rounded 96000000000000)",
+      "from": "23M5ttkmR6KcoUwA7NqBjLuMJFWCvobsD9Zy95MgaAECEhit",
+      "to": "23M5ttkmR6Kco7bReRDve6bQUSAcwqebatp3fWGJYb4hDSDJ",
+    },
+    "method": "Transfer",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 2700000000000)",
+      "from": "23M5ttkmR6KcoUwA7NqBjLuMJFWCvobsD9Zy95MgaAECEhit",
+      "to": "23M5ttkmR6Kco7bReRDve6bQUSAcwqebatp3fWGJYb4hDSDJ",
+    },
+    "method": "Transfer",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "who": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+    },
+    "method": "Upgraded",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 2700000000)",
+      "who": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+    },
+    "method": "Withdraw",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 2700000000)",
+      "who": "23M5ttkmR6KcoPWv3spZT4dLSyv87w8fQ8EzBjbyXUZXwmze",
+    },
+    "method": "Deposit",
+    "section": "balances",
+  },
+]
+`;
 
 exports[`'acala' to 'interlay' using bridgeSDK cross-chain 'INTR' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
 {
@@ -51,6 +416,52 @@ exports[`'acala' to 'moonbeam' using bridgeSDK cross-chain 'AUSD' > parachain br
 
 exports[`'acala' to 'moonbeam' using bridgeSDK cross-chain 'AUSD' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.02)"`;
 
+exports[`'acala' to 'moonbeam' using bridgeSDK cross-chain 'AUSD' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > from chain withdraw events 1`] = `
+[
+  {
+    "data": {
+      "amount": "(rounded 96000000000000)",
+      "from": "23M5ttkmR6KcoUwA7NqBjLuMJFWCvobsD9Zy95MgaAECEhit",
+      "to": "23M5ttkmR6Kco7bReRDve6bQUSAcwqebatp3fWGJYb4hDSDJ",
+    },
+    "method": "Transfer",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 2700000000000)",
+      "from": "23M5ttkmR6KcoUwA7NqBjLuMJFWCvobsD9Zy95MgaAECEhit",
+      "to": "23M5ttkmR6Kco7bReRDve6bQUSAcwqebatp3fWGJYb4hDSDJ",
+    },
+    "method": "Transfer",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "who": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+    },
+    "method": "Upgraded",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 2500000000)",
+      "who": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+    },
+    "method": "Withdraw",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 2500000000)",
+      "who": "23M5ttkmR6KcoPWv3spZT4dLSyv87w8fQ8EzBjbyXUZXwmze",
+    },
+    "method": "Deposit",
+    "section": "balances",
+  },
+]
+`;
+
 exports[`'acala' to 'moonbeam' using bridgeSDK cross-chain 'AUSD' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
 {
   "address": "0x4E7440dB498561A46AAa82b9Bc7d2D5162b5c27B",
@@ -71,12 +482,349 @@ exports[`'acala' to 'polkadot' using bridgeSDK cross-chain 'DOT' > parachain bri
 
 exports[`'acala' to 'polkadot' using bridgeSDK cross-chain 'DOT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.002)"`;
 
+exports[`'acala' to 'polkadot' using bridgeSDK cross-chain 'DOT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > from chain withdraw events 1`] = `
+[
+  {
+    "data": {
+      "amount": "(rounded 96000000000000)",
+      "from": "23M5ttkmR6KcoUwA7NqBjLuMJFWCvobsD9Zy95MgaAECEhit",
+      "to": "23M5ttkmR6Kco7bReRDve6bQUSAcwqebatp3fWGJYb4hDSDJ",
+    },
+    "method": "Transfer",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 2700000000000)",
+      "from": "23M5ttkmR6KcoUwA7NqBjLuMJFWCvobsD9Zy95MgaAECEhit",
+      "to": "23M5ttkmR6Kco7bReRDve6bQUSAcwqebatp3fWGJYb4hDSDJ",
+    },
+    "method": "Transfer",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "who": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+    },
+    "method": "Upgraded",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 2600000000)",
+      "who": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+    },
+    "method": "Withdraw",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 2600000000)",
+      "who": "23M5ttkmR6KcoPWv3spZT4dLSyv87w8fQ8EzBjbyXUZXwmze",
+    },
+    "method": "Deposit",
+    "section": "balances",
+  },
+]
+`;
+
 exports[`'acala' to 'polkadot' using bridgeSDK cross-chain 'DOT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
 {
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
   "decimals": 10,
   "fromChain": 1000,
   "toChain": 1000,
+}
+`;
+
+exports[`'assetHubPolkadot' to 'acala' using bridgeSDK cross-chain 'USDT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > after 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 6,
+  "fromChain": 998,
+  "toChain": "(rounded 2)",
+}
+`;
+
+exports[`'assetHubPolkadot' to 'acala' using bridgeSDK cross-chain 'USDT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.0008)"`;
+
+exports[`'assetHubPolkadot' to 'acala' using bridgeSDK cross-chain 'USDT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > from chain withdraw events 1`] = `
+[
+  {
+    "data": {
+      "who": "146SvjUZXoMaemdeiecyxgALeYMm8ZWh1yrGo8RtpoPfe7WL",
+    },
+    "method": "Upgraded",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 28000000)",
+      "who": "146SvjUZXoMaemdeiecyxgALeYMm8ZWh1yrGo8RtpoPfe7WL",
+    },
+    "method": "Withdraw",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 310000000)",
+      "who": "146SvjUZXoMaemdeiecyxgALeYMm8ZWh1yrGo8RtpoPfe7WL",
+    },
+    "method": "Withdraw",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 310000000)",
+      "who": "13UVJyLnbVp9RBZYFwFGyDvVd1y27Tt8tkntv6Q7JVPhFsTB",
+    },
+    "method": "Deposit",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 28000000)",
+      "who": "13UVJyLgBASGhE2ok3TvxUfaQBGUt88JCcdYjHvUhvQkFTTx",
+    },
+    "method": "Deposit",
+    "section": "balances",
+  },
+]
+`;
+
+exports[`'assetHubPolkadot' to 'acala' using bridgeSDK cross-chain 'USDT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 6,
+  "fromChain": 1000,
+  "toChain": 0,
+}
+`;
+
+exports[`'assetHubPolkadot' to 'polkadot' using bridgeSDK cross-chain 'DOT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > after 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 10,
+  "fromChain": "(rounded 998)",
+  "toChain": "(rounded 1000)",
+}
+`;
+
+exports[`'assetHubPolkadot' to 'polkadot' using bridgeSDK cross-chain 'DOT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.002)"`;
+
+exports[`'assetHubPolkadot' to 'polkadot' using bridgeSDK cross-chain 'DOT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > from chain withdraw events 1`] = `
+[
+  {
+    "data": {
+      "who": "146SvjUZXoMaemdeiecyxgALeYMm8ZWh1yrGo8RtpoPfe7WL",
+    },
+    "method": "Upgraded",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 26000000)",
+      "who": "146SvjUZXoMaemdeiecyxgALeYMm8ZWh1yrGo8RtpoPfe7WL",
+    },
+    "method": "Withdraw",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": 20000000000,
+      "who": "146SvjUZXoMaemdeiecyxgALeYMm8ZWh1yrGo8RtpoPfe7WL",
+    },
+    "method": "Withdraw",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 310000000)",
+      "who": "146SvjUZXoMaemdeiecyxgALeYMm8ZWh1yrGo8RtpoPfe7WL",
+    },
+    "method": "Withdraw",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 310000000)",
+      "who": "13UVJyLnbVp9RBZYFwFGyDvVd1y27Tt8tkntv6Q7JVPhFsTB",
+    },
+    "method": "Deposit",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 26000000)",
+      "who": "13UVJyLgBASGhE2ok3TvxUfaQBGUt88JCcdYjHvUhvQkFTTx",
+    },
+    "method": "Deposit",
+    "section": "balances",
+  },
+]
+`;
+
+exports[`'assetHubPolkadot' to 'polkadot' using bridgeSDK cross-chain 'DOT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 10,
+  "fromChain": 1000,
+  "toChain": 1000,
+}
+`;
+
+exports[`'astar' to 'acala' using bridgeSDK cross-chain 'ACA' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > after 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 8,
+  "toChain": "(rounded 12)",
+}
+`;
+
+exports[`'astar' to 'acala' using bridgeSDK cross-chain 'ACA' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.006)"`;
+
+exports[`'astar' to 'acala' using bridgeSDK cross-chain 'ACA' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > from chain withdraw events 1`] = `
+[
+  {
+    "data": {
+      "amount": "(rounded 7100000000000000000)",
+      "who": "YQnbw3h6couUX48Ghs3qyzhdbyxA3Gu9KQCoi8z2CPBf9N3",
+    },
+    "method": "Deposit",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 11000000000000000000)",
+      "who": "YQnbw3oWxBnCUarnbePrjFcrSgVPP2jqTZYzWcccmN8fXhd",
+    },
+    "method": "Deposit",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 7200000000000000000)",
+      "from": "YQnbw3h6couUX48Ghs3qyzhdbyxA3Gu9KQCoi8z2CPBf9N3",
+      "to": "WywoJ3jqnpCeFchBV3dJpjHWhDiD2C5UaDm2Nk4FaV2aNLi",
+    },
+    "method": "Transfer",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "who": "Z2kDhBaTFjDS4eyFK26rBVTsy5EQUfHxgcvsYeQ95N73hh9",
+    },
+    "method": "Upgraded",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 120000000000000000)",
+      "who": "Z2kDhBaTFjDS4eyFK26rBVTsy5EQUfHxgcvsYeQ95N73hh9",
+    },
+    "method": "Withdraw",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 23000000000000000)",
+      "who": "YQnbw3h6couUX48Ghs3qyzhdbyxA3Gu9KQCoi8z2CPBf9N3",
+    },
+    "method": "Deposit",
+    "section": "balances",
+  },
+]
+`;
+
+exports[`'astar' to 'acala' using bridgeSDK cross-chain 'ACA' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 10,
+  "toChain": 10,
+}
+`;
+
+exports[`'astar' to 'acala' using bridgeSDK cross-chain 'ASTR' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > after 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 18,
+  "fromChain": "(rounded 97.9)",
+  "toChain": "(rounded 1.99)",
+}
+`;
+
+exports[`'astar' to 'acala' using bridgeSDK cross-chain 'ASTR' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.006)"`;
+
+exports[`'astar' to 'acala' using bridgeSDK cross-chain 'ASTR' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > from chain withdraw events 1`] = `
+[
+  {
+    "data": {
+      "amount": "(rounded 7100000000000000000)",
+      "who": "YQnbw3h6couUX48Ghs3qyzhdbyxA3Gu9KQCoi8z2CPBf9N3",
+    },
+    "method": "Deposit",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 11000000000000000000)",
+      "who": "YQnbw3oWxBnCUarnbePrjFcrSgVPP2jqTZYzWcccmN8fXhd",
+    },
+    "method": "Deposit",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 7200000000000000000)",
+      "from": "YQnbw3h6couUX48Ghs3qyzhdbyxA3Gu9KQCoi8z2CPBf9N3",
+      "to": "WywoJ3jqnpCeFchBV3dJpjHWhDiD2C5UaDm2Nk4FaV2aNLi",
+    },
+    "method": "Transfer",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "who": "Z2kDhBaTFjDS4eyFK26rBVTsy5EQUfHxgcvsYeQ95N73hh9",
+    },
+    "method": "Upgraded",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 89000000000000000)",
+      "who": "Z2kDhBaTFjDS4eyFK26rBVTsy5EQUfHxgcvsYeQ95N73hh9",
+    },
+    "method": "Withdraw",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": 2000000000000000000,
+      "from": "Z2kDhBaTFjDS4eyFK26rBVTsy5EQUfHxgcvsYeQ95N73hh9",
+      "to": "YYd75rNoMUyogjtjaJPjWX7QHvYky5BSHz1wTmQ3dXj2pk6",
+    },
+    "method": "Transfer",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 18000000000000000)",
+      "who": "YQnbw3h6couUX48Ghs3qyzhdbyxA3Gu9KQCoi8z2CPBf9N3",
+    },
+    "method": "Deposit",
+    "section": "balances",
+  },
+]
+`;
+
+exports[`'astar' to 'acala' using bridgeSDK cross-chain 'ASTR' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 18,
+  "fromChain": 100,
+  "toChain": 0,
 }
 `;
 
@@ -91,12 +839,138 @@ exports[`'astar' to 'acala' using bridgeSDK cross-chain 'AUSD' > parachain bridg
 
 exports[`'astar' to 'acala' using bridgeSDK cross-chain 'AUSD' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.0008)"`;
 
+exports[`'astar' to 'acala' using bridgeSDK cross-chain 'AUSD' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > from chain withdraw events 1`] = `
+[
+  {
+    "data": {
+      "amount": "(rounded 7100000000000000000)",
+      "who": "YQnbw3h6couUX48Ghs3qyzhdbyxA3Gu9KQCoi8z2CPBf9N3",
+    },
+    "method": "Deposit",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 11000000000000000000)",
+      "who": "YQnbw3oWxBnCUarnbePrjFcrSgVPP2jqTZYzWcccmN8fXhd",
+    },
+    "method": "Deposit",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 7200000000000000000)",
+      "from": "YQnbw3h6couUX48Ghs3qyzhdbyxA3Gu9KQCoi8z2CPBf9N3",
+      "to": "WywoJ3jqnpCeFchBV3dJpjHWhDiD2C5UaDm2Nk4FaV2aNLi",
+    },
+    "method": "Transfer",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "who": "Z2kDhBaTFjDS4eyFK26rBVTsy5EQUfHxgcvsYeQ95N73hh9",
+    },
+    "method": "Upgraded",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 120000000000000000)",
+      "who": "Z2kDhBaTFjDS4eyFK26rBVTsy5EQUfHxgcvsYeQ95N73hh9",
+    },
+    "method": "Withdraw",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 23000000000000000)",
+      "who": "YQnbw3h6couUX48Ghs3qyzhdbyxA3Gu9KQCoi8z2CPBf9N3",
+    },
+    "method": "Deposit",
+    "section": "balances",
+  },
+]
+`;
+
 exports[`'astar' to 'acala' using bridgeSDK cross-chain 'AUSD' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
 {
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
   "decimals": 12,
   "fromChain": 10,
   "toChain": 1000,
+}
+`;
+
+exports[`'astar' to 'acala' using bridgeSDK cross-chain 'LDOT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > after 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 10,
+  "fromChain": 998,
+  "toChain": "(rounded 10000)",
+}
+`;
+
+exports[`'astar' to 'acala' using bridgeSDK cross-chain 'LDOT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.0006)"`;
+
+exports[`'astar' to 'acala' using bridgeSDK cross-chain 'LDOT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > from chain withdraw events 1`] = `
+[
+  {
+    "data": {
+      "amount": "(rounded 7100000000000000000)",
+      "who": "YQnbw3h6couUX48Ghs3qyzhdbyxA3Gu9KQCoi8z2CPBf9N3",
+    },
+    "method": "Deposit",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 11000000000000000000)",
+      "who": "YQnbw3oWxBnCUarnbePrjFcrSgVPP2jqTZYzWcccmN8fXhd",
+    },
+    "method": "Deposit",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 7200000000000000000)",
+      "from": "YQnbw3h6couUX48Ghs3qyzhdbyxA3Gu9KQCoi8z2CPBf9N3",
+      "to": "WywoJ3jqnpCeFchBV3dJpjHWhDiD2C5UaDm2Nk4FaV2aNLi",
+    },
+    "method": "Transfer",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "who": "Z2kDhBaTFjDS4eyFK26rBVTsy5EQUfHxgcvsYeQ95N73hh9",
+    },
+    "method": "Upgraded",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 120000000000000000)",
+      "who": "Z2kDhBaTFjDS4eyFK26rBVTsy5EQUfHxgcvsYeQ95N73hh9",
+    },
+    "method": "Withdraw",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 23000000000000000)",
+      "who": "YQnbw3h6couUX48Ghs3qyzhdbyxA3Gu9KQCoi8z2CPBf9N3",
+    },
+    "method": "Deposit",
+    "section": "balances",
+  },
+]
+`;
+
+exports[`'astar' to 'acala' using bridgeSDK cross-chain 'LDOT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 10,
+  "fromChain": 1000,
+  "toChain": 10000,
 }
 `;
 
@@ -110,6 +984,8 @@ exports[`'interlay' to 'acala' using bridgeSDK cross-chain 'INTR' > parachain br
 `;
 
 exports[`'interlay' to 'acala' using bridgeSDK cross-chain 'INTR' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.006)"`;
+
+exports[`'interlay' to 'acala' using bridgeSDK cross-chain 'INTR' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > from chain withdraw events 1`] = `[]`;
 
 exports[`'interlay' to 'acala' using bridgeSDK cross-chain 'INTR' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
 {
@@ -131,6 +1007,67 @@ exports[`'polkadot' to 'acala' using bridgeSDK cross-chain 'DOT' > parachain bri
 
 exports[`'polkadot' to 'acala' using bridgeSDK cross-chain 'DOT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.0001)"`;
 
+exports[`'polkadot' to 'acala' using bridgeSDK cross-chain 'DOT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > from chain withdraw events 1`] = `
+[
+  {
+    "data": {
+      "who": "146SvjUZXoMaemdeiecyxgALeYMm8ZWh1yrGo8RtpoPfe7WL",
+    },
+    "method": "Upgraded",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 180000000)",
+      "who": "146SvjUZXoMaemdeiecyxgALeYMm8ZWh1yrGo8RtpoPfe7WL",
+    },
+    "method": "Withdraw",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": 20000000000,
+      "from": "146SvjUZXoMaemdeiecyxgALeYMm8ZWh1yrGo8RtpoPfe7WL",
+      "to": "13YMK2eYoAvStnzReuxBjMrAvPXmmdsURwZvc62PrdXimbNy",
+    },
+    "method": "Transfer",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 400000000)",
+      "who": "146SvjUZXoMaemdeiecyxgALeYMm8ZWh1yrGo8RtpoPfe7WL",
+    },
+    "method": "Withdraw",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 400000000)",
+      "who": "13UVJyLnbVp9RBZYFwFGyDvVd1y27Tt8tkntv6Q7JVPhFsTB",
+    },
+    "method": "Deposit",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 150000000)",
+      "who": "13UVJyLnbVp9RBZYFwFGyDvVd1y27Tt8tkntv6Q7JVPhFsTB",
+    },
+    "method": "Deposit",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 36000000)",
+      "who": "14Q74NU7dG4uxiHTSCSZii5T1Y368cm7BNVNeRWmEuoDUGXQ",
+    },
+    "method": "Deposit",
+    "section": "balances",
+  },
+]
+`;
+
 exports[`'polkadot' to 'acala' using bridgeSDK cross-chain 'DOT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
 {
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
@@ -140,7 +1077,7 @@ exports[`'polkadot' to 'acala' using bridgeSDK cross-chain 'DOT' > parachain bri
 }
 `;
 
-exports[`'polkadot' to 'statemint' using bridgeSDK cross-chain 'DOT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > after 1`] = `
+exports[`'polkadot' to 'assetHubPolkadot' using bridgeSDK cross-chain 'DOT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > after 1`] = `
 {
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
   "decimals": 10,
@@ -149,29 +1086,77 @@ exports[`'polkadot' to 'statemint' using bridgeSDK cross-chain 'DOT' > parachain
 }
 `;
 
-exports[`'polkadot' to 'statemint' using bridgeSDK cross-chain 'DOT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.004)"`;
+exports[`'polkadot' to 'assetHubPolkadot' using bridgeSDK cross-chain 'DOT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.004)"`;
 
-exports[`'polkadot' to 'statemint' using bridgeSDK cross-chain 'DOT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
-{
-  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
-  "decimals": 10,
-  "fromChain": 1000,
-  "toChain": 1000,
-}
+exports[`'polkadot' to 'assetHubPolkadot' using bridgeSDK cross-chain 'DOT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > from chain withdraw events 1`] = `
+[
+  {
+    "data": {
+      "who": "146SvjUZXoMaemdeiecyxgALeYMm8ZWh1yrGo8RtpoPfe7WL",
+    },
+    "method": "Upgraded",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 180000000)",
+      "who": "146SvjUZXoMaemdeiecyxgALeYMm8ZWh1yrGo8RtpoPfe7WL",
+    },
+    "method": "Withdraw",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": 20000000000,
+      "who": "146SvjUZXoMaemdeiecyxgALeYMm8ZWh1yrGo8RtpoPfe7WL",
+    },
+    "method": "Withdraw",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 400000000)",
+      "who": "146SvjUZXoMaemdeiecyxgALeYMm8ZWh1yrGo8RtpoPfe7WL",
+    },
+    "method": "Withdraw",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 400000000)",
+      "who": "13UVJyLnbVp9RBZYFwFGyDvVd1y27Tt8tkntv6Q7JVPhFsTB",
+    },
+    "method": "Deposit",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": 20000000000,
+      "who": "13UVJyLnbVp9x5XDyJv8g8r3UddNwBrdaH7AADCmw9XQWvYW",
+    },
+    "method": "Deposit",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 150000000)",
+      "who": "13UVJyLnbVp9RBZYFwFGyDvVd1y27Tt8tkntv6Q7JVPhFsTB",
+    },
+    "method": "Deposit",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 36000000)",
+      "who": "14Q74NU7dG4uxiHTSCSZii5T1Y368cm7BNVNeRWmEuoDUGXQ",
+    },
+    "method": "Deposit",
+    "section": "balances",
+  },
+]
 `;
 
-exports[`'statemint' to 'polkadot' using bridgeSDK cross-chain 'DOT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > after 1`] = `
-{
-  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
-  "decimals": 10,
-  "fromChain": "(rounded 998)",
-  "toChain": "(rounded 1000)",
-}
-`;
-
-exports[`'statemint' to 'polkadot' using bridgeSDK cross-chain 'DOT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.002)"`;
-
-exports[`'statemint' to 'polkadot' using bridgeSDK cross-chain 'DOT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
+exports[`'polkadot' to 'assetHubPolkadot' using bridgeSDK cross-chain 'DOT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
 {
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
   "decimals": 10,
