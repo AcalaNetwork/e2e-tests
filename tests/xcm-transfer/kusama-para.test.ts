@@ -3,31 +3,31 @@ import { query, tx } from '../../helpers/api'
 
 import { basilisk } from '../../networks/hydraDX'
 import { karura } from '../../networks/acala'
-import { statemine } from '../../networks/statemint'
+import { assetHubKusama } from '../../networks/assetHub'
 
 import buildTest from './shared'
 
 const tests = [
-  // statemine <-> karura
+  // assetHubKusama <-> karura
   {
-    from: 'statemine',
+    from: 'assetHubKusama',
     to: 'karura',
     name: 'USDT',
     test: {
       xcmPalletHorizontal: {
         tx: tx.xcmPallet.limitedReserveTransferAssetsV3(
-          statemine.usdt,
+          assetHubKusama.usdt,
           1e6,
           tx.xcmPallet.parachainV3(1, karura.paraId),
         ),
-        fromBalance: query.assets(statemine.usdtIndex),
+        fromBalance: query.assets(assetHubKusama.usdtIndex),
         toBalance: query.tokens(karura.usdt),
       },
     },
   },
   {
     from: 'karura',
-    to: 'statemine',
+    to: 'assetHubKusama',
     name: 'USDT',
     fromStorage: ({ alice }: Context) => ({
       Tokens: {
@@ -36,9 +36,9 @@ const tests = [
     }),
     test: {
       xtokenstHorizontal: {
-        tx: tx.xtokens.transfer(karura.usdt, 1e6, tx.xtokens.parachainV3(statemine.paraId)),
+        tx: tx.xtokens.transfer(karura.usdt, 1e6, tx.xtokens.parachainV3(assetHubKusama.paraId)),
         fromBalance: query.tokens(karura.usdt),
-        toBalance: query.assets(statemine.usdtIndex),
+        toBalance: query.assets(assetHubKusama.usdtIndex),
       },
     },
   },
