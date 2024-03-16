@@ -4,7 +4,7 @@ exports[`'acala' -> 'hydraDX' xcm transfer 'DAI' > xtokens transfer > balance on
 
 exports[`'acala' -> 'hydraDX' xcm transfer 'DAI' > xtokens transfer > balance on to chain 1`] = `
 {
-  "free": "(rounded 100000000000000000000)",
+  "free": 100000000000000000000,
   "frozen": 0,
   "reserved": 0,
 }
@@ -106,14 +106,15 @@ exports[`'acala' -> 'hydraDX' xcm transfer 'DAI' > xtokens transfer > to chain x
 [
   {
     "data": {
+      "error": "AssetNotFound",
       "messageHash": "(hash)",
       "messageId": "(hash)",
       "weight": {
         "proofSize": 0,
-        "refTime": 400000000,
+        "refTime": 300000000,
       },
     },
-    "method": "Success",
+    "method": "Fail",
     "section": "xcmpQueue",
   },
 ]
