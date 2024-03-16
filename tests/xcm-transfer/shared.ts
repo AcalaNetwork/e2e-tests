@@ -115,11 +115,17 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
           await checkEvents(tx0, 'xcmPallet').redact({ number: precision }).toMatchSnapshot('tx events')
 
           await toChain.chain.newBlock()
+          if (toChain.api.query.messageQueue) {
+            // messageQueue always delay XCM for one block for no good reason https://github.com/paritytech/polkadot-sdk/issues/3709
+            await toChain.chain.newBlock()
+          }
 
           await check(balance(toChain, toAccount.address))
             .redact({ number: precision })
             .toMatchSnapshot('balance on to chain')
-          await checkSystemEvents(toChain, 'parachainSystem', 'dmpQueue').toMatchSnapshot('to chain dmp events')
+          await checkSystemEvents(toChain, 'parachainSystem', 'dmpQueue', 'messageQueue').toMatchSnapshot(
+            'to chain dmp events',
+          )
         }, 240000)
       }
 
@@ -148,11 +154,17 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
             await routeChain.chain.newBlock()
           }
           await toChain.chain.newBlock()
+          if (toChain.api.query.messageQueue) {
+            // messageQueue always delay XCM for one block for no good reason https://github.com/paritytech/polkadot-sdk/issues/3709
+            await toChain.chain.newBlock()
+          }
 
           await check(toBalance(toChain, toAccount.address))
             .redact({ number: precision })
             .toMatchSnapshot('balance on to chain')
-          await checkSystemEvents(toChain, 'xcmpQueue', 'dmpQueue').toMatchSnapshot('to chain xcm events')
+          await checkSystemEvents(toChain, 'xcmpQueue', 'dmpQueue', 'messageQueue').toMatchSnapshot(
+            'to chain xcm events',
+          )
         }, 240000)
       }
 
@@ -180,11 +192,17 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
             await routeChain.chain.newBlock()
           }
           await toChain.chain.newBlock()
+          if (toChain.api.query.messageQueue) {
+            // messageQueue always delay XCM for one block for no good reason https://github.com/paritytech/polkadot-sdk/issues/3709
+            await toChain.chain.newBlock()
+          }
 
           await check(toBalance(toChain, toAccount.address))
             .redact({ number: precision })
             .toMatchSnapshot('balance on to chain')
-          await checkSystemEvents(toChain, 'xcmpQueue', 'dmpQueue').toMatchSnapshot('to chain xcm events')
+          await checkSystemEvents(toChain, 'xcmpQueue', 'dmpQueue', 'messageQueue').toMatchSnapshot(
+            'to chain xcm events',
+          )
         }, 240000)
       }
     })
