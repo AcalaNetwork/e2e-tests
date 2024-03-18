@@ -65,6 +65,15 @@ exports[`'altair' to 'karura' using bridgeSDK cross-chain 'AIR' > parachain brid
 }
 `;
 
+exports[`'altair' to 'karura' using bridgeSDK cross-chain 'AIR' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 2`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 18,
+  "fromChain": 1000,
+  "toChain": 0,
+}
+`;
+
 exports[`'bifrost' to 'karura' using bridgeSDK cross-chain 'BNC' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > after 1`] = `
 {
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
@@ -471,6 +480,50 @@ exports[`'khala' to 'karura' using bridgeSDK cross-chain 'KUSD' > parachain brid
   "decimals": 12,
   "fromChain": 100,
   "toChain": 10,
+}
+`;
+
+exports[`'kintsugi' to 'karura' using bridgeSDK cross-chain 'KINT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > after 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": "(rounded 998)",
+  "toChain": "(rounded 2)",
+}
+`;
+
+exports[`'kintsugi' to 'karura' using bridgeSDK cross-chain 'KINT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.0002)"`;
+
+exports[`'kintsugi' to 'karura' using bridgeSDK cross-chain 'KINT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > from chain withdraw events 1`] = `[]`;
+
+exports[`'kintsugi' to 'karura' using bridgeSDK cross-chain 'KINT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 1000,
+  "toChain": 0,
+}
+`;
+
+exports[`'kintsugi' to 'karura' using bridgeSDK cross-chain 'LKSM' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > after 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 98,
+  "toChain": "(rounded 102)",
+}
+`;
+
+exports[`'kintsugi' to 'karura' using bridgeSDK cross-chain 'LKSM' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.0002)"`;
+
+exports[`'kintsugi' to 'karura' using bridgeSDK cross-chain 'LKSM' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > from chain withdraw events 1`] = `[]`;
+
+exports[`'kintsugi' to 'karura' using bridgeSDK cross-chain 'LKSM' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 100,
+  "toChain": 100,
 }
 `;
 
