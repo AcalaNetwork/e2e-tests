@@ -65,63 +65,6 @@ exports[`'altair' to 'karura' using bridgeSDK cross-chain 'AIR' > parachain brid
 }
 `;
 
-exports[`'basilisk' to 'karura' using bridgeSDK cross-chain 'BSX' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > after 1`] = `
-{
-  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
-  "decimals": 12,
-  "fromChain": "(rounded 985)",
-  "toChain": "(rounded 1.94)",
-}
-`;
-
-exports[`'basilisk' to 'karura' using bridgeSDK cross-chain 'BSX' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.06)"`;
-
-exports[`'basilisk' to 'karura' using bridgeSDK cross-chain 'BSX' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > from chain withdraw events 1`] = `
-[
-  {
-    "data": {
-      "who": "bXjgry3bkMHToRvMRedUhtPzEUUXdhyVX2UwY8hY156tWH4YB",
-    },
-    "method": "Upgraded",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "amount": "(rounded 13000000000000)",
-      "who": "bXjgry3bkMHToRvMRedUhtPzEUUXdhyVX2UwY8hY156tWH4YB",
-    },
-    "method": "Withdraw",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "amount": 2000000000000,
-      "from": "bXjgry3bkMHToRvMRedUhtPzEUUXdhyVX2UwY8hY156tWH4YB",
-      "to": "bXjCjrSGYhPDZoYSM8tkzmj1szoNx4TuQW6JdCcezyf48G7kZ",
-    },
-    "method": "Transfer",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "amount": "(rounded 13000000000000)",
-      "who": "bXj4uMHTyQyvNCLHKBv6ztwkPSx8tgsrxuFtAFfWDYntXtohw",
-    },
-    "method": "Deposit",
-    "section": "balances",
-  },
-]
-`;
-
-exports[`'basilisk' to 'karura' using bridgeSDK cross-chain 'BSX' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
-{
-  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
-  "decimals": 12,
-  "fromChain": 1000,
-  "toChain": 0,
-}
-`;
-
 exports[`'bifrost' to 'karura' using bridgeSDK cross-chain 'BNC' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > after 1`] = `
 {
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
@@ -323,6 +266,54 @@ exports[`'karura' to 'khala' using bridgeSDK cross-chain 'KUSD' > parachain brid
 }
 `;
 
+exports[`'karura' to 'kintsugi' using bridgeSDK cross-chain 'LKSM' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > after 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 98,
+  "toChain": "(rounded 102)",
+}
+`;
+
+exports[`'karura' to 'kintsugi' using bridgeSDK cross-chain 'LKSM' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.0002)"`;
+
+exports[`'karura' to 'kintsugi' using bridgeSDK cross-chain 'LKSM' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > from chain withdraw events 1`] = `
+[
+  {
+    "data": {
+      "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "Upgraded",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 2700000000)",
+      "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "Withdraw",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 2700000000)",
+      "who": "qmmNufxeWaAVGhzEp4WhG6VA1dY1Zsd2F8ixNKNbmNZP5Ne",
+    },
+    "method": "Deposit",
+    "section": "balances",
+  },
+]
+`;
+
+exports[`'karura' to 'kintsugi' using bridgeSDK cross-chain 'LKSM' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 100,
+  "toChain": 100,
+}
+`;
+
 exports[`'karura' to 'moonriver' using bridgeSDK cross-chain 'KAR' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > after 1`] = `
 {
   "address": "0x4E7440dB498561A46AAa82b9Bc7d2D5162b5c27B",
@@ -480,68 +471,6 @@ exports[`'khala' to 'karura' using bridgeSDK cross-chain 'KUSD' > parachain brid
   "decimals": 12,
   "fromChain": 100,
   "toChain": 10,
-}
-`;
-
-exports[`'kintsugi' to 'karura' using bridgeSDK cross-chain 'KINT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > after 1`] = `
-{
-  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
-  "decimals": 12,
-  "fromChain": "(rounded 998)",
-  "toChain": "(rounded 2)",
-}
-`;
-
-exports[`'kintsugi' to 'karura' using bridgeSDK cross-chain 'KINT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.0002)"`;
-
-exports[`'kintsugi' to 'karura' using bridgeSDK cross-chain 'KINT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > from chain withdraw events 1`] = `[]`;
-
-exports[`'kintsugi' to 'karura' using bridgeSDK cross-chain 'KINT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
-{
-  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
-  "decimals": 12,
-  "fromChain": 1000,
-  "toChain": 0,
-}
-`;
-
-exports[`'kintsugi' to 'karura' using bridgeSDK cross-chain 'LKSM' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > after 1`] = `
-{
-  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
-  "decimals": 12,
-  "fromChain": 100,
-  "toChain": 100,
-}
-`;
-
-exports[`'kintsugi' to 'karura' using bridgeSDK cross-chain 'LKSM' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > after 2`] = `
-{
-  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
-  "decimals": 12,
-  "fromChain": 100,
-  "toChain": 100,
-}
-`;
-
-exports[`'kintsugi' to 'karura' using bridgeSDK cross-chain 'LKSM' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > from chain withdraw events 1`] = `[]`;
-
-exports[`'kintsugi' to 'karura' using bridgeSDK cross-chain 'LKSM' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > from chain withdraw events 2`] = `[]`;
-
-exports[`'kintsugi' to 'karura' using bridgeSDK cross-chain 'LKSM' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
-{
-  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
-  "decimals": 12,
-  "fromChain": 100,
-  "toChain": 100,
-}
-`;
-
-exports[`'kintsugi' to 'karura' using bridgeSDK cross-chain 'LKSM' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 2`] = `
-{
-  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
-  "decimals": 12,
-  "fromChain": 100,
-  "toChain": 100,
 }
 `;
 

@@ -2,9 +2,9 @@ import { Context } from '../../networks/types'
 import { query, tx } from '../../helpers/api'
 
 import { acala } from '../../networks/acala'
+import { assetHubPolkadot } from '../../networks/assetHub'
 import { hydraDX } from '../../networks/hydraDX'
 import { moonbeam } from '../../networks/moonbeam'
-import { assetHubPolkadot } from '../../networks/assetHub'
 
 import buildTest from './shared'
 

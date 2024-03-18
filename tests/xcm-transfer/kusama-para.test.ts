@@ -1,9 +1,9 @@
 import { Context } from '../../networks/types'
 import { query, tx } from '../../helpers/api'
 
+import { assetHubKusama } from '../../networks/assetHub'
 import { basilisk } from '../../networks/hydraDX'
 import { karura } from '../../networks/acala'
-import { assetHubKusama } from '../../networks/assetHub'
 
 import buildTest from './shared'
 

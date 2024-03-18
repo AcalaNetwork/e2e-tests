@@ -1095,15 +1095,6 @@ exports[`'polkadot' to 'acala' using bridgeSDK cross-chain 'DOT' > parachain bri
 }
 `;
 
-exports[`'polkadot' to 'acala' using bridgeSDK cross-chain 'DOT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 2`] = `
-{
-  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
-  "decimals": 10,
-  "fromChain": 1000,
-  "toChain": 1000,
-}
-`;
-
 exports[`'polkadot' to 'assetHubPolkadot' using bridgeSDK cross-chain 'DOT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > after 1`] = `
 {
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
