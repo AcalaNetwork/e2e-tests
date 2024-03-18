@@ -38,10 +38,10 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
         toAccount = (opt.toAccount as any)(ctx)
       }
 
-      let precision = 3
-      if ('precision' in opt) {
-        precision = opt.precision
-      }
+      const precision = 3
+      // if ('precision' in opt) {
+      //   precision = opt.precision
+      // }
 
       beforeEach(async () => {
         const networkOptions = {
