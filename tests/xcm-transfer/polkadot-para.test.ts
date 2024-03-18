@@ -3,7 +3,6 @@ import { query, tx } from '../../helpers/api'
 
 import { acala } from '../../networks/acala'
 import { assetHubPolkadot } from '../../networks/assetHub'
-import { hydraDX } from '../../networks/hydraDX'
 import { moonbeam } from '../../networks/moonbeam'
 
 import buildTest from './shared'
@@ -68,50 +67,6 @@ const tests = [
       },
     },
   },
-  // acala <-> hydraDX
-  {
-    from: 'acala',
-    to: 'hydraDX',
-    name: 'DAI',
-    precision: 2, // fee varies a lot on hydraDX
-    fromStorage: {
-      Evm: {
-        accountStorages: [
-          [
-            [
-              acala.dai.Erc20,
-              '0x2aef47e62c966f0695d5af370ddc1bc7c56902063eee60853e2872fc0ff4f88c', // balanceOf(Alice)
-            ],
-            '0x0000000000000000000000000000000000000000000000056bc75e2d63100000', // 1e20
-          ],
-        ],
-      },
-    },
-    test: {
-      xtokenstHorizontal: {
-        tx: tx.xtokens.transfer(acala.dai, 10n ** 18n, tx.xtokens.parachainV3(hydraDX.paraId)),
-        fromBalance: query.evm(acala.dai.Erc20, '0x2aef47e62c966f0695d5af370ddc1bc7c56902063eee60853e2872fc0ff4f88c'),
-        toBalance: query.tokens(hydraDX.dai),
-      },
-    },
-  },
-  // {
-  //   from: 'hydraDX',
-  //   to: 'acala',
-  //   name: 'DAI',
-  //   fromStorage: ({ alice }: Context) => ({
-  //     Tokens: {
-  //       accounts: [[[alice.address, hydraDX.dai], { free: 10n * 10n ** 18n }]],
-  //     },
-  //   }),
-  //   test: {
-  //     xtokenstHorizontal: {
-  //       tx: tx.xtokens.transfer(hydraDX.dai, 10n ** 18n, tx.xtokens.parachainV3(acala.paraId)),
-  //       fromBalance: query.tokens(hydraDX.dai),
-  //       toBalance: query.evm(acala.dai.Erc20, '0x2aef47e62c966f0695d5af370ddc1bc7c56902063eee60853e2872fc0ff4f88c'),
-  //     },
-  //   },
-  // },
   // acala <-> moonbeam
   {
     from: 'acala',
@@ -128,26 +83,26 @@ const tests = [
       },
     },
   },
-  // {
-  //   from: 'moonbeam',
-  //   to: 'acala',
-  //   route: 'polkadot',
-  //   name: 'DOT',
-  //   fromAccount: ({ alith }: Context) => alith,
-  //   fromStorage: ({ alith }: Context) => ({
-  //     Assets: {
-  //       account: [[[moonbeam.dot, alith.address], { balance: 10e12 }]],
-  //     },
-  //   }),
-  //   test: {
-  //     xtokenstHorizontal: {
-  //       tx: tx.xtokens.transfer({ ForeignAsset: moonbeam.dot }, 1e12, tx.xtokens.parachainV3(acala.paraId)),
-  //       fromBalance: query.assets(moonbeam.dot),
-  //       toBalance: query.tokens(acala.dot),
-  //       checkUmp: true,
-  //     },
-  //   },
-  // },
+  {
+    from: 'moonbeam',
+    to: 'acala',
+    route: 'polkadot',
+    name: 'DOT',
+    fromAccount: ({ alith }: Context) => alith,
+    fromStorage: ({ alith }: Context) => ({
+      Assets: {
+        account: [[[moonbeam.dot, alith.address], { balance: 10e12 }]],
+      },
+    }),
+    test: {
+      xtokenstHorizontal: {
+        tx: tx.xtokens.transfer({ ForeignAsset: moonbeam.dot }, 1e12, tx.xtokens.parachainV3(acala.paraId)),
+        fromBalance: query.assets(moonbeam.dot),
+        toBalance: query.tokens(acala.dot),
+        checkUmp: true,
+      },
+    },
+  },
 ] as const
 
 export type TestType = (typeof tests)[number]
