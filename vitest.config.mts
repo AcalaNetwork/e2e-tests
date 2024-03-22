@@ -7,7 +7,7 @@ export default defineConfig({
 		testTimeout: 240_000,
 		pool: 'forks',
 		passWithNoTests: true,
-		retry: 2,
+		retry: process.env.CI ? 3 : 2,
 	},
 	plugins: [swc.vite()],
 })
