@@ -520,15 +520,18 @@ exports[`'statemine' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer > to c
 [
   {
     "data": {
-      "messageHash": "(hash)",
-      "messageId": "(hash)",
-      "weight": {
+      "id": "(hash)",
+      "origin": {
+        "Sibling": 1000,
+      },
+      "success": true,
+      "weightUsed": {
         "proofSize": 0,
         "refTime": 1000000000,
       },
     },
-    "method": "Success",
-    "section": "xcmpQueue",
+    "method": "Processed",
+    "section": "messageQueue",
   },
 ]
 `;
