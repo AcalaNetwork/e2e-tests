@@ -172,6 +172,10 @@ export const buildTests = (tests: ReadonlyArray<TestTtype>) => {
 
           await fromchain.chain.newBlock()
           await tochain.chain.newBlock()
+          if (tochain.api.query.messageQueue) {
+            // messageQueue always delay XCM for one block for no good reason https://github.com/paritytech/polkadot-sdk/issues/3709
+            await tochain.chain.newBlock()
+          }
 
           await sleep(100)
           const chainBalanceNow = await chainBalance(sdk, fromData, address)

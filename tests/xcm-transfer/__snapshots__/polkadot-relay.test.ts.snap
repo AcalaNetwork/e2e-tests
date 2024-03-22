@@ -355,35 +355,16 @@ exports[`'polkadot' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > to chai
 [
   {
     "data": {
-      "count": 1,
-    },
-    "method": "DownwardMessagesReceived",
-    "section": "parachainSystem",
-  },
-  {
-    "data": {
-      "messageHash": "(hash)",
-      "messageId": "(hash)",
-      "outcome": {
-        "Complete": {
-          "proofSize": 0,
-          "refTime": 1000000000,
-        },
-      },
-    },
-    "method": "ExecutedDownward",
-    "section": "dmpQueue",
-  },
-  {
-    "data": {
-      "dmqHead": "(hash)",
+      "id": "(hash)",
+      "origin": "Parent",
+      "success": true,
       "weightUsed": {
         "proofSize": 0,
         "refTime": 1000000000,
       },
     },
-    "method": "DownwardMessagesProcessed",
-    "section": "parachainSystem",
+    "method": "Processed",
+    "section": "messageQueue",
   },
 ]
 `;
@@ -442,6 +423,7 @@ exports[`'polkadot' -> 'astar' xcm transfer 'DOT' > xcmPallet transfer > to chai
   },
   {
     "data": {
+      "messageHash": "(hash)",
       "messageId": "(hash)",
       "outcome": {
         "Complete": {
