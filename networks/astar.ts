@@ -2,7 +2,9 @@ import { Config } from './types'
 
 export type Vars = {
   relayToken: string
-  aUSDToken: string
+  aUSDToken: string,
+  acalaNativeToken: string,
+  acalaLiquidityToken: string
 }
 
 export default {
@@ -11,14 +13,18 @@ export default {
     endpoint: 'wss://rpc.astar.network',
     relayToken: '340282366920938463463374607431768211455',
     aUSDToken: '18446744073709551617',
+    acalaNativeToken: '18446744073709551616',
+    acalaLiquidityToken: '18446744073709551618'
   },
   kusama: {
     name: 'shiden' as const,
     endpoint: ['wss://rpc.shiden.astar.network', 'wss://shiden-rpc.dwellir.com'],
     relayToken: '340282366920938463463374607431768211455',
     aUSDToken: '18446744073709551616',
+    acalaNativeToken: '18446744073709551618',
+    acalaLiquidityToken: '18446744073709551619'
   },
-  config: ({ alice, relayToken, aUSDToken }) => ({
+  config: ({ alice, relayToken, aUSDToken , acalaNativeToken, acalaLiquidityToken}) => ({
     storages: {
       System: {
         account: [[[alice.address], { providers: 1, data: { free: '100000000000000000000' } }]],
@@ -27,6 +33,8 @@ export default {
         account: [
           [[relayToken, alice.address], { balance: 10 * 1e12 }],
           [[aUSDToken, alice.address], { balance: 10 * 1e12 }],
+          [[acalaNativeToken, alice.address], { balance: 10 * 1e12 }],
+          [[acalaLiquidityToken, alice.address], { balance: 10 * 1e12 }],
         ],
       },
       Sudo: {

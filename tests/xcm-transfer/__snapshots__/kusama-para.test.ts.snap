@@ -1,5 +1,360 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`'assetHubKusama' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer > balance on from chain 1`] = `
+{
+  "balance": 999000000,
+  "extra": null,
+  "reason": {
+    "consumer": null,
+  },
+  "status": "Liquid",
+}
+`;
+
+exports[`'assetHubKusama' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer > balance on to chain 1`] = `
+{
+  "free": "(rounded 999000)",
+  "frozen": 0,
+  "reserved": 0,
+}
+`;
+
+exports[`'assetHubKusama' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer > from chain hrmp messages 1`] = `
+[
+  {
+    "data": [
+      "ConcatenatedVersionedXcm",
+      {
+        "v3": [
+          {
+            "reserveAssetDeposited": [
+              {
+                "fun": {
+                  "fungible": 1000000,
+                },
+                "id": {
+                  "concrete": {
+                    "interior": {
+                      "x3": [
+                        {
+                          "parachain": 1000,
+                        },
+                        {
+                          "palletInstance": 50,
+                        },
+                        {
+                          "generalIndex": 1984,
+                        },
+                      ],
+                    },
+                    "parents": 1,
+                  },
+                },
+              },
+            ],
+          },
+          {
+            "clearOrigin": null,
+          },
+          {
+            "buyExecution": {
+              "fees": {
+                "fun": {
+                  "fungible": 1000000,
+                },
+                "id": {
+                  "concrete": {
+                    "interior": {
+                      "x3": [
+                        {
+                          "parachain": 1000,
+                        },
+                        {
+                          "palletInstance": 50,
+                        },
+                        {
+                          "generalIndex": 1984,
+                        },
+                      ],
+                    },
+                    "parents": 1,
+                  },
+                },
+              },
+              "weightLimit": {
+                "unlimited": null,
+              },
+            },
+          },
+          {
+            "depositAsset": {
+              "assets": {
+                "wild": {
+                  "allCounted": 1,
+                },
+              },
+              "beneficiary": {
+                "interior": {
+                  "x1": {
+                    "accountId32": {
+                      "id": "0x88dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee",
+                      "network": null,
+                    },
+                  },
+                },
+                "parents": 0,
+              },
+            },
+          },
+          {
+            "setTopic": "(redacted)",
+          },
+        ],
+      },
+    ],
+    "recipient": 2000,
+  },
+]
+`;
+
+exports[`'assetHubKusama' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer > to chain xcm events 1`] = `
+[
+  {
+    "data": {
+      "messageHash": "(hash)",
+      "messageId": "(hash)",
+      "weight": {
+        "proofSize": 0,
+        "refTime": 1000000000,
+      },
+    },
+    "method": "Success",
+    "section": "xcmpQueue",
+  },
+]
+`;
+
+exports[`'assetHubKusama' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer > tx events 1`] = `
+[
+  {
+    "data": {
+      "outcome": {
+        "Complete": {
+          "proofSize": "(rounded 8800)",
+          "refTime": "(rounded 841000000)",
+        },
+      },
+    },
+    "method": "Attempted",
+    "section": "polkadotXcm",
+  },
+]
+`;
+
+exports[`'karura' -> 'assetHubKusama' xcm transfer 'USDT' > xtokens transfer > balance on from chain 1`] = `
+{
+  "free": 9000000,
+  "frozen": 0,
+  "reserved": 0,
+}
+`;
+
+exports[`'karura' -> 'assetHubKusama' xcm transfer 'USDT' > xtokens transfer > balance on to chain 1`] = `
+{
+  "balance": "(rounded 1000000000)",
+  "extra": null,
+  "reason": {
+    "consumer": null,
+  },
+  "status": "Liquid",
+}
+`;
+
+exports[`'karura' -> 'assetHubKusama' xcm transfer 'USDT' > xtokens transfer > from chain hrmp messages 1`] = `
+[
+  {
+    "data": [
+      "ConcatenatedVersionedXcm",
+      {
+        "v2": [
+          {
+            "withdrawAsset": [
+              {
+                "fun": {
+                  "fungible": 1000000,
+                },
+                "id": {
+                  "concrete": {
+                    "interior": {
+                      "x2": [
+                        {
+                          "palletInstance": 50,
+                        },
+                        {
+                          "generalIndex": 1984,
+                        },
+                      ],
+                    },
+                    "parents": 0,
+                  },
+                },
+              },
+            ],
+          },
+          {
+            "clearOrigin": null,
+          },
+          {
+            "buyExecution": {
+              "fees": {
+                "fun": {
+                  "fungible": 1000000,
+                },
+                "id": {
+                  "concrete": {
+                    "interior": {
+                      "x2": [
+                        {
+                          "palletInstance": 50,
+                        },
+                        {
+                          "generalIndex": 1984,
+                        },
+                      ],
+                    },
+                    "parents": 0,
+                  },
+                },
+              },
+              "weightLimit": {
+                "unlimited": null,
+              },
+            },
+          },
+          {
+            "depositAsset": {
+              "assets": {
+                "wild": {
+                  "all": null,
+                },
+              },
+              "beneficiary": {
+                "interior": {
+                  "x1": {
+                    "accountId32": {
+                      "id": "0x88dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee",
+                      "network": {
+                        "any": null,
+                      },
+                    },
+                  },
+                },
+                "parents": 0,
+              },
+              "maxAssets": 1,
+            },
+          },
+        ],
+      },
+    ],
+    "recipient": 1000,
+  },
+]
+`;
+
+exports[`'karura' -> 'assetHubKusama' xcm transfer 'USDT' > xtokens transfer > to chain xcm events 1`] = `
+[
+  {
+    "data": {
+      "messageHash": "(hash)",
+      "messageId": "(hash)",
+      "weight": {
+        "proofSize": "(rounded 7200)",
+        "refTime": "(rounded 300000000)",
+      },
+    },
+    "method": "Success",
+    "section": "xcmpQueue",
+  },
+]
+`;
+
+exports[`'karura' -> 'assetHubKusama' xcm transfer 'USDT' > xtokens transfer > tx events 1`] = `
+[
+  {
+    "data": {
+      "assets": [
+        {
+          "fun": {
+            "Fungible": 1000000,
+          },
+          "id": {
+            "Concrete": {
+              "interior": {
+                "X3": [
+                  {
+                    "Parachain": 1000,
+                  },
+                  {
+                    "PalletInstance": 50,
+                  },
+                  {
+                    "GeneralIndex": "(rounded 2000)",
+                  },
+                ],
+              },
+              "parents": 1,
+            },
+          },
+        },
+      ],
+      "dest": {
+        "interior": {
+          "X2": [
+            {
+              "Parachain": 1000,
+            },
+            {
+              "AccountId32": {
+                "id": "(hash)",
+                "network": null,
+              },
+            },
+          ],
+        },
+        "parents": 1,
+      },
+      "fee": {
+        "fun": {
+          "Fungible": 1000000,
+        },
+        "id": {
+          "Concrete": {
+            "interior": {
+              "X3": [
+                {
+                  "Parachain": 1000,
+                },
+                {
+                  "PalletInstance": 50,
+                },
+                {
+                  "GeneralIndex": "(rounded 2000)",
+                },
+              ],
+            },
+            "parents": 1,
+          },
+        },
+      },
+      "sender": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "TransferredMultiAssets",
+    "section": "xTokens",
+  },
+]
+`;
+
 exports[`'karura' -> 'basilisk' xcm transfer 'DAI' > xtokens transfer > balance on from chain 1`] = `99000000000000000000`;
 
 exports[`'karura' -> 'basilisk' xcm transfer 'DAI' > xtokens transfer > balance on to chain 1`] = `

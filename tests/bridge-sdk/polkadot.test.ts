@@ -13,13 +13,23 @@ const tests = [
   },
   {
     from: 'polkadot',
-    to: 'statemint',
+    to: 'assetHubPolkadot',
     token: 'DOT',
   },
   {
-    from: 'statemint',
+    from: 'assetHubPolkadot',
     to: 'polkadot',
     token: 'DOT',
+  },
+  {
+    from: 'acala',
+    to: 'assetHubPolkadot',
+    token: 'USDT',
+  },
+  {
+    from: 'assetHubPolkadot',
+    to: 'acala',
+    token: 'USDT',
   },
   {
     from: 'acala',
@@ -35,6 +45,36 @@ const tests = [
     from: 'acala',
     to: 'astar',
     token: 'AUSD',
+  },
+  {
+    from: 'astar',
+    to: 'acala',
+    token: 'ACA',
+  },
+  {
+    from: 'acala',
+    to: 'astar',
+    token: 'ACA',
+  },
+  {
+    from: 'astar',
+    to: 'acala',
+    token: 'ASTR',
+  },
+  {
+    from: 'acala',
+    to: 'astar',
+    token: 'ASTR',
+  },
+  {
+    from: 'astar',
+    to: 'acala',
+    token: 'LDOT',
+  },
+  {
+    from: 'acala',
+    to: 'astar',
+    token: 'LDOT',
   },
   {
     from: 'interlay',

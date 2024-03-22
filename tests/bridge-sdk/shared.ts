@@ -1,4 +1,5 @@
 import { ApiPromise } from '@polkadot/api'
+import { AssetHubKusamaAdapter, AssetHubPolkadotAdapter } from '@polkawallet/bridge/adapters/assethub'
 import { FixedPointNumber } from '@acala-network/sdk-core'
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import { sendTransaction, testingPairs } from '@acala-network/chopsticks-testing'
@@ -16,12 +17,10 @@ import { KaruraAdapter } from '@polkawallet/bridge/adapters/acala'
 import { KhalaAdapter } from '@polkawallet/bridge/adapters/phala'
 import { KusamaAdapter, PolkadotAdapter } from '@polkawallet/bridge/adapters/polkadot'
 import { MoonbeamAdapter, MoonriverAdapter } from '@polkawallet/bridge/adapters/moonbeam'
+import { Network, NetworkNames, createNetworks } from '../../networks'
 import { QuartzAdapter, UniqueAdapter } from '@polkawallet/bridge/adapters/unique'
 import { ShadowAdapter } from '@polkawallet/bridge/adapters/crust'
-import { StatemineAdapter, StatemintAdapter } from '@polkawallet/bridge/adapters/statemint'
-
-import { Network, NetworkNames, createNetworks } from '../../networks'
-import { check } from '../../helpers'
+import { check, checkSystemEvents } from '../../helpers'
 
 export type TestTtype = {
   from: NetworkNames
@@ -61,8 +60,10 @@ export const buildTests = (tests: ReadonlyArray<TestTtype>) => {
               Tokens: {
                 Accounts: [
                   [[alice.address, { ForeignAsset: 1 }], { free: 10 * 1e12 }],
+                  [[alice.address, { ForeignAsset: 2 }], { free: '10000000000000000000' }],
                   [[alice.address, { ForeignAsset: 4 }], { free: 10 * 1e10 }],
                   [[alice.address, { ForeignAsset: 3 }], { free: 3 * 1e8 }],
+                  [[alice.address, { ForeignAsset: 12 }], { free: 10 * 1e6 }],
                   [[alice.address, { Token: 'AUSD' }], { free: 10 * 1e12 }],
                 ],
               },
@@ -96,10 +97,10 @@ export const buildTests = (tests: ReadonlyArray<TestTtype>) => {
             karura: KaruraAdapter,
             kusama: KusamaAdapter,
             moonriver: MoonriverAdapter,
-            statemine: StatemineAdapter,
+            assetHubKusama: AssetHubKusamaAdapter,
             basilisk: BasiliskAdapter,
             polkadot: PolkadotAdapter,
-            statemint: StatemintAdapter,
+            assetHubPolkadot: AssetHubPolkadotAdapter,
             moonbeam: MoonbeamAdapter,
             acala: AcalaAdapter,
             bifrost: BifrostAdapter,
@@ -169,7 +170,6 @@ export const buildTests = (tests: ReadonlyArray<TestTtype>) => {
             .signAsync(alice)
 
           await sendTransaction(tx as any)
-
           await fromchain.chain.newBlock()
           await tochain.chain.newBlock()
           if (tochain.api.query.messageQueue) {
@@ -178,6 +178,8 @@ export const buildTests = (tests: ReadonlyArray<TestTtype>) => {
           }
 
           await sleep(100)
+          // await fromchain.pause()
+          await checkSystemEvents(fromchain, 'balances', 'Withdraw').toMatchSnapshot('from chain withdraw events')
           const chainBalanceNow = await chainBalance(sdk, fromData, address)
           await check(chainBalanceNow).redact({ number: 3 }).toMatchSnapshot('after')
 

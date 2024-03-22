@@ -23,13 +23,13 @@ const tests = [
     token: 'KSM',
   },
   {
-    from: 'statemine',
+    from: 'assetHubKusama',
     to: 'kusama',
     token: 'KSM',
   },
   {
     from: 'kusama',
-    to: 'statemine',
+    to: 'assetHubKusama',
     token: 'KSM',
   },
   {
