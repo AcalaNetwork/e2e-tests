@@ -13,19 +13,19 @@
 		"@polkadot/api": "^10.11.2"
 	},
 	"dependencies": {
-		"@acala-network/chopsticks": "^0.9.9",
-		"@acala-network/chopsticks-testing": "^0.9.9",
+		"@acala-network/chopsticks": "^0.9.11-2",
+		"@acala-network/chopsticks-testing": "^0.9.11-2",
 		"@acala-network/sdk": "^4.1.9-13",
 		"@acala-network/sdk-core": "^4.1.9-13",
 		"@polkadot/api": "^10.11.2",
 		"@polkawallet/bridge": "^0.1.5-31",
-		"@swc/core": "^1.4.0",
+		"@swc/core": "^1.4.8",
 		"axios": "^1.6.6",
 		"dotenv": "^16.3.1",
 		"lodash": "^4.17.21",
 		"typescript": "^5.3.3",
 		"unplugin-swc": "^1.4.4",
-		"vitest": "^1.2.2"
+		"vitest": "^1.4.0"
 	},
 	"devDependencies": {
 		"@types/lodash": "^4",
