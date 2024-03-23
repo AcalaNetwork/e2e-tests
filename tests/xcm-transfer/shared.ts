@@ -115,10 +115,6 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
           await checkEvents(tx0, 'xcmPallet').redact({ number: precision }).toMatchSnapshot('tx events')
 
           await toChain.chain.newBlock()
-          if (toChain.api.query.messageQueue) {
-            // messageQueue always delay XCM for one block for no good reason https://github.com/paritytech/polkadot-sdk/issues/3709
-            await toChain.chain.newBlock()
-          }
 
           await check(balance(toChain, toAccount.address))
             .redact({ number: precision })
@@ -154,10 +150,6 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
             await routeChain.chain.newBlock()
           }
           await toChain.chain.newBlock()
-          if (toChain.api.query.messageQueue) {
-            // messageQueue always delay XCM for one block for no good reason https://github.com/paritytech/polkadot-sdk/issues/3709
-            await toChain.chain.newBlock()
-          }
 
           await check(toBalance(toChain, toAccount.address))
             .redact({ number: precision })
@@ -192,10 +184,6 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
             await routeChain.chain.newBlock()
           }
           await toChain.chain.newBlock()
-          if (toChain.api.query.messageQueue) {
-            // messageQueue always delay XCM for one block for no good reason https://github.com/paritytech/polkadot-sdk/issues/3709
-            await toChain.chain.newBlock()
-          }
 
           await check(toBalance(toChain, toAccount.address))
             .redact({ number: precision })

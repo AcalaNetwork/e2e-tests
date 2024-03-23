@@ -8,7 +8,7 @@ export default defineConfig({
 		pool: 'forks',
 		passWithNoTests: true,
 		retry: process.env.CI ? 3 : 2,
-		reporters: process.env.GITHUB_ACTIONS ? ['dot', 'github-actions'] : ['basic'],
+		reporters: process.env.GITHUB_ACTIONS ? ['basic', 'github-actions'] : ['basic'],
 	},
 	plugins: [swc.vite()],
 })
