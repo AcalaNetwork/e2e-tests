@@ -327,7 +327,7 @@ exports[`'kusama' to 'karura' using bridgeSDK cross-chain 'KSM' > parachain brid
 }
 `;
 
-exports[`'kusama' to 'karura' using bridgeSDK cross-chain 'KSM' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.00003)"`;
+exports[`'kusama' to 'karura' using bridgeSDK cross-chain 'KSM' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.00004)"`;
 
 exports[`'kusama' to 'karura' using bridgeSDK cross-chain 'KSM' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
 {
