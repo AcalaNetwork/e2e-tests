@@ -13,35 +13,35 @@
 		"@polkadot/api": "^10.11.2"
 	},
 	"dependencies": {
-		"@acala-network/chopsticks": "^0.9.13",
-		"@acala-network/chopsticks-testing": "^0.9.13",
+		"@acala-network/chopsticks": "^0.10.0",
+		"@acala-network/chopsticks-testing": "^0.10.0",
 		"@acala-network/sdk": "^4.1.9-13",
 		"@acala-network/sdk-core": "^4.1.9-13",
-		"@polkadot/api": "^10.11.2",
+		"@polkadot/api": "^10.12.6",
 		"@polkawallet/bridge": "^0.1.5-31",
-		"@swc/core": "^1.4.8",
-		"axios": "^1.6.6",
-		"dotenv": "^16.3.1",
+		"@swc/core": "^1.4.12",
+		"axios": "^1.6.8",
+		"dotenv": "^16.4.5",
 		"lodash": "^4.17.21",
 		"typescript": "^5.3.3",
-		"unplugin-swc": "^1.4.4",
+		"unplugin-swc": "^1.4.5",
 		"vitest": "^1.4.0"
 	},
 	"devDependencies": {
-		"@types/lodash": "^4",
-		"@types/node": "^20.9.4",
-		"@typescript-eslint/eslint-plugin": "^6.12.0",
-		"@typescript-eslint/parser": "^6.12.0",
-		"@vitest/ui": "^1.2.1",
-		"eslint": "^8.54.0",
-		"eslint-config-prettier": "^9.0.0",
+		"@types/lodash": "^4.17.0",
+		"@types/node": "^20.12.5",
+		"@typescript-eslint/eslint-plugin": "^6.21.0",
+		"@typescript-eslint/parser": "^6.21.0",
+		"@vitest/ui": "^1.4.0",
+		"eslint": "^8.57.0",
+		"eslint-config-prettier": "^9.1.0",
 		"eslint-import-resolver-typescript": "^3.6.1",
-		"eslint-plugin-import": "^2.29.0",
+		"eslint-plugin-import": "^2.29.1",
 		"eslint-plugin-sort-imports-es6-autofix": "^0.6.0",
-		"husky": "^8.0.3",
-		"lint-staged": "^15.1.0",
-		"prettier": "^3.1.0",
-		"tsx": "^4.6.2"
+		"husky": "^9.0.11",
+		"lint-staged": "^15.2.2",
+		"prettier": "^3.2.5",
+		"tsx": "^4.7.2"
 	},
 	"prettier": {
 		"tabWidth": 2,
@@ -52,5 +52,5 @@
 		"*.ts": "eslint --cache --fix",
 		"*.{ts,css}": "prettier --write"
 	},
-	"packageManager": "yarn@4.1.0"
+	"packageManager": "yarn@4.1.1"
 }
