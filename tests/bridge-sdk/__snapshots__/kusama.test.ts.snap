@@ -229,7 +229,7 @@ exports[`'karura' to 'shiden' using bridgeSDK cross-chain 'KUSD' > parachain bri
 }
 `;
 
-exports[`'karura' to 'shiden' using bridgeSDK cross-chain 'KUSD' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.002)"`;
+exports[`'karura' to 'shiden' using bridgeSDK cross-chain 'KUSD' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.0005)"`;
 
 exports[`'karura' to 'shiden' using bridgeSDK cross-chain 'KUSD' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
 {
