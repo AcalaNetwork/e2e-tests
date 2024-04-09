@@ -35,11 +35,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@acala-network/chopsticks-core@npm:0.9.13":
-  version: 0.9.13
-  resolution: "@acala-network/chopsticks-core@npm:0.9.13"
+"@acala-network/chopsticks-core@npm:0.10.0-2":
+  version: 0.10.0-2
+  resolution: "@acala-network/chopsticks-core@npm:0.10.0-2"
   dependencies:
-    "@acala-network/chopsticks-executor": "npm:0.9.13"
+    "@acala-network/chopsticks-executor": "npm:0.10.0-2"
     "@polkadot/rpc-provider": "npm:^10.11.2"
     "@polkadot/types": "npm:^10.11.2"
     "@polkadot/types-codec": "npm:^10.11.2"
@@ -54,61 +54,61 @@ __metadata:
     pino-pretty: "npm:^11.0.0"
     rxjs: "npm:^7.8.1"
     zod: "npm:^3.22.4"
-  checksum: 10c0/3a91e811b3de650a600512756945e9b6047d74dbd50da794d6b8c1721243015066996b458f69b8c7764a28cc87c763fa83b3aa0d0ed7b7d09917dd3ed78bb519
+  checksum: 10c0/8be768c7578a1447cf14461b0d7c3577fb0b37ced13141b95b73ad6a3a127b8e52ee69c53d5bd41a863ce8fddca3d5a17b6fdbeecc4d2441965eb0c03d78fa04
   languageName: node
   linkType: hard
 
-"@acala-network/chopsticks-db@npm:0.9.13":
-  version: 0.9.13
-  resolution: "@acala-network/chopsticks-db@npm:0.9.13"
+"@acala-network/chopsticks-db@npm:0.10.0-2":
+  version: 0.10.0-2
+  resolution: "@acala-network/chopsticks-db@npm:0.10.0-2"
   dependencies:
-    "@acala-network/chopsticks-core": "npm:0.9.13"
+    "@acala-network/chopsticks-core": "npm:0.10.0-2"
     "@polkadot/util": "npm:^12.6.2"
     idb: "npm:^8.0.0"
     sqlite3: "npm:^5.1.7"
     typeorm: "npm:^0.3.20"
-  checksum: 10c0/f7e559c5495c61f654fc5492d255b975c8ca1b16ec691941d1ca7e53aadce4fdf8d2ef3cbd009b10345138d0f456479f124930b00309fa6a3118d78f132d7d2f
+  checksum: 10c0/6fef18e4e0dbac0ba32dce166eb1661293010bdd47c96533d02e686d68c31153bc237bae2a0aeefafbfdd903b36ee117e22cebf08649883c1d5656312fd9e8e2
   languageName: node
   linkType: hard
 
-"@acala-network/chopsticks-executor@npm:0.9.13":
-  version: 0.9.13
-  resolution: "@acala-network/chopsticks-executor@npm:0.9.13"
+"@acala-network/chopsticks-executor@npm:0.10.0-2":
+  version: 0.10.0-2
+  resolution: "@acala-network/chopsticks-executor@npm:0.10.0-2"
   dependencies:
     "@polkadot/util": "npm:^12.6.2"
     "@polkadot/wasm-util": "npm:^7.3.2"
-  checksum: 10c0/5e196eeb785065c218ac54a1883477e76bc197579f3bfab028dddc9b871e3868ca56432cab30ce68ef09e23690f50510bb9aa9cf5362a1db827880405d9c9557
+  checksum: 10c0/d7f46a0b0eab46530c5a46b7d105d91dd7e9fa0da46072cfec20d3863359264c0384d296ec309108ed3bd3ba97a924e8bea2418ebc53098bc8f607941f49863b
   languageName: node
   linkType: hard
 
-"@acala-network/chopsticks-testing@npm:^0.9.13":
-  version: 0.9.13
-  resolution: "@acala-network/chopsticks-testing@npm:0.9.13"
+"@acala-network/chopsticks-testing@npm:^0.10.0-2":
+  version: 0.10.0-2
+  resolution: "@acala-network/chopsticks-testing@npm:0.10.0-2"
   dependencies:
-    "@acala-network/chopsticks-utils": "npm:0.9.13"
+    "@acala-network/chopsticks-utils": "npm:0.10.0-2"
     "@polkadot/api": "npm:^10.11.2"
     "@polkadot/types": "npm:^10.11.2"
-  checksum: 10c0/947de7f5cffb04a23dfd2f76065a91ea08fb16d73d1fdd9544b44e08d7ae08ab0ec8367bdf9a831b585b9147242381a619869c47905f6ebc2b9988a256d56d62
+  checksum: 10c0/0d2d9e3fc7d62a4becd0ee3e4b279e2a7e34b3e007fe583b53c9914e10b7769b8d767a87f821e4cbb5184e1ed5b7afe29a90d512871e5baf72a1a822c786bb36
   languageName: node
   linkType: hard
 
-"@acala-network/chopsticks-utils@npm:0.9.13":
-  version: 0.9.13
-  resolution: "@acala-network/chopsticks-utils@npm:0.9.13"
+"@acala-network/chopsticks-utils@npm:0.10.0-2":
+  version: 0.10.0-2
+  resolution: "@acala-network/chopsticks-utils@npm:0.10.0-2"
   dependencies:
-    "@acala-network/chopsticks": "npm:0.9.13"
+    "@acala-network/chopsticks": "npm:0.10.0-2"
     "@polkadot/api": "npm:^10.11.2"
     "@polkadot/types": "npm:^10.11.2"
-  checksum: 10c0/9b3dc0844508c55bad43974f15fed1000107c2bade84ab3404143de255362671829d45f30b597d8ac6623bf9288b168461eaa9955d5001dbe6725210d11d00bd
+  checksum: 10c0/bc4ab124dadffffc1b37d629d7a6b984a6d80c2ad918e6654da55d3ea37a6078420aea1fd516f2e3f1cc3a434c896dbfe1eaf67457c1a4f45f804cf3ea88e225
   languageName: node
   linkType: hard
 
-"@acala-network/chopsticks@npm:0.9.13, @acala-network/chopsticks@npm:^0.9.13":
-  version: 0.9.13
-  resolution: "@acala-network/chopsticks@npm:0.9.13"
+"@acala-network/chopsticks@npm:0.10.0-2, @acala-network/chopsticks@npm:^0.10.0-2":
+  version: 0.10.0-2
+  resolution: "@acala-network/chopsticks@npm:0.10.0-2"
   dependencies:
-    "@acala-network/chopsticks-core": "npm:0.9.13"
-    "@acala-network/chopsticks-db": "npm:0.9.13"
+    "@acala-network/chopsticks-core": "npm:0.10.0-2"
+    "@acala-network/chopsticks-db": "npm:0.10.0-2"
     "@pnpm/npm-conf": "npm:^2.2.2"
     "@polkadot/api-augment": "npm:^10.11.2"
     "@polkadot/types": "npm:^10.11.2"
@@ -125,7 +125,7 @@ __metadata:
     zod: "npm:^3.22.4"
   bin:
     chopsticks: ./chopsticks.cjs
-  checksum: 10c0/5d978534b24c2fb6bc6c755209eddb5ab86be204e759416dee7f058694c2022088f05ed52e35afef3ca994d2ad8f8d03d3536ac255ac8ea57c0dde96add9574a
+  checksum: 10c0/91725b93d42c5e5d7deb97b9fa7e8b0d037fe2958218a890a099174b2f3208750ecd9a8cd4e120e01fc1b680c1448c4931c5d20649259e6038b8ceb8d01455e3
   languageName: node
   linkType: hard
 
@@ -2683,9 +2683,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polkawallet/bridge@npm:^0.1.5-31":
-  version: 0.1.5-31
-  resolution: "@polkawallet/bridge@npm:0.1.5-31"
+"@polkawallet/bridge@npm:^0.1.5":
+  version: 0.1.5
+  resolution: "@polkawallet/bridge@npm:0.1.5"
   dependencies:
     "@acala-network/api": "npm:^5"
     "@acala-network/sdk": "npm:^4.1.9-7"
@@ -2700,7 +2700,7 @@ __metadata:
     "@acala-network/api": ^5
     "@polkadot/api": ^10
     ethers: ^5
-  checksum: 10c0/5e2632f9d99b53cfa039ed73050515c01875307954f5179b8ec83e33e788b66ae103af68e804d1a7f35b0c45c17470624778b4c45619348025976e85944b889a
+  checksum: 10c0/29cc4f0bf50cd32edbb63022c235f01b6a646e12a57d364922950e99c471cca535c3f873fd5608fa823c8bb20c50f43a440e423eb0ac10be260a822c01a54857
   languageName: node
   linkType: hard
 
@@ -4569,12 +4569,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "e2e-tests@workspace:."
   dependencies:
-    "@acala-network/chopsticks": "npm:^0.9.13"
-    "@acala-network/chopsticks-testing": "npm:^0.9.13"
+    "@acala-network/chopsticks": "npm:^0.10.0-2"
+    "@acala-network/chopsticks-testing": "npm:^0.10.0-2"
     "@acala-network/sdk": "npm:^4.1.9-13"
     "@acala-network/sdk-core": "npm:^4.1.9-13"
-    "@polkadot/api": "npm:^10.11.2"
-    "@polkawallet/bridge": "npm:^0.1.5-31"
+    "@polkadot/api": "npm:^10.12.6"
+    "@polkawallet/bridge": "npm:^0.1.5"
     "@swc/core": "npm:^1.4.8"
     "@types/lodash": "npm:^4"
     "@types/node": "npm:^20.9.4"
