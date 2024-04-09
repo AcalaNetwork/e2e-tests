@@ -50,6 +50,7 @@ for (const def of Object.values(networkDefs)) {
         db: process.env.DB_PATH,
         port: 0,
         allowUnresolvedImports: true,
+        runtimeLogLevel: process.env.RUNTIME_LOG_LEVEL ? Number(process.env.RUNTIME_LOG_LEVEL) : 0,
         ...setupConfig.options,
         ...options,
       }
