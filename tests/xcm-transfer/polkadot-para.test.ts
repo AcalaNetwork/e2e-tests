@@ -1,8 +1,8 @@
 import { Context } from '../../networks/types'
 import { query, tx } from '../../helpers/api'
 
-import { assetHubPolkadot } from '../../networks/assethub'
 import { acala } from '../../networks/acala'
+import { assetHubPolkadot } from '../../networks/assethub'
 import { moonbeam } from '../../networks/moonbeam'
 
 import buildTest from './shared'
