@@ -343,6 +343,21 @@ exports[`'polkadot' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > balance
 }
 `;
 
+exports[`'polkadot' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > balance on from chain 2`] = `
+{
+  "consumers": 0,
+  "data": {
+    "flags": "0x80000000000000000000000000000000",
+    "free": "(rounded 9000000000000)",
+    "frozen": 0,
+    "reserved": 0,
+  },
+  "nonce": 1,
+  "providers": 1,
+  "sufficients": 0,
+}
+`;
+
 exports[`'polkadot' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > balance on to chain 1`] = `
 {
   "free": "(rounded 11000000000000)",
@@ -352,6 +367,67 @@ exports[`'polkadot' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > balance
 `;
 
 exports[`'polkadot' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > from chain Withdraw events 1`] = `
+[
+  {
+    "data": {
+      "who": "146SvjUZXoMaemdeiecyxgALeYMm8ZWh1yrGo8RtpoPfe7WL",
+    },
+    "method": "Upgraded",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 180000000)",
+      "who": "146SvjUZXoMaemdeiecyxgALeYMm8ZWh1yrGo8RtpoPfe7WL",
+    },
+    "method": "Withdraw",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": 1000000000000,
+      "from": "146SvjUZXoMaemdeiecyxgALeYMm8ZWh1yrGo8RtpoPfe7WL",
+      "to": "13YMK2eYoAvStnzReuxBjMrAvPXmmdsURwZvc62PrdXimbNy",
+    },
+    "method": "Transfer",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 400000000)",
+      "who": "146SvjUZXoMaemdeiecyxgALeYMm8ZWh1yrGo8RtpoPfe7WL",
+    },
+    "method": "Withdraw",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 400000000)",
+      "who": "13UVJyLnbVp9RBZYFwFGyDvVd1y27Tt8tkntv6Q7JVPhFsTB",
+    },
+    "method": "Deposit",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 150000000)",
+      "who": "13UVJyLnbVp9RBZYFwFGyDvVd1y27Tt8tkntv6Q7JVPhFsTB",
+    },
+    "method": "Deposit",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 36000000)",
+      "who": "13TrdLhMVLcwcEhMYLcqrkxAgq9M5gnK1LZKAF4VupVfQDUg",
+    },
+    "method": "Deposit",
+    "section": "balances",
+  },
+]
+`;
+
+exports[`'polkadot' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > from chain Withdraw events 2`] = `
 [
   {
     "data": {
@@ -447,7 +523,39 @@ exports[`'polkadot' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > tx even
 ]
 `;
 
+exports[`'polkadot' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > tx events 2`] = `
+[
+  {
+    "data": {
+      "outcome": {
+        "Complete": {
+          "proofSize": "(rounded 6200)",
+          "refTime": "(rounded 537000000)",
+        },
+      },
+    },
+    "method": "Attempted",
+    "section": "xcmPallet",
+  },
+]
+`;
+
 exports[`'polkadot' -> 'astar' xcm transfer 'DOT' > xcmPallet transfer > balance on from chain 1`] = `
+{
+  "consumers": 0,
+  "data": {
+    "flags": "0x80000000000000000000000000000000",
+    "free": "(rounded 9000000000000)",
+    "frozen": 0,
+    "reserved": 0,
+  },
+  "nonce": 1,
+  "providers": 1,
+  "sufficients": 0,
+}
+`;
+
+exports[`'polkadot' -> 'astar' xcm transfer 'DOT' > xcmPallet transfer > balance on from chain 2`] = `
 {
   "consumers": 0,
   "data": {
@@ -534,6 +642,67 @@ exports[`'polkadot' -> 'astar' xcm transfer 'DOT' > xcmPallet transfer > from ch
 ]
 `;
 
+exports[`'polkadot' -> 'astar' xcm transfer 'DOT' > xcmPallet transfer > from chain Withdraw events 2`] = `
+[
+  {
+    "data": {
+      "who": "146SvjUZXoMaemdeiecyxgALeYMm8ZWh1yrGo8RtpoPfe7WL",
+    },
+    "method": "Upgraded",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 180000000)",
+      "who": "146SvjUZXoMaemdeiecyxgALeYMm8ZWh1yrGo8RtpoPfe7WL",
+    },
+    "method": "Withdraw",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": 1000000000000,
+      "from": "146SvjUZXoMaemdeiecyxgALeYMm8ZWh1yrGo8RtpoPfe7WL",
+      "to": "13YMK2eZzuFY1WZGagpYtTgbWBWGdoUD2CtrPj1mQPjY8Ldc",
+    },
+    "method": "Transfer",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 400000000)",
+      "who": "146SvjUZXoMaemdeiecyxgALeYMm8ZWh1yrGo8RtpoPfe7WL",
+    },
+    "method": "Withdraw",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 400000000)",
+      "who": "13UVJyLnbVp9RBZYFwFGyDvVd1y27Tt8tkntv6Q7JVPhFsTB",
+    },
+    "method": "Deposit",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 150000000)",
+      "who": "13UVJyLnbVp9RBZYFwFGyDvVd1y27Tt8tkntv6Q7JVPhFsTB",
+    },
+    "method": "Deposit",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 36000000)",
+      "who": "14xKzzU1ZYDnzFj7FgdtDAYSMJNARjDc2gNw4XAFDgr4uXgp",
+    },
+    "method": "Deposit",
+    "section": "balances",
+  },
+]
+`;
+
 exports[`'polkadot' -> 'astar' xcm transfer 'DOT' > xcmPallet transfer > to chain dmp events 1`] = `
 [
   {
@@ -572,6 +741,23 @@ exports[`'polkadot' -> 'astar' xcm transfer 'DOT' > xcmPallet transfer > to chai
 `;
 
 exports[`'polkadot' -> 'astar' xcm transfer 'DOT' > xcmPallet transfer > tx events 1`] = `
+[
+  {
+    "data": {
+      "outcome": {
+        "Complete": {
+          "proofSize": "(rounded 6200)",
+          "refTime": "(rounded 537000000)",
+        },
+      },
+    },
+    "method": "Attempted",
+    "section": "xcmPallet",
+  },
+]
+`;
+
+exports[`'polkadot' -> 'astar' xcm transfer 'DOT' > xcmPallet transfer > tx events 2`] = `
 [
   {
     "data": {
