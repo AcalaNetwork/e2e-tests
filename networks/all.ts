@@ -2,6 +2,7 @@ import { Config } from './types'
 
 import acalaConfig from './acala'
 import acalaNextConfig from './acala-next'
+import assethubConfig from './assethub'
 import astarConfig from './astar'
 import bifrostConfig from './bifrost'
 import centrifugeConfig from './centrifuge'
@@ -13,12 +14,11 @@ import moonbeamConfig from './moonbeam'
 // import parallelConfig from './parallel'
 import phalaConfig from './phala'
 import polkadotConfig from './polkadot'
-import statemintConfig from './statemint'
 import uniqueConfig from './unique'
 
 const all = {
   polkadot: polkadotConfig,
-  statemint: statemintConfig,
+  assethub: assethubConfig,
   acala: acalaConfig,
   astar: astarConfig,
   acalaNext: acalaNextConfig,
