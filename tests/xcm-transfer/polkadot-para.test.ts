@@ -2,15 +2,15 @@ import { Context } from '../../networks/types'
 import { query, tx } from '../../helpers/api'
 
 import { acala } from '../../networks/acala'
+import { assetHubPolkadot } from '../../networks/assethub'
 import { moonbeam } from '../../networks/moonbeam'
-import { statemint } from '../../networks/statemint'
 
 import buildTest from './shared'
 
 const tests = [
-  // statemint <-> acala
+  // assetHubPolkadot <-> acala
   {
-    from: 'statemint',
+    from: 'assetHubPolkadot',
     to: 'acala',
     name: 'WBTC',
     fromStorage: ({ alice }: Context) => ({
@@ -18,22 +18,26 @@ const tests = [
         account: [[[acala.paraAccount], { providers: 1, data: { free: 10e10 } }]],
       },
       Assets: {
-        account: [[[statemint.wbtcIndex, alice.address], { balance: 1e8 }]],
-        asset: [[[statemint.wbtcIndex], { supply: 1e8 }]],
+        account: [[[assetHubPolkadot.wbtcIndex, alice.address], { balance: 1e8 }]],
+        asset: [[[assetHubPolkadot.wbtcIndex], { supply: 1e8 }]],
       },
     }),
     test: {
       xcmPalletHorizontal: {
-        tx: tx.xcmPallet.limitedReserveTransferAssetsV3(statemint.wbtc, 1e7, tx.xcmPallet.parachainV3(1, acala.paraId)),
-        fromBalance: query.assets(statemint.wbtcIndex),
+        tx: tx.xcmPallet.limitedReserveTransferAssetsV3(
+          assetHubPolkadot.wbtc,
+          1e7,
+          tx.xcmPallet.parachainV3(1, acala.paraId),
+        ),
+        fromBalance: query.assets(assetHubPolkadot.wbtcIndex),
         toBalance: query.tokens(acala.wbtc),
       },
     },
   },
   {
-    // TODO: this failed with FailedToTransactAsset on statemint somehow
+    // TODO: this failed with FailedToTransactAsset on assetHubPolkadot somehow
     from: 'acala',
-    to: 'statemint',
+    to: 'assetHubPolkadot',
     route: 'polkadot', // for sending DOT for fee
     name: 'WBTC',
     fromStorage: ({ alice }: Context) => ({
@@ -47,10 +51,10 @@ const tests = [
       },
       Assets: {
         account: [
-          [[statemint.wbtcIndex, acala.paraAccount], { balance: 10e8 }],
-          [[statemint.wbtcIndex, alice.address], { balance: 10e8 }],
+          [[assetHubPolkadot.wbtcIndex, acala.paraAccount], { balance: 10e8 }],
+          [[assetHubPolkadot.wbtcIndex, alice.address], { balance: 10e8 }],
         ],
-        asset: [[[statemint.wbtcIndex], { supply: 10e8 }]],
+        asset: [[[assetHubPolkadot.wbtcIndex], { supply: 10e8 }]],
       },
     }),
     test: {
@@ -60,10 +64,10 @@ const tests = [
           1e7,
           acala.dot, // fee
           1e10,
-          tx.xtokens.parachainV3(statemint.paraId),
+          tx.xtokens.parachainV3(assetHubPolkadot.paraId),
         ),
         fromBalance: query.tokens(acala.wbtc),
-        toBalance: query.assets(statemint.wbtcIndex),
+        toBalance: query.assets(assetHubPolkadot.wbtcIndex),
       },
     },
   },

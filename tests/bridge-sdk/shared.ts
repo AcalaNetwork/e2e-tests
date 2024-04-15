@@ -5,6 +5,7 @@ import { sendTransaction, testingPairs } from '@acala-network/chopsticks-testing
 
 import { AcalaAdapter } from '@polkawallet/bridge/adapters/acala/acala'
 import { AltairAdapter } from '@polkawallet/bridge/adapters/centrifuge'
+import { AssetHubKusamaAdapter, AssetHubPolkadotAdapter } from '@polkawallet/bridge/adapters/assethub'
 import { AstarAdapter, ShidenAdapter } from '@polkawallet/bridge/adapters/astar'
 import { BasiliskAdapter } from '@polkawallet/bridge/adapters/hydradx'
 import { BifrostAdapter } from '@polkawallet/bridge/adapters/bifrost'
@@ -18,7 +19,6 @@ import { KusamaAdapter, PolkadotAdapter } from '@polkawallet/bridge/adapters/pol
 import { MoonbeamAdapter, MoonriverAdapter } from '@polkawallet/bridge/adapters/moonbeam'
 import { QuartzAdapter, UniqueAdapter } from '@polkawallet/bridge/adapters/unique'
 import { ShadowAdapter } from '@polkawallet/bridge/adapters/crust'
-import { StatemineAdapter, StatemintAdapter } from '@polkawallet/bridge/adapters/statemint'
 
 import { Network, NetworkNames, createNetworks } from '../../networks'
 import { check } from '../../helpers'
@@ -96,10 +96,10 @@ export const buildTests = (tests: ReadonlyArray<TestTtype>) => {
             karura: KaruraAdapter,
             kusama: KusamaAdapter,
             moonriver: MoonriverAdapter,
-            statemine: StatemineAdapter,
+            assetHubKusama: AssetHubKusamaAdapter,
             basilisk: BasiliskAdapter,
             polkadot: PolkadotAdapter,
-            statemint: StatemintAdapter,
+            assetHubPolkadot: AssetHubPolkadotAdapter,
             moonbeam: MoonbeamAdapter,
             acala: AcalaAdapter,
             bifrost: BifrostAdapter,

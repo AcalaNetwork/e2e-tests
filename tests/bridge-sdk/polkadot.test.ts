@@ -13,11 +13,11 @@ const tests = [
   },
   {
     from: 'polkadot',
-    to: 'statemint',
+    to: 'assetHubPolkadot',
     token: 'DOT',
   },
   {
-    from: 'statemint',
+    from: 'assetHubPolkadot',
     to: 'polkadot',
     token: 'DOT',
   },
