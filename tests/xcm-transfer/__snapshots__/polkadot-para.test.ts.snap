@@ -23,24 +23,6 @@ exports[`'acala' -> 'assetHubPolkadot' xcm transfer 'WBTC' > xtokens transfer > 
 [
   {
     "data": {
-      "amount": "(rounded 96000000000000)",
-      "from": "23M5ttkmR6KcoUwA7NqBjLuMJFWCvobsD9Zy95MgaAECEhit",
-      "to": "23M5ttkmR6Kco7bReRDve6bQUSAcwqebatp3fWGJYb4hDSDJ",
-    },
-    "method": "Transfer",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "amount": "(rounded 2700000000000)",
-      "from": "23M5ttkmR6KcoUwA7NqBjLuMJFWCvobsD9Zy95MgaAECEhit",
-      "to": "23M5ttkmR6Kco7bReRDve6bQUSAcwqebatp3fWGJYb4hDSDJ",
-    },
-    "method": "Transfer",
-    "section": "balances",
-  },
-  {
-    "data": {
       "who": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
     },
     "method": "Upgraded",

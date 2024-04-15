@@ -177,24 +177,6 @@ exports[`'karura' -> 'assetHubKusama' xcm transfer 'USDT' > xtokens transfer > f
 [
   {
     "data": {
-      "amount": "(rounded 690000000000)",
-      "from": "qmmNufxeWaAVN8EJK58yYNW1HDcpSLpqGThui55eT3Dfr1a",
-      "to": "qmmNufxeWaAUznVqMTstJ4ZBTt2qUPZD1hnS8yhcssiewPk",
-    },
-    "method": "Transfer",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "amount": "(rounded 9600000000000)",
-      "from": "qmmNufxeWaAVN8EJK58yYNW1HDcpSLpqGThui55eT3Dfr1a",
-      "to": "qmmNufxeWaAUznVqMTstJ4ZBTt2qUPZD1hnS8yhcssiewPk",
-    },
-    "method": "Transfer",
-    "section": "balances",
-  },
-  {
-    "data": {
       "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
     },
     "method": "Upgraded",
@@ -416,24 +398,6 @@ exports[`'karura' -> 'basilisk' xcm transfer 'DAI' > xtokens transfer > balance 
 
 exports[`'karura' -> 'basilisk' xcm transfer 'DAI' > xtokens transfer > from chain Withdraw events 1`] = `
 [
-  {
-    "data": {
-      "amount": "(rounded 690000000000)",
-      "from": "qmmNufxeWaAVN8EJK58yYNW1HDcpSLpqGThui55eT3Dfr1a",
-      "to": "qmmNufxeWaAUznVqMTstJ4ZBTt2qUPZD1hnS8yhcssiewPk",
-    },
-    "method": "Transfer",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "amount": "(rounded 9600000000000)",
-      "from": "qmmNufxeWaAVN8EJK58yYNW1HDcpSLpqGThui55eT3Dfr1a",
-      "to": "qmmNufxeWaAUznVqMTstJ4ZBTt2qUPZD1hnS8yhcssiewPk",
-    },
-    "method": "Transfer",
-    "section": "balances",
-  },
   {
     "data": {
       "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
