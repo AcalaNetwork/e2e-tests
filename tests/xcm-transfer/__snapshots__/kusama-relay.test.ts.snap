@@ -351,67 +351,6 @@ exports[`'kusama' -> 'karura' xcm transfer 'KSM' > xcmPallet transfer > balance 
 }
 `;
 
-exports[`'kusama' -> 'karura' xcm transfer 'KSM' > xcmPallet transfer > from chain Withdraw events 1`] = `
-[
-  {
-    "data": {
-      "who": "FfmSiZNJP72xtSaXiP2iUhBwWeMEvmjPrxY2ViVkWaeChDC",
-    },
-    "method": "Upgraded",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "amount": "(rounded 610000000)",
-      "who": "FfmSiZNJP72xtSaXiP2iUhBwWeMEvmjPrxY2ViVkWaeChDC",
-    },
-    "method": "Withdraw",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "amount": 1000000000000,
-      "from": "FfmSiZNJP72xtSaXiP2iUhBwWeMEvmjPrxY2ViVkWaeChDC",
-      "to": "F7fq1jMZkfuCuoMTyiEVAP2DMpMt18WopgBqTJznLihLNbZ",
-    },
-    "method": "Transfer",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "amount": "(rounded 1300000000)",
-      "who": "FfmSiZNJP72xtSaXiP2iUhBwWeMEvmjPrxY2ViVkWaeChDC",
-    },
-    "method": "Withdraw",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "amount": "(rounded 1300000000)",
-      "who": "F3opxRbN5ZbjJNU511Kj2TLuzFcDq9BGduA9TgiECafpg29",
-    },
-    "method": "Deposit",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "amount": "(rounded 490000000)",
-      "who": "F3opxRbN5ZbjJNU511Kj2TLuzFcDq9BGduA9TgiECafpg29",
-    },
-    "method": "Deposit",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "amount": "(rounded 120000000)",
-      "who": "FZxWD8egFijBD4RCrubaJQggPhv6d9AYbNhqrSn25MGHHX9",
-    },
-    "method": "Deposit",
-    "section": "balances",
-  },
-]
-`;
-
 exports[`'kusama' -> 'karura' xcm transfer 'KSM' > xcmPallet transfer > to chain dmp events 1`] = `
 [
   {
@@ -471,67 +410,6 @@ exports[`'kusama' -> 'shiden' xcm transfer 'KSM' > xcmPallet transfer > balance 
   },
   "status": "Liquid",
 }
-`;
-
-exports[`'kusama' -> 'shiden' xcm transfer 'KSM' > xcmPallet transfer > from chain Withdraw events 1`] = `
-[
-  {
-    "data": {
-      "who": "FfmSiZNJP72xtSaXiP2iUhBwWeMEvmjPrxY2ViVkWaeChDC",
-    },
-    "method": "Upgraded",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "amount": "(rounded 610000000)",
-      "who": "FfmSiZNJP72xtSaXiP2iUhBwWeMEvmjPrxY2ViVkWaeChDC",
-    },
-    "method": "Withdraw",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "amount": 1000000000000,
-      "from": "FfmSiZNJP72xtSaXiP2iUhBwWeMEvmjPrxY2ViVkWaeChDC",
-      "to": "F7fq1jNy74AqkJ1DP4KqSrWtnTGtXfNVoDwFhTvvPxUvJaq",
-    },
-    "method": "Transfer",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "amount": "(rounded 1300000000)",
-      "who": "FfmSiZNJP72xtSaXiP2iUhBwWeMEvmjPrxY2ViVkWaeChDC",
-    },
-    "method": "Withdraw",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "amount": "(rounded 1300000000)",
-      "who": "F3opxRbN5ZbjJNU511Kj2TLuzFcDq9BGduA9TgiECafpg29",
-    },
-    "method": "Deposit",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "amount": "(rounded 490000000)",
-      "who": "F3opxRbN5ZbjJNU511Kj2TLuzFcDq9BGduA9TgiECafpg29",
-    },
-    "method": "Deposit",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "amount": "(rounded 120000000)",
-      "who": "EJn1nRqcxendmgZCdeAcpgoXtfUHWdn2neHWTn3AMDKs6GS",
-    },
-    "method": "Deposit",
-    "section": "balances",
-  },
-]
 `;
 
 exports[`'kusama' -> 'shiden' xcm transfer 'KSM' > xcmPallet transfer > to chain dmp events 1`] = `

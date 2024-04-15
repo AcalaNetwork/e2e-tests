@@ -11,120 +11,12 @@ exports[`'assetHubKusama' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer >
 }
 `;
 
-exports[`'assetHubKusama' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer > balance on from chain 2`] = `
-{
-  "balance": 999000000,
-  "extra": null,
-  "reason": {
-    "consumer": null,
-  },
-  "status": "Liquid",
-}
-`;
-
 exports[`'assetHubKusama' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer > balance on to chain 1`] = `
 {
   "free": "(rounded 999000)",
   "frozen": 0,
   "reserved": 0,
 }
-`;
-
-exports[`'assetHubKusama' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer > from chain Withdraw events 1`] = `
-[
-  {
-    "data": {
-      "who": "FfmSiZNJP72xtSaXiP2iUhBwWeMEvmjPrxY2ViVkWaeChDC",
-    },
-    "method": "Upgraded",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "amount": "(rounded 95000000)",
-      "who": "FfmSiZNJP72xtSaXiP2iUhBwWeMEvmjPrxY2ViVkWaeChDC",
-    },
-    "method": "Withdraw",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "amount": "(rounded 1000000000)",
-      "who": "FfmSiZNJP72xtSaXiP2iUhBwWeMEvmjPrxY2ViVkWaeChDC",
-    },
-    "method": "Withdraw",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "amount": "(rounded 1000000000)",
-      "who": "F3opxRbN5ZbjJNU511Kj2TLuzFcDq9BGduA9TgiECafpg29",
-    },
-    "method": "Deposit",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "amount": "(rounded 95000000)",
-      "who": "F3opxRUwkBj1LqjZ7DyiHCRh9Z4zVPLaVjoxfD5ddbip8mt",
-    },
-    "method": "Deposit",
-    "section": "balances",
-  },
-]
-`;
-
-exports[`'assetHubKusama' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer > from chain Withdraw events 2`] = `
-[
-  {
-    "data": {
-      "amount": "(rounded 3000)",
-      "from": "F3opxRUwkBj1LqjZ7DyiHCRh9Z4zVPLaVjoxfD5ddbip8mt",
-      "to": "H1tAQMm3eizGcmpAhL9aA9gR844kZpQfkU7pkmMiLx9jSzE",
-    },
-    "method": "Transfer",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "who": "FfmSiZNJP72xtSaXiP2iUhBwWeMEvmjPrxY2ViVkWaeChDC",
-    },
-    "method": "Upgraded",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "amount": "(rounded 95000000)",
-      "who": "FfmSiZNJP72xtSaXiP2iUhBwWeMEvmjPrxY2ViVkWaeChDC",
-    },
-    "method": "Withdraw",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "amount": "(rounded 1000000000)",
-      "who": "FfmSiZNJP72xtSaXiP2iUhBwWeMEvmjPrxY2ViVkWaeChDC",
-    },
-    "method": "Withdraw",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "amount": "(rounded 1000000000)",
-      "who": "F3opxRbN5ZbjJNU511Kj2TLuzFcDq9BGduA9TgiECafpg29",
-    },
-    "method": "Deposit",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "amount": "(rounded 95000000)",
-      "who": "F3opxRUwkBj1LqjZ7DyiHCRh9Z4zVPLaVjoxfD5ddbip8mt",
-    },
-    "method": "Deposit",
-    "section": "balances",
-  },
-]
 `;
 
 exports[`'assetHubKusama' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer > from chain hrmp messages 1`] = `
@@ -262,32 +154,7 @@ exports[`'assetHubKusama' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer >
 ]
 `;
 
-exports[`'assetHubKusama' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer > tx events 2`] = `
-[
-  {
-    "data": {
-      "outcome": {
-        "Complete": {
-          "proofSize": "(rounded 8800)",
-          "refTime": "(rounded 841000000)",
-        },
-      },
-    },
-    "method": "Attempted",
-    "section": "polkadotXcm",
-  },
-]
-`;
-
 exports[`'karura' -> 'assetHubKusama' xcm transfer 'USDT' > xtokens transfer > balance on from chain 1`] = `
-{
-  "free": 9000000,
-  "frozen": 0,
-  "reserved": 0,
-}
-`;
-
-exports[`'karura' -> 'assetHubKusama' xcm transfer 'USDT' > xtokens transfer > balance on from chain 2`] = `
 {
   "free": 9000000,
   "frozen": 0,
@@ -326,34 +193,6 @@ exports[`'karura' -> 'assetHubKusama' xcm transfer 'USDT' > xtokens transfer > f
     "method": "Transfer",
     "section": "balances",
   },
-  {
-    "data": {
-      "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "Upgraded",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "amount": "(rounded 2700000000)",
-      "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "Withdraw",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "amount": "(rounded 2700000000)",
-      "who": "qmmNufxeWaAVGhzEp4WhG6VA1dY1Zsd2F8ixNKNbmNZP5Ne",
-    },
-    "method": "Deposit",
-    "section": "balances",
-  },
-]
-`;
-
-exports[`'karura' -> 'assetHubKusama' xcm transfer 'USDT' > xtokens transfer > from chain Withdraw events 2`] = `
-[
   {
     "data": {
       "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
@@ -565,82 +404,6 @@ exports[`'karura' -> 'assetHubKusama' xcm transfer 'USDT' > xtokens transfer > t
 ]
 `;
 
-exports[`'karura' -> 'assetHubKusama' xcm transfer 'USDT' > xtokens transfer > tx events 2`] = `
-[
-  {
-    "data": {
-      "assets": [
-        {
-          "fun": {
-            "Fungible": 1000000,
-          },
-          "id": {
-            "Concrete": {
-              "interior": {
-                "X3": [
-                  {
-                    "Parachain": 1000,
-                  },
-                  {
-                    "PalletInstance": 50,
-                  },
-                  {
-                    "GeneralIndex": "(rounded 2000)",
-                  },
-                ],
-              },
-              "parents": 1,
-            },
-          },
-        },
-      ],
-      "dest": {
-        "interior": {
-          "X2": [
-            {
-              "Parachain": 1000,
-            },
-            {
-              "AccountId32": {
-                "id": "(hash)",
-                "network": null,
-              },
-            },
-          ],
-        },
-        "parents": 1,
-      },
-      "fee": {
-        "fun": {
-          "Fungible": 1000000,
-        },
-        "id": {
-          "Concrete": {
-            "interior": {
-              "X3": [
-                {
-                  "Parachain": 1000,
-                },
-                {
-                  "PalletInstance": 50,
-                },
-                {
-                  "GeneralIndex": "(rounded 2000)",
-                },
-              ],
-            },
-            "parents": 1,
-          },
-        },
-      },
-      "sender": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-    },
-    "method": "TransferredMultiAssets",
-    "section": "xTokens",
-  },
-]
-`;
-
 exports[`'karura' -> 'basilisk' xcm transfer 'DAI' > xtokens transfer > balance on from chain 1`] = `99000000000000000000`;
 
 exports[`'karura' -> 'basilisk' xcm transfer 'DAI' > xtokens transfer > balance on to chain 1`] = `
@@ -653,6 +416,24 @@ exports[`'karura' -> 'basilisk' xcm transfer 'DAI' > xtokens transfer > balance 
 
 exports[`'karura' -> 'basilisk' xcm transfer 'DAI' > xtokens transfer > from chain Withdraw events 1`] = `
 [
+  {
+    "data": {
+      "amount": "(rounded 690000000000)",
+      "from": "qmmNufxeWaAVN8EJK58yYNW1HDcpSLpqGThui55eT3Dfr1a",
+      "to": "qmmNufxeWaAUznVqMTstJ4ZBTt2qUPZD1hnS8yhcssiewPk",
+    },
+    "method": "Transfer",
+    "section": "balances",
+  },
+  {
+    "data": {
+      "amount": "(rounded 9600000000000)",
+      "from": "qmmNufxeWaAVN8EJK58yYNW1HDcpSLpqGThui55eT3Dfr1a",
+      "to": "qmmNufxeWaAUznVqMTstJ4ZBTt2qUPZD1hnS8yhcssiewPk",
+    },
+    "method": "Transfer",
+    "section": "balances",
+  },
   {
     "data": {
       "who": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
