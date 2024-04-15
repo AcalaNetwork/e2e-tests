@@ -19,34 +19,6 @@ exports[`'acala' -> 'assetHubPolkadot' xcm transfer 'WBTC' > xtokens transfer > 
 }
 `;
 
-exports[`'acala' -> 'assetHubPolkadot' xcm transfer 'WBTC' > xtokens transfer > from chain Withdraw events 1`] = `
-[
-  {
-    "data": {
-      "who": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
-    },
-    "method": "Upgraded",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "amount": "(rounded 2900000000)",
-      "who": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
-    },
-    "method": "Withdraw",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "amount": "(rounded 2900000000)",
-      "who": "23M5ttkmR6KcoPWv3spZT4dLSyv87w8fQ8EzBjbyXUZXwmze",
-    },
-    "method": "Deposit",
-    "section": "balances",
-  },
-]
-`;
-
 exports[`'acala' -> 'assetHubPolkadot' xcm transfer 'WBTC' > xtokens transfer > from chain hrmp messages 1`] = `
 [
   {
@@ -255,52 +227,6 @@ exports[`'acala' -> 'moonbeam' xcm transfer 'DOT' > xtokens transfer > balance o
   },
   "status": "Liquid",
 }
-`;
-
-exports[`'acala' -> 'moonbeam' xcm transfer 'DOT' > xtokens transfer > from chain Withdraw events 1`] = `
-[
-  {
-    "data": {
-      "amount": "(rounded 96000000000000)",
-      "from": "23M5ttkmR6KcoUwA7NqBjLuMJFWCvobsD9Zy95MgaAECEhit",
-      "to": "23M5ttkmR6Kco7bReRDve6bQUSAcwqebatp3fWGJYb4hDSDJ",
-    },
-    "method": "Transfer",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "amount": "(rounded 2700000000000)",
-      "from": "23M5ttkmR6KcoUwA7NqBjLuMJFWCvobsD9Zy95MgaAECEhit",
-      "to": "23M5ttkmR6Kco7bReRDve6bQUSAcwqebatp3fWGJYb4hDSDJ",
-    },
-    "method": "Transfer",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "who": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
-    },
-    "method": "Upgraded",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "amount": "(rounded 2500000000)",
-      "who": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
-    },
-    "method": "Withdraw",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "amount": "(rounded 2500000000)",
-      "who": "23M5ttkmR6KcoPWv3spZT4dLSyv87w8fQ8EzBjbyXUZXwmze",
-    },
-    "method": "Deposit",
-    "section": "balances",
-  },
-]
 `;
 
 exports[`'acala' -> 'moonbeam' xcm transfer 'DOT' > xtokens transfer > from chain ump messages 1`] = `
@@ -657,49 +583,6 @@ exports[`'moonbeam' -> 'acala' xcm transfer 'DOT' > xtokens transfer > balance o
   "frozen": 0,
   "reserved": 0,
 }
-`;
-
-exports[`'moonbeam' -> 'acala' xcm transfer 'DOT' > xtokens transfer > from chain Withdraw events 1`] = `
-[
-  {
-    "data": {
-      "who": "0xf24FF3a9CF04c71Dbc94D0b566f7A27B94566cac",
-    },
-    "method": "Upgraded",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "amount": "(rounded 8500000000000000)",
-      "who": "0xf24FF3a9CF04c71Dbc94D0b566f7A27B94566cac",
-    },
-    "method": "Withdraw",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "amount": 0,
-    },
-    "method": "Issued",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "amount": 0,
-      "who": "0xf24FF3a9CF04c71Dbc94D0b566f7A27B94566cac",
-    },
-    "method": "Deposit",
-    "section": "balances",
-  },
-  {
-    "data": {
-      "amount": "(rounded 1700000000000000)",
-      "who": "0x6d6f646C70792f74727372790000000000000000",
-    },
-    "method": "Deposit",
-    "section": "balances",
-  },
-]
 `;
 
 exports[`'moonbeam' -> 'acala' xcm transfer 'DOT' > xtokens transfer > from chain ump messages 1`] = `

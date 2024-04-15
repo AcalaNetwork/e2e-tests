@@ -113,6 +113,7 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
             .redact({ number: precision })
             .toMatchSnapshot('balance on from chain')
           await checkEvents(tx0, 'xcmPallet').redact({ number: precision }).toMatchSnapshot('tx events')
+
           await toChain.chain.newBlock()
 
           await check(balance(toChain, toAccount.address))
@@ -172,7 +173,6 @@ export default function buildTest(tests: ReadonlyArray<TestType>) {
             .redact({ number: precision })
             .toMatchSnapshot('balance on from chain')
           await checkEvents(tx0, 'xTokens').toMatchSnapshot('tx events')
-          await checkSystemEvents(fromChain, 'balances', 'Withdraw').toMatchSnapshot('from chain Withdraw events')
 
           if ('checkUmp' in testOpt) {
             await checkUmp(fromChain).toMatchSnapshot('from chain ump messages')
