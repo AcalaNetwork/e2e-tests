@@ -11,7 +11,6 @@ import { BasiliskAdapter } from '@polkawallet/bridge/adapters/hydradx'
 import { BifrostAdapter } from '@polkawallet/bridge/adapters/bifrost'
 import { Bridge } from '@polkawallet/bridge'
 import { CrabAdapter } from '@polkawallet/bridge/adapters/darwinia'
-import { HydraDxAdapter } from '@polkawallet/bridge/adapters/hydradx'
 import { HeikoAdapter, ParallelAdapter } from '@polkawallet/bridge/adapters/parallel'
 import { InterlayAdapter, KintsugiAdapter } from '@polkawallet/bridge/adapters/interlay'
 import { KaruraAdapter } from '@polkawallet/bridge/adapters/acala'
@@ -23,7 +22,6 @@ import { ShadowAdapter } from '@polkawallet/bridge/adapters/crust'
 
 import { Network, NetworkNames, createNetworks } from '../../networks'
 import { check } from '../../helpers'
-import hydraDX from '../../networks/hydraDX'
 
 export type TestTtype = {
   from: NetworkNames
@@ -108,7 +106,6 @@ export const buildTests = (tests: ReadonlyArray<TestTtype>) => {
             acala: AcalaAdapter,
             bifrost: BifrostAdapter,
             altair: AltairAdapter,
-            hydraDX: HydraDxAdapter,
             heiko: HeikoAdapter,
             shiden: ShidenAdapter,
             crust: ShadowAdapter,
