@@ -29,11 +29,99 @@ exports[`'acala' homa > with latest block > Homa redeem unbond works > events 2`
 ]
 `;
 
+exports[`'acala' homa > with latest block > Homa redeem unbond works > events 3`] = `
+[
+  {
+    "data": {
+      "allowFastMatch": false,
+      "liquidAmount": 1000000000000,
+      "redeemer": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+    },
+    "method": "RequestedRedeem",
+    "section": "homa",
+  },
+]
+`;
+
+exports[`'acala' homa > with latest block > Homa redeem unbond works > events 4`] = `
+[
+  {
+    "data": {
+      "eraIndexWhenUnbond": 100,
+      "liquidAmount": 1000000000000,
+      "redeemer": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+      "unbondingStakingAmount": "(rounded 150000000000)",
+    },
+    "method": "RedeemedByUnbond",
+    "section": "homa",
+  },
+]
+`;
+
+exports[`'acala' homa > with latest block > Homa redeem unbond works > events 5`] = `
+[
+  {
+    "data": {
+      "allowFastMatch": false,
+      "liquidAmount": 1000000000000,
+      "redeemer": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+    },
+    "method": "RequestedRedeem",
+    "section": "homa",
+  },
+]
+`;
+
+exports[`'acala' homa > with latest block > Homa redeem unbond works > events 6`] = `
+[
+  {
+    "data": {
+      "eraIndexWhenUnbond": 100,
+      "liquidAmount": 1000000000000,
+      "redeemer": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+      "unbondingStakingAmount": "(rounded 150000000000)",
+    },
+    "method": "RedeemedByUnbond",
+    "section": "homa",
+  },
+]
+`;
+
 exports[`'acala' homa > with latest block > Homa redeem unbond works > system events 1`] = `
 [
   {
     "data": {
       "amount": "(rounded 140000000000)",
+      "stash": "(address)",
+    },
+    "method": "Unbonded",
+    "section": "staking",
+  },
+  {
+    "data": {
+      "id": "(hash)",
+      "origin": {
+        "Ump": {
+          "Para": 2000,
+        },
+      },
+      "success": true,
+      "weightUsed": {
+        "proofSize": "(rounded 66000)",
+        "refTime": "(rounded 6300000000)",
+      },
+    },
+    "method": "Processed",
+    "section": "messageQueue",
+  },
+]
+`;
+
+exports[`'acala' homa > with latest block > Homa redeem unbond works > system events 2`] = `
+[
+  {
+    "data": {
+      "amount": "(rounded 150000000000)",
       "stash": "(address)",
     },
     "method": "Unbonded",

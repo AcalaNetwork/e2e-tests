@@ -20,6 +20,26 @@ exports[`'altair' to 'karura' using bridgeSDK cross-chain 'AIR' > parachain brid
 }
 `;
 
+exports[`'assetHubKusama' to 'karura' using bridgeSDK cross-chain 'USDT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > after 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 6,
+  "fromChain": 998,
+  "toChain": "(rounded 2)",
+}
+`;
+
+exports[`'assetHubKusama' to 'karura' using bridgeSDK cross-chain 'USDT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.0008)"`;
+
+exports[`'assetHubKusama' to 'karura' using bridgeSDK cross-chain 'USDT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 6,
+  "fromChain": 1000,
+  "toChain": 0,
+}
+`;
+
 exports[`'assetHubKusama' to 'kusama' using bridgeSDK cross-chain 'KSM' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > after 1`] = `
 {
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
@@ -80,6 +100,15 @@ exports[`'basilisk' to 'kusama' using bridgeSDK cross-chain 'KSM' > parachain br
 }
 `;
 
+exports[`'basilisk' to 'kusama' using bridgeSDK cross-chain 'KSM' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 2`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 1000,
+  "toChain": 10,
+}
+`;
+
 exports[`'bifrost' to 'karura' using bridgeSDK cross-chain 'BNC' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > after 1`] = `
 {
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
@@ -116,6 +145,26 @@ exports[`'karura' to 'altair' using bridgeSDK cross-chain 'AIR' > parachain brid
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
   "decimals": 18,
   "fromChain": 100,
+  "toChain": 1000,
+}
+`;
+
+exports[`'karura' to 'assetHubKusama' using bridgeSDK cross-chain 'USDT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > after 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 6,
+  "fromChain": 998,
+  "toChain": "(rounded 1000)",
+}
+`;
+
+exports[`'karura' to 'assetHubKusama' using bridgeSDK cross-chain 'USDT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.007)"`;
+
+exports[`'karura' to 'assetHubKusama' using bridgeSDK cross-chain 'USDT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 6,
+  "fromChain": 1000,
   "toChain": 1000,
 }
 `;

@@ -50,6 +50,7 @@ export const buildTests = (tests: ReadonlyArray<TestTtype>) => {
                 Accounts: [
                   [[alice.address, { Token: 'KINT' }], { free: '1000000000000000' }],
                   [[alice.address, { Token: 'KBTC' }], { free: 3 * 1e8 }],
+                  [[alice.address, { ForeignAsset: 7 }], { free: 1000e6 }],
                   [[alice.address, { ForeignAsset: 12 }], { free: '100000000000000000000' }],
                   [[alice.address, { Token: 'KUSD' }], { free: 10 * 1e12 }],
                 ],
@@ -63,6 +64,7 @@ export const buildTests = (tests: ReadonlyArray<TestTtype>) => {
                   [[alice.address, { ForeignAsset: 1 }], { free: 10 * 1e12 }],
                   [[alice.address, { ForeignAsset: 4 }], { free: 10 * 1e10 }],
                   [[alice.address, { ForeignAsset: 3 }], { free: 3 * 1e8 }],
+                  [[alice.address, { ForeignAsset: 12 }], { free: 1000e6 }],
                   [[alice.address, { Token: 'AUSD' }], { free: 10 * 1e12 }],
                 ],
               },
