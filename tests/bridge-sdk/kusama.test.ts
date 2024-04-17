@@ -33,6 +33,16 @@ const tests = [
     token: 'KSM',
   },
   {
+    from: 'assetHubKusama',
+    to: 'karura',
+    token: 'USDT',
+  },
+  {
+    from: 'karura',
+    to: 'assetHubKusama',
+    token: 'USDT',
+  },
+  {
     from: 'basilisk',
     to: 'karura',
     token: 'BSX',
@@ -57,16 +67,6 @@ const tests = [
     to: 'karura',
     token: 'BNC',
   },
-  // {
-  //   from: 'altair',
-  //   to: 'karura',
-  //   token: 'KUSD',
-  // },
-  // {
-  //   from: 'karura',
-  //   to: 'altair',
-  //   token: 'KUSD',
-  // },
   {
     from: 'altair',
     to: 'karura',

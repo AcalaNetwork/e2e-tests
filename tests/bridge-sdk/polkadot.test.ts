@@ -12,6 +12,16 @@ const tests = [
     token: 'DOT',
   },
   {
+    from: 'acala',
+    to: 'assetHubPolkadot',
+    token: 'USDT',
+  },
+  {
+    from: 'assetHubPolkadot',
+    to: 'acala',
+    token: 'USDT',
+  },
+  {
     from: 'polkadot',
     to: 'assetHubPolkadot',
     token: 'DOT',
