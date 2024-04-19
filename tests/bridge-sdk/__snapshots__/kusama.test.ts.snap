@@ -100,15 +100,6 @@ exports[`'basilisk' to 'kusama' using bridgeSDK cross-chain 'KSM' > parachain br
 }
 `;
 
-exports[`'basilisk' to 'kusama' using bridgeSDK cross-chain 'KSM' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 2`] = `
-{
-  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
-  "decimals": 12,
-  "fromChain": 1000,
-  "toChain": 10,
-}
-`;
-
 exports[`'bifrost' to 'karura' using bridgeSDK cross-chain 'BNC' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > after 1`] = `
 {
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
@@ -158,7 +149,7 @@ exports[`'karura' to 'assetHubKusama' using bridgeSDK cross-chain 'USDT' > parac
 }
 `;
 
-exports[`'karura' to 'assetHubKusama' using bridgeSDK cross-chain 'USDT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.007)"`;
+exports[`'karura' to 'assetHubKusama' using bridgeSDK cross-chain 'USDT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.001)"`;
 
 exports[`'karura' to 'assetHubKusama' using bridgeSDK cross-chain 'USDT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
 {
