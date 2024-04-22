@@ -63,7 +63,7 @@ const tests = [
           acala.wbtc,
           1e7,
           acala.dot, // fee
-          1e10,
+          16e9,
           tx.xtokens.parachainV3(assetHubPolkadot.paraId),
         ),
         fromBalance: query.tokens(acala.wbtc),
