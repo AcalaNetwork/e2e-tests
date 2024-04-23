@@ -149,7 +149,7 @@ exports[`'karura' to 'assetHubKusama' using bridgeSDK cross-chain 'USDT' > parac
 }
 `;
 
-exports[`'karura' to 'assetHubKusama' using bridgeSDK cross-chain 'USDT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.001)"`;
+exports[`'karura' to 'assetHubKusama' using bridgeSDK cross-chain 'USDT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.0008)"`;
 
 exports[`'karura' to 'assetHubKusama' using bridgeSDK cross-chain 'USDT' > parachain bridge to releaychain > Cross-chain using BridgeSDK works > initial 1`] = `
 {
