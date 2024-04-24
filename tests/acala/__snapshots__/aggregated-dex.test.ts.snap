@@ -55,3 +55,35 @@ exports[`'karura' aggregatedDex > swapWithExactSupply > events 1`] = `
   },
 ]
 `;
+
+exports[`'karura' aggregatedDex > swapWithExactSupply > events 2`] = `
+[
+  {
+    "data": {
+      "liquidityChanges": [
+        "(number)",
+        "(number)",
+        "(number)",
+        "(number)",
+      ],
+      "path": [
+        {
+          "Token": "KSM",
+        },
+        {
+          "Token": "KAR",
+        },
+        {
+          "Token": "LKSM",
+        },
+        {
+          "Token": "KUSD",
+        },
+      ],
+      "trader": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
+    },
+    "method": "Swap",
+    "section": "dex",
+  },
+]
+`;
