@@ -15,7 +15,7 @@ export default {
   },
   kusama: {
     name: 'kintsugi' as const,
-    endpoint: 'wss://api-kusama.interlay.io/parachain',
+    endpoint: 'wss://kintsugi-rpc.dwellir.com',
     btc: 'KBTC',
     native: 'KINT',
     LiquidToken: 2,

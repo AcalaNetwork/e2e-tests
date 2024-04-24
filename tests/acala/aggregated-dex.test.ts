@@ -10,7 +10,7 @@ describe.each([
     name: 'karura',
     swapPath: [
       {
-        Dex: [karura.ksm, karura.rmrk, karura.ausd],
+        Dex: [karura.ksm, karura.kar, karura.lksm, karura.ausd],
       },
       {
         Taiga: [1, 0, 2],
@@ -53,7 +53,7 @@ describe.each([
 
   it('swapWithExactSupply', async () => {
     const tx = await sendTransaction(
-      chain.api.tx.aggregatedDex.swapWithExactSupply(swapPath as any, 1e12, 0).signAsync(alice),
+      chain.api.tx.aggregatedDex.swapWithExactSupply(swapPath as any, 1e10, 0).signAsync(alice),
     )
 
     await chain.chain.newBlock()

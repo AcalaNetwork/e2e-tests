@@ -541,8 +541,8 @@ exports[`'polkadot' -> 'astar' xcm transfer 'DOT' > xcmPallet transfer > to chai
       "messageId": "(hash)",
       "outcome": {
         "Complete": {
-          "proofSize": "(rounded 20000)",
-          "refTime": 5000000000,
+          "proofSize": "(rounded 11000)",
+          "refTime": "(rounded 990000000)",
         },
       },
     },
@@ -553,8 +553,8 @@ exports[`'polkadot' -> 'astar' xcm transfer 'DOT' > xcmPallet transfer > to chai
     "data": {
       "dmqHead": "(hash)",
       "weightUsed": {
-        "proofSize": "(rounded 20000)",
-        "refTime": 5000000000,
+        "proofSize": "(rounded 11000)",
+        "refTime": "(rounded 990000000)",
       },
     },
     "method": "DownwardMessagesProcessed",
