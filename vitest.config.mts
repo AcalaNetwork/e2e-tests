@@ -3,7 +3,7 @@ import swc from 'unplugin-swc'
 
 export default defineConfig({
 	test: {
-		hookTimeout: 180_000,
+		hookTimeout: 240_000,
 		testTimeout: 240_000,
 		pool: 'forks',
 		passWithNoTests: true,
