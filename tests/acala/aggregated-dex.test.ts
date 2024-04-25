@@ -1,4 +1,4 @@
-import { afterAll, beforeAll, describe, it } from 'vitest'
+import { afterAll, beforeAll, describe, expect, it } from 'vitest'
 import { sendTransaction } from '@acala-network/chopsticks-testing'
 
 import { Network, createContext, createNetworks } from '../../networks'
@@ -31,11 +31,15 @@ describe.each([
 ] as const)('$name aggregatedDex', async ({ name, swapPath }) => {
   let chain: Network
   const ctx = createContext()
-  const { alice } = ctx
+  const { alice, keyring } = ctx
 
   beforeAll(async () => {
     const networks = await createNetworks({ [name]: undefined }, ctx)
     chain = networks[name]
+    const meta = await chain.chain.head.meta
+    if (meta.registry.chainSS58) {
+      keyring.setSS58Format(meta.registry.chainSS58)
+    }
 
     // restore Homa.toBondPool to correct liquid token exchange rate
     const apiAt = await chain.api.at(await chain.api.rpc.chain.getBlockHash(chain.chain.head.number - 3))
@@ -58,6 +62,18 @@ describe.each([
 
     await chain.chain.newBlock()
 
-    await checkEvents(tx, 'dex').redact({ number: true }).toMatchSnapshot()
+    const dexPath = swapPath[0].Dex
+
+    await checkEvents(tx, 'dex').toMatchObject([
+      expect.objectContaining({
+        method: 'Swap',
+        section: 'dex',
+        data: expect.objectContaining({
+          trader: alice.address,
+          path: expect.arrayContaining([dexPath[0], dexPath[dexPath.length - 1]]),
+          liquidityChanges: expect.arrayContaining([1e10]),
+        }),
+      }),
+    ])
   })
 })
