@@ -62,15 +62,13 @@ describe.each([
 
     await chain.chain.newBlock()
 
-    const dexPath = swapPath[0].Dex
-
     await checkEvents(tx, 'dex').toMatchObject([
       expect.objectContaining({
         method: 'Swap',
         section: 'dex',
         data: expect.objectContaining({
           trader: alice.address,
-          path: expect.arrayContaining([dexPath[0], dexPath[dexPath.length - 1]]),
+          path: expect.arrayContaining(swapPath[0].Dex as any),
           liquidityChanges: expect.arrayContaining([1e10]),
         }),
       }),
