@@ -149,7 +149,7 @@ exports[`'astar' to 'acala' using bridgeSDK cross-chain 'AUSD' > Cross-chain usi
 }
 `;
 
-exports[`'astar' to 'acala' using bridgeSDK cross-chain 'AUSD' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.0008)"`;
+exports[`'astar' to 'acala' using bridgeSDK cross-chain 'AUSD' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.001)"`;
 
 exports[`'astar' to 'acala' using bridgeSDK cross-chain 'AUSD' > Cross-chain using BridgeSDK works > initial 1`] = `
 {
