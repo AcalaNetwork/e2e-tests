@@ -1729,6 +1729,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@polkadot/types-augment@npm:11.0.3":
+  version: 11.0.3
+  resolution: "@polkadot/types-augment@npm:11.0.3"
+  dependencies:
+    "@polkadot/types": "npm:11.0.3"
+    "@polkadot/types-codec": "npm:11.0.3"
+    "@polkadot/util": "npm:^12.6.2"
+    tslib: "npm:^2.6.2"
+  checksum: 10c0/6e7b6c63ae94a225754dd6c23ac03d800ce1e8d3913a5b33f965e373a6965dbfc688b0a3332f6ea95e95ba30833784e093fca474f66d58bee31e01fb82950db3
+  languageName: node
+  linkType: hard
+
 "@polkadot/types-augment@npm:7.15.1":
   version: 7.15.1
   resolution: "@polkadot/types-augment@npm:7.15.1"
@@ -1764,6 +1776,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@polkadot/types-codec@npm:11.0.3":
+  version: 11.0.3
+  resolution: "@polkadot/types-codec@npm:11.0.3"
+  dependencies:
+    "@polkadot/util": "npm:^12.6.2"
+    "@polkadot/x-bigint": "npm:^12.6.2"
+    tslib: "npm:^2.6.2"
+  checksum: 10c0/80ec75695b21692a99e38956a7c6f5dd31cdc5c095937cb1a1bf4a14eff650b34690844484de428288ff63c345425fa85a8e77e910eb3e1fba966cab522b36ea
+  languageName: node
+  linkType: hard
+
 "@polkadot/types-codec@npm:7.15.1":
   version: 7.15.1
   resolution: "@polkadot/types-codec@npm:7.15.1"
@@ -1793,6 +1816,17 @@ __metadata:
     "@polkadot/util": "npm:^12.6.2"
     tslib: "npm:^2.6.2"
   checksum: 10c0/103a63d65df154a47cb9174828fe2e86169d3a99fdf402457f13b45df9a99ae3cc5705bf2aaf72a822484a9efd3336c6a80f93add5eaf77752b4713a00a00055
+  languageName: node
+  linkType: hard
+
+"@polkadot/types-create@npm:11.0.3":
+  version: 11.0.3
+  resolution: "@polkadot/types-create@npm:11.0.3"
+  dependencies:
+    "@polkadot/types-codec": "npm:11.0.3"
+    "@polkadot/util": "npm:^12.6.2"
+    tslib: "npm:^2.6.2"
+  checksum: 10c0/aac8a6ac18b41369709b3a8c0e875464bfd0c127d344eee03dde15ff337309db38445f30ceffcc03f3a21a6d4ece1bd948349c33979f1ea1ebff40562372f312
   languageName: node
   linkType: hard
 
@@ -1876,7 +1910,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polkadot/types@npm:10.11.3, @polkadot/types@npm:^10.11.1, @polkadot/types@npm:^10.11.2, @polkadot/types@npm:^10.7.3, @polkadot/types@npm:^10.9.1":
+"@polkadot/types@npm:10.11.3, @polkadot/types@npm:^10.11.1, @polkadot/types@npm:^10.11.2, @polkadot/types@npm:^10.7.3":
   version: 10.11.3
   resolution: "@polkadot/types@npm:10.11.3"
   dependencies:
@@ -1889,6 +1923,22 @@ __metadata:
     rxjs: "npm:^7.8.1"
     tslib: "npm:^2.6.2"
   checksum: 10c0/498789cb10377d33f183fadc974b74b5f15f52b4a5b3c69b3a19fbc2c42d87e4298889f38321c02148047b77594d29fa2835fb2c0488d6d3d10dab870a93a175
+  languageName: node
+  linkType: hard
+
+"@polkadot/types@npm:11.0.3, @polkadot/types@npm:^11.0.2":
+  version: 11.0.3
+  resolution: "@polkadot/types@npm:11.0.3"
+  dependencies:
+    "@polkadot/keyring": "npm:^12.6.2"
+    "@polkadot/types-augment": "npm:11.0.3"
+    "@polkadot/types-codec": "npm:11.0.3"
+    "@polkadot/types-create": "npm:11.0.3"
+    "@polkadot/util": "npm:^12.6.2"
+    "@polkadot/util-crypto": "npm:^12.6.2"
+    rxjs: "npm:^7.8.1"
+    tslib: "npm:^2.6.2"
+  checksum: 10c0/73d20ffa967db3c5a36a5700ef1cc2df2a9bf1b3139882e6502164a51f27c566138e0bae83557bdbd5dfa04ae90d0c725639862cf952ff2bf5b2b9ddb322f3a3
   languageName: node
   linkType: hard
 
@@ -2683,24 +2733,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polkawallet/bridge@npm:^0.1.6-2":
-  version: 0.1.6-2
-  resolution: "@polkawallet/bridge@npm:0.1.6-2"
+"@polkawallet/bridge@npm:^0.1.7-4":
+  version: 0.1.7-4
+  resolution: "@polkawallet/bridge@npm:0.1.7-4"
   dependencies:
     "@acala-network/api": "npm:^5"
     "@acala-network/sdk": "npm:^4.1.9-7"
     "@acala-network/sdk-core": "npm:^4.1.9-7"
-    "@polkadot/api": "npm:^10.9.1"
+    "@polkadot/api": "npm:^11.0.2"
     "@polkadot/apps-config": "npm:^0.133.1"
-    "@polkadot/types": "npm:^10.9.1"
+    "@polkadot/types": "npm:^11.0.2"
     axios: "npm:^0.27.2"
     ethers: "npm:^5"
     lodash: "npm:^4.17.20"
   peerDependencies:
     "@acala-network/api": ^5
-    "@polkadot/api": ^10
+    "@polkadot/api": ^11
     ethers: ^5
-  checksum: 10c0/dd43eca276885411aada67fbfdb641b394c3283874fc6d71d2c5b92c466bd6cf91f657a0d97e0c7fe3a22edf97665c584a4a9b96e7fe77a5b70fd7993cf1f5c3
+  checksum: 10c0/3b6ecd20e10b7e36fc428b7eb7fc571b21a7bedf8ac84ffcff9a7f7cafe1905f80fa99af641e853c4255a2108dadff6441d5e26afc32e1d4baa3ca6b7e62976d
   languageName: node
   linkType: hard
 
@@ -4562,7 +4612,7 @@ __metadata:
     "@acala-network/sdk": "npm:^4.1.9-13"
     "@acala-network/sdk-core": "npm:^4.1.9-13"
     "@polkadot/api": "npm:^10.12.6"
-    "@polkawallet/bridge": "npm:^0.1.6-2"
+    "@polkawallet/bridge": "npm:^0.1.7-4"
     "@swc/core": "npm:^1.4.12"
     "@types/lodash": "npm:^4.17.0"
     "@types/node": "npm:^20.12.5"
