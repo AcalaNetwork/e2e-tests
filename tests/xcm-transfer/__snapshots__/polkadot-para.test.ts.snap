@@ -220,6 +220,14 @@ exports[`'acala' -> 'moonbeam' xcm transfer 'DOT' > xtokens transfer > balance o
 }
 `;
 
+exports[`'acala' -> 'moonbeam' xcm transfer 'DOT' > xtokens transfer > balance on from chain 2`] = `
+{
+  "free": 9000000000000,
+  "frozen": 0,
+  "reserved": 0,
+}
+`;
+
 exports[`'acala' -> 'moonbeam' xcm transfer 'DOT' > xtokens transfer > balance on to chain 1`] = `
 {
   "balance": "(rounded 1000000000000)",
@@ -231,7 +239,130 @@ exports[`'acala' -> 'moonbeam' xcm transfer 'DOT' > xtokens transfer > balance o
 }
 `;
 
+exports[`'acala' -> 'moonbeam' xcm transfer 'DOT' > xtokens transfer > balance on to chain 2`] = `
+{
+  "balance": "(rounded 1000000000000)",
+  "extra": null,
+  "reason": {
+    "sufficient": null,
+  },
+  "status": "Liquid",
+}
+`;
+
 exports[`'acala' -> 'moonbeam' xcm transfer 'DOT' > xtokens transfer > from chain ump messages 1`] = `
+[
+  {
+    "v2": [
+      {
+        "withdrawAsset": [
+          {
+            "fun": {
+              "fungible": 1000000000000,
+            },
+            "id": {
+              "concrete": {
+                "interior": {
+                  "here": null,
+                },
+                "parents": 0,
+              },
+            },
+          },
+        ],
+      },
+      {
+        "clearOrigin": null,
+      },
+      {
+        "buyExecution": {
+          "fees": {
+            "fun": {
+              "fungible": 500000000000,
+            },
+            "id": {
+              "concrete": {
+                "interior": {
+                  "here": null,
+                },
+                "parents": 0,
+              },
+            },
+          },
+          "weightLimit": {
+            "unlimited": null,
+          },
+        },
+      },
+      {
+        "depositReserveAsset": {
+          "assets": {
+            "wild": {
+              "all": null,
+            },
+          },
+          "dest": {
+            "interior": {
+              "x1": {
+                "parachain": 2004,
+              },
+            },
+            "parents": 0,
+          },
+          "maxAssets": 1,
+          "xcm": [
+            {
+              "buyExecution": {
+                "fees": {
+                  "fun": {
+                    "fungible": 500000000000,
+                  },
+                  "id": {
+                    "concrete": {
+                      "interior": {
+                        "here": null,
+                      },
+                      "parents": 1,
+                    },
+                  },
+                },
+                "weightLimit": {
+                  "unlimited": null,
+                },
+              },
+            },
+            {
+              "depositAsset": {
+                "assets": {
+                  "wild": {
+                    "all": null,
+                  },
+                },
+                "beneficiary": {
+                  "interior": {
+                    "x1": {
+                      "accountKey20": {
+                        "key": "0xf24ff3a9cf04c71dbc94d0b566f7a27b94566cac",
+                        "network": {
+                          "any": null,
+                        },
+                      },
+                    },
+                  },
+                  "parents": 0,
+                },
+                "maxAssets": 1,
+              },
+            },
+          ],
+        },
+      },
+    ],
+  },
+]
+`;
+
+exports[`'acala' -> 'moonbeam' xcm transfer 'DOT' > xtokens transfer > from chain ump messages 2`] = `
 [
   {
     "v2": [
@@ -362,7 +493,77 @@ exports[`'acala' -> 'moonbeam' xcm transfer 'DOT' > xtokens transfer > to chain 
 ]
 `;
 
+exports[`'acala' -> 'moonbeam' xcm transfer 'DOT' > xtokens transfer > to chain xcm events 2`] = `
+[
+  {
+    "data": {
+      "id": "(hash)",
+      "origin": "Parent",
+      "success": true,
+      "weightUsed": {
+        "proofSize": "(rounded 26000)",
+        "refTime": "(rounded 690000000)",
+      },
+    },
+    "method": "Processed",
+    "section": "messageQueue",
+  },
+]
+`;
+
 exports[`'acala' -> 'moonbeam' xcm transfer 'DOT' > xtokens transfer > tx events 1`] = `
+[
+  {
+    "data": {
+      "assets": [
+        {
+          "fun": {
+            "Fungible": 1000000000000,
+          },
+          "id": {
+            "Concrete": {
+              "interior": "Here",
+              "parents": 1,
+            },
+          },
+        },
+      ],
+      "dest": {
+        "interior": {
+          "X2": [
+            {
+              "Parachain": "(rounded 2000)",
+            },
+            {
+              "AccountKey20": {
+                "key": "0xf24ff3a9cf04c71dbc94d0b566f7a27b94566cac",
+                "network": null,
+              },
+            },
+          ],
+        },
+        "parents": 1,
+      },
+      "fee": {
+        "fun": {
+          "Fungible": 1000000000000,
+        },
+        "id": {
+          "Concrete": {
+            "interior": "Here",
+            "parents": 1,
+          },
+        },
+      },
+      "sender": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
+    },
+    "method": "TransferredMultiAssets",
+    "section": "xTokens",
+  },
+]
+`;
+
+exports[`'acala' -> 'moonbeam' xcm transfer 'DOT' > xtokens transfer > tx events 2`] = `
 [
   {
     "data": {
@@ -717,6 +918,17 @@ exports[`'moonbeam' -> 'acala' xcm transfer 'DOT' > xtokens transfer > balance o
 }
 `;
 
+exports[`'moonbeam' -> 'acala' xcm transfer 'DOT' > xtokens transfer > balance on from chain 2`] = `
+{
+  "balance": 9000000000000,
+  "extra": null,
+  "reason": {
+    "consumer": null,
+  },
+  "status": "Liquid",
+}
+`;
+
 exports[`'moonbeam' -> 'acala' xcm transfer 'DOT' > xtokens transfer > balance on to chain 1`] = `
 {
   "free": "(rounded 11000000000000)",
@@ -898,6 +1110,54 @@ exports[`'moonbeam' -> 'acala' xcm transfer 'DOT' > xtokens transfer > tx events
       "sender": "0xf24FF3a9CF04c71Dbc94D0b566f7A27B94566cac",
     },
     "method": "TransferredMultiAssets",
+    "section": "xTokens",
+  },
+]
+`;
+
+exports[`'moonbeam' -> 'acala' xcm transfer 'DOT' > xtokens transfer > tx events 2`] = `
+[
+  {
+    "data": {
+      "assets": [
+        {
+          "fun": {
+            "Fungible": 1000000000000,
+          },
+          "id": {
+            "interior": "Here",
+            "parents": 1,
+          },
+        },
+      ],
+      "dest": {
+        "interior": {
+          "X2": [
+            {
+              "Parachain": 2000,
+            },
+            {
+              "AccountId32": {
+                "id": "(hash)",
+                "network": null,
+              },
+            },
+          ],
+        },
+        "parents": 1,
+      },
+      "fee": {
+        "fun": {
+          "Fungible": 1000000000000,
+        },
+        "id": {
+          "interior": "Here",
+          "parents": 1,
+        },
+      },
+      "sender": "0xf24FF3a9CF04c71Dbc94D0b566f7A27B94566cac",
+    },
+    "method": "TransferredAssets",
     "section": "xTokens",
   },
 ]
