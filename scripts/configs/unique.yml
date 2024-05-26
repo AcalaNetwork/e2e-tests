@@ -12,7 +12,7 @@ extensions:
   merge_subscription:
     keep_alive_seconds: 60
   server:
-    port: 9944
+    port: ${PORT}
     listen_address: '0.0.0.0'
     max_connections: 2000
 
