@@ -433,22 +433,20 @@ exports[`'karura' -> 'assetHubKusama' xcm transfer 'USDT' > xtokens transfer > t
             "Fungible": 1000000,
           },
           "id": {
-            "Concrete": {
-              "interior": {
-                "X3": [
-                  {
-                    "Parachain": 1000,
-                  },
-                  {
-                    "PalletInstance": 50,
-                  },
-                  {
-                    "GeneralIndex": "(rounded 2000)",
-                  },
-                ],
-              },
-              "parents": 1,
+            "interior": {
+              "X3": [
+                {
+                  "Parachain": 1000,
+                },
+                {
+                  "PalletInstance": 50,
+                },
+                {
+                  "GeneralIndex": "(rounded 2000)",
+                },
+              ],
             },
+            "parents": 1,
           },
         },
       ],
@@ -473,27 +471,25 @@ exports[`'karura' -> 'assetHubKusama' xcm transfer 'USDT' > xtokens transfer > t
           "Fungible": 1000000,
         },
         "id": {
-          "Concrete": {
-            "interior": {
-              "X3": [
-                {
-                  "Parachain": 1000,
-                },
-                {
-                  "PalletInstance": 50,
-                },
-                {
-                  "GeneralIndex": "(rounded 2000)",
-                },
-              ],
-            },
-            "parents": 1,
+          "interior": {
+            "X3": [
+              {
+                "Parachain": 1000,
+              },
+              {
+                "PalletInstance": 50,
+              },
+              {
+                "GeneralIndex": "(rounded 2000)",
+              },
+            ],
           },
+          "parents": 1,
         },
       },
       "sender": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
     },
-    "method": "TransferredMultiAssets",
+    "method": "TransferredAssets",
     "section": "xTokens",
   },
 ]
@@ -631,22 +627,20 @@ exports[`'karura' -> 'basilisk' xcm transfer 'DAI' > xtokens transfer > tx event
             "Fungible": 1000000000000000000,
           },
           "id": {
-            "Concrete": {
-              "interior": {
-                "X2": [
-                  {
-                    "Parachain": 2000,
+            "interior": {
+              "X2": [
+                {
+                  "Parachain": 2000,
+                },
+                {
+                  "GeneralKey": {
+                    "data": "(hash)",
+                    "length": 21,
                   },
-                  {
-                    "GeneralKey": {
-                      "data": "(hash)",
-                      "length": 21,
-                    },
-                  },
-                ],
-              },
-              "parents": 1,
+                },
+              ],
             },
+            "parents": 1,
           },
         },
       ],
@@ -671,27 +665,25 @@ exports[`'karura' -> 'basilisk' xcm transfer 'DAI' > xtokens transfer > tx event
           "Fungible": 1000000000000000000,
         },
         "id": {
-          "Concrete": {
-            "interior": {
-              "X2": [
-                {
-                  "Parachain": 2000,
+          "interior": {
+            "X2": [
+              {
+                "Parachain": 2000,
+              },
+              {
+                "GeneralKey": {
+                  "data": "(hash)",
+                  "length": 21,
                 },
-                {
-                  "GeneralKey": {
-                    "data": "(hash)",
-                    "length": 21,
-                  },
-                },
-              ],
-            },
-            "parents": 1,
+              },
+            ],
           },
+          "parents": 1,
         },
       },
       "sender": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
     },
-    "method": "TransferredMultiAssets",
+    "method": "TransferredAssets",
     "section": "xTokens",
   },
 ]

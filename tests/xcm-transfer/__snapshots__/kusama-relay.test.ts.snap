@@ -127,21 +127,21 @@ exports[`'karura' -> 'kusama' xcm transfer 'KSM wiht limited weight' > xtokens t
             "Fungible": 1000000000000,
           },
           "id": {
-            "Concrete": {
-              "interior": "Here",
-              "parents": 1,
-            },
+            "interior": "Here",
+            "parents": 1,
           },
         },
       ],
       "dest": {
         "interior": {
-          "X1": {
-            "AccountId32": {
-              "id": "(hash)",
-              "network": null,
+          "X1": [
+            {
+              "AccountId32": {
+                "id": "(hash)",
+                "network": null,
+              },
             },
-          },
+          ],
         },
         "parents": 1,
       },
@@ -150,15 +150,13 @@ exports[`'karura' -> 'kusama' xcm transfer 'KSM wiht limited weight' > xtokens t
           "Fungible": 1000000000000,
         },
         "id": {
-          "Concrete": {
-            "interior": "Here",
-            "parents": 1,
-          },
+          "interior": "Here",
+          "parents": 1,
         },
       },
       "sender": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
     },
-    "method": "TransferredMultiAssets",
+    "method": "TransferredAssets",
     "section": "xTokens",
   },
 ]
@@ -291,21 +289,21 @@ exports[`'karura' -> 'kusama' xcm transfer 'KSM' > xtokens transfer > tx events 
             "Fungible": 1000000000000,
           },
           "id": {
-            "Concrete": {
-              "interior": "Here",
-              "parents": 1,
-            },
+            "interior": "Here",
+            "parents": 1,
           },
         },
       ],
       "dest": {
         "interior": {
-          "X1": {
-            "AccountId32": {
-              "id": "(hash)",
-              "network": null,
+          "X1": [
+            {
+              "AccountId32": {
+                "id": "(hash)",
+                "network": null,
+              },
             },
-          },
+          ],
         },
         "parents": 1,
       },
@@ -314,15 +312,13 @@ exports[`'karura' -> 'kusama' xcm transfer 'KSM' > xtokens transfer > tx events 
           "Fungible": 1000000000000,
         },
         "id": {
-          "Concrete": {
-            "interior": "Here",
-            "parents": 1,
-          },
+          "interior": "Here",
+          "parents": 1,
         },
       },
       "sender": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
     },
-    "method": "TransferredMultiAssets",
+    "method": "TransferredAssets",
     "section": "xTokens",
   },
 ]

@@ -62,7 +62,7 @@ exports[`acala stable asset > swap overflow > events 1`] = `
         "paysFee": "Yes",
         "weight": {
           "proofSize": "(rounded 11000)",
-          "refTime": "(rounded 3000000000)",
+          "refTime": "(rounded 2900000000)",
         },
       },
     },
@@ -215,7 +215,7 @@ exports[`karura stable asset > swap overflow > events 1`] = `
         "paysFee": "Yes",
         "weight": {
           "proofSize": "(rounded 11000)",
-          "refTime": "(rounded 3000000000)",
+          "refTime": "(rounded 2900000000)",
         },
       },
     },

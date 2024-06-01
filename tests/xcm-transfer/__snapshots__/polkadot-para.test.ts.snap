@@ -147,10 +147,8 @@ exports[`'acala' -> 'assetHubPolkadot' xcm transfer 'WBTC' > xtokens transfer > 
             "Fungible": 16000000000,
           },
           "id": {
-            "Concrete": {
-              "interior": "Here",
-              "parents": 1,
-            },
+            "interior": "Here",
+            "parents": 1,
           },
         },
         {
@@ -158,22 +156,20 @@ exports[`'acala' -> 'assetHubPolkadot' xcm transfer 'WBTC' > xtokens transfer > 
             "Fungible": 10000000,
           },
           "id": {
-            "Concrete": {
-              "interior": {
-                "X3": [
-                  {
-                    "Parachain": 1000,
-                  },
-                  {
-                    "PalletInstance": 50,
-                  },
-                  {
-                    "GeneralIndex": 21,
-                  },
-                ],
-              },
-              "parents": 1,
+            "interior": {
+              "X3": [
+                {
+                  "Parachain": 1000,
+                },
+                {
+                  "PalletInstance": 50,
+                },
+                {
+                  "GeneralIndex": 21,
+                },
+              ],
             },
+            "parents": 1,
           },
         },
       ],
@@ -198,15 +194,13 @@ exports[`'acala' -> 'assetHubPolkadot' xcm transfer 'WBTC' > xtokens transfer > 
           "Fungible": 16000000000,
         },
         "id": {
-          "Concrete": {
-            "interior": "Here",
-            "parents": 1,
-          },
+          "interior": "Here",
+          "parents": 1,
         },
       },
       "sender": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
     },
-    "method": "TransferredMultiAssets",
+    "method": "TransferredAssets",
     "section": "xTokens",
   },
 ]
@@ -371,10 +365,8 @@ exports[`'acala' -> 'moonbeam' xcm transfer 'DOT' > xtokens transfer > tx events
             "Fungible": 1000000000000,
           },
           "id": {
-            "Concrete": {
-              "interior": "Here",
-              "parents": 1,
-            },
+            "interior": "Here",
+            "parents": 1,
           },
         },
       ],
@@ -399,15 +391,13 @@ exports[`'acala' -> 'moonbeam' xcm transfer 'DOT' > xtokens transfer > tx events
           "Fungible": 1000000000000,
         },
         "id": {
-          "Concrete": {
-            "interior": "Here",
-            "parents": 1,
-          },
+          "interior": "Here",
+          "parents": 1,
         },
       },
       "sender": "23y3WetbNi6rDMgHmyRDjgpb7PnhgPotuPPawxruTMLYTLzG",
     },
-    "method": "TransferredMultiAssets",
+    "method": "TransferredAssets",
     "section": "xTokens",
   },
 ]
