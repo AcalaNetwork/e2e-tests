@@ -407,7 +407,7 @@ exports[`'kusama' to 'karura' using bridgeSDK cross-chain 'KSM' > Cross-chain us
 }
 `;
 
-exports[`'kusama' to 'karura' using bridgeSDK cross-chain 'KSM' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.00004)"`;
+exports[`'kusama' to 'karura' using bridgeSDK cross-chain 'KSM' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.00003)"`;
 
 exports[`'kusama' to 'karura' using bridgeSDK cross-chain 'KSM' > Cross-chain using BridgeSDK works > initial 1`] = `
 {
