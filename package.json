@@ -11,7 +11,8 @@
 	},
 	"resolutions": {
 		"@polkadot/api": "^11.3.1",
-		"@polkadot/api-derive": "^11.3.1"
+		"@polkadot/api-derive": "^11.3.1",
+		"@polkadot/types": "^11.3.1"
 	},
 	"dependencies": {
 		"@acala-network/chopsticks": "^0.12.2",

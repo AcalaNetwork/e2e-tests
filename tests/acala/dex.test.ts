@@ -1,9 +1,9 @@
-import { afterAll, beforeEach, describe, it } from 'vitest'
+import { afterEach, beforeEach, describe, it } from 'vitest'
 import { sendTransaction, testingPairs } from '@acala-network/chopsticks-testing'
 
+import { Network, createNetworks } from '../../networks'
 import { acala, karura } from '../../networks/acala'
 import { checkEvents } from '../../helpers'
-import { createNetworks } from '../../networks'
 import { query } from '../../helpers/api'
 
 describe.each([
@@ -16,31 +16,32 @@ describe.each([
     swapPair: [acala.ausd, acala.ldot],
   },
 ] as const)(`$name dex`, async ({ name, swapPair }) => {
-  const { [name]: chain } = await createNetworks({ [name]: undefined })
   const { alice } = testingPairs()
 
-  const head = chain.chain.head
-
-  afterAll(async () => {
-    await chain.teardown()
-  })
+  let chain: Network
 
   beforeEach(async () => {
-    await chain.chain.setHead(head)
+    const { [name]: chain1 } = await createNetworks({ [name]: undefined })
+
+    chain = chain1
+  })
+
+  afterEach(async () => {
+    await chain.teardown()
   })
 
   it.each([
     {
       name: 'swapWithExactSupply',
-      tx: chain.api.tx.dex.swapWithExactSupply(swapPair as any, 1e12, 0),
+      tx: () => chain.api.tx.dex.swapWithExactSupply(swapPair as any, 1e12, 0),
     },
     {
       name: 'swapWithExactTarget',
-      tx: chain.api.tx.dex.swapWithExactTarget(swapPair as any, 1e12, 1e15),
+      tx: () => chain.api.tx.dex.swapWithExactTarget(swapPair as any, 1e12, 1e15),
     },
   ] as const)('$name works', async ({ name, tx }) => {
     const _name = name
-    const tx0 = await sendTransaction(tx.signAsync(alice))
+    const tx0 = await sendTransaction(tx().signAsync(alice))
 
     await chain.chain.newBlock()
 
