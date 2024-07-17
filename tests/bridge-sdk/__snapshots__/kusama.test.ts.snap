@@ -129,7 +129,7 @@ exports[`'karura' to 'altair' using bridgeSDK cross-chain 'AIR' > Cross-chain us
 }
 `;
 
-exports[`'karura' to 'altair' using bridgeSDK cross-chain 'AIR' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.007)"`;
+exports[`'karura' to 'altair' using bridgeSDK cross-chain 'AIR' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.006)"`;
 
 exports[`'karura' to 'altair' using bridgeSDK cross-chain 'AIR' > Cross-chain using BridgeSDK works > initial 1`] = `
 {
