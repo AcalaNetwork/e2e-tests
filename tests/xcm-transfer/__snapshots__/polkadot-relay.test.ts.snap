@@ -526,12 +526,30 @@ exports[`'polkadot' -> 'astar' xcm transfer 'DOT' > xcmPallet transfer > to chai
 [
   {
     "data": {
+      "count": 1,
+    },
+    "method": "DownwardMessagesReceived",
+    "section": "parachainSystem",
+  },
+  {
+    "data": {
+      "dmqHead": "(hash)",
+      "weightUsed": {
+        "proofSize": "(rounded 8000)",
+        "refTime": "(rounded 530000000)",
+      },
+    },
+    "method": "DownwardMessagesProcessed",
+    "section": "parachainSystem",
+  },
+  {
+    "data": {
       "id": "(hash)",
       "origin": "Parent",
       "success": true,
       "weightUsed": {
-        "proofSize": "(rounded 11000)",
-        "refTime": "(rounded 990000000)",
+        "proofSize": "(rounded 9300)",
+        "refTime": "(rounded 890000000)",
       },
     },
     "method": "Processed",
