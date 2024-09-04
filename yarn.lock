@@ -74,7 +74,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@acala-network/chopsticks-testing@npm:^0.12.2":
+"@acala-network/chopsticks-testing@npm:^0.14.2-1":
   version: 0.12.2
   resolution: "@acala-network/chopsticks-testing@npm:0.12.2"
   dependencies:
@@ -99,7 +99,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@acala-network/chopsticks@npm:0.12.2, @acala-network/chopsticks@npm:^0.12.2":
+"@acala-network/chopsticks@npm:0.12.2, @acala-network/chopsticks@npm:^0.14.2-1":
   version: 0.12.2
   resolution: "@acala-network/chopsticks@npm:0.12.2"
   dependencies:
@@ -4592,11 +4592,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "e2e-tests@workspace:."
   dependencies:
-    "@acala-network/chopsticks": "npm:^0.12.2"
-    "@acala-network/chopsticks-testing": "npm:^0.12.2"
+    "@acala-network/chopsticks": "npm:^0.14.2-1"
+    "@acala-network/chopsticks-testing": "npm:^0.14.2-1"
     "@acala-network/sdk": "npm:^4.1.9-13"
     "@acala-network/sdk-core": "npm:^4.1.9-13"
-    "@polkadot/api": "npm:^11.3.1"
+    "@polkadot/api": "npm:12.4.2"
     "@polkawallet/bridge": "npm:^0.1.7-4"
     "@swc/core": "npm:^1.6.1"
     "@types/lodash": "npm:^4.17.5"
