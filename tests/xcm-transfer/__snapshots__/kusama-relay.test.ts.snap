@@ -108,7 +108,7 @@ exports[`'karura' -> 'kusama' xcm transfer 'KSM wiht limited weight' > xtokens t
       "success": true,
       "weightUsed": {
         "proofSize": "(rounded 7200)",
-        "refTime": "(rounded 300000000)",
+        "refTime": "(rounded 310000000)",
       },
     },
     "method": "Processed",
@@ -270,7 +270,7 @@ exports[`'karura' -> 'kusama' xcm transfer 'KSM' > xtokens transfer > to chain u
       "success": true,
       "weightUsed": {
         "proofSize": "(rounded 7200)",
-        "refTime": "(rounded 300000000)",
+        "refTime": "(rounded 310000000)",
       },
     },
     "method": "Processed",
@@ -373,7 +373,7 @@ exports[`'kusama' -> 'karura' xcm transfer 'KSM' > xcmPallet transfer > tx event
         "Complete": {
           "used": {
             "proofSize": "(rounded 6200)",
-            "refTime": "(rounded 288000000)",
+            "refTime": "(rounded 294000000)",
           },
         },
       },
@@ -566,7 +566,7 @@ exports[`'kusama' -> 'shiden' xcm transfer 'KSM' > xcmPallet transfer > tx event
         "Complete": {
           "used": {
             "proofSize": "(rounded 6200)",
-            "refTime": "(rounded 288000000)",
+            "refTime": "(rounded 294000000)",
           },
         },
       },
