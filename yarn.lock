@@ -164,21 +164,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@acala-network/sdk-core@npm:4.1.10, @acala-network/sdk-core@npm:^4.1.9-13":
-  version: 4.1.10
-  resolution: "@acala-network/sdk-core@npm:4.1.10"
-  dependencies:
-    "@acala-network/types": "npm:^6.1.1"
-    "@polkadot/api": "npm:^12.1.1"
-    bignumber.js: "npm:^9.0.0"
-    lodash: "npm:^4.17.20"
-  peerDependencies:
-    "@acala-network/types": ^6
-    "@polkadot/api": ^12
-  checksum: 10c0/49910b86f3ef3c9760775e77f06e70267a4852c2d83d85daff8fbd86f753f1fe973a3ce9793f66d690140edb46261bd255260a4155d31173dd2c2e420371e34c
-  languageName: node
-  linkType: hard
-
 "@acala-network/sdk-core@npm:4.1.11":
   version: 4.1.11
   resolution: "@acala-network/sdk-core@npm:4.1.11"
@@ -215,30 +200,6 @@ __metadata:
     "@polkadot/api": ^12
     ethers: ~5.7.0
   checksum: 10c0/a052dfcba3a0d88ab72a389abbc686ec3c2bf751fcdd4c9b9d7f322f4f0115c1e29ecd33eba787c8b137d2a6fad23cbc7258a0f7b21fffb943d63faab95b5cf8
-  languageName: node
-  linkType: hard
-
-"@acala-network/sdk@npm:^4.1.9-13":
-  version: 4.1.10
-  resolution: "@acala-network/sdk@npm:4.1.10"
-  dependencies:
-    "@acala-network/api": "npm:^6.1.1"
-    "@acala-network/eth-providers": "npm:~2.7.18"
-    "@acala-network/sdk-core": "npm:4.1.10"
-    "@polkadot/api": "npm:^12.1.1"
-    axios: "npm:^0.24.0"
-    ethers: "npm:~5.7.0"
-    graphql: "npm:^16.3.0"
-    graphql-request: "npm:^4.1.0"
-    lodash: "npm:^4.17.20"
-    lru-cache: "npm:^7.14.1"
-    rxjs: "npm:^7.8.1"
-  peerDependencies:
-    "@acala-network/api": ^5
-    "@acala-network/eth-providers": ~2.7.18
-    "@polkadot/api": ^12
-    ethers: ~5.7.0
-  checksum: 10c0/cd0e4ab1785d53394229f0c2e33e314e4e29e77020d24509c77bb4367097d7360fef60c287569a24630d0b2b78d12f40ee7385debb175db81a42b40e4b538cd6
   languageName: node
   linkType: hard
 
