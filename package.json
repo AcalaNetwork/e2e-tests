@@ -21,6 +21,7 @@
 		"@acala-network/sdk": "4.1.10",
 		"@acala-network/sdk-core": "4.1.10",
 		"@polkadot/api": "12.4.2",
+		"@polkadot/util": "13.0.2",
 		"@polkawallet/bridge": "^0.1.7-11",
 		"@swc/core": "^1.6.1",
 		"axios": "^1.7.2",

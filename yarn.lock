@@ -4880,6 +4880,7 @@ __metadata:
     "@acala-network/sdk": "npm:4.1.10"
     "@acala-network/sdk-core": "npm:4.1.10"
     "@polkadot/api": "npm:12.4.2"
+    "@polkadot/util": "npm:13.0.2"
     "@polkawallet/bridge": "npm:^0.1.7-11"
     "@swc/core": "npm:^1.6.1"
     "@types/lodash": "npm:^4.17.5"
