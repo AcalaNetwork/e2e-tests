@@ -179,7 +179,46 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@acala-network/sdk@npm:4.1.10, @acala-network/sdk@npm:^4.1.9-13":
+"@acala-network/sdk-core@npm:4.1.11":
+  version: 4.1.11
+  resolution: "@acala-network/sdk-core@npm:4.1.11"
+  dependencies:
+    "@acala-network/types": "npm:^6.1.1"
+    "@polkadot/api": "npm:^12.1.1"
+    bignumber.js: "npm:^9.0.0"
+    lodash: "npm:^4.17.20"
+  peerDependencies:
+    "@acala-network/types": ^6
+    "@polkadot/api": ^12
+  checksum: 10c0/3a80582f7a8dcfe40ceb8b81d698c105afdb3020699129053e038a3045468a505b085581cd94abce2d05618701e12871939bc6f625210b9c977c0de6036621c2
+  languageName: node
+  linkType: hard
+
+"@acala-network/sdk@npm:4.1.11":
+  version: 4.1.11
+  resolution: "@acala-network/sdk@npm:4.1.11"
+  dependencies:
+    "@acala-network/api": "npm:^6.1.1"
+    "@acala-network/eth-providers": "npm:~2.7.18"
+    "@acala-network/sdk-core": "npm:4.1.11"
+    "@polkadot/api": "npm:^12.1.1"
+    axios: "npm:^0.24.0"
+    ethers: "npm:~5.7.0"
+    graphql: "npm:^16.3.0"
+    graphql-request: "npm:^4.1.0"
+    lodash: "npm:^4.17.20"
+    lru-cache: "npm:^7.14.1"
+    rxjs: "npm:^7.8.1"
+  peerDependencies:
+    "@acala-network/api": ^5
+    "@acala-network/eth-providers": ~2.7.18
+    "@polkadot/api": ^12
+    ethers: ~5.7.0
+  checksum: 10c0/a052dfcba3a0d88ab72a389abbc686ec3c2bf751fcdd4c9b9d7f322f4f0115c1e29ecd33eba787c8b137d2a6fad23cbc7258a0f7b21fffb943d63faab95b5cf8
+  languageName: node
+  linkType: hard
+
+"@acala-network/sdk@npm:^4.1.9-13":
   version: 4.1.10
   resolution: "@acala-network/sdk@npm:4.1.10"
   dependencies:
@@ -4877,8 +4916,8 @@ __metadata:
   dependencies:
     "@acala-network/chopsticks": "npm:^0.14.2-1"
     "@acala-network/chopsticks-testing": "npm:^0.14.2-1"
-    "@acala-network/sdk": "npm:4.1.10"
-    "@acala-network/sdk-core": "npm:4.1.10"
+    "@acala-network/sdk": "npm:4.1.11"
+    "@acala-network/sdk-core": "npm:4.1.11"
     "@polkadot/api": "npm:12.4.2"
     "@polkadot/util": "npm:13.0.2"
     "@polkawallet/bridge": "npm:^0.1.7-11"
