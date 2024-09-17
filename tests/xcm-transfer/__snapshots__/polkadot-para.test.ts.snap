@@ -128,7 +128,7 @@ exports[`'acala' -> 'assetHubPolkadot' xcm transfer 'WBTC' > xtokens transfer > 
       "success": false,
       "weightUsed": {
         "proofSize": "(rounded 7200)",
-        "refTime": "(rounded 320000000)",
+        "refTime": "(rounded 330000000)",
       },
     },
     "method": "Processed",
@@ -548,7 +548,7 @@ exports[`'assetHubPolkadot' -> 'acala' xcm transfer 'WBTC' > xcmPallet transfer 
         "Complete": {
           "used": {
             "proofSize": "(rounded 6200)",
-            "refTime": "(rounded 289000000)",
+            "refTime": "(rounded 298000000)",
           },
         },
       },
@@ -561,7 +561,7 @@ exports[`'assetHubPolkadot' -> 'acala' xcm transfer 'WBTC' > xcmPallet transfer 
       "fees": [
         {
           "fun": {
-            "Fungible": "(rounded 311000000)",
+            "Fungible": "(rounded 305000000)",
           },
           "id": {
             "interior": "Here",

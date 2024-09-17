@@ -209,7 +209,7 @@ exports[`'polkadot' to 'assetHubPolkadot' using bridgeSDK cross-chain 'DOT' > Cr
 }
 `;
 
-exports[`'polkadot' to 'assetHubPolkadot' using bridgeSDK cross-chain 'DOT' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.004)"`;
+exports[`'polkadot' to 'assetHubPolkadot' using bridgeSDK cross-chain 'DOT' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.002)"`;
 
 exports[`'polkadot' to 'assetHubPolkadot' using bridgeSDK cross-chain 'DOT' > Cross-chain using BridgeSDK works > initial 1`] = `
 {

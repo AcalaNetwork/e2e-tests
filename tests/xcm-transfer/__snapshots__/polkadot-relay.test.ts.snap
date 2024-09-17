@@ -108,7 +108,7 @@ exports[`'acala' -> 'polkadot' xcm transfer 'DOT wiht limited weight' > xtokens 
       "success": true,
       "weightUsed": {
         "proofSize": "(rounded 7200)",
-        "refTime": "(rounded 260000000)",
+        "refTime": "(rounded 270000000)",
       },
     },
     "method": "Processed",
@@ -270,7 +270,7 @@ exports[`'acala' -> 'polkadot' xcm transfer 'DOT' > xtokens transfer > to chain 
       "success": true,
       "weightUsed": {
         "proofSize": "(rounded 7200)",
-        "refTime": "(rounded 260000000)",
+        "refTime": "(rounded 270000000)",
       },
     },
     "method": "Processed",
@@ -373,7 +373,7 @@ exports[`'polkadot' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > tx even
         "Complete": {
           "used": {
             "proofSize": "(rounded 6200)",
-            "refTime": "(rounded 246000000)",
+            "refTime": "(rounded 252000000)",
           },
         },
       },
@@ -566,7 +566,7 @@ exports[`'polkadot' -> 'astar' xcm transfer 'DOT' > xcmPallet transfer > tx even
         "Complete": {
           "used": {
             "proofSize": "(rounded 6200)",
-            "refTime": "(rounded 246000000)",
+            "refTime": "(rounded 252000000)",
           },
         },
       },

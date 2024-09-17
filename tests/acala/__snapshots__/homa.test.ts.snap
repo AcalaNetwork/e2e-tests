@@ -50,7 +50,7 @@ exports[`'acala' homa > with latest block > Homa redeem unbond works > system ev
       "success": true,
       "weightUsed": {
         "proofSize": "(rounded 66000)",
-        "refTime": "(rounded 6300000000)",
+        "refTime": "(rounded 6200000000)",
       },
     },
     "method": "Processed",
