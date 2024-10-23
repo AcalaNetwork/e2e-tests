@@ -216,7 +216,7 @@ exports[`'acala' -> 'moonbeam' xcm transfer 'DOT' > xtokens transfer > balance o
 
 exports[`'acala' -> 'moonbeam' xcm transfer 'DOT' > xtokens transfer > balance on to chain 1`] = `
 {
-  "balance": "(rounded 1000000000000)",
+  "balance": "(rounded 999000000000)",
   "extra": null,
   "reason": {
     "sufficient": null,
@@ -345,8 +345,8 @@ exports[`'acala' -> 'moonbeam' xcm transfer 'DOT' > xtokens transfer > to chain 
       "origin": "Parent",
       "success": true,
       "weightUsed": {
-        "proofSize": "(rounded 26000)",
-        "refTime": "(rounded 690000000)",
+        "proofSize": "(rounded 29000)",
+        "refTime": "(rounded 4200000000)",
       },
     },
     "method": "Processed",
