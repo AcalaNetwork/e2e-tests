@@ -65,11 +65,11 @@ exports[`'acala' to 'moonbeam' using bridgeSDK cross-chain 'AUSD' > Cross-chain 
   "address": "0x4E7440dB498561A46AAa82b9Bc7d2D5162b5c27B",
   "decimals": 18,
   "fromChain": 8,
-  "toChain": "(rounded 2)",
+  "toChain": "(rounded 1.97)",
 }
 `;
 
-exports[`'acala' to 'moonbeam' using bridgeSDK cross-chain 'AUSD' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.004)"`;
+exports[`'acala' to 'moonbeam' using bridgeSDK cross-chain 'AUSD' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.03)"`;
 
 exports[`'acala' to 'moonbeam' using bridgeSDK cross-chain 'AUSD' > Cross-chain using BridgeSDK works > initial 1`] = `
 {
