@@ -109,7 +109,7 @@ exports[`'assetHubPolkadot' to 'acala' using bridgeSDK cross-chain 'USDT' > Cros
 }
 `;
 
-exports[`'assetHubPolkadot' to 'acala' using bridgeSDK cross-chain 'USDT' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.0008)"`;
+exports[`'assetHubPolkadot' to 'acala' using bridgeSDK cross-chain 'USDT' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.0009)"`;
 
 exports[`'assetHubPolkadot' to 'acala' using bridgeSDK cross-chain 'USDT' > Cross-chain using BridgeSDK works > initial 1`] = `
 {
@@ -169,7 +169,7 @@ exports[`'interlay' to 'acala' using bridgeSDK cross-chain 'INTR' > Cross-chain 
 }
 `;
 
-exports[`'interlay' to 'acala' using bridgeSDK cross-chain 'INTR' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.006)"`;
+exports[`'interlay' to 'acala' using bridgeSDK cross-chain 'INTR' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.007)"`;
 
 exports[`'interlay' to 'acala' using bridgeSDK cross-chain 'INTR' > Cross-chain using BridgeSDK works > initial 1`] = `
 {
