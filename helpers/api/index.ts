@@ -120,6 +120,15 @@ export const xcmPallet = {
       },
     },
   }),
+  parachainV4: (parents: number, paraId: any) => ({
+    V4: {
+      parents,
+      interior: {
+        X1: [{ Parachain: paraId }],
+      },
+    },
+  }),
+
   limitedTeleportAssets:
     (token: any, amount: any, dest: any) =>
     ({ api }: { api: ApiPromise }, acc: any) =>
@@ -197,6 +206,37 @@ export const xcmPallet = {
         },
         {
           V3: [
+            {
+              id: token,
+              fun: { Fungible: amount },
+            },
+          ],
+        },
+        0,
+        'Unlimited',
+      ),
+  transferAssetsV4:
+    (token: any, amount: any, dest: any) =>
+    ({ api }: { api: ApiPromise }, acc: any) =>
+      (api.tx.xcmPallet || api.tx.polkadotXcm).transferAssets(
+        dest,
+        {
+          V4: {
+            parents: 0,
+            interior: {
+              X1: [
+                {
+                  AccountId32: {
+                    id: acc,
+                  },
+                  network: undefined,
+                },
+              ],
+            },
+          },
+        },
+        {
+          V4: [
             {
               id: token,
               fun: { Fungible: amount },
