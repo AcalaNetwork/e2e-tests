@@ -706,6 +706,17 @@ exports[`'moonbeam' -> 'acala' xcm transfer 'DOT' > xtokens transfer > balance o
 }
 `;
 
+exports[`'moonbeam' -> 'acala' xcm transfer 'DOT' > xtokens transfer > balance on from chain 2`] = `
+{
+  "balance": 9000000000000,
+  "extra": null,
+  "reason": {
+    "consumer": null,
+  },
+  "status": "Liquid",
+}
+`;
+
 exports[`'moonbeam' -> 'acala' xcm transfer 'DOT' > xtokens transfer > balance on to chain 1`] = `
 {
   "free": "(rounded 11000000000000)",
@@ -887,3 +898,5 @@ exports[`'moonbeam' -> 'acala' xcm transfer 'DOT' > xtokens transfer > tx events
   },
 ]
 `;
+
+exports[`'moonbeam' -> 'acala' xcm transfer 'DOT' > xtokens transfer > tx events 2`] = `[]`;

@@ -7,7 +7,7 @@ export default {
   },
   kusama: {
     name: 'crab' as const,
-    endpoint: 'wss://crab-rpc.darwinia.network',
+    endpoint: 'wss://darwiniacrab-rpc.dwellir.com',
   },
   config: ({ alice }) => ({
     storages: {

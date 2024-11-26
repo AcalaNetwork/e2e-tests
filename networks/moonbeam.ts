@@ -25,6 +25,7 @@ export default {
 export const moonbeam = {
   paraId: 2004,
   dot: 42259045809535163221576417993425387648n,
+  parachainDot: { parents: 1, interior: 'Here' },
 } as const
 
 export const moonriver = {
