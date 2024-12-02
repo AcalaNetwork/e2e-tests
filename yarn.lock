@@ -2920,24 +2920,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polkawallet/bridge@npm:^0.1.7-11":
-  version: 0.1.7-11
-  resolution: "@polkawallet/bridge@npm:0.1.7-11"
+"@polkawallet/bridge@npm:^0.1.7-12":
+  version: 0.1.7-12
+  resolution: "@polkawallet/bridge@npm:0.1.7-12"
   dependencies:
     "@acala-network/api": "npm:^5"
     "@acala-network/sdk": "npm:^4.1.9-13"
     "@acala-network/sdk-core": "npm:^4.1.9-13"
-    "@polkadot/api": "npm:^12.0.2"
+    "@polkadot/api": "npm:^14.0.1"
     "@polkadot/apps-config": "npm:^0.133.1"
-    "@polkadot/types": "npm:^12.0.2"
+    "@polkadot/types": "npm:^14.0.1"
     axios: "npm:^0.27.2"
     ethers: "npm:^5"
     lodash: "npm:^4.17.20"
   peerDependencies:
     "@acala-network/api": ^5
-    "@polkadot/api": ^12
+    "@polkadot/api": ^14
     ethers: ^5
-  checksum: 10c0/0115e33c55d60499dab35bef7efe67ebf12bab7a5c5e65e62eae6b79e4459b1e09e5d086e884712adfef356ea50f9c45f26f992da99701bb932da97cf36071fb
+  checksum: 10c0/a798bdac42ecb0cdccaedd532a136043438eb853e02078c45af8541d020823eaff8318b81c184396638aeeb93ce25fdf90812bb52f617c66e2c7426abe530e18
   languageName: node
   linkType: hard
 
@@ -4881,7 +4881,7 @@ __metadata:
     "@acala-network/sdk-core": "npm:4.1.11"
     "@polkadot/api": "npm:12.4.2"
     "@polkadot/util": "npm:13.0.2"
-    "@polkawallet/bridge": "npm:^0.1.7-11"
+    "@polkawallet/bridge": "npm:^0.1.7-12"
     "@swc/core": "npm:^1.6.1"
     "@types/lodash": "npm:^4.17.5"
     "@types/node": "npm:^20.14.4"
