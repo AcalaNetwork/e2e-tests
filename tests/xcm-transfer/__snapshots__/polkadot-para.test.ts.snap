@@ -706,17 +706,6 @@ exports[`'moonbeam' -> 'acala' xcm transfer 'DOT' > xtokens transfer > balance o
 }
 `;
 
-exports[`'moonbeam' -> 'acala' xcm transfer 'DOT' > xtokens transfer > balance on from chain 2`] = `
-{
-  "balance": 9000000000000,
-  "extra": null,
-  "reason": {
-    "consumer": null,
-  },
-  "status": "Liquid",
-}
-`;
-
 exports[`'moonbeam' -> 'acala' xcm transfer 'DOT' > xtokens transfer > balance on to chain 1`] = `
 {
   "free": "(rounded 11000000000000)",
@@ -851,52 +840,4 @@ exports[`'moonbeam' -> 'acala' xcm transfer 'DOT' > xtokens transfer > to chain 
 ]
 `;
 
-exports[`'moonbeam' -> 'acala' xcm transfer 'DOT' > xtokens transfer > tx events 1`] = `
-[
-  {
-    "data": {
-      "assets": [
-        {
-          "fun": {
-            "Fungible": 1000000000000,
-          },
-          "id": {
-            "interior": "Here",
-            "parents": 1,
-          },
-        },
-      ],
-      "dest": {
-        "interior": {
-          "X2": [
-            {
-              "Parachain": 2000,
-            },
-            {
-              "AccountId32": {
-                "id": "(hash)",
-                "network": null,
-              },
-            },
-          ],
-        },
-        "parents": 1,
-      },
-      "fee": {
-        "fun": {
-          "Fungible": 1000000000000,
-        },
-        "id": {
-          "interior": "Here",
-          "parents": 1,
-        },
-      },
-      "sender": "0xf24FF3a9CF04c71Dbc94D0b566f7A27B94566cac",
-    },
-    "method": "TransferredAssets",
-    "section": "xTokens",
-  },
-]
-`;
-
-exports[`'moonbeam' -> 'acala' xcm transfer 'DOT' > xtokens transfer > tx events 2`] = `[]`;
+exports[`'moonbeam' -> 'acala' xcm transfer 'DOT' > xtokens transfer > tx events 1`] = `[]`;
