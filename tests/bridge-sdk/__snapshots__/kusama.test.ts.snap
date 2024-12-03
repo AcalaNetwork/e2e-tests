@@ -1,5 +1,279 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`'altair' to 'karura' using bridgeSDK cross-chain 'AIR' > Cross-chain using BridgeSDK works > after 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 18,
+  "fromChain": "(rounded 998)",
+  "toChain": "(rounded 1.99)",
+}
+`;
+
+exports[`'altair' to 'karura' using bridgeSDK cross-chain 'AIR' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.007)"`;
+
+exports[`'altair' to 'karura' using bridgeSDK cross-chain 'AIR' > Cross-chain using BridgeSDK works > initial 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 18,
+  "fromChain": 1000,
+  "toChain": 0,
+}
+`;
+
+exports[`'assetHubKusama' to 'karura' using bridgeSDK cross-chain 'USDT' > Cross-chain using BridgeSDK works > after 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 6,
+  "fromChain": 998,
+  "toChain": "(rounded 2)",
+}
+`;
+
+exports[`'assetHubKusama' to 'karura' using bridgeSDK cross-chain 'USDT' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.0009)"`;
+
+exports[`'assetHubKusama' to 'karura' using bridgeSDK cross-chain 'USDT' > Cross-chain using BridgeSDK works > initial 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 6,
+  "fromChain": 1000,
+  "toChain": 0,
+}
+`;
+
+exports[`'assetHubKusama' to 'kusama' using bridgeSDK cross-chain 'KSM' > Cross-chain using BridgeSDK works > after 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": "(rounded 8)",
+  "toChain": "(rounded 12)",
+}
+`;
+
+exports[`'assetHubKusama' to 'kusama' using bridgeSDK cross-chain 'KSM' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.00008)"`;
+
+exports[`'assetHubKusama' to 'kusama' using bridgeSDK cross-chain 'KSM' > Cross-chain using BridgeSDK works > initial 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 10,
+  "toChain": 10,
+}
+`;
+
+exports[`'basilisk' to 'karura' using bridgeSDK cross-chain 'BSX' > Cross-chain using BridgeSDK works > after 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": "(rounded 985)",
+  "toChain": "(rounded 1.93)",
+}
+`;
+
+exports[`'basilisk' to 'karura' using bridgeSDK cross-chain 'BSX' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.07)"`;
+
+exports[`'basilisk' to 'karura' using bridgeSDK cross-chain 'BSX' > Cross-chain using BridgeSDK works > initial 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 1000,
+  "toChain": 0,
+}
+`;
+
+exports[`'basilisk' to 'kusama' using bridgeSDK cross-chain 'KSM' > Cross-chain using BridgeSDK works > after 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 998,
+  "toChain": "(rounded 12)",
+}
+`;
+
+exports[`'basilisk' to 'kusama' using bridgeSDK cross-chain 'KSM' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.00008)"`;
+
+exports[`'basilisk' to 'kusama' using bridgeSDK cross-chain 'KSM' > Cross-chain using BridgeSDK works > initial 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 1000,
+  "toChain": 10,
+}
+`;
+
+exports[`'bifrost' to 'karura' using bridgeSDK cross-chain 'BNC' > Cross-chain using BridgeSDK works > after 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": "(rounded 998)",
+  "toChain": "(rounded 1.99)",
+}
+`;
+
+exports[`'bifrost' to 'karura' using bridgeSDK cross-chain 'BNC' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.01)"`;
+
+exports[`'bifrost' to 'karura' using bridgeSDK cross-chain 'BNC' > Cross-chain using BridgeSDK works > initial 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 1000,
+  "toChain": 0,
+}
+`;
+
+exports[`'karura' to 'altair' using bridgeSDK cross-chain 'AIR' > Cross-chain using BridgeSDK works > after 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 18,
+  "fromChain": 98,
+  "toChain": "(rounded 1000)",
+}
+`;
+
+exports[`'karura' to 'altair' using bridgeSDK cross-chain 'AIR' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.006)"`;
+
+exports[`'karura' to 'altair' using bridgeSDK cross-chain 'AIR' > Cross-chain using BridgeSDK works > initial 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 18,
+  "fromChain": 100,
+  "toChain": 1000,
+}
+`;
+
+exports[`'karura' to 'assetHubKusama' using bridgeSDK cross-chain 'USDT' > Cross-chain using BridgeSDK works > after 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 6,
+  "fromChain": 998,
+  "toChain": "(rounded 1000)",
+}
+`;
+
+exports[`'karura' to 'assetHubKusama' using bridgeSDK cross-chain 'USDT' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.007)"`;
+
+exports[`'karura' to 'assetHubKusama' using bridgeSDK cross-chain 'USDT' > Cross-chain using BridgeSDK works > initial 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 6,
+  "fromChain": 1000,
+  "toChain": 1000,
+}
+`;
+
+exports[`'karura' to 'bifrost' using bridgeSDK cross-chain 'KUSD' > Cross-chain using BridgeSDK works > after 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 8,
+  "toChain": 0,
+}
+`;
+
+exports[`'karura' to 'bifrost' using bridgeSDK cross-chain 'KUSD' > Cross-chain using BridgeSDK works > after 2`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 8,
+  "toChain": 0,
+}
+`;
+
+exports[`'karura' to 'bifrost' using bridgeSDK cross-chain 'KUSD' > Cross-chain using BridgeSDK works > after 3`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 8,
+  "toChain": 0,
+}
+`;
+
+exports[`'karura' to 'bifrost' using bridgeSDK cross-chain 'KUSD' > Cross-chain using BridgeSDK works > initial 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 10,
+  "toChain": 0,
+}
+`;
+
+exports[`'karura' to 'bifrost' using bridgeSDK cross-chain 'KUSD' > Cross-chain using BridgeSDK works > initial 2`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 10,
+  "toChain": 0,
+}
+`;
+
+exports[`'karura' to 'bifrost' using bridgeSDK cross-chain 'KUSD' > Cross-chain using BridgeSDK works > initial 3`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 10,
+  "toChain": 0,
+}
+`;
+
+exports[`'karura' to 'khala' using bridgeSDK cross-chain 'KUSD' > Cross-chain using BridgeSDK works > after 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 8,
+  "toChain": "(rounded 102)",
+}
+`;
+
+exports[`'karura' to 'khala' using bridgeSDK cross-chain 'KUSD' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.008)"`;
+
+exports[`'karura' to 'khala' using bridgeSDK cross-chain 'KUSD' > Cross-chain using BridgeSDK works > initial 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 10,
+  "toChain": 100,
+}
+`;
+
+exports[`'karura' to 'kintsugi' using bridgeSDK cross-chain 'KINT' > Cross-chain using BridgeSDK works > after 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 998,
+  "toChain": "(rounded 1000)",
+}
+`;
+
+exports[`'karura' to 'kintsugi' using bridgeSDK cross-chain 'KINT' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.0002)"`;
+
+exports[`'karura' to 'kintsugi' using bridgeSDK cross-chain 'KINT' > Cross-chain using BridgeSDK works > initial 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 1000,
+  "toChain": 1000,
+}
+`;
+
+exports[`'karura' to 'kintsugi' using bridgeSDK cross-chain 'LKSM' > Cross-chain using BridgeSDK works > after 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 98,
+  "toChain": "(rounded 102)",
+}
+`;
+
+exports[`'karura' to 'kintsugi' using bridgeSDK cross-chain 'LKSM' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.0002)"`;
+
+exports[`'karura' to 'kintsugi' using bridgeSDK cross-chain 'LKSM' > Cross-chain using BridgeSDK works > initial 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 100,
+  "toChain": 100,
+}
+`;
+
 exports[`'karura' to 'kusama' using bridgeSDK cross-chain 'KSM' > Cross-chain using BridgeSDK works > after 1`] = `
 {
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
@@ -12,6 +286,184 @@ exports[`'karura' to 'kusama' using bridgeSDK cross-chain 'KSM' > Cross-chain us
 exports[`'karura' to 'kusama' using bridgeSDK cross-chain 'KSM' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.00008)"`;
 
 exports[`'karura' to 'kusama' using bridgeSDK cross-chain 'KSM' > Cross-chain using BridgeSDK works > initial 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 10,
+  "toChain": 10,
+}
+`;
+
+exports[`'karura' to 'moonriver' using bridgeSDK cross-chain 'KAR' > Cross-chain using BridgeSDK works > after 1`] = `
+{
+  "address": "0x4E7440dB498561A46AAa82b9Bc7d2D5162b5c27B",
+  "decimals": 18,
+  "fromChain": "(rounded 8)",
+  "toChain": "(rounded 1.57)",
+}
+`;
+
+exports[`'karura' to 'moonriver' using bridgeSDK cross-chain 'KAR' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.5)"`;
+
+exports[`'karura' to 'moonriver' using bridgeSDK cross-chain 'KAR' > Cross-chain using BridgeSDK works > initial 1`] = `
+{
+  "address": "0x4E7440dB498561A46AAa82b9Bc7d2D5162b5c27B",
+  "decimals": 18,
+  "fromChain": 10,
+  "toChain": 0.09012,
+}
+`;
+
+exports[`'karura' to 'shiden' using bridgeSDK cross-chain 'KUSD' > Cross-chain using BridgeSDK works > after 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 8,
+  "toChain": "(rounded 12)",
+}
+`;
+
+exports[`'karura' to 'shiden' using bridgeSDK cross-chain 'KUSD' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.0005)"`;
+
+exports[`'karura' to 'shiden' using bridgeSDK cross-chain 'KUSD' > Cross-chain using BridgeSDK works > initial 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 10,
+  "toChain": 10,
+}
+`;
+
+exports[`'khala' to 'karura' using bridgeSDK cross-chain 'KUSD' > Cross-chain using BridgeSDK works > after 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 98,
+  "toChain": "(rounded 12)",
+}
+`;
+
+exports[`'khala' to 'karura' using bridgeSDK cross-chain 'KUSD' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.003)"`;
+
+exports[`'khala' to 'karura' using bridgeSDK cross-chain 'KUSD' > Cross-chain using BridgeSDK works > initial 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 100,
+  "toChain": 10,
+}
+`;
+
+exports[`'kintsugi' to 'karura' using bridgeSDK cross-chain 'KINT' > Cross-chain using BridgeSDK works > after 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": "(rounded 998)",
+  "toChain": "(rounded 2)",
+}
+`;
+
+exports[`'kintsugi' to 'karura' using bridgeSDK cross-chain 'KINT' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.0002)"`;
+
+exports[`'kintsugi' to 'karura' using bridgeSDK cross-chain 'KINT' > Cross-chain using BridgeSDK works > initial 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 1000,
+  "toChain": 0,
+}
+`;
+
+exports[`'kintsugi' to 'karura' using bridgeSDK cross-chain 'LKSM' > Cross-chain using BridgeSDK works > after 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 98,
+  "toChain": "(rounded 102)",
+}
+`;
+
+exports[`'kintsugi' to 'karura' using bridgeSDK cross-chain 'LKSM' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.0002)"`;
+
+exports[`'kintsugi' to 'karura' using bridgeSDK cross-chain 'LKSM' > Cross-chain using BridgeSDK works > initial 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 100,
+  "toChain": 100,
+}
+`;
+
+exports[`'kusama' to 'assetHubKusama' using bridgeSDK cross-chain 'KSM' > Cross-chain using BridgeSDK works > after 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": "(rounded 8)",
+  "toChain": "(rounded 12)",
+}
+`;
+
+exports[`'kusama' to 'assetHubKusama' using bridgeSDK cross-chain 'KSM' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.0001)"`;
+
+exports[`'kusama' to 'assetHubKusama' using bridgeSDK cross-chain 'KSM' > Cross-chain using BridgeSDK works > initial 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 10,
+  "toChain": 10,
+}
+`;
+
+exports[`'kusama' to 'basilisk' using bridgeSDK cross-chain 'KSM' > Cross-chain using BridgeSDK works > after 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": "(rounded 8)",
+  "toChain": "(rounded 1000)",
+}
+`;
+
+exports[`'kusama' to 'basilisk' using bridgeSDK cross-chain 'KSM' > Cross-chain using BridgeSDK works > initial 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 10,
+  "toChain": 1000,
+}
+`;
+
+exports[`'kusama' to 'karura' using bridgeSDK cross-chain 'KSM' > Cross-chain using BridgeSDK works > after 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": "(rounded 8)",
+  "toChain": "(rounded 12)",
+}
+`;
+
+exports[`'kusama' to 'karura' using bridgeSDK cross-chain 'KSM' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.00003)"`;
+
+exports[`'kusama' to 'karura' using bridgeSDK cross-chain 'KSM' > Cross-chain using BridgeSDK works > initial 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 10,
+  "toChain": 10,
+}
+`;
+
+exports[`'shiden' to 'karura' using bridgeSDK cross-chain 'KUSD' > Cross-chain using BridgeSDK works > after 1`] = `
+{
+  "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+  "decimals": 12,
+  "fromChain": 8,
+  "toChain": "(rounded 12)",
+}
+`;
+
+exports[`'shiden' to 'karura' using bridgeSDK cross-chain 'KUSD' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.003)"`;
+
+exports[`'shiden' to 'karura' using bridgeSDK cross-chain 'KUSD' > Cross-chain using BridgeSDK works > initial 1`] = `
 {
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
   "decimals": 12,

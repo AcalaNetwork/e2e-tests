@@ -11,7 +11,6 @@ import { BasiliskAdapter } from '@polkawallet/bridge/adapters/hydradx'
 import { BifrostAdapter } from '@polkawallet/bridge/adapters/bifrost'
 import { Bridge } from '@polkawallet/bridge'
 import { CrabAdapter } from '@polkawallet/bridge/adapters/darwinia'
-import { HeikoAdapter, ParallelAdapter } from '@polkawallet/bridge/adapters/parallel'
 import { InterlayAdapter, KintsugiAdapter } from '@polkawallet/bridge/adapters/interlay'
 import { KaruraAdapter } from '@polkawallet/bridge/adapters/acala'
 import { KhalaAdapter } from '@polkawallet/bridge/adapters/phala'
@@ -105,7 +104,6 @@ export const buildTests = (tests: ReadonlyArray<TestTtype>) => {
           acala: AcalaAdapter,
           bifrost: BifrostAdapter,
           altair: AltairAdapter,
-          heiko: HeikoAdapter,
           shiden: ShidenAdapter,
           crust: ShadowAdapter,
           quartz: QuartzAdapter,
@@ -113,7 +111,6 @@ export const buildTests = (tests: ReadonlyArray<TestTtype>) => {
           astar: AstarAdapter,
           interlay: InterlayAdapter,
           kintsugi: KintsugiAdapter,
-          parallel: ParallelAdapter,
           khala: KhalaAdapter,
           crab: CrabAdapter,
         } as any

@@ -190,6 +190,16 @@ exports[`'acala' -> 'polkadot' xcm transfer 'DOT' > xtokens transfer > from chai
   {
     "v2": [
       {
+        "subscribeVersion": {
+          "maxResponseWeight": 0,
+          "queryId": 24,
+        },
+      },
+    ],
+  },
+  {
+    "v2": [
+      {
         "withdrawAsset": [
           {
             "fun": {
@@ -259,6 +269,23 @@ exports[`'acala' -> 'polkadot' xcm transfer 'DOT' > xtokens transfer > from chai
 
 exports[`'acala' -> 'polkadot' xcm transfer 'DOT' > xtokens transfer > to chain ump events 1`] = `
 [
+  {
+    "data": {
+      "id": "(hash)",
+      "origin": {
+        "Ump": {
+          "Para": 2000,
+        },
+      },
+      "success": false,
+      "weightUsed": {
+        "proofSize": "(rounded 3600)",
+        "refTime": "(rounded 390000000)",
+      },
+    },
+    "method": "Processed",
+    "section": "messageQueue",
+  },
   {
     "data": {
       "id": "(hash)",

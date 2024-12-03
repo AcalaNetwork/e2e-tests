@@ -122,16 +122,6 @@ const tests = [
   // // },
 
   // {
-  //   from: 'karura',
-  //   to: 'heiko',
-  //   token: 'KAR',
-  // },
-  // {
-  //   from: 'heiko',
-  //   to: 'karura',
-  //   token: 'HKO',
-  // },
-  // {
   //   from: 'crab',
   //   to: 'karura',
   //   token: 'CRAB',
