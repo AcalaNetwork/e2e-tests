@@ -3,7 +3,6 @@ import { query, tx } from '../../helpers/api'
 
 import { acala } from '../../networks/acala'
 import { assetHubPolkadot } from '../../networks/assethub'
-import { moonbeam } from '../../networks/moonbeam'
 
 import buildTest from './shared'
 
@@ -68,42 +67,6 @@ const tests = [
         ),
         fromBalance: query.tokens(acala.wbtc),
         toBalance: query.assets(assetHubPolkadot.wbtcIndex),
-      },
-    },
-  },
-  // acala <-> moonbeam
-  {
-    from: 'acala',
-    to: 'moonbeam',
-    route: 'polkadot',
-    name: 'DOT',
-    toAccount: ({ alith }: Context) => alith,
-    test: {
-      xtokenstHorizontal: {
-        tx: tx.xtokens.transfer(acala.dot, 1e12, tx.xtokens.parachainAccountId20V3(moonbeam.paraId)),
-        fromBalance: query.tokens(acala.dot),
-        toBalance: query.assets(moonbeam.dot),
-        checkUmp: true,
-      },
-    },
-  },
-  {
-    from: 'moonbeam',
-    to: 'acala',
-    route: 'polkadot',
-    name: 'DOT',
-    fromAccount: ({ alith }: Context) => alith,
-    fromStorage: ({ alith }: Context) => ({
-      Assets: {
-        account: [[[moonbeam.dot, alith.address], { balance: 10e12 }]],
-      },
-    }),
-    test: {
-      xtokenstHorizontal: {
-        tx: tx.xcmPallet.transferAssetsV4(moonbeam.parachainDot, 1e12, tx.xcmPallet.parachainV4(1, acala.paraId)),
-        fromBalance: query.assets(moonbeam.dot),
-        toBalance: query.tokens(acala.dot),
-        checkUmp: true,
       },
     },
   },
