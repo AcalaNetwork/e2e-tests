@@ -56,6 +56,7 @@ const tests = [
     to: 'interlay',
     token: 'INTR',
   },
+
   // btc
   // {
   //   from: 'interlay',
@@ -69,7 +70,6 @@ const tests = [
   //   token: 'IBTC',
   //   fee: 0.008012799999999931
   // },
-
 
   // Chopsticks are currently not supported.
   // {
