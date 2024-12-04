@@ -56,6 +56,7 @@ const tests = [
     to: 'interlay',
     token: 'INTR',
   },
+
   // btc
   // {
   //   from: 'interlay',
@@ -68,28 +69,6 @@ const tests = [
   //   to: 'interlay',
   //   token: 'IBTC',
   //   fee: 0.008012799999999931
-  // },
-
-  // RpcError: 1: Error: createType(Lookup4):: Unable to construct number from multi-key object
-  // {
-  //   from: 'parallel',
-  //   to: 'acala',
-  //   token: 'PARA',
-  // },
-  // {
-  //   from: 'acala',
-  //   to: 'parallel',
-  //   token: 'PARA',
-  // },
-  // {
-  //   from: 'parallel',
-  //   to: 'acala',
-  //   token: 'ACA',
-  // },
-  // {
-  //   from: 'acala',
-  //   to: 'parallel',
-  //   token: 'ACA',
   // },
 
   // Chopsticks are currently not supported.
