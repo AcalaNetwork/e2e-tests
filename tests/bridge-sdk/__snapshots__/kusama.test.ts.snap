@@ -149,7 +149,7 @@ exports[`'karura' to 'assetHubKusama' using bridgeSDK cross-chain 'USDT' > Cross
 }
 `;
 
-exports[`'karura' to 'assetHubKusama' using bridgeSDK cross-chain 'USDT' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.006)"`;
+exports[`'karura' to 'assetHubKusama' using bridgeSDK cross-chain 'USDT' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.007)"`;
 
 exports[`'karura' to 'assetHubKusama' using bridgeSDK cross-chain 'USDT' > Cross-chain using BridgeSDK works > initial 1`] = `
 {
@@ -165,7 +165,7 @@ exports[`'karura' to 'bifrost' using bridgeSDK cross-chain 'KUSD' > Cross-chain 
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
   "decimals": 12,
   "fromChain": 8,
-  "toChain": "(rounded 1.83)",
+  "toChain": "(rounded 1.84)",
 }
 `;
 
@@ -407,7 +407,7 @@ exports[`'kusama' to 'karura' using bridgeSDK cross-chain 'KSM' > Cross-chain us
 }
 `;
 
-exports[`'kusama' to 'karura' using bridgeSDK cross-chain 'KSM' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.00003)"`;
+exports[`'kusama' to 'karura' using bridgeSDK cross-chain 'KSM' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.00002)"`;
 
 exports[`'kusama' to 'karura' using bridgeSDK cross-chain 'KSM' > Cross-chain using BridgeSDK works > initial 1`] = `
 {
