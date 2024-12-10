@@ -61,6 +61,7 @@ const tests = [
     from: 'karura',
     to: 'bifrost',
     token: 'KUSD',
+    precision: 2,
   },
   {
     from: 'bifrost',

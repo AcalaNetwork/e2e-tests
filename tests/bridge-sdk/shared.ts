@@ -27,10 +27,11 @@ export type TestTtype = {
   to: NetworkNames
   token: string
   ignoreFee?: boolean
+  precision?: number
 }
 
 export const buildTests = (tests: ReadonlyArray<TestTtype>) => {
-  for (const { from, to, token, ignoreFee } of tests) {
+  for (const { from, to, token, ignoreFee, precision } of tests) {
     describe(`'${from}' to '${to}' using bridgeSDK cross-chain '${token}'`, async () => {
       let fromchain: Network
       let tochain: Network
@@ -173,7 +174,9 @@ export const buildTests = (tests: ReadonlyArray<TestTtype>) => {
 
         await sleep(100)
         const chainBalanceNow = await chainBalance(sdk, fromData, address)
-        await check(chainBalanceNow).redact({ number: 3 }).toMatchSnapshot('after')
+        await check(chainBalanceNow)
+          .redact({ number: precision ?? 3 })
+          .toMatchSnapshot('after')
 
         //Verify if Destination Chain Transfer Fee matches the app
         expect(chainBalanceNow.fromChain).not.toEqual(chainBalanceInitial.fromChain)
