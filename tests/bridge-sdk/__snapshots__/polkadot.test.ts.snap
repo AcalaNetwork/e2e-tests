@@ -189,7 +189,7 @@ exports[`'polkadot' to 'acala' using bridgeSDK cross-chain 'DOT' > Cross-chain u
 }
 `;
 
-exports[`'polkadot' to 'acala' using bridgeSDK cross-chain 'DOT' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.0001)"`;
+exports[`'polkadot' to 'acala' using bridgeSDK cross-chain 'DOT' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.0002)"`;
 
 exports[`'polkadot' to 'acala' using bridgeSDK cross-chain 'DOT' > Cross-chain using BridgeSDK works > initial 1`] = `
 {
