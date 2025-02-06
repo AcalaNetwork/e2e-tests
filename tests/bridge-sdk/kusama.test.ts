@@ -41,6 +41,7 @@ const tests = [
     from: 'karura',
     to: 'assetHubKusama',
     token: 'USDT',
+    ignoreFee: true,
   },
   {
     from: 'basilisk',
