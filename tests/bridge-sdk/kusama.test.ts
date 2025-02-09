@@ -128,16 +128,16 @@ const tests = [
   //   to: 'karura',
   //   token: 'CRAB',
   // },
-  {
-    from: 'khala',
-    to: 'karura',
-    token: 'KUSD',
-  },
-  {
-    from: 'karura',
-    to: 'khala',
-    token: 'KUSD',
-  },
+  // {
+  //   from: 'khala',
+  //   to: 'karura',
+  //   token: 'KUSD',
+  // },
+  // {
+  //   from: 'karura',
+  //   to: 'khala',
+  //   token: 'KUSD',
+  // },
   // Chopsticks are currently not supported.
   // {
   //   from: 'crust',

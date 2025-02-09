@@ -12,7 +12,7 @@ import hydraDXConfig from './hydraDX'
 import interlayConfig from './interlay'
 import moonbeamConfig from './moonbeam'
 // import parallelConfig from './parallel'
-import phalaConfig from './phala'
+// import phalaConfig from './phala'
 import polkadotConfig from './polkadot'
 import uniqueConfig from './unique'
 
@@ -30,7 +30,7 @@ const all = {
   crust: crustConfig,
   unique: uniqueConfig,
   interlay: interlayConfig,
-  phala: phalaConfig,
+  // phala: phalaConfig,
   darwinia: darwiniaConfig,
 } satisfies Record<string, Config>
 
