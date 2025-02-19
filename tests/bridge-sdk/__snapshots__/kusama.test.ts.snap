@@ -49,7 +49,7 @@ exports[`'assetHubKusama' to 'kusama' using bridgeSDK cross-chain 'KSM' > Cross-
 }
 `;
 
-exports[`'assetHubKusama' to 'kusama' using bridgeSDK cross-chain 'KSM' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.00008)"`;
+exports[`'assetHubKusama' to 'kusama' using bridgeSDK cross-chain 'KSM' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.00009)"`;
 
 exports[`'assetHubKusama' to 'kusama' using bridgeSDK cross-chain 'KSM' > Cross-chain using BridgeSDK works > initial 1`] = `
 {
@@ -89,7 +89,7 @@ exports[`'basilisk' to 'kusama' using bridgeSDK cross-chain 'KSM' > Cross-chain 
 }
 `;
 
-exports[`'basilisk' to 'kusama' using bridgeSDK cross-chain 'KSM' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.00008)"`;
+exports[`'basilisk' to 'kusama' using bridgeSDK cross-chain 'KSM' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.00009)"`;
 
 exports[`'basilisk' to 'kusama' using bridgeSDK cross-chain 'KSM' > Cross-chain using BridgeSDK works > initial 1`] = `
 {
@@ -227,7 +227,7 @@ exports[`'karura' to 'kusama' using bridgeSDK cross-chain 'KSM' > Cross-chain us
 }
 `;
 
-exports[`'karura' to 'kusama' using bridgeSDK cross-chain 'KSM' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.00008)"`;
+exports[`'karura' to 'kusama' using bridgeSDK cross-chain 'KSM' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.00009)"`;
 
 exports[`'karura' to 'kusama' using bridgeSDK cross-chain 'KSM' > Cross-chain using BridgeSDK works > initial 1`] = `
 {

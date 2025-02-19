@@ -145,7 +145,7 @@ exports[`'assetHubKusama' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer >
         "Complete": {
           "used": {
             "proofSize": "(rounded 6200)",
-            "refTime": "(rounded 298000000)",
+            "refTime": "(rounded 305000000)",
           },
         },
       },
@@ -414,7 +414,7 @@ exports[`'karura' -> 'assetHubKusama' xcm transfer 'USDT' > xtokens transfer > t
       "success": true,
       "weightUsed": {
         "proofSize": "(rounded 7200)",
-        "refTime": "(rounded 320000000)",
+        "refTime": "(rounded 330000000)",
       },
     },
     "method": "Processed",
