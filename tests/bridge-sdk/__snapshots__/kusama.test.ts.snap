@@ -243,7 +243,7 @@ exports[`'karura' to 'moonriver' using bridgeSDK cross-chain 'KAR' > Cross-chain
   "address": "0x4E7440dB498561A46AAa82b9Bc7d2D5162b5c27B",
   "decimals": 18,
   "fromChain": "(rounded 8)",
-  "toChain": "(rounded 1.57)",
+  "toChain": "(rounded 1.56)",
 }
 `;
 
