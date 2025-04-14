@@ -33,6 +33,7 @@ jobs:
         cache: 'yarn'
     - run: yarn --immutable
     - run: yarn update-env
+      timeout-minutes: 5
     - run: yarn test tests/${{ matrix.tests }}
     - uses: ravsamhq/notify-slack-action@v2
       if: ${{ failure() }}
