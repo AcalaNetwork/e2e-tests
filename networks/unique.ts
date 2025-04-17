@@ -7,7 +7,7 @@ export default {
   },
   kusama: {
     name: 'quartz' as const,
-    endpoint: 'wss://ws-quartz.unique.network',
+    endpoint: 'wss://quartz-rpc.n.dwellir.com',
   },
   config: ({ alice }) => ({
     storages: {
