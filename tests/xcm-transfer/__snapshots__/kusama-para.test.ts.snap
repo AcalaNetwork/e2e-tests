@@ -25,7 +25,7 @@ exports[`'assetHubKusama' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer >
     "data": [
       "ConcatenatedVersionedXcm",
       {
-        "v3": [
+        "v4": [
           {
             "reserveAssetDeposited": [
               {
@@ -33,22 +33,20 @@ exports[`'assetHubKusama' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer >
                   "fungible": 1000000,
                 },
                 "id": {
-                  "concrete": {
-                    "interior": {
-                      "x3": [
-                        {
-                          "parachain": 1000,
-                        },
-                        {
-                          "palletInstance": 50,
-                        },
-                        {
-                          "generalIndex": 1984,
-                        },
-                      ],
-                    },
-                    "parents": 1,
+                  "interior": {
+                    "x3": [
+                      {
+                        "parachain": 1000,
+                      },
+                      {
+                        "palletInstance": 50,
+                      },
+                      {
+                        "generalIndex": 1984,
+                      },
+                    ],
                   },
+                  "parents": 1,
                 },
               },
             ],
@@ -63,22 +61,20 @@ exports[`'assetHubKusama' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer >
                   "fungible": 1000000,
                 },
                 "id": {
-                  "concrete": {
-                    "interior": {
-                      "x3": [
-                        {
-                          "parachain": 1000,
-                        },
-                        {
-                          "palletInstance": 50,
-                        },
-                        {
-                          "generalIndex": 1984,
-                        },
-                      ],
-                    },
-                    "parents": 1,
+                  "interior": {
+                    "x3": [
+                      {
+                        "parachain": 1000,
+                      },
+                      {
+                        "palletInstance": 50,
+                      },
+                      {
+                        "generalIndex": 1984,
+                      },
+                    ],
                   },
+                  "parents": 1,
                 },
               },
               "weightLimit": {
@@ -95,12 +91,14 @@ exports[`'assetHubKusama' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer >
               },
               "beneficiary": {
                 "interior": {
-                  "x1": {
-                    "accountId32": {
-                      "id": "0x88dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee",
-                      "network": null,
+                  "x1": [
+                    {
+                      "accountId32": {
+                        "id": "0x88dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee",
+                        "network": null,
+                      },
                     },
-                  },
+                  ],
                 },
                 "parents": 0,
               },
