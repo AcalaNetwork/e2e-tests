@@ -8,14 +8,14 @@ export type Vars = {
 export default {
   polkadot: {
     name: 'interlay' as const,
-    endpoint: 'wss://interlay-rpc.dwellir.com',
+    endpoint: 'wss://api.interlay.io/parachain',
     btc: 'IBTC',
     native: 'INTR',
     LiquidToken: 1,
   },
   kusama: {
     name: 'kintsugi' as const,
-    endpoint: 'wss://kintsugi-rpc.dwellir.com',
+    endpoint: 'wss://api-kusama.interlay.io/parachain',
     btc: 'KBTC',
     native: 'KINT',
     LiquidToken: 2,

@@ -126,14 +126,15 @@ export const buildTests = (tests: ReadonlyArray<TestTtype>) => {
         let toChainBalance
         if (to == 'moonriver') {
           const assetBalance = (
-            await tochain.api.query.assets.account('10810581592933651521121702237638664357', address)
+            (await tochain.api.query.assets.account('10810581592933651521121702237638664357', address)) as any
           ).value.balance
+
           toChainBalance =
             (String(assetBalance) as any) !== 'undefined' ? assetBalance.toNumber() / 10 ** fromData.decimals : 0
           tokenDecimals = 18
         } else if (to == 'moonbeam') {
           const assetBalance = (
-            await tochain.api.query.assets.account('110021739665376159354538090254163045594', address)
+            (await tochain.api.query.assets.account('110021739665376159354538090254163045594', address)) as any
           ).value.balance
           toChainBalance =
             (String(assetBalance) as any) !== 'undefined' ? assetBalance.toNumber() / 10 ** fromData.decimals : 0
