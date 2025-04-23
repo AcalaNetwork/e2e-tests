@@ -18,8 +18,8 @@
 		"@acala-network/sdk-core": "4.1.11"
 	},
 	"dependencies": {
-		"@acala-network/chopsticks": "^0.14.2-1",
-		"@acala-network/chopsticks-testing": "^0.14.2-1",
+		"@acala-network/chopsticks": "^1.0.5-1",
+		"@acala-network/chopsticks-testing": "^1.0.5-1",
 		"@acala-network/sdk": "4.1.11",
 		"@acala-network/sdk-core": "4.1.11",
 		"@polkadot/api": "12.4.2",

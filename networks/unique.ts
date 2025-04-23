@@ -3,11 +3,11 @@ import { Config } from './types'
 export default {
   polkadot: {
     name: 'unique' as const,
-    endpoint: 'wss://ws.unique.network',
+    endpoint: 'wss://us-ws.unique.network',
   },
   kusama: {
     name: 'quartz' as const,
-    endpoint: 'wss://quartz-rpc.n.dwellir.com',
+    endpoint: 'wss://asia-ws-quartz.unique.network',
   },
   config: ({ alice }) => ({
     storages: {
