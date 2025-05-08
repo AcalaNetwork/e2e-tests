@@ -168,9 +168,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@acala-network/sdk-core@npm:4.1.11":
-  version: 4.1.11
-  resolution: "@acala-network/sdk-core@npm:4.1.11"
+"@acala-network/sdk-core@npm:4.1.14":
+  version: 4.1.14
+  resolution: "@acala-network/sdk-core@npm:4.1.14"
   dependencies:
     "@acala-network/types": "npm:^6.1.1"
     "@polkadot/api": "npm:^12.1.1"
@@ -179,17 +179,17 @@ __metadata:
   peerDependencies:
     "@acala-network/types": ^6
     "@polkadot/api": ^12
-  checksum: 10c0/3a80582f7a8dcfe40ceb8b81d698c105afdb3020699129053e038a3045468a505b085581cd94abce2d05618701e12871939bc6f625210b9c977c0de6036621c2
+  checksum: 10c0/cae868525b3d05720123c9f94bdd29dd95e5d681f27507f6efe36bad6c64e82c1ac4af2de8b313dbe408e30edd7c9c9b9675e06469dac7869688e039e727bdf8
   languageName: node
   linkType: hard
 
-"@acala-network/sdk@npm:4.1.11":
-  version: 4.1.11
-  resolution: "@acala-network/sdk@npm:4.1.11"
+"@acala-network/sdk@npm:4.1.14":
+  version: 4.1.14
+  resolution: "@acala-network/sdk@npm:4.1.14"
   dependencies:
     "@acala-network/api": "npm:^6.1.1"
     "@acala-network/eth-providers": "npm:~2.7.18"
-    "@acala-network/sdk-core": "npm:4.1.11"
+    "@acala-network/sdk-core": "npm:4.1.14"
     "@polkadot/api": "npm:^12.1.1"
     axios: "npm:^0.24.0"
     ethers: "npm:~5.7.0"
@@ -203,7 +203,7 @@ __metadata:
     "@acala-network/eth-providers": ~2.7.18
     "@polkadot/api": ^12
     ethers: ~5.7.0
-  checksum: 10c0/a052dfcba3a0d88ab72a389abbc686ec3c2bf751fcdd4c9b9d7f322f4f0115c1e29ecd33eba787c8b137d2a6fad23cbc7258a0f7b21fffb943d63faab95b5cf8
+  checksum: 10c0/8bb2ff2841d291a42283037062af8d047189b809edf03fc34a348aa53ec52bddb3688cf9d9a82ab021c0a9fd6b529d71899e7fc6f8e1cb0ae6e47676b462674a
   languageName: node
   linkType: hard
 
