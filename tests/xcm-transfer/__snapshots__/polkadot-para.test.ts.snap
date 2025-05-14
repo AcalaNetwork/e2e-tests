@@ -25,7 +25,7 @@ exports[`'acala' -> 'assetHubPolkadot' xcm transfer 'WBTC' > xtokens transfer > 
     "data": [
       "ConcatenatedVersionedXcm",
       {
-        "v2": [
+        "v4": [
           {
             "withdrawAsset": [
               {
@@ -33,19 +33,17 @@ exports[`'acala' -> 'assetHubPolkadot' xcm transfer 'WBTC' > xtokens transfer > 
                   "fungible": 10000000,
                 },
                 "id": {
-                  "concrete": {
-                    "interior": {
-                      "x2": [
-                        {
-                          "palletInstance": 50,
-                        },
-                        {
-                          "generalIndex": 21,
-                        },
-                      ],
-                    },
-                    "parents": 0,
+                  "interior": {
+                    "x2": [
+                      {
+                        "palletInstance": 50,
+                      },
+                      {
+                        "generalIndex": 21,
+                      },
+                    ],
                   },
+                  "parents": 0,
                 },
               },
               {
@@ -53,12 +51,10 @@ exports[`'acala' -> 'assetHubPolkadot' xcm transfer 'WBTC' > xtokens transfer > 
                   "fungible": 150000000,
                 },
                 "id": {
-                  "concrete": {
-                    "interior": {
-                      "here": null,
-                    },
-                    "parents": 1,
+                  "interior": {
+                    "here": null,
                   },
+                  "parents": 1,
                 },
               },
             ],
@@ -73,12 +69,10 @@ exports[`'acala' -> 'assetHubPolkadot' xcm transfer 'WBTC' > xtokens transfer > 
                   "fungible": 150000000,
                 },
                 "id": {
-                  "concrete": {
-                    "interior": {
-                      "here": null,
-                    },
-                    "parents": 1,
+                  "interior": {
+                    "here": null,
                   },
+                  "parents": 1,
                 },
               },
               "weightLimit": {
@@ -90,23 +84,22 @@ exports[`'acala' -> 'assetHubPolkadot' xcm transfer 'WBTC' > xtokens transfer > 
             "depositAsset": {
               "assets": {
                 "wild": {
-                  "all": null,
+                  "allCounted": 2,
                 },
               },
               "beneficiary": {
                 "interior": {
-                  "x1": {
-                    "accountId32": {
-                      "id": "0x88dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee",
-                      "network": {
-                        "any": null,
+                  "x1": [
+                    {
+                      "accountId32": {
+                        "id": "0x88dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee",
+                        "network": null,
                       },
                     },
-                  },
+                  ],
                 },
                 "parents": 0,
               },
-              "maxAssets": 2,
             },
           },
         ],

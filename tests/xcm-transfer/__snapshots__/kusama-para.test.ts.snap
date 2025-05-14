@@ -315,7 +315,7 @@ exports[`'karura' -> 'assetHubKusama' xcm transfer 'USDT' > xtokens transfer > f
     "data": [
       "ConcatenatedVersionedXcm",
       {
-        "v2": [
+        "v4": [
           {
             "withdrawAsset": [
               {
@@ -323,19 +323,17 @@ exports[`'karura' -> 'assetHubKusama' xcm transfer 'USDT' > xtokens transfer > f
                   "fungible": 1000000,
                 },
                 "id": {
-                  "concrete": {
-                    "interior": {
-                      "x2": [
-                        {
-                          "palletInstance": 50,
-                        },
-                        {
-                          "generalIndex": 1984,
-                        },
-                      ],
-                    },
-                    "parents": 0,
+                  "interior": {
+                    "x2": [
+                      {
+                        "palletInstance": 50,
+                      },
+                      {
+                        "generalIndex": 1984,
+                      },
+                    ],
                   },
+                  "parents": 0,
                 },
               },
             ],
@@ -350,19 +348,17 @@ exports[`'karura' -> 'assetHubKusama' xcm transfer 'USDT' > xtokens transfer > f
                   "fungible": 1000000,
                 },
                 "id": {
-                  "concrete": {
-                    "interior": {
-                      "x2": [
-                        {
-                          "palletInstance": 50,
-                        },
-                        {
-                          "generalIndex": 1984,
-                        },
-                      ],
-                    },
-                    "parents": 0,
+                  "interior": {
+                    "x2": [
+                      {
+                        "palletInstance": 50,
+                      },
+                      {
+                        "generalIndex": 1984,
+                      },
+                    ],
                   },
+                  "parents": 0,
                 },
               },
               "weightLimit": {
@@ -374,23 +370,22 @@ exports[`'karura' -> 'assetHubKusama' xcm transfer 'USDT' > xtokens transfer > f
             "depositAsset": {
               "assets": {
                 "wild": {
-                  "all": null,
+                  "allCounted": 1,
                 },
               },
               "beneficiary": {
                 "interior": {
-                  "x1": {
-                    "accountId32": {
-                      "id": "0x88dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee",
-                      "network": {
-                        "any": null,
+                  "x1": [
+                    {
+                      "accountId32": {
+                        "id": "0x88dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee",
+                        "network": null,
                       },
                     },
-                  },
+                  ],
                 },
                 "parents": 0,
               },
-              "maxAssets": 1,
             },
           },
         ],
@@ -509,7 +504,7 @@ exports[`'karura' -> 'basilisk' xcm transfer 'DAI' > xtokens transfer > from cha
     "data": [
       "ConcatenatedVersionedXcm",
       {
-        "v2": [
+        "v4": [
           {
             "reserveAssetDeposited": [
               {
@@ -517,19 +512,20 @@ exports[`'karura' -> 'basilisk' xcm transfer 'DAI' > xtokens transfer > from cha
                   "fungible": "0x00000000000000000de0b6b3a7640000",
                 },
                 "id": {
-                  "concrete": {
-                    "interior": {
-                      "x2": [
-                        {
-                          "parachain": 2000,
+                  "interior": {
+                    "x2": [
+                      {
+                        "parachain": 2000,
+                      },
+                      {
+                        "generalKey": {
+                          "data": "0x024bb6afb5fa2b07a5d1c499e1c3ddb5a15e709a710000000000000000000000",
+                          "length": 21,
                         },
-                        {
-                          "generalKey": "0x024bb6afb5fa2b07a5d1c499e1c3ddb5a15e709a71",
-                        },
-                      ],
-                    },
-                    "parents": 1,
+                      },
+                    ],
                   },
+                  "parents": 1,
                 },
               },
             ],
@@ -544,19 +540,20 @@ exports[`'karura' -> 'basilisk' xcm transfer 'DAI' > xtokens transfer > from cha
                   "fungible": "0x00000000000000000de0b6b3a7640000",
                 },
                 "id": {
-                  "concrete": {
-                    "interior": {
-                      "x2": [
-                        {
-                          "parachain": 2000,
+                  "interior": {
+                    "x2": [
+                      {
+                        "parachain": 2000,
+                      },
+                      {
+                        "generalKey": {
+                          "data": "0x024bb6afb5fa2b07a5d1c499e1c3ddb5a15e709a710000000000000000000000",
+                          "length": 21,
                         },
-                        {
-                          "generalKey": "0x024bb6afb5fa2b07a5d1c499e1c3ddb5a15e709a71",
-                        },
-                      ],
-                    },
-                    "parents": 1,
+                      },
+                    ],
                   },
+                  "parents": 1,
                 },
               },
               "weightLimit": {
@@ -568,23 +565,22 @@ exports[`'karura' -> 'basilisk' xcm transfer 'DAI' > xtokens transfer > from cha
             "depositAsset": {
               "assets": {
                 "wild": {
-                  "all": null,
+                  "allCounted": 1,
                 },
               },
               "beneficiary": {
                 "interior": {
-                  "x1": {
-                    "accountId32": {
-                      "id": "0x88dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee",
-                      "network": {
-                        "any": null,
+                  "x1": [
+                    {
+                      "accountId32": {
+                        "id": "0x88dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee",
+                        "network": null,
                       },
                     },
-                  },
+                  ],
                 },
                 "parents": 0,
               },
-              "maxAssets": 1,
             },
           },
         ],

@@ -52,7 +52,7 @@ export default {
       },
       PolkadotXcm: {
         // avoid sending xcm version change notifications to makes things faster
-        $removePrefix: ['versionNotifyTargets', 'versionNotifiers', 'supportedVersion'],
+        $removePrefix: ['versionNotifyTargets', 'versionNotifiers'],
       },
     },
   }),

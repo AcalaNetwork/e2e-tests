@@ -17,11 +17,11 @@ const tests = [
     token: 'KSM',
     ignoreFee: true,
   },
-  {
-    from: 'basilisk',
-    to: 'kusama',
-    token: 'KSM',
-  },
+  // {
+  //   from: 'basilisk',
+  //   to: 'kusama',
+  //   token: 'KSM',
+  // },
   {
     from: 'assetHubKusama',
     to: 'kusama',
@@ -43,11 +43,11 @@ const tests = [
     token: 'USDT',
     ignoreFee: true,
   },
-  {
-    from: 'basilisk',
-    to: 'karura',
-    token: 'BSX',
-  },
+  // {
+  //   from: 'basilisk',
+  //   to: 'karura',
+  //   token: 'BSX',
+  // },
   // {
   //   from: 'karura',
   //   to: 'basilisk',

@@ -49,7 +49,7 @@ exports[`'acala' homa > with latest block > Homa redeem unbond works > system ev
       },
       "success": true,
       "weightUsed": {
-        "proofSize": "(rounded 66000)",
+        "proofSize": "(rounded 130000)",
         "refTime": "(rounded 6100000000)",
       },
     },
@@ -136,7 +136,7 @@ exports[`'acala' homa > with latest block > Homa stake works > system events 1`]
 exports[`'acala' homa > with latest block > Homa stake works > ump 1`] = `
 [
   {
-    "v2": [
+    "v4": [
       {
         "withdrawAsset": [
           {
@@ -144,12 +144,10 @@ exports[`'acala' homa > with latest block > Homa stake works > ump 1`] = `
               "fungible": "(number)",
             },
             "id": {
-              "concrete": {
-                "interior": {
-                  "here": null,
-                },
-                "parents": "(number)",
+              "interior": {
+                "here": null,
               },
+              "parents": "(number)",
             },
           },
         ],
@@ -164,16 +162,17 @@ exports[`'acala' homa > with latest block > Homa stake works > ump 1`] = `
               "fungible": "(number)",
             },
             "id": {
-              "concrete": {
-                "interior": {
-                  "here": null,
-                },
-                "parents": "(number)",
+              "interior": {
+                "here": null,
               },
+              "parents": "(number)",
             },
           },
           "weightLimit": {
-            "limited": "(number)",
+            "limited": {
+              "proofSize": "(number)",
+              "refTime": "(number)",
+            },
           },
         },
       },
@@ -181,29 +180,28 @@ exports[`'acala' homa > with latest block > Homa stake works > ump 1`] = `
         "depositAsset": {
           "assets": {
             "wild": {
-              "all": null,
+              "allCounted": "(number)",
             },
           },
           "beneficiary": {
             "interior": {
-              "x1": {
-                "accountId32": {
-                  "id": "(hex)",
-                  "network": {
-                    "any": null,
+              "x1": [
+                {
+                  "accountId32": {
+                    "id": "(hex)",
+                    "network": null,
                   },
                 },
-              },
+              ],
             },
             "parents": "(number)",
           },
-          "maxAssets": "(number)",
         },
       },
     ],
   },
   {
-    "v2": [
+    "v4": [
       {
         "withdrawAsset": [
           {
@@ -211,12 +209,10 @@ exports[`'acala' homa > with latest block > Homa stake works > ump 1`] = `
               "fungible": "(number)",
             },
             "id": {
-              "concrete": {
-                "interior": {
-                  "here": null,
-                },
-                "parents": "(number)",
+              "interior": {
+                "here": null,
               },
+              "parents": "(number)",
             },
           },
         ],
@@ -228,12 +224,10 @@ exports[`'acala' homa > with latest block > Homa stake works > ump 1`] = `
               "fungible": "(number)",
             },
             "id": {
-              "concrete": {
-                "interior": {
-                  "here": null,
-                },
-                "parents": "(number)",
+              "interior": {
+                "here": null,
               },
+              "parents": "(number)",
             },
           },
           "weightLimit": {
@@ -246,8 +240,11 @@ exports[`'acala' homa > with latest block > Homa stake works > ump 1`] = `
           "call": {
             "encoded": "(hex)",
           },
-          "originType": "SovereignAccount",
-          "requireWeightAtMost": "(number)",
+          "originKind": "SovereignAccount",
+          "requireWeightAtMost": {
+            "proofSize": "(number)",
+            "refTime": "(number)",
+          },
         },
       },
       {
@@ -257,18 +254,19 @@ exports[`'acala' homa > with latest block > Homa stake works > ump 1`] = `
         "depositAsset": {
           "assets": {
             "wild": {
-              "all": null,
+              "allCounted": "(number)",
             },
           },
           "beneficiary": {
             "interior": {
-              "x1": {
-                "parachain": "(number)",
-              },
+              "x1": [
+                {
+                  "parachain": "(number)",
+                },
+              ],
             },
             "parents": "(number)",
           },
-          "maxAssets": "(number)",
         },
       },
     ],
@@ -308,7 +306,7 @@ exports[`'acala' homa > with specific block > unbond withdraw works > system eve
       },
       "success": true,
       "weightUsed": {
-        "proofSize": "(rounded 130000)",
+        "proofSize": "(rounded 260000)",
         "refTime": "(rounded 25000000000)",
       },
     },
@@ -321,7 +319,7 @@ exports[`'acala' homa > with specific block > unbond withdraw works > system eve
 exports[`'acala' homa > with specific block > unbond withdraw works > ump 1`] = `
 [
   {
-    "v2": [
+    "v3": [
       {
         "withdrawAsset": [
           {
@@ -364,8 +362,11 @@ exports[`'acala' homa > with specific block > unbond withdraw works > ump 1`] = 
           "call": {
             "encoded": "0x1a010000070305000000",
           },
-          "originType": "SovereignAccount",
-          "requireWeightAtMost": 10000000000,
+          "originKind": "SovereignAccount",
+          "requireWeightAtMost": {
+            "proofSize": 131072,
+            "refTime": 10000000000,
+          },
         },
       },
       {
@@ -373,8 +374,11 @@ exports[`'acala' homa > with specific block > unbond withdraw works > ump 1`] = 
           "call": {
             "encoded": "0x1a01000005030070617261d00700000000000000000000000000000000000000000000000000000bd76e3b5f030a",
           },
-          "originType": "SovereignAccount",
-          "requireWeightAtMost": 10000000000,
+          "originKind": "SovereignAccount",
+          "requireWeightAtMost": {
+            "proofSize": 131072,
+            "refTime": 10000000000,
+          },
         },
       },
       {
@@ -384,7 +388,7 @@ exports[`'acala' homa > with specific block > unbond withdraw works > ump 1`] = 
         "depositAsset": {
           "assets": {
             "wild": {
-              "all": null,
+              "allCounted": 1,
             },
           },
           "beneficiary": {
@@ -395,7 +399,6 @@ exports[`'acala' homa > with specific block > unbond withdraw works > ump 1`] = 
             },
             "parents": 0,
           },
-          "maxAssets": 1,
         },
       },
     ],
@@ -452,8 +455,8 @@ exports[`'karura' homa > with latest block > Homa redeem unbond works > system e
       },
       "success": true,
       "weightUsed": {
-        "proofSize": "(rounded 66000)",
-        "refTime": "(rounded 15000000000)",
+        "proofSize": "(rounded 16000)",
+        "refTime": "(rounded 1600000000)",
       },
     },
     "method": "Processed",
@@ -539,7 +542,7 @@ exports[`'karura' homa > with latest block > Homa stake works > system events 1`
 exports[`'karura' homa > with latest block > Homa stake works > ump 1`] = `
 [
   {
-    "v2": [
+    "v4": [
       {
         "withdrawAsset": [
           {
@@ -547,12 +550,10 @@ exports[`'karura' homa > with latest block > Homa stake works > ump 1`] = `
               "fungible": "(number)",
             },
             "id": {
-              "concrete": {
-                "interior": {
-                  "here": null,
-                },
-                "parents": "(number)",
+              "interior": {
+                "here": null,
               },
+              "parents": "(number)",
             },
           },
         ],
@@ -567,16 +568,17 @@ exports[`'karura' homa > with latest block > Homa stake works > ump 1`] = `
               "fungible": "(number)",
             },
             "id": {
-              "concrete": {
-                "interior": {
-                  "here": null,
-                },
-                "parents": "(number)",
+              "interior": {
+                "here": null,
               },
+              "parents": "(number)",
             },
           },
           "weightLimit": {
-            "limited": "(number)",
+            "limited": {
+              "proofSize": "(number)",
+              "refTime": "(number)",
+            },
           },
         },
       },
@@ -584,29 +586,28 @@ exports[`'karura' homa > with latest block > Homa stake works > ump 1`] = `
         "depositAsset": {
           "assets": {
             "wild": {
-              "all": null,
+              "allCounted": "(number)",
             },
           },
           "beneficiary": {
             "interior": {
-              "x1": {
-                "accountId32": {
-                  "id": "(hex)",
-                  "network": {
-                    "any": null,
+              "x1": [
+                {
+                  "accountId32": {
+                    "id": "(hex)",
+                    "network": null,
                   },
                 },
-              },
+              ],
             },
             "parents": "(number)",
           },
-          "maxAssets": "(number)",
         },
       },
     ],
   },
   {
-    "v2": [
+    "v4": [
       {
         "withdrawAsset": [
           {
@@ -614,12 +615,10 @@ exports[`'karura' homa > with latest block > Homa stake works > ump 1`] = `
               "fungible": "(number)",
             },
             "id": {
-              "concrete": {
-                "interior": {
-                  "here": null,
-                },
-                "parents": "(number)",
+              "interior": {
+                "here": null,
               },
+              "parents": "(number)",
             },
           },
         ],
@@ -631,12 +630,10 @@ exports[`'karura' homa > with latest block > Homa stake works > ump 1`] = `
               "fungible": "(number)",
             },
             "id": {
-              "concrete": {
-                "interior": {
-                  "here": null,
-                },
-                "parents": "(number)",
+              "interior": {
+                "here": null,
               },
+              "parents": "(number)",
             },
           },
           "weightLimit": {
@@ -649,8 +646,11 @@ exports[`'karura' homa > with latest block > Homa stake works > ump 1`] = `
           "call": {
             "encoded": "(hex)",
           },
-          "originType": "SovereignAccount",
-          "requireWeightAtMost": "(number)",
+          "originKind": "SovereignAccount",
+          "requireWeightAtMost": {
+            "proofSize": "(number)",
+            "refTime": "(number)",
+          },
         },
       },
       {
@@ -660,18 +660,19 @@ exports[`'karura' homa > with latest block > Homa stake works > ump 1`] = `
         "depositAsset": {
           "assets": {
             "wild": {
-              "all": null,
+              "allCounted": "(number)",
             },
           },
           "beneficiary": {
             "interior": {
-              "x1": {
-                "parachain": "(number)",
-              },
+              "x1": [
+                {
+                  "parachain": "(number)",
+                },
+              ],
             },
             "parents": "(number)",
           },
-          "maxAssets": "(number)",
         },
       },
     ],
@@ -703,7 +704,7 @@ exports[`'karura' homa > with specific block > unbond withdraw works > system ev
       },
       "success": true,
       "weightUsed": {
-        "proofSize": "(rounded 130000)",
+        "proofSize": "(rounded 260000)",
         "refTime": "(rounded 39000000000)",
       },
     },
@@ -716,7 +717,7 @@ exports[`'karura' homa > with specific block > unbond withdraw works > system ev
 exports[`'karura' homa > with specific block > unbond withdraw works > ump 1`] = `
 [
   {
-    "v2": [
+    "v3": [
       {
         "withdrawAsset": [
           {
@@ -759,8 +760,11 @@ exports[`'karura' homa > with specific block > unbond withdraw works > ump 1`] =
           "call": {
             "encoded": "0x18010200060305000000",
           },
-          "originType": "SovereignAccount",
-          "requireWeightAtMost": 20000000000,
+          "originKind": "SovereignAccount",
+          "requireWeightAtMost": {
+            "proofSize": 131072,
+            "refTime": 20000000000,
+          },
         },
       },
       {
@@ -768,8 +772,11 @@ exports[`'karura' homa > with specific block > unbond withdraw works > ump 1`] =
           "call": {
             "encoded": "0x1801020004030070617261d00700000000000000000000000000000000000000000000000000000b07db23d49c4c",
           },
-          "originType": "SovereignAccount",
-          "requireWeightAtMost": 20000000000,
+          "originKind": "SovereignAccount",
+          "requireWeightAtMost": {
+            "proofSize": 131072,
+            "refTime": 20000000000,
+          },
         },
       },
       {
@@ -779,7 +786,7 @@ exports[`'karura' homa > with specific block > unbond withdraw works > ump 1`] =
         "depositAsset": {
           "assets": {
             "wild": {
-              "all": null,
+              "allCounted": 1,
             },
           },
           "beneficiary": {
@@ -790,7 +797,6 @@ exports[`'karura' homa > with specific block > unbond withdraw works > ump 1`] =
             },
             "parents": 0,
           },
-          "maxAssets": 1,
         },
       },
     ],

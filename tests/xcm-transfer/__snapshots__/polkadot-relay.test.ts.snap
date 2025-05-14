@@ -12,8 +12,8 @@ exports[`'acala' -> 'polkadot' xcm transfer 'DOT wiht limited weight' > xtokens 
 {
   "consumers": 0,
   "data": {
-    "flags": "0x80000000000000000000000000000000",
-    "free": "(rounded 11000000000000)",
+    "flags": 0,
+    "free": 10000000000000,
     "frozen": 0,
     "reserved": 0,
   },
@@ -26,7 +26,7 @@ exports[`'acala' -> 'polkadot' xcm transfer 'DOT wiht limited weight' > xtokens 
 exports[`'acala' -> 'polkadot' xcm transfer 'DOT wiht limited weight' > xtokens transfer > from chain ump messages 1`] = `
 [
   {
-    "v2": [
+    "v4": [
       {
         "withdrawAsset": [
           {
@@ -34,12 +34,10 @@ exports[`'acala' -> 'polkadot' xcm transfer 'DOT wiht limited weight' > xtokens 
               "fungible": 1000000000000,
             },
             "id": {
-              "concrete": {
-                "interior": {
-                  "here": null,
-                },
-                "parents": 0,
+              "interior": {
+                "here": null,
               },
+              "parents": 0,
             },
           },
         ],
@@ -54,16 +52,17 @@ exports[`'acala' -> 'polkadot' xcm transfer 'DOT wiht limited weight' > xtokens 
               "fungible": 1000000000000,
             },
             "id": {
-              "concrete": {
-                "interior": {
-                  "here": null,
-                },
-                "parents": 0,
+              "interior": {
+                "here": null,
               },
+              "parents": 0,
             },
           },
           "weightLimit": {
-            "limited": 5000000000,
+            "limited": {
+              "proofSize": 0,
+              "refTime": 5000000000,
+            },
           },
         },
       },
@@ -71,23 +70,22 @@ exports[`'acala' -> 'polkadot' xcm transfer 'DOT wiht limited weight' > xtokens 
         "depositAsset": {
           "assets": {
             "wild": {
-              "all": null,
+              "allCounted": 1,
             },
           },
           "beneficiary": {
             "interior": {
-              "x1": {
-                "accountId32": {
-                  "id": "0x88dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee",
-                  "network": {
-                    "any": null,
+              "x1": [
+                {
+                  "accountId32": {
+                    "id": "0x88dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee",
+                    "network": null,
                   },
                 },
-              },
+              ],
             },
             "parents": 0,
           },
-          "maxAssets": 1,
         },
       },
     ],
@@ -99,19 +97,15 @@ exports[`'acala' -> 'polkadot' xcm transfer 'DOT wiht limited weight' > xtokens 
 [
   {
     "data": {
+      "error": "Unsupported",
       "id": "(hash)",
       "origin": {
         "Ump": {
           "Para": 2000,
         },
       },
-      "success": true,
-      "weightUsed": {
-        "proofSize": "(rounded 7200)",
-        "refTime": "(rounded 280000000)",
-      },
     },
-    "method": "Processed",
+    "method": "ProcessingFailed",
     "section": "messageQueue",
   },
 ]
@@ -188,7 +182,7 @@ exports[`'acala' -> 'polkadot' xcm transfer 'DOT' > xtokens transfer > balance o
 exports[`'acala' -> 'polkadot' xcm transfer 'DOT' > xtokens transfer > from chain ump messages 1`] = `
 [
   {
-    "v2": [
+    "v4": [
       {
         "withdrawAsset": [
           {
@@ -196,12 +190,10 @@ exports[`'acala' -> 'polkadot' xcm transfer 'DOT' > xtokens transfer > from chai
               "fungible": 1000000000000,
             },
             "id": {
-              "concrete": {
-                "interior": {
-                  "here": null,
-                },
-                "parents": 0,
+              "interior": {
+                "here": null,
               },
+              "parents": 0,
             },
           },
         ],
@@ -216,12 +208,10 @@ exports[`'acala' -> 'polkadot' xcm transfer 'DOT' > xtokens transfer > from chai
               "fungible": 1000000000000,
             },
             "id": {
-              "concrete": {
-                "interior": {
-                  "here": null,
-                },
-                "parents": 0,
+              "interior": {
+                "here": null,
               },
+              "parents": 0,
             },
           },
           "weightLimit": {
@@ -233,23 +223,22 @@ exports[`'acala' -> 'polkadot' xcm transfer 'DOT' > xtokens transfer > from chai
         "depositAsset": {
           "assets": {
             "wild": {
-              "all": null,
+              "allCounted": 1,
             },
           },
           "beneficiary": {
             "interior": {
-              "x1": {
-                "accountId32": {
-                  "id": "0x88dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee",
-                  "network": {
-                    "any": null,
+              "x1": [
+                {
+                  "accountId32": {
+                    "id": "0x88dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee",
+                    "network": null,
                   },
                 },
-              },
+              ],
             },
             "parents": 0,
           },
-          "maxAssets": 1,
         },
       },
     ],

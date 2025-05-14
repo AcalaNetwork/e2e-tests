@@ -12,8 +12,8 @@ exports[`'karura' -> 'kusama' xcm transfer 'KSM wiht limited weight' > xtokens t
 {
   "consumers": 0,
   "data": {
-    "flags": "0x80000000000000000000000000000000",
-    "free": "(rounded 11000000000000)",
+    "flags": 0,
+    "free": 10000000000000,
     "frozen": 0,
     "reserved": 0,
   },
@@ -26,7 +26,7 @@ exports[`'karura' -> 'kusama' xcm transfer 'KSM wiht limited weight' > xtokens t
 exports[`'karura' -> 'kusama' xcm transfer 'KSM wiht limited weight' > xtokens transfer > from chain ump messages 1`] = `
 [
   {
-    "v2": [
+    "v4": [
       {
         "withdrawAsset": [
           {
@@ -34,12 +34,10 @@ exports[`'karura' -> 'kusama' xcm transfer 'KSM wiht limited weight' > xtokens t
               "fungible": 1000000000000,
             },
             "id": {
-              "concrete": {
-                "interior": {
-                  "here": null,
-                },
-                "parents": 0,
+              "interior": {
+                "here": null,
               },
+              "parents": 0,
             },
           },
         ],
@@ -54,16 +52,17 @@ exports[`'karura' -> 'kusama' xcm transfer 'KSM wiht limited weight' > xtokens t
               "fungible": 1000000000000,
             },
             "id": {
-              "concrete": {
-                "interior": {
-                  "here": null,
-                },
-                "parents": 0,
+              "interior": {
+                "here": null,
               },
+              "parents": 0,
             },
           },
           "weightLimit": {
-            "limited": 5000000000,
+            "limited": {
+              "proofSize": 0,
+              "refTime": 5000000000,
+            },
           },
         },
       },
@@ -71,23 +70,22 @@ exports[`'karura' -> 'kusama' xcm transfer 'KSM wiht limited weight' > xtokens t
         "depositAsset": {
           "assets": {
             "wild": {
-              "all": null,
+              "allCounted": 1,
             },
           },
           "beneficiary": {
             "interior": {
-              "x1": {
-                "accountId32": {
-                  "id": "0x88dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee",
-                  "network": {
-                    "any": null,
+              "x1": [
+                {
+                  "accountId32": {
+                    "id": "0x88dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee",
+                    "network": null,
                   },
                 },
-              },
+              ],
             },
             "parents": 0,
           },
-          "maxAssets": 1,
         },
       },
     ],
@@ -105,7 +103,7 @@ exports[`'karura' -> 'kusama' xcm transfer 'KSM wiht limited weight' > xtokens t
           "Para": 2000,
         },
       },
-      "success": true,
+      "success": false,
       "weightUsed": {
         "proofSize": "(rounded 7200)",
         "refTime": "(rounded 320000000)",
@@ -188,7 +186,7 @@ exports[`'karura' -> 'kusama' xcm transfer 'KSM' > xtokens transfer > balance on
 exports[`'karura' -> 'kusama' xcm transfer 'KSM' > xtokens transfer > from chain ump messages 1`] = `
 [
   {
-    "v2": [
+    "v4": [
       {
         "withdrawAsset": [
           {
@@ -196,12 +194,10 @@ exports[`'karura' -> 'kusama' xcm transfer 'KSM' > xtokens transfer > from chain
               "fungible": 1000000000000,
             },
             "id": {
-              "concrete": {
-                "interior": {
-                  "here": null,
-                },
-                "parents": 0,
+              "interior": {
+                "here": null,
               },
+              "parents": 0,
             },
           },
         ],
@@ -216,12 +212,10 @@ exports[`'karura' -> 'kusama' xcm transfer 'KSM' > xtokens transfer > from chain
               "fungible": 1000000000000,
             },
             "id": {
-              "concrete": {
-                "interior": {
-                  "here": null,
-                },
-                "parents": 0,
+              "interior": {
+                "here": null,
               },
+              "parents": 0,
             },
           },
           "weightLimit": {
@@ -233,23 +227,22 @@ exports[`'karura' -> 'kusama' xcm transfer 'KSM' > xtokens transfer > from chain
         "depositAsset": {
           "assets": {
             "wild": {
-              "all": null,
+              "allCounted": 1,
             },
           },
           "beneficiary": {
             "interior": {
-              "x1": {
-                "accountId32": {
-                  "id": "0x88dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee",
-                  "network": {
-                    "any": null,
+              "x1": [
+                {
+                  "accountId32": {
+                    "id": "0x88dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee",
+                    "network": null,
                   },
                 },
-              },
+              ],
             },
             "parents": 0,
           },
-          "maxAssets": 1,
         },
       },
     ],
@@ -391,7 +384,7 @@ exports[`'kusama' -> 'karura' xcm transfer 'KSM' > xcmPallet transfer > tx event
         "Complete": {
           "used": {
             "proofSize": "(rounded 6200)",
-            "refTime": "(rounded 301000000)",
+            "refTime": "(rounded 304000000)",
           },
         },
       },
@@ -584,7 +577,7 @@ exports[`'kusama' -> 'shiden' xcm transfer 'KSM' > xcmPallet transfer > tx event
         "Complete": {
           "used": {
             "proofSize": "(rounded 6200)",
-            "refTime": "(rounded 301000000)",
+            "refTime": "(rounded 304000000)",
           },
         },
       },
