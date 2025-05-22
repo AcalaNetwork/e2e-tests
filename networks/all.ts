@@ -5,7 +5,7 @@ import acalaNextConfig from './acala-next'
 import assethubConfig from './assethub'
 import astarConfig from './astar'
 import bifrostConfig from './bifrost'
-import centrifugeConfig from './centrifuge'
+// import centrifugeConfig from './centrifuge'
 import crustConfig from './crust'
 import darwiniaConfig from './darwinia'
 import hydraDXConfig from './hydraDX'
@@ -25,7 +25,7 @@ const all = {
   moonbeam: moonbeamConfig,
   hydraDX: hydraDXConfig,
   bifrost: bifrostConfig,
-  centrifuge: centrifugeConfig,
+  // centrifuge: centrifugeConfig,
   // parallel: parallelConfig,
   crust: crustConfig,
   unique: uniqueConfig,

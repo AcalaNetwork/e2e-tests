@@ -69,16 +69,16 @@ const tests = [
     to: 'karura',
     token: 'BNC',
   },
-  {
-    from: 'altair',
-    to: 'karura',
-    token: 'AIR',
-  },
-  {
-    from: 'karura',
-    to: 'altair',
-    token: 'AIR',
-  },
+  // {
+  //   from: 'altair',
+  //   to: 'karura',
+  //   token: 'AIR',
+  // },
+  // {
+  //   from: 'karura',
+  //   to: 'altair',
+  //   token: 'AIR',
+  // },
   {
     from: 'shiden',
     to: 'karura',
