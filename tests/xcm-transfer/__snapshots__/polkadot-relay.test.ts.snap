@@ -97,15 +97,19 @@ exports[`'acala' -> 'polkadot' xcm transfer 'DOT wiht limited weight' > xtokens 
 [
   {
     "data": {
-      "error": "Unsupported",
       "id": "(hash)",
       "origin": {
         "Ump": {
           "Para": 2000,
         },
       },
+      "success": false,
+      "weightUsed": {
+        "proofSize": "(rounded 7200)",
+        "refTime": "(rounded 280000000)",
+      },
     },
-    "method": "ProcessingFailed",
+    "method": "Processed",
     "section": "messageQueue",
   },
 ]
@@ -380,7 +384,7 @@ exports[`'polkadot' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > tx even
         "Complete": {
           "used": {
             "proofSize": "(rounded 6200)",
-            "refTime": "(rounded 259000000)",
+            "refTime": "(rounded 265000000)",
           },
         },
       },
@@ -555,8 +559,8 @@ exports[`'polkadot' -> 'astar' xcm transfer 'DOT' > xcmPallet transfer > to chai
       "origin": "Parent",
       "success": true,
       "weightUsed": {
-        "proofSize": "(rounded 9300)",
-        "refTime": "(rounded 890000000)",
+        "proofSize": "(rounded 9400)",
+        "refTime": "(rounded 900000000)",
       },
     },
     "method": "Processed",
@@ -573,7 +577,7 @@ exports[`'polkadot' -> 'astar' xcm transfer 'DOT' > xcmPallet transfer > tx even
         "Complete": {
           "used": {
             "proofSize": "(rounded 6200)",
-            "refTime": "(rounded 259000000)",
+            "refTime": "(rounded 265000000)",
           },
         },
       },

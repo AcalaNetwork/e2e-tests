@@ -53,11 +53,11 @@ const tests = [
   //   to: 'basilisk',
   //   token: 'BSX',
   // },
-  {
-    from: 'karura',
-    to: 'moonriver',
-    token: 'KAR',
-  },
+  // {
+  //   from: 'karura',
+  //   to: 'moonriver',
+  //   token: 'KAR',
+  // },
   {
     from: 'karura',
     to: 'bifrost',

@@ -560,7 +560,7 @@ exports[`'kusama' -> 'shiden' xcm transfer 'KSM' > xcmPallet transfer > to chain
       "success": true,
       "weightUsed": {
         "proofSize": "(rounded 9300)",
-        "refTime": "(rounded 880000000)",
+        "refTime": "(rounded 900000000)",
       },
     },
     "method": "Processed",
