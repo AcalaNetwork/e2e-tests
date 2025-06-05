@@ -87,7 +87,7 @@ exports[`'karura' to 'bifrost' using bridgeSDK cross-chain 'KUSD' > Cross-chain 
 }
 `;
 
-exports[`'karura' to 'bifrost' using bridgeSDK cross-chain 'KUSD' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.08)"`;
+exports[`'karura' to 'bifrost' using bridgeSDK cross-chain 'KUSD' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.05)"`;
 
 exports[`'karura' to 'bifrost' using bridgeSDK cross-chain 'KUSD' > Cross-chain using BridgeSDK works > initial 1`] = `
 {
@@ -155,60 +155,6 @@ exports[`'karura' to 'kusama' using bridgeSDK cross-chain 'KSM' > Cross-chain us
   "decimals": 12,
   "fromChain": 10,
   "toChain": 10,
-}
-`;
-
-exports[`'karura' to 'moonriver' using bridgeSDK cross-chain 'KAR' > Cross-chain using BridgeSDK works > after 1`] = `
-{
-  "address": "0x4E7440dB498561A46AAa82b9Bc7d2D5162b5c27B",
-  "decimals": 18,
-  "fromChain": "(rounded 8)",
-  "toChain": 0,
-}
-`;
-
-exports[`'karura' to 'moonriver' using bridgeSDK cross-chain 'KAR' > Cross-chain using BridgeSDK works > after 2`] = `
-{
-  "address": "0x4E7440dB498561A46AAa82b9Bc7d2D5162b5c27B",
-  "decimals": 18,
-  "fromChain": "(rounded 8)",
-  "toChain": 0,
-}
-`;
-
-exports[`'karura' to 'moonriver' using bridgeSDK cross-chain 'KAR' > Cross-chain using BridgeSDK works > after 3`] = `
-{
-  "address": "0x4E7440dB498561A46AAa82b9Bc7d2D5162b5c27B",
-  "decimals": 18,
-  "fromChain": "(rounded 8)",
-  "toChain": 0,
-}
-`;
-
-exports[`'karura' to 'moonriver' using bridgeSDK cross-chain 'KAR' > Cross-chain using BridgeSDK works > initial 1`] = `
-{
-  "address": "0x4E7440dB498561A46AAa82b9Bc7d2D5162b5c27B",
-  "decimals": 18,
-  "fromChain": 10,
-  "toChain": 0,
-}
-`;
-
-exports[`'karura' to 'moonriver' using bridgeSDK cross-chain 'KAR' > Cross-chain using BridgeSDK works > initial 2`] = `
-{
-  "address": "0x4E7440dB498561A46AAa82b9Bc7d2D5162b5c27B",
-  "decimals": 18,
-  "fromChain": 10,
-  "toChain": 0,
-}
-`;
-
-exports[`'karura' to 'moonriver' using bridgeSDK cross-chain 'KAR' > Cross-chain using BridgeSDK works > initial 3`] = `
-{
-  "address": "0x4E7440dB498561A46AAa82b9Bc7d2D5162b5c27B",
-  "decimals": 18,
-  "fromChain": 10,
-  "toChain": 0,
 }
 `;
 

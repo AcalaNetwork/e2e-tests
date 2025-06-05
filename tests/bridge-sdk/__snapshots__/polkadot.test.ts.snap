@@ -60,26 +60,6 @@ exports[`'acala' to 'interlay' using bridgeSDK cross-chain 'INTR' > Cross-chain 
 }
 `;
 
-exports[`'acala' to 'moonbeam' using bridgeSDK cross-chain 'AUSD' > Cross-chain using BridgeSDK works > after 1`] = `
-{
-  "address": "0x4E7440dB498561A46AAa82b9Bc7d2D5162b5c27B",
-  "decimals": 18,
-  "fromChain": 8,
-  "toChain": "(rounded 1.97)",
-}
-`;
-
-exports[`'acala' to 'moonbeam' using bridgeSDK cross-chain 'AUSD' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.03)"`;
-
-exports[`'acala' to 'moonbeam' using bridgeSDK cross-chain 'AUSD' > Cross-chain using BridgeSDK works > initial 1`] = `
-{
-  "address": "0x4E7440dB498561A46AAa82b9Bc7d2D5162b5c27B",
-  "decimals": 18,
-  "fromChain": 10,
-  "toChain": 0,
-}
-`;
-
 exports[`'acala' to 'polkadot' using bridgeSDK cross-chain 'DOT' > Cross-chain using BridgeSDK works > after 1`] = `
 {
   "address": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
