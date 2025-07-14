@@ -456,7 +456,7 @@ exports[`'karura' homa > with latest block > Homa redeem unbond works > system e
       "success": true,
       "weightUsed": {
         "proofSize": "(rounded 16000)",
-        "refTime": "(rounded 1600000000)",
+        "refTime": "(rounded 1500000000)",
       },
     },
     "method": "Processed",
