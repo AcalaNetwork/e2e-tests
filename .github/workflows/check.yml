@@ -35,9 +35,3 @@ jobs:
     - run: yarn update-env
       timeout-minutes: 5
     - run: yarn test tests/${{ matrix.tests }}
-    - uses: ravsamhq/notify-slack-action@v2
-      if: ${{ failure() }}
-      with:
-        status: ${{ job.status }}
-      env:
-        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
