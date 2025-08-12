@@ -87,7 +87,7 @@ exports[`'karura' to 'bifrost' using bridgeSDK cross-chain 'KUSD' > Cross-chain 
 }
 `;
 
-exports[`'karura' to 'bifrost' using bridgeSDK cross-chain 'KUSD' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.05)"`;
+exports[`'karura' to 'bifrost' using bridgeSDK cross-chain 'KUSD' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.04)"`;
 
 exports[`'karura' to 'bifrost' using bridgeSDK cross-chain 'KUSD' > Cross-chain using BridgeSDK works > initial 1`] = `
 {

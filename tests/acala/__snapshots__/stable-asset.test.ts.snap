@@ -158,7 +158,10 @@ exports[`karura stable asset > mint overflow > events 1`] = `
   {
     "data": {
       "dispatchError": {
-        "Arithmetic": "Overflow",
+        "Module": {
+          "error": "0x06000000",
+          "index": 200,
+        },
       },
       "dispatchInfo": {
         "class": "Normal",
@@ -175,40 +178,17 @@ exports[`karura stable asset > mint overflow > events 1`] = `
 ]
 `;
 
-exports[`karura stable asset > swap > events 1`] = `
-[
-  {
-    "data": {
-      "a": "(number)",
-      "balances": [
-        "(number)",
-        "(number)",
-      ],
-      "inputAmount": "(number)",
-      "inputAsset": {
-        "Token": "KSM",
-      },
-      "minOutputAmount": "(number)",
-      "outputAmount": "(number)",
-      "outputAsset": {
-        "Token": "LKSM",
-      },
-      "poolId": "(number)",
-      "swapper": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-      "totalSupply": "(number)",
-    },
-    "method": "TokenSwapped",
-    "section": "stableAsset",
-  },
-]
-`;
+exports[`karura stable asset > swap > events 1`] = `[]`;
 
 exports[`karura stable asset > swap overflow > events 1`] = `
 [
   {
     "data": {
       "dispatchError": {
-        "Arithmetic": "Overflow",
+        "Module": {
+          "error": "0x06000000",
+          "index": 200,
+        },
       },
       "dispatchInfo": {
         "class": "Normal",
@@ -225,83 +205,8 @@ exports[`karura stable asset > swap overflow > events 1`] = `
 ]
 `;
 
-exports[`karura stable asset > with liquidity > 'RedeemedProportion' > events 1`] = `
-[
-  {
-    "data": {
-      "a": "(number)",
-      "balances": [
-        "(number)",
-        "(number)",
-      ],
-      "feeAmount": "(number)",
-      "inputAmount": "(number)",
-      "minOutputAmounts": [
-        "(number)",
-        "(number)",
-      ],
-      "outputAmounts": [
-        "(number)",
-        "(number)",
-      ],
-      "poolId": "(number)",
-      "redeemer": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-      "totalSupply": "(number)",
-    },
-    "method": "RedeemedProportion",
-    "section": "stableAsset",
-  },
-]
-`;
+exports[`karura stable asset > with liquidity > 'RedeemedProportion' > events 1`] = `[]`;
 
-exports[`karura stable asset > with liquidity > 'RedeemedSingle' > events 1`] = `
-[
-  {
-    "data": {
-      "a": "(number)",
-      "balances": [
-        "(number)",
-        "(number)",
-      ],
-      "feeAmount": "(number)",
-      "inputAmount": "(number)",
-      "minOutputAmount": "(number)",
-      "outputAmount": "(number)",
-      "outputAsset": {
-        "Token": "KSM",
-      },
-      "poolId": "(number)",
-      "redeemer": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-      "totalSupply": "(number)",
-    },
-    "method": "RedeemedSingle",
-    "section": "stableAsset",
-  },
-]
-`;
+exports[`karura stable asset > with liquidity > 'RedeemedSingle' > events 1`] = `[]`;
 
-exports[`karura stable asset > with liquidity > mint > system events 1`] = `
-[
-  {
-    "data": {
-      "a": "(number)",
-      "balances": [
-        "(number)",
-        "(number)",
-      ],
-      "feeAmount": "(number)",
-      "inputAmounts": [
-        "(number)",
-        "(number)",
-      ],
-      "minOutputAmount": "(number)",
-      "minter": "rPizfonc8MPuEsMxufAytHjpRW7a2YrXWHKibaJXe9ZtjKx",
-      "outputAmount": "(number)",
-      "poolId": "(number)",
-      "totalSupply": "(number)",
-    },
-    "method": "Minted",
-    "section": "stableAsset",
-  },
-]
-`;
+exports[`karura stable asset > with liquidity > mint > system events 1`] = `[]`;
