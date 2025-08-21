@@ -87,7 +87,7 @@ exports[`'karura' to 'bifrost' using bridgeSDK cross-chain 'KUSD' > Cross-chain 
 }
 `;
 
-exports[`'karura' to 'bifrost' using bridgeSDK cross-chain 'KUSD' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.05)"`;
+exports[`'karura' to 'bifrost' using bridgeSDK cross-chain 'KUSD' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.04)"`;
 
 exports[`'karura' to 'bifrost' using bridgeSDK cross-chain 'KUSD' > Cross-chain using BridgeSDK works > initial 1`] = `
 {
@@ -285,7 +285,7 @@ exports[`'shiden' to 'karura' using bridgeSDK cross-chain 'KUSD' > Cross-chain u
 }
 `;
 
-exports[`'shiden' to 'karura' using bridgeSDK cross-chain 'KUSD' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.002)"`;
+exports[`'shiden' to 'karura' using bridgeSDK cross-chain 'KUSD' > Cross-chain using BridgeSDK works > fee 1`] = `"(rounded 0.001)"`;
 
 exports[`'shiden' to 'karura' using bridgeSDK cross-chain 'KUSD' > Cross-chain using BridgeSDK works > initial 1`] = `
 {
