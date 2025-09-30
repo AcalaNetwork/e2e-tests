@@ -3,11 +3,11 @@ import { Config } from './types'
 export default {
   polkadot: {
     name: 'bifrostPolkadot' as const,
-    endpoint: 'wss://hk.p.bifrost-rpc.liebi.com/ws',
+    endpoint: 'wss://bifrost.public.curie.radiumblock.co/ws',
   },
   kusama: {
     name: 'bifrost' as const,
-    endpoint: 'wss://bifrost-rpc.liebi.com/ws',
+    endpoint: 'wss://us.bifrost-rpc.liebi.com/ws',
   },
   config: ({ alice }) => ({
     storages: {
@@ -18,7 +18,7 @@ export default {
   }),
 } satisfies Config
 
-export const basilisk = {
+export const bifrost = {
   paraId: 2001,
 }
 export const bifrostPolkadot = {

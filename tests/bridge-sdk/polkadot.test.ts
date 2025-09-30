@@ -56,40 +56,6 @@ const tests = [
     to: 'interlay',
     token: 'INTR',
   },
-
-  // btc
-  // {
-  //   from: 'interlay',
-  //   to: 'acala',
-  //   token: 'IBTC',
-  //   fee: 0.008012799999999931
-  // },
-  // {
-  //   from: 'acala',
-  //   to: 'interlay',
-  //   token: 'IBTC',
-  //   fee: 0.008012799999999931
-  // },
-
-  // Chopsticks are currently not supported.
-  // {
-  //   from: 'crust',
-  //   to: 'karura',
-  //   token: 'CSM',
-  //   fee: 0.008082399999999934
-  // },
-  // {
-  //   from: 'karura',
-  //   to: 'crust',
-  //   token: 'CSM',
-  //   fee: 0.002080000000000082
-  // },
-  // {
-  //   from: 'unique',
-  //   to: 'acala',
-  //   token: 'UNQ',
-  //   fee: 0.008082399999999934
-  // },
 ] as const
 
 buildTests(tests)

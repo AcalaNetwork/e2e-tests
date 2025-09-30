@@ -122,51 +122,6 @@ const tests = [
   // //   token: 'KBTC',
   // //   fee: 0.008012799999999931
   // // },
-
-  // {
-  //   from: 'crab',
-  //   to: 'karura',
-  //   token: 'CRAB',
-  // },
-  // {
-  //   from: 'khala',
-  //   to: 'karura',
-  //   token: 'KUSD',
-  // },
-  // {
-  //   from: 'karura',
-  //   to: 'khala',
-  //   token: 'KUSD',
-  // },
-  // Chopsticks are currently not supported.
-  // {
-  //   from: 'crust',
-  //   to: 'karura',
-  //   token: 'CSM',
-  //   fee: 0.008082399999999934
-  // },
-  // {
-  //   from: 'karura',
-  //   to: 'crust',
-  //   token: 'CSM',
-  //   fee: 0.002080000000000082
-  // },
-  // {
-  //   from: 'unique',
-  //   to: 'acala',
-  //   token: 'UNQ',
-  //   fee: 0.008082399999999934
-  // },
-  // {
-  //   from: 'quartz',
-  //   to: 'karura',
-  //   token: 'QTZ',
-  // },
-  // {
-  //   from: 'karura',
-  //   to: 'quartz',
-  //   token: 'QTZ',
-  // },
 ] as const
 
 buildTests(tests)

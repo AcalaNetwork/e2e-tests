@@ -10,14 +10,10 @@ import { AstarAdapter, ShidenAdapter } from '@polkawallet/bridge/adapters/astar'
 import { BasiliskAdapter } from '@polkawallet/bridge/adapters/hydradx'
 import { BifrostAdapter } from '@polkawallet/bridge/adapters/bifrost'
 import { Bridge } from '@polkawallet/bridge'
-import { CrabAdapter } from '@polkawallet/bridge/adapters/darwinia'
 import { InterlayAdapter, KintsugiAdapter } from '@polkawallet/bridge/adapters/interlay'
 import { KaruraAdapter } from '@polkawallet/bridge/adapters/acala'
-import { KhalaAdapter } from '@polkawallet/bridge/adapters/phala'
 import { KusamaAdapter, PolkadotAdapter } from '@polkawallet/bridge/adapters/polkadot'
 import { MoonbeamAdapter, MoonriverAdapter } from '@polkawallet/bridge/adapters/moonbeam'
-import { QuartzAdapter, UniqueAdapter } from '@polkawallet/bridge/adapters/unique'
-import { ShadowAdapter } from '@polkawallet/bridge/adapters/crust'
 
 import { Network, NetworkNames, createNetworks } from '../../networks'
 import { check } from '../../helpers'
@@ -106,14 +102,9 @@ export const buildTests = (tests: ReadonlyArray<TestTtype>) => {
           bifrost: BifrostAdapter,
           altair: AltairAdapter,
           shiden: ShidenAdapter,
-          crust: ShadowAdapter,
-          quartz: QuartzAdapter,
-          unique: UniqueAdapter,
           astar: AstarAdapter,
           interlay: InterlayAdapter,
           kintsugi: KintsugiAdapter,
-          khala: KhalaAdapter,
-          crab: CrabAdapter,
         } as any
         const adapter = new adapters[chain]()
         await adapter.init(api)
