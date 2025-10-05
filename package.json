@@ -18,8 +18,8 @@
 		"@acala-network/sdk-core": "4.1.14"
 	},
 	"dependencies": {
-		"@acala-network/chopsticks": "^1.0.5-1",
-		"@acala-network/chopsticks-testing": "^1.0.5-1",
+		"@acala-network/chopsticks": "^1.2.1",
+		"@acala-network/chopsticks-testing": "^1.2.1",
 		"@acala-network/sdk": "4.1.14",
 		"@acala-network/sdk-core": "4.1.14",
 		"@polkadot/api": "15.10.2",
@@ -58,5 +58,5 @@
 		"*.ts": "eslint --cache --fix",
 		"*.{ts,css}": "prettier --write"
 	},
-	"packageManager": "yarn@4.1.1"
+	"packageManager": "yarn@4.10.3"
 }
