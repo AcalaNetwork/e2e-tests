@@ -384,7 +384,7 @@ exports[`'polkadot' -> 'acala' xcm transfer 'DOT' > xcmPallet transfer > tx even
         "Complete": {
           "used": {
             "proofSize": "(rounded 6200)",
-            "refTime": "(rounded 273000000)",
+            "refTime": "(rounded 274000000)",
           },
         },
       },
@@ -577,7 +577,7 @@ exports[`'polkadot' -> 'astar' xcm transfer 'DOT' > xcmPallet transfer > tx even
         "Complete": {
           "used": {
             "proofSize": "(rounded 6200)",
-            "refTime": "(rounded 273000000)",
+            "refTime": "(rounded 274000000)",
           },
         },
       },
