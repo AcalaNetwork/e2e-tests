@@ -25,7 +25,7 @@ exports[`'assetHubKusama' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer >
     "data": [
       "ConcatenatedVersionedXcm",
       {
-        "v4": [
+        "v5": [
           {
             "reserveAssetDeposited": [
               {
@@ -142,8 +142,8 @@ exports[`'assetHubKusama' -> 'karura' xcm transfer 'USDT' > xcmPallet transfer >
       "outcome": {
         "Complete": {
           "used": {
-            "proofSize": "(rounded 6200)",
-            "refTime": "(rounded 311000000)",
+            "proofSize": "(rounded 6210)",
+            "refTime": "(rounded 560000000)",
           },
         },
       },
@@ -315,7 +315,7 @@ exports[`'karura' -> 'assetHubKusama' xcm transfer 'USDT' > xtokens transfer > f
     "data": [
       "ConcatenatedVersionedXcm",
       {
-        "v4": [
+        "v5": [
           {
             "withdrawAsset": [
               {
@@ -388,6 +388,9 @@ exports[`'karura' -> 'assetHubKusama' xcm transfer 'USDT' > xtokens transfer > f
               },
             },
           },
+          {
+            "setTopic": "0xe1787acfdfac7e845d2a8a189dd2c9a7399dca1fd460f6ab7983be6adcb41805",
+          },
         ],
       },
     ],
@@ -406,8 +409,8 @@ exports[`'karura' -> 'assetHubKusama' xcm transfer 'USDT' > xtokens transfer > t
       },
       "success": true,
       "weightUsed": {
-        "proofSize": "(rounded 7200)",
-        "refTime": "(rounded 330000000)",
+        "proofSize": "(rounded 11000)",
+        "refTime": "(rounded 990000000)",
       },
     },
     "method": "Processed",
@@ -583,6 +586,9 @@ exports[`'karura' -> 'basilisk' xcm transfer 'DAI' > xtokens transfer > from cha
               },
             },
           },
+          {
+            "setTopic": "0x81061649a3a43e9063d6ae61af00cf5bc12cd339f32e1697739ede1601348a6a",
+          },
         ],
       },
     ],
@@ -602,7 +608,7 @@ exports[`'karura' -> 'basilisk' xcm transfer 'DAI' > xtokens transfer > to chain
       "success": true,
       "weightUsed": {
         "proofSize": 0,
-        "refTime": 400000000,
+        "refTime": 500000000,
       },
     },
     "method": "Processed",

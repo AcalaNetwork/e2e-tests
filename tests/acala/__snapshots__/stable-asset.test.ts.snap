@@ -164,8 +164,8 @@ exports[`karura stable asset > mint overflow > events 1`] = `
         "class": "Normal",
         "paysFee": "Yes",
         "weight": {
-          "proofSize": "(rounded 17000)",
-          "refTime": "(rounded 1300000000)",
+          "proofSize": "(rounded 20000)",
+          "refTime": "(rounded 1400000000)",
         },
       },
     },
@@ -214,8 +214,8 @@ exports[`karura stable asset > swap overflow > events 1`] = `
         "class": "Normal",
         "paysFee": "Yes",
         "weight": {
-          "proofSize": "(rounded 11000)",
-          "refTime": "(rounded 2900000000)",
+          "proofSize": "(rounded 15000)",
+          "refTime": "(rounded 3000000000)",
         },
       },
     },
